@@ -146,6 +146,18 @@ When Word-Units are combined into a compound, each Word-Unit retains its own las
 
 Identical contours may abut across word boundaries. Kilor permits this — musicality comes from rhythmic phrasing and syntactic structure, not forced phonetic alteration.
 
+### G. Musical Tone Override
+
+In song and metered poetry, the melody or rhythmic metre of the composition may override lexical tone contours. When a word is set to music, its tonal pattern can be flattened or reshaped to follow the musical line.
+
+This is consistent with how tonal languages (Mandarin, Cantonese, Thai, Vietnamese) function in song — lexical tone is subordinated to melody when the two conflict. In Kilor, when tones are neutralised by music, word category is recovered from:
+
+1. **Syntactic position** — word order and case suffixes (which remain mandatory in poetic registers) disambiguate role
+2. **The `-s` derivational suffix** — audible even when tones are flattened, preserving the noun/adjective and verb/adverb distinction for 1–2 syllable words
+3. **Colour prefixes** — ontological class provides additional semantic grounding
+
+This is not a grammatical rule but a **performance convention**. No morphological changes, prefixes, or alternative spellings are required — the poet or composer simply prioritises the composition's melodic contour over lexical tone, and the grammar's existing redundancy carries the disambiguation burden.
+
 ---
 
 ## V. Summary Table
