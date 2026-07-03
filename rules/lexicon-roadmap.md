@@ -1,0 +1,130 @@
+# Kilor Lexicon & Developer Roadmap
+
+**Module:** Word Formation, Constraints & Development Pipeline
+**Status:** Canonical
+
+---
+
+## I. Lexical Architecture
+
+### A. Root Words
+
+All roots in Kilor must satisfy the following constraints:
+
+| Constraint | Rule |
+|:---|:---|
+| **Syllable count** | 1 to 5 syllables per root |
+| **Syllable templates** | Strictly CV, CVC, VC, or V only |
+| **Consonant clusters** | Forbidden — no CCV, CVCC, or any multi-consonant sequences |
+| **`j` and `v`** | Must never appear as consonants or vowels |
+| **Tone markers** | Only applied externally via `j`/`v`; never baked into the root spelling |
+
+### B. Word Categories & Tone Patterns
+
+Each root belongs to one of **four** categories. For 3+ syllable words, the tone pattern alone distinguishes them. For 1–2 syllable words, the derivational suffix `-s` creates adjective and adverb forms.
+
+| Category | 1-Syl | 2-Syl | 3+ Syl (Last-3 Domain) | `-s` Derivation |
+|:---|:---|:---|:---|:---|
+| **Noun** | H(`j`) | H(`j`)→L | ...M→H(`j`)→M→L | — |
+| **Verb** | L(`v`) | L(`v`)→H | ...M→L(`v`)→H→M | — |
+| **Adjective** | Noun + `-s` | Noun + `-s` | ...M→M→H(`j`)→H | from Noun |
+| **Adverb** | Verb + `-s` | Verb + `-s` | ...M→M→L(`v`)→M | from Verb |
+
+> See `tone-prosody.md` for full contour rules, last-3 domain, and `-s` appendix rules.
+
+---
+
+## II. Compounding
+
+### A. Mechanism
+
+Vocabulary is expanded through **lexical compounding** — independent roots are combined to form complex concepts.
+
+> **Example:** `lumi` (light) + `sola` (star) → `lumisola` (moon)
+
+### B. Word-Unit Processing Rule
+
+A compound is **not** a single monolithic block. It is processed as a sequence of independent **Word-Units**, each retaining its own tonal contour. When spoken, the contours are **stitched together** — they are not recalculated as if the compound were a single word.
+
+> **Example:** `aujli` (2-syl noun, H→L) + `luvmi` (2-syl noun, H→L) = `aujliluvmi`
+> **Result melody:** H→L → H→L. Each Word-Unit retains its own last-3 domain.
+
+---
+
+## III. Grammatical Mechanisms — Summary of Absence
+
+Kilor intentionally **does not have** the following. All are handled analytically or contextually:
+
+| Mechanism | How It's Handled Instead |
+|:---|:---|
+| **Grammatical tense** | Temporal words (yesterday, tomorrow, now); see `grammar-syntax.md` §V |
+| **Plural marking** | Context, quantifiers, numerals (Chinese-style); see `grammar-syntax.md` §VI |
+| **Agglutinative possessive suffix** | Genitive case (`-si`/`-sa`); see `cases.md` §IV |
+| **Agglutinative plural suffix** | Abolished; no equivalent |
+| **Possessive pronouns** | Pronoun root + Genitive suffix |
+
+---
+
+## IV. Development Pipeline & Heuristics
+
+For contributors (human or AI) extending the Kilor lexicon and grammar, follow this sequential pipeline:
+
+### Step 1: Morphological Foundation
+
+Define core roots ensuring:
+- Strict compliance with CV/CVC/VC/V syllable templates
+- No `j` or `v` in root spelling
+- No consonant clusters
+- **No 1- or 2-syllable root may end in `s` natively** — `-s` is reserved
+- Each root assigned to its category (Noun / Verb / Adjective / Adverb) with corresponding tone pattern (see `tone-prosody.md`)
+
+### Step 2: Lexical Generation
+
+Generate roots across all **four** categories at multiple syllable lengths:
+- **5 Noun roots** (1-syl, 2-syl, 3+ syl)
+- **5 Verb roots** (1-syl, 2-syl, 3+ syl)
+- **5 Adjective roots** (3+ syl — for 1/2 syl, derive via Noun + `-s`)
+- **5 Adverb roots** (3+ syl — for 1/2 syl, derive via Verb + `-s`)
+
+Verify that 1- and 2-syllable noun and verb roots combined with `-s` produce valid adjective/adverb forms. Run constraint checks on every root.
+
+### Step 3: Compounding Matrix
+
+Create 5 compound words (e.g., 2-syl + 2-syl combinations, or 3-syl + 2-syl). Verify:
+- Modular Stitching Rule applied correctly — each Word-Unit keeps its own last-3 domain
+- No tone recalculation across Word-Unit boundaries
+- Colour prefixes apply only to noun Word-Units
+
+### Step 4: Syntactic Testing
+
+Construct 5 SOV sentences using the generated lexicon.
+- **Target structure:** [ColourPrefix-Noun] [ColourPrefix-Noun-Accusative] [Adverb] [Verb]
+- Test SOV (default), OSV, and VSO orders — verify case suffixes disambiguate correctly
+- Test `-s` derivation in context: adjective modifying noun, adverb modifying verb
+
+### Step 5: Acoustic Simulation
+
+Read the sentences aloud. Evaluate:
+- **Rhythmic smoothness:** No consonant clusters should mean the rhythm feels percussive and fluid
+- **Melodic arc:** The stitched contours should feel natural — not monotonous, not chaotic
+- **Physical ease:** Adjust root vowel choices if articulation feels overly labored
+
+---
+
+## V. Reserved & Future Work
+
+| Area | Status |
+|:---|:---|
+| **Article morphology** (a/an/the) | Deferred — shape and tone not yet defined |
+| **Demonstratives** (this/that) | Deferred |
+| **Pronoun inventory** | Deferred |
+| **Numeral & classifier system** | Deferred — needed for explicit plural quantification |
+| **Temporal word inventory** | Deferred — critical for tense-free time expression |
+| **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |
+| **2-syllable noun & verb roots** | Deferred — needed as base for `-s` adjective/adverb derivation; must not end in `s` |
+| **Dative/Instrumental particle inventory** | Reserved slots: `te` (towards), `su` (using); additional particles deferred |
+| **Interrogative structure** | Deferred |
+
+---
+
+*End of Lexicon & Roadmap Specification.*
