@@ -147,6 +147,18 @@ To express quantity explicitly, use numeral + classifier constructions or quanti
 > *many bird* (= many birds)
 > *apple* (could be one or more, depending on context)
 
+### Pronoun Exception
+
+The **only exception** to the no-plural-marking rule is the pronoun system. Pronouns use a dedicated **`-l-` plural infix** to distinguish singular from plural:
+
+| | Singular | Plural |
+|---|---------|--------|
+| 1st | ki | kil |
+| 2nd | ti | til |
+| 3rd Living | si | sil |
+| 3rd Non-Living | ni | nil |
+
+This is a closed-class morphological process that applies **only** to pronouns. See `pronouns.md` §II-B for full details.
 ---
 
 ## VIII. No Possessive Suffixes

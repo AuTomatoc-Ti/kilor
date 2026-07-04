@@ -117,7 +117,7 @@ Read the sentences aloud. Evaluate:
 |:---|:---|
 | **Article morphology** (a/an/the) | Deferred — shape and tone not yet defined |
 | **Demonstratives** (this/that) | Deferred |
-| **Pronoun inventory** | Deferred |
+| **Pronoun inventory** | **Defined** — see `pronouns.md` |
 | **Numeral & classifier system** | Deferred — needed for explicit plural quantification |
 | **Temporal word inventory** | Deferred — critical for tense-free time expression |
 | **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |

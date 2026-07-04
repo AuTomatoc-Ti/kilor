@@ -74,6 +74,7 @@ The Genitive-marked possessor may appear before or after the possessed noun:
 
 There are no dedicated possessive pronouns (no equivalent to English *my*, *your*, *his*). Possession by pronoun is expressed by attaching the Genitive suffix to the pronoun root.
 
+> **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (no vowel harmony). See `pronouns.md` §III for the full declension table.
 ---
 
 ## V. Dative & Instrumental — Analytic Particles

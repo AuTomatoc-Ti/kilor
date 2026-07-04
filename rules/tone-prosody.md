@@ -84,6 +84,14 @@ Single flat tone per category. Adjective and Adverb derived via `-s` from the No
 
 **Collision accepted:** 1-syllable noun = 1-syllable adjective (both H), verb = adverb (both L). Disambiguated by the distinct root form, word order, colour prefixes, and context.
 
+### D. Pronoun Exemption
+
+Pronouns form a **closed-class exception** to the 1-syllable tone rules:
+
+- **1-syllable pronouns** (ki, kin, kis, ti, tin, tis, si, sin, sis, ni, nin, nis) are **toneless** — pronounced with flat mid-tone. They are grammatical function words, not lexical roots, and are never used as verbs.
+- **2-syllable pronoun forms** (kilin, tilis, silin, nilis, etc.) follow the standard 2-syl **noun pattern** H(`j`)→L.
+
+See `pronouns.md` §IV for the full tone specification.
 ---
 
 ## III. The `-s` Derivational Suffix
