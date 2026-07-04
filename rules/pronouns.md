@@ -65,7 +65,7 @@ Pronoun case endings are **invariant**. They do not participate in vowel harmony
 
 ## IV. Tone
 
-Pronouns follow a simplified tone system as a closed-class exception:
+Pronouns follow the standard Kilor tone rules (see `tone-prosody.md`):
 
 | Syllable Count | Tone Pattern | Example |
 |:---|:---|:---|
@@ -74,7 +74,7 @@ Pronouns follow a simplified tone system as a closed-class exception:
 
 ### A. Rationale
 
-1. **1-syllable pronouns are toneless** because they are grammatical function words, not lexical roots. In everyday speech, pronouns are never used as verbs, so the standard 1-syl H/L tone assignment (see `tone-prosody.md` §II-C) does not apply. The flat mid-tone distinguishes them from lexical roots that carry H or L tone markers.
+1. **1-syllable pronouns are toneless** — this follows the general rule that all 1-syllable words in Kilor carry no tone markers (see `tone-prosody.md` §II-C).
 
 2. **2-syllable inflected forms** (kilin, tilis, etc.) follow the standard 2-syl noun pattern H(`j`)→L, as they are multi-syllabic and benefit from a clear tonal contour.
 
@@ -114,7 +114,6 @@ This ambiguity is accepted as a natural feature of the language.
 | Genitive suffix | `-si` / `-sa` | `-s` (invariant) |
 | Vowel harmony | Required | Exempt (invariant endings) |
 | Plural marking | None | `-l-` infix (pronoun-only) |
-| 1-syl tone | H(`j`) or L(`v`) | Toneless (flat mid) |
 
 ---
 

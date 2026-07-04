@@ -1,7 +1,7 @@
 # Kilor Tone & Prosody — System F (Revised)
 
 **Module:** The Unified Prosody Engine
-**Status:** Canonical (v2.0 — Last-3 Domain Standard)
+**Status:** Canonical (v3.0 — 1-Syllable Toneless Standard)
 
 ---
 
@@ -24,7 +24,7 @@ In song and metered poetry, a separate performance convention applies — see §
 
 ## II. The 4 Category Patterns
 
-Kilor distinguishes **Noun, Verb, Adjective, and Adverb** through pitch contour alone for words of 3+ syllables. For 1–2 syllable words, the derivational suffix `-s` and independent roots handle the distinction.
+Kilor distinguishes **Noun, Verb, Adjective, and Adverb** through pitch contour for words of 2+ syllables. For 1-syllable words, all categories are **toneless** — category is distinguished by distinct roots and the `-s` derivational suffix.
 
 ---
 
@@ -69,29 +69,24 @@ Only Noun and Verb carry distinct tone patterns. Adjective and Adverb are derive
 
 ---
 
-### C. 1-Syllable Words
+### C. 1-Syllable Words — Toneless
 
-Single flat tone per category. Adjective and Adverb derived via `-s` from the Noun and Verb roots respectively.
+All 1-syllable words in Kilor are **toneless** — pronounced with flat mid-tone. No 1-syllable word carries a `j` or `v` tone marker.
 
 | Category | Form | Tone |
 |---|---|---|
-| **Noun** | Distinct root | H(`j`) |
-| **Verb** | Distinct root | L(`v`) |
-| **Adjective** | Noun root + `-s` | H(`j`) |
-| **Adverb** | Verb root + `-s` | L(`v`) |
+| **Noun** | Distinct root | Toneless (flat mid) |
+| **Verb** | Distinct root | Toneless (flat mid) |
+| **Adjective** | Noun root + `-s` | Toneless (flat mid) |
+| **Adverb** | Verb root + `-s` | Toneless (flat mid) |
 
-> **Example:** `fei` (verb, L) → `feis` (adv). Noun and verb are independent roots — the noun for "fly" is a different word entirely.
+> **Example:** `fei` (verb, toneless) → `feis` (adverb, toneless). Noun and verb are independent roots — the noun for "fly" is a different word entirely.
 
-**Collision accepted:** 1-syllable noun = 1-syllable adjective (both H), verb = adverb (both L). Disambiguated by the distinct root form, word order, colour prefixes, and context.
+**Category distinction** for 1-syllable words is handled by:
+1. **Distinct roots** — nouns and verbs are different words, not distinguished by tone
+2. **The `-s` suffix** — marks adjective (noun + `-s`) and adverb (verb + `-s`)
+3. **Word order and colour prefixes** — provide additional disambiguation
 
-### D. Pronoun Exemption
-
-Pronouns form a **closed-class exception** to the 1-syllable tone rules:
-
-- **1-syllable pronouns** (ki, kin, kis, ti, tin, tis, si, sin, sis, ni, nin, nis) are **toneless** — pronounced with flat mid-tone. They are grammatical function words, not lexical roots, and are never used as verbs.
-- **2-syllable pronoun forms** (kilin, tilis, silin, nilis, etc.) follow the standard 2-syl **noun pattern** H(`j`)→L.
-
-See `pronouns.md` §IV for the full tone specification.
 ---
 
 ## III. The `-s` Derivational Suffix
@@ -174,11 +169,11 @@ This is not a grammatical rule but a **performance convention**. No morphologica
 
 | Syl | Noun | Verb | Adjective | Adverb |
 |---|---|---|---|---|
-| **1** | H(`j`) | L(`v`) | Noun+`s`, H(`j`) | Verb+`s`, L(`v`) |
+| **1** | Toneless | Toneless | Noun+`s`, Toneless | Verb+`s`, Toneless |
 | **2** | H(`j`)→L | L(`v`)→H | Noun+`s` | Verb+`s` |
 | **3** | H(`j`)→M→L | L(`v`)→H→M | M→H(`j`)→H | M→L(`v`)→M |
 | **4+** | ...M→**H(j)→M→L** | ...M→**L(v)→H→M** | ...M→**M→H(j)→H** | ...M→**M→L(v)→M** |
 
 ---
 
-*End of Tone & Prosody Specification (v2.0).*
+*End of Tone & Prosody Specification (v3.0).*

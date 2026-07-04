@@ -25,10 +25,10 @@ Each root belongs to one of **four** categories. For 3+ syllable words, the tone
 
 | Category | 1-Syl | 2-Syl | 3+ Syl (Last-3 Domain) | `-s` Derivation |
 |:---|:---|:---|:---|:---|
-| **Noun** | H(`j`) | H(`j`)→L | ...M→H(`j`)→M→L | — |
-| **Verb** | L(`v`) | L(`v`)→H | ...M→L(`v`)→H→M | — |
-| **Adjective** | Noun + `-s` | Noun + `-s` | ...M→M→H(`j`)→H | from Noun |
-| **Adverb** | Verb + `-s` | Verb + `-s` | ...M→M→L(`v`)→M | from Verb |
+| **Noun** | Toneless | H(`j`)→L | ...M→H(`j`)→M→L | — |
+| **Verb** | Toneless | L(`v`)→H | ...M→L(`v`)→H→M | — |
+| **Adjective** | Noun + `-s`, Toneless | Noun + `-s` | ...M→M→H(`j`)→H | from Noun |
+| **Adverb** | Verb + `-s`, Toneless | Verb + `-s` | ...M→M→L(`v`)→M | from Verb |
 
 > See `tone-prosody.md` for full contour rules, last-3 domain, and `-s` appendix rules.
 
@@ -123,7 +123,8 @@ Read the sentences aloud. Evaluate:
 | **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |
 | **2-syllable noun & verb roots** | Deferred — needed as base for `-s` adjective/adverb derivation; must not end in `s` |
 | **Dative/Instrumental particle inventory** | Reserved slots: `te` (towards), `su` (using); additional particles deferred |
-| **Interrogative structure** | Deferred |
+| **Interrogative structure** | **Defined** — see `interrogative.md` |
+| **Negation** | **Defined** — see `negation.md` |
 
 ---
 
