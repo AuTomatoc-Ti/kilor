@@ -137,14 +137,14 @@ When multiple suffixes co-occur: **root → case suffix → `-s`**
 
 The **colour prefix** is an external proclitic. It is pronounced flat Mid and does **not** count toward the syllable count for the last-3 domain. Only the root's syllables are counted.
 
-> **Example:** `a-` (red prefix, flat Mid) + `lumisola` (3-syl noun root, H→M→L) = `a-lumisola`
-> The last-3 domain applies to the root `lumisola`, ignoring the prefix.
+> **Example:** `a-` (red prefix, flat Mid) + `lujmisojla` (4-syl compound noun root, M→H→M→L) = `a-lujmisojla`
+> The last-3 domain applies to the root `lujmisojla`, ignoring the prefix. Each Word-Unit (`lujmi` + `sojla`) retains its own internal contour: H→L → H→L = M→H→M→L.
 
 ### E. Modular Stitching (Compounds)
 
 When Word-Units are combined into a compound, each Word-Unit retains its own last-3 domain. The tonal contours are **stitched sequentially**, not recalculated for the compound's total syllable count.
 
-> **Example:** `aujli` (2-syl noun, H→L) + `luvmi` (2-syl noun, H→L) = `aujliluvmi`
+> **Example:** `aujli` (2-syl noun, H→L) + `lujmi` (2-syl noun, H→L) = `aujlilujmi`
 > **Melody:** H→L → H→L. Each Word-Unit's internal contour is preserved.
 
 ### F. No Cross-Word Tone Sandhi

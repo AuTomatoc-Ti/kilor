@@ -11,7 +11,7 @@
 
 Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. This is the natural order for everyday speech and standard prose.
 
-> **Example:** `a-kovra aelumini takaj.`
+> **Example:** `a-kojra aelujmina tavka.`
 > (The fire the light burns.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 
@@ -31,7 +31,7 @@ Because case suffixes explicitly mark syntactic roles (see `cases.md`), Kilor is
 
 The Genitive possessor may precede or follow the possessed noun. Both orders are intelligible because the `-si`/`-sa` suffix marks the possessor unambiguously.
 
-> **Example:** `akovrasa aelumi` (the fire's light) ≡ `aelumi akovrasa` (the light of the fire)
+> **Example:** `a-kojrasa aelujmi` (the fire's light) ≡ `aelujmi a-kojrasa` (the light of the fire)
 
 ---
 
@@ -46,14 +46,14 @@ Suffixes must assimilate to the vowel class of the root word's nucleus.
 
 **Rule:** A root containing a Back vowel dictates that all subsequent agglutinative suffixes must use Back vowel variants, and vice versa.
 
-> **Example (Back root):** `kora` (fire, contains `o`) + Accusative → `korana` (uses `-na`, not `-ni`)
-> **Example (Front root):** `lumi` (light, contains `i`) + Accusative → `lumini` (uses `-ni`, not `-na`)
+> **Example (Back root):** `kojra` (fire, contains `o`, noun H→L) + Accusative → `kojrana` (uses `-na`, not `-ni`)
+> **Example (Back root):** `lujmi` (light, contains `u`, noun H→L) + Accusative → `lujmina` (uses `-na`, not `-ni` — `u` is a back vowel)
 
 ### Proclitic Exemption
 
 The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Echo Rule. Only the root's nucleus determines suffix vowel class.
 
-> **Example:** `a-kora-sa` — the prefix `a` is Front, but the root `o` is Back, so the Genitive suffix uses `-sa` (Back).
+> **Example:** `a-kojra-sa` — the prefix `a` is Front, but the root `o` is Back, so the Genitive suffix uses `-sa` (Back).
 
 ---
 
@@ -83,7 +83,7 @@ When a root terminating in a vowel interfaces with a vowel-initial suffix, they 
 
 Vocabulary is expanded through **lexical compounding**: roots of 1 to 5 syllables are combined to form complex concepts.
 
-> **Example:** `lumi` (light) + `sola` (star) → `lumisola` (moon)
+> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmisojla` (moon)
 
 ### B. Word-Unit Processing
 
@@ -109,7 +109,7 @@ The suffix `-s` creates modifiers from base roots. It applies to **1 and 2 sylla
 | Noun + `-s` | Adjective | 1 & 2 syllable nouns |
 | Verb + `-s` | Adverb | 1 & 2 syllable verbs |
 
-> **1-syllable example:** `fei` (verb, L) → `feis` (adverb, L)
+> **1-syllable example:** `fei` (verb, toneless) → `feis` (adverb, toneless)
 > **2-syllable example:** `aujli` (noun, H→L) → `aujlis` (adjective, H→L)
 
 ### B. Phonological Nature

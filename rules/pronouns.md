@@ -65,20 +65,18 @@ Pronoun case endings are **invariant**. They do not participate in vowel harmony
 
 ## IV. Tone
 
-Pronouns follow the standard Kilor tone rules (see `tone-prosody.md`):
+Pronouns follow the standard Kilor tone rules in pronunciation only (see `tone-prosody.md`):
 
-| Syllable Count | Tone Pattern | Example |
+| Syllable Count | Spelled Form | Pronounced Tone |
 |:---|:---|:---|
-| **1-syllable** (ki, kin, kis, etc.) | **Toneless** — flat mid-tone | `ki` (flat mid) |
-| **2-syllable** (kilin, tilis, etc.) | **Noun pattern** — H(`j`)→L | `kijlin`, `tijlis` |
+| **1-syllable** (ki, kin, kis, etc.) | `ki` | Flat mid-tone |
+| **2-syllable** (kilin, tilis, etc.) | `kilin` | H→L (noun pattern) |
 
-### A. Rationale
+### A. Simplified Spelling Convention
 
-1. **1-syllable pronouns are toneless** — this follows the general rule that all 1-syllable words in Kilor carry no tone markers (see `tone-prosody.md` §II-C).
+Pronouns are a closed class — every form is unambiguously nominal. Therefore, **tone markers (`j`/`v`) are omitted from pronoun spelling** even when multi-syllable forms carry non-flat tone contours in speech. This simplifies the written form without creating ambiguity.
 
-2. **2-syllable inflected forms** (kilin, tilis, etc.) follow the standard 2-syl noun pattern H(`j`)→L, as they are multi-syllabic and benefit from a clear tonal contour.
-
-3. The tone marker `j` is placed on the **first syllable** of 2-syllable forms: `kijlin`, `tijlis`, `sijlin`, `nijlin`, `tijlis`, `sijlis`, `nijlis`.
+> **Pronunciation:** 2-syllable inflected forms (`kilin`, `tilis`, `silin`, `nilin`, `tilis`, `silis`, `nilis`) are pronounced with H→L contour. 1-syllable forms are flat mid.
 
 ---
 
@@ -88,7 +86,7 @@ Pronouns follow the standard Kilor tone rules (see `tone-prosody.md`):
 
 Possession by pronoun follows the same rule as regular nouns (see `cases.md` §IV): the Genitive-marked pronoun may appear before or after the possessed noun.
 
-> **Example:** `kis aelumi` (my light) ≡ `aelumi kis` (the light of mine)
+> **Example:** `kis aelujmi` (my light) ≡ `aelujmi kis` (the light of mine)
 
 ### B. Accusative Optionality
 

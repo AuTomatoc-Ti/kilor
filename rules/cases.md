@@ -32,10 +32,10 @@ Case suffixes use simple CV (Consonant-Vowel) forms to maintain rhythmic purity.
 |:---|:---|
 | e, i, y, ae, ai, ei, eu, iu, oi | a, o, u, au, ou |
 
-> **Example (Back root):** `kora` (fire, `o`) + Accusative → `korana`
-> **Example (Front root):** `lumi` (light, `i`) + Accusative → `lumini`
-> **Example (Back root):** `kora` (fire) + Genitive → `korasa`
-> **Example (Front root):** `lumi` (light) + Genitive → `lumisi`
+> **Example (Back root):** `kojra` (fire, `o`, noun H→L) + Accusative → `kojrana`
+> **Example (Back root):** `lujmi` (light, `u`, noun H→L) + Accusative → `lujmina`
+> **Example (Back root):** `kojra` (fire) + Genitive → `kojrasa`
+> **Example (Back root):** `lujmi` (light) + Genitive → `lujmisa`
 
 ---
 
@@ -47,7 +47,7 @@ The Accusative suffix (`-ni`/`-na`) has a **two-tier usage rule**:
 
 When a sentence follows the **default SOV order**, the Accusative may be **dropped** in everyday conversation. The object's position between Subject and Verb already signals its role sufficiently.
 
-> **Conceptual example (SOV speech):** `akovra lumi takaj` — *lumi* (light) is unambiguously the object by position.
+> **Conceptual example (SOV speech):** `a-kojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
 
 ### B. Mandatory — Formal Writing & Non-SOV Order
 
@@ -56,7 +56,7 @@ The Accusative becomes **mandatory** in two contexts:
 1. **Formal writing** (even in SOV order) — for precision and clarity
 2. **Any non-SOV word order** (OSV, VSO, or other poetic inversions) — because position no longer signals objecthood, the suffix is the sole disambiguator
 
-> **Conceptual example (OSV):** `lumina akovra takaj` — the `-na` on *lumi* confirms it as the object despite being sentence-initial.
+> **Conceptual example (OSV):** `lujmina a-kojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
 
 ---
 
@@ -68,7 +68,7 @@ The Genitive (`-si`/`-sa`) is the **only mechanism for expressing possession** i
 
 The Genitive-marked possessor may appear before or after the possessed noun:
 
-> `akovrasa aelumi` (the fire's light) ≡ `aelumi akovrasa` (the light of the fire)
+> `a-kojrasa aelujmi` (the fire's light) ≡ `aelujmi a-kojrasa` (the light of the fire)
 
 ### Absence of Possessive Pronouns
 

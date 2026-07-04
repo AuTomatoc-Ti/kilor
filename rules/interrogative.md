@@ -54,10 +54,10 @@ The colour prefix follows the standard rules from `nouns-colour-prefix.md`:
 
 All question words are **fronted** to the **beginning of the sentence**, regardless of their grammatical role. This is a strict rule — question words cannot remain in situ.
 
-> **Example (subject question):** `awej akovra takaj?` (Which [one] eats the fire?)
-> **Example (object question):** `ewej ti takaj?` (What do you eat?)
-> **Example (location question):** `iwej akovra?` (Where is the fire?)
-> **Example (reason question):** `ywej ti akovra takaj?` (Why do you eat fire?)
+> **Example (subject question):** `awej a-kojra tavka?` (Which [one] eats the fire?)
+> **Example (object question):** `ewej ti tavka?` (What do you eat?)
+> **Example (location question):** `iwej a-kojra?` (Where is the fire?)
+> **Example (reason question):** `ywej ti a-kojra tavka?` (Why do you eat fire?)
 
 ---
 
@@ -65,14 +65,14 @@ All question words are **fronted** to the **beginning of the sentence**, regardl
 
 Yes/no (polar) questions are formed by appending the affirmative particle **`iu`** to the end of a declarative sentence. The intonation rises on `iu`.
 
-> **Statement:** `ti akovra takaj.` (You eat fire.)
-> **Question:** `ti akovra takaj iu?` (Do you eat fire?)
+> **Statement:** `ti a-kojra tavka.` (You eat fire.)
+> **Question:** `ti a-kojra tavka iu?` (Do you eat fire?)
 
 ### A. Answering
 
 Yes/no questions are answered using the standalone particles from `negation.md`:
 
-> **Q:** `ti akovra takaj iu?`
+> **Q:** `ti a-kojra tavka iu?`
 > **A:** `iu.` (Yes.) / `na.` (No.)
 
 ---
@@ -81,14 +81,14 @@ Yes/no questions are answered using the standalone particles from `negation.md`:
 
 | Question Type | Mechanism | Example |
 |:---|:---|:---|
-| **Who?** | `ae-wei` (fronted) | `aewej akovra takaj?` |
-| **Which?** | `a-wei` (fronted) | `awej akovra takaj?` |
-| **What?** | `e-wei` (fronted) | `ewej ti takaj?` |
-| **Where?** | `i-wei` (fronted) | `iwej akovra?` |
-| **When?** | `o-wei` (fronted) | `owej ti takaj?` |
-| **How?** | `u-wei` (fronted) | `uwej ti takaj?` |
-| **Why?** | `y-wei` (fronted) | `ywej ti akovra takaj?` |
-| **Yes/No?** | `iu` (sentence-final) | `ti akovra takaj iu?` |
+| **Who?** | `ae-wei` (fronted) | `aewej a-kojra tavka?` |
+| **Which?** | `a-wei` (fronted) | `awej a-kojra tavka?` |
+| **What?** | `e-wei` (fronted) | `ewej ti tavka?` |
+| **Where?** | `i-wei` (fronted) | `iwej a-kojra?` |
+| **When?** | `o-wei` (fronted) | `owej ti tavka?` |
+| **How?** | `u-wei` (fronted) | `uwej ti tavka?` |
+| **Why?** | `y-wei` (fronted) | `ywej ti a-kojra tavka?` |
+| **Yes/No?** | `iu` (sentence-final) | `ti a-kojra tavka iu?` |
 
 ---
 

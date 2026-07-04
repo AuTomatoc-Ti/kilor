@@ -45,17 +45,74 @@ Two vowels that merge into a **single syllable nucleus**. These are the **only**
 
 ## III. Consonant Inventory
 
-Grouped by articulatory mechanics. **No `j` or `v` permitted.**
+Grouped by positional restriction. **No `j` or `v` permitted.**
 
-| Group | Letters | Notes |
-|:---|:---|:---|
-| **Labial** | p, b, m, f, w | Standard lip/teeth sounds |
-| **Coronal** | t, d, n, s, z, l, r, th | `r` = alveolar trill; `th` = dental fricative (*thin*) |
-| **Palatal** | sh, y, c, ch | `c` = /ts/ (pizza); `ch` = /tʃ/ (church) |
-| **Dorsal** | k, g, ng, x, h | `x` = uvular fricative (*Loch*); `ng` = /ŋ/ (sing) |
-| **Exotic** | gh, hl, rh, ky, ty, hy, dz | `hl`/`rh` = voiceless L/R; `ky`/`ty`/`hy`/`dz` are single-phoneme digraphs (palatalised /kj/, /tj/, /hj/, and voiced affricate /dz/), not consonant clusters |
+### A. Core Consonants (Appear Anywhere)
 
-> **Note:** Palatalised blends use `y` (not `j`) to avoid tonal conflict, e.g., `ky`, `ty`, `hy`.
+15 consonants that may appear word-initially, word-medially, or word-finally. Grouped by articulatory mechanics.
+
+**Labial** (lips / lip-teeth):
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **p** | /p/ | Voiceless bilabial plosive | s**p**in |
+| **b** | /b/ | Voiced bilabial plosive | **b**oy |
+| **m** | /m/ | Bilabial nasal | **m**oon |
+| **f** | /f/ | Voiceless labiodental fricative | **f**ish |
+| **w** | /w/ | Voiced labio-velar approximant | **w**e |
+
+**Coronal** (tongue tip / blade):
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **t** | /t/ | Voiceless alveolar plosive | s**t**op |
+| **d** | /d/ | Voiced alveolar plosive | **d**og |
+| **n** | /n/ | Alveolar nasal | **n**o |
+| **s** | /s/ | Voiceless alveolar fricative | **s**ee |
+| **l** | /l/ | Alveolar lateral approximant | **l**ight |
+| **r** | /r/ | Alveolar trill | Spanish pe**rr**o |
+| **c** | /ts/ | Voiceless alveolar affricate | pi**zz**a |
+
+**Dorsal & Glottal** (velar / glottis):
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **k** | /k/ | Voiceless velar plosive | s**k**y |
+| **g** | /g/ | Voiced velar plosive | **g**o |
+| **h** | /h/ | Voiceless glottal fricative | **h**at |
+
+### B. Ending-Only Consonants
+
+2 consonants that appear only at the end of words (word-final or syllable-final position).
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **ng** | /ŋ/ | Velar nasal | si**ng** |
+| **x** | /x/ | Voiceless uvular/velar fricative | Scottish Lo**ch** |
+
+### C. Start-Only Onsets
+
+10 onset digraphs that appear only at the start of words. These are **single-phoneme digraphs** — two letters representing one articulatory motion, not consonant clusters.
+
+**Fricative/Affricate onsets:**
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **sh** | /ʃ/ | Voiceless postalveolar fricative | **sh**ip |
+| **ch** | /tʃ/ | Voiceless postalveolar affricate | **ch**urch |
+| **th** | /θ/ | Voiceless dental fricative | **th**in |
+
+**Lateral-release onsets:** Each is one continuous motion — the tongue tip presses to the roof, and air releases over the sides into the vowel.
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **sl** | /s͜l/ | `s` released laterally | whi**stl**e (without the 't') |
+| **kl** | /k͜l/ | `k` released laterally | **cl**ick |
+| **tl** | /t͜l/ | `t` released laterally | bo**ttl**e |
+| **bl** | /b͜l/ | `b` released laterally | bub**bl**e |
+| **ml** | /m͜l/ | `m` released laterally | ha**ml**et (compressed) |
+
+> **Note:** The lateral-release onsets (`sl`, `kl`, `tl`, `bl`, `ml`) are single-phoneme digraphs, not consonant clusters. The tongue does not reposition between the consonant and the lateral release — it is one continuous articulatory gesture.
 
 ---
 
@@ -72,8 +129,8 @@ The letters **`j`** and **`v`** are exclusively tone markers. They are **extra-s
 | Template | Pattern | Examples |
 |:---|:---|:---|
 | **CV** | Consonant + Vowel | *ka, mi, sou* |
-| **CVC** | Consonant + Vowel + Consonant | *kan, mil, souch* |
-| **VC** | Vowel + Consonant | *ak, il, ouch* |
+| **CVC** | Consonant + Vowel + Consonant | *kan, mil, sok* |
+| **VC** | Vowel + Consonant | *ak, il, ok* |
 | **V** | Standalone Vowel/Diphthong | *a, o, ae, ai* |
 
 ### C. The V Template Rule

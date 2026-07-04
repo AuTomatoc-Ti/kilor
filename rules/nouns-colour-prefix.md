@@ -38,13 +38,13 @@ The Colour Prefix is an **External Proclitic**. It sits outside the phonological
 - **Does not** trigger the Echo Rule (Vowel Harmony) — only the root's nucleus determines suffix vowel class
 - **Does not** carry tone — all colour prefixes are pronounced with a flat mid-tone
 - **Does not** count toward the syllable count for the last-3 tone domain (see `tone-prosody.md`) — only the root's syllables are counted
-- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-akora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
+- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-akojra`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
 
-> **Example (3-syl root):** `a-lumisola` (Red moon)
-> The colour prefix `a-` is flat Mid and ignored for tone. The root `lumisola` (3 syllables) carries the last-3 domain: H(`j`)→M→L for noun.
+> **Example (4-syl compound):** `a-lujmisojla` (Red moon)
+> The colour prefix `a-` is flat Mid and ignored for tone. The compound root `lujmisojla` (4 syllables, `lujmi` + `sojla`) carries two stitched H→L contours: M→H→M→L.
 >
-> **Example (Echo Rule):** `a-kora-sa` (Red fire's)
-> Prefix `a` is Front; root `kora` contains Back vowel `o` → Genitive suffix uses Back variant `-sa`
+> **Example (Echo Rule):** `a-kojra-sa` (Red fire's)
+> Prefix `a` is Front; root `kojra` contains Back vowel `o` → Genitive suffix uses Back variant `-sa`
 
 ---
 
