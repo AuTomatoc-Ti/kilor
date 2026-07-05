@@ -40,14 +40,17 @@ Each root belongs to one of **four** categories. For 3+ syllable words, the tone
 
 Vocabulary is expanded through **lexical compounding** — independent roots are combined to form complex concepts.
 
-> **Example:** `lumi` (light) + `sola` (star) → `lumisola` (moon)
+> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (moon, multi-word vocab)
 
-### B. Word-Unit Processing Rule
+### B. Tone Processing — Mono-Words vs. Multi-Word Vocabs
 
-A compound is **not** a single monolithic block. It is processed as a sequence of independent **Word-Units**, each retaining its own tonal contour. When spoken, the contours are **stitched together** — they are not recalculated as if the compound were a single word.
+Kilor distinguishes two forms of compounding for tone:
 
-> **Example:** `aujli` (2-syl noun, H→L) + `luvmi` (2-syl noun, H→L) = `aujliluvmi`
-> **Result melody:** H→L → H→L. Each Word-Unit retains its own last-3 domain.
+1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word: the Last-3 Domain Rule applies across the entire word (see `tone-prosody.md` §IV-A).
+
+2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `lujmi sojla`, `aujli lujmi`). Each word retains its own tonal contour independently. The contours are **stitched sequentially** across the word sequence, not recalculated (see `tone-prosody.md` §IV-D).
+
+   > **Example:** `aujli lujmi` (2-syl noun + 2-syl noun, two-word vocab) → H→L → H→L. Each word retains its own last-3 domain.
 
 ---
 
@@ -57,8 +60,8 @@ Kilor intentionally **does not have** the following. All are handled analyticall
 
 | Mechanism | How It's Handled Instead |
 |:---|:---|
-| **Grammatical tense** | Temporal words (yesterday, tomorrow, now); see `grammar-syntax.md` §V |
-| **Plural marking** | Context, quantifiers, numerals (Chinese-style); see `grammar-syntax.md` §VI |
+| **Grammatical tense** | Temporal words (yesterday, tomorrow, now); see `grammar-syntax.md` §VI |
+| **Plural marking** | Context, quantifiers, numerals (Chinese-style); see `grammar-syntax.md` §VII |
 | **Agglutinative possessive suffix** | Genitive case (`-si`/`-sa`); see `cases.md` §IV |
 | **Agglutinative plural suffix** | Abolished; no equivalent |
 | **Possessive pronouns** | Pronoun root + Genitive suffix |
@@ -90,9 +93,9 @@ Verify that 1- and 2-syllable noun and verb roots combined with `-s` produce val
 
 ### Step 3: Compounding Matrix
 
-Create 5 compound words (e.g., 2-syl + 2-syl combinations, or 3-syl + 2-syl). Verify:
-- Modular Stitching Rule applied correctly — each Word-Unit keeps its own last-3 domain
-- No tone recalculation across Word-Unit boundaries
+Create 5 compound words (e.g., 2-syl + 2-syl combinations, or 3-syl + 2-syl). Include both mono-word compounds and multi-word vocabs. Verify:
+- **Mono-word compounds:** Last-3 Domain Rule applies across the entire word (recalculated, not stitched)
+- **Multi-word vocabs:** Each word keeps its own last-3 domain, stitched sequentially across word boundaries
 - Colour prefixes apply only to noun Word-Units
 
 ### Step 4: Syntactic Testing
@@ -115,8 +118,7 @@ Read the sentences aloud. Evaluate:
 
 | Area | Status |
 |:---|:---|
-| **Article morphology** (a/an/the) | Deferred — shape and tone not yet defined |
-| **Demonstratives** (this/that) | Deferred |
+| **Article morphology / Demonstratives** (a/an/the, this/that) | **Defined** — expressed through the colour prefix system itself; see `nouns-colour-prefix.md` §IV |
 | **Pronoun inventory** | **Defined** — see `pronouns.md` |
 | **Numeral & classifier system** | Deferred — needed for explicit plural quantification |
 | **Temporal word inventory** | Deferred — critical for tense-free time expression |

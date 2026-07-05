@@ -27,19 +27,32 @@ All three are **1-syllable words** and follow the standard 1-syllable tone rule:
 
 > **Example (negating a noun):** `ki nar` = "not me"
 > **Example (negating a verb):** `tavka nar` = "not eat"
-> **Example (negating a full clause):** `ki a-kojra tavka nar` = "I do not eat the fire"
+> **Example (negating a full clause):** `ki kojra tavka nar` = "I do not eat fire"
 
 ### B. Scope
 
-`nar` negates only the **preceding constituent**, not the entire clause by default. This allows precise scoping:
+`nar` has a **two-tier scope rule** depending on position:
+
+#### Clause-End Position — Predicate Scope
+
+When `nar` appears at the **end of a clause** (after the verb), it scopes over the **entire predicate** — the whole clause is negated.
+
+> `ki kojra tavka nar` = "I do not eat fire" (entire predicate negated)
+
+#### Non-Final Position — Constituent Scope
+
+In any other position, `nar` negates only the **immediately preceding constituent**:
 
 | Phrase | Meaning |
 |:---|:---|
-| `ki nar a-kojra tavka` | "Not I eat the fire" (someone else does) |
-| `ki a-kojra nar tavka` | "I not-the-fire eat" (I eat something else) |
-| `ki a-kojra tavka nar` | "I do not eat the fire" (negates the whole predicate) |
+| `ki nar kojra tavka` | "Not I eat fire" (someone else does) |
+| `ki kojra nar tavka` | "I not-the-fire eat" (I eat something else) |
 
-### C. Double Negation
+### C. Interaction with `iu`
+
+The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti kojra tavka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `interrogative.md` §IV-B.
+
+### D. Double Negation
 
 **Double negation (`nar nar`) is forbidden in formal language.** Two consecutive `nar` particles are ungrammatical. To express emphasis, use contextual intensifiers or rephrase the sentence.
 
@@ -51,24 +64,24 @@ All three are **1-syllable words** and follow the standard 1-syllable tone rule:
 
 `iu` is used as a standalone affirmative response:
 
-> **Q:** `ti a-kojra tavka iu?` (Do you eat fire?)
+> **Q:** `ti kojra tavka iu?` (Do you eat fire?)
 > **A:** `iu.` (Yes.)
 
 ### B. Negative Answer
 
 `na` is used as a standalone negative response:
 
-> **Q:** `ti a-kojra tavka iu?` (Do you eat fire?)
+> **Q:** `ti kojra tavka iu?` (Do you eat fire?)
 > **A:** `na.` (No.)
 
 ---
 
 ## IV. Interaction with Interrogatives
 
-`iu` also functions as the **yes/no question marker** when placed at the end of a declarative sentence (see `interrogative.md` §III). In this role, it converts a statement into a polar question.
+`iu` also functions as the **yes/no question marker** when placed at the end of a declarative sentence (see `interrogative.md` §IV). In this role, it converts a statement into a polar question.
 
-> **Statement:** `ti a-kojra tavka.` (You eat fire.)
-> **Question:** `ti a-kojra tavka iu?` (Do you eat fire?)
+> **Statement:** `ti kojra tavka.` (You eat fire.)
+> **Question:** `ti kojra tavka iu?` (Do you eat fire?)
 
 ---
 

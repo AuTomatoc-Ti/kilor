@@ -7,7 +7,9 @@
 
 ## I. Crucial Constraint: `j` and `v` Reserved
 
-The letters **`j`** and **`v`** are **strictly and exclusively reserved for Tone Notation** (see `tone-prosody.md`). They do not exist as consonants or vowels in the phonetic inventory. No root word, suffix, or colour prefix may contain them.
+The letters **`j`** and **`v`** are **strictly and exclusively reserved for Tone Notation** (see `tone-prosody.md`). They never serve as consonants or vowels in the segmental phonetic inventory. No root, suffix, or colour prefix may contain `j` or `v` as a segmental phoneme.
+
+When `j` or `v` appears in the orthography of a word (e.g., `lujmi`, `aujli`), it is a floating tone marker — an extra-segmental annotation overlaid on the vowel of its anchor syllable, not a consonant or vowel in the syllable structure. See `tone-prosody.md` §I and `phonology.md` §IV-A for the syllable-level treatment.
 
 ---
 
@@ -83,7 +85,7 @@ Grouped by positional restriction. **No `j` or `v` permitted.**
 
 ### B. Ending-Only Consonants
 
-2 consonants that appear only at the end of words (word-final or syllable-final position).
+2 consonants that appear only at the end of words (word-final position** only** — they may not appear word-medially, even across syllable boundaries within a compound).
 
 | Letter | IPA | Sound Description | English Example |
 |:---|:---|:---|:---|
@@ -92,7 +94,7 @@ Grouped by positional restriction. **No `j` or `v` permitted.**
 
 ### C. Start-Only Onsets
 
-10 onset digraphs that appear only at the start of words. These are **single-phoneme digraphs** — two letters representing one articulatory motion, not consonant clusters.
+8 onset digraphs that appear only at the start of words. These are **single-phoneme digraphs** — two letters representing one articulatory motion, not consonant clusters.
 
 **Fricative/Affricate onsets:**
 
@@ -113,6 +115,8 @@ Grouped by positional restriction. **No `j` or `v` permitted.**
 | **ml** | /m͜l/ | `m` released laterally | ha**ml**et (compressed) |
 
 > **Note:** The lateral-release onsets (`sl`, `kl`, `tl`, `bl`, `ml`) are single-phoneme digraphs, not consonant clusters. The tongue does not reposition between the consonant and the lateral release — it is one continuous articulatory gesture.
+
+> **Compounding restriction:** These onsets are restricted to **absolute word-initial** position. A root beginning with a start-only onset may not appear as the second or later element in a mono-word compound (where it would become word-medial). Such combinations must use multi-word vocabs instead. Roots beginning with a core consonant (see §III-A) may appear in any position within a compound.
 
 ---
 
@@ -139,7 +143,7 @@ The **V** template (a standalone vowel or diphthong) is primarily permitted at:
 
 1. The **beginning of words** (e.g., *a-ki-la*)
 2. As **standalone grammatical particles** (e.g., colour prefixes like `a-`, `e-`)
-3. As a **hiatus** between a colour prefix and the root (e.g., `a-akora`: V + V, creating a brief vowel hiatus; an optional glottal catch may be inserted in careful speech)
+3. As a **hiatus** between a colour prefix and the root (e.g., `a-ajkora`: V + V, creating a brief vowel hiatus; an optional glottal catch may be inserted in careful speech)
 
 > **Note:** A diphthong (e.g., `au`) counts as a single **V** nucleus within a syllable.
 

@@ -12,7 +12,7 @@ Traditional case languages overwhelm learners with 10+ morphological slots. Kilo
 This minimal system achieves two goals:
 
 1. **Zero Cognitive Friction** — learners only need two suffixes. The subject (Nominative) is unmarked.
-2. **Absolute Poetic Freedom** — because every non-subject noun wears an explicit syntactic tag, word order can be shuffled for rhythm, emphasis, and aesthetic beauty without breaking grammar.
+2. **Poetic Freedom** — case suffixes mark syntactic roles explicitly, so word order can be shuffled for rhythm, emphasis, and aesthetic beauty. In everyday casual SOV speech, the Accusative may be dropped for simplicity (see §III-A); in formal writing and non-SOV orders, all case suffixes are mandatory, ensuring full disambiguation.
 
 ---
 
@@ -26,16 +26,25 @@ Case suffixes use simple CV (Consonant-Vowel) forms to maintain rhythmic purity.
 | **Accusative** | The Target / Object *(Who receives it?)* | **`-ni`** | **`-na`** | `n` is a nasal resonance — it phonetically flows *toward* a target. |
 | **Genitive** | The Owner / Possession *(Whose? / "Of")* | **`-si`** | **`-sa`** | `s` is continuous fricative — it implies a lingering connection. |
 
-### Vowel Harmony Assignment
+### Contrastive Suffix Assignment
 
-| Front Root Vowels | Back Root Vowels |
+Suffixes use the vowel class **opposite** to the last syllable's nucleus of the **root**. This creates a pleasant front↔back alternation at the root-suffix boundary.
+
+The colour prefix is an external proclitic — it sits outside the phonological boundary of the root and does **not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class (see `nouns-colour-prefix.md` §III, `grammar-syntax.md` §II).
+
+| Front Vowels (last syllable) | Back Suffix |
 |:---|:---|
-| e, i, y, ae, ai, ei, eu, iu, oi | a, o, u, au, ou |
+| e, i, y, ae, ei, eu, iu | `-na` (ACC), `-sa` (GEN) |
 
-> **Example (Back root):** `kojra` (fire, `o`, noun H→L) + Accusative → `kojrana`
-> **Example (Back root):** `lujmi` (light, `u`, noun H→L) + Accusative → `lujmina`
-> **Example (Back root):** `kojra` (fire) + Genitive → `kojrasa`
-> **Example (Back root):** `lujmi` (light) + Genitive → `lujmisa`
+| Back Vowels (last syllable) | Front Suffix |
+|:---|:---|
+| a, o, u, ai, au, oi, ou | `-ni` (ACC), `-si` (GEN) |
+
+> **Example (contrast):** `kojra` (fire, last vowel `a` = back) + Accusative → `kojrani` (front `-ni`)
+> **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Accusative → `lujmina` (back `-na`)
+> **Example (contrast):** `kojra` (fire, last vowel `a` = back) + Genitive → `kojrasi` (front `-si`)
+> **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Genitive → `lujmisa` (back `-sa`)
+> **Example (proclitic exemption):** `a-kojra` (Red-fire, prefix `a` = Front) + Genitive → `a-kojrasi` (front `-si`, not `-sa`). The prefix `a` is ignored; root's last vowel `a` (Back) selects front `-si`.
 
 ---
 
@@ -47,7 +56,7 @@ The Accusative suffix (`-ni`/`-na`) has a **two-tier usage rule**:
 
 When a sentence follows the **default SOV order**, the Accusative may be **dropped** in everyday conversation. The object's position between Subject and Verb already signals its role sufficiently.
 
-> **Conceptual example (SOV speech):** `a-kojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
+> **Conceptual example (SOV speech):** `kojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
 
 ### B. Mandatory — Formal Writing & Non-SOV Order
 
@@ -56,7 +65,18 @@ The Accusative becomes **mandatory** in two contexts:
 1. **Formal writing** (even in SOV order) — for precision and clarity
 2. **Any non-SOV word order** (OSV, VSO, or other poetic inversions) — because position no longer signals objecthood, the suffix is the sole disambiguator
 
-> **Conceptual example (OSV):** `lujmina a-kojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
+> **Conceptual example (OSV):** `lujmina kojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
+
+### C. Multi-Word Vocabs — Suffix Placement
+
+When the noun receiving a case suffix is a **multi-word vocab** (a semantic unit composed of multiple orthographic words; see `grammar-syntax.md` §IV-B), the case suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked.
+
+> **Example (Accusative, multi-word vocab):** `lujmi sojla` (moon) + Accusative → `lujmi sojlana` (moon as object)
+> **Example (Genitive, multi-word vocab):** `lujmi sojla` (moon) + Genitive → `lujmi sojlasa` (moon's / of the moon)
+
+The colour prefix (if present) attaches orthographically to the first word and does not affect suffix placement:
+
+> **Example (with prefix):** `a-lujmi sojla` (Red-moon) + Accusative → `a-lujmi sojlana`
 
 ---
 
@@ -64,17 +84,33 @@ The Accusative becomes **mandatory** in two contexts:
 
 The Genitive (`-si`/`-sa`) is the **only mechanism for expressing possession** in Kilor. There is no separate possessive particle or agglutinative possessive suffix.
 
-### Word Order Flexibility
+### Single Possessor — Word Order Flexibility
 
 The Genitive-marked possessor may appear before or after the possessed noun:
 
-> `a-kojrasa aelujmi` (the fire's light) ≡ `aelujmi a-kojrasa` (the light of the fire)
+> `kojrasi lujmi` (fire's light) ≡ `lujmi kojrasi` (light of fire)
+
+### Nested Possession — Fixed Recursive Order
+
+When **multiple Genitive-marked nouns** chain together (nested possession), Kilor uses a **fixed recursive order** to prevent structural ambiguity: each possessor must **precede** what it owns.
+
+```
+[Possessor-GEN] [Possessed] → recursive nesting
+```
+
+In a chain, the outermost possessor comes first, followed by each successively nested pair:
+
+> `kis kojrasi lujmi` = "my fire's light" — `kis` (my) owns `kojrasi` (fire's), which owns `lujmi` (light)
+> 
+> Parse: `[kis [kojrasi lujmi]]` — `kis` is the outermost possessor; `kojrasi` is nested inside
+
+Free order (`lujmi kojrasi kis`) is **not valid** for nested possession — the fixed possessor-first recursive order disambiguates the nesting structure.
 
 ### Absence of Possessive Pronouns
 
 There are no dedicated possessive pronouns (no equivalent to English *my*, *your*, *his*). Possession by pronoun is expressed by attaching the Genitive suffix to the pronoun root.
 
-> **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (no vowel harmony). See `pronouns.md` §III for the full declension table.
+> **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (exempt from the Contrastive Suffix Rule). See `pronouns.md` §III for the full declension table.
 ---
 
 ## V. Dative & Instrumental — Analytic Particles
@@ -86,7 +122,7 @@ Kilor intentionally restricts the case system to 3 slots. Two additional semanti
 | **Dative** | To / For (recipient) | **`te`** | Placed before the recipient noun |
 | **Instrumental** | With / By (means) | **`su`** | Placed before the instrument noun |
 
-These particles are **standalone, single-syllable words** that sit outside the case suffix system. They do not trigger vowel harmony and carry flat mid-tone.
+These particles are **standalone, single-syllable words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
 
 ---
 
@@ -101,15 +137,6 @@ When a case suffix is attached to a root, the tonal architecture of the root is 
 
 > **Example:** `aujli` (noun, 2 syllables, H(`j`)→L) + Genitive `-sa` → `aujlisa`
 > The `j` stays locked on `au`; `-sa` is flat mid-tone.
-
-### Suffix Order
-
-When the derivational `-s` (modifier marker) co-occurs with a case suffix, the order is:
-
-**root → case suffix → `-s`**
-
-> **Example:** `aujli` (noun) + Accusative `-na` + `-s` → `aujlina-s`
-> (Accusative noun form turned into an adjective)
 
 ---
 

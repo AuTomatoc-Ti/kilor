@@ -18,7 +18,7 @@ These letters are **exclusively reserved** for tone notation and never appear as
 
 Tone is **immutable** in speech — a word's category is fixed at creation, and its tonal contour cannot be shifted for poetic or oratorical effect. Shifting the `j`/`v` marker would change the word's category, breaking intelligibility.
 
-In song and metered poetry, a separate performance convention applies — see §IV-G (Musical Tone Override).
+In song and metered poetry, a separate performance convention applies — see §IV-F (Musical Tone Override).
 
 ---
 
@@ -65,7 +65,7 @@ Only Noun and Verb carry distinct tone patterns. Adjective and Adverb are derive
 
 > **Example:** `aujli` (noun, H→L) → `aujlis` (adj). `auvli` (verb, L→H) → `auvlis` (adv).
 
-**Constraint:** No 2-syllable root may end in `s` natively. This preserves `-s` as an unambiguous modifier marker.
+**Constraint:** No 1- or 2-syllable root may end in `s` natively. This preserves `-s` as an unambiguous modifier marker.
 
 ---
 
@@ -108,7 +108,6 @@ All 1-syllable words in Kilor are **toneless** — pronounced with flat mid-tone
 - Does **not** affect the last-3 domain calculation
 - Does **not** carry `j` or `v`
 - Does **not** count toward syllable count for tone rules
-- Is always the **last** element in suffix order (root → case suffix → `s`)
 
 ---
 
@@ -124,34 +123,32 @@ This ensures long compounds (6+ syllables) are tonally predictable — no recalc
 
 When a **case suffix** (Accusative `-ni`/`-na`, Genitive `-si`/`-sa`) is attached, the tone marker (`j` or `v`) **never migrates**. It remains locked to its original syllable. Case suffixes are pronounced flat Mid and do **not** count toward the last-3 domain.
 
-> **Example:** `aujli` (noun, 2-syl, H→L) + Genitive `-sa` → `aujlisa` — `j` stays on `au`; `-sa` is flat Mid.
+> **Crucial:** Case suffixes are **extrasyllabic for tone purposes** — they do not count toward the syllable count for the Last-3 Domain Rule. A 2-syllable root + case suffix remains a **2-syllable word** tonally, retaining its original H→L or L→H contour. The case suffix is simply appended as a flat Mid appendix. This means a 2-syl root + case suffix (e.g., `aujlisa`) has a **different** tonal pattern from a bare 3-syllable root (which would follow the Last-3 Domain: H→M→L for nouns).
 
-### C. Suffix Order
+> **Example:** `aujli` (noun, 2-syl, H→L) + Genitive `-sa` → `aujlisa` — `j` stays on `au`; `-sa` is flat Mid. The word is tonally 2 syllables (H→L) with a flat appendix, not a 3-syllable H→M→L noun.
 
-When multiple suffixes co-occur: **root → case suffix → `-s`**
-
-> **Example:** `aujli` (noun) + Accusative `-na` + modifier `-s` → `aujlina-s`
-> (Accusative noun form → turned into adjective)
-
-### D. Colour Prefix Exemption
+### C. Colour Prefix Exemption
 
 The **colour prefix** is an external proclitic. It is pronounced flat Mid and does **not** count toward the syllable count for the last-3 domain. Only the root's syllables are counted.
 
-> **Example:** `a-` (red prefix, flat Mid) + `lujmisojla` (4-syl compound noun root, M→H→M→L) = `a-lujmisojla`
-> The last-3 domain applies to the root `lujmisojla`, ignoring the prefix. Each Word-Unit (`lujmi` + `sojla`) retains its own internal contour: H→L → H→L = M→H→M→L.
+> **Example:** `a-` (red prefix, flat Mid) + `lujmi sojla` (2-syl noun + 2-syl noun, multi-word vocab) = `a-lujmi sojla`
+> The colour prefix `a-` is flat Mid and attaches to the first word. Each word retains its own tonal contour: H→L → H→L.
 
-### E. Modular Stitching (Compounds)
+### D. Modular Stitching (Multi-Word Vocabs)
 
-When Word-Units are combined into a compound, each Word-Unit retains its own last-3 domain. The tonal contours are **stitched sequentially**, not recalculated for the compound's total syllable count.
+When a semantic concept is expressed as **multiple orthographic words** (a multi-word vocab with spaces), each word retains its own last-3 domain. The tonal contours are **stitched sequentially** across the word sequence, not recalculated as if the phrase were a single word.
 
-> **Example:** `aujli` (2-syl noun, H→L) + `lujmi` (2-syl noun, H→L) = `aujlilujmi`
-> **Melody:** H→L → H→L. Each Word-Unit's internal contour is preserved.
+This contrasts with mono-word compounds written as a single word — those use the Last-3 Domain Rule (§IV-A) recalculated across the entire word.
 
-### F. No Cross-Word Tone Sandhi
+> **Example:** `aujli lujmi` (2-syl noun + 2-syl noun, two-word vocab)
+> **Melody:** H→L → H→L. Each word's internal contour is preserved.
+> **Contrast:** If these were fused into a single word, the Last-3 Domain Rule would recalculate the contour across the entire compound (e.g., a 4-syllable noun → M→H→M→L).
+
+### E. No Cross-Word Tone Sandhi
 
 Identical contours may abut across word boundaries. Kilor permits this — musicality comes from rhythmic phrasing and syntactic structure, not forced phonetic alteration.
 
-### G. Musical Tone Override
+### F. Musical Tone Override
 
 In song and metered poetry, the melody or rhythmic metre of the composition may override lexical tone contours. When a word is set to music, its tonal pattern can be flattened or reshaped to follow the musical line.
 
@@ -173,6 +170,8 @@ This is not a grammatical rule but a **performance convention**. No morphologica
 | **2** | H(`j`)→L | L(`v`)→H | Noun+`s` | Verb+`s` |
 | **3** | H(`j`)→M→L | L(`v`)→H→M | M→H(`j`)→H | M→L(`v`)→M |
 | **4+** | ...M→**H(j)→M→L** | ...M→**L(v)→H→M** | ...M→**M→H(j)→H** | ...M→**M→L(v)→M** |
+
+> **Footnote — Case suffixes:** Case suffixes (Accusative `-ni`/`-na`, Genitive `-si`/`-sa`) are extrasyllabic for tone purposes. They do not count toward the syllable count and do not affect the Last-3 Domain. A 2-syl root + case suffix remains tonally a 2-syl word (H→L or L→H) with a flat Mid appendix. See §IV-B.
 
 ---
 

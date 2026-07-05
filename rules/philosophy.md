@@ -104,8 +104,10 @@ On the other hand, knowing that things may not go as we will, but still **holdin
 These dual-concepts are not merely decorative. They inform the design of Kilor at every level:
 
 - **The Chromatic Ontology System** (colour prefixes) is the direct linguistic embodiment — each prefix's semantic field resonates with its philosophical dual-concept
-- **The 4-category tonal system** reflects the rhythm of these tensions: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding)
+- **The 4-category tonal system** reflects the rhythm of these tensions: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding)[^1]
 - **The tolerance for ambiguity** (fault-tolerant prefixes, identical contour abutment, optional case marking) echoes the cultural embrace of duality — things need not be forced into a single category
+
+[^1]: The "arched prominence" (M→H→H) and "dipped grounding" (M→L→M) metaphors describe the 3+ syllable tone patterns. For 1–2 syllable words, Adjective and Adverb are derived from Noun and Verb via `-s` and share their parent contours: Adjective = Noun's H→L ("grounded descent"), Adverb = Verb's L→H ("dynamic rise"). See `tone-prosody.md` §II-B, §II-C.
 
 ---
 

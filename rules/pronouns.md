@@ -28,9 +28,16 @@ Kilor distinguishes **1st, 2nd, and 3rd person**, with a **living vs. non-living
 
 ### B. Plural Formation
 
-The plural forms are derived from the singular roots via the **infix `-l-`** inserted before the case ending. This `-l-` plural infix is **pronoun-only** — regular nouns have no plural marking (see `grammar-syntax.md` §VII).
+Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `grammar-syntax.md` §VII).
 
-> **Rule:** `ki` + `-l-` → `kil` (we). This is a closed-class morphological process that does not extend to nouns.
+The marker surfaces in two forms depending on what follows:
+
+- **`-l`** when word-final (Nominative, no case suffix): `ki` → `kil` (we)
+- **`-li-`** when a consonant-initial case suffix follows (Accusative `-n`, Genitive `-s`): `ki` → `kilin` (us), `ki` → `kilis` (our)
+
+The epenthetic `-i-` in the `-li-` form prevents forbidden consonant clusters (`-ln-`, `-ls-`) while keeping the root and ending phonotactically legal.
+
+> **Rule:** This is a closed-class morphological process that does not extend to nouns.
 
 ---
 
@@ -44,9 +51,11 @@ Pronouns use **reduced case endings** instead of the standard `-ni`/`-na` (Accus
 | **Accusative** | `-ni` / `-na` | **`-n`** | `kin` (me) |
 | **Genitive** | `-si` / `-sa` | **`-s`** | `kis` (my / mine) |
 
-### A. Invariant Form — No Vowel Harmony
+### A. Invariant Form — No Contrastive Suffix Rule
 
-Pronoun case endings are **invariant**. They do not participate in vowel harmony (the Echo Rule). The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `cases.md` §II.
+Pronoun case endings are **invariant**. They do not participate in the Contrastive Suffix Rule. The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `cases.md` §II.
+
+Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). They participate in the word's tone contour rather than sitting outside it as flat-mid appendices.
 
 ### B. Full Declension Table
 
@@ -76,7 +85,7 @@ Pronouns follow the standard Kilor tone rules in pronunciation only (see `tone-p
 
 Pronouns are a closed class — every form is unambiguously nominal. Therefore, **tone markers (`j`/`v`) are omitted from pronoun spelling** even when multi-syllable forms carry non-flat tone contours in speech. This simplifies the written form without creating ambiguity.
 
-> **Pronunciation:** 2-syllable inflected forms (`kilin`, `tilis`, `silin`, `nilin`, `tilis`, `silis`, `nilis`) are pronounced with H→L contour. 1-syllable forms are flat mid.
+> **Pronunciation:** 2-syllable inflected forms (`kilin`, `tilis`, `silin`, `nilin`, `silis`, `nilis`) are pronounced with H→L contour. 1-syllable forms are flat mid.
 
 ---
 
@@ -86,7 +95,7 @@ Pronouns are a closed class — every form is unambiguously nominal. Therefore, 
 
 Possession by pronoun follows the same rule as regular nouns (see `cases.md` §IV): the Genitive-marked pronoun may appear before or after the possessed noun.
 
-> **Example:** `kis aelujmi` (my light) ≡ `aelujmi kis` (the light of mine)
+> **Example:** `kis lujmi` (my light) ≡ `lujmi kis` (light of mine)
 
 ### B. Accusative Optionality
 
@@ -94,13 +103,11 @@ The Accusative forms (`kin`, `tin`, etc.) follow the same two-tier rule as regul
 - **Optional** in everyday SOV speech
 - **Mandatory** in formal writing and non-SOV word order
 
-### C. The `-s` Homograph
+### C. The `-s` on Pronouns — Genitive Only
 
-The Genitive ending `-s` is identical in form to the derivational modifier suffix `-s` (see `tone-prosody.md` §III). This creates a theoretical homograph (e.g., `kis` = "my" or "ki-like"). In practice, context and syntactic position disambiguate:
-- `kis` before/after a noun → Genitive pronoun (my)
-- `kis` modifying a verb or as a predicate → adjective derived from hypothetical root `ki`
+The derivational modifier suffix `-s` (see `tone-prosody.md` §III) attaches only to noun and verb roots to form adjectives and adverbs. Pronouns are a **closed class** — they never receive derivational morphology.
 
-This ambiguity is accepted as a natural feature of the language.
+The `-s` on a pronoun form (e.g., `kis`, `tis`, `sis`, `nis`, and their plural counterparts) is always and exclusively the **Genitive case ending**. There is no ambiguity.
 
 ---
 
@@ -110,8 +117,8 @@ This ambiguity is accepted as a natural feature of the language.
 |:---|:---|:---|
 | Accusative suffix | `-ni` / `-na` | `-n` (invariant) |
 | Genitive suffix | `-si` / `-sa` | `-s` (invariant) |
-| Vowel harmony | Required | Exempt (invariant endings) |
-| Plural marking | None | `-l-` infix (pronoun-only) |
+| Contrastive Suffix Rule | Required | Exempt (invariant endings) |
+| Plural marking | None | `-l(i)-` marker (pronoun-only, surfaces as `-l` word-finally, `-li-` before a consonant-initial suffix) |
 
 ---
 

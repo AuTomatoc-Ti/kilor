@@ -35,37 +35,52 @@ Each prefix is a single vowel (V template), aligning with Kilor's syllable struc
 
 The Colour Prefix is an **External Proclitic**. It sits outside the phonological boundary of the root and:
 
-- **Does not** trigger the Echo Rule (Vowel Harmony) — only the root's nucleus determines suffix vowel class
+- **Does not** trigger the Contrastive Suffix Rule — only the root's last-syllable nucleus determines suffix vowel class
 - **Does not** carry tone — all colour prefixes are pronounced with a flat mid-tone
 - **Does not** count toward the syllable count for the last-3 tone domain (see `tone-prosody.md`) — only the root's syllables are counted
-- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-akojra`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
+- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-ajkora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
 
-> **Example (4-syl compound):** `a-lujmisojla` (Red moon)
-> The colour prefix `a-` is flat Mid and ignored for tone. The compound root `lujmisojla` (4 syllables, `lujmi` + `sojla`) carries two stitched H→L contours: M→H→M→L.
+> **Example (multi-word vocab):** `a-lujmi sojla` (Red moon)
+> The colour prefix `a-` is flat Mid and ignored for tone. The multi-word vocab `lujmi sojla` (2-syl noun + 2-syl noun) carries two stitched H→L contours: H→L → H→L.
 >
-> **Example (Echo Rule):** `a-kojra-sa` (Red fire's)
-> Prefix `a` is Front; root `kojra` contains Back vowel `o` → Genitive suffix uses Back variant `-sa`
+> **Example (Contrastive Suffix Rule):** `a-kojra-si` (Red fire's)
+> Prefix `a` is Front but ignored; root's last vowel `a` is Back → Genitive suffix uses front variant `-si`
 
 ---
 
 ## IV. The Definiteness Rule
 
-The Colour Prefix is governed by Information Structure, not by arbitrary lexical assignment.
+The Colour Prefix is governed by syntactic context, not by arbitrary lexical assignment. Kilor has **no separate articles or demonstratives** — the colour prefix itself encodes definiteness, indefiniteness, and demonstrative force, fused with ontological framing into a single vowel.
 
-### A. Mandatory — Prefix Required
+### A. Foregrounded (Definite / Specific / Demonstrative) — Prefix Required
 
-The prefix **must** be applied when:
+The prefix **must** be applied when the noun is **foregrounded** — i.e., definite, specific, or demonstratively marked. The prefix simultaneously signals:
 
-1. The noun is preceded by an **article** (`a`/`an`/`the`) or a **determiner** (`this`/`that`)
-2. The noun is the **first word of the sentence** (the Topic position)
+- **Definiteness** — the noun refers to a specific, identifiable referent (like English *the*)
+- **Demonstrative force** — the noun is pointed to (like English *this*/*that*)
+- **Ontological framing** — the speaker's cognitive lens on the noun (Red, Blue, etc.)
 
-In these states, the noun is "isolated" from the background flow and requires explicit ontological framing.
+In this state, the noun is grammatically foregrounded and requires explicit ontological framing.
 
-### B. Omitted — Prefix Dropped
+> **Example:** `a-kojra` = "the fire" or "this fire" (specific, identifiable fire, framed as Red/Alive)
+> **Example:** `o-lujmi` = "the light" or "that light" (specific light, framed as White/Abstract)
 
-The prefix is **dropped entirely** when the noun is a **Bare Noun** in the middle of a sentence, without an article or determiner preceding it. The noun becomes an unmarked, generic mass or concept.
+### B. Generic / Indefinite — Prefix Omitted
 
-> This syntactic drop also serves as the ultimate escape hatch for edge cases — if the speaker cannot classify the object, they may simply omit the prefix.
+When the noun is **generic or indefinite** (not tied to a specific referent), the prefix is **dropped by default**. The noun appears as an unmarked, generic concept without ontological commitment.
+
+> **Example:** `kojra` = "fire" (generic concept, not a specific fire)
+> **Example:** `lujmi` = "light" (light in general)
+
+> **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
+
+### C. Proper Nouns — Cultural Convention
+
+Proper nouns (personal names, place names, etc.) are **exempt from both the definiteness prefix requirement (§IV-A) and the classification rules (§V)**:
+
+- A proper name **may** carry any colour prefix, or **no prefix at all** — both are common. Unlike common nouns, proper nouns are **not** required to carry a prefix when definite (they are inherently definite by nature). In practice, some proper terms in everyday usage appear without a colour prefix, and others carry one assigned by **historical or cultural convention** rather than by the ontological properties of the referent.
+- The 7-Question Filter (§V) applies only to common nouns and should not be used to determine a proper noun's prefix.
+- When a prefix is used on a proper name, the same city might carry a different prefix in different historical eras, or a person's name might inherit a prefix from a founding myth.
 
 ---
 
@@ -97,11 +112,27 @@ The speaker chooses the colour based on the **immediate cognitive focus** in tha
 > `y-ice` (Black) → focus on its hard, impenetrable mass blocking a path
 > `i-ice` (Blue) → focus on its true nature as frozen water
 
-### Tier 2: Lexical Fossilisation (Community Shortcut)
+### Tier 2: 共識 — Community-Consensus Defaults
 
-For highly frequent, everyday objects, the community naturally develops a default classification. Beginners are taught these defaults as cognitive shortcuts, though Tier 1 remains technically permissible.
+Every **common noun** in Kilor has a **community-consensus default prefix (共識)** — the conventionalised ontological framing that the speech community has settled on as the unmarked, neutral choice. This is not limited to highly frequent everyday objects; it applies to the entire common-noun lexicon. Beginners are taught these defaults as cognitive shortcuts, and they serve as the baseline for everyday communication.
+
+Proper nouns may also have conventionalised default prefixes (e.g., a city named with a culturally assigned colour), but they are **exempt** from the 共識 requirement — a proper name may carry any colour prefix, or no prefix at all (see §IV-C).
 
 > **Example:** *Paper* defaults to **`e-paper`** (Yellow) — its primary identity is a human-crafted tool.
+> **Example:** *Fire* defaults to **`a-kojra`** (Red/Alive) — its primary identity is as a living, energy-consuming force.
+
+#### Speaker Override (異體字)
+
+The 共識 default is the conventional form, but a speaker may intentionally substitute their own colour prefix based on **context, emphasis, or personal intent**. This is analogous to 異體字 (variant characters) in written Chinese — the standard form is known and accepted, but variant forms are understood and tolerated without breaking communication.
+
+A speaker who uses a non-standard prefix does not cause confusion; the root morpheme carries the core semantic weight. The variant prefix acts as a deliberate "camera lens" that highlights a specific property the speaker wishes to foreground, even if it deviates from convention.
+
+> **Example (共識 + 異體字):**
+> 共識: `a-kojra` (Red) — fire's conventional framing as alive/energy
+> 異體字: `y-kojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
+> 異體字: `o-kojra` (White) — fire framed abstractly, as concept or spirit
+
+Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override.
 
 ### Tier 3: The `Null` Fallback (White Default)
 

@@ -11,8 +11,10 @@
 
 Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. This is the natural order for everyday speech and standard prose.
 
-> **Example:** `a-kojra aelujmina tavka.`
-> (The fire the light burns.)
+> **Note:** SOV is a **pedagogical baseline** — the simplest model for explaining Kilor's core syntax. Real sentences may include additional elements (prepositions, numerals, temporal words, question words, etc.) that create more complex structures. The SOV model describes the relative order of the three core arguments; other elements are placed according to their own rules (see `interrogative.md` for question word fronting, `cases.md` §V for dative/instrumental particles).
+
+> **Example:** `kojra lujmina tavka.`
+> (fire light burns.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 
 ### B. Poetic & Formal Reordering
@@ -26,34 +28,40 @@ Because case suffixes explicitly mark syntactic roles (see `cases.md`), Kilor is
 | **VSO** | Verb—Subject—Object | Leads with the action for dramatic effect |
 
 > **Rule:** When word order deviates from SOV, all non-Nominative case suffixes become **mandatory** (even the Accusative, which is otherwise optional in speech). This ensures the syntactic roles remain unambiguous.
+>
+> **Exception:** Question words are **exempt** from this rule — they are always fronted (see `interrogative.md` §III) and carry no case suffixes regardless of word order (see `interrogative.md` §II-C).
 
 ### C. Genitive Chains
 
-The Genitive possessor may precede or follow the possessed noun. Both orders are intelligible because the `-si`/`-sa` suffix marks the possessor unambiguously.
+For a **single possessor**, the Genitive-marked noun may precede or follow the possessed noun:
 
-> **Example:** `a-kojrasa aelujmi` (the fire's light) ≡ `aelujmi a-kojrasa` (the light of the fire)
+> **Example:** `kojrasi lujmi` (fire's light) ≡ `lujmi kojrasi` (light of fire)
+
+For **nested possession** (multiple Genitive-marked nouns chained together), Kilor uses a **fixed recursive order**: each possessor must **precede** what it owns. The outermost possessor comes first, followed by each successively nested pair. See `cases.md` §IV for the full rule.
+
+> **Nested example:** `kis kojrasi lujmi` = "my fire's light" — `kis` owns `kojrasi`, which owns `lujmi`
+> 
+> Free order (`lujmi kojrasi kis`) is not valid for nested possession.
 
 ---
 
-## II. Vowel Harmony — The Echo Rule
+## II. Contrastive Suffix Rule
 
-Suffixes must assimilate to the vowel class of the root word's nucleus.
+Suffixes use the vowel class **opposite** to the root's last-syllable nucleus. This creates a pleasant front↔back alternation at the root-suffix boundary.
 
-| Class | Vowels |
-|:---|:---|
-| **Back / Deep** | a, o, u, au, ou |
-| **Front / Bright** | e, i, y, ae, ai, ei, eu, iu, oi |
+| Last-Syllable Vowel Class | Suffix Class | Vowels |
+|:---|:---|:---|
+| **Front / Bright** | Uses Back suffix | e, i, y, ae, ei, eu, iu → `-na` (ACC), `-sa` (GEN) |
+| **Back / Deep** | Uses Front suffix | a, o, u, ai, au, oi, ou → `-ni` (ACC), `-si` (GEN) |
 
-**Rule:** A root containing a Back vowel dictates that all subsequent agglutinative suffixes must use Back vowel variants, and vice versa.
-
-> **Example (Back root):** `kojra` (fire, contains `o`, noun H→L) + Accusative → `kojrana` (uses `-na`, not `-ni`)
-> **Example (Back root):** `lujmi` (light, contains `u`, noun H→L) + Accusative → `lujmina` (uses `-na`, not `-ni` — `u` is a back vowel)
+> **Example (last vowel `a` = back → front suffix):** `kojra` (fire, noun H→L) + Accusative → `kojrani` (uses `-ni`, not `-na`)
+> **Example (last vowel `i` = front → back suffix):** `lujmi` (light, noun H→L) + Accusative → `lujmina` (uses `-na`, not `-ni`)
 
 ### Proclitic Exemption
 
-The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Echo Rule. Only the root's nucleus determines suffix vowel class.
+The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class.
 
-> **Example:** `a-kojra-sa` — the prefix `a` is Front, but the root `o` is Back, so the Genitive suffix uses `-sa` (Back).
+> **Example:** `a-kojra-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
 
 ---
 
@@ -73,7 +81,7 @@ When a root terminating in a vowel interfaces with a vowel-initial suffix, they 
 
 > **Note:** All currently defined suffixes (`-ni`/`-na`, `-si`/`-sa`, `-s`) begin with consonants, so the Diphthong Merge has no active application with the current suffix inventory. This rule is reserved for future vowel-initial affixes.
 >
-> The derivational suffix `-s` is an extrasyllabic appendix that attaches directly without merging: a root ending in a vowel (e.g., `korai`) simply takes `-s` with no diphthongisation → `korai-s`.
+> The derivational suffix `-s` is an extrasyllabic appendix that attaches directly without merging: a root ending in a vowel (e.g., `kora`) simply takes `-s` with no diphthongisation → `kora-s`.
 
 ---
 
@@ -83,11 +91,19 @@ When a root terminating in a vowel interfaces with a vowel-initial suffix, they 
 
 Vocabulary is expanded through **lexical compounding**: roots of 1 to 5 syllables are combined to form complex concepts.
 
-> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmisojla` (moon)
+> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (moon, multi-word vocab)
 
 ### B. Word-Unit Processing
 
-A compound word is **not** treated as a single monolithic block for tone calculation. It is processed as a sequence of independent **Word-Units (Morphemes)**. Tone contours are stitched together via the Modular Stitching Rule (see `tone-prosody.md`), not recalculated for the compound's total syllable count.
+Kilor distinguishes two forms of compounding for tone purposes:
+
+1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word for tone: the Last-3 Domain Rule applies across the entire word (see `tone-prosody.md` §IV-A).
+
+   > **Phonotactic constraint:** Start-only onsets (`sh`, `ch`, `th`, `sl`, `kl`, `tl`, `bl`, `ml`; see `phonology.md` §III-C) and ending-only consonants (`ng`, `x`; see `phonology.md` §III-B) are restricted to word-peripheral positions. A root beginning with a start-only onset or ending with an ending-only consonant may **not** appear as a non-initial or non-final element in a mono-word compound — such combinations must use multi-word vocabs instead. Only roots composed entirely of core consonants (see `phonology.md` §III-A) may appear in any position within a mono-word compound.
+
+2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `sojlas lujmi`). Each word retains its own tonal contour independently via Modular Stitching (see `tone-prosody.md` §IV-D). The contours are stitched sequentially, not recalculated across word boundaries.
+
+   > **Case suffix distribution:** When a multi-word vocab receives a case suffix (Accusative or Genitive), the suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked. The colour prefix (if present) attaches orthographically to the first word and does not affect suffix placement. See `cases.md` §III–IV for case usage rules.
 
 ### C. Root Constraints
 
@@ -95,6 +111,8 @@ A compound word is **not** treated as a single monolithic block for tone calcula
 - No `j` or `v` may appear in any root
 - No consonant clusters
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
+- 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
+- Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
 
 ---
 
@@ -115,14 +133,6 @@ The suffix `-s` creates modifiers from base roots. It applies to **1 and 2 sylla
 ### B. Phonological Nature
 
 `s` is a **toneless extrasyllabic appendix** — pronounced like English plural `-s` (`/s/` or `/z/`). It does not add a syllable, does not carry `j` or `v`, and does not affect the last-3 tone domain.
-
-### C. Suffix Order
-
-When multiple suffixes co-occur on the same root, the order is:
-
-**root → case suffix → `-s`**
-
-> **Example:** `aujli` (noun) + Accusative `-na` + `-s` → `aujlina-s`
 
 ---
 
@@ -149,7 +159,7 @@ To express quantity explicitly, use numeral + classifier constructions or quanti
 
 ### Pronoun Exception
 
-The **only exception** to the no-plural-marking rule is the pronoun system. Pronouns use a dedicated **`-l-` plural infix** to distinguish singular from plural:
+The **only exception** to the no-plural-marking rule is the pronoun system. Pronouns use a dedicated **`-l(i)-` plural marker** to distinguish singular from plural:
 
 | | Singular | Plural |
 |---|---------|--------|
