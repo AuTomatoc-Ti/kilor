@@ -43,7 +43,7 @@ The Colour Prefix is an **External Proclitic**. It sits outside the phonological
 > **Example (multi-word vocab):** `a-lujmi sojla` (Red moon)
 > The colour prefix `a-` is flat Mid and ignored for tone. The multi-word vocab `lujmi sojla` (2-syl noun + 2-syl noun) carries two stitched H→L contours: H→L → H→L.
 >
-> **Example (Contrastive Suffix Rule):** `a-kojra-si` (Red fire's)
+> **Example (Contrastive Suffix Rule):** `a-fojra-si` (Red fire's)
 > Prefix `a` is Front but ignored; root's last vowel `a` is Back → Genitive suffix uses front variant `-si`
 
 ---
@@ -62,14 +62,14 @@ The prefix **must** be applied when the noun is **foregrounded** — i.e., defin
 
 In this state, the noun is grammatically foregrounded and requires explicit ontological framing.
 
-> **Example:** `a-kojra` = "the fire" or "this fire" (specific, identifiable fire, framed as Red/Alive)
+> **Example:** `a-fojra` = "the fire" or "this fire" (specific, identifiable fire, framed as Red/Alive)
 > **Example:** `o-lujmi` = "the light" or "that light" (specific light, framed as White/Abstract)
 
 ### B. Generic / Indefinite — Prefix Omitted
 
 When the noun is **generic or indefinite** (not tied to a specific referent), the prefix is **dropped by default**. The noun appears as an unmarked, generic concept without ontological commitment.
 
-> **Example:** `kojra` = "fire" (generic concept, not a specific fire)
+> **Example:** `fojra` = "fire" (generic concept, not a specific fire)
 > **Example:** `lujmi` = "light" (light in general)
 
 > **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
@@ -119,7 +119,7 @@ Every **common noun** in Kilor has a **community-consensus default prefix (共�
 Proper nouns may also have conventionalised default prefixes (e.g., a city named with a culturally assigned colour), but they are **exempt** from the 共識 requirement — a proper name may carry any colour prefix, or no prefix at all (see §IV-C).
 
 > **Example:** *Paper* defaults to **`e-paper`** (Yellow) — its primary identity is a human-crafted tool.
-> **Example:** *Fire* defaults to **`a-kojra`** (Red/Alive) — its primary identity is as a living, energy-consuming force.
+> **Example:** *Fire* defaults to **`a-fojra`** (Red/Alive) — its primary identity is as a living, energy-consuming force.
 
 #### Speaker Override (異體字)
 
@@ -128,9 +128,9 @@ The 共識 default is the conventional form, but a speaker may intentionally sub
 A speaker who uses a non-standard prefix does not cause confusion; the root morpheme carries the core semantic weight. The variant prefix acts as a deliberate "camera lens" that highlights a specific property the speaker wishes to foreground, even if it deviates from convention.
 
 > **Example (共識 + 異體字):**
-> 共識: `a-kojra` (Red) — fire's conventional framing as alive/energy
-> 異體字: `y-kojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
-> 異體字: `o-kojra` (White) — fire framed abstractly, as concept or spirit
+> 共識: `a-fojra` (Red) — fire's conventional framing as alive/energy
+> 異體字: `y-fojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
+> 異體字: `o-fojra` (White) — fire framed abstractly, as concept or spirit
 
 Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override.
 

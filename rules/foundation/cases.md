@@ -40,11 +40,11 @@ The colour prefix is an external proclitic — it sits outside the phonological 
 |:---|:---|
 | a, o, u, ai, au, oi, ou | `-ni` (ACC), `-si` (GEN) |
 
-> **Example (contrast):** `kojra` (fire, last vowel `a` = back) + Accusative → `kojrani` (front `-ni`)
+> **Example (contrast):** `fojra` (fire, last vowel `a` = back) + Accusative → `fojrani` (front `-ni`)
 > **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Accusative → `lujmina` (back `-na`)
-> **Example (contrast):** `kojra` (fire, last vowel `a` = back) + Genitive → `kojrasi` (front `-si`)
+> **Example (contrast):** `fojra` (fire, last vowel `a` = back) + Genitive → `fojrasi` (front `-si`)
 > **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Genitive → `lujmisa` (back `-sa`)
-> **Example (proclitic exemption):** `a-kojra` (Red-fire, prefix `a` = Front) + Genitive → `a-kojrasi` (front `-si`, not `-sa`). The prefix `a` is ignored; root's last vowel `a` (Back) selects front `-si`.
+> **Example (proclitic exemption):** `a-fojra` (Red-fire, prefix `a` = Front) + Genitive → `a-fojrasi` (front `-si`, not `-sa`). The prefix `a` is ignored; root's last vowel `a` (Back) selects front `-si`.
 
 ---
 
@@ -56,7 +56,7 @@ The Accusative suffix (`-ni`/`-na`) has a **two-tier usage rule**:
 
 When a sentence follows the **default SOV order**, the Accusative may be **dropped** in everyday conversation. The object's position between Subject and Verb already signals its role sufficiently.
 
-> **Conceptual example (SOV speech):** `kojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
+> **Conceptual example (SOV speech):** `fojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
 
 ### B. Mandatory — Formal Writing & Non-SOV Order
 
@@ -65,7 +65,7 @@ The Accusative becomes **mandatory** in two contexts:
 1. **Formal writing** (even in SOV order) — for precision and clarity
 2. **Any non-SOV word order** (OSV, VSO, or other poetic inversions) — because position no longer signals objecthood, the suffix is the sole disambiguator
 
-> **Conceptual example (OSV):** `lujmina kojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
+> **Conceptual example (OSV):** `lujmina fojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
 
 ### C. Multi-Word Vocabs — Suffix Placement
 
@@ -88,7 +88,7 @@ The Genitive (`-si`/`-sa`) is the **only mechanism for expressing possession** i
 
 The Genitive-marked possessor may appear before or after the possessed noun:
 
-> `kojrasi lujmi` (fire's light) ≡ `lujmi kojrasi` (light of fire)
+> `fojrasi lujmi` (fire's light) ≡ `lujmi fojrasi` (light of fire)
 
 ### Nested Possession — Fixed Recursive Order
 
@@ -100,11 +100,11 @@ When **multiple Genitive-marked nouns** chain together (nested possession), Kilo
 
 In a chain, the outermost possessor comes first, followed by each successively nested pair:
 
-> `kis kojrasi lujmi` = "my fire's light" — `kis` (my) owns `kojrasi` (fire's), which owns `lujmi` (light)
+> `kis fojrasi lujmi` = "my fire's light" — `kis` (my) owns `fojrasi` (fire's), which owns `lujmi` (light)
 > 
-> Parse: `[kis [kojrasi lujmi]]` — `kis` is the outermost possessor; `kojrasi` is nested inside
+> Parse: `[kis [fojrasi lujmi]]` — `kis` is the outermost possessor; `fojrasi` is nested inside
 
-Free order (`lujmi kojrasi kis`) is **not valid** for nested possession — the fixed possessor-first recursive order disambiguates the nesting structure.
+Free order (`lujmi fojrasi kis`) is **not valid** for nested possession — the fixed possessor-first recursive order disambiguates the nesting structure.
 
 ### Absence of Possessive Pronouns
 

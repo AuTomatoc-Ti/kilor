@@ -68,7 +68,7 @@ When a fronted question word creates animate-subject vs. animate-object ambiguit
 
 This is an extension of the principle that case suffixes disambiguate when word order cannot (`grammar-syntax.md` §I-B): the question word stays bare, but the non-interrogative argument follows the standard mandatory-case rule for non-SOV orders.
 
-> **Example (unambiguous — inanimate object):** `aewei kojra tavka?` (Who eats fire?) — `kojra` (fire) is inanimate; no case marking needed.
+> **Example (unambiguous — inanimate object):** `aewei fojra tavka?` (Who eats fire?) — `fojra` (fire) is inanimate; no case marking needed.
 > **Example (ambiguous — both animate):** `aewei si tavka?` (Who eats him/her?) — `si` is unmarked, therefore subject.
 > **Example (ambiguous — both animate):** `aewei sin tavka?` (He/she eats whom?) — `sin` carries Accusative, confirming it as object.
 
@@ -90,7 +90,7 @@ The genitive question **"whose?"** uses an irregular fused form: **`aeweijsan`**
 
 **Pronunciation:** Phonetically 3 syllables (`ae.wei.san`). For tonal purposes, only the 2-syllable root `weijsan` is counted — the colour prefix `ae-` is an external proclitic (flat mid-tone, zero tonal syllables; see `tone-prosody.md` §IV-C). The root `weijsan` independently carries the standard 2-syllable noun H(`j`)→L contour.
 
-> **Example:** `aeweijsan kojra tavka?` (Whose fire burns?)
+> **Example:** `aeweijsan fojra tavka?` (Whose fire burns?)
 
 **Relation to `aewei` (Who?):**
 
@@ -107,11 +107,11 @@ The genitive question **"whose?"** uses an irregular fused form: **`aeweijsan`**
 
 All question words are **fronted** to the **beginning of the sentence**, regardless of their grammatical role. This is a strict rule — question words cannot remain in situ.
 
-> **Example (subject question):** `awei kojra tavka?` (Which [one] eats fire?)
+> **Example (subject question):** `awei fojra tavka?` (Which [one] eats fire?)
 > **Example (object question):** `ewei ti tavka?` (What do you eat?)
-> **Example (genitive question):** `aeweijsan kojra tavka?` (Whose fire burns?)
-> **Example (location question):** `iwei kojra?` (Where is fire?)
-> **Example (reason question):** `ywei ti kojra tavka?` (Why do you eat fire?)
+> **Example (genitive question):** `aeweijsan fojra tavka?` (Whose fire burns?)
+> **Example (location question):** `iwei fojra?` (Where is fire?)
+> **Example (reason question):** `ywei ti fojra tavka?` (Why do you eat fire?)
 
 ---
 
@@ -121,14 +121,14 @@ All question words are **fronted** to the **beginning of the sentence**, regardl
 
 Yes/no (polar) questions are formed by appending the affirmative particle **`iu`** to the end of a declarative sentence. The intonation rises on `iu`.
 
-> **Statement:** `ti kojra tavka.` (You eat fire.)
-> **Question:** `ti kojra tavka iu?` (Do you eat fire?)
+> **Statement:** `ti fojra tavka.` (You eat fire.)
+> **Question:** `ti fojra tavka iu?` (Do you eat fire?)
 
 #### Answering
 
 Yes/no questions are answered using the standalone particles from `negation.md`:
 
-> **Q:** `ti kojra tavka iu?`
+> **Q:** `ti fojra tavka iu?`
 > **A:** `iu.` (Yes.) / `na.` (No.)
 
 ### B. Rhetorical Questions — 反問句
@@ -139,10 +139,10 @@ A **rhetorical question (反問句)** — one that implies its own answer — is
 
 The negator `nar` inverts the expected answer: a rhetorical question with `nar` implies that the **positive** statement is true.
 
-> **Example:** `ti kojra tavka nar iu?` (Don't you eat fire?) — implies: *you do eat fire*
-> **Contrast:** `ti kojra tavka iu?` (Do you eat fire?) — neutral question, no presupposition
+> **Example:** `ti fojra tavka nar iu?` (Don't you eat fire?) — implies: *you do eat fire*
+> **Contrast:** `ti fojra tavka iu?` (Do you eat fire?) — neutral question, no presupposition
 
-This is distinct from a plain negated statement (`ti kojra tavka nar.` = "You don't eat fire.") — the addition of `iu` makes it interrogative rather than declarative.
+This is distinct from a plain negated statement (`ti fojra tavka nar.` = "You don't eat fire.") — the addition of `iu` makes it interrogative rather than declarative.
 
 ---
 
@@ -150,15 +150,15 @@ This is distinct from a plain negated statement (`ti kojra tavka nar.` = "You do
 
 | Question Type | Mechanism | Example |
 |:---|:---|:---|
-| **Who?** | `ae-wei` (fronted) | `aewei kojra tavka?` |
-| **Whose?** | `ae-weijsan` (fronted) | `aeweijsan kojra tavka?` |
-| **Which?** | `a-wei` (fronted) | `awei kojra tavka?` |
+| **Who?** | `ae-wei` (fronted) | `aewei fojra tavka?` |
+| **Whose?** | `ae-weijsan` (fronted) | `aeweijsan fojra tavka?` |
+| **Which?** | `a-wei` (fronted) | `awei fojra tavka?` |
 | **What?** | `e-wei` (fronted) | `ewei ti tavka?` |
-| **Where?** | `i-wei` (fronted) | `iwei kojra?` |
+| **Where?** | `i-wei` (fronted) | `iwei fojra?` |
 | **When?** | `o-wei` (fronted) | `owei ti tavka?` |
 | **How?** | `u-wei` (fronted) | `uwei ti tavka?` |
-| **Why?** | `y-wei` (fronted) | `ywei ti kojra tavka?` |
-| **Yes/No?** | `iu` (sentence-final) | `ti kojra tavka iu?` |
+| **Why?** | `y-wei` (fronted) | `ywei ti fojra tavka?` |
+| **Yes/No?** | `iu` (sentence-final) | `ti fojra tavka iu?` |
 
 ---
 

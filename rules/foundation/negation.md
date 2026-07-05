@@ -27,7 +27,7 @@ All three are **1-syllable words** and follow the standard 1-syllable tone rule:
 
 > **Example (negating a noun):** `ki nar` = "not me"
 > **Example (negating a verb):** `tavka nar` = "not eat"
-> **Example (negating a full clause):** `ki kojra tavka nar` = "I do not eat fire"
+> **Example (negating a full clause):** `ki fojra tavka nar` = "I do not eat fire"
 
 ### B. Scope
 
@@ -37,7 +37,7 @@ All three are **1-syllable words** and follow the standard 1-syllable tone rule:
 
 When `nar` appears at the **end of a clause** (after the verb), it scopes over the **entire predicate** — the whole clause is negated.
 
-> `ki kojra tavka nar` = "I do not eat fire" (entire predicate negated)
+> `ki fojra tavka nar` = "I do not eat fire" (entire predicate negated)
 
 #### Non-Final Position — Constituent Scope
 
@@ -45,12 +45,12 @@ In any other position, `nar` negates only the **immediately preceding constituen
 
 | Phrase | Meaning |
 |:---|:---|
-| `ki nar kojra tavka` | "Not I eat fire" (someone else does) |
-| `ki kojra nar tavka` | "I not-the-fire eat" (I eat something else) |
+| `ki nar fojra tavka` | "Not I eat fire" (someone else does) |
+| `ki fojra nar tavka` | "I not-the-fire eat" (I eat something else) |
 
 ### C. Interaction with `iu`
 
-The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti kojra tavka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `interrogative.md` §IV-B.
+The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti fojra tavka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `interrogative.md` §IV-B.
 
 ### D. Double Negation
 
@@ -64,14 +64,14 @@ The sentence-final question particle `iu` sits **outside the clause proper** and
 
 `iu` is used as a standalone affirmative response:
 
-> **Q:** `ti kojra tavka iu?` (Do you eat fire?)
+> **Q:** `ti fojra tavka iu?` (Do you eat fire?)
 > **A:** `iu.` (Yes.)
 
 ### B. Negative Answer
 
 `na` is used as a standalone negative response:
 
-> **Q:** `ti kojra tavka iu?` (Do you eat fire?)
+> **Q:** `ti fojra tavka iu?` (Do you eat fire?)
 > **A:** `na.` (No.)
 
 ---
@@ -80,8 +80,8 @@ The sentence-final question particle `iu` sits **outside the clause proper** and
 
 `iu` also functions as the **yes/no question marker** when placed at the end of a declarative sentence (see `interrogative.md` §IV). In this role, it converts a statement into a polar question.
 
-> **Statement:** `ti kojra tavka.` (You eat fire.)
-> **Question:** `ti kojra tavka iu?` (Do you eat fire?)
+> **Statement:** `ti fojra tavka.` (You eat fire.)
+> **Question:** `ti fojra tavka iu?` (Do you eat fire?)
 
 ---
 

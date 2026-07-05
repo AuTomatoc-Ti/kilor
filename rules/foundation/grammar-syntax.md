@@ -13,7 +13,7 @@ Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. T
 
 > **Note:** SOV is a **pedagogical baseline** — the simplest model for explaining Kilor's core syntax. Real sentences may include additional elements (prepositions, numerals, temporal words, question words, etc.) that create more complex structures. The SOV model describes the relative order of the three core arguments; other elements are placed according to their own rules (see `interrogative.md` for question word fronting, `cases.md` §V for dative/instrumental particles).
 
-> **Example:** `kojra lujmina tavka.`
+> **Example:** `fojra lujmina tavka.`
 > (fire light burns.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 
@@ -35,13 +35,13 @@ Because case suffixes explicitly mark syntactic roles (see `cases.md`), Kilor is
 
 For a **single possessor**, the Genitive-marked noun may precede or follow the possessed noun:
 
-> **Example:** `kojrasi lujmi` (fire's light) ≡ `lujmi kojrasi` (light of fire)
+> **Example:** `fojrasi lujmi` (fire's light) ≡ `lujmi fojrasi` (light of fire)
 
 For **nested possession** (multiple Genitive-marked nouns chained together), Kilor uses a **fixed recursive order**: each possessor must **precede** what it owns. The outermost possessor comes first, followed by each successively nested pair. See `cases.md` §IV for the full rule.
 
-> **Nested example:** `kis kojrasi lujmi` = "my fire's light" — `kis` owns `kojrasi`, which owns `lujmi`
+> **Nested example:** `kis fojrasi lujmi` = "my fire's light" — `kis` owns `fojrasi`, which owns `lujmi`
 > 
-> Free order (`lujmi kojrasi kis`) is not valid for nested possession.
+> Free order (`lujmi fojrasi kis`) is not valid for nested possession.
 
 ---
 
@@ -54,14 +54,14 @@ Suffixes use the vowel class **opposite** to the root's last-syllable nucleus. T
 | **Front / Bright** | Uses Back suffix | e, i, y, ae, ei, eu, iu → `-na` (ACC), `-sa` (GEN) |
 | **Back / Deep** | Uses Front suffix | a, o, u, ai, au, oi, ou → `-ni` (ACC), `-si` (GEN) |
 
-> **Example (last vowel `a` = back → front suffix):** `kojra` (fire, noun H→L) + Accusative → `kojrani` (uses `-ni`, not `-na`)
+> **Example (last vowel `a` = back → front suffix):** `fojra` (fire, noun H→L) + Accusative → `fojrani` (uses `-ni`, not `-na`)
 > **Example (last vowel `i` = front → back suffix):** `lujmi` (light, noun H→L) + Accusative → `lujmina` (uses `-na`, not `-ni`)
 
 ### Proclitic Exemption
 
 The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class.
 
-> **Example:** `a-kojra-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
+> **Example:** `a-fojra-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
 
 ---
 
