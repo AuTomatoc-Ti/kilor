@@ -41,9 +41,9 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 | Bare roots (validated) | 76 |
 | Surface word forms (4-category expansion) | ~190 |
 | Compounds (defined) | 0 |
-| Rule files (foundation) | 11 |
+| Rule files (foundation) | 12 |
 | Progress toward 6,000 target | 1.3% |
-| Completed in this session | Phonotactic audit, `fojra` rename, `wino` colour system, copula/existential spec (`res`/`ero`), closed-class `-s` exemption, 4-category expansion table, `roli` added |
+| Completed in this session | Phonotactic audit, `fojra` rename, `wino` colour system, copula/existential spec (`res`/`ero`), closed-class `-s` exemption, 4-category expansion table, `roli` added, numeral system (`num.md`), ordinal `dir`, NP quantification order |
 
 ---
 
@@ -51,7 +51,7 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 
 | # | Gap | Priority | Why |
 |---|---|---|---|
-| 1 | **Numeral & classifier system** | 🔴 Critical | Cannot count; base system undefined; complements the no-plural strategy |
+| 1 | ~~Numeral & classifier system~~ | ✅ Resolved | `rules/num.md` — base-10, 0–13 irregular, scale markers (`gau`/`cu`/`kas`/`hus`/`tus`/`rakas`), multiplicative + additive, no taxonomic classifiers, ordinal `dir`, NP order `NOUN — (MEASURE) — NUM — (ORD)` |
 | 2 | **Subordinate clauses & relativization** | 🔴 Critical | Cannot embed clauses: "the fire that burns", "I know that you came", "when/because/if" |
 | 3 | **Temporal word inventory** | 🟡 High | "yesterday", "tomorrow", "always", "never" — needed for tense-free time expression |
 | 4 | **Comparatives & superlatives** | 🟡 Medium | "bigger", "biggest", "more beautiful than" |
@@ -64,7 +64,7 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 Each phase produces both **roots** and **compound words**. Compounds are not automatically generated — each compound must be manually coined with its own meaning, usage notes, and (for nouns) a 共識 colour prefix. A compound is a dictionary entry just like a root.
 
 ### Phase 0: Grammar Completion (now → near-term)
-- Define numeral system and numerals 0–10, hundred, thousand
+- ~~Define numeral system and numerals 0–10, hundred, thousand~~ ✅ Done — see `rules/num.md`
 - Design subordination (relative clauses, complement clauses, adverbial clauses)
 - Fill core temporal words (yesterday, tomorrow, always, never, soon, late, early, again)
 - **Root target:** 76 → ~80 (+4 temporal roots)

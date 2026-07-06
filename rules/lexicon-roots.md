@@ -92,6 +92,7 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | donar | 2 | door | noun: `doj*nar` (H→L); verb: `dov*nar` (L→H, see §D) |
 | maliu | 2 | knife / blade | |
 | hamin | 2 | food | |
+| pei | 1 | cup / container | Yellow (`e-`) — crafted vessel |
 | selo | 2 | path / road | |
 | gilan | 2 | mountain | |
 | liwat | 2 | river | |

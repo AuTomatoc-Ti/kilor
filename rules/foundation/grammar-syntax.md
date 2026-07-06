@@ -152,11 +152,11 @@ Time is expressed purely through **context and temporal words** (yesterday, tomo
 
 Kilor has **no plural marking** — neither suffixes, nor prefixes, nor tonal changes indicate plurality. This follows the Chinese approach: number is inferred from **context, quantifiers, and numerals**.
 
-To express quantity explicitly, use numeral + classifier constructions or quantifier words (many, few, all, some, three, etc.).
+To express quantity explicitly, use **numeral + optional measure word + noun** constructions (see `num.md` §VI) or quantifier words (many, few, all, some, three, etc.).
 
-> **Example (conceptual):** *three apple* (= three apples)
-> *many bird* (= many birds)
-> *apple* (could be one or more, depending on context)
+> **Example (conceptual):** *lira ro* (= three waters / three [units of] water)
+> *lira pei ro* (= three cups of water)
+> *lira* (could be one or more, depending on context)
 
 ### Pronoun Exception
 

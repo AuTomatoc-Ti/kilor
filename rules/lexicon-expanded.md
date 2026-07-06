@@ -76,6 +76,7 @@
 | donar | 2 | door | N+V | dojnar | dovnar | dojnars | dovnars | ae- |
 | maliu | 2 | knife / blade | N | majliu | mavliu | majlius | mavlius | y- |
 | hamin | 2 | food | N | hajmin | havmin | hajmins | havmins | e- |
+| pei | 1 | cup / container | N | pei | pei | peis | peis | e- |
 | selo | 2 | path / road | N | sejlo | sevlo | sejlos | sevlos | ae- |
 | gilan | 2 | mountain | N | gijlan | givlan | gijlans | givlans | y- |
 | liwat | 2 | river | N | lijwat | livwat | lijwats | livwats | i- |
