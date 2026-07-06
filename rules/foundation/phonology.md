@@ -27,7 +27,7 @@ Pure, ungliding vowel sounds.
 | **o** | /ɔ/ | aw | l**o**t / th**ough**t |
 | **u** | /u/ | oo | fl**u**te |
 | **y** | /y/ | ü | German *über* |
-| **ae** | /æ/ | short a | c**a**t / b**a**d |
+| **ae** | /æ/ | short a | c**a**t / **ai**r |
 
 ### B. The 7 Permitted Diphthongs
 

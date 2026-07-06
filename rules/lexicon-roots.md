@@ -152,7 +152,7 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | roi | 1 | day | |
 | roch | 1 | night | |
 | ima | 2 | now | |
-| tlipi | 2 | before / past | |
+| tilpi | 2 | before / past | |
 | tilpa | 2 | after / future | |
 | thin | 1 | here | |
 | tha | 1 | there | |

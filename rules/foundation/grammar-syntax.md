@@ -113,7 +113,7 @@ Kilor distinguishes two forms of compounding for tone purposes:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `nar`, `iu`, `na`, `te`, `su`) are **exempt** from the `-s` constraint. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`) are **exempt** from the `-s` constraint. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
 
 ---
 

@@ -6,7 +6,7 @@
 
 ---
 
-All resolved items have moved to their respective rule files (pronouns → `rules/foundation/pronouns.md`, articles → `rules/foundation/nouns-colour-prefix.md`, interrogative → `rules/foundation/interrogative.md`, negation → `rules/foundation/negation.md`, copula/existential → `rules/foundation/copula-existential.md`, numerals → `rules/num.md`).
+All resolved items have moved to their respective rule files (pronouns → `rules/foundation/pronouns.md`, articles → `rules/foundation/nouns-colour-prefix.md`, interrogative → `rules/foundation/interrogative.md`, negation → `rules/foundation/negation.md`, copula/existential → `rules/foundation/copula-existential.md`, numerals → `rules/num.md`, subordination & relativization → `rules/foundation/subordination.md`, oblique particles → `rules/foundation/cases.md` §V).
 
 The remaining open questions below are the ones that must be resolved — or at minimum, have a firm design decision — before the mass root creation pipeline can begin in earnest. See `roadmap.md` §Grammar Gaps for priority mapping.
 
@@ -18,29 +18,28 @@ These items directly affect how roots are coined, what grammatical categories ex
 
 ---
 
-### 1. Subordinate Clauses & Relativization
+### 1. ✅ Subordinate Clauses & Relativization — RESOLVED (2026-07-07)
 
-**Context:** No mechanism exists for embedding clauses (e.g., "the fire that burns", "I know that you came", "when/because/if").
+**Moved to:** `rules/foundation/subordination.md`
 
-**Roadmap:** 🔴 Critical (`roadmap.md` Grammar Gaps #2)
-
-**Questions:**
-- Relative clauses: prenominal (like Japanese), postnominal (like English), or correlative?
-- Complement clauses (e.g., "I know that..."): particle, nominalization, or parataxis?
-- Adverbial subordination (when, because, if): particles or conjunctions?
-- How do embedded clauses interact with SOV word order and case marking?
+**Decisions:**
+- Relative clauses: postnominal, with declining relativizer `kus` (subject `kus`, object `kus-ni`, possessor `kus-si`); stackable
+- Complement clauses: `kus` doubles as complementizer (same as English "that"); clause may take ACC case
+- Adverbial subordination: dedicated particles `tu` (when/while), `li` (if), `aiga` (because), `hoskar` (although)
+- All subordination particles are closed-class, toneless, exempt from `-s` constraint
 
 ---
 
-### 2. Dative & Instrumental Particle Expansion
+### 2. ✅ Dative & Instrumental Particle Expansion — RESOLVED (2026-07-07)
 
-**Context:** `te` (dative: to/for) and `su` (instrumental: with/by) are reserved slots. `cases.md` §V defines them as standalone single-syllable words with flat mid-tone. It is unclear whether additional oblique particles should exist.
+**Moved to:** `rules/foundation/cases.md` §V
 
-**Questions:**
-- Will there be additional particles beyond `te` and `su`? (e.g., locative, ablative, comitative, benefactive)
-- Or will all other oblique roles be handled by context + the 3-case system?
-- If additional particles are added, what are they phonologically?
-- Decision affects which oblique roots are needed in the lexicon (e.g., dedicated location roots vs. particle-based location).
+**Decisions:**
+- `su` removed; split into `mer` (comitative: with/together) and `sy` (instrumental: by/with/using)
+- Additional oblique particles: `ar` (ablative: from), `tilpe` (locative-relational: between)
+- Conjunctions: `ei` (and), `po` (or), `amer` (but)
+- Subordinators: `tu` (when/while), `li` (if), `aiga` (because), `hoskar` (although) — see `subordination.md`
+- `te` (dative: to/for) retained unchanged
 
 ---
 

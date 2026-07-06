@@ -113,16 +113,42 @@ There are no dedicated possessive pronouns (no equivalent to English *my*, *your
 > **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (exempt from the Contrastive Suffix Rule). See `pronouns.md` §III for the full declension table.
 ---
 
-## V. Dative & Instrumental — Analytic Particles
+## V. Oblique Particles & Prepositions
 
-Kilor intentionally restricts the case system to 3 slots. Two additional semantic roles are handled analytically:
+Kilor intentionally restricts the case system to 3 slots. All other semantic roles are handled by a set of **analytic prepositions** — standalone particles that precede their noun phrase. These are closed-class function words: 1–2 syllables, toneless, no `j`/`v`, exempt from the `-s` constraint.
+
+### A. Oblique Prepositions
 
 | Role | Meaning | Particle | Usage |
 |:---|:---|:---|:---|
-| **Dative** | To / For (recipient) | **`te`** | Placed before the recipient noun |
-| **Instrumental** | With / By (means) | **`su`** | Placed before the instrument noun |
+| **Dative** | to / for (recipient, direction) | **`te`** | Placed before the recipient/goal noun |
+| **Comitative** | with / together (companion) | **`mer`** | Placed before the companion noun |
+| **Instrumental** | by / with / using (means, tool, agent) | **`sy`** | Placed before the instrument/agent noun |
+| **Ablative** | from (origin, source) | **`ar`** | Placed before the source noun |
+| **Locative-relational** | between | **`tilpe`** | Placed before the location/reference noun |
 
-These particles are **standalone, single-syllable words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
+### B. Conjunctions
+
+Conjunctions connect words, phrases, or clauses:
+
+| Role | Meaning | Particle |
+|:---|:---|:---|
+| **Additive** | and | **`ei`** |
+| **Alternative** | or | **`po`** |
+| **Adversative** | but | **`amer`** |
+
+### C. Subordinators
+
+Subordinator particles introduce adverbial clauses (when/because/if). See `subordination.md` for full clause-embedding rules.
+
+| Role | Meaning | Particle |
+|:---|:---|:---|
+| **Temporal** | when / while | **`tu`** |
+| **Conditional** | if | **`li`** |
+| **Causal** | because | **`aiga`** |
+| **Concessive** | although | **`hoskar`** |
+
+These particles are **standalone words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
 
 ---
 

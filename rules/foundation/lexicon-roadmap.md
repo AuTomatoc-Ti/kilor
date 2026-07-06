@@ -124,7 +124,7 @@ Read the sentences aloud. Evaluate:
 | **Temporal word inventory** | Deferred — critical for tense-free time expression |
 | **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |
 | **2-syllable noun & verb roots** | Deferred — needed as base for `-s` adjective/adverb derivation; must not end in `s` |
-| **Dative/Instrumental particle inventory** | Reserved slots: `te` (towards), `su` (using); additional particles deferred |
+| **Dative/Instrumental particle inventory** | **Defined** — see `cases.md` §V: `te` (to/for), `mer` (with), `sy` (by/using), `ar` (from), `tilpe` (between). Conjunctions: `ei` (and), `po` (or), `amer` (but) |
 | **Interrogative structure** | **Defined** — see `interrogative.md` |
 | **Negation** | **Defined** — see `negation.md` |
 

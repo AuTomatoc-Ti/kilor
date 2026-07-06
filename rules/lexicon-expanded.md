@@ -126,7 +126,7 @@
 | roi | 1 | day | N | roi | roi | rois | rois | o- |
 | roch | 1 | night | N | roch | roch | rochs | rochs | o- |
 | ima | 2 | now | N | ijma | ivma | ijmas | ivmas | o- |
-| tlipi | 2 | before / past | N | tlip | tlip | tlips | tlips | o- |
+| tilpi | 2 | before / past | N | tijlpi | tivlpi | tijlpis | tivlpis | o- |
 | tilpa | 2 | after / future | N | tijlpa | tivlpa | tijlpas | tivlpas | o- |
 | thin | 1 | here | N | thin | thin | thins | thins | o- |
 | tha | 1 | there | N | tha | tha | thas | thas | o- |
@@ -171,7 +171,18 @@ Exempt from `-s` constraint (see `grammar-syntax.md` §IV-C). Never receive deri
 | `iu` | 1 | Yes/no question particle; affirmative answer | Toneless (flat mid) |
 | `na` | 1 | Negative answer | Toneless (flat mid) |
 | `te` | 1 | Dative particle (to/for) | Toneless (flat mid) |
-| `su` | 1 | Instrumental particle (with/by) | Toneless (flat mid) |
+| `mer` | 1 | Comitative particle (with/together) | Toneless (flat mid) |
+| `sy` | 1 | Instrumental particle (by/with/using) | Toneless (flat mid) |
+| `ar` | 1 | Ablative particle (from) | Toneless (flat mid) |
+| `tilpe` | 2 | Locative-relational particle (between) | Toneless (flat mid) |
+| `ei` | 1 | Additive conjunction (and) | Toneless (flat mid) |
+| `po` | 1 | Alternative conjunction (or) | Toneless (flat mid) |
+| `amer` | 2 | Adversative conjunction (but) | Toneless (flat mid) |
+| `tu` | 1 | Temporal subordinator (when/while) | Toneless (flat mid) |
+| `li` | 1 | Conditional subordinator (if) | Toneless (flat mid) |
+| `aiga` | 2 | Causal subordinator (because) | Toneless (flat mid) |
+| `hoskar` | 2 | Concessive subordinator (although) | Toneless (flat mid) |
+| `kus` | 1 | Relativizer / Complementizer (that/which) | Toneless (flat mid) |
 
 ---
 

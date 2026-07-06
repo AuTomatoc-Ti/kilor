@@ -41,9 +41,9 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 | Bare roots (validated) | 76 |
 | Surface word forms (4-category expansion) | ~190 |
 | Compounds (defined) | 0 |
-| Rule files (foundation) | 12 |
+| Rule files (foundation) | 13 |
 | Progress toward 6,000 target | 1.3% |
-| Completed in this session | Phonotactic audit, `fojra` rename, `wino` colour system, copula/existential spec (`res`/`ero`), closed-class `-s` exemption, 4-category expansion table, `roli` added, numeral system (`num.md`), ordinal `dir`, NP quantification order |
+| Completed in this session | Phonotactic audit, `fojra` rename, `wino` colour system, copula/existential spec (`res`/`ero`), closed-class `-s` exemption, 4-category expansion table, `roli` added, numeral system (`num.md`), ordinal `dir`, NP quantification order, subordination (`subordination.md`), oblique particle inventory (`mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`) |
 
 ---
 
@@ -52,7 +52,7 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 | # | Gap | Priority | Why |
 |---|---|---|---|
 | 1 | ~~Numeral & classifier system~~ | ✅ Resolved | `rules/num.md` — base-10, 0–13 irregular, scale markers (`gau`/`cu`/`kas`/`hus`/`tus`/`rakas`), multiplicative + additive, no taxonomic classifiers, ordinal `dir`, NP order `NOUN — (MEASURE) — NUM — (ORD)` |
-| 2 | **Subordinate clauses & relativization** | 🔴 Critical | Cannot embed clauses: "the fire that burns", "I know that you came", "when/because/if" |
+| 2 | ~~Subordinate clauses & relativization~~ | ✅ Resolved | `rules/foundation/subordination.md` — postnominal `kus` (relative/complement), `tu`/`li`/`aiga`/`hoskar` (adverbial). Full oblique particle + conjunction inventory in `cases.md` §V |
 | 3 | **Temporal word inventory** | 🟡 High | "yesterday", "tomorrow", "always", "never" — needed for tense-free time expression |
 | 4 | **Comparatives & superlatives** | 🟡 Medium | "bigger", "biggest", "more beautiful than" |
 | 5 | **Passive voice or equivalent** | 🟢 Low | Can be handled by OSV word order + mandatory cases; may not need dedicated grammar |
@@ -65,7 +65,7 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 
 ### Phase 0: Grammar Completion (now → near-term)
 - ~~Define numeral system and numerals 0–10, hundred, thousand~~ ✅ Done — see `rules/num.md`
-- Design subordination (relative clauses, complement clauses, adverbial clauses)
+- ~~Design subordination (relative clauses, complement clauses, adverbial clauses)~~ ✅ Done — see `rules/foundation/subordination.md`
 - Fill core temporal words (yesterday, tomorrow, always, never, soon, late, early, again)
 - **Root target:** 76 → ~80 (+4 temporal roots)
 - **Compound target:** ~10 core compounds from existing roots
@@ -167,7 +167,7 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 | Colour vocabulary: `wino` | One root meaning "colour/hue"; 7 colours = prefix + `wino` |
 | Copula: `res` | 1-syl toneless closed-class verb (是); identity/attribution |
 | Existential/Possession: `ero` | 2-syl L→H → `evro` (有); Chinese unified model |
-| Closed-class `-s` exemption | `res`, `nar`, `iu`, `na`, `te`, `su` exempt from `-s` constraint (`grammar-syntax.md` §IV-C) |
+| Closed-class `-s` exemption | `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus` exempt from `-s` constraint (`grammar-syntax.md` §IV-C) |
 | `roli` | 2-syl quality root = "lot / many" |
 
 ---
@@ -187,6 +187,7 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 | `rules/foundation/negation.md` | `nar`, `na`, `iu` system |
 | `rules/foundation/copula-existential.md` | `res` (是) + `ero` (有) |
 | `rules/foundation/lexicon-roadmap.md` | Root constraints, development pipeline |
+| `rules/foundation/subordination.md` | Relative clauses, complement clauses, adverbial clauses |
 | `rules/lexicon-roots.md` | 76 bare roots with English meanings (manual fill-in template) |
 | `rules/lexicon-expanded.md` | 76 roots × 4 categories with tone markers & 共識 prefixes |
 | `question.md` | Deferred design questions (stale — several completed) |
