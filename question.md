@@ -1,21 +1,14 @@
 # Kilor — Open Design Questions
 
-**Status:** Active — pre-Phase-1
+**Status:** Active — pre-Phase-1 root pipeline
 **Created:** 2026-07-04
 **Last Updated:** 2026-07-06
 
 ---
 
-Resolved items moved to their respective rule files:
+All resolved items have moved to their respective rule files (pronouns → `rules/foundation/pronouns.md`, articles → `rules/foundation/nouns-colour-prefix.md`, interrogative → `rules/foundation/interrogative.md`, negation → `rules/foundation/negation.md`, copula/existential → `rules/foundation/copula-existential.md`, numerals → `rules/num.md`).
 
-| # | Domain | Resolved In |
-|---|--------|-------------|
-| 1 | Pronoun inventory | `rules/foundation/pronouns.md` |
-| 2 | Article system | `rules/foundation/nouns-colour-prefix.md` §IV (colour prefix encodes definiteness; no separate articles) |
-| 4 | Interrogative structure | `rules/foundation/interrogative.md` |
-| 5 | Negation | `rules/foundation/negation.md` |
-| 8 | Copula & existential | `rules/foundation/copula-existential.md` |
-| — | Numeral & classifier system | `rules/num.md` — base-10, 0–13 irregular, scale markers (`gau`/`cu`/`kas`/`hus`/`tus`/`rakas`), multiplicative + additive construction, no taxonomic classifiers (measure words = regular nouns), ordinal `dir`, NP order `NOUN — (MEASURE) — NUM — (ORD)` |
+The remaining open questions below are the ones that must be resolved — or at minimum, have a firm design decision — before the mass root creation pipeline can begin in earnest. See `roadmap.md` §Grammar Gaps for priority mapping.
 
 ---
 
@@ -105,18 +98,6 @@ These are lower priority. They do not block root creation and can be addressed i
 - Can OSV word order + mandatory case marking handle all passive-like needs?
 - Or is a dedicated passive construction needed for agent-demotion (e.g., "the fire was eaten" without specifying by whom)?
 - If passive exists, how is it formed — particle, word order, or verbal morphology?
-
----
-
-## General Design Philosophy (Settled de facto)
-
-These questions were posed when little grammar existed. The completed rule files now answer them implicitly:
-
-| Question | De Facto Answer |
-|----------|-----------------|
-| **Simplicity vs expressiveness** | 6,000-root target → approaching Esperanto-level expressiveness, not Toki Pona minimalism. Full grammatical toolkit: 3 cases, 7-colour ontology, interrogative, negation, copula/existential, planned subordination |
-| **Naturalism vs regularity** | Hybrid: pronouns are a closed-class irregular paradigm (naturalistic); tone system is fully regular; colour prefix is fluid/contextual. Irregularity is intentional where natural languages have it — regularity everywhere else |
-| **Priority order of remaining questions** | #1 Subordination → #2 Particles → #3 Temporal words → #4 Comparatives → #5 `ae` → #6 Passive (see Blocking section above) |
 
 ---
 
