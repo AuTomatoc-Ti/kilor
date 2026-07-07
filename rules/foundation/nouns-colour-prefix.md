@@ -29,6 +29,18 @@ Each prefix is a single vowel (V template), aligning with Kilor's syllable struc
 
 > **Crucial:** The Diphthong Plural Shift from earlier drafts has been **removed**. Prefixes retain only their monophthong form regardless of number. Plurality is handled contextually — see `grammar-syntax.md` §VI.
 
+### A. Hyphen — Mandatory Orthographic Rule
+
+The hyphen between the colour prefix and the root is **mandatory** in written Kilor. It is never omitted. This ensures unambiguous parsing between the two-letter Brown prefix `ae-` and roots beginning with `/æ/` (`ae`):
+
+| Written | Parsing |
+|---|---|
+| `ae-kora` | Brown prefix `ae-` + root `kora` |
+| `a-ekora` | Red prefix `a-` + root `ekora` |
+| `aekora` | Single bare root `aekora` — no prefix (generic/indefinite) |
+
+Without the mandatory hyphen, `aekora` would be ambiguous: Brown-prefix `kora` vs bare root `aekora`. The hyphen eliminates this ambiguity entirely.
+
 ---
 
 ## III. Phonological Status: The Proclitic Exemption

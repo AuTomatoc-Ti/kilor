@@ -1,7 +1,7 @@
 # Kilor Development Roadmap
 
-**Status:** Active
-**Last Updated:** 2026-07-06
+**Status:** Grammar complete — Phase 1 root creation underway
+**Last Updated:** 2026-07-08
 
 ---
 
@@ -17,181 +17,149 @@
 
 ### Multiplier Explanation
 
-- **×2.5 derived:** Average of 2.5 productive surface forms per root. Not all roots fill all 4 categories (N/V pair ~10% = 4 forms; noun-only ~45% = ~2 forms; verb-only ~35% = ~2 forms; quality-only ~10% = ~1.5 forms). Weighted average ≈ 2.5.
-- **×1 compounds:** Roughly one lexicalised compound per root. Compounds are not automatic — each must be **manually coined and defined**. Compounding is modeled on Mandarin (~50–70% of vocabulary is compounds) but conservatively estimated at 1 compound per root.
+- **×2.5 derived:** Average of 2.5 productive surface forms per root (N/V pairs produce 4 forms; noun-only ~2 forms; verb-only ~2 forms; quality-only ~1.5 forms).
+- **×1 compounds:** Roughly one lexicalised compound per root, each manually coined and defined. Modeled on Mandarin (~50–70% of vocabulary is compounds), conservatively estimated.
 - **Total multiplier: ×3.5**
 
 ### English Benchmarks
 
 | Tier | Count | What It Is |
 |---|---|---|
-| OED total entries | ~170,000 | Includes obsolete, dialectal, all inflected forms — no human knows this many |
+| OED total entries | ~170,000 | Includes obsolete, dialectal, all inflected forms |
 | College-educated passive | ~30,000–40,000 | Words recognised but not actively used |
 | **Active vocabulary (target)** | **~20,000–30,000** | Words actually used in speech/writing |
 | Core daily 90%+ coverage | ~5,000 | Words that cover most everyday conversation |
 
-Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,000 words matches a university-educated English speaker's active vocabulary.
+Kilor targets **active vocabulary**. 6,000 roots → 21,000 words matches a university-educated English speaker's active vocabulary.
 
 ---
 
-## Current State
+## Grammar Foundation
 
-| Asset | Count |
+All core grammar is designed and codified. No blocking design questions remain. See `question.md` for a summary.
+
+| Domain | File |
 |---|---|
-| Bare roots (validated) | 85 |
-| Surface word forms (4-category expansion) | ~190 |
-| Compounds (defined) | 0 |
-| Rule files (foundation) | 13 |
-| Progress toward 6,000 target | 1.3% |
-| Completed in this session | Phonotactic audit, `fojra` rename, `wino` colour system, copula/existential spec (`res`/`ero`), closed-class `-s` exemption, 4-category expansion table, `roli` added, numeral system (`num.md`), ordinal `dir`, NP quantification order, subordination (`subordination.md`), oblique particle inventory (`mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`) |
-
----
-
-## Grammar Gaps (Before Large-Scale Lexicon Work)
-
-| # | Gap | Priority | Why |
-|---|---|---|---|
-| 1 | ~~Numeral & classifier system~~ | ✅ Resolved | `rules/num.md` — base-10, 0–13 irregular, scale markers (`gau`/`cu`/`kas`/`hus`/`tus`/`rakas`), multiplicative + additive, no taxonomic classifiers, ordinal `dir`, NP order `NOUN — (MEASURE) — NUM — (ORD)` |
-| 2 | ~~Subordinate clauses & relativization~~ | ✅ Resolved | `rules/foundation/subordination.md` — postnominal `kus` (relative/complement), `tu`/`li`/`aiga`/`hoskar` (adverbial). Full oblique particle + conjunction inventory in `cases.md` §V |
-| 3 | **Temporal word inventory** | ✅ Resolved | Full inventory: day scale (`pimaroi`/`piroi`/`imaroi`/`paroi`/`pamaroi`), distance scale (`pima`/`pama`), frequency (`esaka`/`slosaka`/`nasaka`), bare roots (`shu`/`sar`/`cho`/`amo`/`fou`). Supporting roots: `esa`, `sakar`, `slote`, `founai`. Clause-initial placement. See `grammar-syntax.md` §VI |
-| 4 | **Comparatives & superlatives** | 🟡 Medium | "bigger", "biggest", "more beautiful than" |
-| 5 | **Passive voice or equivalent** | 🟢 Low | Can be handled by OSV word order + mandatory cases; may not need dedicated grammar |
+| Sound system | `rules/foundation/phonology.md` |
+| Tone & prosody | `rules/foundation/tone-prosody.md` |
+| 3-case system (NOM/ACC/GEN) | `rules/foundation/cases.md` |
+| Word order, compounding, derivations | `rules/foundation/grammar-syntax.md` |
+| 7-colour prefix system | `rules/foundation/nouns-colour-prefix.md` |
+| Pronoun inventory | `rules/foundation/pronouns.md` |
+| Interrogative | `rules/foundation/interrogative.md` |
+| Negation | `rules/foundation/negation.md` |
+| Copula & existential | `rules/foundation/copula-existential.md` |
+| Subordination & relativization | `rules/foundation/subordination.md` |
+| Numeral system | `rules/num.md` |
 
 ---
 
 ## Lexicon Phased Expansion
 
-Each phase produces both **roots** and **compound words**. Compounds are not automatically generated — each compound must be manually coined with its own meaning, usage notes, and (for nouns) a 共識 colour prefix. A compound is a dictionary entry just like a root.
+Each phase produces both **roots** and **compound words**. Compounds are not automatically generated — each must be manually coined with a defined meaning, usage notes, and (for nouns) a 共識 colour prefix. Wordlist reference files in `wordlist/` provide English-meaning targets organized by semantic category.
 
-### Phase 0: Grammar Completion (now → near-term)
-- ~~Define numeral system and numerals 0–10, hundred, thousand~~ ✅ Done — see `rules/num.md`
-- ~~Design subordination (relative clauses, complement clauses, adverbial clauses)~~ ✅ Done — see `rules/foundation/subordination.md`
-- ~~Fill core temporal words (yesterday, tomorrow, always, never, soon, late, early, again)~~ ✅ Done — see `grammar-syntax.md` §VI. +9 new roots (`shu`, `sar`, `cho`, `amo`, `fou`, `founai`, `sakar`, `esa`, `slote`), +8 compounds (`pimaroi`, `piroi`, `imaroi`, `paroi`, `pamaroi`, `esaka`, `slosaka`, `nasaka`), +2 free adverbs (`pima`, `pama`)
-- **Root target:** 76 → 85 (+9 temporal roots) ✅
-- **Compound target:** ~8 compounds defined ✅
+---
 
-### Phase 1: Basic Daily (→500 roots, →1,750 words)
-- Target: **85 → 500 roots**
-- Categories to fill:
-  - Body parts (head, foot, leg, arm, face, nose, tongue, skin, bone, heart)
-  - Family/people (mother, father, child, sibling, man, woman, baby, chief)
-  - Daily actions (sit, sleep, run, swim, fly, fall, cut, hit, push, pull, carry, open, close, wash, wear, buy, sell, work, play, sing, write, read)
-  - Food/clothing/shelter (bread, meat, fruit, vegetable, cup, table, chair, bed, shirt, shoe, wall, roof, window)
-  - More qualities (beautiful, ugly, strong, weak, wet, dry, heavy, light, full, empty, clean, dirty, sweet, bitter)
-  - Nature/weather (rain, snow, ice, cloud, thunder, lake, sea, forest, field, sand)
-  - Directions/position (up, down, left, right, front, back, inside, outside, near, far, above, below)
-  - Tools/transport (boat, cart, rope, hammer, needle, pot, basket)
-  - Social (help, thank, greet, promise, gift, war, peace, law, teach, learn)
-- **Compound target:** ~400 compounds manually defined from the expanded root set
-- Comparable to: ~3-year-old child vocabulary
+### Phase 1: A1 — Beginner (→ ~500 roots, → ~1,750 words)
 
-### Phase 2: Functional (→1,000 roots, →3,500 words)
-- Target: **500 → 1,000 roots**
-- Fill gaps discovered during Phase 1 sentence-building
-- More action verbs, more specific qualities, cultural terms tied to the 7 dual-concepts
-- **Compound target:** ~500 compounds
-- Comparable to: tourist-level functional language
+**Comparable to:** ~3-year-old child vocabulary. CEFR A1 — basic survival phrases and familiar everyday expressions.
 
-### Phase 3: Fluent Non-Native (→3,000 roots, →10,500 words)
-- Target: **1,000 → 3,000 roots**
-- Major expansion across all domains
-- Systematic semantic grids: body systems, emotion nuance, social roles, nature taxonomy
-- Start of domain-specific vocabulary (basic math, basic physics, basic law)
-- **Compound target:** ~2,000 compounds
-- Comparable to: B2/C1 non-native speaker — fluent daily life + simple professional
-- **Milestone: crosses 10,000 total words**
+| Category | What's Covered |
+|---|---|
+| **Body parts** | head, foot, leg, arm, face, nose, tongue, skin, bone, heart, ear, mouth, eye, hand |
+| **Family & people** | mother, father, child, sibling, brother, sister, son, daughter, man, woman, baby, chief, friend |
+| **Daily actions** | sit, sleep, run, swim, fly, fall, cut, hit, push, pull, carry, open, close, wash, wear, buy, sell, walk, work, play, sing, dance, write, read |
+| **Food & drink** | bread, meat, fruit, vegetable, salt, sugar, milk, egg, rice, soup, oil, wine, beer |
+| **Clothing & home** | shirt, shoe, hat, dress, cloth; door, wall, roof, window, room, bed, chair, table, cup, plate, pot, basket, box, bag, key, lock, fire, light |
+| **Basic qualities** | beautiful, ugly, strong, weak, soft, hard, wet, dry, heavy, light, full, empty, clean, dirty, sweet, bitter, sour, sharp, blunt, round, flat, thick, thin, deep, shallow; plus: true/false, same/different, ready/tired, hungry/thirsty, sick/healthy, alive/dead, free/busy, safe/dangerous, easy/difficult, possible/impossible, important, rich/poor, young |
+| **Nature & weather** | rain, snow, ice, cloud, thunder, storm, lake, sea, ocean, forest, field, sand, island, wave, water, stone, earth, sky, sun, moon, star, tree, flower |
+| **Animals** | dog, cat, horse, cow, sheep, pig, snake, insect |
+| **Directions & position** | up, down, left, right, front, back, inside, outside, near, far, above, below, beside, between, north, south, east, west |
+| **Tools & transport** | boat, cart, rope, hammer, needle, knife, stick, wheel, bridge |
+| **Social** | help, thank, greet, promise, gift, war, peace, law, rule, teach, learn, study, question, answer, story, joke, game, music, song, dance |
 
-### Phase 4: Professional (→4,500 roots, →15,750 words)
-- Target: **3,000 → 4,500 roots**
-- Full professional/academic vocabulary:
-  - Physics (force, mass, energy, wave, field, particle, velocity)
-  - Biology (organ systems, species categories, cell, gene, growth stages)
-  - Mathematics (plus, minus, multiply, divide, angle, shape names, set, function)
-  - Medicine (disease, heal, wound, fever, poison, cure)
-  - Law/governance (judge, contract, right, duty, crime, punish, inherit)
-  - Technology (machine, engine, wire, signal, compute — mostly compounds)
-- **Compound target:** ~3,000 compounds
-- Comparable to: strong professional writing across fields
+---
 
-### Phase 5: Complete (→6,000 roots, →21,000 words)
-- Target: **4,500 → 6,000 roots**
-- Literature and poetry: aesthetic terms, rhetorical devices, emotion nuance
-- Dialectal, archaic, and poetic variants
-- Comprehensive domain coverage
-- **Compound target:** ~4,500 compounds
-- Comparable to: university-educated native speaker
-- **Milestone: crosses 20,000 total words**
+### Phase 2: A2 — Elementary (→ ~1,000 roots, → ~3,500 words)
 
-### Phase 6: Upper Aspirational (→8,600 roots, →30,100 words)
-- Target: **6,000 → 8,600 roots**
-- Edge cases, rare concepts, highly specific terminology
-- Historical/archaic roots
-- **Compound target:** ~6,000 compounds
-- Comparable to: Shakespeare-range active vocabulary
-- **Milestone: crosses 30,000 total words**
+**Comparable to:** Tourist-level functional language. CEFR A2 — can describe in simple terms aspects of immediate environment and routine needs.
+
+Fills gaps discovered during Phase 1 sentence-building. Expands action verbs, adds more specific qualities, and introduces cultural terms tied to the 7 dual-concepts. Learners can handle simple, direct exchanges on familiar topics.
+
+---
+
+### Phase 3: B1/B2 — Intermediate (→ ~3,000 roots, → ~10,500 words)
+
+**Comparable to:** B1 (Threshold) — can deal with most situations likely to arise while travelling; B2 (Vantage) — can produce clear, detailed text on a wide range of subjects.
+
+Systematic semantic grids across body systems, emotion nuance, social roles, and nature taxonomy. Begins domain-specific vocabulary for basic math, basic physics, and basic law. Learners can interact with a degree of fluency and spontaneity.
+
+**Milestone: crosses 10,000 total words.**
+
+---
+
+### Phase 4: C1 — Advanced (→ ~4,500 roots, → ~15,750 words)
+
+**Comparable to:** Strong professional writing. CEFR C1 — can use language flexibly and effectively for social, academic, and professional purposes.
+
+Full professional and academic vocabulary:
+
+| Domain | Topics |
+|---|---|
+| **Physics** | force, mass, energy, wave, field, particle, velocity |
+| **Biology** | organ systems, species categories, cell, gene, growth stages |
+| **Mathematics** | plus, minus, multiply, divide, angle, shape names, set, function |
+| **Medicine** | disease, heal, wound, fever, poison, cure |
+| **Law & governance** | judge, contract, right, duty, crime, punish, inherit |
+| **Technology** | machine, engine, wire, signal, compute (mostly compounds) |
+
+---
+
+### Phase 5: C2 — Proficient (→ ~6,000 roots, → ~21,000 words)
+
+**Comparable to:** University-educated native speaker. CEFR C2 — can express spontaneously, very fluently and precisely, differentiating finer shades of meaning.
+
+Literature and poetry vocabulary: aesthetic terms, rhetorical devices, emotion nuance. Dialectal, archaic, and poetic variants. Comprehensive domain coverage. Can summarise information from different spoken and written sources and reconstruct arguments coherently.
+
+**Milestone: crosses 20,000 total words. Primary target reached.**
+
+---
+
+### Phase 6: Near-Native / Literary (→ ~8,600 roots, → ~30,100 words)
+
+**Comparable to:** Shakespeare-range active vocabulary. Beyond formal CEFR scales — the vocabulary range of a highly literate native speaker with command of rare, archaic, and domain-specific terminology.
+
+Edge cases, rare concepts, highly specific terminology. Historical and archaic roots. Comparable to the active vocabulary of a major literary figure.
+
+**Milestone: crosses 30,000 total words.**
 
 ---
 
 ## Root Estimate Matrix
 
-| Scope | Roots | Derived (×2.5) | Compounds (×1) | Total Words | English Equivalent |
-|---|---|---|---|---|---|
-| Phase 1 — Basic daily | 500 | 1,250 | 500 | 1,750 | Child (~3 yr) |
-| Phase 2 — Functional | 1,000 | 2,500 | 1,000 | 3,500 | Tourist-level |
-| Phase 3 — Fluent non-native | 3,000 | 7,500 | 3,000 | 10,500 | B2/C1 speaker |
-| Phase 4 — Professional | 4,500 | 11,250 | 4,500 | 15,750 | Professional writing |
-| Phase 5 — Complete (lower) | 6,000 | 15,000 | 6,000 | 21,000 | University-educated |
-| Phase 6 — Complete (upper) | 8,600 | 21,500 | 8,600 | 30,100 | Shakespeare-range |
+| Phase | Level | Roots | Derived (×2.5) | Compounds (×1) | Total Words | English Equivalent |
+|---|---|---|---|---|---|---|
+| Phase 1 | A1 Beginner | ~500 | ~1,250 | ~500 | ~1,750 | Child (~3 yr) |
+| Phase 2 | A2 Elementary | ~1,000 | ~2,500 | ~1,000 | ~3,500 | Tourist-level |
+| Phase 3 | B1/B2 Intermediate | ~3,000 | ~7,500 | ~3,000 | ~10,500 | Fluent daily life + simple professional |
+| Phase 4 | C1 Advanced | ~4,500 | ~11,250 | ~4,500 | ~15,750 | Professional writing |
+| Phase 5 | C2 Proficient | ~6,000 | ~15,000 | ~6,000 | ~21,000 | University-educated native |
+| Phase 6 | Literary | ~8,600 | ~21,500 | ~8,600 | ~30,100 | Shakespeare-range |
 
-**Note:** Compounds must be manually coined and defined. They are not automatic. Each compound is a dictionary entry with its own meaning, usage, and (for nouns) 共識 prefix.
-
----
-
-## Process Infrastructure (Needed Before Phase 3+)
-
-| Need | Description |
-|---|---|
-| **Root database** | `.csv` or structured format for search, dedup, collision checking |
-| **Compound dictionary** | Separate inventory of all defined compounds with meanings and 共識 prefixes |
-| **Constraint validator** | Script to check new roots against phonotactics before acceptance |
-| **Compounding style guide** | Rules for idiomatic vs compositional compounds; canonical multi-word vocab format |
-| **Etymology convention** | Kilor-internal etymologies for consistency across roots and compounds |
+**Note:** Compounds must be manually coined and defined. Each compound is a dictionary entry with its own meaning, usage, and (for nouns) 共識 prefix.
 
 ---
 
-## Key Design Decisions (from this session)
+## Process Infrastructure
 
-| Decision | Detail |
+| Tool / Asset | Purpose |
 |---|---|
-| Fire root: `fora` → `fojra` (H→L noun) | `kojra` renamed globally; 50 occurrences in 6 files |
-| Colour vocabulary: `wino` | One root meaning "colour/hue"; 7 colours = prefix + `wino` |
-| Copula: `res` | 1-syl toneless closed-class verb (是); identity/attribution |
-| Existential/Possession: `ero` | 2-syl L→H → `evro` (有); Chinese unified model |
-| Closed-class `-s` exemption | `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus` exempt from `-s` constraint (`grammar-syntax.md` §IV-C) |
-| `roli` | 2-syl quality root = "lot / many" |
-
----
-
-## Files
-
-| File | Purpose |
-|---|---|
-| `rules/foundation/phonology.md` | Sound system, syllable templates |
-| `rules/foundation/tone-prosody.md` | 4-category tone system |
-| `rules/foundation/cases.md` | 3-case system (NOM/ACC/GEN) |
-| `rules/foundation/grammar-syntax.md` | SOV order, compounding, `-s` derivation, plural/tense strategy |
-| `rules/foundation/nouns-colour-prefix.md` | 7-colour prefix system, definiteness, 共識 |
-| `rules/foundation/philosophy.md` | 7 dual-concepts mapped to colours |
-| `rules/foundation/pronouns.md` | Pronoun inventory & declension |
-| `rules/foundation/interrogative.md` | Wh-questions + yes/no (`wei` + `iu`) |
-| `rules/foundation/negation.md` | `nar`, `na`, `iu` system |
-| `rules/foundation/copula-existential.md` | `res` (是) + `ero` (有) |
-| `rules/foundation/lexicon-roadmap.md` | Root constraints, development pipeline |
-| `rules/foundation/subordination.md` | Relative clauses, complement clauses, adverbial clauses |
-| `rules/lexicon-roots.md` | 85 bare roots with English meanings (manual fill-in template) |
-| `rules/lexicon-expanded.md` | 85 roots × 4 categories with tone markers & 共識 prefixes |
-| `question.md` | Deferred design questions (stale — several completed) |
-| `draft/colour-kilor.txt` | Original philosophy notes for the 7-colour system |
+| `lexicon.csv` | Root database — structured format for search, dedup, collision checking |
+| `kilor.py` | Constraint validator — checks new roots against phonotactics |
+| `wordlist/` | English-meaning targets organized by semantic category |
+| Compound dictionary | (Future) Separate inventory of all defined compounds with meanings and 共識 prefixes |
+| Compounding style guide | (Future) Rules for idiomatic vs compositional compounds |
+| Etymology convention | (Future) Kilor-internal etymologies for consistency |
 
 ---
 

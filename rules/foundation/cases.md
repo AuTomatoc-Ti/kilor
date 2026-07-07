@@ -162,6 +162,24 @@ Comparative particles mark the standard of comparison and form comparative, equa
 
 These particles are **standalone words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
 
+### E. Passive `sy`
+
+The instrumental particle **`sy`** (§V-A) is extended to serve as the **passive marker** — a valency-reducing operation that promotes the patient to subject and demotes the agent to an optional oblique. This follows the same design logic as English "by" or Chinese 被: one particle handles both instrumental ("with/by a tool") and passive-agent ("by someone").
+
+`sy` occupies a fixed position between the patient (promoted to unmarked NOM) and the verb phrase. Three usage patterns are distinguished by what follows `sy`:
+
+| Usage | Pattern | Example |
+|:---|:---|:---|
+| **Instrumental** (active SOV) | `Agent object-ACC sy instrument verb` | `ki bau-ni sy maliu cut.` — "I cut bread with a knife." |
+| **Passive, agent deleted** | `Patient sy verb` | `hawu sy tavka.` — "The animal was eaten." |
+| **Passive, agent expressed** | `Patient sy agent verb` | `hawu sy a-fojra tavka.` — "The animal was eaten by the fire." |
+
+> **Design notes:**
+> - When the agent is expressed after `sy`, it carries no case suffix — `sy` itself marks the agent's oblique role. The verb carries no morphological change; valency reduction is signalled entirely by `sy`.
+> - The patient is unmarked (NOM default), occupying the subject slot.
+> - The listener disambiguates `sy`'s function via what follows it: a tool noun in an active SOV frame → instrumental; a verb (or agent + verb) after the patient → passive.
+> - In the agent-deleted pattern, OSV word order (§I-B of `grammar-syntax.md`) would place the patient before the verb without `sy` — but this is **topicalisation** (agent is still present and marked NOM elsewhere), not agent deletion. Passive `sy` is the only mechanism for structurally omitting the agent.
+
 ---
 
 ## VI. Phonological Integration — The Tone Lock Rule

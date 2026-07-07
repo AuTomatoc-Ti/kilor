@@ -13,9 +13,10 @@ Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. T
 
 > **Note:** SOV is a **pedagogical baseline** — the simplest model for explaining Kilor's core syntax. Real sentences may include additional elements (prepositions, numerals, temporal words, question words, etc.) that create more complex structures. The SOV model describes the relative order of the three core arguments; other elements are placed according to their own rules (see `interrogative.md` for question word fronting, `cases.md` §V for dative/instrumental particles).
 
-> **Example:** `fojra lujmina tavka.`
-> (fire light burns.)
+> **Example:** `a-fojra hawu-ni tavka.`
+> (the-fire animal-ACC eat.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
+> "The fire eats the animal."
 
 ### B. Poetic & Formal Reordering
 
@@ -42,6 +43,21 @@ For **nested possession** (multiple Genitive-marked nouns chained together), Kil
 > **Nested example:** `kis fojrasi lujmi` = "my fire's light" — `kis` owns `fojrasi`, which owns `lujmi`
 > 
 > Free order (`lujmi fojrasi kis`) is not valid for nested possession.
+
+### D. Passive Voice
+
+Kilor expresses passive voice (agent demotion or deletion) using the instrumental particle **`sy`** as a valency-reducing marker. See `cases.md` §V-E for the full specification with all three usage patterns (instrumental, passive agent-deleted, passive agent-expressed).
+
+In brief:
+
+| Pattern | Example |
+|:---|:---|
+| `Patient sy verb` | `hawu sy tavka.` — "The animal was eaten." |
+| `Patient sy agent verb` | `hawu sy a-fojra tavka.` — "The animal was eaten by the fire." |
+
+The patient is promoted to NOM (unmarked). The agent (if expressed) follows `sy` with no case suffix. The verb carries no morphological change — valency reduction is signalled entirely by `sy`.
+
+> **Note:** OSV word order (§I-B) can topicalise the object but cannot delete the agent. Passive `sy` is the only mechanism for structurally omitting the agent from the clause.
 
 ---
 
