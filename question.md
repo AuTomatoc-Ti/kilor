@@ -43,16 +43,18 @@ These items directly affect how roots are coined, what grammatical categories ex
 
 ---
 
-### 3. Temporal Word Inventory
+### 3. ✅ Temporal Word Inventory — RESOLVED (2026-07-08)
 
-**Context:** Kilor uses a tense-free time expression strategy (`grammar-syntax.md` §VI). Core temporal words are needed to anchor events in time without grammatical tense.
+**Moved to:** `rules/foundation/grammar-syntax.md` §VI
 
-**Roadmap:** 🟡 High (`roadmap.md` Grammar Gaps #3)
-
-**Questions:**
-- Which temporal words are roots vs. compounds? (e.g., "yesterday" = "day" + "before"?)
-- Inventory: yesterday, today, tomorrow, always, never, soon, late, early, again, now, then, before, after, during
-- How do temporal expressions interact with SOV word order — are they clause-initial adverbials, or can they appear in situ?
+**Decisions:**
+- Day scale: mono-word compounds with `roi` (day) — `pimaroi`, `piroi`, `imaroi`, `paroi`, `pamaroi`
+- Distance scale: free-standing adverbs `pima` (earlier/further back) and `pama` (later/further ahead), each with two context-disambiguated meanings (specific: exactly two steps away; open-range: ≥ two steps away)
+- Frequency: `-saka` paradigm from `sakar` (occurrence) — `esaka` (always), `slosaka` (sometimes), `nasaka` (never)
+- Bare temporal roots: `shu` (soon), `sar` (late), `cho` (early), `amo` (again), `fou` (during), `founai` (duration)
+- Supporting roots: `esa` (all/every), `sakar` (occurrence), `slote` (some)
+- Word order: temporal adverbs are **clause-initial** (before subject) in the SOV frame
+- Combining forms: `pi` ← `tilpi`, `pa` ← `tilpa`, `tow` ← `tlow`; `ma` is a bound infix meaning "one step removed"
 
 ---
 

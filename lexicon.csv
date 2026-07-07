@@ -62,13 +62,22 @@ losto,2,joy / happiness,n,F,lojsto,lovsto,lojstos,lovstos,o-,false,
 hax,1,pain / suffering,n,F,hax,hax,haxs,haxs,o-,false,
 roi,1,day,n,G,roi,roi,rois,rois,o-,false,
 roch,1,night,n,G,roch,roch,rochs,rochs,o-,false,
-ima,2,now,n,G,ijma,ivma,ijmas,ivmas,o-,false,
-tilpi,2,before / past,n,G,tijlpi,tivlpi,tijlpis,tivlpis,o-,false,
-tilpa,2,after / future,n,G,tijlpa,tivlpa,tijlpas,tivlpas,o-,false,
+ima,2,now,n,G,ijma,ivma,ijmas,ivmas,o-,false,combining form for imaroi (today)
+tilpi,2,before,n,G,tijlpi,tivlpi,tijlpis,tivlpis,o-,false,combining form pi in day compounds
+tilpa,2,after,n,G,tijlpa,tivlpa,tijlpas,tivlpas,o-,false,combining form pa in day compounds
 thin,1,here,n,G,thin,thin,thins,thins,o-,false,
 tha,1,there,n,G,tha,tha,thas,thas,o-,false,
 poska,2,place / location,n,G,pojska,povska,pojskas,povskas,o-,false,
-tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,
+tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,combining form tow in temporal compounds
+shu,1,soon,av,G,shu,shu,shus,shus,o-,false,bare root (simplified from shuk+tlow)
+sar,1,late,av,G,sar,sar,sars,sars,o-,false,bare root (simplified from pusar+tlow)
+cho,1,early,av,G,cho,cho,chos,chos,o-,false,bare root; ch onset (start-only)
+amo,2,again,av,G,ajmo,avmo,ajmos,avmos,o-,false,
+fou,1,during,av,G,fou,fou,fous,fous,o-,false,related to founai
+founai,2,duration,n,G,foujnai,fouvnai,foujnais,fouvnais,o-,false,
+sakar,2,occurrence / frequency,n,G,sajkar,savkar,sajkars,savkars,o-,false,combines with esa/slote/na
+esa,2,all / every,a,G,ejsa,evsa,ejsas,evsas,o-,false,combines into esaka (always)
+slote,2,some,a,G,slojte,slovte,slojtes,slovtes,o-,false,combines into slosaka (sometimes)
 mi,1,name,n,H,mi,mi,mis,mis,o-,false,
 berat,2,word / speech,n,H,bejrat,bevrat,bejrats,bevrats,o-,false,
 song,1,friend,n,H,song,song,songs,songs,o-,false,

@@ -132,6 +132,15 @@
 | tha | 1 | there | N | tha | tha | thas | thas | o- |
 | poska | 2 | place / location | N | pojska | povska | pojskas | povskas | o- |
 | tlow | 1 | time | N | tlow | tlow | tlows | tlows | o- |
+| shu | 1 | soon | Av | shu | shu | shus | shus | o- |
+| sar | 1 | late | Av | sar | sar | sars | sars | o- |
+| cho | 1 | early | Av | cho | cho | chos | chos | o- |
+| amo | 2 | again | Av | ajmo | avmo | ajmos | avmos | o- |
+| fou | 1 | during | Av | fou | fou | fous | fous | o- |
+| founai | 2 | duration | N | foujnai | fouvnai | foujnais | fouvnais | o- |
+| sakar | 2 | occurrence / frequency | N | sajkar | savkar | sajkars | savkars | o- |
+| esa | 2 | all / every | A | ejsa | evsa | ejsas | evsas | o- |
+| slote | 2 | some | A | slojte | slovte | slojtes | slovtes | o- |
 ## H. Social & Relational
 
 | Bare Root | Syl | Meaning | Cat | Noun | Verb | Adjective | Adverb | 共識 |

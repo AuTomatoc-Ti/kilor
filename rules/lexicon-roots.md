@@ -151,13 +151,22 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 |---|---|---|---|
 | roi | 1 | day | |
 | roch | 1 | night | |
-| ima | 2 | now | |
-| tilpi | 2 | before / past | |
-| tilpa | 2 | after / future | |
+| ima | 2 | now | Combines into `imaroi` (today) |
+| tilpi | 2 | before / past | Combining form `pi` in day compounds |
+| tilpa | 2 | after / future | Combining form `pa` in day compounds |
 | thin | 1 | here | |
 | tha | 1 | there | |
 | poska | 2 | place / location | |
-| tlow | 1 | time | |
+| tlow | 1 | time | Combining form `tow` in temporal compounds |
+| shu | 1 | soon | Bare root (simplified from `shuk` + `tlow`) |
+| sar | 1 | late | Bare root (simplified from `pusar` + `tlow`) |
+| cho | 1 | early | Bare root, `ch` onset (start-only) |
+| amo | 2 | again | Bare root |
+| fou | 1 | during | Bare root; related to `founai` |
+| founai | 2 | duration | |
+| sakar | 2 | occurrence / frequency | Combines with `esa`, `slote`, `na` |
+| esa | 2 | all / every | Combines into `esaka` (always) |
+| slote | 2 | some | Combines into `slosaka` (sometimes) |
 
 ### H. Social & Relational
 

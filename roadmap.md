@@ -38,7 +38,7 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 
 | Asset | Count |
 |---|---|
-| Bare roots (validated) | 76 |
+| Bare roots (validated) | 85 |
 | Surface word forms (4-category expansion) | ~190 |
 | Compounds (defined) | 0 |
 | Rule files (foundation) | 13 |
@@ -53,7 +53,7 @@ Kilor targets **active vocabulary**, not dictionary total. 6,000 roots → 21,00
 |---|---|---|---|
 | 1 | ~~Numeral & classifier system~~ | ✅ Resolved | `rules/num.md` — base-10, 0–13 irregular, scale markers (`gau`/`cu`/`kas`/`hus`/`tus`/`rakas`), multiplicative + additive, no taxonomic classifiers, ordinal `dir`, NP order `NOUN — (MEASURE) — NUM — (ORD)` |
 | 2 | ~~Subordinate clauses & relativization~~ | ✅ Resolved | `rules/foundation/subordination.md` — postnominal `kus` (relative/complement), `tu`/`li`/`aiga`/`hoskar` (adverbial). Full oblique particle + conjunction inventory in `cases.md` §V |
-| 3 | **Temporal word inventory** | 🟡 High | "yesterday", "tomorrow", "always", "never" — needed for tense-free time expression |
+| 3 | **Temporal word inventory** | ✅ Resolved | Full inventory: day scale (`pimaroi`/`piroi`/`imaroi`/`paroi`/`pamaroi`), distance scale (`pima`/`pama`), frequency (`esaka`/`slosaka`/`nasaka`), bare roots (`shu`/`sar`/`cho`/`amo`/`fou`). Supporting roots: `esa`, `sakar`, `slote`, `founai`. Clause-initial placement. See `grammar-syntax.md` §VI |
 | 4 | **Comparatives & superlatives** | 🟡 Medium | "bigger", "biggest", "more beautiful than" |
 | 5 | **Passive voice or equivalent** | 🟢 Low | Can be handled by OSV word order + mandatory cases; may not need dedicated grammar |
 
@@ -66,12 +66,12 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 ### Phase 0: Grammar Completion (now → near-term)
 - ~~Define numeral system and numerals 0–10, hundred, thousand~~ ✅ Done — see `rules/num.md`
 - ~~Design subordination (relative clauses, complement clauses, adverbial clauses)~~ ✅ Done — see `rules/foundation/subordination.md`
-- Fill core temporal words (yesterday, tomorrow, always, never, soon, late, early, again)
-- **Root target:** 76 → ~80 (+4 temporal roots)
-- **Compound target:** ~10 core compounds from existing roots
+- ~~Fill core temporal words (yesterday, tomorrow, always, never, soon, late, early, again)~~ ✅ Done — see `grammar-syntax.md` §VI. +9 new roots (`shu`, `sar`, `cho`, `amo`, `fou`, `founai`, `sakar`, `esa`, `slote`), +8 compounds (`pimaroi`, `piroi`, `imaroi`, `paroi`, `pamaroi`, `esaka`, `slosaka`, `nasaka`), +2 free adverbs (`pima`, `pama`)
+- **Root target:** 76 → 85 (+9 temporal roots) ✅
+- **Compound target:** ~8 compounds defined ✅
 
 ### Phase 1: Basic Daily (→500 roots, →1,750 words)
-- Target: **76 → 500 roots**
+- Target: **85 → 500 roots**
 - Categories to fill:
   - Body parts (head, foot, leg, arm, face, nose, tongue, skin, bone, heart)
   - Family/people (mother, father, child, sibling, man, woman, baby, chief)
@@ -188,8 +188,8 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 | `rules/foundation/copula-existential.md` | `res` (是) + `ero` (有) |
 | `rules/foundation/lexicon-roadmap.md` | Root constraints, development pipeline |
 | `rules/foundation/subordination.md` | Relative clauses, complement clauses, adverbial clauses |
-| `rules/lexicon-roots.md` | 76 bare roots with English meanings (manual fill-in template) |
-| `rules/lexicon-expanded.md` | 76 roots × 4 categories with tone markers & 共識 prefixes |
+| `rules/lexicon-roots.md` | 85 bare roots with English meanings (manual fill-in template) |
+| `rules/lexicon-expanded.md` | 85 roots × 4 categories with tone markers & 共識 prefixes |
 | `question.md` | Deferred design questions (stale — several completed) |
 | `draft/colour-kilor.txt` | Original philosophy notes for the 7-colour system |
 
