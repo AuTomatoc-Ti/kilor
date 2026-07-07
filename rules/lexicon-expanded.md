@@ -99,7 +99,7 @@
 | pag | 1 | small | A | pag | pag | pags | pags | o- |
 | wem | 1 | hot / warm | A | wem | wem | wems | wems | o- |
 | kop | 1 | cold | A | kop | kop | kops | kops | o- |
-| bera | 2 | good | A | bejra | bevra | bejras | bevras | o- |
+| gor | 1 | good | A | gor | gor | gors | gors | o- |
 | bono | 2 | bad | A | bojno | bovno | bojnos | bovnos | o- |
 | my | 1 | dark | A | my | my | mys | mys | o- |
 | shuk | 1 | fast / quick | A | shuk | shuk | shuks | shuks | o- |

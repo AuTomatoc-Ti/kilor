@@ -123,7 +123,7 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | pag | 1 | small | |
 | wem | 1 | hot / warm | |
 | kop | 1 | cold | |
-| bera | 2 | good | |
+| gor | 1 | good | |
 | bono | 2 | bad | |
 | lumi | 2 | bright | adj derived from noun `lumi` (light) + `-s` → `lujmis` |
 | my | 1 | dark | |
