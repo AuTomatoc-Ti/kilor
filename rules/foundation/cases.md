@@ -148,6 +148,18 @@ Subordinator particles introduce adverbial clauses (when/because/if). See `subor
 | **Causal** | because | **`aiga`** |
 | **Concessive** | although | **`hoskar`** |
 
+### D. Comparative Particles
+
+Comparative particles mark the standard of comparison and form comparative, equative, and superlative constructions. See `grammar-syntax.md` §IX for full usage rules and example sentences.
+
+| Role | Meaning | Particle |
+|:---|:---|:---|
+| **Comparative** | than | **`tor`** |
+| **Equative** | as | **`les`** |
+| **Superlative** | most | **`torra`** |
+| **Intensified comparative** | much more than | **`wetor`** |
+| **Restrictive** | among / among all | **`mangus`** |
+
 These particles are **standalone words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
 
 ---

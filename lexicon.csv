@@ -96,4 +96,12 @@ nar,1,clausal/constituent negation,v,-,nar,nar,nar,nar,,true,closed-class
 iu,1,yes/no question + affirmative answer,v,-,iu,iu,iu,iu,,true,closed-class
 na,1,negative answer (no),v,-,na,na,na,na,,true,closed-class
 te,1,dative particle (to/for),v,-,te,te,te,te,,true,closed-class
-su,1,instrumental particle (with/by),v,-,su,su,su,su,,true,closed-class
+we,1,intensify,v,D,we,we,wes,wes,,false,derived adverb wes = "very"
+mere,2,be slight (intensity),v,D,mejre,mevre,mejres,mevres,,false,derived mevres = "a bit" (intensity); distinct from pere (amount)
+pere,2,small amount,n,E,pejre,pevre,pejres,pevres,o-,false,derived pejres = "little (amount)"; distinct from mere (intensity)
+tor,,comparative particle (than),,,,,,true,closed-class; toneless; -s exempt
+les,,equative particle (as),,,,,,true,closed-class; toneless; -s exempt
+torra,,superlative particle (most),,,,,,true,closed-class; toneless; -s exempt; fused from tor + rap
+wetor,,intensified comparative (much more than),,,,,,true,closed-class; toneless; -s exempt; fused from wes + tor
+mangus,,restrictive (among/among all),,,,,,true,closed-class; toneless; -s exempt
+rap,2,top / peak,n,G,rajp,ravp,rajps,ravps,o-,false,

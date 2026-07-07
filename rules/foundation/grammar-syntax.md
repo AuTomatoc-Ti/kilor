@@ -113,7 +113,7 @@ Kilor distinguishes two forms of compounding for tone purposes:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`) are **exempt** from the `-s` constraint. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`) are **exempt** from the `-s` constraint. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
 
 ---
 
@@ -218,6 +218,121 @@ This is a closed-class morphological process that applies **only** to pronouns. 
 ## VIII. No Possessive Suffixes
 
 Kilor has **no dedicated agglutinative possessive suffix**. Possession is expressed exclusively through the **Genitive case** suffix (`-si`/`-sa`). See `cases.md` for full details.
+
+---
+
+## IX. Comparatives & Superlatives
+
+Kilor uses analytic particles to express comparison. No dedicated comparative/superlative morphology exists — comparison is handled through a small inventory of closed-class particles that pattern like the oblique preposition system (see `cases.md` §V).
+
+### A. Comparative Particle Inventory
+
+| Particle | Meaning | Role |
+|---|---|---|
+| `tor` | than | Marks the standard of comparison |
+| `les` | as | Marks the equative standard |
+| `torra` | most | Marks the superlative |
+| `wetor` | much more than | Intensified comparative (fused from `wes` + `tor`) |
+| `mangus` | among / among all | Restricts superlative scope |
+
+These particles are **closed-class**: 1–2 syllables, toneless, no `j`/`v`, exempt from the `-s` constraint. They are added to the exemption list in §IV-C and the oblique particle inventory in `cases.md` §V.
+
+### B. Comparative of Inequality
+
+The comparative frame:
+
+```
+Subject  tor  Standard  (Degree)  Quality
+```
+
+> **Example:** `ki tor ti rali.`
+> (I than you big)
+> "I am bigger than you."
+
+Degree words optionally intensify or diminish the comparison. These slot between the `tor`-phrase and the quality:
+
+- `wes` (very, adverb derived from `we` + `-s`): `ki tor ti wes rali` — "I am much bigger than you"
+- `meres` (a bit, adverb derived from `mere` + `-s`): `ki tor ti meres rali` — "I am a little bigger than you"
+- `wetor` (much more than, fused particle): `ki wetor ti rali` — "I am much bigger than you"
+
+The standard may be fronted for emphasis (OSV-like reordering), with the ACC case suffix marking the object:
+
+> **Example:** `ti-n tor ki rali.`
+> (you-ACC than I big)
+> "Compared to you, I am bigger."
+
+### C. Equative ("as X as Y")
+
+The equative frame uses `les` in the same syntactic position as `tor`:
+
+```
+Subject  les  Standard  (Degree)  Quality
+```
+
+> **Example:** `ki les ti rali.`
+> (I as you big)
+> "I am as big as you."
+
+**Negation:** Negation of the comparison uses `nar` **after** the particle (`les nar`, `tor nar`) to scope over the comparison itself, not over the subject:
+
+> **Example:** `ki les nar ti rali.`
+> (I as NEG you big)
+> "I am not as big as you."
+
+> **Example:** `ki tor nar ti rali.`
+> (I than NEG you big)
+> "I am not bigger than you."
+
+### D. Superlative
+
+The superlative particle `torra` precedes the quality:
+
+```
+Subject  torra  Quality
+```
+
+> **Example:** `ki torra rali.`
+> (I most big)
+> "I am the biggest."
+
+To restrict the scope, use `mangus` (among). `mangus` may appear with or without `torra`:
+
+> **Example (with explicit superlative):** `ki mangus torra rali.`
+> (I among most big)
+> "I am the biggest among (them/all)."
+
+> **Example (implicit superlative):** `ki mangus rali.`
+> (I among big)
+> "I am the biggest among (them)."
+
+`mangus` may take an explicit reference group as its object:
+
+> **Example:** `ki mangus kil rali.`
+> (I among us big)
+> "I am the biggest among us."
+
+### E. Word Order
+
+The comparative phrase (`tor`/`les` + Standard + Degree) sits **between the subject and the quality**. In a full SOV clause with a copula:
+
+```
+Subject  tor/les  Standard  Degree  Quality  (res)  Object  Verb
+```
+
+In attributive position, the quality may link via the copula `res`. The copula may be omitted in casual speech when the quality directly follows the comparative frame — the comparative particle itself signals the predicative relationship.
+
+### F. Supporting Content Roots
+
+| Root | Syl | Category | Meaning | Derived Forms |
+|---|---|---|---|---|
+| `rap` | 2 | Noun | top / peak | `rajp` (n, H→L) → `rajps` (adj) "topmost" |
+| `we` | 1 | Verb | to intensify | `wes` (adv) "very" |
+| `mere` | 2 | Verb | to be slight (intensity) | `mejre` (n), `mevres` (adv) "a bit" |
+| `pere` | 2 | Noun | small amount | `pejre` (n) → `pejres` (adj) "little (amount)" |
+
+> **Distinction:** `mere` (intensity: "a bit") and `pere` (amount: "little") are distinct roots. Kilor separates intensity modification from quantity modification. Compare:
+> - `meres rali` = "a bit big" (intensity — slightly big)
+> - `peres hamin` = "little food" (amount — small quantity of food)
 
 ---
 

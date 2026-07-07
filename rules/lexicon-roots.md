@@ -113,7 +113,8 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | tesak | 2 | make / create | |
 | fora | 2 | burn | verb form of fire (noun `fojra`, verb `fovra`) |
 | minau | 2 | stand / stay | |
-
+| we | 1 | intensify | Verb root; derived adverb `wes` = "very" |
+| mere | 2 | be slight (intensity) | Verb root; derived adverb `meres` = "a bit" (intensity, not amount) |
 ### E. Qualities & States
 
 | Root Form | Syl | Meaning (EN) | Notes |
@@ -131,7 +132,7 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | roli | 2 | lot / many | |
 | niba | 2 | new | |
 | noba | 2 | old | |
-
+| pere | 2 | small amount | Noun root; derived adjective `peres` = "little (amount)". Distinct from `mere` (intensity) |
 ### F. Mind & Emotion
 
 | Root Form | Syl | Meaning (EN) | Notes |
@@ -167,7 +168,7 @@ Each table has the English meaning pre-filled. Write the **bare Kilor root** and
 | sakar | 2 | occurrence / frequency | Combines with `esa`, `slote`, `na` |
 | esa | 2 | all / every | Combines into `esaka` (always) |
 | slote | 2 | some | Combines into `slosaka` (sometimes) |
-
+| rap | 2 | top / peak | Noun root; `rajp` (H→L). Used in superlative particle `torra` (= `tor` + `rap`) |
 ### H. Social & Relational
 
 | Root Form | Syl | Meaning (EN) | Notes |
