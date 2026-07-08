@@ -48,7 +48,7 @@ kop,1,cold,a,E,kop,kop,kops,kops,o-,false,
 gor,1,good,a,E,gor,gor,gors,gors,o-,false,
 bono,2,bad,a,E,bojno,bovno,bojnos,bovnos,o-,false,
 my,1,dark,a,E,my,my,mys,mys,o-,false,
-shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,
+shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)
 pusar,2,slow,a,E,pujsar,puvsar,pujsars,puvsars,o-,false,
 roli,2,lot / many,a,E,rojli,rovli,rojlis,rovlis,o-,false,
 niba,2,new,a,E,nijba,nivba,nijbas,nivbas,o-,false,

@@ -59,6 +59,50 @@ The patient is promoted to NOM (unmarked). The agent (if expressed) follows `sy`
 
 > **Note:** OSV word order (§I-B) can topicalise the object but cannot delete the agent. Passive `sy` is the only mechanism for structurally omitting the agent from the clause.
 
+### E. Modifier Placement & Oblique PP Order
+
+#### Adjectives
+
+Adjectives (noun + `-s` or quality roots used attributively) **precede** the noun:
+
+> `rajlis a-maeha` — "big person" (lit. "big the-person")
+
+Intensity adverbs (`wes`, `meres`) precede the adjective:
+
+> `wes rajlis a-maeha` — "very big person"
+
+#### Oblique PPs — Fixed Order
+
+When multiple oblique prepositional phrases appear, they follow the **fixed order**:
+
+```
+Object [ACC] — [Numeral] — [sy Instrumental] — [te Dative] — [Adverb] — Verb
+```
+
+> `bau-ni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
+
+The object (with optional ACC case suffix) and any numeral come first. Instrumental `sy` precedes dative `te`. Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
+
+#### Full Clause Template (SOV)
+
+```
+[Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [te Dat]  [Manner Adv]  [Verb]  [nar]
+```
+
+All slots are optional except the subject and verb. See `question.md` for resolved designs on passives, comparatives, and subordination.
+
+#### Maximal Example Sentence
+
+```
+piroi  wes  rajlis  a-maeha  kus kin argona  bau-ni ro  sy y-maliu  te kis song  shuks  sounar  nar.
+
+ei  imaroi  bau  sy a-fojra  tavka.
+
+amer  ki  mangus kil  torra  rali.
+```
+
+**Translation:** "Yesterday the very big person who loves me did not quickly give three breads to my friend with an iron knife. And today the bread was eaten by the fire. But I am the biggest among us."
+
 ---
 
 ## II. Contrastive Suffix Rule
@@ -143,9 +187,14 @@ The suffix `-s` creates modifiers from base roots. It applies to **1 and 2 sylla
 |:---|:---|:---|
 | Noun + `-s` | Adjective | 1 & 2 syllable nouns |
 | Verb + `-s` | Adverb | 1 & 2 syllable verbs |
+| Quality root + `-s` | Manner Adverb | 1 & 2 syllable quality roots (`a` category) |
 
-> **1-syllable example:** `fei` (verb, toneless) → `feis` (adverb, toneless)
-> **2-syllable example:** `aujli` (noun, H→L) → `aujlis` (adjective, H→L)
+> **1-syllable verb → adverb:** `fei` (verb, toneless) → `feis` (adverb, toneless)
+> **2-syllable noun → adjective:** `aujli` (noun, H→L) → `aujlis` (adjective, H→L)
+> **1-syllable quality → manner adverb:** `shuk` (adj: fast) → `shuks` (adv: quickly)
+> **1-syllable quality → manner adverb:** `gor` (adj: good) → `gors` (adv: well)
+
+Manner adverbs derived from quality roots are distinguished from attributive adjectives by **position**: adjectives precede nouns (§I-E), manner adverbs precede verbs (§I-E). The same `-s` form serves both roles — context disambiguates.
 
 ### B. Phonological Nature
 
