@@ -2,6 +2,9 @@
 
 **Module:** Numeral System, Quantification & Ranking
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -43,11 +46,11 @@ Scale markers are closed-class numeral roots denoting powers of 10.
 
 ### A. `-s` Exemption
 
-`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint (`grammar-syntax.md` §IV-C). All numerals form a **closed class** — they never receive derivational morphology. They join `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, and `kus` in the closed-class exemption list.
+`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint (`0-foundation/grammar-syntax.md` §IV-C). All numerals form a **closed class** — they never receive derivational morphology. They join `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, and `kus` in the closed-class exemption list.
 
 ### B. `sl` Positional Exemption
 
-`slo` (6) uses the start-only onset `sl`. Within **mono-word numeral compounds**, `sl` is exempt from the word-initial-only restriction (`phonology.md` §III-C) — it may appear in any position. Numeral compounds form a closed, predictable subsystem; e.g., `gauslokas` (16,000) with `sl` word-medially is legal.
+`slo` (6) uses the start-only onset `sl`. Within **mono-word numeral compounds**, `sl` is exempt from the word-initial-only restriction (`0-foundation/phonology.md` §III-C) — it may appear in any position. Numeral compounds form a closed, predictable subsystem; e.g., `gauslokas` (16,000) with `sl` word-medially is legal.
 
 ---
 
@@ -153,7 +156,7 @@ Numerals follow **standard tone rules per word**, based on each word's syllable 
 | 2-syllable | H→L (noun pattern) |
 | 3+ syllable | H→M→L (last-3 domain) |
 
-Multi-word numeral expressions are stitched **modularly**: each word carries its own independent contour per `tone-prosody.md` §IV-D. There is no free variation — tone is deterministic.
+Multi-word numeral expressions are stitched **modularly**: each word carries its own independent contour per `0-foundation/tone-prosody.md` §IV-D. There is no free variation — tone is deterministic.
 
 > **1-syllable:** `mo`, `gau`, `kas`, `cu` → flat mid-tone
 > **2-syllable:** `dogau`, `rakas`, `aniu` → H→L (the `j`/`v` tone marker is used in dictionary citation forms per the standard noun pattern; in practice, numerals follow the closed-class pronoun convention where tone markers may be omitted in spelling — see §VIII)
@@ -209,7 +212,7 @@ When no measure word is used, the numeral directly quantifies the noun:
 
 ### C. Colour Prefix Interaction
 
-Quantified nouns are **indefinite** — the colour prefix is omitted per `nouns-colour-prefix.md` §IV-B:
+Quantified nouns are **indefinite** — the colour prefix is omitted per `1-nominals/nouns-colour-prefix.md` §IV-B:
 
 > ✅ `lira ro` = three waters (generic)
 > ❌ `i-lira ro` = three the-waters (contradiction: quantified nouns are indefinite by nature)
@@ -224,13 +227,13 @@ A colour prefix may be retained when the quantification is part of a larger defi
 
 Numerals do not take case suffixes (Accusative or Genitive). They are a closed class — they occupy the modifier slot in the NP and are never the syntactic head.
 
-Measure words, being regular noun roots, **may** take case suffixes when the NP as a whole receives case marking, following the suffix-distribution rule for multi-word vocabs (`grammar-syntax.md` §IV-B).
+Measure words, being regular noun roots, **may** take case suffixes when the NP as a whole receives case marking, following the suffix-distribution rule for multi-word vocabs (`0-foundation/grammar-syntax.md` §IV-B).
 
 ---
 
 ## VIII. Orthographic Convention
 
-Numerals are a closed class. In everyday writing, tone markers (`j`/`v`) may be omitted from multi-syllable numerals following the same convention as pronouns (`pronouns.md` §IV-A) — the closed class and unambiguous numerical context make tone markers redundant in practice.
+Numerals are a closed class. In everyday writing, tone markers (`j`/`v`) may be omitted from multi-syllable numerals following the same convention as pronouns (`1-nominals/pronouns.md` §IV-A) — the closed class and unambiguous numerical context make tone markers redundant in practice.
 
 Dictionary citation forms include tone markers for completeness (e.g., `dovgau`, `rakas`), but canonical example sentences may omit them.
 

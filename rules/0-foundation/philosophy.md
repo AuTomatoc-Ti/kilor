@@ -2,6 +2,9 @@
 
 **Module:** Cultural & Philosophical Foundations
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -107,7 +110,7 @@ These dual-concepts are not merely decorative. They inform the design of Kilor a
 - **The 4-category tonal system** reflects the rhythm of these tensions: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding)[^1]
 - **The tolerance for ambiguity** (fault-tolerant prefixes, identical contour abutment, optional case marking) echoes the cultural embrace of duality — things need not be forced into a single category
 
-[^1]: The "arched prominence" (M→H→H) and "dipped grounding" (M→L→M) metaphors describe the 3+ syllable tone patterns. For 1–2 syllable words, Adjective and Adverb are derived from Noun and Verb via `-s` and share their parent contours: Adjective = Noun's H→L ("grounded descent"), Adverb = Verb's L→H ("dynamic rise"). See `tone-prosody.md` §II-B, §II-C.
+[^1]: The "arched prominence" (M→H→H) and "dipped grounding" (M→L→M) metaphors describe the 3+ syllable tone patterns. For 1–2 syllable words, Adjective and Adverb are derived from Noun and Verb via `-s` and share their parent contours: Adjective = Noun's H→L ("grounded descent"), Adverb = Verb's L→H ("dynamic rise"). See `0-foundation/tone-prosody.md` §II-B, §II-C.
 
 ---
 

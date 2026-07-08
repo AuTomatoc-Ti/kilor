@@ -2,6 +2,9 @@
 
 **Module:** Word Formation, Constraints & Development Pipeline
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -30,7 +33,7 @@ Each root belongs to one of **four** categories. For 3+ syllable words, the tone
 | **Adjective** | Noun + `-s`, Toneless | Noun + `-s` | ...M→M→H(`j`)→H | from Noun |
 | **Adverb** | Verb + `-s`, Toneless | Verb + `-s` | ...M→M→L(`v`)→M | from Verb |
 
-> See `tone-prosody.md` for full contour rules, last-3 domain, and `-s` appendix rules.
+> See `0-foundation/tone-prosody.md` for full contour rules, last-3 domain, and `-s` appendix rules.
 
 ---
 
@@ -46,9 +49,9 @@ Vocabulary is expanded through **lexical compounding** — independent roots are
 
 Kilor distinguishes two forms of compounding for tone:
 
-1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word: the Last-3 Domain Rule applies across the entire word (see `tone-prosody.md` §IV-A).
+1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word: the Last-3 Domain Rule applies across the entire word (see `0-foundation/tone-prosody.md` §IV-A).
 
-2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `lujmi sojla`, `aujli lujmi`). Each word retains its own tonal contour independently. The contours are **stitched sequentially** across the word sequence, not recalculated (see `tone-prosody.md` §IV-D).
+2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `lujmi sojla`, `aujli lujmi`). Each word retains its own tonal contour independently. The contours are **stitched sequentially** across the word sequence, not recalculated (see `0-foundation/tone-prosody.md` §IV-D).
 
    > **Example:** `aujli lujmi` (2-syl noun + 2-syl noun, two-word vocab) → H→L → H→L. Each word retains its own last-3 domain.
 
@@ -60,9 +63,9 @@ Kilor intentionally **does not have** the following. All are handled analyticall
 
 | Mechanism | How It's Handled Instead |
 |:---|:---|
-| **Grammatical tense** | Temporal words (yesterday, tomorrow, now); see `grammar-syntax.md` §VI |
-| **Plural marking** | Context, quantifiers, numerals (Chinese-style); see `grammar-syntax.md` §VII |
-| **Agglutinative possessive suffix** | Genitive case (`-si`/`-sa`); see `cases.md` §IV |
+| **Grammatical tense** | Temporal words (yesterday, tomorrow, now); see `3-subsystems/temporals.md` |
+| **Plural marking** | Context, quantifiers, numerals (Chinese-style); see `0-foundation/grammar-syntax.md` §VI |
+| **Agglutinative possessive suffix** | Genitive case (`-si`/`-sa`); see `1-nominals/cases.md` §IV |
 | **Agglutinative plural suffix** | Abolished; no equivalent |
 | **Possessive pronouns** | Pronoun root + Genitive suffix |
 
@@ -79,7 +82,7 @@ Define core roots ensuring:
 - No `j` or `v` in root spelling
 - No consonant clusters
 - **No 1- or 2-syllable root may end in `s` natively** — `-s` is reserved
-- Each root assigned to its category (Noun / Verb / Adjective / Adverb) with corresponding tone pattern (see `tone-prosody.md`)
+- Each root assigned to its category (Noun / Verb / Adjective / Adverb) with corresponding tone pattern (see `0-foundation/tone-prosody.md`)
 
 ### Step 2: Lexical Generation
 
@@ -118,15 +121,15 @@ Read the sentences aloud. Evaluate:
 
 | Area | Status |
 |:---|:---|
-| **Article morphology / Demonstratives** (a/an/the, this/that) | **Defined** — expressed through the colour prefix system itself; see `nouns-colour-prefix.md` §IV |
-| **Pronoun inventory** | **Defined** — see `pronouns.md` |
-| **Numeral & classifier system** | Deferred — needed for explicit plural quantification |
-| **Temporal word inventory** | Deferred — critical for tense-free time expression |
+| **Article morphology / Demonstratives** (a/an/the, this/that) | **Defined** — expressed through the colour prefix system itself; see `1-nominals/nouns-colour-prefix.md` §IV |
+| **Pronoun inventory** | **Defined** — see `1-nominals/pronouns.md` |
+| **Numeral & classifier system** | **Defined** — see `3-subsystems/numerals.md` |
+| **Temporal word inventory** | **Defined** — see `3-subsystems/temporals.md` |
 | **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |
 | **2-syllable noun & verb roots** | Deferred — needed as base for `-s` adjective/adverb derivation; must not end in `s` |
-| **Dative/Instrumental particle inventory** | **Defined** — see `cases.md` §V: `te` (to/for), `mer` (with), `sy` (by/using), `ar` (from), `tilpe` (between). Conjunctions: `ei` (and), `po` (or), `amer` (but) |
-| **Interrogative structure** | **Defined** — see `interrogative.md` |
-| **Negation** | **Defined** — see `negation.md` |
+| **Dative/Instrumental particle inventory** | **Defined** — see `1-nominals/cases.md` §V: `te` (to/for), `mer` (with), `sy` (by/using), `ar` (from), `tilpe` (between). Conjunctions: `ei` (and), `po` (or), `amer` (but) |
+| **Interrogative structure** | **Defined** — see `2-predication/interrogative.md` |
+| **Negation** | **Defined** — see `2-predication/negation.md` |
 
 ---
 

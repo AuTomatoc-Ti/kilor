@@ -2,6 +2,9 @@
 
 **Module:** Pronoun Inventory & Declension
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -28,7 +31,7 @@ Kilor distinguishes **1st, 2nd, and 3rd person**, with a **living vs. non-living
 
 ### B. Plural Formation
 
-Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `grammar-syntax.md` §VII).
+Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `0-foundation/grammar-syntax.md` §VII).
 
 The marker surfaces in two forms depending on what follows:
 
@@ -53,9 +56,9 @@ Pronouns use **reduced case endings** instead of the standard `-ni`/`-na` (Accus
 
 ### A. Invariant Form — No Contrastive Suffix Rule
 
-Pronoun case endings are **invariant**. They do not participate in the Contrastive Suffix Rule. The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `cases.md` §II.
+Pronoun case endings are **invariant**. They do not participate in the Contrastive Suffix Rule. The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `1-nominals/cases.md` §II.
 
-Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). They participate in the word's tone contour rather than sitting outside it as flat-mid appendices.
+Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `0-foundation/tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). They participate in the word's tone contour rather than sitting outside it as flat-mid appendices.
 
 ### B. Full Declension Table
 
@@ -74,7 +77,7 @@ Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic
 
 ## IV. Tone
 
-Pronouns follow the standard Kilor tone rules in pronunciation only (see `tone-prosody.md`):
+Pronouns follow the standard Kilor tone rules in pronunciation only (see `0-foundation/tone-prosody.md`):
 
 | Syllable Count | Spelled Form | Pronounced Tone |
 |:---|:---|:---|
@@ -93,19 +96,19 @@ Pronouns are a closed class — every form is unambiguously nominal. Therefore, 
 
 ### A. Possession
 
-Possession by pronoun follows the same rule as regular nouns (see `cases.md` §IV): the Genitive-marked pronoun may appear before or after the possessed noun.
+Possession by pronoun follows the same rule as regular nouns (see `1-nominals/cases.md` §IV): the Genitive-marked pronoun may appear before or after the possessed noun.
 
 > **Example:** `kis lujmi` (my light) ≡ `lujmi kis` (light of mine)
 
 ### B. Accusative Optionality
 
-The Accusative forms (`kin`, `tin`, etc.) follow the same two-tier rule as regular nouns (see `cases.md` §III):
+The Accusative forms (`kin`, `tin`, etc.) follow the same two-tier rule as regular nouns (see `1-nominals/cases.md` §III):
 - **Optional** in everyday SOV speech
 - **Mandatory** in formal writing and non-SOV word order
 
 ### C. The `-s` on Pronouns — Genitive Only
 
-The derivational modifier suffix `-s` (see `tone-prosody.md` §III) attaches only to noun and verb roots to form adjectives and adverbs. Pronouns are a **closed class** — they never receive derivational morphology.
+The derivational modifier suffix `-s` (see `0-foundation/tone-prosody.md` §III) attaches only to noun and verb roots to form adjectives and adverbs. Pronouns are a **closed class** — they never receive derivational morphology.
 
 The `-s` on a pronoun form (e.g., `kis`, `tis`, `sis`, `nis`, and their plural counterparts) is always and exclusively the **Genitive case ending**. There is no ambiguity.
 

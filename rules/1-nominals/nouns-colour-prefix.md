@@ -2,6 +2,9 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional register system)
 
 ---
 
@@ -27,7 +30,7 @@ Each prefix is a single vowel (V template), aligning with Kilor's syllable struc
 | **Black** | Mass / Dense / Unyielding | **`y-`** | Hard, heavy, dense matter; metal, deep rock |
 | **Brown** | Earth / Boundary / Friction | **`ae-`** | Soil, wood, mundane physical boundaries |
 
-> **Crucial:** The Diphthong Plural Shift from earlier drafts has been **removed**. Prefixes retain only their monophthong form regardless of number. Plurality is handled contextually — see `grammar-syntax.md` §VI.
+> **Crucial:** The Diphthong Plural Shift from earlier drafts has been **removed**. Prefixes retain only their monophthong form regardless of number. Plurality is handled contextually — see `0-foundation/grammar-syntax.md` §VI.
 
 ### A. Hyphen — Mandatory Orthographic Rule
 
@@ -49,7 +52,7 @@ The Colour Prefix is an **External Proclitic**. It sits outside the phonological
 
 - **Does not** trigger the Contrastive Suffix Rule — only the root's last-syllable nucleus determines suffix vowel class
 - **Does not** carry tone — all colour prefixes are pronounced with a flat mid-tone
-- **Does not** count toward the syllable count for the last-3 tone domain (see `tone-prosody.md`) — only the root's syllables are counted
+- **Does not** count toward the syllable count for the last-3 tone domain (see `0-foundation/tone-prosody.md`) — only the root's syllables are counted
 - Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-ajkora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
 
 > **Example (multi-word vocab):** `a-lujmi sojla` (Red moon)
@@ -86,7 +89,7 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 
 > **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
 > 
-> **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
+> **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `3-subsystems/colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
 > 
 > > **Example:** `a-lujmi` (Red-passion light) — "light" as indefinite concept, but spoken with passionate emotional weight
 > > **Example:** `i-ro` (Blue-longing water) — "water" as an indefinite, generic substance, tinted with longing
@@ -153,7 +156,7 @@ A speaker who uses a non-standard prefix does not cause confusion; the root morp
 > 異體字: `y-fojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
 > 異體字: `o-fojra` (White) — fire framed abstractly, as concept or spirit
 
-Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override. Emotional colouring is one legitimate motivation for a 異體字 override — a speaker may deliberately substitute a non-standard colour prefix to tint a definite noun with a specific emotional register, independent of its ontological properties (see `colour-emotion.md` for the full emotional register system).
+Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override. Emotional colouring is one legitimate motivation for a 異體字 override — a speaker may deliberately substitute a non-standard colour prefix to tint a definite noun with a specific emotional register, independent of its ontological properties (see `3-subsystems/colour-emotion.md` for the full emotional register system).
 
 
 ### Tier 3: The `Null` Fallback (White Default)

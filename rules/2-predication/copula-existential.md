@@ -2,6 +2,9 @@
 
 **Module:** Predication, Existence & Having
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -30,7 +33,7 @@ This split reflects a philosophical stance: **being something** and **having som
 | **Syllables** | 1 |
 | **Category** | Verb (closed-class function word) |
 | **Tone** | Toneless (flat mid-tone) — follows 1-syllable verb rule |
-| **Class** | Closed-class — exempt from the open-root `-s` constraint (see `grammar-syntax.md` §IV-C) |
+| **Class** | Closed-class — exempt from the open-root `-s` constraint (see `0-foundation/grammar-syntax.md` §IV-C) |
 
 `res` expresses:
 
@@ -131,7 +134,7 @@ Subject — Complement — Verb
 
 ### D. Constituent Negation
 
-As with all verbs (see `negation.md` §II-B), `nar` placed before the verb negates only the preceding constituent:
+As with all verbs (see `2-predication/negation.md` §II-B), `nar` placed before the verb negates only the preceding constituent:
 
 > `ki nar fojra evro.`
 > "Not I have fire." (someone else does)
@@ -145,7 +148,7 @@ As with all verbs (see `negation.md` §II-B), `nar` placed before the verb negat
 
 ### A. Yes/No Questions
 
-Sentence-final `iu` as usual (see `interrogative.md` §IV):
+Sentence-final `iu` as usual (see `2-predication/interrogative.md` §IV):
 
 > `fojra wem res iu?`
 > "Is fire hot?"

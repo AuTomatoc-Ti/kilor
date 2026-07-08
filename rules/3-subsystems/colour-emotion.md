@@ -1,15 +1,18 @@
 # Kilor Colour-Emotion Register
 
-**Module:** Emotional Particles & Expressive Colour Usage
+**Module:** Emotional Particles
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system)
 
 ---
 
 ## I. Philosophy — The Colour as Feeling
 
-Kilor's 7 colour prefixes do double duty. They classify nouns by ontological category (see `nouns-colour-prefix.md`), and they also function as **standalone emotional particles** — tiny words that tint a clause or verb with the speaker's subjective emotional register.
+Kilor's 7 colour prefixes do double duty. They classify nouns by ontological category (see `1-nominals/nouns-colour-prefix.md`), and they also function as **standalone emotional particles** — tiny words that tint a clause or verb with the speaker's subjective emotional register.
 
-This is not a coincidence. Each colour's dual-concept in Kilor philosophy (see `philosophy.md`) already encodes a single experiential condition with two emotional faces. The emotional particle system makes these dualities explicit and **usable in speech** — speakers can colour a sentence, a verb, or (via the noun prefix) a noun with any of these registers.
+This is not a coincidence. Each colour's dual-concept in Kilor philosophy (see `0-foundation/philosophy.md`) already encodes a single experiential condition with two emotional faces. The emotional particle system makes these dualities explicit and **usable in speech** — speakers can colour a sentence, a verb, or (via the noun prefix) a noun with any of these registers.
 
 This system is **optional**. A Kilor sentence without emotional particles is fully grammatical and neutral in register. The particles are an expressive layer, not a grammatical requirement.
 
@@ -17,7 +20,9 @@ This system is **optional**. A Kilor sentence without emotional particles is ful
 
 ## II. The 7 Emotional Particles — Dual-Pole System
 
-Each register names a **single core condition** of human experience, with two emotional faces — one warm, one cold. These are not opposites. They are the same condition viewed from two angles. A person who loves deeply and a person who grieves deeply are in the same condition: profoundly attached.
+Each register names a **single core condition** of human experience, with two emotional faces — one warm, one cold. These are not opposites. They are the same condition viewed from two angles.
+
+> For the full philosophical exposition of each dual-concept, see `0-foundation/philosophy.md` §II.
 
 | Colour | Particle | Register | Core Condition | Warm Face (+) | Cold Face (−) |
 |:---|:---|:---|:---|:---|:---|
@@ -33,106 +38,73 @@ Each register names a **single core condition** of human experience, with two em
 
 ### Red — Passion (`a`) — Attachment
 
-> *Philosophy: 犧牲 (Sacrifice) / 覺悟 (Awakening)*
+> Philosophy dual-concept: 犧牲 (Sacrifice) / 覺悟 (Awakening). See `0-foundation/philosophy.md` §II-Red.
 
-To care about something is to have skin in the game. Attachment flows in two directions. When it flows freely, you feel love, warmth, and the fire to keep going (determination). When what you're attached to is threatened or lost, the same attachment becomes pain and grief. The lover and the mourner are the same person — deeply attached.
+To care about something is to have skin in the game. Attachment flows in two directions. When it flows freely, you feel love, warmth, and determination. When what you're attached to is threatened or lost, the same attachment becomes pain and grief. The lover and the mourner are the same person — deeply attached.
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Love, warmth, determination — caring flowing freely | Pain, grief, suffering — caring encountering loss |
 
-> **Everyday:** A successful hunt, a warm meal shared, a child's laugh → `a` (passion). The attachment of being alive and caring.
-> **Profound:** Loss of a loved one → `a` (passion). The same attachment, now wounded.
-
----
-
 ### Yellow — Purpose (`e`) — Striving for Meaning
 
-> *Philosophy: 課題 (Quest) / 意義 (Meaning)*
+> Philosophy dual-concept: 課題 (Quest) / 意義 (Meaning). See `0-foundation/philosophy.md` §II-Yellow.
 
-Life has no inherent meaning, but humans need meaning to survive. This hunger — the quest for purpose — contains two faces. Joy fills the emptiness and makes it bearable; the passing of joy returns you to emptiness, and the emptiness defines what joy is worth. They oscillate, two moments in the same cycle of striving. A life without emptiness has no room for joy; joy without emptiness would have no depth.
+Life has no inherent meaning, but humans need meaning to survive. Joy fills the emptiness and makes it bearable; the passing of joy returns you to emptiness, and the emptiness defines what joy is worth.
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Joy — the spark of meaning, the moment of fulfilment | Emptiness — the void that joy fills and leaves behind |
 
-> **Everyday:** A beautiful sunset, a moment of laughter, a finished task → `e` (purpose). The spark of meaning that makes the striving worth it.
-> **Profound:** Existential despair, the feeling that nothing matters → `e` (purpose). The emptiness that defines the quest.
-
----
-
 ### Blue — Longing (`i`) — Proximity
 
-> *Philosophy: 孤離 (Solitude) / 並存 (Coexistence)*
+> Philosophy dual-concept: 孤離 (Solitude) / 並存 (Coexistence). See `0-foundation/philosophy.md` §II-Blue.
 
-Every being is unique — no other can fully share our internal experience. Yet all unique beings coexist in the same world. The core experience is **proximity**: you are always somewhere on the scale between closeness and distance. The same bond can feel close or far; you can feel near someone who is absent, or distant from someone beside you. Longing is the awareness of that proximity — the pull of closeness and the ache of distance, always both present.
+Every being is unique — no other can fully share our internal experience. Yet all unique beings coexist in the same world. The core experience is **proximity**: you are always somewhere on the scale between closeness and distance. Longing is the awareness of that proximity.
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Closeness — the warmth of nearness, the comfort of connection | Distance — the ache of the gap, the chill of separation |
 
-> **Everyday:** Missing a friend, feeling at home with family → `i` (longing). The ordinary ebb and flow of closeness.
-> **Profound:** Existential solitude, the unbridgeable gap between selves → `i` (longing). The fundamental distance that coexists with all connection.
-
----
-
 ### White — Yearning (`o`) — Living in the Gap
 
-> *Philosophy: 遺憾 (Regret) / 可能性 (Possibility)*
+> Philosophy dual-concept: 遺憾 (Regret) / 可能性 (Possibility). See `0-foundation/philosophy.md` §II-White.
 
-Time yields only one outcome at a time. The gap between what is and what could have been creates regret; the same gap, pointed forward, creates hope. Yearning is the experience of living in that gap — imagining a different reality than this one, whether backward (regret) or forward (hope). They are the same act of imagination, pointed in two temporal directions.
+Time yields only one outcome at a time. The gap between what is and what could have been creates regret; the same gap, pointed forward, creates hope. Yearning is the experience of living in that gap — imagining a different reality than this one, whether backward (regret) or forward (hope).
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Hope — reaching forward across the gap toward what could be | Regret — aching backward across the gap toward what wasn't |
 
-> **Everyday:** Hoping for good weather, wishing you'd said something differently → `o` (yearning).
-> **Profound:** Lifelong regret, desperate hope against impossible odds → `o` (yearning).
-
----
-
 ### Green — Faith (`u`) — Commitment without Certainty
 
-> *Philosophy: 救贖 (Salvation) / 信念 (Faith)*
+> Philosophy dual-concept: 救贖 (Salvation) / 信念 (Faith). See `0-foundation/philosophy.md` §II-Green.
 
-To have faith is to commit to a path without knowing the destination. If certainty existed, faith would not be needed — it would be knowledge. Trust is the act of choosing despite the fog. Uncertainty is the fog itself. Both are always present when you have faith. The most deeply trusting person is also the one most aware of what they do not know. "I don't know the way, but I walk anyway."
+To have faith is to commit to a path without knowing the destination. Trust is the act of choosing despite the fog. Uncertainty is the fog itself. "I don't know the way, but I walk anyway."
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Trust — the stillness of having chosen, the peace of walking your path | Uncertainty — the vertigo of not knowing, the groundlessness faith rests on |
 
-> **Everyday:** Trusting a friend without proof, planting seeds for an unseen harvest → `u` (faith).
-> **Profound:** Religious conviction held against doubt, the courage to act in radical uncertainty → `u` (faith).
-
----
-
 ### Black — Awe (`y`) — Standing before the Vast
 
-> *Philosophy: 敬畏 (Reverence) / 探求 (Exploration)*
+> Philosophy dual-concept: 敬畏 (Reverence) / 探求 (Exploration). See `0-foundation/philosophy.md` §II-Black.
 
-To stand before something vast — a mountain, an ocean, the night sky, death — is to feel a single experience with two faces. Wonder and amazement pull you forward, calling you to explore. Fear and dread make you shrink back, reminding you of your smallness. 敬畏 itself contains 畏 (fear). Awe is the shiver of the sublime: wonder and terror as one response to the unknown.
+To stand before something vast — a mountain, an ocean, the night sky, death — is to feel a single experience with two faces. Wonder and amazement pull you forward; fear and dread make you shrink back. Awe is the shiver of the sublime.
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Wonder, amazement, surprise — the pull to explore, the thrill of mystery | Fear, dread — the instinct to retreat, the awareness of forces beyond control |
 
-> **Everyday:** A breathtaking view, an unexpected thunderstorm → `y` (awe).
-> **Profound:** Standing at the edge of death, confronting the unknowable → `y` (awe).
-
----
-
 ### Brown — Defiance (`ae`) — Self-Assertion against the World
 
-> *Philosophy: 自我 (Ego) / 他者 (Other)*
+> Philosophy dual-concept: 自我 (Ego) / 他者 (Other). See `0-foundation/philosophy.md` §II-Brown.
 
-To have a self is to have boundaries — between what is you and what is other. Pride rises when your boundary holds, when you stand as yourself. Anger rises when your boundary is crossed, when the world pushes back. These are two moments in the same act of self-assertion: pride maintains the line; anger defends it. "I draw a line and I stand by it."
+To have a self is to have boundaries — between what is you and what is other. Pride rises when your boundary holds; anger rises when your boundary is crossed. "I draw a line and I stand by it."
 
 | Warm (+) | Cold (−) |
 |---|---|
 | Pride — the dignity of self, the worth of standing as an individual | Anger — the heat of boundaries colliding, the push-back when crossed |
-
-> **Everyday:** Standing up for yourself, feeling proud of your work → `ae` (defiance).
-> **Profound:** Righteous fury against oppression, the refusal to yield your selfhood → `ae` (defiance).
 
 ---
 
@@ -256,7 +228,7 @@ The emotional particle occupies a distinct slot from the manner adverb (`-s` der
 > `ki shuks a tavka.`
 > — "I quickly eat (with passion)."
 
-When both appear, the manner adverb precedes the emotional particle. See `grammar-syntax.md` §I-E for the full clause template.
+When both appear, the manner adverb precedes the emotional particle. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
 
 ---
 
@@ -276,7 +248,7 @@ When both appear, the manner adverb precedes the emotional particle. See `gramma
 
 ### B. Tonal Status
 
-All emotional particles are **toneless** — pronounced with flat mid-tone. This is consistent with all other closed-class particles in Kilor (`nar`, `tor`, `les`, `sy`, `te`, `mer`, `res`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `torra`, `wetor`, `mangus`). Emotional particles:
+All emotional particles are **toneless** — pronounced with flat mid-tone. This is consistent with all other closed-class particles in Kilor (see `0-foundation/grammar-syntax.md` §IV-C for the full inventory). Emotional particles:
 
 - Carry **no `j` or `v`** tone markers
 - Are **exempt** from the `-s` derivational constraint (they are closed-class, not open-class roots)
@@ -318,7 +290,7 @@ The same colour may appear as a noun prefix and as an emotional particle in the 
 
 ## VII. Emotional Colour on Nouns (via Prefix)
 
-In addition to the standalone particles, emotional colour can be applied to nouns through the existing colour prefix system. This is documented fully in `nouns-colour-prefix.md`; summarised here for completeness:
+> **This section is a summary.** The authoritative specification for emotional override on nouns lives in `1-nominals/nouns-colour-prefix.md` §VII (Emotional Override / 異體字).
 
 ### A. Indefinite Nouns
 
@@ -326,7 +298,7 @@ A speaker may **optionally** retain a colour prefix on an indefinite/generic nou
 
 > `i-ro` — "(longing-tinged) water" (indefinite, generic water)
 
-See `nouns-colour-prefix.md` §IV-B.
+See `1-nominals/nouns-colour-prefix.md` §VII-A.
 
 ### B. Definite Nouns — 異體字 Override
 
@@ -335,7 +307,7 @@ A speaker may override a definite noun's 共識 (community-consensus) default pr
 > 共識: `a-fojra` (Red) — fire as alive/energy
 > 異體字: `y-fojra` (Black) — fire tinted with awe
 
-See `nouns-colour-prefix.md` §VI (Speaker Override / 異體字).
+See `1-nominals/nouns-colour-prefix.md` §VII-B.
 
 ---
 

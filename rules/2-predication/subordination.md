@@ -2,6 +2,9 @@
 
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 **Created:** 2026-07-07
 
 ---
@@ -10,7 +13,7 @@
 
 Kilor uses a minimal set of closed-class particles to embed clauses within clauses. The relativizer `kus` serves double duty — introducing both relative clauses ("the fire that burns") and complement clauses ("I know that you came") — mirroring English "that". Adverbial clauses (when, because, if) use dedicated subordinator particles.
 
-All subordination particles are **toneless, closed-class, 1–2 syllable function words** exempt from the `-s` constraint (see `grammar-syntax.md` §IV-C).
+All subordination particles are **toneless, closed-class, 1–2 syllable function words** exempt from the `-s` constraint (see `0-foundation/grammar-syntax.md` §IV-C).
 
 ---
 
@@ -85,7 +88,7 @@ A complement clause is an embedded sentence that functions as the object of a ve
 
 ### B. ACC Case on Complement Clauses
 
-The ACC suffix `-ni`/`-na` may optionally attach to the last word of the complement clause to mark it as the object. This follows the same rule as multi-word vocabs (`cases.md` §III-C).
+The ACC suffix `-ni`/`-na` may optionally attach to the last word of the complement clause to mark it as the object. This follows the same rule as multi-word vocabs (`1-nominals/cases.md` §III-C).
 
 In SOV order with unambiguous position, ACC marking is optional (same optionality as regular objects). In formal writing or non-SOV order, it is mandatory.
 
@@ -93,7 +96,7 @@ In SOV order with unambiguous position, ACC marking is optional (same optionalit
 
 ### C. No Tense in Embedded Clauses
 
-Kilor has no grammatical tense. Time reference in embedded clauses is inferred from context, temporal words, or the main clause's temporal frame. See `grammar-syntax.md` §VI.
+Kilor has no grammatical tense. Time reference in embedded clauses is inferred from context, temporal words, or the main clause's temporal frame. See `3-subsystems/temporals.md`.
 
 ---
 
@@ -138,11 +141,11 @@ Adverbial clauses may precede or follow the main clause. Clause-initial position
 
 ### A. Question Word Fronting
 
-When a relative or complement clause contains a question word, that question word is fronted to the start of the **embedded clause**, not the matrix clause. See `interrogative.md` §III.
+When a relative or complement clause contains a question word, that question word is fronted to the start of the **embedded clause**, not the matrix clause. See `2-predication/interrogative.md` §III.
 
 ### B. Negation
 
-Negation particles (`nar`, `na`) scope over the clause they appear in. See `negation.md`.
+Negation particles (`nar`, `na`) scope over the clause they appear in. See `2-predication/negation.md`.
 
 > **Example:** `ki kus nar ti kau asdo` — "I know that you did NOT come" (negation scopes inside the complement clause)
 

@@ -2,6 +2,9 @@
 
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -30,7 +33,7 @@ Case suffixes use simple CV (Consonant-Vowel) forms to maintain rhythmic purity.
 
 Suffixes use the vowel class **opposite** to the last syllable's nucleus of the **root**. This creates a pleasant front↔back alternation at the root-suffix boundary.
 
-The colour prefix is an external proclitic — it sits outside the phonological boundary of the root and does **not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class (see `nouns-colour-prefix.md` §III, `grammar-syntax.md` §II).
+The colour prefix is an external proclitic — it sits outside the phonological boundary of the root and does **not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class (see `1-nominals/nouns-colour-prefix.md` §III, `0-foundation/grammar-syntax.md` §II).
 
 | Front Vowels (last syllable) | Back Suffix |
 |:---|:---|
@@ -69,7 +72,7 @@ The Accusative becomes **mandatory** in two contexts:
 
 ### C. Multi-Word Vocabs — Suffix Placement
 
-When the noun receiving a case suffix is a **multi-word vocab** (a semantic unit composed of multiple orthographic words; see `grammar-syntax.md` §IV-B), the case suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked.
+When the noun receiving a case suffix is a **multi-word vocab** (a semantic unit composed of multiple orthographic words; see `0-foundation/grammar-syntax.md` §IV-B), the case suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked.
 
 > **Example (Accusative, multi-word vocab):** `lujmi sojla` (moon) + Accusative → `lujmi sojlana` (moon as object)
 > **Example (Genitive, multi-word vocab):** `lujmi sojla` (moon) + Genitive → `lujmi sojlasa` (moon's / of the moon)
@@ -110,7 +113,7 @@ Free order (`lujmi fojrasi kis`) is **not valid** for nested possession — the 
 
 There are no dedicated possessive pronouns (no equivalent to English *my*, *your*, *his*). Possession by pronoun is expressed by attaching the Genitive suffix to the pronoun root.
 
-> **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (exempt from the Contrastive Suffix Rule). See `pronouns.md` §III for the full declension table.
+> **Pronoun exception:** Pronouns use **reduced case endings** — Accusative `-n` and Genitive `-s` — instead of the standard `-ni`/`-na` and `-si`/`-sa`. These endings are invariant (exempt from the Contrastive Suffix Rule). See `1-nominals/pronouns.md` §III for the full declension table.
 ---
 
 ## V. Oblique Particles & Prepositions
@@ -139,7 +142,7 @@ Conjunctions connect words, phrases, or clauses:
 
 ### C. Subordinators
 
-Subordinator particles introduce adverbial clauses (when/because/if). See `subordination.md` for full clause-embedding rules.
+Subordinator particles introduce adverbial clauses (when/because/if). See `2-predication/subordination.md` for full clause-embedding rules.
 
 | Role | Meaning | Particle |
 |:---|:---|:---|
@@ -150,7 +153,7 @@ Subordinator particles introduce adverbial clauses (when/because/if). See `subor
 
 ### D. Comparative Particles
 
-Comparative particles mark the standard of comparison and form comparative, equative, and superlative constructions. See `grammar-syntax.md` §IX for full usage rules and example sentences.
+Comparative particles mark the standard of comparison and form comparative, equative, and superlative constructions. See `3-subsystems/comparatives.md` for full usage rules and example sentences.
 
 | Role | Meaning | Particle |
 |:---|:---|:---|
@@ -178,7 +181,7 @@ The instrumental particle **`sy`** (§V-A) is extended to serve as the **passive
 > - When the agent is expressed after `sy`, it carries no case suffix — `sy` itself marks the agent's oblique role. The verb carries no morphological change; valency reduction is signalled entirely by `sy`.
 > - The patient is unmarked (NOM default), occupying the subject slot.
 > - The listener disambiguates `sy`'s function via what follows it: a tool noun in an active SOV frame → instrumental; a verb (or agent + verb) after the patient → passive.
-> - In the agent-deleted pattern, OSV word order (§I-B of `grammar-syntax.md`) would place the patient before the verb without `sy` — but this is **topicalisation** (agent is still present and marked NOM elsewhere), not agent deletion. Passive `sy` is the only mechanism for structurally omitting the agent.
+> - In the agent-deleted pattern, OSV word order (§I-B of `0-foundation/grammar-syntax.md`) would place the patient before the verb without `sy` — but this is **topicalisation** (agent is still present and marked NOM elsewhere), not agent deletion. Passive `sy` is the only mechanism for structurally omitting the agent.
 
 ---
 
@@ -189,7 +192,7 @@ When a case suffix is attached to a root, the tonal architecture of the root is 
 - The tone marker (`j` or `v`) **never migrates**
 - It remains ontologically locked to its original anchor syllable
 - The case suffix itself is pronounced with a **neutral, flat mid-tone**
-- The case suffix does **not** count toward the last-3 tone domain (see `tone-prosody.md`)
+- The case suffix does **not** count toward the last-3 tone domain (see `0-foundation/tone-prosody.md`)
 
 > **Example:** `aujli` (noun, 2 syllables, H(`j`)→L) + Genitive `-sa` → `aujlisa`
 > The `j` stays locked on `au`; `-sa` is flat mid-tone.

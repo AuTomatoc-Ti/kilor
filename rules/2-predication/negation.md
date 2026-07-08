@@ -2,6 +2,9 @@
 
 **Module:** Yes/No Answers & Clausal Negation
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -15,7 +18,7 @@ Kilor uses three dedicated particles for affirmation and negation:
 | `na` | no | Negative answer to a question |
 | `nar` | not | Negates the preceding word or phrase |
 
-All three are **1-syllable words** and follow the standard 1-syllable tone rule: **toneless** (flat mid-tone). See `tone-prosody.md` §II-C.
+All three are **1-syllable words** and follow the standard 1-syllable tone rule: **toneless** (flat mid-tone). See `0-foundation/tone-prosody.md` §II-C.
 
 ---
 
@@ -50,7 +53,7 @@ In any other position, `nar` negates only the **immediately preceding constituen
 
 ### C. Interaction with `iu`
 
-The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti fojra tavka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `interrogative.md` §IV-B.
+The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti fojra tavka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `2-predication/interrogative.md` §IV-B.
 
 ### D. Double Negation
 
@@ -78,7 +81,7 @@ The sentence-final question particle `iu` sits **outside the clause proper** and
 
 ## IV. Interaction with Interrogatives
 
-`iu` also functions as the **yes/no question marker** when placed at the end of a declarative sentence (see `interrogative.md` §IV). In this role, it converts a statement into a polar question.
+`iu` also functions as the **yes/no question marker** when placed at the end of a declarative sentence (see `2-predication/interrogative.md` §IV). In this role, it converts a statement into a polar question.
 
 > **Statement:** `ti fojra tavka.` (You eat fire.)
 > **Question:** `ti fojra tavka iu?` (Do you eat fire?)

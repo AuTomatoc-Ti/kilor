@@ -2,6 +2,9 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v3.0 — 1-Syllable Toneless Standard)
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
@@ -14,7 +17,7 @@ In Kilor, tone signals **word category**, not part of speech in isolation. Patte
 
 These letters are **exclusively reserved** for tone notation and never appear as consonants or vowels.
 
-`j` and `v` are **extra-segmental tone annotations** — they carry no inherent segmental sound and float outside the syllable structure. They are purely tonal markers that overlay onto the vowel nucleus of their anchor syllable. A syllable like `auj` is a V nucleus (`au`) with a floating H tone, not a V+C sequence. See `phonology.md` §IV-A for the syllable-level treatment.
+`j` and `v` are **extra-segmental tone annotations** — they carry no inherent segmental sound and float outside the syllable structure. They are purely tonal markers that overlay onto the vowel nucleus of their anchor syllable. A syllable like `auj` is a V nucleus (`au`) with a floating H tone, not a V+C sequence. See `0-foundation/phonology.md` §IV-A for the syllable-level treatment.
 
 Tone is **immutable** in speech — a word's category is fixed at creation, and its tonal contour cannot be shifted for poetic or oratorical effect. Shifting the `j`/`v` marker would change the word's category, breaking intelligibility.
 

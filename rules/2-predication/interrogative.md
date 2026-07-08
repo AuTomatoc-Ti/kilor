@@ -2,12 +2,15 @@
 
 **Module:** Wh-Questions, Genitive Questions & Yes/No Questions
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
 ## I. Core Root
 
-The root **`wei`** carries the core meaning of "question / unknown / what". It is a **1-syllable word** and follows the standard 1-syllable tone rule: **toneless** (flat mid-tone). See `tone-prosody.md` §II-C.
+The root **`wei`** carries the core meaning of "question / unknown / what". It is a **1-syllable word** and follows the standard 1-syllable tone rule: **toneless** (flat mid-tone). See `0-foundation/tone-prosody.md` §II-C.
 
 On its own, `wei` can be used as a general expression of uncertainty or questioning (like "huh?" or "what?").
 
@@ -31,7 +34,7 @@ Question words are formed by attaching a **colour prefix** to the root `wei`. Ea
 
 ### A. Tone
 
-The prefixed question words are **toneless** — pronounced with flat mid-tone. The colour prefix is an external proclitic (see `nouns-colour-prefix.md` §III). It attaches to the root `wei` orthographically but does not form a 2-syllable root — the word remains toneless and does not trigger the noun H(`j`)→L pattern. No `j` or `v` tone marker is used. This is a closed-class exception; the bare root `wei` was already toneless (1-syllable rule), and the prefixed forms remain toneless.
+The prefixed question words are **toneless** — pronounced with flat mid-tone. The colour prefix is an external proclitic (see `1-nominals/nouns-colour-prefix.md` §III). It attaches to the root `wei` orthographically but does not form a 2-syllable root — the word remains toneless and does not trigger the noun H(`j`)→L pattern. No `j` or `v` tone marker is used. This is a closed-class exception; the bare root `wei` was already toneless (1-syllable rule), and the prefixed forms remain toneless.
 
 **Exception — `aeweijsan` (Whose?):** The genitive question word `aeweijsan` is the **only tonally-marked question word**. It follows the standard 2-syllable noun pattern H(`j`)→L (see §II-D). All other question words remain toneless.
 
@@ -48,25 +51,25 @@ The prefixed question words are **toneless** — pronounced with flat mid-tone. 
 
 ### B. Colour Prefix Rules
 
-The colour prefix follows the standard rules from `nouns-colour-prefix.md`:
+The colour prefix follows the standard rules from `1-nominals/nouns-colour-prefix.md`:
 - It is an external proclitic, pronounced flat mid-tone
 - It does **not** trigger the Contrastive Suffix Rule on the root
 - No tone marker (`j`/`v`) is used on toneless question words — a closed-class exception to the 2-syllable noun H(`j`)→L pattern (see §II-A). `aeweijsan` (§II-D) is the sole exception.
-- Question words are **formally exempt** from the definiteness rule (`nouns-colour-prefix.md` §IV). Their colour prefixes encode question type, not definiteness.
+- Question words are **formally exempt** from the definiteness rule (`1-nominals/nouns-colour-prefix.md` §IV). Their colour prefixes encode question type, not definiteness.
 
-> **Hyphenation:** The hyphenated form (`a-wei`) and the merged form (`awei`) are both acceptable written variants. See `nouns-colour-prefix.md` for the standard colour prefix convention.
+> **Hyphenation:** The hyphenated form (`a-wei`) and the merged form (`awei`) are both acceptable written variants. See `1-nominals/nouns-colour-prefix.md` for the standard colour prefix convention.
 
 ### C. Case Marking Exemption
 
 Question words are **exempt from case marking** — even when fronted in non-SOV word order (see §III), they carry no Accusative or Genitive suffix regardless of their grammatical role. The fronting rule alone identifies them as the interrogative element, and the question context disambiguates their syntactic function.
 
-> **Note:** This exemption is a deliberate override of the general rule that requires case suffixes in non-SOV order (see `grammar-syntax.md` §I-B). Question words are always fronted, so they would *always* trigger the mandatory-case rule — the exemption exists precisely to avoid this conflict.
+> **Note:** This exemption is a deliberate override of the general rule that requires case suffixes in non-SOV order (see `0-foundation/grammar-syntax.md` §I-B). Question words are always fronted, so they would *always* trigger the mandatory-case rule — the exemption exists precisely to avoid this conflict.
 
 #### Animate-Ambiguity Rule
 
 When a fronted question word creates animate-subject vs. animate-object ambiguity — both arguments being living beings or sentient entities capable of acting — the **non-interrogative argument must carry its appropriate case suffix** for disambiguation. The question word itself remains exempt.
 
-This is an extension of the principle that case suffixes disambiguate when word order cannot (`grammar-syntax.md` §I-B): the question word stays bare, but the non-interrogative argument follows the standard mandatory-case rule for non-SOV orders.
+This is an extension of the principle that case suffixes disambiguate when word order cannot (`0-foundation/grammar-syntax.md` §I-B): the question word stays bare, but the non-interrogative argument follows the standard mandatory-case rule for non-SOV orders.
 
 > **Example (unambiguous — inanimate object):** `aewei fojra tavka?` (Who eats fire?) — `fojra` (fire) is inanimate; no case marking needed.
 > **Example (ambiguous — both animate):** `aewei si tavka?` (Who eats him/her?) — `si` is unmarked, therefore subject.
@@ -88,7 +91,7 @@ The genitive question **"whose?"** uses an irregular fused form: **`aeweijsan`**
 
 **Tone:** H(`j`)→L — follows the standard 2-syllable noun pattern. The `j` on `wei` marks high tone on the first syllable; `san` carries low tone. Unlike all other question words which are toneless, `aeweijsan` is the **only tonally-marked question word**. This is because the fused genitive element `-san` brings the word into the standard noun domain — it is no longer a bare interrogative particle but a nominalised question word with an embedded case relation.
 
-**Pronunciation:** Phonetically 3 syllables (`ae.wei.san`). For tonal purposes, only the 2-syllable root `weijsan` is counted — the colour prefix `ae-` is an external proclitic (flat mid-tone, zero tonal syllables; see `tone-prosody.md` §IV-C). The root `weijsan` independently carries the standard 2-syllable noun H(`j`)→L contour.
+**Pronunciation:** Phonetically 3 syllables (`ae.wei.san`). For tonal purposes, only the 2-syllable root `weijsan` is counted — the colour prefix `ae-` is an external proclitic (flat mid-tone, zero tonal syllables; see `0-foundation/tone-prosody.md` §IV-C). The root `weijsan` independently carries the standard 2-syllable noun H(`j`)→L contour.
 
 > **Example:** `aeweijsan fojra tavka?` (Whose fire burns?)
 
@@ -126,7 +129,7 @@ Yes/no (polar) questions are formed by appending the affirmative particle **`iu`
 
 #### Answering
 
-Yes/no questions are answered using the standalone particles from `negation.md`:
+Yes/no questions are answered using the standalone particles from `2-predication/negation.md`:
 
 > **Q:** `ti fojra tavka iu?`
 > **A:** `iu.` (Yes.) / `na.` (No.)

@@ -2,14 +2,17 @@
 
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
+**Last updated:** 2026-07-09
+**Version:** 1.0.0
+**Depends on:**
 
 ---
 
 ## I. Crucial Constraint: `j` and `v` Reserved
 
-The letters **`j`** and **`v`** are **strictly and exclusively reserved for Tone Notation** (see `tone-prosody.md`). They never serve as consonants or vowels in the segmental phonetic inventory. No root, suffix, or colour prefix may contain `j` or `v` as a segmental phoneme.
+The letters **`j`** and **`v`** are **strictly and exclusively reserved for Tone Notation** (see `0-foundation/tone-prosody.md`). They never serve as consonants or vowels in the segmental phonetic inventory. No root, suffix, or colour prefix may contain `j` or `v` as a segmental phoneme.
 
-When `j` or `v` appears in the orthography of a word (e.g., `lujmi`, `aujli`), it is a floating tone marker — an extra-segmental annotation overlaid on the vowel of its anchor syllable, not a consonant or vowel in the syllable structure. See `tone-prosody.md` §I and `phonology.md` §IV-A for the syllable-level treatment.
+When `j` or `v` appears in the orthography of a word (e.g., `lujmi`, `aujli`), it is a floating tone marker — an extra-segmental annotation overlaid on the vowel of its anchor syllable, not a consonant or vowel in the syllable structure. See `0-foundation/tone-prosody.md` §I and `0-foundation/phonology.md` §IV-A for the syllable-level treatment.
 
 ---
 
@@ -156,7 +159,7 @@ The **V** template (a standalone vowel or diphthong) is primarily permitted at:
 
 ### E. Extrasyllabic Appendix: `-s`
 
-The derivational modifier suffix `-s` (see `tone-prosody.md`) is a **toneless extrasyllabic appendix** — pronounced like English plural `-s` (`/s/` or `/z/`). It:
+The derivational modifier suffix `-s` (see `0-foundation/tone-prosody.md`) is a **toneless extrasyllabic appendix** — pronounced like English plural `-s` (`/s/` or `/z/`). It:
 
 - Does **not** add a syllable
 - Does **not** create a consonant cluster (it is an appendix, not part of the syllable nucleus/coda)
