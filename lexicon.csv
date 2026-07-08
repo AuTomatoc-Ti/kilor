@@ -2,7 +2,7 @@ bare_root,syl,meaning,category,section,noun,verb,adjective,adverb,consensus_pref
 fora,2,fire,nv,A,fojra,fovra,fojras,fovras,a-,false,
 lumi,2,light,na,A,lujmi,luvmi,lujmis,luvmis,o-,false,adj derived from noun + -s
 lira,2,water,n,A,lijra,livra,lijras,livras,i-,false,
-lima,2,air / wind,n,A,lijma,livma,lijmas,livmas,i-,false,
+lima,2,air,n,A,lijma,livma,lijmas,livmas,i-,false,
 kaera,2,earth / soil,n,A,kaejra,kaevra,kaejras,kaevras,ae-,false,
 kora,2,stone / rock,n,A,kojra,kovra,kojras,kovras,y-,false,
 tare,2,star,n,A,tajre,tavre,tajres,tavres,o-,false,

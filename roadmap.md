@@ -67,12 +67,12 @@ Each phase produces both **roots** and **compound words**. Compounds are not aut
 | Category | What's Covered |
 |---|---|
 | **Body parts** | head, foot, leg, arm, face, nose, tongue, skin, bone, heart, ear, mouth, eye, hand |
-| **Family & people** | mother, father, child, sibling, brother, sister, son, daughter, man, woman, baby, chief, friend |
+| **Family & people** | mother, father, child, sibling, brother, sister, son, daughter, man, woman, baby, chief, friend, enemy |
 | **Daily actions** | sit, sleep, run, swim, fly, fall, cut, hit, push, pull, carry, open, close, wash, wear, buy, sell, walk, work, play, sing, dance, write, read |
 | **Food & drink** | bread, meat, fruit, vegetable, salt, sugar, milk, egg, rice, soup, oil, wine, beer |
 | **Clothing & home** | shirt, shoe, hat, dress, cloth; door, wall, roof, window, room, bed, chair, table, cup, plate, pot, basket, box, bag, key, lock, fire, light |
 | **Basic qualities** | beautiful, ugly, strong, weak, soft, hard, wet, dry, heavy, light, full, empty, clean, dirty, sweet, bitter, sour, sharp, blunt, round, flat, thick, thin, deep, shallow; plus: true/false, same/different, ready/tired, hungry/thirsty, sick/healthy, alive/dead, free/busy, safe/dangerous, easy/difficult, possible/impossible, important, rich/poor, young |
-| **Nature & weather** | rain, snow, ice, cloud, thunder, storm, lake, sea, ocean, forest, field, sand, island, wave, water, stone, earth, sky, sun, moon, star, tree, flower |
+| **Nature & weather** | rain, snow, ice, cloud, thunder, wind, storm, river, lake, sea, ocean, forest, field, sand, island, wave, water, stone, earth, sky, sun, moon, star, tree, flower |
 | **Animals** | dog, cat, horse, cow, sheep, pig, snake, insect |
 | **Directions & position** | up, down, left, right, front, back, inside, outside, near, far, above, below, beside, between, north, south, east, west |
 | **Tools & transport** | boat, cart, rope, hammer, needle, knife, stick, wheel, bridge |

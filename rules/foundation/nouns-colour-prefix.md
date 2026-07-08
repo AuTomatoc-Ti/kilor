@@ -85,6 +85,15 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 > **Example:** `lujmi` = "light" (light in general)
 
 > **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
+> 
+> **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
+> 
+> > **Example:** `a-lujmi` (Red-passion light) — "light" as indefinite concept, but spoken with passionate emotional weight
+> > **Example:** `i-ro` (Blue-longing water) — "water" as an indefinite, generic substance, tinted with longing
+> > **Example:** `y-lojvi` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
+> 
+> This usage is optional and expressive; omitting the prefix remains the default for generic reference. The emotional register is recoverable from context and does not override the noun's grammatical indefiniteness.
+
 
 ### C. Proper Nouns — Cultural Convention
 
@@ -144,7 +153,8 @@ A speaker who uses a non-standard prefix does not cause confusion; the root morp
 > 異體字: `y-fojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
 > 異體字: `o-fojra` (White) — fire framed abstractly, as concept or spirit
 
-Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override.
+Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override. Emotional colouring is one legitimate motivation for a 異體字 override — a speaker may deliberately substitute a non-standard colour prefix to tint a definite noun with a specific emotional register, independent of its ontological properties (see `colour-emotion.md` for the full emotional register system).
+
 
 ### Tier 3: The `Null` Fallback (White Default)
 
