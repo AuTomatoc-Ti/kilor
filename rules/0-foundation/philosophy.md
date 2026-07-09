@@ -3,7 +3,7 @@
 **Module:** Cultural & Philosophical Foundations
 **Status:** Canonical
 **Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Version:** 1.0.1
 **Depends on:**
 
 ---
@@ -107,6 +107,7 @@ On the other hand, knowing that things may not go as we will, but still **holdin
 These dual-concepts are not merely decorative. They inform the design of Kilor at every level:
 
 - **The Chromatic Ontology System** (colour prefixes) is the direct linguistic embodiment — each prefix's semantic field resonates with its philosophical dual-concept
+- **The Emotional Register System** (standalone colour particles) derives historically from these dual-concepts but has since crystallized into 7 basic, universally recognizable emotions for accessibility (anger, joy, sadness, calm, fear, surprise, disgust). See `3-subsystems/colour-emotion.md` §I for the full historical evolution and §II for the modern mapping.
 - **The 4-category tonal system** reflects the rhythm of these tensions: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding)[^1]
 - **The tolerance for ambiguity** (fault-tolerant prefixes, identical contour abutment, optional case marking) echoes the cultural embrace of duality — things need not be forced into a single category
 

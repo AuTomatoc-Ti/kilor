@@ -3,130 +3,97 @@
 **Module:** Emotional Particles
 **Status:** Canonical
 **Last updated:** 2026-07-09
-**Version:** 1.0.0
-**Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system)
+**Version:** 2.1.0
+**Depends on:** `0-foundation/philosophy.md` (historical origin), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system, 異體字 override)
 
 ---
 
-## I. Philosophy — The Colour as Feeling
+## I. Historical Evolution — One Form, Two Roles
 
-Kilor's 7 colour prefixes do double duty. They classify nouns by ontological category (see `1-nominals/nouns-colour-prefix.md`), and they also function as **standalone emotional particles** — tiny words that tint a clause or verb with the speaker's subjective emotional register.
+The 7 colour morphemes (`a`, `e`, `i`, `o`, `u`, `y`, `ae`) serve two distinct functions in Kilor: **ontological classification** (noun prefixes) and **emotional register** (standalone particles). This is not a coincidence — it reflects a natural grammaticalization path.
 
-This is not a coincidence. Each colour's dual-concept in Kilor philosophy (see `0-foundation/philosophy.md`) already encodes a single experiential condition with two emotional faces. The emotional particle system makes these dualities explicit and **usable in speech** — speakers can colour a sentence, a verb, or (via the noun prefix) a noun with any of these registers.
+### Stage 1 — Pre-History (Content Words)
 
-This system is **optional**. A Kilor sentence without emotional particles is fully grammatical and neutral in register. The particles are an expressive layer, not a grammatical requirement.
+The colour terms were full content words with rich cultural associations. Red (`a`) evoked blood, life, and the heat of anger. Black (`y`) evoked the night sky, the vast unknown, and the fear it inspires. These associations included both *what things are* (ontological) and *how things feel* (emotional).
+
+### Stage 2 — Early Kilor (Classifier Grammaticalization)
+
+Colour terms eroded into noun classifiers. "Red-thing" (`a-`) became the classifier for living beings; "Black-thing" (`y-`) for hard, dense matter. The emotional connotations remained present as cultural resonance, even as the primary function shifted to ontological marking.
+
+### Stage 3 — Classical Kilor (Emotional Systematization)
+
+The latent emotional connotations of each colour were systematized into a parallel grammatical function. The same morphemes, used as standalone particles, came to express the speaker's emotional register toward a clause or verb. The dual-concept philosophy (`0-foundation/philosophy.md`) formalized these associations into a cultural framework.
+
+### Stage 4 — Modern Kilor (Basic Emotion Mapping)
+
+In contemporary Kilor, the emotional particles have settled into **7 basic, universally recognizable emotions** — the most accessible expression of each colour's emotional resonance. The philosophical dual-concepts remain as the historical and cultural foundation for *ontological classification*, but the emotional register system now foregrounds immediate, intuitive emotional experience. A speaker does not need to study philosophy to say "I'm angry" — they use `a`.
+
+This dual function (classifier + emotional register) parallels the diminutive in natural languages: Spanish `-ito` marks both small size (ontological) and affection (emotional). The same form, two related functions, disambiguated by syntactic position.
 
 ---
 
-## II. The 7 Emotional Particles — Dual-Pole System
+## II. The 7 Basic Emotions
 
-Each register names a **single core condition** of human experience, with two emotional faces — one warm, one cold. These are not opposites. They are the same condition viewed from two angles.
+Each particle expresses a single basic emotion with two arousal faces — high (+) and low (−). These are the same condition at different intensities, not opposites.
 
-> For the full philosophical exposition of each dual-concept, see `0-foundation/philosophy.md` §II.
-
-| Colour | Particle | Register | Core Condition | Warm Face (+) | Cold Face (−) |
+| Colour | Particle | Emotion | Core Experience | High-Arousal (+) | Low-Arousal (−) |
 |:---|:---|:---|:---|:---|:---|
-| **Red** | `a` | **Passion** | Attachment | Love · Determination | Pain · Grief |
-| **Yellow** | `e` | **Purpose** | Striving for meaning | Joy | Emptiness |
-| **Blue** | `i` | **Longing** | Proximity | Closeness | Distance |
-| **White** | `o` | **Yearning** | Living in the gap | Hope | Regret |
-| **Green** | `u` | **Faith** | Commitment without certainty | Trust | Uncertainty |
-| **Black** | `y` | **Awe** | Standing before the vast | Wonder · Amazement | Fear · Dread |
-| **Brown** | `ae` | **Defiance** | Self-assertion against world | Pride | Anger |
+| **Red** | `a` | **Anger** | Boundary violation | Rage, fury, outburst | Irritation, annoyance, simmering |
+| **Yellow** | `e` | **Joy** | Fulfilment, warmth | Ecstasy, excitement, elation | Contentment, mild pleasure |
+| **Blue** | `i` | **Sadness** | Loss, separation | Grief, despair, weeping | Melancholy, wistfulness, quiet ache |
+| **Green** | `u` | **Calm** | Stillness, safety | Serenity, bliss, deep peace | Quiet ease, gentle relaxation |
+| **Black** | `y` | **Fear** | Threat, the unknown | Terror, panic, paralysis | Worry, unease, wariness |
+| **White** | `o` | **Surprise** | Unexpected event | Shock, amazement, startle | Curiosity, mild wonder, intrigue |
+| **Brown** | `ae` | **Disgust** | Contamination, rejection | Revulsion, nausea, horror | Distaste, mild aversion, cringe |
+
+> **Historical note:** These basic emotions are the modern crystallization of the 7 dual-concepts in `0-foundation/philosophy.md`. The dual-concepts provide the *why* (the cultural-philosophical origin); the basic emotions provide the *what* (the intuitive, ready-to-use register).
 
 ---
 
-### Red — Passion (`a`) — Attachment
+## III. Coverage & Boundaries
 
-> Philosophy dual-concept: 犧牲 (Sacrifice) / 覺悟 (Awakening). See `0-foundation/philosophy.md` §II-Red.
+### A. Emotions Within the 7 — Direct Expression
 
-To care about something is to have skin in the game. Attachment flows in two directions. When it flows freely, you feel love, warmth, and determination. When what you're attached to is threatened or lost, the same attachment becomes pain and grief. The lover and the mourner are the same person — deeply attached.
+The 7 basic emotions cover the most frequent emotional expression in everyday speech. Any of these can be intensified (high-arousal pole) or softened (low-arousal pole) through context, lexical choice, and prosody.
 
-| Warm (+) | Cold (−) |
+### B. Emotions Outside the 7 — Expressible via Lexical Description
+
+These are emotional states that combine two basic emotions. The colour particle tints the sentence toward whichever pole the speaker chooses to emphasize; the full emotional meaning comes from **lexical roots**, not from the particle.
+
+| Blended Emotion | Primaries | Example Scenario |
+|---|---|---|
+| Love, affection | Joy (`e`) + Calm (`u`) | Holding a child, sitting with a partner |
+| Bittersweet nostalgia | Joy (`e`) + Sadness (`i`) | Remembering a lost friend fondly |
+| Righteous fury | Anger (`a`) + Joy (`e`) | The thrill of justified revenge |
+| Jealousy | Anger (`a`) + Sadness (`i`) | Watching someone you desire with another |
+| Awe (fear + wonder) | Fear (`y`) + Surprise (`o`) | Standing at the edge of a vast canyon |
+| Horror | Fear (`y`) + Disgust (`ae`) | Seeing something unnatural and monstrous |
+| Shame | Sadness (`i`) + Disgust (`ae`) | Self-directed revulsion after a mistake |
+| Contempt | Anger (`a`) + Disgust (`ae`) | Looking down on someone beneath you |
+| Remorse, guilt | Sadness (`i`) + Anger (`a`) | Anger at oneself mixed with sorrow |
+| Relief | Joy (`e`) + Fear (`y`) | The fear is over, replaced by joy |
+| Anticipation | Fear (`y`) + Joy (`e`) | Nervous excitement before a big event |
+| Melancholy | Sadness (`i`) + Calm (`u`) | Peaceful sadness, loss accepted |
+| Gratitude | Joy (`e`) + Calm (`u`) | Warm appreciation, joy anchored in peace |
+
+In all these cases, the speaker picks **one** emotional particle — the dominant emotional lens — and the blended state is conveyed through the lexical content of the sentence. The particle acts as an emoji: it tints, it does not define.
+
+### C. Emotions Outside the System Entirely
+
+These states are too cognitively complex, too socially mediated, or too drive-based to map to basic emotions. They are expressed through dedicated lexical roots and constructions:
+
+| Emotion | Why It's Outside |
 |---|---|
-| Love, warmth, determination — caring flowing freely | Pain, grief, suffering — caring encountering loss |
+| Pride | Requires self-evaluation against a standard + social recognition |
+| Embarrassment | Requires awareness of others' gaze — social, not visceral |
+| Envy (distinct from jealousy) | A cognitive desire-state (wanting what another has), not a basic emotion |
+| Boredom | Understimulation — an absence of emotion, not a blend |
+| Indignation | Moral anger — requires a concept of justice beyond basic anger (`a`) |
+| Schadenfreude | Joy at another's suffering — requires theory of mind + social comparison |
+| Profound grief | More than sadness — involves narrative self-disruption. Sadness (`i`) is the emotional colour, but grief is a process |
+| Curiosity | A drive state, similar to hunger or thirst |
 
-### Yellow — Purpose (`e`) — Striving for Meaning
-
-> Philosophy dual-concept: 課題 (Quest) / 意義 (Meaning). See `0-foundation/philosophy.md` §II-Yellow.
-
-Life has no inherent meaning, but humans need meaning to survive. Joy fills the emptiness and makes it bearable; the passing of joy returns you to emptiness, and the emptiness defines what joy is worth.
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Joy — the spark of meaning, the moment of fulfilment | Emptiness — the void that joy fills and leaves behind |
-
-### Blue — Longing (`i`) — Proximity
-
-> Philosophy dual-concept: 孤離 (Solitude) / 並存 (Coexistence). See `0-foundation/philosophy.md` §II-Blue.
-
-Every being is unique — no other can fully share our internal experience. Yet all unique beings coexist in the same world. The core experience is **proximity**: you are always somewhere on the scale between closeness and distance. Longing is the awareness of that proximity.
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Closeness — the warmth of nearness, the comfort of connection | Distance — the ache of the gap, the chill of separation |
-
-### White — Yearning (`o`) — Living in the Gap
-
-> Philosophy dual-concept: 遺憾 (Regret) / 可能性 (Possibility). See `0-foundation/philosophy.md` §II-White.
-
-Time yields only one outcome at a time. The gap between what is and what could have been creates regret; the same gap, pointed forward, creates hope. Yearning is the experience of living in that gap — imagining a different reality than this one, whether backward (regret) or forward (hope).
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Hope — reaching forward across the gap toward what could be | Regret — aching backward across the gap toward what wasn't |
-
-### Green — Faith (`u`) — Commitment without Certainty
-
-> Philosophy dual-concept: 救贖 (Salvation) / 信念 (Faith). See `0-foundation/philosophy.md` §II-Green.
-
-To have faith is to commit to a path without knowing the destination. Trust is the act of choosing despite the fog. Uncertainty is the fog itself. "I don't know the way, but I walk anyway."
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Trust — the stillness of having chosen, the peace of walking your path | Uncertainty — the vertigo of not knowing, the groundlessness faith rests on |
-
-### Black — Awe (`y`) — Standing before the Vast
-
-> Philosophy dual-concept: 敬畏 (Reverence) / 探求 (Exploration). See `0-foundation/philosophy.md` §II-Black.
-
-To stand before something vast — a mountain, an ocean, the night sky, death — is to feel a single experience with two faces. Wonder and amazement pull you forward; fear and dread make you shrink back. Awe is the shiver of the sublime.
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Wonder, amazement, surprise — the pull to explore, the thrill of mystery | Fear, dread — the instinct to retreat, the awareness of forces beyond control |
-
-### Brown — Defiance (`ae`) — Self-Assertion against the World
-
-> Philosophy dual-concept: 自我 (Ego) / 他者 (Other). See `0-foundation/philosophy.md` §II-Brown.
-
-To have a self is to have boundaries — between what is you and what is other. Pride rises when your boundary holds; anger rises when your boundary is crossed. "I draw a line and I stand by it."
-
-| Warm (+) | Cold (−) |
-|---|---|
-| Pride — the dignity of self, the worth of standing as an individual | Anger — the heat of boundaries colliding, the push-back when crossed |
-
----
-
-### Register Boundaries
-
-These are overlapping regions, not rigid boxes. A speaker feeling joyful might choose Red (passion: love-warmth) or Yellow (purpose: joy) depending on what flavour dominates. A speaker facing the sea might feel Black (awe) or Blue (longing: distance). The particle reflects the speaker's dominant emotional lens in that moment.
-
-Emotions not directly represented — disgust, guilt, hate — are conveyed lexically (through word choice) rather than through the colour particle system.
-
----
-
-## III. Beginner-Friendly Summary
-
-| Register | One-Sentence Intuition |
-|---|---|
-| **Passion** (Red) | "I care deeply" — caring feels warm when it flows, hurts when it's wounded |
-| **Purpose** (Yellow) | "I seek meaning" — joy fills the emptiness; emptiness makes joy precious |
-| **Longing** (Blue) | "I'm near, or I'm far" — one scale, two feelings |
-| **Yearning** (White) | "I imagine something different" — looking forward (hope) or backward (regret) |
-| **Faith** (Green) | "I walk, though I don't know the way" — trust is the choice, uncertainty is the fog |
-| **Awe** (Black) | "I'm small before something vast" — wonder and fear are the same shiver |
-| **Defiance** (Brown) | "I draw a line" — pride in holding it, anger when it's crossed |
+The particle system is not a failure for missing these. Natural languages handle complex emotions lexically. Kilor does the same. The colour particles provide assistive emotional register — they do not replace a full emotional vocabulary.
 
 ---
 
@@ -140,27 +107,27 @@ The emotional particle **stands alone at the clause head**, before any temporal 
 [Emotional Particle]  [Temporal]  [Subject] ... [Verb]
 ```
 
-> **Example (Red / Passion):**
+> **Example (Anger / Red):**
 > `a, piroi ki kau.`
-> — "(With passion,) I came yesterday."
+> — "(With anger,) I came yesterday."
 
-> **Example (Blue / Longing):**
+> **Example (Sadness / Blue):**
 > `i, paroi si kau nar.`
-> — "(With longing,) she will not come tomorrow."
+> — "(With sadness,) she will not come tomorrow."
 
-> **Example (Black / Awe):**
+> **Example (Fear / Black):**
 > `y, a-maeha a-fojra-si aulvtavka.`
-> — "(With awe,) the person entered the fire."
+> — "(With fear,) the person entered the fire."
 
-> **Example (Brown / Defiance):**
+> **Example (Disgust / Brown):**
 > `ae, ki bau-ni sy a-fojra tavka.`
-> — "(With defiance,) the bread was eaten by the fire."
+> — "(With disgust,) the bread was eaten by the fire."
 
 When the sentence opens with a bare verb (no subject or temporal word), the clause-initial and pre-verbal positions overlap — the emotional reading converges:
 
-> `a, tavka.` — "(With passion,) eat." / "Eat (with passion)."
->
-> In practice these readings are indistinguishable; the emotional weight lands on the verb either way.
+> `a, tavka.` — "(With anger,) eat." / "Eat (with anger)."
+
+In practice these readings are indistinguishable; the emotional weight lands on the verb either way.
 
 ### B. Verb-Level Emotional Register
 
@@ -170,33 +137,33 @@ The emotional particle is placed **immediately before the verb** (after the obje
 Subject  [Object]  [Obliques]  [Emotional Particle]  [Verb]
 ```
 
-> **Example (Red / Passion — verb-level):**
+> **Example (Anger / Red — verb-level):**
 > `ki bau-ni a tavka.`
-> — "I eat the bread (with passion)."
+> — "I eat the bread (with anger)."
 
-> **Example (Yellow / Purpose — verb-level):**
+> **Example (Joy / Yellow — verb-level):**
 > `ki po a-maeha e kau.`
-> — "I go to the person (with purpose)."
+> — "I go to the person (with joy)."
 
-> **Example (Blue / Longing — verb-level):**
+> **Example (Sadness / Blue — verb-level):**
 > `si a-lujmi i sojpa.`
-> — "She watches the light (with longing)."
+> — "She watches the light (with sadness)."
 
-> **Example (White / Yearning — verb-level):**
+> **Example (Surprise / White — verb-level):**
 > `ki o shuki.`
-> — "I wait (with yearning)."
+> — "I wait (with surprise)."
 
-> **Example (Green / Faith — verb-level):**
+> **Example (Calm / Green — verb-level):**
 > `sil u sojlan.`
-> — "They sleep (with faith)."
+> — "They sleep (with calm)."
 
-> **Example (Black / Awe — verb-level):**
+> **Example (Fear / Black — verb-level):**
 > `ni y aulvtavka.`
-> — "It entered (and I felt awe)."
+> — "It entered (and I felt fear)."
 
-> **Example (Brown / Defiance — verb-level):**
+> **Example (Disgust / Brown — verb-level):**
 > `ki ae mekan.`
-> — "I speak (with defiance)."
+> — "I speak (with disgust)."
 
 ### C. Scope Interaction
 
@@ -207,32 +174,87 @@ When both sentence-level and verb-level particles appear in the same clause:
 
 > **Example:**
 > `i, ki bau-ni a tavka.`
-> — "(Longing overall,) I eat the bread (with passion)."
+> — "(Sadness overall,) I eat the bread (with anger)."
 >
-> The clause carries Blue (longing), but the act of eating itself is Red (passion) — complex emotional layering: distance-in-context, attachment-in-action.
+> The clause carries Blue (sadness), but the act of eating itself is Red (anger) — emotional layering: sorrow in context, anger in action.
 
 Multiple verb-level particles may appear in a single clause if there are multiple verbs (e.g., in subordinated or coordinated structures):
 
 > `i, ki bau-ni a tajka, u soujlan.`
-> — "With longing, I eat with passion, (then) sleep with faith."
+> — "With sadness, I eat with anger, (then) sleep with calm."
 
 Using the **same particle** at both levels is redundant but permissible — it intensifies the register:
 
 > `a, ki a tavka.`
-> — "(With passion,) I eat (with passion)."
+> — "(With anger,) I eat (with anger)."
 
-### D. Word Order Note
+### D. One Particle Per Position — No Compounding
+
+A speaker may feel multiple emotions simultaneously, but the emotional particle slot accepts **exactly one particle**. The speaker chooses the most salient or dominant emotional lens for that clause or verb.
+
+If the speaker wishes to convey a blended emotional state (e.g., bittersweet = joy + sadness), the emotional register emphasizes one pole, and the lexical content of the sentence provides the full picture:
+
+> `e, ki a-sojla-ni sojpa.` — "(With joy,) I look at the room" — warmth of the memories foregrounded
+> `i, ki a-sojla-ni sojpa.` — "(With sadness,) I look at the room" — loss and ache foregrounded
+
+The choice itself is meaningful. The particle does not need to name every emotion present — it selects the dominant lens.
+
+### E. Word Order Note
 
 The emotional particle occupies a distinct slot from the manner adverb (`-s` derived). A manner adverb describes **how** the action is performed (quickly, well, quietly); an emotional particle describes the **emotional register** of the action. They are compatible and may co-occur:
 
 > `ki shuks a tavka.`
-> — "I quickly eat (with passion)."
+> — "I quickly eat (with anger)."
 
 When both appear, the manner adverb precedes the emotional particle. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
 
+### F. Clause-Initial Fusion — Casual Shorthand
+
+When a clause-initial emotional particle immediately precedes the subject noun, the particle and the noun's colour prefix may **fuse** in casual speech and writing. The emotional particle's colour takes orthographic priority; the noun's original ontological prefix is elided. The comma is dropped.
+
+| Full Form | Fused Form | Meaning |
+|---|---|---|
+| `a, a-maeha tavka.` | `a-maeha tavka.` | "(With anger,) the person eats." |
+| `e, a-maeha tavka.` | `e-maeha tavka.` | "(With joy,) the person eats." |
+| `i, y-gijlan sojpa.` | `i-gijlan sojpa.` | "(With sadness,) s/he looks at the mountain." |
+| `y, a-fojra aulvtavka.` | `y-fojra aulvtavka.` | "(With fear,) the fire entered." |
+
+**Constraints:**
+
+- Fusion applies **only clause-initially** — the emotional particle and the subject noun must be adjacent. If a temporal word or other element intervenes (`a, piroi a-maeha tavka.`), fusion is blocked.
+- The fused prefix carries the **emotional register colour**. The noun's 共識 ontological prefix (e.g., `a-` on `maeha` for Red/Alive) is understood from context.
+- The noun remains **definite** (it has a colour prefix). Only the ontological classification is suppressed.
+- Fusion is **optional** — the full form is always grammatical and preferred in formal registers.
+
+**Acknowledged Ambiguity:**
+
+Fusion creates a structural ambiguity between emotional register and ontological classification. The fused form `a-maeha` could be parsed as:
+
+| Parsing | Meaning |
+|---|---|
+| Fused: `a` (emotion: anger) + `maeha` | "(With anger,) the person" — ontological prefix `a-` elided |
+| Regular: `a-` (ontological: Red/Alive) + `maeha` | "the person" — no emotional register |
+
+Context resolves most cases. When a speaker hears `a-maeha tavka`, they infer emotional register if the discourse context supports it, and default to the ontological reading otherwise. The ambiguity is a known limitation of the shorthand — comparable to English "I saw her duck" (animal vs. action). Native speakers navigate it instinctively; learners are advised that the full form avoids ambiguity entirely.
+
+When the emotional particle's colour happens to match the noun's 共識 prefix (e.g., `ae, ae-tuka` → `ae-tuka`), the fused form is indistinguishable from the regular ontological prefix. In these cases, only the full form (`ae, ae-tuka`) unambiguously signals emotional register.
+
 ---
 
-## V. Phonology
+
+## V. Role in Communication — Emoji-Like Emphasis
+
+The emotional particles are an **assistive, optional layer** — comparable to emoji in digital communication. They tint a clause or verb with the speaker's felt emotional register, but they do not carry the primary semantic weight of emotional expression.
+
+- A sentence **without** an emotional particle is fully grammatical and emotionally neutral.
+- Emotional meaning is primarily carried by **lexical roots** (e.g., a verb for "to be happy," a noun for "grief"). The particle adds an expressive tint.
+- Multiple omitted particles in a row do not create ambiguity — the lexical content stands on its own.
+
+This design keeps Kilor accessible to beginners. A learner can speak grammatically without touching the emotional particle system. As fluency grows, the particles become a tool for expressive nuance.
+
+---
+
+## VI. Phonology
 
 ### A. Particle Forms
 
@@ -261,9 +283,9 @@ In connected speech, emotional particles are pronounced attached to the followin
 
 ---
 
-## VI. Relationship to Noun Colour Prefixes
+## VII. Relationship to Noun Colour Prefixes
 
-The emotional particles and the noun colour prefixes share the same 7 forms but serve different grammatical roles:
+The emotional particles and the noun colour prefixes share the same 7 forms but serve different grammatical roles, reflecting their shared historical origin (see §I):
 
 | | Noun Colour Prefix | Emotional Particle |
 |:---|:---|:---|
@@ -278,17 +300,17 @@ The emotional particles and the noun colour prefixes share the same 7 forms but 
 A single sentence can use **both** systems simultaneously without conflict, because they operate on different grammatical targets:
 
 > `a, a-maeha a tavka.`
-> — "(With passion,) the-person eats (with passion)."
+> — "(With anger,) the-person eats (with anger)."
 >
-> - Clause-initial `a` (particle): emotional register = Passion
+> - Clause-initial `a` (particle): emotional register = Anger
 > - Noun prefix `a-` on `maeha`: ontological class = Red/Alive + definiteness
-> - Pre-verbal `a` (particle): verb emotional register = Passion
+> - Pre-verbal `a` (particle): verb emotional register = Anger
 
-The same colour may appear as a noun prefix and as an emotional particle in the same clause, with independent functions.
+The same colour may appear as a noun prefix and as an emotional particle in the same clause, with independent functions. Red on a noun means "living being" (ontological); Red as a particle means "anger" (emotional). Context and syntactic position disambiguate.
 
 ---
 
-## VII. Emotional Colour on Nouns (via Prefix)
+## VIII. Emotional Colour on Nouns (via Prefix)
 
 > **This section is a summary.** The authoritative specification for emotional override on nouns lives in `1-nominals/nouns-colour-prefix.md` §VI (Speaker Override / 異體字).
 
@@ -296,7 +318,7 @@ The same colour may appear as a noun prefix and as an emotional particle in the 
 
 A speaker may **optionally** retain a colour prefix on an indefinite/generic noun for emotional effect. The prefix carries emotional register rather than ontological commitment:
 
-> `i-ro` — "(longing-tinged) water" (indefinite, generic water)
+> `i-ro` — "(sadness-tinged) water" (indefinite, generic water)
 
 See `1-nominals/nouns-colour-prefix.md` §VI.
 
@@ -305,49 +327,115 @@ See `1-nominals/nouns-colour-prefix.md` §VI.
 A speaker may override a definite noun's 共識 (community-consensus) default prefix with a different colour for emotional effect:
 
 > 共識: `a-fojra` (Red) — fire as alive/energy
-> 異體字: `y-fojra` (Black) — fire tinted with awe
+> 異體字: `y-fojra` (Black) — fire tinted with fear
+> 異體字: `ae-fojra` (Brown) — fire tinted with disgust
 
 See `1-nominals/nouns-colour-prefix.md` §VI.
 
 ---
 
-## VIII. Examples — Full Register Palette
+## IX. Examples — Full Register Palette
 
-### Red — Passion (`a`)
+### Red — Anger (`a`)
 
-> `a, ki kau.` — "(With passion,) I come."
-> `ki a tavka.` — "I eat (with passion)."
-> `a, a-maeha a fei.` — "(With passion,) the person flies (with passion)."
+> `a, ki kau.` — "(With anger,) I come."
+> `ki a tavka.` — "I eat (with anger)."
+> `a, a-maeha a fei.` — "(With anger,) the person flies (with anger)."
 
-### Yellow — Purpose (`e`)
+### Yellow — Joy (`e`)
 
-> `e, paroi ki a-maeha-ni sojpa.` — "(With purpose,) tomorrow I will see the person."
-> `ki e shuki.` — "I wait (with purpose — the joy and emptiness of waiting)."
+> `e, paroi ki a-maeha-ni sojpa.` — "(With joy,) tomorrow I will see the person."
+> `ki e shuki.` — "I wait (with joy)."
 
-### Blue — Longing (`i`)
+### Blue — Sadness (`i`)
 
-> `i, piroi si kau nar.` — "(With longing,) yesterday she did not come."
-> `ki i sojpa lujmi sojla.` — "I watch the star-light (with longing — closeness and distance)."
+> `i, piroi si kau nar.` — "(With sadness,) yesterday she did not come."
+> `ki i sojpa lujmi sojla.` — "I watch the star-light (with sadness)."
 
-### White — Yearning (`o`)
+### White — Surprise (`o`)
 
-> `o, ki shuki.` — "(With yearning,) I wait."
-> `si o mekan.` — "She speaks (with yearning — hope and regret)."
+> `o, ki shuki.` — "(With surprise,) I wait."
+> `si o mekan.` — "She speaks (with surprise)."
 
-### Green — Faith (`u`)
+### Green — Calm (`u`)
 
-> `u, sil soujlan.` — "(With faith,) they sleep."
-> `ki u ro-ni fen.` — "I drink water (with faith — trust and uncertainty)."
+> `u, sil soujlan.` — "(With calm,) they sleep."
+> `ki u ro-ni fen.` — "I drink water (with calm)."
 
-### Black — Awe (`y`)
+### Black — Fear (`y`)
 
-> `y, a-maeha aulvtavka.` — "(With awe,) the person entered."
-> `ki y sojpa a-gijlan.` — "I look at the mountain (with awe — wonder and fear)."
+> `y, a-maeha aulvtavka.` — "(With fear,) the person entered."
+> `ki y sojpa a-gijlan.` — "I look at the mountain (with fear)."
 
-### Brown — Defiance (`ae`)
+### Brown — Disgust (`ae`)
 
-> `ae, ki bau-ni sy a-fojra tavka.` — "(With defiance,) the bread was eaten by the fire."
-> `ki ae mekan.` — "I speak (with defiance — pride and anger)."
+> `ae, ki bau-ni sy a-fojra tavka.` — "(With disgust,) the bread was eaten by the fire."
+> `ki ae mekan.` — "I speak (with disgust)."
+
+
+---
+
+## X. Rhetorical & Stylistic Uses — rhetoric
+
+The emotional particle may intentionally **contradict** the lexical content of the sentence for stylistic effect. This is not an error — it is a recognized rhetorical device in Kilor, comparable to 反諷 (irony/sarcasm) in literary Chinese.
+
+### A. 反諷 — Irony & Sarcasm
+
+The emotional particle expresses the speaker's **true feeling**, which contradicts the surface lexical content:
+
+> `a, ki losto.`
+> — "(With anger,) I am happy."
+>
+> The anger-particle exposes the real emotion beneath the words. The listener understands: the speaker is *not* happy.
+
+> `e, ki dorito.`
+> — "(With joy,) I am sad."
+>
+> Bitter cheerfulness — the speaker foregrounds a lightness that makes the sadness sharper.
+
+### B. 輕描淡寫 — Understatement
+
+A calm or neutral particle paired with dramatic content minimizes the event for effect:
+
+> `u, a-fojra aulvtavka.`
+> — "(With calm,) the fire entered."
+>
+> The speaker describes a dangerous event as if it were unremarkable — deadpan, stoic, or darkly humorous.
+
+### C. 不協調 — Emotional Dissonance
+
+The clash between particle and content creates a third meaning — the tension *is* the message:
+
+> `i, e-kilorsa mekan.`
+> — "(With sadness,) the instrument speaks."
+>
+> The music is beautiful but the speaker feels loss. The sadness-particle transforms the sentence from description into elegy.
+
+> `e, y-gijlan aulvsojpa.`
+> — "(With joy,) the mountain looms."
+>
+> Joy at the sight of something vast and threatening — the mix of emotions is the point.
+
+### D. 假裝 — Feigned Emotion
+
+The particle signals an emotion the speaker is **performing** rather than feeling:
+
+> `o, ki sojpa.`
+> — "(With surprise,) I see."
+>
+> Sarcastic — the speaker is not surprised at all. Comparable to English "Oh, wow, I see" delivered flatly.
+
+> `ae, ki losto.`
+> — "(With disgust,) I am happy."
+>
+> The speaker is performing happiness while signalling genuine distaste — a layered emotional stance.
+
+### Usage Notes
+
+- Any particle can be used with any lexical content. There is no grammatical restriction.
+- The device is more effective when the **clash is sharp** — extreme-arousal particle + emotionally neutral content, or vice versa.
+- This is a **pragmatic convention**, not a grammatical rule. Native speakers develop an intuition for when the clash reads as irony vs. confusion.
+- Beginners should master straightforward emotional register before attempting advanced usage. A mismatched particle used unintentionally will simply be read as an error.
 
 ---
 

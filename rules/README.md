@@ -3,7 +3,7 @@
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
 **Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Version:** 1.0.1
 
 ---
 
@@ -97,7 +97,7 @@ When you change a file, check these dependents:
 | `2-predication/interrogative.md` | `1-nominals/nouns-colour-prefix.md` | Question words use colour prefixes; definiteness rule exemption |
 | `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md` | `kus` relativizer interacts with case suffixes, question fronting, and negation scoping |
 | `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template and closed-class list |
-| `3-subsystems/colour-emotion.md` | `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
+| `3-subsystems/colour-emotion.md` | `0-foundation/philosophy.md` (historical origin), `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
 | `3-subsystems/temporals.md` | `0-foundation/grammar-syntax.md` §I-E | Temporal words occupy the clause-initial slot |
 | `3-subsystems/comparatives.md` | `0-foundation/grammar-syntax.md` §IV-C, `2-predication/copula-existential.md` | Comparative particles are closed-class; equative uses copula |
 | `4-meta/lexicon-roadmap.md` | All files in `rules/` | Lexicon development pipeline — any schema change in rule files may affect word-building workflow |
