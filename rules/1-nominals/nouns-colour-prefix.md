@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional register system)
+**Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone)
 
 ---
 
@@ -55,7 +55,7 @@ The Colour Prefix is an **External Proclitic**. It sits outside the phonological
 - **Does not** count toward the syllable count for the last-3 tone domain (see `0-foundation/tone-prosody.md`) — only the root's syllables are counted
 - Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-ajkora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
 
-> **Example (multi-word vocab):** `a-lujmi sojla` (Red moon)
+> **Example (multi-word vocab):** `a-lujmi sojla` (Red star-light)
 > The colour prefix `a-` is flat Mid and ignored for tone. The multi-word vocab `lujmi sojla` (2-syl noun + 2-syl noun) carries two stitched H→L contours: H→L → H→L.
 >
 > **Example (Contrastive Suffix Rule):** `a-fojra-si` (Red fire's)
@@ -93,7 +93,7 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 > 
 > > **Example:** `a-lujmi` (Red-passion light) — "light" as indefinite concept, but spoken with passionate emotional weight
 > > **Example:** `i-ro` (Blue-longing water) — "water" as an indefinite, generic substance, tinted with longing
-> > **Example:** `y-lojvi` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
+> > **Example:** `y-gijlan` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
 > 
 > This usage is optional and expressive; omitting the prefix remains the default for generic reference. The emotional register is recoverable from context and does not override the noun's grammatical indefiniteness.
 

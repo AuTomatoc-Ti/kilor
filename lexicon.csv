@@ -5,13 +5,13 @@ lira,2,water,n,A,lijra,livra,lijras,livras,i-,false,
 lima,2,air,n,A,lijma,livma,lijmas,livmas,i-,false,
 kaera,2,earth / soil,n,A,kaejra,kaevra,kaejras,kaevras,ae-,false,
 kora,2,stone / rock,n,A,kojra,kovra,kojras,kovras,y-,false,
-tare,2,star,n,A,tajre,tavre,tajres,tavres,o-,false,
+sola,2,star,n,A,sojla,sovla,sojlas,sovlas,o-,false,
 rora,2,sun,n,A,rojra,rovra,rojras,rovras,a-,false,
 yre,2,moon,n,A,yjre,yvre,yjres,yvres,o-,false,
 tiri,2,sky,n,A,tijri,tivri,tijris,tivris,i-,false,
 symak,2,smoke / mist,n,A,syjmak,syvmak,syjmaks,syvmaks,i-,false,
-maeha,2,person / human,n,B,majeh,maveh,majehs,mavehs,a-,false,
-maeda,2,body,n,B,majed,maved,majeds,maveds,a-,false,
+maeha,2,person / human,n,B,maejha,maevha,maejhas,maevhas,a-,false,
+maeda,2,body,n,B,maejda,maevda,maejdas,maevdas,a-,false,
 hinar,2,hand,n,B,hijnar,hivnar,hijnars,hivnars,a-,false,
 winar,2,eye,nv,B,wijnar,wivnar,wijnars,wivnars,a-,false,
 tilda,2,ear,nv,B,tijlda,tivlda,tijldas,tivldas,a-,false,
@@ -62,7 +62,7 @@ losga,2,anger / rage,n,F,lojsga,lovsga,lojsgas,lovsgas,o-,false,
 losto,2,joy / happiness,n,F,lojsto,lovsto,lojstos,lovstos,o-,false,
 hax,1,pain / suffering,n,F,hax,hax,haxs,haxs,o-,false,
 roi,1,day,n,G,roi,roi,rois,rois,o-,false,
-roch,1,night,n,G,roch,roch,rochs,rochs,o-,false,
+rok,1,night,n,G,rok,rok,roks,roks,o-,false,
 ima,2,now,n,G,ijma,ivma,ijmas,ivmas,o-,false,combining form for imaroi (today)
 tilpi,2,before,n,G,tijlpi,tivlpi,tijlpis,tivlpis,o-,false,combining form pi in day compounds
 tilpa,2,after,n,G,tijlpa,tivlpa,tijlpas,tivlpas,o-,false,combining form pa in day compounds
@@ -85,7 +85,7 @@ song,1,friend,n,H,song,song,songs,songs,o-,false,
 loger,2,power / strength,n,H,lojger,lovger,lojgers,lovgers,o-,false,
 eli,2,life,n,H,ejli,evli,ejlis,evlis,a-,false,
 mil,1,death,n,H,mil,mil,mils,mils,o-,false,
-maekoi,2,spirit / soul,n,I,majekoi,mavekoi,maejkois,maevkois,o-,false,
+maekoi,2,spirit / soul,n,I,maejkoi,maevkoi,maejkois,maevkois,o-,false,
 emlu,2,truth,n,I,ejmlu,evmlu,ejmlus,evmlus,o-,false,
 noi,1,void / emptiness,n,I,noi,noi,nois,nois,o-,false,
 sinkoi,2,alone / solitude,n,I,sijnkoi,sivnkoi,sijnkois,sivnkois,o-,false,
@@ -96,7 +96,7 @@ ero,2,existential & possession - there is/have,v,-,ero,evro,eros,evros,,false,ve
 nar,1,clausal/constituent negation,v,-,nar,nar,nar,nar,,true,closed-class
 iu,1,yes/no question + affirmative answer,v,-,iu,iu,iu,iu,,true,closed-class
 na,1,negative answer (no),v,-,na,na,na,na,,true,closed-class
-te,1,dative particle (to/for),v,-,te,te,te,te,,true,closed-class
+te,1,dative particle (to),v,-,te,te,te,te,,true,closed-class
 we,1,intensify,v,D,we,we,wes,wes,,false,derived adverb wes = "very"
 mere,2,be slight (intensity),v,D,mejre,mevre,mejres,mevres,,false,derived mevres = "a bit" (intensity); distinct from pere (amount)
 pere,2,small amount,n,E,pejre,pevre,pejres,pevres,o-,false,derived pejres = "little (amount)"; distinct from mere (intensity)
@@ -105,4 +105,4 @@ les,,equative particle (as),,,,,,true,closed-class; toneless; -s exempt
 torra,,superlative particle (most),,,,,,true,closed-class; toneless; -s exempt; fused from tor + rap
 wetor,,intensified comparative (much more than),,,,,,true,closed-class; toneless; -s exempt; fused from wes + tor
 mangus,,restrictive (among/among all),,,,,,true,closed-class; toneless; -s exempt
-rap,2,top / peak,n,G,rajp,ravp,rajps,ravps,o-,false,
+rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,

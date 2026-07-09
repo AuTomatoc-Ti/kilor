@@ -4,8 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
-**Created:** 2026-07-07
+**Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`
 
 ---
 
@@ -39,8 +38,8 @@ Relative clauses follow the head noun. The relativizer `kus` marks the start of 
 
 | Kilor | Gloss | Meaning |
 |:---|:---|:---|
-| `fojra kus dinu fovra` | fire REL tree burn | "the fire that burns the tree" |
-| `dinu kus-ni fojra fovra` | tree REL-ACC fire burn | "the tree that fire burns" |
+| `fojra kus dijnu fovra` | fire REL tree burn | "the fire that burns the tree" |
+| `dijnu kus-ni fojra fovra` | tree REL-ACC fire burn | "the tree that fire burns" |
 | `maeha kus-si slato fovra` | person REL-GEN house burn | "the person whose house burns" |
 
 > **Subject gap:** `kus` unmarked — the head noun (`fojra`) is the subject of `fovra` (the fire does the burning).
@@ -55,11 +54,11 @@ Relative clauses may be nested. Each level uses its own `kus`:
 
 | Kilor | Meaning |
 |:---|:---|
-| `fojra kus dinu kus-ni ki wivnar fovra wem res` | "The fire that burns the tree that I saw is hot" |
+| `fojra kus dijnu kus-ni ki wivnar fovra wem res` | "The fire that burns the tree that I saw is hot" |
 
-Parse: `fojra [kus dinu [kus-ni ki wivnar] fovra] wem res`
-- Outer clause: `fojra` modified by `[kus dinu ... fovra]` — "fire that burns the tree"
-- Inner clause: `dinu` modified by `[kus-ni ki wivnar]` — "tree that I saw"
+Parse: `fojra [kus dijnu [kus-ni ki wivnar] fovra] wem res`
+- Outer clause: `fojra` modified by `[kus dijnu ... fovra]` — "fire that burns the tree"
+- Inner clause: `dijnu` modified by `[kus-ni ki wivnar]` — "tree that I saw"
 
 ### D. Relativizer vs Complementizer — Disambiguation
 
@@ -67,8 +66,8 @@ Parse: `fojra [kus dinu [kus-ni ki wivnar] fovra] wem res`
 
 | Function | Structure | Example |
 |:---|:---|:---|
-| **Relative** | Head noun immediately precedes `kus` | `fojra kus [dinu fovra]` — "fire that burns tree" |
-| **Complement** | No head noun; `kus` starts a clause in object position | `ki kus [fojra dinu fovra] asdo` — "I know that fire burns tree" |
+| **Relative** | Head noun immediately precedes `kus` | `fojra kus [dijnu fovra]` — "fire that burns tree" |
+| **Complement** | No head noun; `kus` starts a clause in object position | `ki kus [fojra dinu fovra] avsdo` — "I know that fire burns tree" |
 
 ---
 
@@ -82,9 +81,9 @@ A complement clause is an embedded sentence that functions as the object of a ve
 
 | Kilor | Gloss | Meaning |
 |:---|:---|:---|
-| `ki kus ti kau asdo` | I REL you come know | "I know that you come/came" |
-| `ki kus lir tavka-ni rima` | I REL fish eat-ACC want | "I want to eat fish" |
-| `si kus fojra dinu fovra wivnar` | 3L REL fire tree burn see | "He/she sees that fire burns the tree" |
+| `ki kus ti kau avsdo` | I REL you come know | "I know that you come/came" |
+| `ki kus lir tavka-ni rivma` | I REL fish eat-ACC want | "I want to eat fish" |
+| `si kus fojra dijnu fovra wivnar` | 3L REL fire tree burn see | "He/she sees that fire burns the tree" |
 
 ### B. ACC Case on Complement Clauses
 
@@ -92,7 +91,7 @@ The ACC suffix `-ni`/`-na` may optionally attach to the last word of the complem
 
 In SOV order with unambiguous position, ACC marking is optional (same optionality as regular objects). In formal writing or non-SOV order, it is mandatory.
 
-> **Example (formal):** `ki kus lir tavka-ni asdo` — "I know that fish eats" (ACC marks the clause as object)
+> **Example (formal):** `ki kus lir tavka-ni avsdo` — "I know that fish eats" (ACC marks the clause as object)
 
 ### C. No Tense in Embedded Clauses
 
@@ -124,7 +123,7 @@ Adverbial clauses modify the main action — specifying when, why, under what co
 | `tu ti kau, ki losto res` | "When you come, I am happy" |
 | `li ti lir tavka, ki lira sounar` | "If you eat fish, I give water" |
 | `aiga fojra fovra, kora wem res` | "Because fire burns, the stone is hot" |
-| `hoskar roch my res, ki slato te kau` | "Although the night is dark, I come to the house" |
+| `hoskar rok my res, ki slato te kau` | "Although the night is dark, I come to the house" |
 
 ### D. Position Flexibility
 
@@ -147,7 +146,7 @@ When a relative or complement clause contains a question word, that question wor
 
 Negation particles (`nar`, `na`) scope over the clause they appear in. See `2-predication/negation.md`.
 
-> **Example:** `ki kus nar ti kau asdo` — "I know that you did NOT come" (negation scopes inside the complement clause)
+> **Example:** `ki kus nar ti kau avsdo` — "I know that you did NOT come" (negation scopes inside the complement clause)
 
 ### C. Case Marking in Embedded Clauses
 

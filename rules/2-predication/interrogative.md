@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
+**Depends on:** `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md`
 
 ---
 

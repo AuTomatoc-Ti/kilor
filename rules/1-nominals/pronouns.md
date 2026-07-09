@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
+**Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`
 
 ---
 
@@ -31,7 +31,7 @@ Kilor distinguishes **1st, 2nd, and 3rd person**, with a **living vs. non-living
 
 ### B. Plural Formation
 
-Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `0-foundation/grammar-syntax.md` §VII).
+Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `0-foundation/grammar-syntax.md` §VI).
 
 The marker surfaces in two forms depending on what follows:
 

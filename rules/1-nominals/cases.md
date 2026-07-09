@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
+**Depends on:** `0-foundation/grammar-syntax.md`
 
 ---
 
@@ -74,12 +74,12 @@ The Accusative becomes **mandatory** in two contexts:
 
 When the noun receiving a case suffix is a **multi-word vocab** (a semantic unit composed of multiple orthographic words; see `0-foundation/grammar-syntax.md` §IV-B), the case suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked.
 
-> **Example (Accusative, multi-word vocab):** `lujmi sojla` (moon) + Accusative → `lujmi sojlana` (moon as object)
-> **Example (Genitive, multi-word vocab):** `lujmi sojla` (moon) + Genitive → `lujmi sojlasa` (moon's / of the moon)
+> **Example (Accusative, multi-word vocab):** `lujmi sojla` (star-light) + Accusative → `lujmi sojlani` (star-light as object)
+> **Example (Genitive, multi-word vocab):** `lujmi sojla` (star-light) + Genitive → `lujmi sojlasi` (star-light's / of the star-light)
 
 The colour prefix (if present) attaches orthographically to the first word and does not affect suffix placement:
 
-> **Example (with prefix):** `a-lujmi sojla` (Red-moon) + Accusative → `a-lujmi sojlana`
+> **Example (with prefix):** `a-lujmi sojla` (Red-star-light) + Accusative → `a-lujmi sojlani`
 
 ---
 

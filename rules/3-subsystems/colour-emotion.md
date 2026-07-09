@@ -149,7 +149,7 @@ The emotional particle **stands alone at the clause head**, before any temporal 
 > — "(With longing,) she will not come tomorrow."
 
 > **Example (Black / Awe):**
-> `y, a-maeha a-fojra-si aultavka.`
+> `y, a-maeha a-fojra-si aulvtavka.`
 > — "(With awe,) the person entered the fire."
 
 > **Example (Brown / Defiance):**
@@ -180,7 +180,7 @@ Subject  [Object]  [Obliques]  [Emotional Particle]  [Verb]
 
 > **Example (Blue / Longing — verb-level):**
 > `si a-lujmi i sojpa.`
-> — "She watches the fire (with longing)."
+> — "She watches the light (with longing)."
 
 > **Example (White / Yearning — verb-level):**
 > `ki o shuki.`
@@ -191,7 +191,7 @@ Subject  [Object]  [Obliques]  [Emotional Particle]  [Verb]
 > — "They sleep (with faith)."
 
 > **Example (Black / Awe — verb-level):**
-> `ni y aultavka.`
+> `ni y aulvtavka.`
 > — "It entered (and I felt awe)."
 
 > **Example (Brown / Defiance — verb-level):**
@@ -213,7 +213,7 @@ When both sentence-level and verb-level particles appear in the same clause:
 
 Multiple verb-level particles may appear in a single clause if there are multiple verbs (e.g., in subordinated or coordinated structures):
 
-> `i, ki bau-ni a tavka, u sojlan.`
+> `i, ki bau-ni a tajka, u soujlan.`
 > — "With longing, I eat with passion, (then) sleep with faith."
 
 Using the **same particle** at both levels is redundant but permissible — it intensifies the register:
@@ -290,7 +290,7 @@ The same colour may appear as a noun prefix and as an emotional particle in the 
 
 ## VII. Emotional Colour on Nouns (via Prefix)
 
-> **This section is a summary.** The authoritative specification for emotional override on nouns lives in `1-nominals/nouns-colour-prefix.md` §VII (Emotional Override / 異體字).
+> **This section is a summary.** The authoritative specification for emotional override on nouns lives in `1-nominals/nouns-colour-prefix.md` §VI (Speaker Override / 異體字).
 
 ### A. Indefinite Nouns
 
@@ -298,7 +298,7 @@ A speaker may **optionally** retain a colour prefix on an indefinite/generic nou
 
 > `i-ro` — "(longing-tinged) water" (indefinite, generic water)
 
-See `1-nominals/nouns-colour-prefix.md` §VII-A.
+See `1-nominals/nouns-colour-prefix.md` §VI.
 
 ### B. Definite Nouns — 異體字 Override
 
@@ -307,7 +307,7 @@ A speaker may override a definite noun's 共識 (community-consensus) default pr
 > 共識: `a-fojra` (Red) — fire as alive/energy
 > 異體字: `y-fojra` (Black) — fire tinted with awe
 
-See `1-nominals/nouns-colour-prefix.md` §VII-B.
+See `1-nominals/nouns-colour-prefix.md` §VI.
 
 ---
 
@@ -327,7 +327,7 @@ See `1-nominals/nouns-colour-prefix.md` §VII-B.
 ### Blue — Longing (`i`)
 
 > `i, piroi si kau nar.` — "(With longing,) yesterday she did not come."
-> `ki i sojpa lujmi sojla.` — "I watch the moon (with longing — closeness and distance)."
+> `ki i sojpa lujmi sojla.` — "I watch the star-light (with longing — closeness and distance)."
 
 ### White — Yearning (`o`)
 
@@ -336,13 +336,13 @@ See `1-nominals/nouns-colour-prefix.md` §VII-B.
 
 ### Green — Faith (`u`)
 
-> `u, sil sojlan.` — "(With faith,) they sleep."
+> `u, sil soujlan.` — "(With faith,) they sleep."
 > `ki u ro-ni fen.` — "I drink water (with faith — trust and uncertainty)."
 
 ### Black — Awe (`y`)
 
-> `y, a-maeha aultavka.` — "(With awe,) the person entered."
-> `ki y sojpa a-lojvi.` — "I look at the mountain (with awe — wonder and fear)."
+> `y, a-maeha aulvtavka.` — "(With awe,) the person entered."
+> `ki y sojpa a-gijlan.` — "I look at the mountain (with awe — wonder and fear)."
 
 ### Brown — Defiance (`ae`)
 

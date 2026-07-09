@@ -3,7 +3,7 @@
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
 **Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`
 
 ---
@@ -70,7 +70,7 @@ Adjectives (noun + `-s` or quality roots used attributively) **precede** the nou
 
 > `rajlis a-maeha` — "big person" (lit. "big the-person")
 
-Intensity adverbs (`wes`, `meres`) precede the adjective:
+Intensity adverbs (`wes`, `mevres`) precede the adjective:
 
 > `wes rajlis a-maeha` — "very big person"
 
@@ -82,32 +82,33 @@ When multiple oblique prepositional phrases appear, they follow the **fixed orde
 Object [ACC] — [Numeral] — [sy Instrumental] — [te Dative] — [Adverb] — Verb
 ```
 
-> `bau-ni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
+> `bau-ni ro sy y-maliu te kis song shuks souvnar` — "quickly give three breads to my friend with an iron knife"
 
 The object (with optional ACC case suffix) and any numeral come first. Instrumental `sy` precedes dative `te`. Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
 
 #### Full Clause Template (SOV)
 
 ```
-[Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [te Dat]  [Manner Adv]  [Verb]  [nar]
+[Emo]  [Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [te Dat]  [Manner Adv]  [Emo]  [Verb]  [nar]
 ```
 
-All slots are optional except the subject and verb.
+All slots are optional except the subject and verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only.
 
 #### Maximal Example Sentence
 
 ```
-piroi  wes  rajlis  a-maeha  kus kin argona  bau-ni ro  sy y-maliu  te kis song  shuks  sounar  nar.
+piroi  wes  rajlis  a-maeha  kus kin avrgona  bau-ni ro  sy y-maliu  te kis song  shuks  souvnar  nar.
 
 ei  imaroi  bau  sy a-fojra  tavka.
 
-amer  ki  mangus kil  torra  rali.
+amer  ki  mangus kil  torra  rajlis.
 ```
 
 **Translation:** "Yesterday the very big person who loves me did not quickly give three breads to my friend with an iron knife. And today the bread was eaten by the fire. But I am the biggest among us."
 
 For details on the subsystems referenced above:
 - `3-subsystems/temporals.md` — temporal expression (clause-initial slot)
+- `3-subsystems/colour-emotion.md` — emotional particles (clause-initial and pre-verbal slots)
 - `3-subsystems/comparatives.md` — comparatives & superlatives
 - `2-predication/subordination.md` — subordination & relative clauses
 - `2-predication/negation.md` — clausal negation (`nar`)
@@ -160,7 +161,7 @@ When a root terminating in a vowel interfaces with a vowel-initial suffix, they 
 
 Vocabulary is expanded through **lexical compounding**: roots of 1 to 5 syllables are combined to form complex concepts.
 
-> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (moon, multi-word vocab)
+> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (star-light, multi-word vocab)
 
 ### B. Word-Unit Processing
 
@@ -182,7 +183,7 @@ Kilor distinguishes two forms of compounding for tone purposes:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`) are **exempt** from the `-s` constraint. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`dir`, `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`) are **exempt** from the `-s` constraint. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
 
 ---
 
@@ -196,12 +197,14 @@ The suffix `-s` creates modifiers from base roots. It applies to **1 and 2 sylla
 |:---|:---|:---|
 | Noun + `-s` | Adjective | 1 & 2 syllable nouns |
 | Verb + `-s` | Adverb | 1 & 2 syllable verbs |
-| Quality root + `-s` | Manner Adverb | 1 & 2 syllable quality roots (`a` category) |
+| Quality root + `-s` | Manner Adverb | 1 & 2 syllable adjective/quality roots (lexicon `category: a`) |
 
 > **1-syllable verb → adverb:** `fei` (verb, toneless) → `feis` (adverb, toneless)
 > **2-syllable noun → adjective:** `aujli` (noun, H→L) → `aujlis` (adjective, H→L)
 > **1-syllable quality → manner adverb:** `shuk` (adj: fast) → `shuks` (adv: quickly)
 > **1-syllable quality → manner adverb:** `gor` (adj: good) → `gors` (adv: well)
+
+> **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, hot, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
 
 Manner adverbs derived from quality roots are distinguished from attributive adjectives by **position**: adjectives precede nouns (§I-E), manner adverbs precede verbs (§I-E). The same `-s` form serves both roles — context disambiguates.
 

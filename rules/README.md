@@ -33,19 +33,19 @@ After these, explore any subsystem that interests you — they all depend on the
 | Comparatives & superlatives (`tor`, `les`, `torra`, `wetor`, `mangus`) | `3-subsystems/comparatives.md` |
 | Copula & existential (`res`) | `2-predication/copula-existential.md` |
 | Dual-concepts (philosophy) | `0-foundation/philosophy.md` |
-| Emotional override on nouns (異體字) | `1-nominals/nouns-colour-prefix.md` §VII |
+| Emotional override on nouns (異體字) | `1-nominals/nouns-colour-prefix.md` §VI |
 | Interrogatives (question words) | `2-predication/interrogative.md` |
 | Lexicon development roadmap | `4-meta/lexicon-roadmap.md` |
 | Negation (`nar`) | `2-predication/negation.md` |
 | Numerals & measure words | `3-subsystems/numerals.md` |
 | Phoneme inventory, syllables, phonotactics | `0-foundation/phonology.md` |
-| Plural strategy (none, except pronouns) | `0-foundation/grammar-syntax.md` §VII |
+| Plural strategy (none, except pronouns) | `0-foundation/grammar-syntax.md` §VI |
 | Pronouns | `1-nominals/pronouns.md` |
 | Subordination & relative clauses | `2-predication/subordination.md` |
 | Temporal expression (time words) | `3-subsystems/temporals.md` |
 | Tone system | `0-foundation/tone-prosody.md` |
 | `-s` derivational suffix | `0-foundation/grammar-syntax.md` §V |
-| 異體字 (speaker colour override on nouns) | `1-nominals/nouns-colour-prefix.md` §VII |
+| 異體字 (speaker colour override on nouns) | `1-nominals/nouns-colour-prefix.md` §VI |
 
 ---
 
@@ -91,10 +91,16 @@ When you change a file, check these dependents:
 | `0-foundation/tone-prosody.md` | `3-subsystems/numerals.md`, `1-nominals/pronouns.md`, `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` §IV-B | Tone rules apply to numerals, pronouns, emotional particles, and compounding |
 | `1-nominals/nouns-colour-prefix.md` | `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` | Colour prefix system interacts with emotional particles and NP syntax |
 | `1-nominals/cases.md` | `0-foundation/grammar-syntax.md`, `1-nominals/pronouns.md` | Case suffixes interact with word order rules and pronoun inflection |
-| `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VII | NP quantification references clause template and closed-class list |
+| `1-nominals/pronouns.md` | `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI | Pronoun declension uses reduced case endings; plural exception to general no-plural rule |
+| `2-predication/copula-existential.md` | `2-predication/negation.md`, `2-predication/interrogative.md` | Copula `res` and existential `ero` interact with negation and interrogative particles |
+| `2-predication/negation.md` | `2-predication/interrogative.md` | `iu` serves dual role as yes/no marker and affirmative answer; `nar` scoping interacts with `iu` |
+| `2-predication/interrogative.md` | `1-nominals/nouns-colour-prefix.md` | Question words use colour prefixes; definiteness rule exemption |
+| `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md` | `kus` relativizer interacts with case suffixes, question fronting, and negation scoping |
+| `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template and closed-class list |
 | `3-subsystems/colour-emotion.md` | `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
 | `3-subsystems/temporals.md` | `0-foundation/grammar-syntax.md` §I-E | Temporal words occupy the clause-initial slot |
 | `3-subsystems/comparatives.md` | `0-foundation/grammar-syntax.md` §IV-C, `2-predication/copula-existential.md` | Comparative particles are closed-class; equative uses copula |
+| `4-meta/lexicon-roadmap.md` | All files in `rules/` | Lexicon development pipeline — any schema change in rule files may affect word-building workflow |
 
 ---
 

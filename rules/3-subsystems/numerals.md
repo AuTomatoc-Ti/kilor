@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
+**Depends on:** `0-foundation/grammar-syntax.md`, `0-foundation/phonology.md`
 
 ---
 
@@ -46,7 +46,7 @@ Scale markers are closed-class numeral roots denoting powers of 10.
 
 ### A. `-s` Exemption
 
-`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint (`0-foundation/grammar-syntax.md` §IV-C). All numerals form a **closed class** — they never receive derivational morphology. They join `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, and `kus` in the closed-class exemption list.
+`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint (`0-foundation/grammar-syntax.md` §IV-C). All numerals form a **closed class** — they never receive derivational morphology. They join `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, and `mangus` in the closed-class exemption list.
 
 ### B. `sl` Positional Exemption
 

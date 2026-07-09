@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-09
 **Version:** 1.0.0
-**Depends on:**
+**Depends on:** `2-predication/negation.md`, `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
 
@@ -76,7 +76,7 @@ Subject — Complement — Verb
 
 ### B. Predicate Nominal
 
-> `ki maeha res.`
+> `ki maejha res.`
 > (I person am.)
 > "I am a person."
 
@@ -90,7 +90,7 @@ Subject — Complement — Verb
 > (Fire exists.)
 > "There is fire." / "Fire exists."
 
-> `maeha evro.`
+> `maejha evro.`
 > (Person exists.)
 > "There is a person."
 
@@ -115,7 +115,7 @@ Subject — Complement — Verb
 > `fojra wem res nar.`
 > "Fire is not hot."
 
-> `ki maeha res nar.`
+> `ki maejha res nar.`
 > "I am not a person."
 
 ### B. Existential Negation
@@ -153,7 +153,7 @@ Sentence-final `iu` as usual (see `2-predication/interrogative.md` §IV):
 > `fojra wem res iu?`
 > "Is fire hot?"
 
-> `ki maeha res iu?`
+> `ki maejha res iu?`
 > "Am I a person?"
 
 > `fojra evro iu?`
@@ -186,8 +186,8 @@ Question words are fronted as usual, including with copula/existential:
 
 The copula is a **linking verb** — neither argument is an object. Both subject and complement are in the **Nominative** (unmarked). No Accusative suffix is used.
 
-> ✅ `ki maeha res.` (I person am.)
-> ❌ `ki maehana res.` (person in Accusative — invalid with copula)
+> ✅ `ki maejha res.` (I person am.)
+> ❌ `ki maejhana res.` (person in Accusative — invalid with copula)
 
 ### B. Existential & Possession — Standard Case Rules Apply
 
@@ -216,7 +216,7 @@ This is the **only** context where zero-copula is permitted. Predicate nominals 
 | Pattern | Structure | Example | Meaning |
 |---|---|---|---|
 | Predicate Adjective | SUBJ ADJ `res` | `fojra wem res` | Fire is hot |
-| Predicate Nominal | SUBJ NOUN `res` | `ki maeha res` | I am a person |
+| Predicate Nominal | SUBJ NOUN `res` | `ki maejha res` | I am a person |
 | Existential | NOUN `evro` | `fojra evro` | There is fire |
 | Possession | POSSESSOR POSSESSED `evro` | `ki fojra evro` | I have fire |
 | Negated copula | SUBJ COMP `res nar` | `fojra wem res nar` | Fire is not hot |

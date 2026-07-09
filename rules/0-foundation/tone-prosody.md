@@ -143,7 +143,7 @@ When a semantic concept is expressed as **multiple orthographic words** (a multi
 
 This contrasts with mono-word compounds written as a single word — those use the Last-3 Domain Rule (§IV-A) recalculated across the entire word.
 
-> **Example:** `aujli lujmi` (2-syl noun + 2-syl noun, two-word vocab)
+> **Example:** `aujli sojla` (2-syl noun + 2-syl noun, two-word vocab)
 > **Melody:** H→L → H→L. Each word's internal contour is preserved.
 > **Contrast:** If these were fused into a single word, the Last-3 Domain Rule would recalculate the contour across the entire compound (e.g., a 4-syllable noun → M→H→M→L).
 
