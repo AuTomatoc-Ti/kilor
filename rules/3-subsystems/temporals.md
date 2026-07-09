@@ -2,8 +2,8 @@
 
 **Module:** Temporal Expression
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.0.1
 **Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E)
 
 ---
@@ -30,6 +30,8 @@ Time is expressed purely through **context and temporal words** (yesterday, tomo
 | `pamaroi` | 3 | day after tomorrow | `pa` + `ma` + `roi` |
 
 > **Combining forms:** `pi` ← `tilpi` (before), `pa` ← `tilpa` (after), `ma` (bound infix: one step removed). `roi` = day. `ima` = now.
+>
+> **Tone:** 2-syllable compounds (`piroi`, `paroi`) are toneless (flat mid-tone). 3-syllable compounds (`pimaroi`, `imaroi`, `pamaroi`) follow the noun Last-3 Domain pattern (H→M→L) — tone markers are used in dictionary citation forms but may be omitted in everyday writing per the closed-class orthographic convention.
 
 ### B. Distance Scale (free-standing adverbs)
 
@@ -50,6 +52,8 @@ Time is expressed purely through **context and temporal words** (yesterday, tomo
 | `slosaka` | 3 | sometimes | `slo(te)` (some) + `sakar` |
 | `nasaka` | 3 | never | `na` (negation) + `sakar` |
 
+> **Tone:** 3-syllable frequency words follow the noun Last-3 Domain pattern in citation form. Tone markers may be omitted in everyday writing.
+
 ### D. Bare Temporal Roots
 
 | Root | Syl | Meaning | Notes |
@@ -59,6 +63,8 @@ Time is expressed purely through **context and temporal words** (yesterday, tomo
 | `cho` | 1 | early | Bare root, `ch` onset (start-only) |
 | `amo` | 2 | again | Bare root |
 | `fou` | 1 | during | Related to `founai` (duration) |
+
+> **Tone:** All bare temporal roots (1–2 syllables) are toneless (flat mid-tone), consistent with the 1–2 syllable toneless rule (`0-foundation/tone-prosody.md` §II-B).
 
 ---
 

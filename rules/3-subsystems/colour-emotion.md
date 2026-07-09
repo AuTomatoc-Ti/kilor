@@ -2,8 +2,8 @@
 
 **Module:** Emotional Particles
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 2.1.0
+**Last updated:** 2026-07-10
+**Version:** 2.2.1
 **Depends on:** `0-foundation/philosophy.md` (historical origin), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system, 異體字 override)
 
 ---
@@ -116,16 +116,16 @@ The emotional particle **stands alone at the clause head**, before any temporal 
 > — "(With sadness,) she will not come tomorrow."
 
 > **Example (Fear / Black):**
-> `y, a-maeha a-fojra-si aulvtavka.`
+> `y, a-maeha a-fora-ni auvltake.`
 > — "(With fear,) the person entered the fire."
 
 > **Example (Disgust / Brown):**
-> `ae, ki bau-ni sy a-fojra tavka.`
+> `ae, bau sy a-fora taka.`
 > — "(With disgust,) the bread was eaten by the fire."
 
 When the sentence opens with a bare verb (no subject or temporal word), the clause-initial and pre-verbal positions overlap — the emotional reading converges:
 
-> `a, tavka.` — "(With anger,) eat." / "Eat (with anger)."
+> `a, taka.` — "(With anger,) eat." / "Eat (with anger)."
 
 In practice these readings are indistinguishable; the emotional weight lands on the verb either way.
 
@@ -138,31 +138,31 @@ Subject  [Object]  [Obliques]  [Emotional Particle]  [Verb]
 ```
 
 > **Example (Anger / Red — verb-level):**
-> `ki bau-ni a tavka.`
+> `ki bau-ni a taka.`
 > — "I eat the bread (with anger)."
 
 > **Example (Joy / Yellow — verb-level):**
-> `ki po a-maeha e kau.`
-> — "I go to the person (with joy)."
+> `ki te a-maeha e kau.`
+> — "I come to the person (with joy)."
 
 > **Example (Sadness / Blue — verb-level):**
-> `si a-lujmi i sojpa.`
+> `si a-lumi i sopa.`
 > — "She watches the light (with sadness)."
 
 > **Example (Surprise / White — verb-level):**
-> `ki o shuki.`
+> `ki o tle.`
 > — "I wait (with surprise)."
 
 > **Example (Calm / Green — verb-level):**
-> `sil u sojlan.`
+> `sil u thep.`
 > — "They sleep (with calm)."
 
 > **Example (Fear / Black — verb-level):**
-> `ni y aulvtavka.`
+> `ni y auvltake.`
 > — "It entered (and I felt fear)."
 
 > **Example (Disgust / Brown — verb-level):**
-> `ki ae mekan.`
+> `ki ae rilda.`
 > — "I speak (with disgust)."
 
 ### C. Scope Interaction
@@ -173,19 +173,19 @@ When both sentence-level and verb-level particles appear in the same clause:
 - **Verb-level** overrides the sentence-level register for that **specific verb only**.
 
 > **Example:**
-> `i, ki bau-ni a tavka.`
+> `i, ki bau-ni a taka.`
 > — "(Sadness overall,) I eat the bread (with anger)."
 >
 > The clause carries Blue (sadness), but the act of eating itself is Red (anger) — emotional layering: sorrow in context, anger in action.
 
 Multiple verb-level particles may appear in a single clause if there are multiple verbs (e.g., in subordinated or coordinated structures):
 
-> `i, ki bau-ni a tajka, u soujlan.`
+> `i, ki bau-ni a taka, u thep.`
 > — "With sadness, I eat with anger, (then) sleep with calm."
 
 Using the **same particle** at both levels is redundant but permissible — it intensifies the register:
 
-> `a, ki a tavka.`
+> `a, ki a taka.`
 > — "(With anger,) I eat (with anger)."
 
 ### D. One Particle Per Position — No Compounding
@@ -194,8 +194,8 @@ A speaker may feel multiple emotions simultaneously, but the emotional particle 
 
 If the speaker wishes to convey a blended emotional state (e.g., bittersweet = joy + sadness), the emotional register emphasizes one pole, and the lexical content of the sentence provides the full picture:
 
-> `e, ki a-sojla-ni sojpa.` — "(With joy,) I look at the room" — warmth of the memories foregrounded
-> `i, ki a-sojla-ni sojpa.` — "(With sadness,) I look at the room" — loss and ache foregrounded
+> `e, ki a-sola-ni sopa.` — "(With joy,) I look at the room" — warmth of the memories foregrounded
+> `i, ki a-sola-ni sopa.` — "(With sadness,) I look at the room" — loss and ache foregrounded
 
 The choice itself is meaningful. The particle does not need to name every emotion present — it selects the dominant lens.
 
@@ -203,7 +203,7 @@ The choice itself is meaningful. The particle does not need to name every emotio
 
 The emotional particle occupies a distinct slot from the manner adverb (`-s` derived). A manner adverb describes **how** the action is performed (quickly, well, quietly); an emotional particle describes the **emotional register** of the action. They are compatible and may co-occur:
 
-> `ki shuks a tavka.`
+> `ki shuks a taka.`
 > — "I quickly eat (with anger)."
 
 When both appear, the manner adverb precedes the emotional particle. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
@@ -214,14 +214,14 @@ When a clause-initial emotional particle immediately precedes the subject noun, 
 
 | Full Form | Fused Form | Meaning |
 |---|---|---|
-| `a, a-maeha tavka.` | `a-maeha tavka.` | "(With anger,) the person eats." |
-| `e, a-maeha tavka.` | `e-maeha tavka.` | "(With joy,) the person eats." |
-| `i, y-gijlan sojpa.` | `i-gijlan sojpa.` | "(With sadness,) s/he looks at the mountain." |
-| `y, a-fojra aulvtavka.` | `y-fojra aulvtavka.` | "(With fear,) the fire entered." |
+| `a, a-maeha taka.` | `a-maeha taka.` | "(With anger,) the person eats." |
+| `e, a-maeha taka.` | `e-maeha taka.` | "(With joy,) the person eats." |
+| `i, y-gilan sopa.` | `i-gilan sopa.` | "(With sadness,) s/he looks at the mountain." |
+| `y, a-fora auvltake.` | `y-fora auvltake.` | "(With fear,) the fire entered." |
 
 **Constraints:**
 
-- Fusion applies **only clause-initially** — the emotional particle and the subject noun must be adjacent. If a temporal word or other element intervenes (`a, piroi a-maeha tavka.`), fusion is blocked.
+- Fusion applies **only clause-initially** — the emotional particle and the subject noun must be adjacent. If a temporal word or other element intervenes (`a, piroi a-maeha taka.`), fusion is blocked.
 - The fused prefix carries the **emotional register colour**. The noun's 共識 ontological prefix (e.g., `a-` on `maeha` for Red/Alive) is understood from context.
 - The noun remains **definite** (it has a colour prefix). Only the ontological classification is suppressed.
 - Fusion is **optional** — the full form is always grammatical and preferred in formal registers.
@@ -235,11 +235,9 @@ Fusion creates a structural ambiguity between emotional register and ontological
 | Fused: `a` (emotion: anger) + `maeha` | "(With anger,) the person" — ontological prefix `a-` elided |
 | Regular: `a-` (ontological: Red/Alive) + `maeha` | "the person" — no emotional register |
 
-Context resolves most cases. When a speaker hears `a-maeha tavka`, they infer emotional register if the discourse context supports it, and default to the ontological reading otherwise. The ambiguity is a known limitation of the shorthand — comparable to English "I saw her duck" (animal vs. action). Native speakers navigate it instinctively; learners are advised that the full form avoids ambiguity entirely.
+Context resolves most cases. When a speaker hears `a-maeha taka`, they infer emotional register if the discourse context supports it, and default to the ontological reading otherwise. The ambiguity is a known limitation of the shorthand — comparable to English "I saw her duck" (animal vs. action). Native speakers navigate it instinctively; learners are advised that the full form avoids ambiguity entirely.
 
 When the emotional particle's colour happens to match the noun's 共識 prefix (e.g., `ae, ae-tuka` → `ae-tuka`), the fused form is indistinguishable from the regular ontological prefix. In these cases, only the full form (`ae, ae-tuka`) unambiguously signals emotional register.
-
----
 
 
 ## V. Role in Communication — Emoji-Like Emphasis
@@ -279,7 +277,7 @@ All emotional particles are **toneless** — pronounced with flat mid-tone. This
 
 ### C. Connected Speech
 
-In connected speech, emotional particles are pronounced attached to the following word (at clause-initial position, the temporal word or subject; at verb-level, the verb), but are **orthographically separated by a space**. The vowel hiatus between the particle and a vowel-initial word (e.g., `a aultavka`) is phonotactically legal; an optional glottal catch may be inserted in careful speech for clarity.
+In connected speech, emotional particles are pronounced attached to the following word (at clause-initial position, the temporal word or subject; at verb-level, the verb), but are **orthographically separated by a space**. The vowel hiatus between the particle and a vowel-initial word (e.g., `a auvltake`) is phonotactically legal; an optional glottal catch may be inserted in careful speech for clarity.
 
 ---
 
@@ -299,7 +297,7 @@ The emotional particles and the noun colour prefixes share the same 7 forms but 
 
 A single sentence can use **both** systems simultaneously without conflict, because they operate on different grammatical targets:
 
-> `a, a-maeha a tavka.`
+> `a, a-maeha a taka.`
 > — "(With anger,) the-person eats (with anger)."
 >
 > - Clause-initial `a` (particle): emotional register = Anger
@@ -326,9 +324,9 @@ See `1-nominals/nouns-colour-prefix.md` §VI.
 
 A speaker may override a definite noun's 共識 (community-consensus) default prefix with a different colour for emotional effect:
 
-> 共識: `a-fojra` (Red) — fire as alive/energy
-> 異體字: `y-fojra` (Black) — fire tinted with fear
-> 異體字: `ae-fojra` (Brown) — fire tinted with disgust
+> 共識: `a-fora` (Red) — fire as alive/energy
+> 異體字: `y-fora` (Black) — fire tinted with fear
+> 異體字: `ae-fora` (Brown) — fire tinted with disgust
 
 See `1-nominals/nouns-colour-prefix.md` §VI.
 
@@ -339,38 +337,38 @@ See `1-nominals/nouns-colour-prefix.md` §VI.
 ### Red — Anger (`a`)
 
 > `a, ki kau.` — "(With anger,) I come."
-> `ki a tavka.` — "I eat (with anger)."
+> `ki a taka.` — "I eat (with anger)."
 > `a, a-maeha a fei.` — "(With anger,) the person flies (with anger)."
 
 ### Yellow — Joy (`e`)
 
-> `e, paroi ki a-maeha-ni sojpa.` — "(With joy,) tomorrow I will see the person."
-> `ki e shuki.` — "I wait (with joy)."
+> `e, paroi ki a-maeha-ni sopa.` — "(With joy,) tomorrow I will see the person."
+> `ki e tle.` — "I wait (with joy)."
 
 ### Blue — Sadness (`i`)
 
 > `i, piroi si kau nar.` — "(With sadness,) yesterday she did not come."
-> `ki i sojpa lujmi sojla.` — "I watch the star-light (with sadness)."
+> `ki i sopa lumi sola.` — "I watch the star-light (with sadness)."
 
 ### White — Surprise (`o`)
 
-> `o, ki shuki.` — "(With surprise,) I wait."
-> `si o mekan.` — "She speaks (with surprise)."
+> `o, ki tle.` — "(With surprise,) I wait."
+> `si o rilda.` — "She speaks (with surprise)."
 
 ### Green — Calm (`u`)
 
-> `u, sil soujlan.` — "(With calm,) they sleep."
-> `ki u ro-ni fen.` — "I drink water (with calm)."
+> `u, sil thep.` — "(With calm,) they sleep."
+> `ki u lira-ni taki.` — "I drink water (with calm)."
 
 ### Black — Fear (`y`)
 
-> `y, a-maeha aulvtavka.` — "(With fear,) the person entered."
-> `ki y sojpa a-gijlan.` — "I look at the mountain (with fear)."
+> `y, a-maeha auvltake.` — "(With fear,) the person entered."
+> `ki y sopa a-gilan.` — "I look at the mountain (with fear)."
 
 ### Brown — Disgust (`ae`)
 
-> `ae, ki bau-ni sy a-fojra tavka.` — "(With disgust,) the bread was eaten by the fire."
-> `ki ae mekan.` — "I speak (with disgust)."
+> `ae, bau sy a-fora taka.` — "(With disgust,) the bread was eaten by the fire."
+> `ki ae rilda.` — "I speak (with disgust)."
 
 
 ---
@@ -383,12 +381,12 @@ The emotional particle may intentionally **contradict** the lexical content of t
 
 The emotional particle expresses the speaker's **true feeling**, which contradicts the surface lexical content:
 
-> `a, ki losto.`
+> `a, ki losto res.`
 > — "(With anger,) I am happy."
 >
 > The anger-particle exposes the real emotion beneath the words. The listener understands: the speaker is *not* happy.
 
-> `e, ki dorito.`
+> `e, ki hik res.`
 > — "(With joy,) I am sad."
 >
 > Bitter cheerfulness — the speaker foregrounds a lightness that makes the sadness sharper.
@@ -397,7 +395,7 @@ The emotional particle expresses the speaker's **true feeling**, which contradic
 
 A calm or neutral particle paired with dramatic content minimizes the event for effect:
 
-> `u, a-fojra aulvtavka.`
+> `u, a-fora auvltake.`
 > — "(With calm,) the fire entered."
 >
 > The speaker describes a dangerous event as if it were unremarkable — deadpan, stoic, or darkly humorous.
@@ -406,26 +404,26 @@ A calm or neutral particle paired with dramatic content minimizes the event for 
 
 The clash between particle and content creates a third meaning — the tension *is* the message:
 
-> `i, e-kilorsa mekan.`
-> — "(With sadness,) the instrument speaks."
+> `i, e-berat rilda.`
+> — "(With sadness,) the word speaks."
 >
-> The music is beautiful but the speaker feels loss. The sadness-particle transforms the sentence from description into elegy.
+> The words are spoken but the speaker feels loss. The sadness-particle transforms the sentence from statement into elegy.
 
-> `e, y-gijlan aulvsojpa.`
-> — "(With joy,) the mountain looms."
+> `e, y-gilan sopa.`
+> — "(With joy,) the mountain is watched."
 >
-> Joy at the sight of something vast and threatening — the mix of emotions is the point.
+> Joy at the sight of something vast — the mix of emotions is the point.
 
 ### D. 假裝 — Feigned Emotion
 
 The particle signals an emotion the speaker is **performing** rather than feeling:
 
-> `o, ki sojpa.`
+> `o, ki sopa.`
 > — "(With surprise,) I see."
 >
 > Sarcastic — the speaker is not surprised at all. Comparable to English "Oh, wow, I see" delivered flatly.
 
-> `ae, ki losto.`
+> `ae, ki losto res.`
 > — "(With disgust,) I am happy."
 >
 > The speaker is performing happiness while signalling genuine distaste — a layered emotional stance.

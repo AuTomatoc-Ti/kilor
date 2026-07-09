@@ -1,105 +1,117 @@
 bare_root,syl,meaning,category,section,noun,verb,adjective,adverb,consensus_prefix,is_function_word,notes
-fora,2,fire,nv,A,fojra,fovra,fojras,fovras,a-,false,
-lumi,2,light,na,A,lujmi,luvmi,lujmis,luvmis,o-,false,adj derived from noun + -s
-lira,2,water,n,A,lijra,livra,lijras,livras,i-,false,
-lima,2,air,n,A,lijma,livma,lijmas,livmas,i-,false,
-kaera,2,earth / soil,n,A,kaejra,kaevra,kaejras,kaevras,ae-,false,
-kora,2,stone / rock,n,A,kojra,kovra,kojras,kovras,y-,false,
-sola,2,star,n,A,sojla,sovla,sojlas,sovlas,o-,false,
-rora,2,sun,n,A,rojra,rovra,rojras,rovras,a-,false,
-yre,2,moon,n,A,yjre,yvre,yjres,yvres,o-,false,
-tiri,2,sky,n,A,tijri,tivri,tijris,tivris,i-,false,
-symak,2,smoke / mist,n,A,syjmak,syvmak,syjmaks,syvmaks,i-,false,
-maeha,2,person / human,n,B,maejha,maevha,maejhas,maevhas,a-,false,
-maeda,2,body,n,B,maejda,maevda,maejdas,maevdas,a-,false,
-hinar,2,hand,n,B,hijnar,hivnar,hijnars,hivnars,a-,false,
-winar,2,eye,nv,B,wijnar,wivnar,wijnars,wivnars,a-,false,
-tilda,2,ear,nv,B,tijlda,tivlda,tijldas,tivldas,a-,false,
-rilda,2,mouth,nv,B,rijlda,rivlda,rijldas,rivldas,a-,false,
-pesha,2,blood,n,B,pejsha,pevsha,pejshas,pevshas,a-,false,
-hawu,2,animal / beast,n,B,hajwu,havwu,hajwus,havwus,a-,false,
+fora,2,fire,nv,A,fora,fora,foras,foras,a-,false,
+lumi,2,light,na,A,lumi,lumi,lumis,lumis,o-,false,adj derived from noun + -s
+lira,2,water,n,A,lira,lira,liras,liras,i-,false,
+lima,2,air,n,A,lima,lima,limas,limas,i-,false,
+kaera,2,earth / soil,n,A,kaera,kaera,kaeras,kaeras,ae-,false,
+kora,2,stone / rock,n,A,kora,kora,koras,koras,y-,false,
+sola,2,star,n,A,sola,sola,solas,solas,o-,false,
+rora,2,sun,n,A,rora,rora,roras,roras,a-,false,
+yre,2,moon,n,A,yre,yre,yres,yres,o-,false,
+tiri,2,sky,n,A,tiri,tiri,tiris,tiris,i-,false,
+symak,2,smoke / mist,n,A,symak,symak,symaks,symaks,i-,false,
+maeha,2,person / human,n,B,maeha,maeha,maehas,maehas,a-,false,
+maeda,2,body,n,B,maeda,maeda,maedas,maedas,a-,false,
+hinar,2,hand,n,B,hinar,hinar,hinars,hinars,a-,false,
+winar,2,eye,nv,B,winar,winar,winars,winars,a-,false,
+tilda,2,ear,nv,B,tilda,tilda,tildas,tildas,a-,false,
+rilda,2,mouth,nv,B,rilda,rilda,rildas,rildas,a-,false,verb use = speak/say
+pesha,2,blood,n,B,pesha,pesha,peshas,peshas,a-,false,
+hawu,2,animal / beast,n,B,hawu,hawu,hawus,hawus,a-,false,
 fein,1,bird,n,B,fein,fein,feins,feins,a-,false,
+fei,1,fly / flying,nv,B,fei,fei,feis,feis,a-,false,bare root serves as both noun and verb; feis = adj/adv
 lir,1,fish,n,B,lir,lir,lirs,lirs,a-,false,
-dinu,2,tree,n,B,dijnu,divnu,dijnus,divnus,u-,false,
+dinu,2,tree,n,B,dinu,dinu,dinus,dinus,u-,false,
 slu,1,flower,n,B,slu,slu,slus,slus,u-,false,
-giliu,2,metal / iron,n,C,gijliu,givliu,gijlius,givlius,y-,false,
+giliu,2,metal / iron,n,C,giliu,giliu,gilius,gilius,y-,false,
 dinogak,3,wood,n,C,dijnogak,divnogak,dinojgak,dinovgak,u-,false,
 klang,1,cloth / fabric,n,C,klang,klang,klangs,klangs,e-,false,
 slato,2,house / dwelling,n,C,slato,slato,slatos,slatos,ae-,false,
-donar,2,door,nv,C,dojnar,dovnar,dojnars,dovnars,ae-,false,
-maliu,2,knife / blade,n,C,majliu,mavliu,majlius,mavlius,y-,false,
-hamin,2,food,n,C,hajmin,havmin,hajmins,havmins,e-,false,
+donar,2,door,nv,C,donar,donar,donars,donars,ae-,false,
+maliu,2,knife / blade,n,C,maliu,maliu,malius,malius,y-,false,
+hamin,2,food,n,C,hamin,hamin,hamins,hamins,e-,false,
 bau,1,bread,n,C,bau,bau,baus,baus,e-,false,
 pei,1,cup / container,n,C,pei,pei,peis,peis,e-,false,
-selo,2,path / road,n,C,sejlo,sevlo,sejlos,sevlos,ae-,false,
-gilan,2,mountain,n,C,gijlan,givlan,gijlans,givlans,y-,false,
-liwat,2,river,n,C,lijwat,livwat,lijwats,livwats,i-,false,
-taka,2,eat,v,D,tajka,tavka,tajkas,tavkas,a-,false,
+selo,2,path / road,n,C,selo,selo,selos,selos,ae-,false,
+rusome,3,room / chamber,n,C,rujsome,ruvsome,rusojme,rusovme,ae-,false,
+gilan,2,mountain,n,C,gilan,gilan,gilans,gilans,y-,false,
+liwat,2,river,n,C,liwat,liwat,liwats,liwats,i-,false,
+taka,2,eat,v,D,taka,taka,takas,takas,a-,false,
 retanik,3,drink,v,D,rejtanik,revtanik,retajnik,retavnik,a-,false,
+taki,2,drink,v,D,taki,taki,takis,takis,a-,false,
+aultake,3,enter,v,D,aujltake,auvltake,aultajke,aultavke,o-,false,
 kau,1,come,v,D,kau,kau,kaus,kaus,o-,false,
-sounar,2,give,v,D,soujnar,souvnar,soujnars,souvnars,o-,false,
-thanar,2,take / get,v,D,thajnar,thavnar,thajnars,thavnars,o-,false,
-tesak,2,make / create,v,D,tejsak,tevsak,tejsaks,tevsaks,o-,false,
-minau,2,stand / stay,v,D,mijnau,mivnau,mijnaus,mivnaus,o-,false,
-rali,2,big / large,a,E,rajli,ravli,rajlis,ravlis,o-,false,
+aug,1,start / begin,v,D,aug,aug,augs,augs,o-,false,
+sounar,2,give,v,D,sounar,sounar,sounars,sounars,o-,false,
+thanar,2,take / get,v,D,thanar,thanar,thanars,thanars,o-,false,
+tesak,2,make / create,v,D,tesak,tesak,tesaks,tesaks,o-,false,
+minau,2,stand / stay,v,D,minau,minau,minaus,minaus,o-,false,
+sopa,2,watch / look,v,D,sopa,sopa,sopas,sopas,a-,false,
+kup,1,cut,nv,D,kup,kup,kups,kups,a-,false,bare root serves as both noun and verb
+thep,1,sleep,v,D,thep,thep,theps,theps,a-,false,
+tle,1,wait,v,D,tle,tle,tles,tles,o-,false,
+rali,2,big / large,a,E,rali,rali,ralis,ralis,o-,false,
 pag,1,small,a,E,pag,pag,pags,pags,o-,false,
 wem,1,hot / warm,a,E,wem,wem,wems,wems,o-,false,
 kop,1,cold,a,E,kop,kop,kops,kops,o-,false,
 gor,1,good,a,E,gor,gor,gors,gors,o-,false,
-bono,2,bad,a,E,bojno,bovno,bojnos,bovnos,o-,false,
+bono,2,bad,a,E,bono,bono,bonos,bonos,o-,false,
 my,1,dark,a,E,my,my,mys,mys,o-,false,
 shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)
-pusar,2,slow,a,E,pujsar,puvsar,pujsars,puvsars,o-,false,
-roli,2,lot / many,a,E,rojli,rovli,rojlis,rovlis,o-,false,
-niba,2,new,a,E,nijba,nivba,nijbas,nivbas,o-,false,
-noba,2,old,a,E,nojba,novba,nojbas,novbas,o-,false,
-asdo,2,know,v,F,ajsdo,avsdo,ajsdos,avsdos,o-,false,
+pusar,2,slow,a,E,pusar,pusar,pusars,pusars,o-,false,
+roli,2,lot / many,a,E,roli,roli,rolis,rolis,o-,false,
+niba,2,new,a,E,niba,niba,nibas,nibas,o-,false,
+noba,2,old,a,E,noba,noba,nobas,nobas,o-,false,
+hik,1,sad,a,E,hik,hik,hiks,hiks,o-,false,
+asdo,2,know,v,F,asdo,asdo,asdos,asdos,o-,false,
 thy,1,think,v,F,thy,thy,thys,thys,o-,false,
-rima,2,want / desire,v,F,rijma,rivma,rijmas,rivmas,o-,false,
+rima,2,want / desire,v,F,rima,rima,rimas,rimas,o-,false,
 argona,3,love,v,F,ajrgona,avrgona,argojna,argovna,o-,false,
-wamy,2,fear,n,F,wajmy,wavmy,wajmys,wavmys,o-,false,
-losga,2,anger / rage,n,F,lojsga,lovsga,lojsgas,lovsgas,o-,false,
-losto,2,joy / happiness,n,F,lojsto,lovsto,lojstos,lovstos,o-,false,
+wamy,2,fear,n,F,wamy,wamy,wamys,wamys,o-,false,
+losga,2,anger / rage,n,F,losga,losga,losgas,losgas,o-,false,
+losto,2,joy / happiness,n,F,losto,losto,lostos,lostos,o-,false,
 hax,1,pain / suffering,n,F,hax,hax,haxs,haxs,o-,false,
 roi,1,day,n,G,roi,roi,rois,rois,o-,false,
 rok,1,night,n,G,rok,rok,roks,roks,o-,false,
-ima,2,now,n,G,ijma,ivma,ijmas,ivmas,o-,false,combining form for imaroi (today)
-tilpi,2,before,n,G,tijlpi,tivlpi,tijlpis,tivlpis,o-,false,combining form pi in day compounds
-tilpa,2,after,n,G,tijlpa,tivlpa,tijlpas,tivlpas,o-,false,combining form pa in day compounds
+tar,1,dusk,n,G,tar,tar,tars,tars,o-,false,
+ima,2,now,n,G,ima,ima,imas,imas,o-,false,combining form for imaroi (today)
+tilpi,2,before,n,G,tilpi,tilpi,tilpis,tilpis,o-,false,combining form pi in day compounds
+tilpa,2,after,n,G,tilpa,tilpa,tilpas,tilpas,o-,false,combining form pa in day compounds
 thin,1,here,n,G,thin,thin,thins,thins,o-,false,
 tha,1,there,n,G,tha,tha,thas,thas,o-,false,
-poska,2,place / location,n,G,pojska,povska,pojskas,povskas,o-,false,
+poska,2,place / location,n,G,poska,poska,poskas,poskas,o-,false,
 tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,combining form tow in temporal compounds
 shu,1,soon,av,G,shu,shu,shus,shus,o-,false,bare root (simplified from shuk+tlow)
 sar,1,late,av,G,sar,sar,sars,sars,o-,false,bare root (simplified from pusar+tlow)
 cho,1,early,av,G,cho,cho,chos,chos,o-,false,bare root; ch onset (start-only)
-amo,2,again,av,G,ajmo,avmo,ajmos,avmos,o-,false,
+amo,2,again,av,G,amo,amo,amos,amos,o-,false,
 fou,1,during,av,G,fou,fou,fous,fous,o-,false,related to founai
-founai,2,duration,n,G,foujnai,fouvnai,foujnais,fouvnais,o-,false,
-sakar,2,occurrence / frequency,n,G,sajkar,savkar,sajkars,savkars,o-,false,combines with esa/slote/na
-esa,2,all / every,a,G,ejsa,evsa,ejsas,evsas,o-,false,combines into esaka (always)
-slote,2,some,a,G,slojte,slovte,slojtes,slovtes,o-,false,combines into slosaka (sometimes)
+founai,2,duration,n,G,founai,founai,founais,founais,o-,false,
+sakar,2,occurrence / frequency,n,G,sakar,sakar,sakars,sakars,o-,false,combines with esa/slote/na
+esa,2,all / every,a,G,esa,esa,esas,esas,o-,false,combines into esaka (always)
+slote,2,some,a,G,slote,slote,slotes,slotes,o-,false,combines into slosaka (sometimes)
 mi,1,name,n,H,mi,mi,mis,mis,o-,false,
-berat,2,word / speech,n,H,bejrat,bevrat,bejrats,bevrats,o-,false,
+berat,2,word / speech,n,H,berat,berat,berats,berats,o-,false,
 song,1,friend,n,H,song,song,songs,songs,o-,false,
-loger,2,power / strength,n,H,lojger,lovger,lojgers,lovgers,o-,false,
-eli,2,life,n,H,ejli,evli,ejlis,evlis,a-,false,
+loger,2,power / strength,n,H,loger,loger,logers,logers,o-,false,
+eli,2,life,n,H,eli,eli,elis,elis,a-,false,
 mil,1,death,n,H,mil,mil,mils,mils,o-,false,
-maekoi,2,spirit / soul,n,I,maejkoi,maevkoi,maejkois,maevkois,o-,false,
-emlu,2,truth,n,I,ejmlu,evmlu,ejmlus,evmlus,o-,false,
+maekoi,2,spirit / soul,n,I,maekoi,maekoi,maekois,maekois,o-,false,
+emlu,2,truth,n,I,emlu,emlu,emlus,emlus,o-,false,
 noi,1,void / emptiness,n,I,noi,noi,nois,nois,o-,false,
-sinkoi,2,alone / solitude,n,I,sijnkoi,sivnkoi,sijnkois,sivnkois,o-,false,
+sinkoi,2,alone / solitude,n,I,sinkoi,sinkoi,sinkois,sinkois,o-,false,
 ilsinkoi,3,together,n,I,ijlsinkoi,ivlsinkoi,ilsijnkoi,ilsivnkoi,o-,false,
-wino,2,colour / hue,n,J,wijno,wivno,wijnos,wivnos,o-,false,
+auli,2,comet,n,A,auli,auli,aulis,aulis,o-,false,
+wino,2,colour / hue,n,J,wino,wino,winos,winos,o-,false,
 res,1,copula - identity/attribution,v,-,res,res,res,res,,true,closed-class
-ero,2,existential & possession - there is/have,v,-,ero,evro,eros,evros,,false,verb form evro (L→H)
+ero,2,existential & possession - there is/have,v,-,ero,ero,eros,eros,,true,closed-class
 nar,1,clausal/constituent negation,v,-,nar,nar,nar,nar,,true,closed-class
 iu,1,yes/no question + affirmative answer,v,-,iu,iu,iu,iu,,true,closed-class
 na,1,negative answer (no),v,-,na,na,na,na,,true,closed-class
 te,1,dative particle (to),v,-,te,te,te,te,,true,closed-class
 we,1,intensify,v,D,we,we,wes,wes,,false,derived adverb wes = "very"
-mere,2,be slight (intensity),v,D,mejre,mevre,mejres,mevres,,false,derived mevres = "a bit" (intensity); distinct from pere (amount)
-pere,2,small amount,n,E,pejre,pevre,pejres,pevres,o-,false,derived pejres = "little (amount)"; distinct from mere (intensity)
+mere,2,be slight (intensity),v,D,mere,mere,meres,meres,,false,derived meres = "a bit" (intensity); distinct from pere (amount)
+pere,2,small amount,n,E,pere,pere,peres,peres,o-,false,derived peres = "little (amount)"; distinct from mere (intensity)
 tor,,comparative particle (than),,,,,,true,closed-class; toneless; -s exempt
 les,,equative particle (as),,,,,,true,closed-class; toneless; -s exempt
 torra,,superlative particle (most),,,,,,true,closed-class; toneless; -s exempt; fused from tor + rap

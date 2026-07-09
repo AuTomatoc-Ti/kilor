@@ -2,8 +2,8 @@
 
 **Module:** Comparatives & Superlatives
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md` (clause template, §IV-C closed-class particles), `2-predication/copula-existential.md` (copula `res`)
 
 ---
@@ -32,19 +32,19 @@ The comparative frame:
 Subject  tor  Standard  (Degree)  Quality
 ```
 
-> **Example:** `ki tor ti rajlis.`
+> **Example:** `ki tor ti ralis.`
 > (I than you big)
 > "I am bigger than you."
 
 Degree words optionally intensify or diminish the comparison. These slot between the `tor`-phrase and the quality:
 
-- `wes` (very, adverb derived from `we` + `-s`): `ki tor ti wes rajlis` — "I am much bigger than you"
-- `mevres` (a bit, adverb derived from `mere` + `-s`): `ki tor ti mevres rajlis` — "I am a little bigger than you"
-- `wetor` (much more than, fused particle): `ki wetor ti rajlis` — "I am much bigger than you"
+- `wes` (very, adverb derived from `we` + `-s`): `ki tor ti wes ralis` — "I am much bigger than you"
+- `meres` (a bit, adverb derived from `mere` + `-s`): `ki tor ti meres ralis` — "I am a little bigger than you"
+- `wetor` (much more than, fused particle): `ki wetor ti ralis` — "I am much bigger than you"
 
 The standard may be fronted for emphasis (OSV-like reordering), with the ACC case suffix marking the object:
 
-> **Example:** `ti-n tor ki rajlis.`
+> **Example:** `ti-n tor ki ralis.`
 > (you-ACC than I big)
 > "Compared to you, I am bigger."
 
@@ -58,17 +58,17 @@ The equative frame uses `les` in the same syntactic position as `tor`:
 Subject  les  Standard  (Degree)  Quality
 ```
 
-> **Example:** `ki les ti rajlis.`
+> **Example:** `ki les ti ralis.`
 > (I as you big)
 > "I am as big as you."
 
 **Negation:** Negation of the comparison uses `nar` **after** the particle (`les nar`, `tor nar`) to scope over the comparison itself, not over the subject:
 
-> **Example:** `ki les nar ti rajlis.`
+> **Example:** `ki les nar ti ralis.`
 > (I as NEG you big)
 > "I am not as big as you."
 
-> **Example:** `ki tor nar ti rajlis.`
+> **Example:** `ki tor nar ti ralis.`
 > (I than NEG you big)
 > "I am not bigger than you."
 
@@ -82,23 +82,23 @@ The superlative particle `torra` precedes the quality:
 Subject  torra  Quality
 ```
 
-> **Example:** `ki torra rajlis.`
+> **Example:** `ki torra ralis.`
 > (I most big)
 > "I am the biggest."
 
 To restrict the scope, use `mangus` (among). `mangus` may appear with or without `torra`:
 
-> **Example (with explicit superlative):** `ki mangus torra rajlis.`
+> **Example (with explicit superlative):** `ki mangus torra ralis.`
 > (I among most big)
 > "I am the biggest among (them/all)."
 
-> **Example (implicit superlative):** `ki mangus rajlis.`
+> **Example (implicit superlative):** `ki mangus ralis.`
 > (I among big)
 > "I am the biggest among (them)."
 
 `mangus` may take an explicit reference group as its object:
 
-> **Example:** `ki mangus kil rajlis.`
+> **Example:** `ki mangus kil ralis.`
 > (I among us big)
 > "I am the biggest among us."
 
@@ -120,13 +120,13 @@ In attributive position, the quality may link via the copula `res`. The copula m
 
 | Root | Syl | Category | Meaning | Derived Forms |
 |---|---|---|---|---|
-| `rap` | 1 | Noun | top / peak | `rap` → `raps` "topmost" |
+| `rap` | 1 | Noun | top / peak | `raps` (adj) "topmost" |
 | `we` | 1 | Verb | to intensify | `wes` (adv) "very" |
-| `mere` | 2 | Verb | to be slight (intensity) | `mejre` (n), `mevres` (adv) "a bit" |
-| `pere` | 2 | Noun | small amount | `pejre` (n) → `pejres` (adj) "little (amount)" |
+| `mere` | 2 | Verb | to be slight (intensity) | `meres` (adv) "a bit" |
+| `pere` | 2 | Noun | small amount | `peres` (adj) "little (amount)" |
 
 > **Distinction:** `mere` (intensity: "a bit") and `pere` (amount: "little") are distinct roots. Kilor separates intensity modification from quantity modification. Compare:
-> - `mevres rajlis` = "a bit big" (intensity — slightly big)
+> - `meres ralis` = "a bit big" (intensity — slightly big)
 > - `peres hamin` = "little food" (amount — small quantity of food)
 
 ---

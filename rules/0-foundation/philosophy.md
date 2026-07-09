@@ -2,8 +2,8 @@
 
 **Module:** Cultural & Philosophical Foundations
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.1
+**Last updated:** 2026-07-10
+**Version:** 1.1.0
 **Depends on:**
 
 ---
@@ -108,10 +108,10 @@ These dual-concepts are not merely decorative. They inform the design of Kilor a
 
 - **The Chromatic Ontology System** (colour prefixes) is the direct linguistic embodiment — each prefix's semantic field resonates with its philosophical dual-concept
 - **The Emotional Register System** (standalone colour particles) derives historically from these dual-concepts but has since crystallized into 7 basic, universally recognizable emotions for accessibility (anger, joy, sadness, calm, fear, surprise, disgust). See `3-subsystems/colour-emotion.md` §I for the full historical evolution and §II for the modern mapping.
-- **The 4-category tonal system** reflects the rhythm of these tensions: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding)[^1]
+- **The 3+ syllable tonal system** reflects the rhythm of these tensions for longer words: Noun (grounded descent), Verb (dynamic rise), Adjective (arched prominence), Adverb (dipped grounding). For 1–2 syllable words, all categories are toneless — disambiguation comes from syntactic position and the `-s` derivational suffix.[^1]
 - **The tolerance for ambiguity** (fault-tolerant prefixes, identical contour abutment, optional case marking) echoes the cultural embrace of duality — things need not be forced into a single category
 
-[^1]: The "arched prominence" (M→H→H) and "dipped grounding" (M→L→M) metaphors describe the 3+ syllable tone patterns. For 1–2 syllable words, Adjective and Adverb are derived from Noun and Verb via `-s` and share their parent contours: Adjective = Noun's H→L ("grounded descent"), Adverb = Verb's L→H ("dynamic rise"). See `0-foundation/tone-prosody.md` §II-B, §II-C.
+[^1]: The tonal metaphors ("grounded descent," "dynamic rise," "arched prominence," "dipped grounding") describe the 3+ syllable tone patterns defined in `0-foundation/tone-prosody.md` §II-A. For 1–2 syllable words, all four categories are toneless — a bare root serves as both noun and verb, and the `-s` suffixed form serves as both adjective and adverb. See `0-foundation/tone-prosody.md` §II-B.
 
 ---
 

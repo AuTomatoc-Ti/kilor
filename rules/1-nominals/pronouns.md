@@ -2,8 +2,8 @@
 
 **Module:** Pronoun Inventory & Declension
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.0.1
 **Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`
 
 ---
@@ -58,7 +58,7 @@ Pronouns use **reduced case endings** instead of the standard `-ni`/`-na` (Accus
 
 Pronoun case endings are **invariant**. They do not participate in the Contrastive Suffix Rule. The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `1-nominals/cases.md` §II.
 
-Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `0-foundation/tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). They participate in the word's tone contour rather than sitting outside it as flat-mid appendices.
+Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `0-foundation/tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). Since all pronouns are 1–2 syllables and toneless (see `0-foundation/tone-prosody.md` §II-B), there are no tone contours to participate in — the endings are flat mid, same as the pronoun roots.
 
 ### B. Full Declension Table
 
@@ -77,18 +77,7 @@ Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic
 
 ## IV. Tone
 
-Pronouns follow the standard Kilor tone rules in pronunciation only (see `0-foundation/tone-prosody.md`):
-
-| Syllable Count | Spelled Form | Pronounced Tone |
-|:---|:---|:---|
-| **1-syllable** (ki, kin, kis, etc.) | `ki` | Flat mid-tone |
-| **2-syllable** (kilin, tilis, etc.) | `kilin` | H→L (noun pattern) |
-
-### A. Simplified Spelling Convention
-
-Pronouns are a closed class — every form is unambiguously nominal. Therefore, **tone markers (`j`/`v`) are omitted from pronoun spelling** even when multi-syllable forms carry non-flat tone contours in speech. This simplifies the written form without creating ambiguity.
-
-> **Pronunciation:** 2-syllable inflected forms (`kilin`, `tilis`, `silin`, `nilin`, `silis`, `nilis`) are pronounced with H→L contour. 1-syllable forms are flat mid.
+Pronouns are 1–2 syllable words and are **toneless** — pronounced with flat mid-tone (see `0-foundation/tone-prosody.md` §II-B). This applies to all forms: singular (`ki`, `kin`, `kis`), plural (`kil`, `kilin`, `kilis`), and all other persons. No `j`/`v` tone markers are used in pronoun spelling or pronunciation.
 
 ---
 
@@ -98,7 +87,7 @@ Pronouns are a closed class — every form is unambiguously nominal. Therefore, 
 
 Possession by pronoun follows the same rule as regular nouns (see `1-nominals/cases.md` §IV): the Genitive-marked pronoun may appear before or after the possessed noun.
 
-> **Example:** `kis lujmi` (my light) ≡ `lujmi kis` (light of mine)
+> **Example:** `kis lumi` (my light) ≡ `lumi kis` (light of mine)
 
 ### B. Accusative Optionality
 

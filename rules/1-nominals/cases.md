@@ -2,8 +2,8 @@
 
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.3.0
 **Depends on:** `0-foundation/grammar-syntax.md`
 
 ---
@@ -43,11 +43,11 @@ The colour prefix is an external proclitic — it sits outside the phonological 
 |:---|:---|
 | a, o, u, ai, au, oi, ou | `-ni` (ACC), `-si` (GEN) |
 
-> **Example (contrast):** `fojra` (fire, last vowel `a` = back) + Accusative → `fojrani` (front `-ni`)
-> **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Accusative → `lujmina` (back `-na`)
-> **Example (contrast):** `fojra` (fire, last vowel `a` = back) + Genitive → `fojrasi` (front `-si`)
-> **Example (contrast):** `lujmi` (light, last vowel `i` = front) + Genitive → `lujmisa` (back `-sa`)
-> **Example (proclitic exemption):** `a-fojra` (Red-fire, prefix `a` = Front) + Genitive → `a-fojrasi` (front `-si`, not `-sa`). The prefix `a` is ignored; root's last vowel `a` (Back) selects front `-si`.
+> **Example (contrast):** `fora` (fire, last vowel `a` = back) + Accusative → `forani` (front `-ni`)
+> **Example (contrast):** `lumi` (light, last vowel `i` = front) + Accusative → `lumina` (back `-na`)
+> **Example (contrast):** `fora` (fire, last vowel `a` = back) + Genitive → `forasi` (front `-si`)
+> **Example (contrast):** `lumi` (light, last vowel `i` = front) + Genitive → `lumisa` (back `-sa`)
+> **Example (proclitic exemption):** `a-fora` (Red-fire, prefix `a` = Front) + Genitive → `a-forasi` (front `-si`, not `-sa`). The prefix `a` is ignored; root's last vowel `a` (Back) selects front `-si`.
 
 ---
 
@@ -59,7 +59,7 @@ The Accusative suffix (`-ni`/`-na`) has a **two-tier usage rule**:
 
 When a sentence follows the **default SOV order**, the Accusative may be **dropped** in everyday conversation. The object's position between Subject and Verb already signals its role sufficiently.
 
-> **Conceptual example (SOV speech):** `fojra lujmi tavka` — *lujmi* (light) is unambiguously the object by position.
+> **Conceptual example (SOV speech):** `fora lumi taka` — *lumi* (light) is unambiguously the object by position.
 
 ### B. Mandatory — Formal Writing & Non-SOV Order
 
@@ -68,18 +68,24 @@ The Accusative becomes **mandatory** in two contexts:
 1. **Formal writing** (even in SOV order) — for precision and clarity
 2. **Any non-SOV word order** (OSV, VSO, or other poetic inversions) — because position no longer signals objecthood, the suffix is the sole disambiguator
 
-> **Conceptual example (OSV):** `lujmina fojra tavka` — the `-na` on *lujmi* confirms it as the object despite being sentence-initial.
+> **Conceptual example (OSV):** `lumina fora taka` — the `-na` on *lumi* confirms it as the object despite being sentence-initial.
 
 ### C. Multi-Word Vocabs — Suffix Placement
 
 When the noun receiving a case suffix is a **multi-word vocab** (a semantic unit composed of multiple orthographic words; see `0-foundation/grammar-syntax.md` §IV-B), the case suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked.
 
-> **Example (Accusative, multi-word vocab):** `lujmi sojla` (star-light) + Accusative → `lujmi sojlani` (star-light as object)
-> **Example (Genitive, multi-word vocab):** `lujmi sojla` (star-light) + Genitive → `lujmi sojlasi` (star-light's / of the star-light)
+> **Example (Accusative, multi-word vocab):** `lumi sola` (star-light) + Accusative → `lumi solani` (star-light as object)
+> **Example (Genitive, multi-word vocab):** `lumi sola` (star-light) + Genitive → `lumi solasi` (star-light's / of the star-light)
 
 The colour prefix (if present) attaches orthographically to the first word and does not affect suffix placement:
 
-> **Example (with prefix):** `a-lujmi sojla` (Red-star-light) + Accusative → `a-lujmi sojlani`
+> **Example (with prefix):** `a-lumi sola` (Red-star-light) + Accusative → `a-lumi solani`
+
+> **Lexical vs. syntactic distinction:** This suffix-placement rule applies only to **lexical multi-word vocabs** — compound lexical entries composed of multiple orthographic words that form a single semantic concept (e.g., `lumi sola` "star-light"). It does **not** apply to syntactic noun phrases with quantifiers. When a noun is quantified by a numeral, the numeral occupies its own clause slot (`[Numeral]`; see `0-foundation/grammar-syntax.md` §I-E), and the case suffix attaches to the noun, not the numeral:
+>
+> > **Example (syntactic quantification):** `bau-ni ro` (three breads, with ACC on the noun `bau`, not on the numeral `ro`)
+>
+> See `3-subsystems/numerals.md` §VI for NP quantification word order.
 
 ---
 
@@ -91,7 +97,7 @@ The Genitive (`-si`/`-sa`) is the **only mechanism for expressing possession** i
 
 The Genitive-marked possessor may appear before or after the possessed noun:
 
-> `fojrasi lujmi` (fire's light) ≡ `lujmi fojrasi` (light of fire)
+> `forasi lumi` (fire's light) ≡ `lumi forasi` (light of fire)
 
 ### Nested Possession — Fixed Recursive Order
 
@@ -103,11 +109,11 @@ When **multiple Genitive-marked nouns** chain together (nested possession), Kilo
 
 In a chain, the outermost possessor comes first, followed by each successively nested pair:
 
-> `kis fojrasi lujmi` = "my fire's light" — `kis` (my) owns `fojrasi` (fire's), which owns `lujmi` (light)
-> 
-> Parse: `[kis [fojrasi lujmi]]` — `kis` is the outermost possessor; `fojrasi` is nested inside
+> `kis forasi lumi` = "my fire's light" — `kis` (my) owns `forasi` (fire's), which owns `lumi` (light)
+>
+> Parse: `[kis [forasi lumi]]` — `kis` is the outermost possessor; `forasi` is nested inside
 
-Free order (`lujmi fojrasi kis`) is **not valid** for nested possession — the fixed possessor-first recursive order disambiguates the nesting structure.
+Free order (`lumi forasi kis`) is **not valid** for nested possession — the fixed possessor-first recursive order disambiguates the nesting structure.
 
 ### Absence of Possessive Pronouns
 
@@ -124,11 +130,13 @@ Kilor intentionally restricts the case system to 3 slots. All other semantic rol
 
 | Role | Meaning | Particle | Usage |
 |:---|:---|:---|:---|
-| **Dative** | to / for (recipient, direction) | **`te`** | Placed before the recipient/goal noun |
-| **Comitative** | with / together (companion) | **`mer`** | Placed before the companion noun |
 | **Instrumental** | by / with / using (means, tool, agent) | **`sy`** | Placed before the instrument/agent noun |
-| **Ablative** | from (origin, source) | **`ar`** | Placed before the source noun |
+| **Comitative** | with / together (companion) | **`mer`** | Placed before the companion noun |
 | **Locative-relational** | between | **`tilpe`** | Placed before the location/reference noun |
+| **Ablative** | from (origin, source) | **`ar`** | Placed before the source noun |
+| **Dative** | to / for (recipient, direction) | **`te`** | Placed before the recipient/goal noun |
+
+When multiple obliques co-occur in the same clause, they follow the fixed order: `sy` (Instrumental) > `mer` (Comitative) > `tilpe` (Locative-relational) > `ar` (Ablative) > `te` (Dative). See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
 
 ### B. Conjunctions
 
@@ -173,9 +181,9 @@ The instrumental particle **`sy`** (§V-A) is extended to serve as the **passive
 
 | Usage | Pattern | Example |
 |:---|:---|:---|
-| **Instrumental** (active SOV) | `Agent object-ACC sy instrument verb` | `ki bau-ni sy maliu cut.` — "I cut bread with a knife." |
-| **Passive, agent deleted** | `Patient sy verb` | `hawu sy tavka.` — "The animal was eaten." |
-| **Passive, agent expressed** | `Patient sy agent verb` | `hawu sy a-fojra tavka.` — "The animal was eaten by the fire." |
+| **Instrumental** (active SOV) | `Agent object-ACC sy instrument verb` | `ki bau-ni sy maliu kup.` — "I cut bread with a knife." |
+| **Passive, agent deleted** | `Patient sy verb` | `hawu sy taka.` — "The animal was eaten." |
+| **Passive, agent expressed** | `Patient sy agent verb` | `hawu sy a-fora taka.` — "The animal was eaten by the fire." |
 
 > **Design notes:**
 > - When the agent is expressed after `sy`, it carries no case suffix — `sy` itself marks the agent's oblique role. The verb carries no morphological change; valency reduction is signalled entirely by `sy`.
@@ -189,13 +197,10 @@ The instrumental particle **`sy`** (§V-A) is extended to serve as the **passive
 
 When a case suffix is attached to a root, the tonal architecture of the root is completely preserved:
 
-- The tone marker (`j` or `v`) **never migrates**
-- It remains ontologically locked to its original anchor syllable
+- For 3+ syllable roots: the tone marker (`j` or `v`) **never migrates**. It remains ontologically locked to its original anchor syllable.
+- For 1–2 syllable roots: there are no tone markers (toneless — see `0-foundation/tone-prosody.md` §II-B).
 - The case suffix itself is pronounced with a **neutral, flat mid-tone**
 - The case suffix does **not** count toward the last-3 tone domain (see `0-foundation/tone-prosody.md`)
-
-> **Example:** `aujli` (noun, 2 syllables, H(`j`)→L) + Genitive `-sa` → `aujlisa`
-> The `j` stays locked on `au`; `-sa` is flat mid-tone.
 
 ---
 

@@ -2,8 +2,8 @@
 
 **Module:** Predication, Existence & Having
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.2.0
 **Depends on:** `2-predication/negation.md`, `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
@@ -32,7 +32,7 @@ This split reflects a philosophical stance: **being something** and **having som
 | **Root** | `res` |
 | **Syllables** | 1 |
 | **Category** | Verb (closed-class function word) |
-| **Tone** | Toneless (flat mid-tone) — follows 1-syllable verb rule |
+| **Tone** | Toneless (flat mid-tone) — follows 1-syllable toneless rule |
 | **Class** | Closed-class — exempt from the open-root `-s` constraint (see `0-foundation/grammar-syntax.md` §IV-C) |
 
 `res` expresses:
@@ -46,8 +46,9 @@ This split reflects a philosophical stance: **being something** and **having som
 |---|---|
 | **Root** | `ero` |
 | **Syllables** | 2 |
-| **Category** | Verb (open-class) |
-| **Tone** | 2-syl verb pattern: L(`v`)→H → `evro` |
+| **Category** | Verb (closed-class function word) |
+| **Tone** | Toneless (flat mid-tone) — follows 2-syllable toneless rule |
+| **Class** | Closed-class — exempt from the open-root `-s` constraint (see `0-foundation/grammar-syntax.md` §IV-C) |
 
 `ero` expresses:
 
@@ -66,41 +67,41 @@ Subject — Complement — Verb
 
 ### A. Predicate Adjective
 
-> `a-fojra wem res.`
+> `a-fora wem res.`
 > (The fire hot is.)
 > "The fire is hot."
 
-> `fojra wem res.`
+> `fora wem res.`
 > (Fire hot is.)
 > "Fire is hot." (generic)
 
 ### B. Predicate Nominal
 
-> `ki maejha res.`
+> `ki maeha res.`
 > (I person am.)
 > "I am a person."
 
-> `si a-fojra res.`
+> `si a-fora res.`
 > (It the-fire is.)
 > "It is the fire."
 
 ### C. Existential
 
-> `fojra evro.`
+> `fora ero.`
 > (Fire exists.)
 > "There is fire." / "Fire exists."
 
-> `maejha evro.`
+> `maeha ero.`
 > (Person exists.)
 > "There is a person."
 
 ### D. Possession
 
-> `ki fojra evro.`
+> `ki fora ero.`
 > (I fire have.)
 > "I have fire."
 
-> `si lira evro.`
+> `si lira ero.`
 > (He/she water has.)
 > "He/she has water."
 
@@ -112,34 +113,34 @@ Subject — Complement — Verb
 
 `nar` follows the copula, scoping over the predication:
 
-> `fojra wem res nar.`
+> `fora wem res nar.`
 > "Fire is not hot."
 
-> `ki maejha res nar.`
+> `ki maeha res nar.`
 > "I am not a person."
 
 ### B. Existential Negation
 
 `nar` follows `ero`, negating existence:
 
-> `fojra evro nar.`
+> `fora ero nar.`
 > "There is no fire." / "Fire does not exist."
 
 ### C. Possession Negation
 
 `nar` follows `ero`, negating possession:
 
-> `ki fojra evro nar.`
+> `ki fora ero nar.`
 > "I do not have fire."
 
 ### D. Constituent Negation
 
 As with all verbs (see `2-predication/negation.md` §II-B), `nar` placed before the verb negates only the preceding constituent:
 
-> `ki nar fojra evro.`
+> `ki nar fora ero.`
 > "Not I have fire." (someone else does)
 
-> `ki fojra nar evro.`
+> `ki fora nar ero.`
 > "I not-fire have." (I have something else)
 
 ---
@@ -150,16 +151,16 @@ As with all verbs (see `2-predication/negation.md` §II-B), `nar` placed before 
 
 Sentence-final `iu` as usual (see `2-predication/interrogative.md` §IV):
 
-> `fojra wem res iu?`
+> `fora wem res iu?`
 > "Is fire hot?"
 
-> `ki maejha res iu?`
+> `ki maeha res iu?`
 > "Am I a person?"
 
-> `fojra evro iu?`
+> `fora ero iu?`
 > "Is there fire?"
 
-> `ki fojra evro iu?`
+> `ki fora ero iu?`
 > "Do I have fire?"
 
 ### B. Wh-Questions
@@ -170,11 +171,11 @@ Question words are fronted as usual, including with copula/existential:
 > (What hot is?)
 > "What is hot?"
 
-> `iwei fojra evro?`
+> `iwei fora ero?`
 > (Where fire exists?)
 > "Where is there fire?"
 
-> `aewei fojra evro?`
+> `aewei fora ero?`
 > (Who fire has?)
 > "Who has fire?"
 
@@ -186,14 +187,14 @@ Question words are fronted as usual, including with copula/existential:
 
 The copula is a **linking verb** — neither argument is an object. Both subject and complement are in the **Nominative** (unmarked). No Accusative suffix is used.
 
-> ✅ `ki maejha res.` (I person am.)
-> ❌ `ki maejhana res.` (person in Accusative — invalid with copula)
+> ✅ `ki maeha res.` (I person am.)
+> ❌ `ki maehana res.` (person in Accusative — invalid with copula)
 
 ### B. Existential & Possession — Standard Case Rules Apply
 
 Possession with `ero` uses standard SOV case marking:
 
-> `ki fojrani evro.` (I fire-ACC have.) — Accusative optional in SOV speech, mandatory in formal/non-SOV
+> `ki forani ero.` (I fire-ACC have.) — Accusative optional in SOV speech, mandatory in formal/non-SOV
 
 ---
 
@@ -215,15 +216,15 @@ This is the **only** context where zero-copula is permitted. Predicate nominals 
 
 | Pattern | Structure | Example | Meaning |
 |---|---|---|---|
-| Predicate Adjective | SUBJ ADJ `res` | `fojra wem res` | Fire is hot |
-| Predicate Nominal | SUBJ NOUN `res` | `ki maejha res` | I am a person |
-| Existential | NOUN `evro` | `fojra evro` | There is fire |
-| Possession | POSSESSOR POSSESSED `evro` | `ki fojra evro` | I have fire |
-| Negated copula | SUBJ COMP `res nar` | `fojra wem res nar` | Fire is not hot |
-| Negated existential | NOUN `evro nar` | `fojra evro nar` | There is no fire |
-| Negated possession | PSR PSD `evro nar` | `ki fojra evro nar` | I don't have fire |
-| Y/N copula | SUBJ COMP `res iu` | `fojra wem res iu` | Is fire hot? |
-| Y/N existential | NOUN `evro iu` | `fojra evro iu` | Is there fire? |
+| Predicate Adjective | SUBJ ADJ `res` | `fora wem res` | Fire is hot |
+| Predicate Nominal | SUBJ NOUN `res` | `ki maeha res` | I am a person |
+| Existential | NOUN `ero` | `fora ero` | There is fire |
+| Possession | POSSESSOR POSSESSED `ero` | `ki fora ero` | I have fire |
+| Negated copula | SUBJ COMP `res nar` | `fora wem res nar` | Fire is not hot |
+| Negated existential | NOUN `ero nar` | `fora ero nar` | There is no fire |
+| Negated possession | PSR PSD `ero nar` | `ki fora ero nar` | I don't have fire |
+| Y/N copula | SUBJ COMP `res iu` | `fora wem res iu` | Is fire hot? |
+| Y/N existential | NOUN `ero iu` | `fora ero iu` | Is there fire? |
 | Zero-copula (ambient) | ADJ | `wem` | It's hot |
 
 ---

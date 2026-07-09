@@ -2,8 +2,8 @@
 
 **Module:** Numeral System, Quantification & Ranking
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `0-foundation/phonology.md`
 
 ---
@@ -46,7 +46,7 @@ Scale markers are closed-class numeral roots denoting powers of 10.
 
 ### A. `-s` Exemption
 
-`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint (`0-foundation/grammar-syntax.md` §IV-C). All numerals form a **closed class** — they never receive derivational morphology. They join `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, and `mangus` in the closed-class exemption list.
+`kas`, `hus`, `tus`, and `rakas` end in `-s` but are **exempt** from the open-root `-s` constraint. All numerals form a **closed class** — they never receive derivational morphology. See `0-foundation/grammar-syntax.md` §IV-C for the full closed-class inventory.
 
 ### B. `sl` Positional Exemption
 
@@ -148,19 +148,13 @@ When zero is explicit for clarity (e.g., arithmetic), `aniu` stands alone:
 
 ## IV. Tone
 
-Numerals follow **standard tone rules per word**, based on each word's syllable count independently:
+Numerals are a **closed class**. 1–2 syllable numerals are **toneless** (flat mid-tone), consistent with all 1–2 syllable words (see `0-foundation/tone-prosody.md` §II-B). 3+ syllable numeral compounds follow the standard Last-3 Domain: the noun pattern H→M→L applies (numerals are nominal).
 
-| Syllables | Tone Rule |
-|:---|:---|
-| 1-syllable | Flat mid-tone (toneless) |
-| 2-syllable | H→L (noun pattern) |
-| 3+ syllable | H→M→L (last-3 domain) |
-
-Multi-word numeral expressions are stitched **modularly**: each word carries its own independent contour per `0-foundation/tone-prosody.md` §IV-D. There is no free variation — tone is deterministic.
+Multi-word numeral expressions are stitched **modularly**: each word carries its own independent tone per `0-foundation/tone-prosody.md` §IV-D. There is no free variation — tone is deterministic.
 
 > **1-syllable:** `mo`, `gau`, `kas`, `cu` → flat mid-tone
-> **2-syllable:** `dogau`, `rakas`, `aniu` → H→L (the `j`/`v` tone marker is used in dictionary citation forms per the standard noun pattern; in practice, numerals follow the closed-class pronoun convention where tone markers may be omitted in spelling — see §VIII)
-> **3+ syllable:** `cudogaurokas` → H→M→L across last 3 syllables
+> **2-syllable:** `dogau`, `rakas`, `aniu` → flat mid-tone (toneless)
+> **3+ syllable:** `cudogaurokas` → noun H→M→L across last 3 syllables
 
 ---
 
@@ -233,9 +227,7 @@ Measure words, being regular noun roots, **may** take case suffixes when the NP 
 
 ## VIII. Orthographic Convention
 
-Numerals are a closed class. In everyday writing, tone markers (`j`/`v`) may be omitted from multi-syllable numerals following the same convention as pronouns (`1-nominals/pronouns.md` §IV-A) — the closed class and unambiguous numerical context make tone markers redundant in practice.
-
-Dictionary citation forms include tone markers for completeness (e.g., `dovgau`, `rakas`), but canonical example sentences may omit them.
+Numerals are a closed class. All 1–2 syllable numerals are spelled without `j`/`v` tone markers, consistent with the 1–2 syllable toneless rule (`0-foundation/tone-prosody.md` §II-B). 3+ syllable numeral compounds carry tone markers on the last 3 syllables as appropriate for the noun pattern (H→M→L).
 
 ---
 
@@ -252,7 +244,7 @@ Dictionary citation forms include tone markers for completeness (e.g., `dovgau`,
 | **NP order** | `NOUN — (MEASURE) — NUM — (ORD)` |
 | **`-s` exemption** | `kas`, `hus`, `tus`, `rakas` exempt (numerals = closed class) |
 | **`sl` exemption** | `sl` permitted word-medially in numeral compounds |
-| **Tone** | Deterministic per-word, modular stitching |
+| **Tone** | 1–2 syllable: toneless; 3+: noun H→M→L; modular stitching |
 | **Case** | Numerals do not take case suffixes |
 
 ---

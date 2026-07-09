@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.1.0
+**Last updated:** 2026-07-10
+**Version:** 2.0.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`
 
 ---
@@ -16,7 +16,7 @@ Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. T
 
 > **Note:** SOV is a **pedagogical baseline** — the simplest model for explaining Kilor's core syntax. Real sentences may include additional elements (prepositions, numerals, temporal words, question words, etc.) that create more complex structures. The SOV model describes the relative order of the three core arguments; other elements are placed according to their own rules (see `2-predication/interrogative.md` for question word fronting, `1-nominals/cases.md` §V for dative/instrumental particles).
 
-> **Example:** `a-fojra hawu-ni tavka.`
+> **Example:** `a-fora hawu-ni taka.`
 > (the-fire animal-ACC eat.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 > "The fire eats the animal."
@@ -39,13 +39,13 @@ Because case suffixes explicitly mark syntactic roles (see `1-nominals/cases.md`
 
 For a **single possessor**, the Genitive-marked noun may precede or follow the possessed noun:
 
-> **Example:** `fojrasi lujmi` (fire's light) ≡ `lujmi fojrasi` (light of fire)
+> **Example:** `forasi lumi` (fire's light) ≡ `lumi forasi` (light of fire)
 
 For **nested possession** (multiple Genitive-marked nouns chained together), Kilor uses a **fixed recursive order**: each possessor must **precede** what it owns. The outermost possessor comes first, followed by each successively nested pair. See `1-nominals/cases.md` §IV for the full rule.
 
-> **Nested example:** `kis fojrasi lujmi` = "my fire's light" — `kis` owns `fojrasi`, which owns `lujmi`
-> 
-> Free order (`lujmi fojrasi kis`) is not valid for nested possession.
+> **Nested example:** `kis forasi lumi` = "my fire's light" — `kis` owns `forasi`, which owns `lumi`
+>
+> Free order (`lumi forasi kis`) is not valid for nested possession.
 
 ### D. Passive Voice
 
@@ -55,8 +55,8 @@ In brief:
 
 | Pattern | Example |
 |:---|:---|
-| `Patient sy verb` | `hawu sy tavka.` — "The animal was eaten." |
-| `Patient sy agent verb` | `hawu sy a-fojra tavka.` — "The animal was eaten by the fire." |
+| `Patient sy verb` | `hawu sy taka.` — "The animal was eaten." |
+| `Patient sy agent verb` | `hawu sy a-fora taka.` — "The animal was eaten by the fire." |
 
 The patient is promoted to NOM (unmarked). The agent (if expressed) follows `sy` with no case suffix. The verb carries no morphological change — valency reduction is signalled entirely by `sy`.
 
@@ -68,28 +68,28 @@ The patient is promoted to NOM (unmarked). The agent (if expressed) follows `sy`
 
 Adjectives (noun + `-s` or quality roots used attributively) **precede** the noun:
 
-> `rajlis a-maeha` — "big person" (lit. "big the-person")
+> `ralis a-maeha` — "big person" (lit. "big the-person")
 
-Intensity adverbs (`wes`, `mevres`) precede the adjective:
+Intensity adverbs (`wes`, `meres`) precede the adjective:
 
-> `wes rajlis a-maeha` — "very big person"
+> `wes ralis a-maeha` — "very big person"
 
 #### Oblique PPs — Fixed Order
 
 When multiple oblique prepositional phrases appear, they follow the **fixed order**:
 
 ```
-Object [ACC] — [Numeral] — [sy Instrumental] — [te Dative] — [Adverb] — Verb
+Object [ACC] — [Numeral] — [sy Instrumental] — [mer Comitative] — [tilpe Locative-relational] — [ar Ablative] — [te Dative] — [Adverb] — Verb
 ```
 
-> `bau-ni ro sy y-maliu te kis song shuks souvnar` — "quickly give three breads to my friend with an iron knife"
+> `bau-ni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
 
-The object (with optional ACC case suffix) and any numeral come first. Instrumental `sy` precedes dative `te`. Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
+The object (with optional ACC case suffix) and any numeral come first. When multiple obliques co-occur, the fixed order is `sy` (Instrumental) > `mer` (Comitative) > `tilpe` (Locative-relational) > `ar` (Ablative) > `te` (Dative). Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
 
 #### Full Clause Template (SOV)
 
 ```
-[Emo]  [Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [te Dat]  [Manner Adv]  [Emo]  [Verb]  [nar]
+[Emo]  [Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [mer Com]  [tilpe Loc-rel]  [ar Abl]  [te Dat]  [Manner Adv]  [Emo]  [Verb]  [nar]
 ```
 
 All slots are optional except the subject and verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only.
@@ -97,11 +97,11 @@ All slots are optional except the subject and verb. `[Emo]` is an optional emoti
 #### Maximal Example Sentence
 
 ```
-piroi  wes  rajlis  a-maeha  kus kin avrgona  bau-ni ro  sy y-maliu  te kis song  shuks  souvnar  nar.
+piroi  wes  ralis  a-maeha  kus kin avrgona  bau-ni ro  sy y-maliu  te kis song  shuks  sounar  nar.
 
-ei  imaroi  bau  sy a-fojra  tavka.
+ei  imaroi  bau  sy a-fora  taka.
 
-amer  ki  mangus kil  torra  rajlis.
+amer  ki  mangus kil  torra  ralis.
 ```
 
 **Translation:** "Yesterday the very big person who loves me did not quickly give three breads to my friend with an iron knife. And today the bread was eaten by the fire. But I am the biggest among us."
@@ -124,14 +124,14 @@ Suffixes use the vowel class **opposite** to the root's last-syllable nucleus. T
 | **Front / Bright** | Uses Back suffix | e, i, y, ae, ei, eu, iu → `-na` (ACC), `-sa` (GEN) |
 | **Back / Deep** | Uses Front suffix | a, o, u, ai, au, oi, ou → `-ni` (ACC), `-si` (GEN) |
 
-> **Example (last vowel `a` = back → front suffix):** `fojra` (fire, noun H→L) + Accusative → `fojrani` (uses `-ni`, not `-na`)
-> **Example (last vowel `i` = front → back suffix):** `lujmi` (light, noun H→L) + Accusative → `lujmina` (uses `-na`, not `-ni`)
+> **Example (last vowel `a` = back → front suffix):** `fora` (fire, noun) + Accusative → `forani` (uses `-ni`, not `-na`)
+> **Example (last vowel `i` = front → back suffix):** `lumi` (light, noun) + Accusative → `lumina` (uses `-na`, not `-ni`)
 
 ### Proclitic Exemption
 
 The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class.
 
-> **Example:** `a-fojra-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
+> **Example:** `a-fora-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
 
 ---
 
@@ -161,29 +161,29 @@ When a root terminating in a vowel interfaces with a vowel-initial suffix, they 
 
 Vocabulary is expanded through **lexical compounding**: roots of 1 to 5 syllables are combined to form complex concepts.
 
-> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (star-light, multi-word vocab)
+> **Example:** `lumi` (light) + `sola` (star) → `lumi sola` (star-light, multi-word vocab)
 
 ### B. Word-Unit Processing
 
-Kilor distinguishes two forms of compounding for tone purposes:
+Kilor distinguishes two forms of compounding:
 
-1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word for tone: the Last-3 Domain Rule applies across the entire word (see `0-foundation/tone-prosody.md` §IV-A).
+1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word: for 3+ syllable compounds, the Last-3 Domain Rule applies across the entire word (see `0-foundation/tone-prosody.md` §IV-A). 1–2 syllable mono-word compounds are toneless.
 
    > **Phonotactic constraint:** Start-only onsets (`sh`, `ch`, `th`, `sl`, `kl`, `tl`, `bl`, `ml`; see `0-foundation/phonology.md` §III-C) and ending-only consonants (`ng`, `x`; see `0-foundation/phonology.md` §III-B) are restricted to word-peripheral positions. A root beginning with a start-only onset or ending with an ending-only consonant may **not** appear as a non-initial or non-final element in a mono-word compound — such combinations must use multi-word vocabs instead. Only roots composed entirely of core consonants (see `0-foundation/phonology.md` §III-A) may appear in any position within a mono-word compound.
 
-2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `sojlas lujmi`). Each word retains its own tonal contour independently via Modular Stitching (see `0-foundation/tone-prosody.md` §IV-D). The contours are stitched sequentially, not recalculated across word boundaries.
+2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `solas lumi`). Each word is processed independently via Modular Stitching (see `0-foundation/tone-prosody.md` §IV-D).
 
    > **Case suffix distribution:** When a multi-word vocab receives a case suffix (Accusative or Genitive), the suffix attaches **only to the last word** of the vocab. The earlier words remain unmarked. The colour prefix (if present) attaches orthographically to the first word and does not affect suffix placement. See `1-nominals/cases.md` §III–IV for case usage rules.
 
 ### C. Root Constraints
 
 - All roots must obey the CV/CVC/VC/V syllable templates
-- No `j` or `v` may appear in any root
+- No `j` or `v` may appear in any root of 1–2 syllables (toneless). `j` and `v` appear only as tone markers on 3+ syllable words
 - No consonant clusters
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`dir`, `res`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`) are **exempt** from the `-s` constraint. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`dir`, `res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
 ---
 
@@ -193,20 +193,19 @@ Kilor distinguishes two forms of compounding for tone purposes:
 
 The suffix `-s` creates modifiers from base roots. It applies to **1 and 2 syllable** words only. 3+ syllable words distinguish all 4 categories through tone pattern alone (see `0-foundation/tone-prosody.md`).
 
+For 1–2 syllable words:
+
 | Derivation | Result | Applies To |
 |:---|:---|:---|
-| Noun + `-s` | Adjective | 1 & 2 syllable nouns |
-| Verb + `-s` | Adverb | 1 & 2 syllable verbs |
-| Quality root + `-s` | Manner Adverb | 1 & 2 syllable adjective/quality roots (lexicon `category: a`) |
+| Root + `-s` | Adjective & Adverb | All 1 & 2 syllable roots |
 
-> **1-syllable verb → adverb:** `fei` (verb, toneless) → `feis` (adverb, toneless)
-> **2-syllable noun → adjective:** `aujli` (noun, H→L) → `aujlis` (adjective, H→L)
-> **1-syllable quality → manner adverb:** `shuk` (adj: fast) → `shuks` (adv: quickly)
-> **1-syllable quality → manner adverb:** `gor` (adj: good) → `gors` (adv: well)
+The bare root serves as both noun and verb. Adding `-s` creates the modifier form, which serves as both adjective and adverb. Position disambiguates: adjectives precede nouns (§I-E), adverbs precede verbs (§I-E).
+
+> **1-syllable examples:** `fei` (bare root: fly/verbal noun) → `feis` (modifier: flying/flyingly). `shuk` (quality root: fast) → `shuks` (adv: quickly).
+> **2-syllable example:** `fora` (bare root: fire/burn) → `foras` (modifier: fiery/burningly).
+> **Quality root:** `gor` (adj: good) → `gors` (adv: well).
 
 > **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, hot, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
-
-Manner adverbs derived from quality roots are distinguished from attributive adjectives by **position**: adjectives precede nouns (§I-E), manner adverbs precede verbs (§I-E). The same `-s` form serves both roles — context disambiguates.
 
 ### B. Phonological Nature
 

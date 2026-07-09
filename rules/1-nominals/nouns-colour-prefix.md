@@ -2,8 +2,8 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.1
+**Last updated:** 2026-07-10
+**Version:** 1.1.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -44,6 +44,8 @@ The hyphen between the colour prefix and the root is **mandatory** in written Ki
 
 Without the mandatory hyphen, `aekora` would be ambiguous: Brown-prefix `kora` vs bare root `aekora`. The hyphen eliminates this ambiguity entirely.
 
+> **Exception — Question words:** Question words formed from `wei` with a colour prefix (`awei`, `ewei`, `iwei`, `owei`, `uwei`, `ywei`, `aewei`) are **exempt** from the mandatory hyphen rule. The merged form without a hyphen is the sole written form for question words. See `2-predication/interrogative.md` §II.
+
 ---
 
 ## III. Phonological Status: The Proclitic Exemption
@@ -53,12 +55,12 @@ The Colour Prefix is an **External Proclitic**. It sits outside the phonological
 - **Does not** trigger the Contrastive Suffix Rule — only the root's last-syllable nucleus determines suffix vowel class
 - **Does not** carry tone — all colour prefixes are pronounced with a flat mid-tone
 - **Does not** count toward the syllable count for the last-3 tone domain (see `0-foundation/tone-prosody.md`) — only the root's syllables are counted
-- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-ajkora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
+- Uses the **V (Standalone Vowel)** template — the hiatus between prefix and root (e.g., `a-akora`) is phonotactically legal and creates a brief vowel hiatus; an optional glottal catch may be inserted in careful speech for emphasis
 
-> **Example (multi-word vocab):** `a-lujmi sojla` (Red star-light)
-> The colour prefix `a-` is flat Mid and ignored for tone. The multi-word vocab `lujmi sojla` (2-syl noun + 2-syl noun) carries two stitched H→L contours: H→L → H→L.
+> **Example (multi-word vocab):** `a-lumi sola` (Red star-light)
+> The colour prefix `a-` is flat Mid and ignored for tone. The multi-word vocab `lumi sola` (2-syl noun + 2-syl noun) is toneless (flat mid).
 >
-> **Example (Contrastive Suffix Rule):** `a-fojra-si` (Red fire's)
+> **Example (Contrastive Suffix Rule):** `a-fora-si` (Red fire's)
 > Prefix `a` is Front but ignored; root's last vowel `a` is Back → Genitive suffix uses front variant `-si`
 
 ---
@@ -77,24 +79,24 @@ The prefix **must** be applied when the noun is **foregrounded** — i.e., defin
 
 In this state, the noun is grammatically foregrounded and requires explicit ontological framing.
 
-> **Example:** `a-fojra` = "the fire" or "this fire" (specific, identifiable fire, framed as Red/Alive)
-> **Example:** `o-lujmi` = "the light" or "that light" (specific light, framed as White/Abstract)
+> **Example:** `a-fora` = "the fire" or "this fire" (specific, identifiable fire, framed as Red/Alive)
+> **Example:** `o-lumi` = "the light" or "that light" (specific light, framed as White/Abstract)
 
 ### B. Generic / Indefinite — Prefix Omitted
 
 When the noun is **generic or indefinite** (not tied to a specific referent), the prefix is **dropped by default**. The noun appears as an unmarked, generic concept without ontological commitment.
 
-> **Example:** `fojra` = "fire" (generic concept, not a specific fire)
-> **Example:** `lujmi` = "light" (light in general)
+> **Example:** `fora` = "fire" (generic concept, not a specific fire)
+> **Example:** `lumi` = "light" (light in general)
 
 > **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
-> 
+>
 > **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `3-subsystems/colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
-> 
-> > **Example:** `a-lujmi` (Red-anger light) — "light" as indefinite concept, but spoken with anger-tinted emotional weight
+>
+> > **Example:** `a-lumi` (Red-anger light) — "light" as indefinite concept, but spoken with anger-tinted emotional weight
 > > **Example:** `i-ro` (Blue-sadness water) — "water" as an indefinite, generic substance, tinted with sadness
-> > **Example:** `y-gijlan` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
-> 
+> > **Example:** `y-gilan` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
+>
 > This usage is optional and expressive; omitting the prefix remains the default for generic reference. The emotional register is recoverable from context and does not override the noun's grammatical indefiniteness.
 
 
@@ -143,7 +145,7 @@ Every **common noun** in Kilor has a **community-consensus default prefix (共�
 Proper nouns may also have conventionalised default prefixes (e.g., a city named with a culturally assigned colour), but they are **exempt** from the 共識 requirement — a proper name may carry any colour prefix, or no prefix at all (see §IV-C).
 
 > **Example:** *Paper* defaults to **`e-paper`** (Yellow) — its primary identity is a human-crafted tool.
-> **Example:** *Fire* defaults to **`a-fojra`** (Red/Alive) — its primary identity is as a living, energy-consuming force.
+> **Example:** *Fire* defaults to **`a-fora`** (Red/Alive) — its primary identity is as a living, energy-consuming force.
 
 #### Speaker Override (異體字)
 
@@ -152,9 +154,9 @@ The 共識 default is the conventional form, but a speaker may intentionally sub
 A speaker who uses a non-standard prefix does not cause confusion; the root morpheme carries the core semantic weight. The variant prefix acts as a deliberate "camera lens" that highlights a specific property the speaker wishes to foreground, even if it deviates from convention.
 
 > **Example (共識 + 異體字):**
-> 共識: `a-fojra` (Red) — fire's conventional framing as alive/energy
-> 異體字: `y-fojra` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
-> 異體字: `o-fojra` (White) — fire framed abstractly, as concept or spirit
+> 共識: `a-fora` (Red) — fire's conventional framing as alive/energy
+> 異體字: `y-fora` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
+> 異體字: `o-fora` (White) — fire framed abstractly, as concept or spirit
 
 Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override. Emotional colouring is one legitimate motivation for a 異體字 override — a speaker may deliberately substitute a non-standard colour prefix to tint a definite noun with a specific emotional register, independent of its ontological properties (see `3-subsystems/colour-emotion.md` for the full emotional register system).
 

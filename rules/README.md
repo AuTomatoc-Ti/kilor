@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-07-09
-**Version:** 1.0.1
+**Last updated:** 2026-07-10
+**Version:** 1.1.2
 
 ---
 
@@ -86,7 +86,7 @@ When you change a file, check these dependents:
 | If you change… | Also check… | Reason |
 |---|---|---|
 | `0-foundation/philosophy.md` | `1-nominals/nouns-colour-prefix.md`, `3-subsystems/colour-emotion.md`, `2-predication/interrogative.md` | All colour-based systems derive from philosophy dual-concepts |
-| `0-foundation/grammar-syntax.md` | All files in `3-subsystems/`, `2-predication/`, `1-nominals/cases.md` | Defines clause template, closed-class particle inventory, `-s` derivation — referenced everywhere |
+| `0-foundation/grammar-syntax.md` | All files in `3-subsystems/`, `2-predication/`, `1-nominals/cases.md` | Defines clause template, closed-class particle inventory, `-s` derivation — referenced everywhere. The closed-class inventory in §IV-C is the SSOT; `3-subsystems/numerals.md` §II-A cross-references it |
 | `0-foundation/phonology.md` | `0-foundation/tone-prosody.md`, `3-subsystems/numerals.md`, `kilor.py` | Phoneme inventory and phonotactics constrain all word-building; `kilor.py` validates against them |
 | `0-foundation/tone-prosody.md` | `3-subsystems/numerals.md`, `1-nominals/pronouns.md`, `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` §IV-B | Tone rules apply to numerals, pronouns, emotional particles, and compounding |
 | `1-nominals/nouns-colour-prefix.md` | `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` | Colour prefix system interacts with emotional particles and NP syntax |
@@ -96,7 +96,7 @@ When you change a file, check these dependents:
 | `2-predication/negation.md` | `2-predication/interrogative.md` | `iu` serves dual role as yes/no marker and affirmative answer; `nar` scoping interacts with `iu` |
 | `2-predication/interrogative.md` | `1-nominals/nouns-colour-prefix.md` | Question words use colour prefixes; definiteness rule exemption |
 | `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md` | `kus` relativizer interacts with case suffixes, question fronting, and negation scoping |
-| `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template and closed-class list |
+| `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template; `-s` exemption cross-references closed-class inventory |
 | `3-subsystems/colour-emotion.md` | `0-foundation/philosophy.md` (historical origin), `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
 | `3-subsystems/temporals.md` | `0-foundation/grammar-syntax.md` §I-E | Temporal words occupy the clause-initial slot |
 | `3-subsystems/comparatives.md` | `0-foundation/grammar-syntax.md` §IV-C, `2-predication/copula-existential.md` | Comparative particles are closed-class; equative uses copula |
