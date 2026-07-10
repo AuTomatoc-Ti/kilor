@@ -3,7 +3,7 @@
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
 **Last updated:** 2026-07-10
-**Version:** 1.1.2
+**Version:** 1.1.6
 
 ---
 

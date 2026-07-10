@@ -3,7 +3,7 @@
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 1.1.0
+**Version:** 1.1.1
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -94,7 +94,7 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 > **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `3-subsystems/colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
 >
 > > **Example:** `a-lumi` (Red-anger light) — "light" as indefinite concept, but spoken with anger-tinted emotional weight
-> > **Example:** `i-ro` (Blue-sadness water) — "water" as an indefinite, generic substance, tinted with sadness
+> > **Example:** `i-lira` (Blue-sadness water) — "water" as an indefinite, generic substance, tinted with sadness
 > > **Example:** `y-gilan` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
 >
 > This usage is optional and expressive; omitting the prefix remains the default for generic reference. The emotional register is recoverable from context and does not override the noun's grammatical indefiniteness.

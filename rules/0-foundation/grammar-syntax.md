@@ -3,7 +3,7 @@
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 2.0.0
+**Version:** 2.0.1
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`
 
 ---
@@ -16,7 +16,7 @@ Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. T
 
 > **Note:** SOV is a **pedagogical baseline** — the simplest model for explaining Kilor's core syntax. Real sentences may include additional elements (prepositions, numerals, temporal words, question words, etc.) that create more complex structures. The SOV model describes the relative order of the three core arguments; other elements are placed according to their own rules (see `2-predication/interrogative.md` for question word fronting, `1-nominals/cases.md` §V for dative/instrumental particles).
 
-> **Example:** `a-fora hawu-ni taka.`
+> **Example:** `a-fora hawuni taka.`
 > (the-fire animal-ACC eat.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 > "The fire eats the animal."
@@ -82,7 +82,7 @@ When multiple oblique prepositional phrases appear, they follow the **fixed orde
 Object [ACC] — [Numeral] — [sy Instrumental] — [mer Comitative] — [tilpe Locative-relational] — [ar Ablative] — [te Dative] — [Adverb] — Verb
 ```
 
-> `bau-ni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
+> `bauni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
 
 The object (with optional ACC case suffix) and any numeral come first. When multiple obliques co-occur, the fixed order is `sy` (Instrumental) > `mer` (Comitative) > `tilpe` (Locative-relational) > `ar` (Ablative) > `te` (Dative). Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
 
@@ -97,7 +97,7 @@ All slots are optional except the subject and verb. `[Emo]` is an optional emoti
 #### Maximal Example Sentence
 
 ```
-piroi  wes  ralis  a-maeha  kus kin avrgona  bau-ni ro  sy y-maliu  te kis song  shuks  sounar  nar.
+piroi  wes  ralis  a-maeha  kus kin avrgonna  bauni ro  sy y-maliu  te kis song  shuks  sounar  nar.
 
 ei  imaroi  bau  sy a-fora  taka.
 
@@ -131,7 +131,7 @@ Suffixes use the vowel class **opposite** to the root's last-syllable nucleus. T
 
 The **colour prefix** is an external proclitic. It sits outside the phonological boundary of the root and **does not** trigger or participate in the Contrastive Suffix Rule. Only the root's last-syllable nucleus determines suffix vowel class.
 
-> **Example:** `a-fora-si` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
+> **Example:** `a-forasi` — the prefix `a` is Front, but the root's last vowel `a` is Back, so the Genitive suffix uses front `-si`.
 
 ---
 
@@ -205,7 +205,7 @@ The bare root serves as both noun and verb. Adding `-s` creates the modifier for
 > **2-syllable example:** `fora` (bare root: fire/burn) → `foras` (modifier: fiery/burningly).
 > **Quality root:** `gor` (adj: good) → `gors` (adv: well).
 
-> **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, hot, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
+> **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, warm, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
 
 ### B. Phonological Nature
 

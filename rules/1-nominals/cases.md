@@ -3,7 +3,7 @@
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 1.3.0
+**Version:** 1.3.1
 **Depends on:** `0-foundation/grammar-syntax.md`
 
 ---
@@ -83,7 +83,7 @@ The colour prefix (if present) attaches orthographically to the first word and d
 
 > **Lexical vs. syntactic distinction:** This suffix-placement rule applies only to **lexical multi-word vocabs** — compound lexical entries composed of multiple orthographic words that form a single semantic concept (e.g., `lumi sola` "star-light"). It does **not** apply to syntactic noun phrases with quantifiers. When a noun is quantified by a numeral, the numeral occupies its own clause slot (`[Numeral]`; see `0-foundation/grammar-syntax.md` §I-E), and the case suffix attaches to the noun, not the numeral:
 >
-> > **Example (syntactic quantification):** `bau-ni ro` (three breads, with ACC on the noun `bau`, not on the numeral `ro`)
+> > **Example (syntactic quantification):** `bauni ro` (three breads, with ACC on the noun `bau`, not on the numeral `ro`)
 >
 > See `3-subsystems/numerals.md` §VI for NP quantification word order.
 
@@ -181,7 +181,7 @@ The instrumental particle **`sy`** (§V-A) is extended to serve as the **passive
 
 | Usage | Pattern | Example |
 |:---|:---|:---|
-| **Instrumental** (active SOV) | `Agent object-ACC sy instrument verb` | `ki bau-ni sy maliu kup.` — "I cut bread with a knife." |
+| **Instrumental** (active SOV) | `Agent object-ACC sy instrument verb` | `ki bauni sy maliu kup.` — "I cut bread with a knife." |
 | **Passive, agent deleted** | `Patient sy verb` | `hawu sy taka.` — "The animal was eaten." |
 | **Passive, agent expressed** | `Patient sy agent verb` | `hawu sy a-fora taka.` — "The animal was eaten by the fire." |
 

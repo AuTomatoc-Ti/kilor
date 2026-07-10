@@ -2,8 +2,8 @@
 
 **Module:** Word Formation, Constraints & Development Pipeline
 **Status:** Canonical
-**Last updated:** 2026-07-09
-**Version:** 1.0.0
+**Last updated:** 2026-07-10
+**Version:** 1.0.1
 **Depends on:**
 
 ---
@@ -28,8 +28,8 @@ Each root belongs to one of **four** categories. For 3+ syllable words, the tone
 
 | Category | 1-Syl | 2-Syl | 3+ Syl (Last-3 Domain) | `-s` Derivation |
 |:---|:---|:---|:---|:---|
-| **Noun** | Toneless | H(`j`)→L | ...M→H(`j`)→M→L | — |
-| **Verb** | Toneless | L(`v`)→H | ...M→L(`v`)→H→M | — |
+| **Noun** | Toneless | Toneless | ...M→H(`j`)→M→L | — |
+| **Verb** | Toneless | Toneless | ...M→L(`v`)→H→M | — |
 | **Adjective** | Noun + `-s`, Toneless | Noun + `-s` | ...M→M→H(`j`)→H | from Noun |
 | **Adverb** | Verb + `-s`, Toneless | Verb + `-s` | ...M→M→L(`v`)→M | from Verb |
 
@@ -43,7 +43,7 @@ Each root belongs to one of **four** categories. For 3+ syllable words, the tone
 
 Vocabulary is expanded through **lexical compounding** — independent roots are combined to form complex concepts.
 
-> **Example:** `lujmi` (light, H→L) + `sojla` (star, H→L) → `lujmi sojla` (moon, multi-word vocab)
+> **Example:** `lumi` (light) + `sola` (star) → `lumi sola` (star-light, multi-word vocab)
 
 ### B. Tone Processing — Mono-Words vs. Multi-Word Vocabs
 
@@ -51,9 +51,9 @@ Kilor distinguishes two forms of compounding for tone:
 
 1. **Mono-word compounds** — roots fused into a single orthographic word. These are treated as a single word: the Last-3 Domain Rule applies across the entire word (see `0-foundation/tone-prosody.md` §IV-A).
 
-2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `lujmi sojla`, `aujli lujmi`). Each word retains its own tonal contour independently. The contours are **stitched sequentially** across the word sequence, not recalculated (see `0-foundation/tone-prosody.md` §IV-D).
+2. **Multi-word vocabs** — two or more words written with spaces that together form one semantic concept (e.g., `lumi sola`, `auli lumi`). Each word retains its own tonal contour independently. The contours are **stitched sequentially** across the word sequence, not recalculated (see `0-foundation/tone-prosody.md` §IV-D).
 
-   > **Example:** `aujli lujmi` (2-syl noun + 2-syl noun, two-word vocab) → H→L → H→L. Each word retains its own last-3 domain.
+   > **Example:** `auli lumi` (2-syl noun + 2-syl noun, two-word vocab) → toneless → toneless. Each word retains its own independent processing per `0-foundation/tone-prosody.md` §IV-D.
 
 ---
 

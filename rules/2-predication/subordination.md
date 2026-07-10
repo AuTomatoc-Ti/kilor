@@ -3,7 +3,7 @@
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 1.0.1
+**Version:** 1.0.2
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`
 
 ---
@@ -54,7 +54,7 @@ Relative clauses may be nested. Each level uses its own `kus`:
 
 | Kilor | Meaning |
 |:---|:---|
-| `fora kus dinu kus-ni ki winar fora wem res` | "The fire that burns the tree that I saw is hot" |
+| `fora kus dinu kus-ni ki winar fora wem res` | "The fire that burns the tree that I saw is warm" |
 
 Parse: `fora [kus dinu [kus-ni ki winar] fora] wem res`
 - Outer clause: `fora` modified by `[kus dinu ... fora]` — "fire that burns the tree"
@@ -122,8 +122,8 @@ Adverbial clauses modify the main action — specifying when, why, under what co
 |:---|:---|
 | `tu ti kau, ki losto res` | "When you come, I am happy" |
 | `li ti lir taka, ki lira sounar` | "If you eat fish, I give water" |
-| `aiga fora fora, kora wem res` | "Because fire burns, the stone is hot" |
-| `hoskar rok my res, ki slato te kau` | "Although the night is dark, I come to the house" |
+| `aiga fora fora, kora wem res` | "Because fire burns, the stone is warm" |
+| `hoskar rok my res, ki te slato kau` | "Although the night is dark, I come to the house" |
 
 ### D. Position Flexibility
 

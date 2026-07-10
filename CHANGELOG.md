@@ -6,6 +6,63 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.1.6 — 2026-07-10
+
+Orthographic normalization: removed hyphens between root and case suffix (e.g., `bau-ni` → `bauni`), and fixed incorrect ACC allomorph.
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.0.0→2.0.1 — §I-A: `hawu-ni`→`hawuni`. §I-E: `bau-ni`→`bauni` (2 occurrences). §II: `a-fora-si`→`a-forasi` (canonical orthography, no hyphen between root and suffix).
+
+**Nominals:**
+- **`cases.md`** v1.3.0→1.3.1 — §III-C, §V-E: `bau-ni`→`bauni` (2 occurrences).
+
+**Predication:**
+- **`copula-existential.md`** v1.2.0→1.2.1 — §VI-A: `maehana`→`maehani`. `maeha` last vowel `a` (Back) requires front ACC `-ni`, even in the invalid example.
+
+**Subsystems:**
+- **`colour-emotion.md`** v2.2.3→2.2.4 — §IV-B, §IV-C: `bau-ni`→`bauni` (3 occurrences).
+
+---
+
+## workspace v1.1.5 — 2026-07-10
+
+Re-audit: 2 errors fixed in tone-prosody.md.
+
+**Foundation:**
+- **`tone-prosody.md`** v2.0.0→2.0.1 — §IV-B: Fixed `forasa` → `forasi`. `fora` last vowel `a` (Back) requires front Genitive `-si` per Contrastive Suffix Rule. §IV-D: Fixed `dinovgak` label "adj" → "adv". `v` on syllable 2 is the adverb pattern (M→L→M); the adjective pattern would use `j` on syllable 2 (`dinojgak`).
+
+---
+
+## workspace v1.1.4 — 2026-07-10
+
+Rigorous cross-file audit: 1 conflict resolved + 1 example error fixed.
+
+**Lexicon:**
+- **`lexicon.csv`** — `dinogak` consensus_prefix changed from `u-` (Green) to `ae-` (Brown). Wood aligns with Brown/Earth per the 7-Question Filter in `nouns-colour-prefix.md` §V.
+
+**Subsystems:**
+- **`colour-emotion.md`** v2.2.2→2.2.3 — §IV-D: Fixed `a-solani` (star) → `ae-rusomena` (room) in two example glosses. `sola` means "star"; the intended word was "room" (`rusome`, consensus `ae-`).
+
+---
+
+## workspace v1.1.3 — 2026-07-10
+
+Rigorous cross-file audit: 1 conflict + 5 example errors fixed across 5 files.
+
+**Meta:**
+- **`lexicon-roadmap.md`** v1.0.0→1.0.1 — §I-B: Updated 2-syllable tone patterns from old H(j)→L / L(v)→H to Toneless (missed in v1.1.0 architecture change). §II-A, §II-B: Replaced `j`-marked 2-syllable example words (`lujmi`, `sojla`, `aujli`) with legal toneless forms (`lumi`, `sola`, `auli`).
+
+**Nominals:**
+- **`nouns-colour-prefix.md`** v1.1.0→1.1.1 — §IV-B: Fixed `i-ro` (Blue-sadness water) → `i-lira` (ro=3, not water).
+
+**Subsystems:**
+- **`colour-emotion.md`** v2.2.1→2.2.2 — §VIII-A: Same `i-ro` → `i-lira` fix. §IV-A, §IV-D, §IX: Normalized double-hyphen case forms (`a-fora-ni` → `a-forani`, `a-maeha-ni` → `a-maehani`, `lira-ni` → `lirani`, `a-sola-ni` → `a-solani`) to match standard prefix-hyphen-root-suffix pattern in `cases.md`.
+
+**Predication:**
+- **`subordination.md`** v1.0.1→1.0.2 — §IV-C: Fixed `ki slato te kau` → `ki te slato kau` (dative `te` must precede its NP per oblique PP fixed order in `grammar-syntax.md` §I-E).
+
+---
+
 ## workspace v1.1.2 — 2026-07-10
 
 Tone marker placement fix: `j`/`v` must sit between nucleus and coda, not between coda and next syllable onset.
@@ -16,7 +73,7 @@ Tone marker placement fix: `j`/`v` must sit between nucleus and coda, not betwee
 **Important phonotactic rule confirmed:**
 For 3+ syllable words with `j`/`v` tone markers on a CVC syllable: the marker goes immediately after the vowel nucleus, **before** any coda consonant. Examples:
 - `aul` (VC) + H = `auj` — not `aulj`
-- `ar` (VC) + H = `ajr` — not `arj` (this was already correct in `ajrgona`)
+- `ar` (VC) + H = `ajr` — not `arj` (this was already correct in `ajrgonna`)
 - `sin` (CVC) + H = `sijn` — correct in `ilsijnkoi`
 - `din` (CVC) + H = `dijn` — correct in `dijnogak`
 

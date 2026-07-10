@@ -3,7 +3,7 @@
 **Module:** Emotional Particles
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 2.2.1
+**Version:** 2.2.4
 **Depends on:** `0-foundation/philosophy.md` (historical origin), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system, 異體字 override)
 
 ---
@@ -116,7 +116,7 @@ The emotional particle **stands alone at the clause head**, before any temporal 
 > — "(With sadness,) she will not come tomorrow."
 
 > **Example (Fear / Black):**
-> `y, a-maeha a-fora-ni auvltake.`
+> `y, a-maeha a-forani auvltake.`
 > — "(With fear,) the person entered the fire."
 
 > **Example (Disgust / Brown):**
@@ -138,7 +138,7 @@ Subject  [Object]  [Obliques]  [Emotional Particle]  [Verb]
 ```
 
 > **Example (Anger / Red — verb-level):**
-> `ki bau-ni a taka.`
+> `ki bauni a taka.`
 > — "I eat the bread (with anger)."
 
 > **Example (Joy / Yellow — verb-level):**
@@ -173,14 +173,14 @@ When both sentence-level and verb-level particles appear in the same clause:
 - **Verb-level** overrides the sentence-level register for that **specific verb only**.
 
 > **Example:**
-> `i, ki bau-ni a taka.`
+> `i, ki bauni a taka.`
 > — "(Sadness overall,) I eat the bread (with anger)."
 >
 > The clause carries Blue (sadness), but the act of eating itself is Red (anger) — emotional layering: sorrow in context, anger in action.
 
 Multiple verb-level particles may appear in a single clause if there are multiple verbs (e.g., in subordinated or coordinated structures):
 
-> `i, ki bau-ni a taka, u thep.`
+> `i, ki bauni a taka, u thep.`
 > — "With sadness, I eat with anger, (then) sleep with calm."
 
 Using the **same particle** at both levels is redundant but permissible — it intensifies the register:
@@ -194,8 +194,8 @@ A speaker may feel multiple emotions simultaneously, but the emotional particle 
 
 If the speaker wishes to convey a blended emotional state (e.g., bittersweet = joy + sadness), the emotional register emphasizes one pole, and the lexical content of the sentence provides the full picture:
 
-> `e, ki a-sola-ni sopa.` — "(With joy,) I look at the room" — warmth of the memories foregrounded
-> `i, ki a-sola-ni sopa.` — "(With sadness,) I look at the room" — loss and ache foregrounded
+> `e, ki ae-rusomena sopa.` — "(With joy,) I look at the room" — warmth of the memories foregrounded
+> `i, ki ae-rusomena sopa.` — "(With sadness,) I look at the room" — loss and ache foregrounded
 
 The choice itself is meaningful. The particle does not need to name every emotion present — it selects the dominant lens.
 
@@ -316,7 +316,7 @@ The same colour may appear as a noun prefix and as an emotional particle in the 
 
 A speaker may **optionally** retain a colour prefix on an indefinite/generic noun for emotional effect. The prefix carries emotional register rather than ontological commitment:
 
-> `i-ro` — "(sadness-tinged) water" (indefinite, generic water)
+> `i-lira` — "(sadness-tinged) water" (indefinite, generic water)
 
 See `1-nominals/nouns-colour-prefix.md` §VI.
 
@@ -342,7 +342,7 @@ See `1-nominals/nouns-colour-prefix.md` §VI.
 
 ### Yellow — Joy (`e`)
 
-> `e, paroi ki a-maeha-ni sopa.` — "(With joy,) tomorrow I will see the person."
+> `e, paroi ki a-maehani sopa.` — "(With joy,) tomorrow I will see the person."
 > `ki e tle.` — "I wait (with joy)."
 
 ### Blue — Sadness (`i`)
@@ -358,7 +358,7 @@ See `1-nominals/nouns-colour-prefix.md` §VI.
 ### Green — Calm (`u`)
 
 > `u, sil thep.` — "(With calm,) they sleep."
-> `ki u lira-ni taki.` — "I drink water (with calm)."
+> `ki u lirani taki.` — "I drink water (with calm)."
 
 ### Black — Fear (`y`)
 

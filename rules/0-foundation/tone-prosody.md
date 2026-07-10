@@ -3,7 +3,7 @@
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
 **Last updated:** 2026-07-10
-**Version:** 2.0.0
+**Version:** 2.0.1
 **Depends on:**
 
 ---
@@ -94,7 +94,7 @@ The `-s` suffix is the **only category marker** for 1–2 syllable words. It dis
 
 `s` applies only to **1–2 syllable** words. 3+ syllable words use tone pattern alone to distinguish all 4 categories.
 
-> **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, hot, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
+> **Note:** "Quality roots" are roots whose lexical category in `lexicon.csv` is `a` (adjective). These roots describe attributes (e.g., big, small, warm, cold, fast, good) and derive manner adverbs via `-s`. The `a` category label is a lexicon-internal convention, not a grammatical term visible in speech.
 
 ### B. Phonological Nature
 
@@ -123,7 +123,7 @@ For 3+ syllable roots: the tone marker (`j` or `v`) **never migrates**. It remai
 
 For 1–2 syllable roots: there are no tone markers to lock. Case suffixes are simply appended as flat Mid appendices.
 
-> **Crucial:** A 2-syllable root + case suffix (e.g., `fora` + Genitive `-sa` → `forasa`) remains tonally a 2-syllable word (flat mid throughout, with `-sa` as a flat appendix), not a 3-syllable word that would follow the Last-3 Domain.
+> **Crucial:** A 2-syllable root + case suffix (e.g., `fora` + Genitive `-si` → `forasi`) remains tonally a 2-syllable word (flat mid throughout, with `-si` as a flat appendix), not a 3-syllable word that would follow the Last-3 Domain.
 >
 > A 3-syllable root + case suffix keeps its Last-3 Domain contour with the suffix as a flat appendix on top.
 
@@ -141,7 +141,7 @@ When a semantic concept is expressed as **multiple orthographic words** (a multi
 This contrasts with mono-word compounds written as a single word — those use the Last-3 Domain Rule (§IV-A) recalculated across the entire word.
 
 > **Example (toneless):** `lumi sola` (2-syl noun + 2-syl noun, two-word vocab) — each word is toneless (flat mid).
-> **Example (3+ syllable):** `rujsome dinovgak` (3-syl noun + 3-syl adj) — each word carries its own Last-3 contour independently.
+> **Example (3+ syllable):** `rujsome dinovgak` (3-syl noun + 3-syl adv) — each word carries its own Last-3 contour independently.
 > **Contrast:** If words were fused into a single word, the Last-3 Domain Rule would recalculate the contour across the entire compound.
 
 ### E. No Cross-Word Tone Sandhi

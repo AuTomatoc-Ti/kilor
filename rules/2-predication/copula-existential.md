@@ -3,7 +3,7 @@
 **Module:** Predication, Existence & Having
 **Status:** Canonical
 **Last updated:** 2026-07-10
-**Version:** 1.2.0
+**Version:** 1.2.1
 **Depends on:** `2-predication/negation.md`, `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
@@ -37,7 +37,7 @@ This split reflects a philosophical stance: **being something** and **having som
 
 `res` expresses:
 
-1. **Predicate adjective:** "X is hot/big/good"
+1. **Predicate adjective:** "X is warm/big/good"
 2. **Predicate nominal:** "X is a person/fire/star"
 
 ### B. `ero` — Existential & Possession
@@ -68,12 +68,12 @@ Subject — Complement — Verb
 ### A. Predicate Adjective
 
 > `a-fora wem res.`
-> (The fire hot is.)
-> "The fire is hot."
+> (The fire warm is.)
+> "The fire is warm."
 
 > `fora wem res.`
-> (Fire hot is.)
-> "Fire is hot." (generic)
+> (Fire warm is.)
+> "Fire is warm." (generic)
 
 ### B. Predicate Nominal
 
@@ -114,7 +114,7 @@ Subject — Complement — Verb
 `nar` follows the copula, scoping over the predication:
 
 > `fora wem res nar.`
-> "Fire is not hot."
+> "Fire is not warm."
 
 > `ki maeha res nar.`
 > "I am not a person."
@@ -152,7 +152,7 @@ As with all verbs (see `2-predication/negation.md` §II-B), `nar` placed before 
 Sentence-final `iu` as usual (see `2-predication/interrogative.md` §IV):
 
 > `fora wem res iu?`
-> "Is fire hot?"
+> "Is fire warm?"
 
 > `ki maeha res iu?`
 > "Am I a person?"
@@ -168,8 +168,8 @@ Sentence-final `iu` as usual (see `2-predication/interrogative.md` §IV):
 Question words are fronted as usual, including with copula/existential:
 
 > `ewei wem res iu?`
-> (What hot is?)
-> "What is hot?"
+> (What warm is?)
+> "What is warm?"
 
 > `iwei fora ero?`
 > (Where fire exists?)
@@ -188,7 +188,7 @@ Question words are fronted as usual, including with copula/existential:
 The copula is a **linking verb** — neither argument is an object. Both subject and complement are in the **Nominative** (unmarked). No Accusative suffix is used.
 
 > ✅ `ki maeha res.` (I person am.)
-> ❌ `ki maehana res.` (person in Accusative — invalid with copula)
+> ❌ `ki maehani res.` (person in Accusative — invalid with copula)
 
 ### B. Existential & Possession — Standard Case Rules Apply
 
@@ -202,7 +202,7 @@ Possession with `ero` uses standard SOV case marking:
 
 For statements about ambient conditions (weather, temperature, light level), the copula **may** be omitted in everyday speech. This is a stylistic option, not a grammatical requirement.
 
-> `wem.` = "It's hot." (lit. "Hot.")
+> `wem.` = "It's warm." (lit. "warm.")
 > `wem res.` = same meaning, fully grammatical
 
 > `my.` = "It's dark."
@@ -216,16 +216,16 @@ This is the **only** context where zero-copula is permitted. Predicate nominals 
 
 | Pattern | Structure | Example | Meaning |
 |---|---|---|---|
-| Predicate Adjective | SUBJ ADJ `res` | `fora wem res` | Fire is hot |
+| Predicate Adjective | SUBJ ADJ `res` | `fora wem res` | Fire is warm |
 | Predicate Nominal | SUBJ NOUN `res` | `ki maeha res` | I am a person |
 | Existential | NOUN `ero` | `fora ero` | There is fire |
 | Possession | POSSESSOR POSSESSED `ero` | `ki fora ero` | I have fire |
-| Negated copula | SUBJ COMP `res nar` | `fora wem res nar` | Fire is not hot |
+| Negated copula | SUBJ COMP `res nar` | `fora wem res nar` | Fire is not warm |
 | Negated existential | NOUN `ero nar` | `fora ero nar` | There is no fire |
 | Negated possession | PSR PSD `ero nar` | `ki fora ero nar` | I don't have fire |
-| Y/N copula | SUBJ COMP `res iu` | `fora wem res iu` | Is fire hot? |
+| Y/N copula | SUBJ COMP `res iu` | `fora wem res iu` | Is fire warm? |
 | Y/N existential | NOUN `ero iu` | `fora ero iu` | Is there fire? |
-| Zero-copula (ambient) | ADJ | `wem` | It's hot |
+| Zero-copula (ambient) | ADJ | `wem` | It's warm |
 
 ---
 
