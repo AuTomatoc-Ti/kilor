@@ -35,7 +35,7 @@ pei,1,cup / container,n,C,pei,pei,peis,peis,e-,false,
 selo,2,path / road,n,C,selo,selo,selos,selos,ae-,false,
 rusome,3,room / chamber,n,C,rujsome,ruvsome,rusojme,rusovme,ae-,false,
 gilan,2,mountain,n,C,gilan,gilan,gilans,gilans,y-,false,
-liwat,2,river,n,C,liwat,liwat,liwats,liwats,i-,false,
+liwat,2,lake,n,C,liwat,liwat,liwats,liwats,i-,false,
 taka,2,eat,v,D,taka,taka,takas,takas,a-,false,
 retanik,3,drink,v,D,rejtanik,revtanik,retajnik,retavnik,a-,false,
 taki,2,drink,v,D,taki,taki,takis,takis,a-,false,
@@ -118,3 +118,36 @@ torra,,superlative particle (most),,,,,,true,closed-class; toneless; -s exempt; 
 wetor,,intensified comparative (much more than),,,,,,true,closed-class; toneless; -s exempt; fused from wes + tor
 mangus,,restrictive (among/among all),,,,,,true,closed-class; toneless; -s exempt
 rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,
+hu,1,wind,n,A,hu,hu,hus,hus,o-,false,
+hupli,2,rain,n,A,hupli,hupli,huplis,huplis,o-,false,
+shili,2,river,n,A,shili,shili,shilis,shilis,o-,false,
+blusa,2,wave,n,A,blusa,blusa,blusas,blusas,o-,false,
+wonli,2,sea,n,A,wonli,wonli,wonlis,wonlis,o-,false,
+wonar,2,ocean,n,A,wonar,wonar,wonars,wonars,o-,false,
+liforli,3,flood,n,A,lijforli,livforli,liforjli,liforvli,o-,false,
+aron,2,season,n,A,aron,aron,arons,arons,o-,false,
+apar,2,spring,n,A,apar,apar,apars,apars,o-,false,
+gustar,2,summer,n,A,gustar,gustar,gustars,gustars,o-,false,
+choumar,2,autumn,n,A,choumar,choumar,choumars,choumars,o-,false,
+fossar,2,winter,n,A,fossar,fossar,fossars,fossars,o-,false,
+maur,1,second,n,G,maur,maur,maurs,maurs,o-,false,
+faur,1,minute,n,G,faur,faur,faurs,faurs,o-,false,
+tlaur,1,hour,n,G,tlaur,tlaur,tlaurs,tlaurs,o-,false,
+taroi,2,week,n,G,taroi,taroi,tarois,tarois,o-,false,
+gauroi,2,ten-day,n,G,gauroi,gauroi,gaurois,gaurois,o-,false,
+yra,2,month,n,G,yra,yra,yras,yras,o-,false,
+ron,1,year,n,G,ron,ron,rons,rons,o-,false,
+gauron,2,decade,n,G,gauron,gauron,gaurons,gaurons,o-,false,
+curon,2,century,n,G,curon,curon,curons,curons,o-,false,
+gus,1,hot,a,E,gus,gus,gus,gus,o-,false,noun/adj same form; -s final whitelist exception
+fem,2,cool,a,E,fem,fem,fems,fems,o-,false,
+fos,1,ice / freeze,nv,A,fos,fos,fos,fos,o-,false,noun/adj same form; -s final whitelist exception; not "cold" (→kop)
+fosli,2,snow,n,A,fosli,fosli,foslis,foslis,o-,false,
+foske,2,frost,n,A,foske,foske,foskes,foskes,o-,false,
+foshu,2,blizzard,n,A,foshu,foshu,foshus,foshus,o-,false,compound: fos (ice) + hu (wind)
+fosgilan,3,glacier,n,A,fosjgilan,fosvgilan,fosgijlan,fosgivlan,o-,false,compound: fos (ice) + gilan (mountain)
+fosblon,2,avalanche,n,A,fosblon,fosblon,fosblons,fosblons,o-,false,compound: fos (ice) + blon (collapse)
+foskaera,3,frozen soil,n,A,fosjkaera,fosvkaera,foskaejra,foskaevra,o-,false,compound: fos (ice) + kaera (earth)
+blon,1,collapse,v,D,blon,blon,blons,blons,o-,false,
+hup,1,fall,v,D,hup,hup,hups,hups,o-,false,
+rolifor,3,excess,nv,E,rojlifor,rovlifor,rolijfor,rolivfor,o-,false,

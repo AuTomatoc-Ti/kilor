@@ -6,6 +6,18 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.1.7 — 2026-07-10
+
+Added 33 new lexicon entries (weather, time, temperature, fos-family compounds). Modified 2 existing entries. White-listed `gus`/`fos` as `-s`-final exceptions.
+
+**Lexicon:**
+- **`lexicon.csv`** — `liwat` meaning changed from "river" to "lake". Added 33 entries: `hu` (wind), `hupli` (rain), `shili` (river), `blusa` (wave), `wonli` (sea), `wonar` (ocean), `liforli` (flood), `aron` (season), `apar` (spring), `gustar` (summer), `choumar` (autumn), `fossar` (winter), `maur` (second), `faur` (minute), `tlaur` (hour), `taroi` (week), `gauroi` (ten-day), `yra` (month), `ron` (year), `gauron` (decade), `curon` (century), `gus` (hot), `fem` (cool), `fos` (ice/freeze), `fosli` (snow), `foske` (frost), `foshu` (blizzard, compound), `fosgilan` (glacier, compound), `fosblon` (avalanche, compound), `foskaera` (frozen soil, compound), `blon` (collapse), `hup` (fall), `rolifor` (excess).
+
+**Tooling:**
+- **`kilor.py`** — added `S_FINAL_WHITELIST = {'gus', 'fos'}` to `validate_content_root()`. These 1-syllable roots end in `-s` but are exceptions (noun/adj share the bare root form; the `-s` is part of the root not the derivational suffix).
+
+---
+
 ## workspace v1.1.6 — 2026-07-10
 
 Orthographic normalization: removed hyphens between root and case suffix (e.g., `bau-ni` → `bauni`), and fixed incorrect ACC allomorph.

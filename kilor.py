@@ -78,6 +78,13 @@ def validate_root(root):
     
     return True, ""
 
+# ── -s Exception Whitelist ──────────────────────────────────────────────
+
+# Content roots that end in -s despite being 1-2 syllables. These are
+# exceptional: their noun/adj forms are the same bare root (the -s is
+# part of the root, not the derivational suffix).
+S_FINAL_WHITELIST = {'gus', 'fos'}
+
 def validate_content_root(root):
     """Validate a content root (not function word). Adds -s constraint."""
     valid, err = validate_root(root)
@@ -85,7 +92,8 @@ def validate_content_root(root):
         return False, err
     syl_count = count_syllables(root)
     if 1 <= syl_count <= 2 and root.endswith('s'):
-        return False, f"root '{root}' is {syl_count}-syllable and ends in 's' (-s is reserved for derivation)"
+        if root not in S_FINAL_WHITELIST:
+            return False, f"root '{root}' is {syl_count}-syllable and ends in 's' (-s is reserved for derivation)"
     return True, ""
 
 def validate_row(row, all_bare_roots=None):
