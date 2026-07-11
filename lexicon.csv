@@ -65,7 +65,6 @@ noba,2,old,a,E,noba,noba,nobas,nobas,o-,false,
 hik,1,sad,a,E,hik,hik,hiks,hiks,o-,false,
 asdo,2,know,v,F,asdo,asdo,asdos,asdos,o-,false,
 thy,1,think,v,F,thy,thy,thys,thys,o-,false,
-rima,2,want / desire,v,F,rima,rima,rimas,rimas,o-,false,
 argonna,3,love,v,F,ajrgonna,avrgonna,argojnna,argovnna,o-,false,
 wamy,2,fear,n,F,wamy,wamy,wamys,wamys,o-,false,
 losga,2,anger / rage,n,F,losga,losga,losgas,losgas,o-,false,
@@ -151,3 +150,19 @@ foskaera,3,frozen soil,n,A,fosjkaera,fosvkaera,foskaejra,foskaevra,o-,false,comp
 blon,1,collapse,v,D,blon,blon,blons,blons,o-,false,
 hup,1,fall,v,D,hup,hup,hups,hups,o-,false,
 rolifor,3,excess,nv,E,rojlifor,rovlifor,rolijfor,rolivfor,o-,false,
+aus,1,start-of,n,G,aus,aus,aus,aus,o-,false,etymology: aug + genitive -si; -s final whitelist exception
+oug,1,end,n,G,oug,oug,ougs,ougs,o-,false,
+ous,1,end-of,n,G,ous,ous,ous,ous,o-,false,etymology: oug + genitive -si; -s final whitelist exception
+taroinous,3,weekend,n,G,taroinous,taroinous,taroinous,taroinous,o-,false,compound: taroi (week) + ous (end-of)
+faure,2,5min,n,G,faure,faure,faures,faures,o-,false,
+tlaure,2,30min,n,G,tlaure,tlaure,tlaures,tlaures,o-,false,
+afaloi,3,ability / able to,nv,H,afaloi,afaloi,afaloi,afaloi,o-,false,
+sew,1,can,v,H,sew,sew,sews,sews,o-,false,
+hostak,2,must,v,H,hostak,hostak,hostaks,hostaks,o-,false,
+mug,1,want,v,H,mug,mug,mugs,mugs,o-,false,replaces rima
+som,1,need,v,H,som,som,soms,soms,o-,false,
+shunle,2,should,v,H,shunle,shunle,shunles,shunles,o-,false,
+chorogor,3,good morning,n,H,chorogor,chorogor,chorogor,chorogor,o-,false,compound: cho + roi + gor
+sarrogor,3,good afternoon,n,H,sarrogor,sarrogor,sarrogor,sarrogor,o-,false,compound: sar + roi + gor
+targor,2,good evening,n,H,targor,targor,targors,targors,o-,false,compound: tar + gor
+rokgor,2,good night,n,H,rokgor,rokgor,rokgors,rokgors,o-,false,compound: rok + gor

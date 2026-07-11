@@ -83,7 +83,7 @@ def validate_root(root):
 # Content roots that end in -s despite being 1-2 syllables. These are
 # exceptional: their noun/adj forms are the same bare root (the -s is
 # part of the root, not the derivational suffix).
-S_FINAL_WHITELIST = {'gus', 'fos'}
+S_FINAL_WHITELIST = {'gus', 'fos', 'aus', 'ous'}
 
 def validate_content_root(root):
     """Validate a content root (not function word). Adds -s constraint."""

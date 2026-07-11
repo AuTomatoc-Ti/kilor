@@ -6,6 +6,18 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.1.8 — 2026-07-11
+
+Added 16 new lexicon entries (time roots, modals, greetings). Removed 1 entry (`rima` → `mug`). Whitelisted `aus`/`ous` as `-s`-final exceptions.
+
+**Lexicon:**
+- **`lexicon.csv`** — Removed `rima` (want/desire, replaced by `mug`). Added 16 entries: `aus` (start-of), `oug` (end), `ous` (end-of), `taroinous` (weekend, compound: taroi + ous), `faure` (5min), `tlaure` (30min), `afaloi` (ability / able to, nv), `sew` (can, v), `hostak` (must, v), `mug` (want, v), `som` (need, v), `shunle` (should, v), `chorogor` (good morning, compound: cho + roi + gor), `sarrogor` (good afternoon, compound: sar + roi + gor), `targor` (good evening, compound: tar + gor), `rokgor` (good night, compound: rok + gor).
+
+**Tooling:**
+- **`kilor.py`** — Added `'aus'`, `'ous'` to `S_FINAL_WHITELIST`.
+
+---
+
 ## workspace v1.1.7 — 2026-07-10
 
 Added 33 new lexicon entries (weather, time, temperature, fos-family compounds). Modified 2 existing entries. White-listed `gus`/`fos` as `-s`-final exceptions.
