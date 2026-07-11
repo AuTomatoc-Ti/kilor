@@ -2,9 +2,9 @@
 
 **Module:** Yes/No Answers & Clausal Negation
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.0.1
-**Depends on:** `2-predication/interrogative.md`
+**Last updated:** 2026-07-11
+**Version:** 1.0.2
+**Depends on:** `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
 
@@ -18,7 +18,7 @@ Kilor uses three dedicated particles for affirmation and negation:
 | `na` | no | Negative answer to a question |
 | `nar` | not | Negates the preceding word or phrase |
 
-All three are **1-syllable words** and are **toneless** (flat mid-tone). See `0-foundation/tone-prosody.md` §II-B.
+All three are closed-class, toneless function words. See `0-foundation/grammar-syntax.md` §IV-C.
 
 ---
 

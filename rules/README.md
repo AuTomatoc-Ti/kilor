@@ -3,7 +3,7 @@
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
 **Last updated:** 2026-07-11
-**Version:** 1.3.0
+**Version:** 2.0.0
 
 ---
 
@@ -19,46 +19,105 @@ New to Kilor? Read these 5 files in order:
 
 After these, explore any subsystem that interests you — they all depend on the foundation but not on each other.
 
+For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
+
 ---
 
-## Reference Index
+## Quick Reference — Particles & Forms
 
-| Concept | File |
+### Closed-Class Particles
+
+| Particle | Function | File |
+|---|---|---|
+| `res` | Copula ("is") | `2-predication/copula-existential.md` |
+| `ero` | Existential / Possession ("there is", "have") | `2-predication/copula-existential.md` |
+| `nar` | Negation ("not") | `2-predication/negation.md` |
+| `iu` | Yes/No question marker; affirmative answer | `2-predication/interrogative.md` |
+| `na` | Negative answer ("no") | `2-predication/negation.md` |
+| `ei` | And | `2-predication/clause-combining.md` |
+| `po` | Or (exclusive) | `2-predication/clause-combining.md` |
+| `pem` | Or (inclusive) | `2-predication/clause-combining.md` |
+| `pona` | XNOR (both or neither) | `2-predication/clause-combining.md` |
+| `pemna` | NOR (neither...nor) | `2-predication/clause-combining.md` |
+| `amer` | But | `2-predication/clause-combining.md` |
+| `li` | If | `2-predication/conditionals.md` |
+| `bam` | Then / consequently | `2-predication/conditionals.md` |
+| `tu` | When / while | `2-predication/subordination.md` |
+| `aiga` | Because | `2-predication/subordination.md` |
+| `hoskar` | Although | `2-predication/subordination.md` |
+| `fidak` | In order to | `2-predication/subordination.md` |
+| `arfi` | Even | `2-predication/subordination.md` |
+| `kus` | Relativizer / complementizer | `2-predication/subordination.md` |
+| `gin` | Progressive aspect | `3-subsystems/aspect.md` |
+| `ger` | Perfective aspect | `3-subsystems/aspect.md` |
+| `gou` | Experiential aspect | `3-subsystems/aspect.md` |
+| `sor` | Suggestion (hortative) | `3-subsystems/imperatives.md` |
+| `chom` | Polite request | `3-subsystems/imperatives.md` |
+| `maug` | Strong prohibition | `3-subsystems/imperatives.md` |
+| `tor` | Than (comparative) | `3-subsystems/comparatives.md` |
+| `les` | As (equative) | `3-subsystems/comparatives.md` |
+| `torra` | Most (superlative) | `3-subsystems/comparatives.md` |
+| `wetor` | Much more than | `3-subsystems/comparatives.md` |
+| `mangus` | Among | `3-subsystems/comparatives.md` |
+| `dir` | Ordinal marker | `3-subsystems/numerals.md` |
+
+### Oblique Particles
+
+| Particle | Role | File |
+|---|---|---|
+| `sy` | Instrumental / Passive | `1-nominals/cases.md` |
+| `mer` | Comitative ("with") | `1-nominals/cases.md` |
+| `tilpe` | Locative-relational | `1-nominals/cases.md` |
+| `ar` | Ablative ("from") | `1-nominals/cases.md` |
+| `te` | Dative ("to/for") | `1-nominals/cases.md` |
+
+### Case Suffixes & Tone Markers
+
+| Form | Function | File |
+|---|---|---|
+| `-ni` / `-na` | Accusative | `1-nominals/cases.md` |
+| `-si` / `-sa` | Genitive | `1-nominals/cases.md` |
+| `-s` | Derivational suffix (adj/adv) | `0-foundation/tone-prosody.md` |
+| `j` | High tone marker | `0-foundation/tone-prosody.md` |
+| `v` | Low tone marker | `0-foundation/tone-prosody.md` |
+
+### Colour Prefixes & Emotional Particles
+
+| Form | Ontological Class | Emotion | File |
+|---|---|---|---|
+| `a-` / `a` | Alive / Energy | Anger | `0-foundation/philosophy.md`, `3-subsystems/colour-emotion.md` |
+| `e-` / `e` | Crafted / Tool | Joy | same |
+| `i-` / `i` | Fluid / Vast | Sadness | same |
+| `o-` / `o` | Abstract / Void | Surprise | same |
+| `u-` / `u` | Organic / Growth | Calm | same |
+| `y-` / `y` | Dense / Mass | Fear | same |
+| `ae-` / `ae` | Earth / Boundary | Disgust | same |
+
+### Question Words
+
+| Form | Meaning |
 |---|---|
-| Aspect particles (`gin`, `ger`, `gou`) | `3-subsystems/aspect.md` |
-| Bare serialisation (purpose, causatives) | `2-predication/subordination.md` §IX–X |
-| Case suffixes (Nominative, Accusative, Genitive, Instrumental, Dative) | `1-nominals/cases.md` |
-| Causatives (`min`, `mingo`, `tesak`) | `0-foundation/grammar-syntax.md` §IV-C, `lexicon.csv` |
-| Clause combining & coordination (`ei`, `po`, `pem`, `pona`, `pemna`, `amer`) | `2-predication/clause-combining.md` |
-| Clause template (full slot layout) | `0-foundation/grammar-syntax.md` §I-E |
-| Closed-class particles (full inventory) | `0-foundation/grammar-syntax.md` §IV-C |
-| Colour emotional particles (`a`, `e`, `i`, `o`, `u`, `y`, `ae`) | `3-subsystems/colour-emotion.md` |
-| Colour noun prefixes (`a-`, `e-`, `i-`, `o-`, `u-`, `y-`, `ae-`) | `1-nominals/nouns-colour-prefix.md` |
-| Comparatives & superlatives (`tor`, `les`, `torra`, `wetor`, `mangus`) | `3-subsystems/comparatives.md` |
-| Conditionals (`li`, `bam`) | `2-predication/conditionals.md` |
-| Concessives (`hoskar`, `arfi`) | `2-predication/subordination.md` §IV |
-| Copula & existential (`res`) | `2-predication/copula-existential.md` |
-| Dual-concepts (philosophy) | `0-foundation/philosophy.md` |
-| Emotional override on nouns (異體字) | `1-nominals/nouns-colour-prefix.md` §VI |
-| Imperatives, suggestions, prohibitions (`sor`, `chom`, `maug`) | `3-subsystems/imperatives.md` |
-| Interrogatives (question words) | `2-predication/interrogative.md` |
-| Lexicon development roadmap | `4-meta/lexicon-roadmap.md` |
-| Negation (`nar`) | `2-predication/negation.md` |
-| Numerals & measure words | `3-subsystems/numerals.md` |
-| Optative / desiderative / benedictive (`halise`) | `3-subsystems/optative.md` |
-| Phoneme inventory, syllables, phonotactics | `0-foundation/phonology.md` |
-| Plural strategy (none, except pronouns) | `0-foundation/grammar-syntax.md` §VI |
-| Pronouns | `1-nominals/pronouns.md` |
-| Purpose clauses (`fidak`, bare serialisation) | `2-predication/subordination.md` §IX |
-| Reflexives (`shen`) & reciprocals (`meshen`) | `2-predication/subordination.md` §VII |
-| Reported speech (`kus` / bare juxtaposition) | `2-predication/subordination.md` §VIII |
-| Subordination & relative clauses | `2-predication/subordination.md` |
-| Temporal expression (time words) | `3-subsystems/temporals.md` |
-| Temporal adverbial clauses (`tu`, `tilpi`, `tilpa`) | `2-predication/subordination.md` §IV, `3-subsystems/temporals.md` |
-| Tone system | `0-foundation/tone-prosody.md` |
-| Vocative (`hei`) | `3-subsystems/imperatives.md` §V |
-| `-s` derivational suffix | `0-foundation/grammar-syntax.md` §V |
-| 異體字 (speaker colour override on nouns) | `1-nominals/nouns-colour-prefix.md` §VI |
+| `aewei` | Who? |
+| `aeweisan` | Whose? |
+| `awei` | Which? |
+| `ewei` | What? |
+| `iwei` | Where? |
+| `owei` | When? |
+| `uwei` | How? |
+| `ywei` | Why? |
+
+See `2-predication/interrogative.md` for full details.
+
+### Pronouns
+
+| | Singular | Plural |
+|---|---|---|
+| 1st | `ki` | `kil` |
+| 2nd | `ti` | `til` |
+| 3rd Living | `si` | `sil` |
+| 3rd Non-Living | `ni` | `nil` |
+
+See `1-nominals/pronouns.md` for declension (ACC `-n`, GEN `-s`).
 
 ---
 
@@ -70,60 +129,62 @@ rules/
 ├── 0-foundation/               ← Prerequisite knowledge (read linearly)
 │   ├── philosophy.md           — The 7 dual-concepts (SSOT for colour meanings)
 │   ├── phonology.md            — Phoneme inventory, syllables, phonotactics
-│   ├── tone-prosody.md         — Tone system
-│   └── grammar-syntax.md       — Word order, clause template, particles, compounding, -s derivation, plural
+│   ├── tone-prosody.md         — Tone system, -s derivation
+│   └── grammar-syntax.md       — Word order, clause template, closed-class particles (SSOT), compounding, plural
 ├── 1-nominals/                 ← Noun-related systems
-│   ├── nouns-colour-prefix.md  — Colour prefix ontology, definiteness, emotional override (異體字)
+│   ├── nouns-colour-prefix.md  — Colour prefix ontology, definiteness, 異體字 override
 │   ├── pronouns.md             — Personal pronouns
 │   └── cases.md                — Case suffixes and oblique particles
 ├── 2-predication/              ← Verb-related & clause-level systems
 │   ├── clause-combining.md     — Coordination, disjunction, adversative
 │   ├── conditionals.md         — Conditional & consequential clauses (li, bam)
 │   ├── copula-existential.md   — Copula & existential constructions
-│   ├── negation.md             — Negation
 │   ├── interrogative.md        — Question words
-│   └── subordination.md        — Relative clauses, complement clauses, adverbial clauses, reported speech, purpose, serialisation, reflexives & reciprocals
+│   ├── negation.md             — Negation
+│   └── subordination.md        — Relative clauses, complement clauses, adverbial clauses
 ├── 3-subsystems/               ← Self-contained modules (depend on foundation)
-│   ├── aspect.md               — Optional aspect particles (progressive, perfective, experiential)
-│   ├── colour-emotion.md       — Emotional particles (sentence-level & verb-level)
+│   ├── aspect.md               — Optional aspect particles
+│   ├── colour-emotion.md       — Emotional particles
 │   ├── comparatives.md         — Comparatives & superlatives
 │   ├── imperatives.md          — Commands, suggestions, prohibitions, vocative
 │   ├── numerals.md             — Numerals, measure words, ordinals
-│   ├── optative.md             — Optative, desiderative & benedictive mood (halise)
+│   ├── optative.md             — Optative, desiderative & benedictive mood
 │   └── temporals.md            — Temporal expression
 └── 4-meta/                     ← Project governance
     └── lexicon-roadmap.md      — Lexicon development plan
+
+guide/                          ← Usage guides (examples, style, rhetoric)
+├── README.md
+└── emotional-register-usage.md
 ```
 
 ---
 
-## Maintenance Guide — Dependency Table
+## Dependency Table
 
 When you change a file, check these dependents:
 
-| If you change… | Also check… | Reason |
-|---|---|---|
-| `0-foundation/philosophy.md` | `1-nominals/nouns-colour-prefix.md`, `3-subsystems/colour-emotion.md`, `2-predication/interrogative.md` | All colour-based systems derive from philosophy dual-concepts |
-| `0-foundation/grammar-syntax.md` | All files in `3-subsystems/`, `2-predication/`, `1-nominals/cases.md` | Defines clause template, closed-class particle inventory, `-s` derivation — referenced everywhere. The closed-class inventory in §IV-C is the SSOT; `3-subsystems/numerals.md` §II-A cross-references it |
-| `0-foundation/phonology.md` | `0-foundation/tone-prosody.md`, `3-subsystems/numerals.md`, `kilor.py` | Phoneme inventory and phonotactics constrain all word-building; `kilor.py` validates against them |
-| `0-foundation/tone-prosody.md` | `3-subsystems/numerals.md`, `1-nominals/pronouns.md`, `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` §IV-B | Tone rules apply to numerals, pronouns, emotional particles, and compounding |
-| `1-nominals/nouns-colour-prefix.md` | `3-subsystems/colour-emotion.md`, `0-foundation/grammar-syntax.md` | Colour prefix system interacts with emotional particles and NP syntax |
-| `1-nominals/cases.md` | `0-foundation/grammar-syntax.md`, `1-nominals/pronouns.md` | Case suffixes interact with word order rules and pronoun inflection |
-| `1-nominals/pronouns.md` | `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI | Pronoun declension uses reduced case endings; plural exception to general no-plural rule |
-| `2-predication/conditionals.md` | `0-foundation/grammar-syntax.md`, `2-predication/subordination.md` | `li` and `bam` are closed-class particles; conditional patterns interact with adverbial subordination |
-| `2-predication/copula-existential.md` | `2-predication/negation.md`, `2-predication/interrogative.md` | Copula `res` and existential `ero` interact with negation and interrogative particles |
-| `2-predication/negation.md` | `2-predication/interrogative.md` | `iu` serves dual role as yes/no marker and affirmative answer; `nar` scoping interacts with `iu` |
-| `2-predication/interrogative.md` | `1-nominals/nouns-colour-prefix.md` | Question words use colour prefixes; definiteness rule exemption |
-| `2-predication/clause-combining.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/negation.md` | Coordination particles are closed-class; conjunction table in `cases.md` §V-B; negation scoping |
-| `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `3-subsystems/aspect.md`, `2-predication/conditionals.md` | `kus` relativizer; adverbial subordinators; reported speech; purpose; serialisation; conditional cross-reference |
-| `3-subsystems/aspect.md` | `0-foundation/grammar-syntax.md` §IV-C, `3-subsystems/temporals.md` | Aspect particles are closed-class; temporal words + aspect interaction |
-| `3-subsystems/imperatives.md` | `0-foundation/grammar-syntax.md`, `2-predication/negation.md`, `3-subsystems/colour-emotion.md`, `3-subsystems/optative.md` | Imperative particles are closed-class; negative commands use `nar`; emotional particles co-occur; hortative cross-reference |
-| `3-subsystems/optative.md` | `0-foundation/grammar-syntax.md`, `3-subsystems/colour-emotion.md`, `3-subsystems/imperatives.md` | `halise` uses tone system; interacts with emotional particles; cross-references `sor` hortative |
-| `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template; `-s` exemption cross-references closed-class inventory |
-| `3-subsystems/colour-emotion.md` | `0-foundation/philosophy.md` (historical origin), `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
-| `3-subsystems/temporals.md` | `0-foundation/grammar-syntax.md` §I-E | Temporal words occupy the clause-initial slot |
-| `3-subsystems/comparatives.md` | `0-foundation/grammar-syntax.md` §IV-C, `2-predication/copula-existential.md` | Comparative particles are closed-class; equative uses copula |
-| `4-meta/lexicon-roadmap.md` | All files in `rules/` | Lexicon development pipeline — any schema change in rule files may affect word-building workflow |
+| If you change… | Also check… |
+|---|---|
+| `0-foundation/philosophy.md` | `nouns-colour-prefix.md`, `colour-emotion.md`, `interrogative.md` |
+| `0-foundation/grammar-syntax.md` | All files — defines clause template, closed-class inventory (SSOT), `-s` derivation |
+| `0-foundation/phonology.md` | `tone-prosody.md`, `numerals.md`, `kilor.py` |
+| `0-foundation/tone-prosody.md` | `numerals.md`, `pronouns.md`, `colour-emotion.md`, `grammar-syntax.md` |
+| `1-nominals/nouns-colour-prefix.md` | `colour-emotion.md`, `grammar-syntax.md` |
+| `1-nominals/cases.md` | `grammar-syntax.md`, `pronouns.md` |
+| `1-nominals/pronouns.md` | `cases.md`, `grammar-syntax.md` |
+| `2-predication/conditionals.md` | `grammar-syntax.md`, `subordination.md` |
+| `2-predication/copula-existential.md` | `negation.md`, `interrogative.md` |
+| `2-predication/negation.md` | `interrogative.md` |
+| `2-predication/clause-combining.md` | `grammar-syntax.md`, `cases.md`, `negation.md` |
+| `2-predication/subordination.md` | `grammar-syntax.md`, `cases.md`, `interrogative.md`, `negation.md`, `aspect.md`, `conditionals.md` |
+| `3-subsystems/aspect.md` | `grammar-syntax.md`, `temporals.md` |
+| `3-subsystems/imperatives.md` | `grammar-syntax.md`, `negation.md`, `colour-emotion.md`, `optative.md` |
+| `3-subsystems/optative.md` | `grammar-syntax.md`, `colour-emotion.md`, `imperatives.md` |
+| `3-subsystems/numerals.md` | `grammar-syntax.md` |
+| `3-subsystems/colour-emotion.md` | `philosophy.md`, `nouns-colour-prefix.md`, `grammar-syntax.md` |
+| `3-subsystems/temporals.md` | `grammar-syntax.md` |
+| `3-subsystems/comparatives.md` | `grammar-syntax.md`, `copula-existential.md` |
 
 ---
 
@@ -134,13 +195,22 @@ When modifying any rule file:
 2. Check all listed dependents for broken cross-references
 3. Search `rules/` for any concept name you changed to find implicit references
 4. Update this README if you add, remove, or rename a file
-5. Run `python kilor.py` to verify no constraints are violated
+5. Run `python kilor.py check` to verify no constraints are violated
+
+---
+
+## Agent-Optimized Conventions
+
+- **No concept is defined in more than one file** — cross-reference with `See path/to/file.md §Section`.
+- **Closed-class particles are toneless and `-s` exempt** — this is SSOT in `grammar-syntax.md` §IV-C; do not repeat in other files.
+- **Spec files capped at ~250 lines** — if a file exceeds this, extract usage/examples to `guide/`.
+- **Every spec file header includes `Depends on:`** listing prerequisite files.
 
 ---
 
 ## Versioning Convention
 
-Every rule file should carry a header with:
+Every rule file carries a header with:
 - **Module:** Short name
 - **Status:** Canonical / Draft / Deprecated
 - **Last updated:** YYYY-MM-DD
@@ -151,12 +221,8 @@ Every rule file should carry a header with:
 
 | Change Type | Bump |
 |---|---|
-| Content addition (new section, new rule, new example) | MINOR (e.g., 1.1.0) |
-| Content correction (typo, clarifying wording, bug fix) | PATCH (e.g., 1.1.1) |
-| Structural change (reorganization, renamed sections, removed rules) | MAJOR (e.g., 2.0.0) |
+| Content addition (new section, new rule) | MINOR (1.1.0) |
+| Content correction (typo, clarifying wording) | PATCH (1.1.1) |
+| Structural change (reorganization, renamed sections, removed rules) | MAJOR (2.0.0) |
 
-All files start at **1.0.0** (canonical baseline). When a file's version changes, review its dependents (see dependency table above) — they may need a PATCH bump if the change affects their content.
-
-### Traceability
-
-Git tags the overall language spec at milestones (e.g., `v1.0.0` = all files at 1.0.0). Individual file versions let you trace which rules changed between releases without diffing the entire repo.
+All files start at **1.0.0**. When a file's version changes, review its dependents — they may need a PATCH bump.

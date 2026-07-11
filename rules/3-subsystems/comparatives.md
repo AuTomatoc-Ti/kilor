@@ -2,13 +2,13 @@
 
 **Module:** Comparatives & Superlatives
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.1.0
+**Last updated:** 2026-07-11
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md` (clause template, §IV-C closed-class particles), `2-predication/copula-existential.md` (copula `res`)
 
 ---
 
-Kilor uses analytic particles to express comparison. No dedicated comparative/superlative morphology exists — comparison is handled through a small inventory of closed-class particles that pattern like the oblique preposition system (see `1-nominals/cases.md` §V).
+Comparison is handled through a small inventory of closed-class particles (see `0-foundation/grammar-syntax.md` §IV-C). They pattern like the oblique preposition system (see `1-nominals/cases.md` §V-D).
 
 ## I. Comparative Particle Inventory
 
@@ -19,8 +19,6 @@ Kilor uses analytic particles to express comparison. No dedicated comparative/su
 | `torra` | most | Marks the superlative |
 | `wetor` | much more than | Intensified comparative (fused from `wes` + `tor`) |
 | `mangus` | among / among all | Restricts superlative scope |
-
-These particles are **closed-class**: 1–2 syllables, toneless, no `j`/`v`, exempt from the `-s` constraint. They are included in the closed-class exemption list in `0-foundation/grammar-syntax.md` §IV-C and the oblique particle inventory in `1-nominals/cases.md` §V.
 
 ---
 

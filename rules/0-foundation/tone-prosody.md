@@ -2,8 +2,8 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
-**Last updated:** 2026-07-10
-**Version:** 2.0.1
+**Last updated:** 2026-07-11
+**Version:** 2.0.2
 **Depends on:**
 
 ---
@@ -161,17 +161,6 @@ This is consistent with how tonal languages (Mandarin, Cantonese, Thai, Vietname
 This is not a grammatical rule but a **performance convention**. No morphological changes, prefixes, or alternative spellings are required — the poet or composer simply prioritises the composition's melodic contour over lexical tone, and the grammar's existing redundancy carries the disambiguation burden.
 
 ---
-
-## V. Summary Table
-
-| Syl | Noun | Verb | Adjective | Adverb |
-|---|---|---|---|---|
-| **1** | Toneless (bare root) | Toneless (bare root) | Toneless (root + `-s`) | Toneless (root + `-s`) |
-| **2** | Toneless (bare root) | Toneless (bare root) | Toneless (root + `-s`) | Toneless (root + `-s`) |
-| **3** | H(`j`)→M→L | L(`v`)→H→M | M→H(`j`)→H | M→L(`v`)→M |
-| **4+** | ...M→**H(j)→M→L** | ...M→**L(v)→H→M** | ...M→**M→H(j)→H** | ...M→**M→L(v)→M** |
-
-> **Footnote — Case suffixes:** Case suffixes (Accusative `-ni`/`-na`, Genitive `-si`/`-sa`) are extrasyllabic for tone purposes. They do not count toward the syllable count and do not affect the Last-3 Domain. See §IV-B.
 
 ---
 

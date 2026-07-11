@@ -89,15 +89,7 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 > **Example:** `fora` = "fire" (generic concept, not a specific fire)
 > **Example:** `lumi` = "light" (light in general)
 
-> **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring**. The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding.
->
-> **Emotional colouring on indefinite nouns:** When a colour prefix is used on an indefinite noun purely for emotional effect, the prefix carries the speaker's subjective emotional register toward the noun rather than an ontological claim. The same 7 colours used for ontological classification double as emotional registers (see `3-subsystems/colour-emotion.md` for the full emotional register system). This is distinct from definiteness — the noun remains grammatically indefinite, but the prefix adds an expressive layer:
->
-> > **Example:** `a-lumi` (Red-anger light) — "light" as indefinite concept, but spoken with anger-tinted emotional weight
-> > **Example:** `i-lira` (Blue-sadness water) — "water" as an indefinite, generic substance, tinted with sadness
-> > **Example:** `y-gilan` (Black-awe mountain) — "a mountain" (indefinite), but the speaker feels awe toward it
->
-> This usage is optional and expressive; omitting the prefix remains the default for generic reference. The emotional register is recoverable from context and does not override the noun's grammatical indefiniteness.
+> **Soft guideline:** This is not a hard rule. A speaker may optionally retain a colour prefix on a generic noun to **emphasise a specific ontological property** or convey **emotional colouring** (see `3-subsystems/colour-emotion.md` for the full emotional register system). The system is fault-tolerant: the root morpheme carries the core semantic weight, so using a "wrong" or unexpected prefix does not cause catastrophic misunderstanding. Omitting the prefix remains the default for generic reference.
 
 
 ### C. Proper Nouns — Cultural Convention

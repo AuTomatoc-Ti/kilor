@@ -2,8 +2,8 @@
 
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.3.1
+**Last updated:** 2026-07-11
+**Version:** 1.3.2
 **Depends on:** `0-foundation/grammar-syntax.md`
 
 ---
@@ -140,43 +140,17 @@ When multiple obliques co-occur in the same clause, they follow the fixed order:
 
 ### B. Conjunctions
 
-Conjunctions connect words, phrases, or clauses:
-
-| Role | Meaning | Particle |
-|:---|:---|:---|
-| **Additive** | and | **`ei`** |
-| **Alternative (exclusive)** | or (one or the other, not both) | **`po`** |
-| **Alternative (inclusive)** | or (either or both) | **`pem`** |
-| **XNOR** | both or neither | **`pona`** |
-| **NOR** | neither...nor | **`pemna`** |
-| **Adversative** | but | **`amer`** |
-
-For full coordination rules, see `2-predication/clause-combining.md`.
+See `2-predication/clause-combining.md` for the full inventory and coordination rules.
 
 ### C. Subordinators
 
-Subordinator particles introduce adverbial clauses (when/because/if). See `2-predication/subordination.md` for full clause-embedding rules.
-
-| Role | Meaning | Particle |
-|:---|:---|:---|
-| **Temporal** | when / while | **`tu`** |
-| **Conditional** | if | **`li`** |
-| **Causal** | because | **`aiga`** |
-| **Concessive** | although | **`hoskar`** |
+See `2-predication/subordination.md` for the full inventory and clause-embedding rules.
 
 ### D. Comparative Particles
 
-Comparative particles mark the standard of comparison and form comparative, equative, and superlative constructions. See `3-subsystems/comparatives.md` for full usage rules and example sentences.
+See `3-subsystems/comparatives.md` for the full inventory and usage rules.
 
-| Role | Meaning | Particle |
-|:---|:---|:---|
-| **Comparative** | than | **`tor`** |
-| **Equative** | as | **`les`** |
-| **Superlative** | most | **`torra`** |
-| **Intensified comparative** | much more than | **`wetor`** |
-| **Restrictive** | among / among all | **`mangus`** |
-
-These particles are **standalone words** that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone.
+All oblique particles are closed-class, toneless, standalone words that sit outside the case suffix system. They do not participate in the Contrastive Suffix Rule and carry flat mid-tone. See `0-foundation/grammar-syntax.md` §IV-C.
 
 ### E. Passive `sy`
 

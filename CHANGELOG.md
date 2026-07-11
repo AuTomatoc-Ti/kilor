@@ -6,6 +6,45 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.4.0 — 2026-07-11
+
+Documentation reorganization for agent-optimized readability. No content deleted — everything moved to `guide/` with cross-references, or duplicate boilerplate deduplicated. New `guide/` directory for usage guides. Cleaned 14 spec files (~13% line reduction). Updated `.clinerules/kilor.md` with agent-optimized conventions.
+
+**New:**
+- **`guide/README.md`** v1.0.0 — Index for usage guides; SSOT exemption, lighter header format
+- **`guide/emotional-register-usage.md`** v1.0.0 — Extracted from `colour-emotion.md`: rhetorical devices (反諷, 輕描淡寫, 不協調, 假裝), multi-colour artistic layering (重彩), full example gallery, historical evolution narrative, blended emotions table
+
+**Foundation:**
+- **`tone-prosody.md`** v2.0.1→2.0.2 — Removed §V summary table (duplicate of §II). PATCH bump.
+
+**Nominals:**
+- **`cases.md`** v1.3.1→1.3.2 — §V-B/C/D: Replaced duplicate conjunction/subordinator/comparative particle tables with cross-references to SSOT files. PATCH bump.
+- **`nouns-colour-prefix.md`** v1.1.1 (unchanged version) — §IV-B: Trimmed emotional-colouring sub-block from 10 lines to one sentence + cross-ref.
+
+**Predication:**
+- **`clause-combining.md`** v1.0.0→1.1.0 — Removed §I boilerplate, §VII summary table. MINOR bump.
+- **`conditionals.md`** v1.0.0→1.1.0 — Removed §I boilerplate, §VI summary table. `**Interacts with:**` header added replacing §III prose. MINOR bump.
+- **`copula-existential.md`** v1.2.1→1.3.0 — Removed duplicate §II property tables (tone info SSOT elsewhere). MINOR bump.
+- **`interrogative.md`** v1.2.0→1.3.0 — Removed §I/§II-A tone boilerplate, §V summary table. MINOR bump.
+- **`negation.md`** v1.0.1→1.0.2 — Removed tone note (SSOT). Added `grammar-syntax.md` to Depends on. PATCH bump.
+- **`subordination.md`** v2.1.0→2.2.0 — Removed §I prose, §V interaction section (→ `**Interacts with:**` header), merged §VI summary into body. MINOR bump.
+
+**Subsystems:**
+- **`aspect.md`** v1.0.0→1.1.0 — Removed §I boilerplate, §IV interaction prose (→ `**Interacts with:**` header), §VI summary. MINOR bump.
+- **`colour-emotion.md`** v2.3.0→2.4.0 — Major cleanup: §I compressed to 8 lines; §VIII (duplicate of §VII) removed; §IX example gallery moved to guide; §X rhetorical devices moved to guide; §XI artistic layering moved to guide; toneless/closed-class repetition removed from §VI-B. 523→198 lines. MINOR bump.
+- **`comparatives.md`** v1.1.0→1.1.1 — Removed closed-class boilerplate. PATCH bump.
+- **`imperatives.md`** v1.0.0→1.1.0 — Removed §I boilerplate, §VI interaction prose (→ `**Interacts with:**` header), §VII summary table. MINOR bump.
+- **`optative.md`** v1.0.0→1.1.0 — Removed §I prose, §VI summary table. MINOR bump.
+
+**Meta:**
+- **`rules/README.md`** v1.3.0→2.0.0 — Restructured: collapsed verbose reference index into agent-friendly Quick Reference (all particles, prefixes, pronouns, question words in consolidated tables). Added `guide/` to directory structure. Added agent-optimized conventions section. MAJOR bump (structural reorganization).
+- **`.clinerules/kilor.md`** — Added §9 (Usage Guides — `guide/` directory) and §10 (Agent-Optimized Conventions: closed-class SSOT, file size cap, `Interacts with` header, no summary tables in short files, tables over prose). Updated directory structure diagram to include all current files.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 197 entries pass.
+
+---
+
 ## workspace v1.3.0 — 2026-07-11
 
 Grammar completeness audit: resolved 12 missing grammatical systems. Added 3 new rule files, 20 new lexicon entries, 1 new phonology section. Major update to subordination.md (reported speech, purpose clauses, bare serialisation, concessive/conditional/purpose particles).
