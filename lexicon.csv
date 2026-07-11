@@ -29,6 +29,7 @@ klang,1,cloth / fabric,n,C,klang,klang,klangs,klangs,e-,false,
 slato,2,house / dwelling,n,C,slato,slato,slatos,slatos,ae-,false,
 donar,2,door,nv,C,donar,donar,donars,donars,ae-,false,
 maliu,2,knife / blade,n,C,maliu,maliu,malius,malius,y-,false,
+tek,1,tool,n,C,tek,tek,teks,teks,e-,false,combining form for instrument derivation
 hamin,2,food,n,C,hamin,hamin,hamins,hamins,e-,false,
 bau,1,bread,n,C,bau,bau,baus,baus,e-,false,
 pei,1,cup / container,n,C,pei,pei,peis,peis,e-,false,
@@ -60,6 +61,11 @@ my,1,dark,a,E,my,my,mys,mys,o-,false,
 shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)
 pusar,2,slow,a,E,pusar,pusar,pusars,pusars,o-,false,
 roli,2,lot / many,a,E,roli,roli,rolis,rolis,o-,false,
+mekri,2,few,a,E,mekri,mekri,mekris,mekris,o-,false,
+meki,2,most,a,E,meki,meki,mekis,mekis,o-,false,
+eski,2,each,a,E,eski,eski,eskis,eskis,o-,false,
+amin,2,any,a,E,amin,amin,amins,amins,o-,false,
+naram,2,none,a,E,naram,naram,narams,narams,o-,false,compound: nar + amin
 niba,2,new,a,E,niba,niba,nibas,nibas,o-,false,
 noba,2,old,a,E,noba,noba,nobas,nobas,o-,false,
 hik,1,sad,a,E,hik,hik,hiks,hiks,o-,false,
@@ -96,10 +102,17 @@ loger,2,power / strength,n,H,loger,loger,logers,logers,o-,false,
 eli,2,life,n,H,eli,eli,elis,elis,a-,false,
 mil,1,death,n,H,mil,mil,mils,mils,o-,false,
 maekoi,2,spirit / soul,n,I,maekoi,maekoi,maekois,maekois,o-,false,
-emlu,2,truth,n,I,emlu,emlu,emlus,emlus,o-,false,
+emlu,2,truth,n,I,emlu,emlu,emlus,emlus,o-,false,compound: em + lu
 noi,1,void / emptiness,n,I,noi,noi,nois,nois,o-,false,
 sinkoi,2,alone / solitude,n,I,sinkoi,sinkoi,sinkois,sinkois,o-,false,
 ilsinkoi,3,together,n,I,ijlsinkoi,ivlsinkoi,ilsijnkoi,ilsivnkoi,o-,false,
+pireilu,3,property / quality,n,I,pijreilu,pivreilu,pireijlu,pireivlu,o-,false,combining form lu for abstract property derivation
+rinok,2,measure / measurement,n,I,rinok,rinok,rinoks,rinoks,o-,false,combining form rin for scalar degree derivation
+chap,1,act / deed,n,I,chap,chap,chaps,chaps,o-,false,combining form par for process derivation
+param,2,result,n,I,param,param,params,params,o-,false,combining form param for result derivation
+lokisra,3,doctrine / system of thought,n,I,lokjisra,lokvisra,lokisjra,lokisvra,o-,false,combining form isra for doctrine derivation
+isra,2,idea,n,I,isra,isra,isras,isras,o-,false,combining form for doctrine derivation
+narau,2,without / lack,n,I,narau,narau,naraus,naraus,o-,false,combining form nara for derivational compounding; narau + noun = without X; noun + nara = X-less
 auli,2,comet,n,A,auli,auli,aulis,aulis,o-,false,
 wino,2,colour / hue,n,J,wino,wino,winos,winos,o-,false,
 res,1,copula - identity/attribution,v,-,res,res,res,res,,true,closed-class
@@ -162,6 +175,9 @@ hostak,2,must,v,H,hostak,hostak,hostaks,hostaks,o-,false,
 mug,1,want,v,H,mug,mug,mugs,mugs,o-,false,replaces rima
 som,1,need,v,H,som,som,soms,soms,o-,false,
 shunle,2,should,v,H,shunle,shunle,shunles,shunles,o-,false,
+hostakes,3,certainly / must have (deduction),av,H,hosjtakes,hosvtakes,hostajkes,hostavkes,o-,false,epistemic modal; pre-verbal adverb slot
+sewanes,3,might / perhaps / could be,av,H,sejwanes,sevwanes,sewajnes,sewavnes,o-,false,epistemic modal; pre-verbal adverb slot
+bamares,3,would have (counterfactual),av,H,bajmares,bavmares,bamajres,bamavres,o-,false,epistemic modal; pre-verbal adverb slot
 chorogor,3,good morning,n,H,chorogor,chorogor,chorogor,chorogor,o-,false,compound: cho + roi + gor
 sarrogor,3,good afternoon,n,H,sarrogor,sarrogor,sarrogor,sarrogor,o-,false,compound: sar + roi + gor
 targor,2,good evening,n,H,targor,targor,targors,targors,o-,false,compound: tar + gor

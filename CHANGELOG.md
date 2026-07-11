@@ -6,6 +6,29 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.5.0 — 2026-07-12
+
+Grammar gap resolution: quantifier inventory, derivational compounding system (10 heads), epistemic modals.
+
+**New:**
+- **`rules/3-subsystems/derivational-compounding.md`** v1.1.0 — 10 derivational heads via light-noun compounding: agent (mae), instrument (tek), property (lu), measure (rin), process (par), result (param), location (pos), doctrine (isra), capability (afaloi), without/lack (narau/nara).
+- **`rules/3-subsystems/derivational-compounding.md`** v1.0.0→v1.1.0 — Added patterns I–J (capability, without/lack). MINOR bump.
+
+**Lexicon:**
+- **`lexicon.csv`** — Added 16 entries:
+  - **Quantifiers (5):** `eski` (each), `amin` (any), `naram` (none, compound: nar + amin), `meki` (most), `mekri` (few)
+  - **Derivational heads (7):** `tek` (tool), `pireilu` (property), `rinok` (measure), `chap` (act), `param` (result), `lokisra` (doctrine), `isra` (idea)
+  - **Epistemic modals (3):** `hostakes` (certainly/must have), `sewanes` (might/perhaps), `bamares` (would have)
+  - **Without/lack (1):** `narau` (without/lack, combining form `nara`)
+  - Modified: `emlu` note updated to `compound: em + lu`
+
+**Meta:**
+- **`rules/README.md`** v2.0.0→2.1.0 — Added `derivational-compounding.md` to directory structure, dependency table. Bumped date/version.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 213 entries pass (183 content roots, 30 function words).
+
+
 ## workspace v1.4.0 — 2026-07-11
 
 Documentation reorganization for agent-optimized readability. No content deleted — everything moved to `guide/` with cross-references, or duplicate boilerplate deduplicated. New `guide/` directory for usage guides. Cleaned 14 spec files (~13% line reduction). Updated `.clinerules/kilor.md` with agent-optimized conventions.
