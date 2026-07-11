@@ -6,6 +6,30 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.3.0 — 2026-07-11
+
+Grammar completeness audit: resolved 12 missing grammatical systems. Added 3 new rule files, 20 new lexicon entries, 1 new phonology section. Major update to subordination.md (reported speech, purpose clauses, bare serialisation, concessive/conditional/purpose particles).
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.0.1→2.0.2 — §IV-C: Added 3 new closed-class particles (`bam`, `fidak`, `arfi`). Bumped version and date.
+- **`phonology.md`** v1.1.0→1.2.0 — §IV-F: New section — Schwa epenthesis rule for loanword adaptation. Insert `e` between consonant clusters.
+
+**Predication:**
+- **New: `conditionals.md`** v1.0.0 — Conditional & consequential clauses: `li` (if), `bam` (then/consequential 便/就). Two patterns: `li X, bam Y` and `Y li X`. `bam` as standalone consequential connector. Interaction with negation, emotional particles, aspect.
+- **`subordination.md`** v2.0.0→2.1.0 — §IV: Added `fidak` (purpose subordinator) and `arfi` (concessive intensifier) to subordinator inventory. §VI: Updated summary table with new particles. §VIII: New section — Reported speech (two strategies: `kus` + bare juxtaposition; pronoun resolution; direct quote). §IX: New section — Purpose clauses (bare serial verb default; explicit `fidak` particle). §X: New section — `kus` vs. bare serialisation decision table.
+
+**Subsystems:**
+- **New: `optative.md`** v1.0.0 — Optative, desiderative & benedictive mood via `halise` (3-syllable content root with full tone paradigm: `hajlise`/`havlise`/`halijse`/`halivse`). Three structural patterns for disambiguation. Interaction with emotional particles. Hortative cross-reference to `sor` in `imperatives.md`.
+
+**Lexicon:**
+- **`lexicon.csv`** — Added 20 entries: 3 closed-class particles (`bam`, `fidak`, `arfi`), 13 previously-uncatalogued closed-class particles (`mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`), 1 open-class optative root (`halise`, 3-syl, `hajlise`/`havlise`/`halijse`/`halivse`), 2 causative verbs (`min` = let, `mingo` = make/force 使/令).
+
+**Meta:**
+- **`README.md`** v1.2.0→1.3.0 — Added new files to reference index (conditionals, concessives, causatives, optative, purpose, reported speech, temporal clauses, bare serialisation), directory structure, and dependency table. Added `conditionals.md` and `optative.md` to dependency table.
+- **`question.md`** — Updated: all 12 gaps from grammar completeness audit recorded as resolved. Old causatives deferred item resolved. Only topic marking remains deferred.
+
+---
+
 ## workspace v1.2.0 — 2026-07-11
 
 Grammar expansion: coordination, imperatives, aspect, complement clauses, reflexives/reciprocals. Added 4 new rule files, 13 new lexicon entries. Major update to subordination.md (complement clause syntax, reflexives/reciprocals).

@@ -2,8 +2,8 @@
 
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.1.0
+**Last updated:** 2026-07-11
+**Version:** 1.2.0
 **Depends on:**
 
 ---
@@ -165,6 +165,20 @@ The derivational modifier suffix `-s` (see `0-foundation/tone-prosody.md`) is a 
 - Does **not** create a consonant cluster (it is an appendix, not part of the syllable nucleus/coda)
 - Does **not** carry `j` or `v`
 - Does **not** affect the last-3 domain or syllable count for tone purposes
+
+### F. Schwa Epenthesis for Loanwords
+
+When a loanword contains a consonant cluster (CC, CCC, etc.) that violates Kilor's strict no-cluster phonotactic constraint, an epenthetic schwa `e` /ə/ is inserted between the consonants to break the cluster. This rule applies systematically to all imported words:
+
+- **Between adjacent consonants:** Insert `e` between any C₁C₂ sequence
+- **Word-final clusters:** Insert `e` before the final consonant if a cluster would result
+- **Multiple clusters:** Apply to each cluster independently
+
+> **Example:** English "star" /stɑr/ → `setar` (e inserted between s-t)
+> **Example:** English "spring" /sprɪŋ/ → `sepurin` (e between s-p, e between p-r, -ing→-in)
+> **Example:** English "left" /left/ → `lefet` (e between f-t)
+
+The inserted `e` is a full vowel nucleus forming its own syllable, pronounced as schwa /ə/. It carries no tone (flat mid) and does not count toward the last-3 tone domain for 3+ syllable adapted loanwords — tone markers are assigned to the adapted form following standard tone rules.
 
 ---
 

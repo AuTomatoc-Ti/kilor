@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 2.0.1
+**Last updated:** 2026-07-11
+**Version:** 2.0.2
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`
 
 ---
@@ -183,7 +183,7 @@ Kilor distinguishes two forms of compounding:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
 Note: `hei` (vocative, `3-subsystems/imperatives.md`) and `shen` (reflexive, `2-predication/subordination.md` §VII) are open-class content roots, subject to `-s` derivation and not in the closed-class exemption list.
 

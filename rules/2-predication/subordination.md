@@ -1,10 +1,10 @@
 # Kilor Subordination — Clause Embedding & Relativization
 
-**Module:** Relative Clauses, Complement Clauses, Adverbial Clauses
+**Module:** Relative Clauses, Complement Clauses, Adverbial Clauses, Reported Speech, Purpose Clauses, Bare Serialisation
 **Status:** Canonical
 **Last updated:** 2026-07-11
-**Version:** 2.0.0
-**Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`
+**Version:** 2.1.0
+**Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`, `3-subsystems/optative.md`
 
 ---
 
@@ -129,6 +129,8 @@ Adverbial clauses modify the main action — specifying when, why, under what co
 | `li` | if | Conditional |
 | `aiga` | because | Causal |
 | `hoskar` | although | Concessive |
+| `fidak` | in order to | Purpose |
+| `arfi` | even | Concessive intensifier |
 
 ### C. Examples
 
@@ -175,9 +177,11 @@ Case suffixes inside embedded clauses follow the same rules as matrix clauses: o
 | `kus` | Relativizer ("that/which/who") | §II |
 | `kus` | Complementizer ("that" — I know that...) | §III |
 | `tu` | Temporal subordinator ("when/while") | §IV |
-| `li` | Conditional subordinator ("if") | §IV |
+| `li` | Conditional subordinator ("if") | §IV, `conditionals.md` |
 | `aiga` | Causal subordinator ("because") | §IV |
 | `hoskar` | Concessive subordinator ("although") | §IV |
+| `fidak` | Purpose subordinator ("in order to") | §IX |
+| `arfi` | Concessive intensifier ("even") | §IV |
 
 
 ## VII. Reflexives & Reciprocals
@@ -222,6 +226,75 @@ The reflexive may also be used for emphasis ("I myself did it"):
 ### C. Interaction with Case
 
 Reflexive `shen` takes standard case suffixes per the Contrastive Suffix Rule (last vowel `e` = Front → Back suffixes `-na` ACC, `-sa` GEN). Reciprocal `meshen` as a pre-verbal adverb does not take case marking.
+
+---
+
+## VIII. Reported Speech
+
+### A. Two Acceptable Strategies
+
+Kilor allows both explicit `kus`-marked reported speech and bare juxtaposition (Chinese-style). Both are grammatically valid; speakers choose freely.
+
+| Strategy | Structure | Example |
+|:---|:---|:---|
+| **With `kus`** | Verb-of-saying + `kus` + reported clause | `si rilda kus hamin gor res` — "He said that the food is good" |
+| **Bare juxtaposition** | Verb-of-saying + reported clause (no `kus`) | `si rilda hamin gor res` — "He said the food is good" |
+
+### B. Pronoun Resolution
+
+Kilor follows the Chinese model: pronouns in reported speech retain the speaker's perspective. No pronoun shift occurs.
+
+> `si rilda kus ki hik res` — "He said that I am sad" (ki = the current speaker, not "he")
+> `si rilda kus si hik res` — "He said that he (himself) is sad" (si = the reported speaker)
+
+### C. Direct Quote
+
+Direct quotation uses bare juxtaposition with no `kus`:
+
+> `si rilda: "ki hik res"` — "He said: 'I am sad'"
+
+The colon and quotation marks are orthographic conventions; in speech, intonation and pause mark the boundary.
+
+---
+
+## IX. Purpose Clauses
+
+### A. Bare Serial Verb — Default
+
+Kilor expresses purpose through **bare verb serialisation** (Chinese-style). Two verb phrases are juxtaposed; the second is interpreted as the purpose of the first:
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki kau hamin taka` | "I come (to) eat food" |
+| `si thep loger tesak` | "He/she sleeps (to) make strength" |
+
+No subordinator is needed. Word order is fixed: the purpose clause follows the main verb.
+
+### B. Explicit Purpose Particle — `fidak`
+
+`fidak` ("in order to") provides an optional explicit marking, used for disambiguation, emphasis, or formal register. It introduces the purpose clause:
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki kau fidak hamin taka` | "I come in order to eat food" |
+| `si kau fidak hamin taka` | "He/she comes in order to eat food" |
+
+`fidak` is a **closed-class particle** (2 syllables, toneless, `-s` exempt). It occupies the same structural position as other adverbial subordinators (§IV) and may appear clause-initially:
+
+> `fidak hamin taka, ki te selo kau` — "In order to eat food, I go to the road"
+
+---
+
+## X. `kus` vs. Bare Serialisation — Decision Table
+
+| Context | Strategy | Example |
+|:---|:---|:---|
+| **Relative clause** | `kus` **required** | `maeha kus hamin taka` — "the person who ate the food" |
+| **Complement clause** (cognition: know, think, see) | `kus` **required** | `ki asdo kus ti kau` — "I know that you came" |
+| **Reported speech** (say, tell) | `kus` **optional** | `rilda kus X` or `rilda X` — both acceptable |
+| **Purpose clause** (in order to) | **No `kus`** — bare serial verb (default); `fidak` optional | `kau hamin taka` — "come (to) eat food" |
+| **Causative** (make/let) | **No `kus`** — bare verb complement | `ki min ti taka` — "I let you eat" |
+| **Sequential actions** (and then) | Use `ei` (coordinator) or bare juxtaposition | `ti bau taka ei thep` — "eat bread and sleep" |
 
 ---
 

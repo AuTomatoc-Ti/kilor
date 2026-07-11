@@ -178,3 +178,21 @@ gou,1,experiential aspect (have X-ed before),v,-,gou,gou,gou,gou,,true,closed-cl
 hei,1,hello / hey (vocative),n,I,hei,hei,heis,heis,o-,false,colour prefix on vocative conveys emotional stance (異體字)
 shen,1,self (reflexive),n,I,shen,shen,shens,shens,a-,false,reflexive pronoun; follows personal pronoun; open-class
 meshen,2,each other (reciprocal),av,I,meshen,meshen,meshens,meshens,o-,false,pre-verbal reciprocal adverb; open-class
+mer,,comitative particle (with),v,-,mer,mer,mer,mer,,true,closed-class; toneless; -s exempt
+sy,,instrumental & passive particle (by/with),v,-,sy,sy,sy,sy,,true,closed-class; toneless; -s exempt
+ar,,ablative particle (from),v,-,ar,ar,ar,ar,,true,closed-class; toneless; -s exempt
+tilpe,,locative-relational particle (at/on/in/near),v,-,tilpe,tilpe,tilpe,tilpe,,true,closed-class; toneless; -s exempt
+ei,,coordinator (and),v,-,ei,ei,ei,ei,,true,closed-class; toneless; -s exempt
+po,,exclusive or (either but not both),v,-,po,po,po,po,,true,closed-class; toneless; -s exempt
+amer,,adversative (but/however),v,-,amer,amer,amer,amer,,true,closed-class; toneless; -s exempt
+tu,,temporal subordinator (when/while),v,-,tu,tu,tu,tu,,true,closed-class; toneless; -s exempt
+li,,conditional subordinator (if),v,-,li,li,li,li,,true,closed-class; toneless; -s exempt
+bam,,consequential particle (then / 便/就),v,-,bam,bam,bam,bam,,true,closed-class; toneless; -s exempt
+aiga,,causal subordinator (because),v,-,aiga,aiga,aiga,aiga,,true,closed-class; toneless; -s exempt
+hoskar,,concessive subordinator (although),v,-,hoskar,hoskar,hoskar,hoskar,,true,closed-class; toneless; -s exempt
+arfi,,concessive intensifier (even),v,-,arfi,arfi,arfi,arfi,,true,closed-class; toneless; -s exempt
+fidak,,purpose subordinator (in order to),v,-,fidak,fidak,fidak,fidak,,true,closed-class; toneless; -s exempt
+kus,,relativizer & complementizer (that/which),v,-,kus,kus,kus,kus,,true,closed-class; toneless; -s exempt
+halise,3,hope / wish,nv,I,hajlise,havlise,halijse,halivse,o-,false,open-class; optative/desiderative/benedictive verb
+min,1,let (permissive),v,H,min,min,mins,mins,o-,false,causative: let someone do something
+mingo,2,make / force (使/令),v,H,mingo,mingo,mingos,mingos,o-,false,causative: make someone do something
