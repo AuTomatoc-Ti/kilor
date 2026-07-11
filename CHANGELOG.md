@@ -6,6 +6,35 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.2.0 — 2026-07-11
+
+Grammar expansion: coordination, imperatives, aspect, complement clauses, reflexives/reciprocals. Added 4 new rule files, 13 new lexicon entries. Major update to subordination.md (complement clause syntax, reflexives/reciprocals).
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.0.1→2.0.2 — §IV-C: Added 13 new closed-class particles (`pem`, `pona`, `pemna`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`). Noted `hei` and `shen` as open-class content roots not in closed-class exemption list.
+
+**Nominals:**
+- **`cases.md`** v1.3.1→1.3.2 — §V-B: Added `pem` (inclusive or), `pona` (xnor), `pemna` (nor) to conjunction table. Added cross-reference to `2-predication/clause-combining.md`.
+
+**Predication:**
+- **`subordination.md`** v1.0.2→2.0.0 — §III: Complement clause syntax changed to head-final pattern (`SUBJ MAIN-VERB kus [embedded clause]`). Added `kus` with non-clausal complements. Added §VII: Reflexives (`shen`) & reciprocals (`meshen`). Updated disambiguation table and negation example. Added dependency on `3-subsystems/aspect.md`.
+- **New: `clause-combining.md`** v1.0.0 — Coordination & conjunction: `ei` (and), `po` (exclusive or), `pem` (inclusive or), `pona` (xnor), `pemna` (nor), `amer` (but). NP coordination, clause coordination, shared argument gapping, negation interaction, disjunction in questions.
+
+**Subsystems:**
+- **New: `imperatives.md`** v1.0.0 — 4-level imperative register system: bare verb (casual), `nar` post-verbal (negative), `sor` sentence-final (suggestion), `chom` pre-verbal (polite), `maug` pre-verbal (strong prohibition). Vocative `hei` with optional colour prefix for emotional nuance.
+- **New: `aspect.md`** v1.0.0 — Optional post-verbal aspect particles: `gin` (progressive), `ger` (perfective), `gou` (experiential). Interaction with negation, temporal words, imperatives. Explicitly optional — bare verb always grammatical.
+
+**Lexicon:**
+- **`lexicon.csv`** — Added 13 entries: `pem` (inclusive or), `pona` (xnor), `pemna` (nor), `sor` (suggestion), `chom` (polite request), `maug` (strong prohibition), `gin` (progressive), `ger` (perfective), `gou` (experiential), `hei` (vocative, open-class), `shen` (reflexive, open-class), `meshen` (reciprocal, open-class).
+
+**Meta:**
+- **`README.md`** v1.1.6→1.2.0 — Added new files to reference index, directory structure, and dependency table.
+
+**Deferred (recorded in question.md):**
+- Topic marking, causatives.
+
+---
+
 ## workspace v1.1.8 — 2026-07-11
 
 Added 16 new lexicon entries (time roots, modals, greetings). Removed 1 entry (`rima` → `mug`). Whitelisted `aus`/`ous` as `-s`-final exceptions.

@@ -145,8 +145,13 @@ Conjunctions connect words, phrases, or clauses:
 | Role | Meaning | Particle |
 |:---|:---|:---|
 | **Additive** | and | **`ei`** |
-| **Alternative** | or | **`po`** |
+| **Alternative (exclusive)** | or (one or the other, not both) | **`po`** |
+| **Alternative (inclusive)** | or (either or both) | **`pem`** |
+| **XNOR** | both or neither | **`pona`** |
+| **NOR** | neither...nor | **`pemna`** |
 | **Adversative** | but | **`amer`** |
+
+For full coordination rules, see `2-predication/clause-combining.md`.
 
 ### C. Subordinators
 

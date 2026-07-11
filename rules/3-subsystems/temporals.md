@@ -2,15 +2,17 @@
 
 **Module:** Temporal Expression
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.0.1
-**Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E)
+**Last updated:** 2026-07-11
+**Version:** 1.1.0
+**Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E), `3-subsystems/aspect.md`
 
 ---
 
-Kilor has **no grammatical tense**. There are no verb conjugations for past, present, or future, and no aspect particles (e.g., no equivalent to Cantonese 咗).
+Kilor has **no grammatical tense**. There are no verb conjugations for past, present, or future.
 
-Time is expressed purely through **context and temporal words** (yesterday, tomorrow, now, later, before, etc.). These time words are critically important in the language and **must be placed clause-initially** (before the subject) to establish the temporal frame.
+Time is expressed through **context and temporal words** (yesterday, tomorrow, now, later, before, etc.). These time words are critically important in the language and **must be placed clause-initially** (before the subject) to establish the temporal frame.
+
+Optional aspect particles (`gin`, `ger`, `gou`; see `3-subsystems/aspect.md`) provide additional temporal precision when needed but are never required.
 
 > **Example:** *piroi ki kau* (yesterday I come) = I came yesterday
 > *paroi ki kau* (tomorrow I come) = I will come tomorrow

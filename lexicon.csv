@@ -13,8 +13,8 @@ symak,2,smoke / mist,n,A,symak,symak,symaks,symaks,i-,false,
 maeha,2,person / human,n,B,maeha,maeha,maehas,maehas,a-,false,
 maeda,2,body,n,B,maeda,maeda,maedas,maedas,a-,false,
 hinar,2,hand,n,B,hinar,hinar,hinars,hinars,a-,false,
-winar,2,eye,nv,B,winar,winar,winars,winars,a-,false,
-tilda,2,ear,nv,B,tilda,tilda,tildas,tildas,a-,false,
+winar,2,eye,nv,B,winar,winar,winars,winars,a-,false,verb use = see
+tilda,2,ear,nv,B,tilda,tilda,tildas,tildas,a-,false,verb use = hear
 rilda,2,mouth,nv,B,rilda,rilda,rildas,rildas,a-,false,verb use = speak/say
 pesha,2,blood,n,B,pesha,pesha,peshas,peshas,a-,false,
 hawu,2,animal / beast,n,B,hawu,hawu,hawus,hawus,a-,false,
@@ -166,3 +166,15 @@ chorogor,3,good morning,n,H,chorogor,chorogor,chorogor,chorogor,o-,false,compoun
 sarrogor,3,good afternoon,n,H,sarrogor,sarrogor,sarrogor,sarrogor,o-,false,compound: sar + roi + gor
 targor,2,good evening,n,H,targor,targor,targors,targors,o-,false,compound: tar + gor
 rokgor,2,good night,n,H,rokgor,rokgor,rokgors,rokgors,o-,false,compound: rok + gor
+pem,1,inclusive or (either or both),v,-,pem,pem,pem,pem,,true,closed-class; toneless; -s exempt
+pona,2,xnor (both or neither),v,-,pona,pona,pona,pona,,true,closed-class; toneless; -s exempt
+pemna,2,nor (neither...nor),v,-,pemna,pemna,pemna,pemna,,true,closed-class; toneless; -s exempt
+sor,1,suggestion particle (sentence-final),v,-,sor,sor,sor,sor,,true,closed-class; toneless; -s exempt; like Cantonese 啦
+chom,1,polite request particle (pre-verbal),v,-,chom,chom,chom,chom,,true,closed-class; toneless; -s exempt; like Cantonese 請
+maug,1,strong prohibition particle (pre-verbal),v,-,maug,maug,maug,maug,,true,closed-class; toneless; -s exempt; like Cantonese 咪
+gin,1,progressive aspect (be X-ing),v,-,gin,gin,gin,gin,,true,closed-class; toneless; -s exempt; post-verbal
+ger,1,perfective aspect (have X-ed),v,-,ger,ger,ger,ger,,true,closed-class; toneless; -s exempt; post-verbal
+gou,1,experiential aspect (have X-ed before),v,-,gou,gou,gou,gou,,true,closed-class; toneless; -s exempt; post-verbal
+hei,1,hello / hey (vocative),n,I,hei,hei,heis,heis,o-,false,colour prefix on vocative conveys emotional stance (異體字)
+shen,1,self (reflexive),n,I,shen,shen,shens,shens,a-,false,reflexive pronoun; follows personal pronoun; open-class
+meshen,2,each other (reciprocal),av,I,meshen,meshen,meshens,meshens,o-,false,pre-verbal reciprocal adverb; open-class

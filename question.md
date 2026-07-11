@@ -20,4 +20,13 @@ All design questions that blocked Phase 1 root creation have been resolved. Deci
 
 ---
 
-*No open design questions remain. Phase 1 root creation can begin.*
+*All blocking design questions resolved. Phase 1 root creation can begin.*
+
+---
+
+## Deferred
+
+| # | Question | Status | Notes |
+|---|---|---|---|
+| 7 | Topic marking | Deferred | No topic marker for now. Revisit if needed during sentence-building. |
+| 8 | Causatives | Deferred | Defer to Phase 3+. Serial verb constructions may provide a natural path. |

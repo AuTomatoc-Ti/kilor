@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-07-10
-**Version:** 1.1.6
+**Last updated:** 2026-07-11
+**Version:** 1.2.0
 
 ---
 
@@ -41,9 +41,14 @@ After these, explore any subsystem that interests you — they all depend on the
 | Phoneme inventory, syllables, phonotactics | `0-foundation/phonology.md` |
 | Plural strategy (none, except pronouns) | `0-foundation/grammar-syntax.md` §VI |
 | Pronouns | `1-nominals/pronouns.md` |
+| Aspect particles (`gin`, `ger`, `gou`) | `3-subsystems/aspect.md` |
+| Clause combining & coordination (`ei`, `po`, `pem`, `pona`, `pemna`, `amer`) | `2-predication/clause-combining.md` |
+| Imperatives, suggestions, prohibitions (`sor`, `chom`, `maug`) | `3-subsystems/imperatives.md` |
+| Reflexives (`shen`) & reciprocals (`meshen`) | `2-predication/subordination.md` §VII |
 | Subordination & relative clauses | `2-predication/subordination.md` |
 | Temporal expression (time words) | `3-subsystems/temporals.md` |
 | Tone system | `0-foundation/tone-prosody.md` |
+| Vocative (`hei`) | `3-subsystems/imperatives.md` §V |
 | `-s` derivational suffix | `0-foundation/grammar-syntax.md` §V |
 | 異體字 (speaker colour override on nouns) | `1-nominals/nouns-colour-prefix.md` §VI |
 
@@ -64,11 +69,14 @@ rules/
 │   ├── pronouns.md             — Personal pronouns
 │   └── cases.md                — Case suffixes and oblique particles
 ├── 2-predication/              ← Verb-related & clause-level systems
+│   ├── clause-combining.md     — Coordination, disjunction, adversative
 │   ├── copula-existential.md   — Copula & existential constructions
 │   ├── negation.md             — Negation
 │   ├── interrogative.md        — Question words
-│   └── subordination.md        — Relative clauses & subordination
+│   └── subordination.md        — Relative clauses, complement clauses, reflexives & reciprocals
 ├── 3-subsystems/               ← Self-contained modules (depend on foundation)
+│   ├── aspect.md               — Optional aspect particles (progressive, perfective, experiential)
+│   ├── imperatives.md          — Commands, suggestions, prohibitions, vocative
 │   ├── numerals.md             — Numerals, measure words, ordinals
 │   ├── colour-emotion.md       — Emotional particles (sentence-level & verb-level)
 │   ├── temporals.md            — Temporal expression
@@ -95,7 +103,10 @@ When you change a file, check these dependents:
 | `2-predication/copula-existential.md` | `2-predication/negation.md`, `2-predication/interrogative.md` | Copula `res` and existential `ero` interact with negation and interrogative particles |
 | `2-predication/negation.md` | `2-predication/interrogative.md` | `iu` serves dual role as yes/no marker and affirmative answer; `nar` scoping interacts with `iu` |
 | `2-predication/interrogative.md` | `1-nominals/nouns-colour-prefix.md` | Question words use colour prefixes; definiteness rule exemption |
-| `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md` | `kus` relativizer interacts with case suffixes, question fronting, and negation scoping |
+| `2-predication/clause-combining.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/negation.md` | Coordination particles are closed-class; conjunction table in `cases.md` §V-B; negation scoping |
+| `2-predication/subordination.md` | `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `3-subsystems/aspect.md` | `kus` relativizer interacts with case suffixes, question fronting, negation scoping; aspect in complement clauses |
+| `3-subsystems/aspect.md` | `0-foundation/grammar-syntax.md` §IV-C, `3-subsystems/temporals.md` | Aspect particles are closed-class; temporal words + aspect interaction |
+| `3-subsystems/imperatives.md` | `0-foundation/grammar-syntax.md`, `2-predication/negation.md`, `3-subsystems/colour-emotion.md` | Imperative particles are closed-class; negative commands use `nar`; emotional particles co-occur |
 | `3-subsystems/numerals.md` | `0-foundation/grammar-syntax.md` §IV-C, §VI | NP quantification references clause template; `-s` exemption cross-references closed-class inventory |
 | `3-subsystems/colour-emotion.md` | `0-foundation/philosophy.md` (historical origin), `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md` §IV-C, §I-E | Emotional particles interact with noun prefixes, clause slots, and closed-class list |
 | `3-subsystems/temporals.md` | `0-foundation/grammar-syntax.md` §I-E | Temporal words occupy the clause-initial slot |
