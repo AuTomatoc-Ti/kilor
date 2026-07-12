@@ -6,6 +6,34 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.7.0 — 2026-07-12
+
+Lexicon expansion: added 73 roots from draft plus full core numeral system (0–13, scale markers, ordinal). Created `data/` directory and `compounds.json` as SSOT for compound construction metadata (73 entries: 52 mono-word + 21 multi-word). Data flow documented in `data/README.md`: `lexicon.csv` + `compounds.json` → `kilor.py dict` → dictionary output. Whitelisted `kas`/`hus`/`tus`/`rakas` as closed-class numeral `-s` exceptions.
+
+**New:**
+- **`data/` directory** — Organized lexicon data into `data/lexicon.csv`, `data/compounds.json`, `data/README.md`. Moved from project root.
+- **`data/compounds.json`** — Compound dictionary (SSOT for construction metadata). 73 entries: 52 mono-word + 21 multi-word. All entries carry `meaning` (lexical cache for mono-word compounds also in lexicon.csv; sole source for multi-word compounds). All mono-word entries now have `meaning` field for self-contained dictionary lookup.
+- **`data/README.md`** — Field reference for both CSV and JSON, SSOT rules, data flow diagram, update instructions.
+
+**Lexicon:**
+- **`lexicon.csv`** — Added 73 new entries:
+  - **Draft roots (37):** `ma` (mom), `mamae` (mother), `fa` (dad), `famae` (father), `lorrak` (language), `wug` (dog), `mau` (cat), `onla` (leaves), `walunla` (forest), `rori` (sunrise), `aura` (celestial object), `auron` (sky), `aurok` (cosmic/space, compound: auron+rok), `auronte` (dome/canopy, compound: auron+tek), `thung` (swim), `latif` (heal/save), `argonnia` (grace/grateful, 4-syl), `miso` (music), `bop` (bottom/down), `hap` (right), `fap` (left), `arrin` (distance), `arrinna` (distant), `hak` (half), `hakdo` (1/4), `hakfoi` (1/8), `hakauk` (1/6), `dok` (double), `dokdo` (4×), `dokfoi` (8×), `dokauk` (16×), `dise` (head/facing), `diserin` (direction), `nordi` (north), `sirdi` (south), `aerdi` (east), `bordi` (west)
+  - **Core numerals 0–13 (14):** `aniu` (zero), `mo` (1), `do` (2), `ro` (3), `foi` (4), `tai` (5), `slo` (6), `lai` (7), `auk` (8), `wy` (9), `gau` (10), `mai` (11), `doi` (12), `rai` (13) — closed-class
+  - **Scale markers (5):** `cu` (100), `kas` (1,000), `hus` (10⁶), `tus` (10⁹), `rakas` (10¹²) — closed-class
+  - **Ordinal (1):** `dir` — closed-class function word
+  - **Temporal compounds (10):** `piroi` (yesterday), `paroi` (tomorrow), `imaroi` (today), `pimaroi` (day before yesterday), `pamaroi` (day after tomorrow), `pima` (earlier), `pama` (later), `esaka` (always), `slosaka` (sometimes), `nasaka` (never) — from `temporals.md` §I
+  - **Nature compounds (4):** `foragilan` (volcano), `lirahup` (waterfall), `roralumi` (sunlight), `yrelumi` (moonlight)
+  - **Place compounds (2):** `theprusome` (bedroom), `haminrusome` (dining room)
+  - **Direction family renamed (4):** `nordis`→`nordi`, `sirdis`→`sirdi`, `aerdis`→`aerdi`, `bordis`→`bordi` (comply with 1–2 syllable `-s` constraint)
+
+**Tooling:**
+- **`kilor.py`** — Added `kas`, `hus`, `tus`, `rakas` to `S_FINAL_WHITELIST` (closed-class scale markers per `numerals.md` §II-A).
+
+**Validation:**
+- `python kilor.py check` — ✅ All 296 entries pass (246 content roots, 50 function words).
+
+---
+
 ## workspace v1.6.0 — 2026-07-12
 
 Grammar completeness audit (second round): resolved 9 grammar gaps — demonstratives, NP-internal word order, spatial postpositions, modal verb syntax, directional/motion-path, focus/emphasis, impersonal constructions, predicate adjective syntax, negation of non-verbal predicates. Added 2 new rule files, 10 new lexicon roots.

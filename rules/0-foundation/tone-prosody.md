@@ -2,8 +2,8 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
-**Last updated:** 2026-07-11
-**Version:** 2.0.2
+**Last updated:** 2026-07-12
+**Version:** 2.0.3
 **Depends on:**
 
 ---
@@ -141,7 +141,7 @@ When a semantic concept is expressed as **multiple orthographic words** (a multi
 This contrasts with mono-word compounds written as a single word — those use the Last-3 Domain Rule (§IV-A) recalculated across the entire word.
 
 > **Example (toneless):** `lumi sola` (2-syl noun + 2-syl noun, two-word vocab) — each word is toneless (flat mid).
-> **Example (3+ syllable):** `rujsome dinovgak` (3-syl noun + 3-syl adv) — each word carries its own Last-3 contour independently.
+> **Example (3+ syllable):** `rujsome lunlavgak` (3-syl noun + 3-syl adv) — each word carries its own Last-3 contour independently.
 > **Contrast:** If words were fused into a single word, the Last-3 Domain Rule would recalculate the contour across the entire compound.
 
 ### E. No Cross-Word Tone Sandhi

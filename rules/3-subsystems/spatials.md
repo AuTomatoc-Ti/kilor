@@ -3,7 +3,7 @@
 **Module:** Spatial Postpositions
 **Status:** Canonical
 **Last updated:** 2026-07-12
-**Version:** 1.1.0
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`
 
 ---
@@ -62,7 +62,7 @@ Spatial postpositions follow the landmark noun, which carries **Genitive case**:
 ```
 
 > `slato-si ikne` — "house's inside" = "inside the house"
-> `dinu-si umne` — "tree's under" = "under the tree"
+> `lunla-si umne` — "tree's under" = "under the tree"
 > `gilan-si rapne` — "mountain's above" = "above the mountain"
 > `donar-si haune` — "door's behind" = "behind the door"
 > `slato-si paune` — "house's in front of" = "in front of the house"
@@ -72,7 +72,7 @@ Spatial postpositions follow the landmark noun, which carries **Genitive case**:
 > `slato-si meipone` — "house's around" = "around the house"
 > `shilisa orakne` — "river's across" = "across the river"
 > `selo-si inoune` — "road's through" = "through the road"
-> `dinu do-si tilpe` — "two trees' between" = "between two trees"
+> `lunla do-si tilpe` — "two trees' between" = "between two trees"
 
 ### B. Pronoun Landmarks
 

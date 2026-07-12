@@ -21,10 +21,10 @@ hawu,2,animal / beast,n,B,hawu,hawu,hawus,hawus,a-,false,
 fein,1,bird,n,B,fein,fein,feins,feins,a-,false,
 fei,1,fly / flying,nv,B,fei,fei,feis,feis,a-,false,bare root serves as both noun and verb; feis = adj/adv
 lir,1,fish,n,B,lir,lir,lirs,lirs,a-,false,
-dinu,2,tree,n,B,dinu,dinu,dinus,dinus,u-,false,
+lunla,2,tree,n,B,lunla,lunla,lunlas,lunlas,u-,false,
 slu,1,flower,n,B,slu,slu,slus,slus,u-,false,
 giliu,2,metal / iron,n,C,giliu,giliu,gilius,gilius,y-,false,
-dinogak,3,wood,n,C,dijnogak,divnogak,dinojgak,dinovgak,ae-,false,
+lunlagak,3,wood,n,C,lunjlagak,lunvlagak,lunlajgak,lunlavgak,ae-,false,
 klang,1,cloth / fabric,n,C,klang,klang,klangs,klangs,e-,false,
 slato,2,house / dwelling,n,C,slato,slato,slatos,slatos,ae-,false,
 donar,2,door,nv,C,donar,donar,donars,donars,ae-,false,
@@ -222,3 +222,76 @@ kus,,relativizer & complementizer (that/which),v,-,kus,kus,kus,kus,,true,closed-
 halise,3,hope / wish,nv,I,hajlise,havlise,halijse,halivse,o-,false,open-class; optative/desiderative/benedictive verb
 min,1,let (permissive),v,H,min,min,mins,mins,o-,false,causative: let someone do something
 mingo,2,make / force (使/令),v,H,mingo,mingo,mingos,mingos,o-,false,causative: make someone do something
+ma,1,mom,n,H,ma,ma,mas,mas,a-,false,
+mamae,2,mother,n,H,mamae,mamae,mamaes,mamaes,a-,false,
+fa,1,dad,n,H,fa,fa,fas,fas,a-,false,
+famae,2,father,n,H,famae,famae,famaes,famaes,a-,false,
+lorrak,2,language,n,H,lorrak,lorrak,lorraks,lorraks,a-,false,
+wug,1,dog,n,B,wug,wug,wugs,wugs,a-,false,
+mau,1,cat,n,B,mau,mau,maus,maus,a-,false,
+onla,2,leaves,n,B,onla,onla,onlas,onlas,u-,false,
+walunla,3,forest,n,A,walunla,walunla,walunlas,walunlas,u-,false,
+rori,2,sunrise,n,A,rori,rori,roris,roris,a-,false,
+aura,2,celestial object,n,A,aura,aura,auras,auras,o-,false,
+auron,2,sky,n,A,auron,auron,aurons,aurons,i-,false,
+aurok,2,cosmic / space,n,A,aurok,aurok,auroks,auroks,i-,false,compound: auron + rok
+auronte,3,dome / canopy,n,A,auronte,auronte,aurontes,aurontes,i-,false,compound: auron + tek
+thung,1,swim,v,D,thung,thung,thungs,thungs,o-,false,
+latif,2,heal / save,v,D,latif,latif,latifs,latifs,o-,false,
+argonnia,4,grace / grateful,na,F,argonnia,argonnia,argonnias,argonnias,o-,false,4-syl: ar/gon/ni/a
+miso,2,music,n,J,miso,miso,misos,misos,o-,false,
+bop,1,bottom / down,n,G,bop,bop,bops,bops,o-,false,
+hap,1,right,n,G,hap,hap,haps,haps,o-,false,
+fap,1,left,n,G,fap,fap,faps,faps,o-,false,
+arrin,2,distance,n,G,arrin,arrin,arrins,arrins,o-,false,
+arrinna,3,distant,a,G,arrinna,arrinna,arrinnas,arrinnas,o-,false,derived from arrin
+hak,1,half,n,I,hak,hak,haks,haks,o-,false,
+hakdo,2,one-fourth,n,I,hakdo,hakdo,hakdos,hakdos,o-,false,compound: hak + do
+hakfoi,2,one-eighth,n,I,hakfoi,hakfoi,hakfois,hakfois,o-,false,compound: hak + foi
+hakauk,2,one-sixth,n,I,hakauk,hakauk,hakauks,hakauks,o-,false,compound: hak + auk
+dok,1,double,n,I,dok,dok,doks,doks,o-,false,
+dokdo,2,four times,n,I,dokdo,dokdo,dokdos,dokdos,o-,false,compound: dok + do
+dokfoi,2,eight times,n,I,dokfoi,dokfoi,dokfois,dokfois,o-,false,compound: dok + foi
+dokauk,2,sixteen times,n,I,dokauk,dokauk,dokauks,dokauks,o-,false,compound: dok + auk
+dise,2,head / facing,nv,G,dise,dise,dises,dises,o-,false,
+diserin,3,direction,n,G,diserin,diserin,diserins,diserins,o-,false,
+nordi,2,north,n,G,nordi,nordi,nordis,nordis,o-,false,
+sirdi,2,south,n,G,sirdi,sirdi,sirdis,sirdis,o-,false,
+aerdi,2,east,n,G,aerdi,aerdi,aerdis,aerdis,o-,false,
+bordi,2,west,n,G,bordi,bordi,bordis,bordis,o-,false,
+aniu,2,zero,n,I,aniu,aniu,aniu,aniu,o-,true,closed-class numeral
+mo,1,one,n,I,mo,mo,mo,mo,o-,true,closed-class numeral
+do,1,two,n,I,do,do,do,do,o-,true,closed-class numeral
+ro,1,three,n,I,ro,ro,ro,ro,o-,true,closed-class numeral
+foi,1,four,n,I,foi,foi,foi,foi,o-,true,closed-class numeral
+tai,1,five,n,I,tai,tai,tai,tai,o-,true,closed-class numeral
+slo,1,six,n,I,slo,slo,slo,slo,o-,true,closed-class numeral
+lai,1,seven,n,I,lai,lai,lai,lai,o-,true,closed-class numeral
+auk,1,eight,n,I,auk,auk,auk,auk,o-,true,closed-class numeral
+wy,1,nine,n,I,wy,wy,wy,wy,o-,true,closed-class numeral
+gau,1,ten,n,I,gau,gau,gau,gau,o-,true,closed-class numeral
+mai,1,eleven,n,I,mai,mai,mai,mai,o-,true,closed-class numeral
+doi,1,twelve,n,I,doi,doi,doi,doi,o-,true,closed-class numeral
+rai,1,thirteen,n,I,rai,rai,rai,rai,o-,true,closed-class numeral
+cu,1,hundred,n,I,cu,cu,cu,cu,o-,true,closed-class scale marker
+kas,1,thousand,n,I,kas,kas,kas,kas,o-,true,closed-class scale marker; -s exempt
+hus,1,million,n,I,hus,hus,hus,hus,o-,true,closed-class scale marker; -s exempt
+tus,1,billion,n,I,tus,tus,tus,tus,o-,true,closed-class scale marker; -s exempt
+rakas,2,trillion,n,I,rakas,rakas,rakas,rakas,o-,true,closed-class scale marker; -s exempt
+dir,1,ordinal particle,n,I,dir,dir,dir,dir,o-,true,closed-class; toneless; -s exempt
+piroi,2,yesterday,n,G,piroi,piroi,pirois,pirois,o-,false,compound: pi + roi; see 3-subsystems/temporals.md §I-A
+paroi,2,tomorrow,n,G,paroi,paroi,parois,parois,o-,false,compound: pa + roi; see 3-subsystems/temporals.md §I-A
+imaroi,3,today,n,G,imaroi,imaroi,imarois,imarois,o-,false,compound: ima + roi; see 3-subsystems/temporals.md §I-A
+pimaroi,3,day before yesterday,n,G,pimaroi,pimaroi,pimarois,pimarois,o-,false,compound: pi + ma + roi; see 3-subsystems/temporals.md §I-A
+pamaroi,3,day after tomorrow,n,G,pamaroi,pamaroi,pamarois,pamarois,o-,false,compound: pa + ma + roi; see 3-subsystems/temporals.md §I-A
+pima,2,earlier / further back,n,G,pima,pima,pimas,pimas,o-,false,compound: pi + ma; see 3-subsystems/temporals.md §I-B
+pama,2,later / further ahead,n,G,pama,pama,pamas,pamas,o-,false,compound: pa + ma; see 3-subsystems/temporals.md §I-B
+esaka,3,always,av,G,esaka,esaka,esakas,esakas,o-,false,compound: esa + sakar; see 3-subsystems/temporals.md §I-C
+slosaka,3,sometimes,av,G,slosaka,slosaka,slosakas,slosakas,o-,false,compound: slote + sakar; see 3-subsystems/temporals.md §I-C
+nasaka,3,never,av,G,nasaka,nasaka,nasakas,nasakas,o-,false,compound: na + sakar; see 3-subsystems/temporals.md §I-C
+foragilan,4,volcano,n,A,foragilan,foragilan,foragilans,foragilans,a-,false,compound: fora + gilan
+lirahup,3,waterfall,n,A,lirahup,lirahup,lirahups,lirahups,i-,false,compound: lira + hup
+roralumi,4,sunlight,n,A,roralumi,roralumi,roralumis,roralumis,o-,false,compound: rora + lumi
+yrelumi,4,moonlight,n,A,yrelumi,yrelumi,yrelumis,yrelumis,o-,false,compound: yre + lumi
+theprusome,4,bedroom,n,C,theprusome,theprusome,theprusomes,theprusomes,ae-,false,compound: thep + rusome
+haminrusome,5,dining room,n,C,haminrusome,haminrusome,haminrusomes,haminrusomes,ae-,false,compound: hamin + rusome

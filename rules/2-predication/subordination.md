@@ -2,8 +2,8 @@
 
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses, Reported Speech, Purpose Clauses, Bare Serialisation
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 2.2.0
+**Last updated:** 2026-07-12
+**Version:** 2.2.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`, `3-subsystems/optative.md`
 **Interacts with:** `2-predication/conditionals.md` (li, bam cross-reference), `2-predication/clause-combining.md` (ei vs bare juxtaposition)
 
@@ -31,21 +31,21 @@ Relative clauses follow the head noun. Word order inside remains SOV.
 
 | Kilor | Gloss | Meaning |
 |:---|:---|:---|
-| `fora kus dinu fora` | fire REL tree burn | "the fire that burns the tree" |
-| `dinu kusni fora fora` | tree REL-ACC fire burn | "the tree that fire burns" |
+| `fora kus lunla fora` | fire REL tree burn | "the fire that burns the tree" |
+| `lunla kusni fora fora` | tree REL-ACC fire burn | "the tree that fire burns" |
 | `maeha kussi slato fora` | person REL-GEN house burn | "the person whose house burns" |
 
 ### C. Stacking (Nested Relative Clauses)
 
 Each level uses its own `kus`:
-> `fora kus dinu kusni ki winar fora wem res` — "The fire that burns the tree that I saw is warm"
+> `fora kus lunla kusni ki winar fora wem res` — "The fire that burns the tree that I saw is warm"
 
 ### D. Relativizer vs Complementizer — Disambiguation
 
 | Function | Structure | Example |
 |:---|:---|:---|
-| **Relative** | Head noun immediately precedes `kus` | `fora kus [dinu fora]` — "fire that burns tree" |
-| **Complement** | No head noun; main verb precedes `kus` | `ki asdo kus [fora dinu fora]` — "I know that fire burns tree" |
+| **Relative** | Head noun immediately precedes `kus` | `fora kus [lunla fora]` — "fire that burns tree" |
+| **Complement** | No head noun; main verb precedes `kus` | `ki asdo kus [fora lunla fora]` — "I know that fire burns tree" |
 
 ---
 
@@ -58,7 +58,7 @@ Each level uses its own `kus`:
 | Kilor | Meaning |
 |:---|:---|
 | `ki asdo kus ti kau.` | "I know that you came." |
-| `ki thy kus fora dinu fora.` | "I think that fire burns the tree." |
+| `ki thy kus fora lunla fora.` | "I think that fire burns the tree." |
 | `si winar kus ki bau taka.` | "He/she sees that I eat bread." |
 
 ### B. `kus` with Non-Clausal Complements

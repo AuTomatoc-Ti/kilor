@@ -18,7 +18,7 @@ from collections import defaultdict
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join(SCRIPT_DIR, "lexicon.csv")
+CSV_PATH = os.path.join(SCRIPT_DIR, "data", "lexicon.csv")
 WORDLIST_DIR = os.path.join(SCRIPT_DIR, "wordlist")
 
 # ── Constants ───────────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ def validate_root(root):
 # Content roots that end in -s despite being 1-2 syllables. These are
 # exceptional: their noun/adj forms are the same bare root (the -s is
 # part of the root, not the derivational suffix).
-S_FINAL_WHITELIST = {'gus', 'fos', 'aus', 'ous', 'les', 'mangus'}
+S_FINAL_WHITELIST = {'gus', 'fos', 'aus', 'ous', 'les', 'mangus', 'kas', 'hus', 'tus', 'rakas'}
 
 def validate_content_root(root):
     """Validate a content root (not function word). Adds -s constraint."""

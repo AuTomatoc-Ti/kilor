@@ -3,7 +3,7 @@
 **Module:** Demonstratives (this/that)
 **Status:** Canonical
 **Last updated:** 2026-07-12
-**Version:** 1.0.0
+**Version:** 1.0.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -41,7 +41,7 @@ When the speaker wishes to express an emotional stance toward the referent, the 
 
 > `thin a-bau` — "this bread" (Red emotional colouring: anger towards the bread)
 > `tha o-slato` — "that house" (White emotional colouring: surprise or regret about the house)
-> `thin u-dinu` — "this tree" (Green emotional colouring: calm/faith regarding the tree)
+> `thin u-lunla` — "this tree" (Green emotional colouring: calm/faith regarding the tree)
 
 Without emotional override, the bare root is the default:
 
