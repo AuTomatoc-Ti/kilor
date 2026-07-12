@@ -2,9 +2,9 @@
 
 **Module:** Word Formation, Constraints & Development Pipeline
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.0.1
-**Depends on:**
+**Last updated:** 2026-07-12
+**Version:** 1.0.2
+**Depends on:** `3-subsystems/spatials.md`
 
 ---
 
@@ -127,7 +127,7 @@ Read the sentences aloud. Evaluate:
 | **Temporal word inventory** | **Defined** — see `3-subsystems/temporals.md` |
 | **1-syllable noun & verb roots** | Deferred — atomic roots needed as base for `-s` adjective/adverb derivation |
 | **2-syllable noun & verb roots** | Deferred — needed as base for `-s` adjective/adverb derivation; must not end in `s` |
-| **Dative/Instrumental particle inventory** | **Defined** — see `1-nominals/cases.md` §V: `te` (to/for), `mer` (with), `sy` (by/using), `ar` (from), `tilpe` (between). Conjunctions: `ei` (and), `po` (or), `amer` (but) |
+| **Dative/Instrumental particle inventory** | **Defined** — see `1-nominals/cases.md` §V: `te` (to/for; also spatial root), `mer` (with), `sy` (by/using), `ar` (from), `tilpe` (between). Spatial postpositions via `-ne` suffix: see `3-subsystems/spatials.md`. Conjunctions: `ei` (and), `po` (or), `amer` (but) |
 | **Interrogative structure** | **Defined** — see `2-predication/interrogative.md` |
 | **Negation** | **Defined** — see `2-predication/negation.md` |
 

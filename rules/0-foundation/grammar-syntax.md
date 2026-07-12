@@ -2,9 +2,9 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 2.0.2
-**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`
+**Last updated:** 2026-07-12
+**Version:** 2.2.0
+**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`
 
 ---
 
@@ -20,6 +20,20 @@ Kilor's **default, unmarked** word order is **Subject–Object–Verb (SOV)**. T
 > (the-fire animal-ACC eat.)
 > SUBJ [NOM] — OBJ [ACC] — VERB
 > "The fire eats the animal."
+
+### A2. Zero-Subject Clauses (Impersonal)
+
+For weather and ambient conditions, the subject may be **omitted entirely**. The bare content word (noun or quality root) stands alone as a complete clause:
+
+> `hupli.` — "It's raining." (bare noun = "Rain.")
+> `kop.` — "It's cold." (bare quality root)
+> `my.` — "It's dark." (bare quality root)
+> `foshu.` — "It's a blizzard." (bare noun)
+
+Negation follows the standard pattern (§I-E, `2-predication/negation.md`):
+
+> `kop nar.` — "It's not cold."
+> `hupli nar.` — "It's not raining."
 
 ### B. Poetic & Formal Reordering
 
@@ -64,6 +78,31 @@ The patient is promoted to NOM (unmarked). The agent (if expressed) follows `sy`
 
 ### E. Modifier Placement & Oblique PP Order
 
+#### NP-Internal Word Order
+
+Within the noun phrase, modifiers follow a fixed order relative to the head noun:
+
+```
+[Demo] — [Poss GEN] — [Adj] — [(Colour-)Noun] — [Num/Quant] — [Rel Clause]
+```
+
+| Slot | Position | Example | Notes |
+|---|---|---|---|
+| Demonstrative | Pre-nominal (leftmost) | `thin` | `thin`/`tha`; replaces colour prefix unless 異體字 override (see `1-nominals/demonstratives.md`) |
+| Possessor (GEN) | Pre-nominal | `kis` | Pronoun GEN or noun + `-si`/`-sa` |
+| Adjective | Pre-nominal | `ralis` | Noun/quality root + `-s` |
+| Head Noun | Centre | `bau` | May carry colour prefix or be bare |
+| Numeral / Quantifier | Post-nominal | `ro`, `esa`, `roli` | See `3-subsystems/numerals.md` §VI |
+| Relative Clause | Post-nominal (rightmost) | `kus ...` | See `2-predication/subordination.md` §II |
+
+All slots are optional except the head noun. NP-internal order is **rigid** (no poetic reordering within the NP).
+
+> **Full NP example:** `thin kis ralis bau ro kus ki taka ger`
+> "these three big breads of mine that I ate"
+>
+> thin — kis — ralis — bau — ro — [kus ki taka ger]
+> this — my — big — bread — three — that I ate
+
 #### Adjectives
 
 Adjectives (noun + `-s` or quality roots used attributively) **precede** the noun:
@@ -79,39 +118,66 @@ Intensity adverbs (`wes`, `meres`) precede the adjective:
 When multiple oblique prepositional phrases appear, they follow the **fixed order**:
 
 ```
-Object [ACC] — [Numeral] — [sy Instrumental] — [mer Comitative] — [tilpe Locative-relational] — [ar Ablative] — [te Dative] — [Adverb] — Verb
+Object [ACC] — [Numeral] — [sy Instrumental] — [mer Comitative] — [spatial-ne / tilpe] — [ar Ablative] — [te Dative] — [Adverb] — Verb
 ```
 
-> `bauni ro sy y-maliu te kis song shuks sounar` — "quickly give three breads to my friend with an iron knife"
+> `bauni ro sy y-maliu mer kis song slato-si ikne te ti shuks sounar` — "quickly give three breads to you with an iron knife with my friend inside the house"
 
-The object (with optional ACC case suffix) and any numeral come first. When multiple obliques co-occur, the fixed order is `sy` (Instrumental) > `mer` (Comitative) > `tilpe` (Locative-relational) > `ar` (Ablative) > `te` (Dative). Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**.
+The object (with optional ACC case suffix) and any numeral come first. When multiple obliques co-occur, the fixed order is `sy` (Instrumental) > `mer` (Comitative) > spatial postpositions / `tilpe` (Locative-relational & Spatial) > `ar` (Ablative) > `te` (Dative). Manner adverbs (`-s` derived from quality roots or verbs) **precede the verb**. For the full spatial postposition inventory (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `tilpe`), see `3-subsystems/spatials.md`.
+
+#### Modal Verbs
+
+Root modal verbs (`mug` "want", `som` "need", `sew` "can", `hostak` "must", `shunle` "should") form a **bare serial construction** with the main verb. The modal directly precedes the main verb — no complementizer is used. The object stays before the modal+verb complex:
+
+> `ki bau mug taka.` — "I want to eat bread." (lit. "I bread want eat.")
+> `ki fei sew.` — "I can fly."
+> `ki bau som taka.` — "I need to eat bread."
+
+Modals can **stack**:
+
+> `ki fei mug sew.` — "I want to be able to fly."
+
+The modal sits between the manner adverb and the verb:
+
+> `ki bau mug shuks taka.` — "I want to quickly eat bread."
+
+Epistemic modals (`hostakes` "certainly", `sewanes` "might", `bamares` "would have") are pre-verbal adverbs and already occupy the `[Manner Adv]` slot.
 
 #### Full Clause Template (SOV)
 
 ```
-[Emo]  [Temporal]  [Intensity Adv]  [Adj]  [Subject-NOM]  [Relative Clause]  [Object-ACC]  [Numeral]  [sy Instr]  [mer Com]  [tilpe Loc-rel]  [ar Abl]  [te Dat]  [Manner Adv]  [Emo]  [Verb]  [nar]
+[Emo]  [Temporal]  [Intensity Adv]  [NPSUBJ]  [NPOBJ]  [Numeral]  [sy Instr]  [mer Com]  [spatial-ne / tilpe]  [ar Abl]  [te Dat]  [Manner Adv]  [Modal]  [Emo]  [Verb]  [nar]
 ```
 
-All slots are optional except the subject and verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only.
+Where NPSUBJ and NPOBJ expand to:
+
+```
+NPSUBJ: [Demo]  [Poss GEN]  [Adj]  [(Colour-)Noun]  [Rel Clause]
+NPOBJ:  [Demo]  [Poss GEN]  [Adj]  [(Colour-)Noun]  [Rel Clause]  [Num/Quant (on OBJ side preceding Numeral slot)]
+```
+
+All slots are optional except the subject and main verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only. `[Modal]` is an optional root modal verb (`mug`, `som`, `sew`, `hostak`, `shunle`); epistemic modals (`hostakes`, `sewanes`, `bamares`) occupy the `[Manner Adv]` slot.
 
 #### Maximal Example Sentence
 
 ```
-piroi  wes  ralis  a-maeha  kus kin avrgonna  bauni ro  sy y-maliu  te kis song  shuks  sounar  nar.
+piroi  wes  ralis  a-maeha  kus kin avrgonna  bauni ro  sy y-maliu  mer kis song  slato-si ikne  te ti  shuks  sounar  nar.
 
 ei  imaroi  bau  sy a-fora  taka.
 
 amer  ki  mangus kil  torra  ralis.
 ```
 
-**Translation:** "Yesterday the very big person who loves me did not quickly give three breads to my friend with an iron knife. And today the bread was eaten by the fire. But I am the biggest among us."
+**Translation:** "Yesterday the very big person who loves me did not quickly give three breads to you with an iron knife with my friend inside the house. And today the bread was eaten by the fire. But I am the biggest among us."
 
 For details on the subsystems referenced above:
 - `3-subsystems/temporals.md` — temporal expression (clause-initial slot)
 - `3-subsystems/colour-emotion.md` — emotional particles (clause-initial and pre-verbal slots)
+- `3-subsystems/spatials.md` — spatial postpositions (`-ne` suffix, `tilpe` = between)
 - `3-subsystems/comparatives.md` — comparatives & superlatives
 - `2-predication/subordination.md` — subordination & relative clauses
 - `2-predication/negation.md` — clausal negation (`nar`)
+- `1-nominals/demonstratives.md` — demonstratives (`thin`/`tha`)
 
 ---
 

@@ -1,51 +1,76 @@
 # Kilor — Design Questions
 
-**Status:** All resolved
-**Last Updated:** 2026-07-11
-
-All major grammatical design questions have been resolved. Decisions codified in their respective rule files.
+**Last Updated:** 2026-07-12
 
 ---
 
-## Resolved (2026-07-11 — Grammar Completeness Audit)
+## Audit: What's Already Covered (All Resolved)
 
-| # | Question | Resolution | Codified In |
-|---|---|---|---|
-| 1 | Conditionals (if…then) | `li` = if, `bam` = then/consequential (便/就); two patterns: `li X, bam Y` and `Y li X` | `rules/2-predication/conditionals.md` |
-| 2 | Purpose clauses | Bare verb serialisation (Chinese-style) default; `fidak` = optional explicit "in order to" | `rules/2-predication/subordination.md` §IX |
-| 3 | Reason/cause clauses | `aiga` — already documented | `rules/2-predication/subordination.md` §IV |
-| 4 | Reported speech | `kus` (optional) or bare juxtaposition (optional); pronoun perspective retained | `rules/2-predication/subordination.md` §VIII |
-| 5 | Causatives | `min` = let (permissive), `mingo` = make/force (使/令), `tesak` = make/create (造) | `lexicon.csv` |
-| 6 | Concessive clauses | `hoskar` = although (existing), `arfi` = even | `rules/2-predication/subordination.md` §IV |
-| 7 | Temporal adverbial clauses | Temporal noun + clause: `tilpi ki kau` = before I came; `tu` for "when" | `rules/2-predication/subordination.md` §IV, `rules/3-subsystems/temporals.md` |
-| 8 | Optative / desiderative / benedictive | `halise` (3 syllables, full tone paradigm) for all three; `sor` covers hortative "let's"; emotional particles add nuance | `rules/3-subsystems/optative.md` |
-| 9 | Noun → adverb derivation | `-s` applies: e.g., `roks` = at night (nightly) | `rules/0-foundation/grammar-syntax.md` §V |
-| 10 | `kus` vs. bare serialisation | Decision table codified; `kus` required for relatives & cognition complements, optional for reported speech, prohibited for purpose & causatives | `rules/2-predication/subordination.md` §X |
-| 11 | Schwa epenthesis | Formalised for loanword adaptation; `e` inserted between consonant clusters | `rules/0-foundation/phonology.md` §IV-F |
-| 12 | Polite/formal register | Intentional omission — colour-emotion system + `chom` sufficient | N/A (design decision) |
-| 13 | Missing closed-class particles in CSV | Added all missing particles: `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `amer`, `tu`, `li`, `bam`, `aiga`, `hoskar`, `arfi`, `fidak`, `kus` | `lexicon.csv` |
+### Foundation
+- [x] Philosophy & 7 dual-concepts
+- [x] Phonemic inventory, syllables, phonotactics, schwa epenthesis
+- [x] Tone system (`j`/`v` on 3+ syllable; 1–2 syllable toneless)
+- [x] SOV word order, full clause template, modifier placement, oblique PP order
+- [x] NP-internal word order: `[Demo] — [Poss GEN] — [Adj] — [Noun] — [Num/Quant] — [Rel]`
+- [x] Contrastive suffix rule
+- [x] Compounding (mono-word vs multi-word vocab)
+- [x] `-s` derivational suffix (adj/adv from bare roots)
+- [x] No plural marking (except pronoun `-l-`)
+- [x] No possessive suffixes (Genitive `-si`/`-sa` only)
+- [x] Pronoun declension (ACC `-n`, GEN `-s`)
+- [x] Demonstratives: `thin`/`tha` dual-citizenship (place noun, determiner, pronoun)
+- [x] Zero-subject clauses for weather/ambient
+- [x] Modal verb syntax: bare serial, modal between manner adv and verb
+
+### Nominals
+- [x] Colour prefix ontology (7 colours → ontological classes), definiteness, 異體字 emotional override
+- [x] Personal pronouns
+- [x] Case suffixes (`-ni`/`-na` ACC, `-si`/`-sa` GEN) & oblique particles (`sy`, `mer`, `tilpe`, `ar`, `te`)
+- [x] Passive voice via `sy`
+- [x] Genitive chains (single vs. nested possessors)
+- [x] Demonstratives (`thin`/`tha`)
+
+### Predication
+- [x] Coordination `ei` (and), `po` (exclusive or), `pem` (inclusive or), `pona` (XNOR), `pemna` (NOR), `amer` (but)
+- [x] Conditionals: `li` (if), `bam` (then)
+- [x] Copula `res` & existential/possession `ero`
+- [x] Predicate adjective syntax: `res` + adjective form
+- [x] Negation: `nar` (postpositive clausal/constituent), `na` (negative answer)
+- [x] Negation of non-verbal predicates: `ki res a-maeha nar.` / `fora res gus nar.`
+- [x] Interrogatives: 8 question words (aewei, aeweisan, awei, ewei, iwei, owei, uwei, ywei), Y/N `iu`
+- [x] Subordination: `kus` (relativizer/complementizer), `tu` (when), `aiga` (because), `hoskar` (although), `arfi` (even), `fidak` (in order to), temporal noun + clause
+- [x] Reported speech: `kus` (optional) or bare juxtaposition
+- [x] Reflexive `shen`, reciprocal `meshen`
+- [x] Causatives: `min` (let), `mingo` (make/force)
+- [x] Focus/emphasis: covered by OSV, `arfi`, `shen`, `nar` contrast (no new grammar needed)
+
+### Subsystems
+- [x] Aspect: `gin` (progressive), `ger` (perfective), `gou` (experiential)
+- [x] Emotional particles
+- [x] Comparatives & superlatives: `tor`, `les`, `torra`, `wetor`, `mangus`
+- [x] Derivational compounding (light-noun heads: `lu`, `rin`, `par`, `param`, `tek`, `isra`, `nara`, `tow`)
+- [x] Imperatives: bare verb, `sor` (suggestion), `chom` (polite request), `maug` (prohibition), `hei` (vocative)
+- [x] Numerals: core 1–10, powers-of-ten, measure words, ordinals (`dir`)
+- [x] Optative, desiderative, benedictive: `halise`
+- [x] Temporals: day/week/month/year scale, `-saka` frequency paradigm, temporal compounds
+- [x] Spatial postpositions: 13 forms via `-ne` suffix (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `orakne`, `inoune`, `tilpe`)
+- [x] Directional / motion-path: spatial postpositions + motion verb = direction
 
 ---
 
-## Older Resolved
+## Nice-to-Have (Lower Priority — Deferred)
 
-| # | Question | Resolution | Codified In |
-|---|---|---|---|
-| 14 | Subordinate clauses & relativization | Postnominal `kus` relativizer + adverbial particles | `rules/2-predication/subordination.md` |
-| 15 | Dative & instrumental particles | `su` split into `mer` (comitative) and `sy` (instrumental) | `rules/1-nominals/cases.md` §V |
-| 16 | Temporal word inventory | Day scale compounds with `roi`, frequency `-saka` paradigm, bare temporal roots | `rules/0-foundation/grammar-syntax.md` §VI |
-| 17 | Comparatives & superlatives | Analytic particle system: `tor`, `les`, `torra`, `wetor`, `mangus` | `rules/3-subsystems/comparatives.md` |
-| 18 | `ae` prefix ambiguity | Mandatory hyphen rule — hyphen never omitted between prefix and root | `rules/1-nominals/nouns-colour-prefix.md` §II-A |
-| 19 | Passive voice | `sy` extended as unified passive + instrumental particle (Chinese 被 model) | `rules/1-nominals/cases.md` §V-E, `rules/0-foundation/grammar-syntax.md` §I-D |
-
----
-
-## Deferred
-
-| # | Question | Status | Notes |
-|---|---|---|---|
-| 20 | Topic marking | Deferred | No topic marker for now. Revisit if needed during sentence-building. |
+| # | Area | Status |
+|---|---|---|
+| 10 | Serial verb / converb constructions | 🔵 Deferred |
+| 11 | Ability vs. permission distinction (`sew` vs `afaloi`) | 🔵 Deferred |
+| 12 | Evidentiality | 🔵 Deferred |
+| 13 | Honorifics beyond `chom` | 🔵 Deferred |
+| 14 | Middle voice / anticausative | 🔵 Deferred |
+| 15 | Reduplication | 🔵 Deferred |
+| 16 | Tag questions | 🔵 Deferred |
+| 17 | Topic marking | 🔵 Deferred |
 
 ---
 
-*All blocking design questions resolved. Lexicon expansion can begin.*
+*All critical and important grammar gaps resolved. Kilor is ready for lexicon expansion.*

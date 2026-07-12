@@ -3,7 +3,7 @@
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
 **Last updated:** 2026-07-12
-**Version:** 2.1.0
+**Version:** 2.2.0
 
 ---
 
@@ -48,6 +48,7 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `fidak` | In order to | `2-predication/subordination.md` |
 | `arfi` | Even | `2-predication/subordination.md` |
 | `kus` | Relativizer / complementizer | `2-predication/subordination.md` |
+| `thin` / `tha` | Demonstrative ("this"/"that") | `1-nominals/demonstratives.md` |
 | `gin` | Progressive aspect | `3-subsystems/aspect.md` |
 | `ger` | Perfective aspect | `3-subsystems/aspect.md` |
 | `gou` | Experiential aspect | `3-subsystems/aspect.md` |
@@ -67,9 +68,24 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 |---|---|---|
 | `sy` | Instrumental / Passive | `1-nominals/cases.md` |
 | `mer` | Comitative ("with") | `1-nominals/cases.md` |
-| `tilpe` | Locative-relational | `1-nominals/cases.md` |
+| `tilpe` | Between | `1-nominals/cases.md`, `3-subsystems/spatials.md` |
 | `ar` | Ablative ("from") | `1-nominals/cases.md` |
-| `te` | Dative ("to/for") | `1-nominals/cases.md` |
+| `te` | Dative ("to/for") & spatial root ("towards") | `1-nominals/cases.md`, `3-subsystems/spatials.md` |
+
+### Spatial Postpositions (`-ne` suffix)
+
+| Form | Meaning | File |
+|---|---|---|
+| `ikne` | inside | `3-subsystems/spatials.md` |
+| `oukne` | outside | `3-subsystems/spatials.md` |
+| `umne` | under | `3-subsystems/spatials.md` |
+| `rapne` | above | `3-subsystems/spatials.md` |
+| `haune` | behind | `3-subsystems/spatials.md` |
+| `paune` | in front of | `3-subsystems/spatials.md` |
+| `hinne` | beside / near | `3-subsystems/spatials.md` |
+| `tene` | towards | `3-subsystems/spatials.md` |
+| `orane` | along | `3-subsystems/spatials.md` |
+| `meipone` | around | `3-subsystems/spatials.md` |
 
 ### Case Suffixes & Tone Markers
 
@@ -134,6 +150,7 @@ rules/
 ├── 1-nominals/                 ← Noun-related systems
 │   ├── nouns-colour-prefix.md  — Colour prefix ontology, definiteness, 異體字 override
 │   ├── pronouns.md             — Personal pronouns
+│   ├── demonstratives.md       — Demonstratives (thin/tha)
 │   └── cases.md                — Case suffixes and oblique particles
 ├── 2-predication/              ← Verb-related & clause-level systems
 │   ├── clause-combining.md     — Coordination, disjunction, adversative
@@ -150,6 +167,7 @@ rules/
 │   ├── imperatives.md          — Commands, suggestions, prohibitions, vocative
 │   ├── numerals.md             — Numerals, measure words, ordinals
 │   ├── optative.md             — Optative, desiderative & benedictive mood
+│   ├── spatials.md             — Spatial postpositions (-ne suffix)
 │   └── temporals.md            — Temporal expression
 └── 4-meta/                     ← Project governance
     └── lexicon-roadmap.md      — Lexicon development plan
@@ -171,9 +189,10 @@ When you change a file, check these dependents:
 | `0-foundation/grammar-syntax.md` | All files — defines clause template, closed-class inventory (SSOT), `-s` derivation |
 | `0-foundation/phonology.md` | `tone-prosody.md`, `numerals.md`, `kilor.py` |
 | `0-foundation/tone-prosody.md` | `numerals.md`, `pronouns.md`, `colour-emotion.md`, `grammar-syntax.md` |
-| `1-nominals/nouns-colour-prefix.md` | `colour-emotion.md`, `grammar-syntax.md` |
-| `1-nominals/cases.md` | `grammar-syntax.md`, `pronouns.md` |
+| `1-nominals/nouns-colour-prefix.md` | `colour-emotion.md`, `grammar-syntax.md`, `demonstratives.md` |
+| `1-nominals/cases.md` | `grammar-syntax.md`, `pronouns.md`, `spatials.md` |
 | `1-nominals/pronouns.md` | `cases.md`, `grammar-syntax.md` |
+| `1-nominals/demonstratives.md` | `grammar-syntax.md`, `nouns-colour-prefix.md` |
 | `2-predication/conditionals.md` | `grammar-syntax.md`, `subordination.md` |
 | `2-predication/copula-existential.md` | `negation.md`, `interrogative.md` |
 | `2-predication/negation.md` | `interrogative.md` |
@@ -187,6 +206,7 @@ When you change a file, check these dependents:
 | `3-subsystems/temporals.md` | `grammar-syntax.md` |
 | `3-subsystems/comparatives.md` | `grammar-syntax.md`, `copula-existential.md` |
 | `3-subsystems/derivational-compounding.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
+| `3-subsystems/spatials.md` | `grammar-syntax.md`, `cases.md` |
 
 ---
 

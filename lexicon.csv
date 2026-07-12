@@ -82,9 +82,19 @@ tar,1,dusk,n,G,tar,tar,tars,tars,o-,false,
 ima,2,now,n,G,ima,ima,imas,imas,o-,false,combining form for imaroi (today)
 tilpi,2,before,n,G,tilpi,tilpi,tilpis,tilpis,o-,false,combining form pi in day compounds
 tilpa,2,after,n,G,tilpa,tilpa,tilpas,tilpas,o-,false,combining form pa in day compounds
-thin,1,here,n,G,thin,thin,thins,thins,o-,false,
-tha,1,there,n,G,tha,tha,thas,thas,o-,false,
+thin,1,here / this,n,G,thin,thin,thins,thins,o-,false,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
+tha,1,there / that,n,G,tha,tha,thas,thas,o-,false,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
 poska,2,place / location,n,G,poska,poska,poskas,poskas,o-,false,
+ik,1,in,n,G,ik,ik,iks,iks,o-,false,spatial root; -ne → ikne (inside)
+ouk,1,out,n,G,ouk,ouk,ouks,ouks,o-,false,spatial root; -ne → oukne (outside)
+um,1,under,n,G,um,um,ums,ums,o-,false,spatial root; -ne → umne (under)
+hau,1,back,n,G,hau,hau,haus,haus,o-,false,spatial root; -ne → haune (behind)
+pau,1,front,n,G,pau,pau,paus,paus,o-,false,spatial root; -ne → paune (in front of)
+hin,1,side,n,G,hin,hin,hins,hins,o-,false,spatial root; -ne → hinne (beside / near / next to)
+ora,2,along,n,G,ora,ora,oras,oras,o-,false,spatial root; -ne → orane (along)
+meipo,2,around,n,G,meipo,meipo,meipos,meipos,o-,false,spatial root; -ne → meipone (around)
+orak,2,across,n,G,orak,orak,oraks,oraks,o-,false,spatial root; -ne → orakne (across)
+inou,2,through / via,n,G,inou,inou,inous,inous,o-,false,spatial root; -ne → inoune (through)
 tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,combining form tow in temporal compounds
 shu,1,soon,av,G,shu,shu,shus,shus,o-,false,bare root (simplified from shuk+tlow)
 sar,1,late,av,G,sar,sar,sars,sars,o-,false,bare root (simplified from pusar+tlow)
@@ -120,7 +130,7 @@ ero,2,existential & possession - there is/have,v,-,ero,ero,eros,eros,,true,close
 nar,1,clausal/constituent negation,v,-,nar,nar,nar,nar,,true,closed-class
 iu,1,yes/no question + affirmative answer,v,-,iu,iu,iu,iu,,true,closed-class
 na,1,negative answer (no),v,-,na,na,na,na,,true,closed-class
-te,1,dative particle (to),v,-,te,te,te,te,,true,closed-class
+te,1,dative particle (to) & spatial root (towards),v,-,te,te,te,te,,true,closed-class; also open-class spatial root; -ne → tene (towards); see 3-subsystems/spatials.md §IV-C
 we,1,intensify,v,D,we,we,wes,wes,,false,derived adverb wes = "very"
 mere,2,be slight (intensity),v,D,mere,mere,meres,meres,,false,derived meres = "a bit" (intensity); distinct from pere (amount)
 pere,2,small amount,n,E,pere,pere,peres,peres,o-,false,derived peres = "little (amount)"; distinct from mere (intensity)
@@ -129,7 +139,7 @@ les,,equative particle (as),,,,,,true,closed-class; toneless; -s exempt
 torra,,superlative particle (most),,,,,,true,closed-class; toneless; -s exempt; fused from tor + rap
 wetor,,intensified comparative (much more than),,,,,,true,closed-class; toneless; -s exempt; fused from wes + tor
 mangus,,restrictive (among/among all),,,,,,true,closed-class; toneless; -s exempt
-rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,
+rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,spatial root; -ne → rapne (above); see 3-subsystems/spatials.md
 hu,1,wind,n,A,hu,hu,hus,hus,o-,false,
 hupli,2,rain,n,A,hupli,hupli,huplis,huplis,o-,false,
 shili,2,river,n,A,shili,shili,shilis,shilis,o-,false,
@@ -197,7 +207,7 @@ meshen,2,each other (reciprocal),av,I,meshen,meshen,meshens,meshens,o-,false,pre
 mer,,comitative particle (with),v,-,mer,mer,mer,mer,,true,closed-class; toneless; -s exempt
 sy,,instrumental & passive particle (by/with),v,-,sy,sy,sy,sy,,true,closed-class; toneless; -s exempt
 ar,,ablative particle (from),v,-,ar,ar,ar,ar,,true,closed-class; toneless; -s exempt
-tilpe,,locative-relational particle (at/on/in/near),v,-,tilpe,tilpe,tilpe,tilpe,,true,closed-class; toneless; -s exempt
+tilpe,,locative-relational particle (between),v,-,tilpe,tilpe,tilpe,tilpe,,true,closed-class; toneless; -s exempt
 ei,,coordinator (and),v,-,ei,ei,ei,ei,,true,closed-class; toneless; -s exempt
 po,,exclusive or (either but not both),v,-,po,po,po,po,,true,closed-class; toneless; -s exempt
 amer,,adversative (but/however),v,-,amer,amer,amer,amer,,true,closed-class; toneless; -s exempt

@@ -6,6 +6,36 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.6.0 — 2026-07-12
+
+Grammar completeness audit (second round): resolved 9 grammar gaps — demonstratives, NP-internal word order, spatial postpositions, modal verb syntax, directional/motion-path, focus/emphasis, impersonal constructions, predicate adjective syntax, negation of non-verbal predicates. Added 2 new rule files, 10 new lexicon roots.
+
+**New:**
+- **`rules/1-nominals/demonstratives.md`** v1.0.0 — Demonstratives `thin`/`tha` as dual-citizenship words: place nouns, demonstrative determiners (pre-colour-prefix, replace colour prefix unless 異體字 override), demonstrative pronouns.
+- **`rules/3-subsystems/spatials.md`** v1.1.0 — 13 spatial postpositions via invariable `-ne` suffix. `tilpe` redefined as "between" (was "at/on/in/near"). Landmark takes GEN case.
+
+**Foundation:**
+- **`grammar-syntax.md`** 2.0.2→2.2.0 — §I-A2: New section — zero-subject impersonal clauses. §I-E: Added NP-internal word order table `[Demo]—[Poss]—[Adj]—[Noun]—[Num/Quant]—[Rel]`. §I-E: Added modal verb syntax (bare serial, modal between manner adv and verb). §I-E: Updated clause template with `[Modal]` slot. `tilpe` redefined as "between" throughout. Oblique PP order updated to `sy > mer > spatial-ne/tilpe > ar > te`. Added `demonstratives.md` and `spatials.md` to Depends on.
+
+**Nominals:**
+- **`cases.md`** 1.3.2→1.4.0 — `tilpe` redefined as "between". Oblique PP order updated to include spatial postpositions. Added `spatials.md` to Depends on.
+
+**Subsystems:**
+- **`spatials.md`** 1.0.0→1.1.0 — Added `orak` (across) and `inou` (through/via) roots. MINOR bump.
+
+**Lexicon:**
+- **`lexicon.csv`** — `tilpe` meaning changed from "at/on/in/near" to "between". `thin`/`tha` notes updated for demonstrative dual-citizenship. `rap` notes updated for spatial root. `te` notes updated for dual-use (dative particle + spatial root). Added 10 new spatial roots (Category G): `ik` (in), `ouk` (out), `um` (under), `hau` (back), `pau` (front), `hin` (side), `ora` (along), `meipo` (around), `orak` (across), `inou` (through/via).
+
+**Meta:**
+- **`rules/README.md`** 2.1.0→2.2.0 — Added spatial postpositions quick-reference table, demonstratives entry in closed-class particles, updated directory structure (demonstratives.md, spatials.md), updated dependency table (3 new entries). `tilpe` description changed from "Locative-relational" to "Between".
+- **`rules/4-meta/lexicon-roadmap.md`** 1.0.1→1.0.2 — Updated `tilpe` description. Added spatial postpositions reference.
+- **`question.md`** — All 9 gaps documented as resolved. Audit checklist merged into single comprehensive list. Deferred items noted.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 223 entries pass (193 content roots, 30 function words).
+
+---
+
 ## workspace v1.5.0 — 2026-07-12
 
 Grammar gap resolution: quantifier inventory, derivational compounding system (10 heads), epistemic modals.

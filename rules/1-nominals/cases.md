@@ -2,9 +2,9 @@
 
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.3.2
-**Depends on:** `0-foundation/grammar-syntax.md`
+**Last updated:** 2026-07-12
+**Version:** 1.4.0
+**Depends on:** `0-foundation/grammar-syntax.md`, `3-subsystems/spatials.md`
 
 ---
 
@@ -132,11 +132,11 @@ Kilor intentionally restricts the case system to 3 slots. All other semantic rol
 |:---|:---|:---|:---|
 | **Instrumental** | by / with / using (means, tool, agent) | **`sy`** | Placed before the instrument/agent noun |
 | **Comitative** | with / together (companion) | **`mer`** | Placed before the companion noun |
-| **Locative-relational** | between | **`tilpe`** | Placed before the location/reference noun |
+| **Locative-relational** | between | **`tilpe`** | Placed before the reference points (two or more) |
 | **Ablative** | from (origin, source) | **`ar`** | Placed before the source noun |
 | **Dative** | to / for (recipient, direction) | **`te`** | Placed before the recipient/goal noun |
 
-When multiple obliques co-occur in the same clause, they follow the fixed order: `sy` (Instrumental) > `mer` (Comitative) > `tilpe` (Locative-relational) > `ar` (Ablative) > `te` (Dative). See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
+When multiple obliques co-occur in the same clause, they follow the fixed order: `sy` (Instrumental) > `mer` (Comitative) > spatial postpositions / `tilpe` (Locative-relational & Spatial) > `ar` (Ablative) > `te` (Dative). For the full spatial postposition inventory (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `tilpe`), see `3-subsystems/spatials.md`. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
 
 ### B. Conjunctions
 
