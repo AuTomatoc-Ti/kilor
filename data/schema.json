@@ -1,0 +1,118 @@
+{
+  "database": "kilor.db",
+  "tables": {
+    "words": {
+      "description": "Every lexical entry — the single source of truth",
+      "columns": [
+        {"name": "id", "type": "INTEGER", "pk": true, "autoincrement": true},
+        {"name": "form", "type": "TEXT", "nullable": false, "unique": true, "description": "Word as written, e.g. foragilan, latif mae"},
+        {"name": "syl_count", "type": "INTEGER", "nullable": false, "description": "Syllable count"},
+        {"name": "is_root", "type": "BOOLEAN", "default": 0, "description": "True for bare roots"},
+        {"name": "is_compound", "type": "BOOLEAN", "default": 0, "description": "True for compounds"},
+        {"name": "compound_type", "type": "TEXT", "nullable": true, "description": "mono or multi; NULL for roots"},
+        {"name": "derivation_mask", "type": "TEXT", "nullable": true, "description": "NVAD mask: which derivations are semantically natural. N=noun, V=verb, A=adjective, D=adverb. Empty for closed-class."},
+        {"name": "section", "type": "TEXT", "nullable": false, "description": "A-J semantic domain"},
+        {"name": "consensus_prefix", "type": "TEXT", "nullable": true, "description": "Default colour prefix, e.g. o-"},
+        {"name": "is_function_word", "type": "BOOLEAN", "default": 0},
+        {"name": "notes", "type": "TEXT", "nullable": true},
+        {"name": "created_at", "type": "TEXT", "default": "datetime('now')"},
+        {"name": "updated_at", "type": "TEXT", "default": "datetime('now')"}
+      ],
+      "indexes": [
+        {"name": "idx_words_form", "columns": ["form"]},
+        {"name": "idx_words_derivation_mask", "columns": ["derivation_mask"]},
+        {"name": "idx_words_section", "columns": ["section"]}
+      ]
+    },
+    "meanings": {
+      "description": "Glosses per word",
+      "columns": [
+        {"name": "id", "type": "INTEGER", "pk": true, "autoincrement": true},
+        {"name": "word_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "gloss", "type": "TEXT", "nullable": false, "description": "English gloss"},
+        {"name": "language", "type": "TEXT", "default": "en"},
+        {"name": "sort_order", "type": "INTEGER", "default": 0, "description": "Display order for multiple glosses"}
+      ],
+      "indexes": [
+        {"name": "idx_meanings_word_id", "columns": ["word_id"]}
+      ]
+    },
+    "inflections": {
+      "description": "Inflected forms per word",
+      "columns": [
+        {"name": "word_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "form_type", "type": "TEXT", "nullable": false, "description": "noun, verb, adjective, adverb"},
+        {"name": "form", "type": "TEXT", "nullable": false, "description": "Tone-marked inflected form"}
+      ],
+      "pk": ["word_id", "form_type"]
+    },
+    "compound_components": {
+      "description": "Links compounds to their component roots",
+      "columns": [
+        {"name": "compound_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "component_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "position", "type": "INTEGER", "nullable": false, "description": "Order in compound, 0-based"}
+      ],
+      "pk": ["compound_id", "position"],
+      "indexes": [
+        {"name": "idx_compound_components_component_id", "columns": ["component_id"]}
+      ]
+    },
+    "compound_meta": {
+      "description": "Pattern and rule references for compounds",
+      "columns": [
+        {"name": "compound_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "pattern", "type": "TEXT", "nullable": false, "description": "Derivational/compounding pattern name"},
+        {"name": "rule_ref", "type": "TEXT", "nullable": true, "description": "Grammar spec reference, e.g. rules/3-subsystems/temporals.md §I-A"}
+      ],
+      "pk": ["compound_id"]
+    },
+    "examples": {
+      "description": "Usage example sentences",
+      "columns": [
+        {"name": "id", "type": "INTEGER", "pk": true, "autoincrement": true},
+        {"name": "word_id", "type": "INTEGER", "nullable": false, "fk_table": "words", "fk_column": "id", "on_delete": "CASCADE"},
+        {"name": "kilor_text", "type": "TEXT", "nullable": false, "description": "Kilor example sentence"},
+        {"name": "english_text", "type": "TEXT", "nullable": false, "description": "English translation"},
+        {"name": "source", "type": "TEXT", "default": "canonical", "description": "canonical or corpus"}
+      ]
+    },
+    "words_fts": {
+      "description": "FTS5 full-text search index (virtual table)",
+      "columns": [
+        {"name": "form", "type": "FTS5", "indexed": true},
+        {"name": "gloss", "type": "FTS5", "indexed": true},
+        {"name": "kilor_examples", "type": "FTS5", "indexed": true},
+        {"name": "english_examples", "type": "FTS5", "indexed": true}
+      ],
+      "content_table": "words",
+      "content_rowid": "id"
+    }
+  },
+  "section_labels": {
+    "A": "Worlds & Elements",
+    "B": "Living Things",
+    "C": "Physical Objects",
+    "D": "Actions & Motion",
+    "E": "Qualities & States",
+    "F": "Mind & Emotion",
+    "G": "Time & Space",
+    "H": "Social & Relational",
+    "I": "Abstract",
+    "J": "Sensation"
+  },
+  "derivation_mask_labels": {
+    "N": "Noun",
+    "V": "Verb",
+    "A": "Adjective",
+    "D": "Adverb",
+    "NVA": "Noun / Verb / Adjective",
+    "NA": "Noun / Adjective",
+    "NV": "Noun / Verb",
+    "NAD": "Noun / Adjective / Adverb",
+    "NVAD": "Noun / Verb / Adjective / Adverb",
+    "VAD": "Verb / Adjective / Adverb",
+    "AD": "Adjective / Adverb",
+    "": "Closed-class"
+  }
+}

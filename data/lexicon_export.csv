@@ -1,0 +1,318 @@
+form,syl_count,meaning,category,section,noun,verb,adjective,adverb,consensus_prefix,is_function_word,is_compound,compound_type,notes
+fora,2,fire,nv,A,fora,fora,foras,foras,a-,false,false,,
+lumi,2,light,na,A,lumi,lumi,lumis,lumis,o-,false,false,,adj derived from noun + -s
+lira,2,water,n,A,lira,lira,liras,liras,i-,false,false,,
+lima,2,air,n,A,lima,lima,limas,limas,i-,false,false,,
+kaera,2,earth / soil,n,A,kaera,kaera,kaeras,kaeras,ae-,false,false,,
+kora,2,stone / rock,n,A,kora,kora,koras,koras,y-,false,false,,
+sola,2,star,n,A,sola,sola,solas,solas,o-,false,false,,
+rora,2,sun,n,A,rora,rora,roras,roras,a-,false,false,,
+yre,2,moon,n,A,yre,yre,yres,yres,o-,false,false,,
+tiri,2,sky,n,A,tiri,tiri,tiris,tiris,i-,false,false,,
+symak,2,smoke / mist,n,A,symak,symak,symaks,symaks,i-,false,false,,
+maeha,2,person / human,n,B,maeha,maeha,maehas,maehas,a-,false,false,,
+maeda,2,body,n,B,maeda,maeda,maedas,maedas,a-,false,false,,
+hinar,2,hand,n,B,hinar,hinar,hinars,hinars,a-,false,false,,
+winar,2,eye,nv,B,winar,winar,winars,winars,a-,false,false,,verb use = see
+tilda,2,ear,nv,B,tilda,tilda,tildas,tildas,a-,false,false,,verb use = hear
+rilda,2,mouth,nv,B,rilda,rilda,rildas,rildas,a-,false,false,,verb use = speak/say
+pesha,2,blood,n,B,pesha,pesha,peshas,peshas,a-,false,false,,
+hawu,2,animal / beast,n,B,hawu,hawu,hawus,hawus,a-,false,false,,
+fein,1,bird,n,B,fein,fein,feins,feins,a-,false,false,,
+fei,1,fly / flying,nv,B,fei,fei,feis,feis,a-,false,false,,bare root serves as both noun and verb; feis = adj/adv
+lir,1,fish,n,B,lir,lir,lirs,lirs,a-,false,false,,
+lunla,2,tree,n,B,lunla,lunla,lunlas,lunlas,u-,false,false,,
+slu,1,flower,n,B,slu,slu,slus,slus,u-,false,false,,
+giliu,2,metal / iron,n,C,giliu,giliu,gilius,gilius,y-,false,false,,
+lunlagak,3,wood,n,C,lunjlagak,lunvlagak,lunlajgak,lunlavgak,ae-,false,true,mono,
+klang,1,cloth / fabric,n,C,klang,klang,klangs,klangs,e-,false,false,,
+slato,2,house / dwelling,n,C,slato,slato,slatos,slatos,ae-,false,false,,
+donar,2,door,nv,C,donar,donar,donars,donars,ae-,false,false,,
+maliu,2,knife / blade,n,C,maliu,maliu,malius,malius,y-,false,false,,
+tek,1,tool,n,C,tek,tek,teks,teks,e-,false,false,,combining form for instrument derivation
+hamin,2,food,n,C,hamin,hamin,hamins,hamins,e-,false,false,,
+bau,1,bread,n,C,bau,bau,baus,baus,e-,false,false,,
+pei,1,cup / container,n,C,pei,pei,peis,peis,e-,false,false,,
+selo,2,path / road,n,C,selo,selo,selos,selos,ae-,false,false,,
+rusome,3,room / chamber,n,C,rujsome,ruvsome,rusojme,rusovme,ae-,false,false,,
+gilan,2,mountain,n,C,gilan,gilan,gilans,gilans,y-,false,false,,
+liwat,2,lake,n,C,liwat,liwat,liwats,liwats,i-,false,false,,
+taka,2,eat,v,D,taka,taka,takas,takas,a-,false,false,,
+retanik,3,drink,v,D,rejtanik,revtanik,retajnik,retavnik,a-,false,false,,
+taki,2,drink,v,D,taki,taki,takis,takis,a-,false,false,,
+aultake,3,enter,v,D,aujltake,auvltake,aultajke,aultavke,o-,false,false,,
+kau,1,come,v,D,kau,kau,kaus,kaus,o-,false,false,,
+aug,1,start / begin,v,D,aug,aug,augs,augs,o-,false,false,,
+sounar,2,give,v,D,sounar,sounar,sounars,sounars,o-,false,false,,
+thanar,2,take / get,v,D,thanar,thanar,thanars,thanars,o-,false,false,,
+tesak,2,make / create,v,D,tesak,tesak,tesaks,tesaks,o-,false,false,,
+minau,2,stand / stay,v,D,minau,minau,minaus,minaus,o-,false,false,,
+sopa,2,watch / look,v,D,sopa,sopa,sopas,sopas,a-,false,false,,
+kup,1,cut,nv,D,kup,kup,kups,kups,a-,false,false,,bare root serves as both noun and verb
+thep,1,sleep,v,D,thep,thep,theps,theps,a-,false,false,,
+tle,1,wait,v,D,tle,tle,tles,tles,o-,false,false,,
+rali,2,big / large,a,E,rali,rali,ralis,ralis,o-,false,false,,
+pag,1,small,a,E,pag,pag,pags,pags,o-,false,false,,
+wem,1,warm,a,E,wem,wem,wems,wems,o-,false,false,,
+kop,1,cold,a,E,kop,kop,kops,kops,o-,false,false,,
+gor,1,good,a,E,gor,gor,gors,gors,o-,false,false,,
+bono,2,bad,a,E,bono,bono,bonos,bonos,o-,false,false,,
+my,1,dark,a,E,my,my,mys,mys,o-,false,false,,
+shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,false,,shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)
+pusar,2,slow,a,E,pusar,pusar,pusars,pusars,o-,false,false,,
+roli,2,lot / many,a,E,roli,roli,rolis,rolis,o-,false,false,,
+mekri,2,few,a,E,mekri,mekri,mekris,mekris,o-,false,false,,
+meki,2,most,a,E,meki,meki,mekis,mekis,o-,false,false,,
+eski,2,each,a,E,eski,eski,eskis,eskis,o-,false,false,,
+amin,2,any,a,E,amin,amin,amins,amins,o-,false,false,,
+naram,2,none,a,E,naram,naram,narams,narams,o-,false,true,mono,compound: nar + amin
+niba,2,new,a,E,niba,niba,nibas,nibas,o-,false,false,,
+noba,2,old,a,E,noba,noba,nobas,nobas,o-,false,false,,
+hik,1,sad,a,E,hik,hik,hiks,hiks,o-,false,false,,
+asdo,2,know,v,F,asdo,asdo,asdos,asdos,o-,false,false,,
+thy,1,think,v,F,thy,thy,thys,thys,o-,false,false,,
+argonna,3,love,v,F,ajrgonna,avrgonna,argojnna,argovnna,o-,false,false,,
+wamy,2,fear,n,F,wamy,wamy,wamys,wamys,o-,false,false,,
+losga,2,anger / rage,n,F,losga,losga,losgas,losgas,o-,false,false,,
+losto,2,joy / happiness,n,F,losto,losto,lostos,lostos,o-,false,false,,
+hax,1,pain / suffering,n,F,hax,hax,haxs,haxs,o-,false,false,,
+roi,1,day,n,G,roi,roi,rois,rois,o-,false,false,,
+rok,1,night,n,G,rok,rok,roks,roks,o-,false,false,,
+tar,1,dusk,n,G,tar,tar,tars,tars,o-,false,false,,
+ima,2,now,n,G,ima,ima,imas,imas,o-,false,false,,combining form for imaroi (today)
+tilpi,2,before,n,G,tilpi,tilpi,tilpis,tilpis,o-,false,false,,combining form pi in day compounds
+tilpa,2,after,n,G,tilpa,tilpa,tilpas,tilpas,o-,false,false,,combining form pa in day compounds
+thin,1,here / this,n,G,thin,thin,thins,thins,o-,false,false,,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
+tha,1,there / that,n,G,tha,tha,thas,thas,o-,false,false,,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
+poska,2,place / location,n,G,poska,poska,poskas,poskas,o-,false,false,,
+ik,1,in,n,G,ik,ik,iks,iks,o-,false,false,,spatial root; -ne → ikne (inside)
+ouk,1,out,n,G,ouk,ouk,ouks,ouks,o-,false,false,,spatial root; -ne → oukne (outside)
+um,1,under,n,G,um,um,ums,ums,o-,false,false,,spatial root; -ne → umne (under)
+hau,1,back,n,G,hau,hau,haus,haus,o-,false,false,,spatial root; -ne → haune (behind)
+pau,1,front,n,G,pau,pau,paus,paus,o-,false,false,,spatial root; -ne → paune (in front of)
+hin,1,side,n,G,hin,hin,hins,hins,o-,false,false,,spatial root; -ne → hinne (beside / near / next to)
+ora,2,along,n,G,ora,ora,oras,oras,o-,false,false,,spatial root; -ne → orane (along)
+meipo,2,around,n,G,meipo,meipo,meipos,meipos,o-,false,false,,spatial root; -ne → meipone (around)
+orak,2,across,n,G,orak,orak,oraks,oraks,o-,false,false,,spatial root; -ne → orakne (across)
+inou,2,through / via,n,G,inou,inou,inous,inous,o-,false,false,,spatial root; -ne → inoune (through)
+tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,false,,combining form tow in temporal compounds
+shu,1,soon,av,G,shu,shu,shus,shus,o-,false,false,,bare root (simplified from shuk+tlow)
+sar,1,late,av,G,sar,sar,sars,sars,o-,false,false,,bare root (simplified from pusar+tlow)
+cho,1,early,av,G,cho,cho,chos,chos,o-,false,false,,bare root; ch onset (start-only)
+amo,2,again,av,G,amo,amo,amos,amos,o-,false,false,,
+fou,1,during,av,G,fou,fou,fous,fous,o-,false,false,,related to founai
+founai,2,duration,n,G,founai,founai,founais,founais,o-,false,false,,
+sakar,2,occurrence / frequency,n,G,sakar,sakar,sakars,sakars,o-,false,false,,combines with esa/slote/na
+esa,2,all / every,a,G,esa,esa,esas,esas,o-,false,false,,combines into esaka (always)
+slote,2,some,a,G,slote,slote,slotes,slotes,o-,false,false,,combines into slosaka (sometimes)
+mi,1,name,n,H,mi,mi,mis,mis,o-,false,false,,
+berat,2,word / speech,n,H,berat,berat,berats,berats,o-,false,false,,
+song,1,friend,n,H,song,song,songs,songs,o-,false,false,,
+loger,2,power / strength,n,H,loger,loger,logers,logers,o-,false,false,,
+eli,2,life,n,H,eli,eli,elis,elis,a-,false,false,,
+mil,1,death,n,H,mil,mil,mils,mils,o-,false,false,,
+maekoi,2,spirit / soul,n,I,maekoi,maekoi,maekois,maekois,o-,false,true,mono,
+emlu,2,truth,n,I,emlu,emlu,emlus,emlus,o-,false,true,mono,compound: em + lu
+noi,1,void / emptiness,n,I,noi,noi,nois,nois,o-,false,false,,
+sinkoi,2,alone / solitude,n,I,sinkoi,sinkoi,sinkois,sinkois,o-,false,true,mono,
+ilsinkoi,3,together,n,I,ijlsinkoi,ivlsinkoi,ilsijnkoi,ilsivnkoi,o-,false,true,mono,
+pireilu,3,property / quality,n,I,pijreilu,pivreilu,pireijlu,pireivlu,o-,false,true,mono,combining form lu for abstract property derivation
+rinok,2,measure / measurement,n,I,rinok,rinok,rinoks,rinoks,o-,false,false,,combining form rin for scalar degree derivation
+chap,1,act / deed,n,I,chap,chap,chaps,chaps,o-,false,false,,combining form par for process derivation
+param,2,result,n,I,param,param,params,params,o-,false,false,,combining form param for result derivation
+lokisra,3,doctrine / system of thought,n,I,lokjisra,lokvisra,lokisjra,lokisvra,o-,false,true,mono,combining form isra for doctrine derivation
+isra,2,idea,n,I,isra,isra,isras,isras,o-,false,false,,combining form for doctrine derivation
+narau,2,without / lack,n,I,narau,narau,naraus,naraus,o-,false,false,,combining form nara for derivational compounding; narau + noun = without X; noun + nara = X-less
+auli,2,comet,n,A,auli,auli,aulis,aulis,o-,false,false,,
+wino,2,colour / hue,n,J,wino,wino,winos,winos,o-,false,false,,
+res,1,copula - identity / attribution,v,-,res,res,res,res,o-,true,false,,closed-class
+ero,2,existential & possession - there is / have,v,-,ero,ero,eros,eros,o-,true,false,,closed-class
+nar,1,clausal / constituent negation,v,-,nar,nar,nar,nar,o-,true,false,,closed-class
+iu,1,yes / no question + affirmative answer,v,-,iu,iu,iu,iu,o-,true,false,,closed-class
+na,1,negative answer (no),v,-,na,na,na,na,o-,true,false,,closed-class
+te,1,dative particle (to) & spatial root (towards),v,-,te,te,te,te,o-,true,false,,closed-class; also open-class spatial root; -ne → tene (towards); see 3-subsystems/spatials.md §IV-C
+we,1,intensify,v,D,we,we,wes,wes,o-,false,false,,"derived adverb wes = ""very"""
+mere,2,be slight (intensity),v,D,mere,mere,meres,meres,o-,false,false,,"derived meres = ""a bit"" (intensity); distinct from pere (amount)"
+pere,2,small amount,n,E,pere,pere,peres,peres,o-,false,false,,"derived peres = ""little (amount)""; distinct from mere (intensity)"
+tor,1,comparative particle (than),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
+les,1,equative particle (as),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
+torra,2,superlative particle (most),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt; fused from tor + rap
+wetor,2,intensified comparative (much more than),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt; fused from wes + tor
+mangus,2,restrictive (among / among all),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
+rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,false,,spatial root; -ne → rapne (above); see 3-subsystems/spatials.md
+hu,1,wind,n,A,hu,hu,hus,hus,o-,false,false,,
+hupli,2,rain,n,A,hupli,hupli,huplis,huplis,o-,false,false,,
+shili,2,river,n,A,shili,shili,shilis,shilis,o-,false,false,,
+blusa,2,wave,n,A,blusa,blusa,blusas,blusas,o-,false,false,,
+wonli,2,sea,n,A,wonli,wonli,wonlis,wonlis,o-,false,false,,
+wonar,2,ocean,n,A,wonar,wonar,wonars,wonars,o-,false,false,,
+liforli,3,flood,n,A,lijforli,livforli,liforjli,liforvli,o-,false,false,,
+aron,2,season,n,A,aron,aron,arons,arons,o-,false,false,,
+apar,2,spring,n,A,apar,apar,apars,apars,o-,false,false,,
+gustar,2,summer,n,A,gustar,gustar,gustars,gustars,o-,false,false,,
+choumar,2,autumn,n,A,choumar,choumar,choumars,choumars,o-,false,false,,
+fossar,2,winter,n,A,fossar,fossar,fossars,fossars,o-,false,false,,
+maur,1,second,n,G,maur,maur,maurs,maurs,o-,false,false,,
+faur,1,minute,n,G,faur,faur,faurs,faurs,o-,false,false,,
+tlaur,1,hour,n,G,tlaur,tlaur,tlaurs,tlaurs,o-,false,false,,
+taroi,2,week,n,G,taroi,taroi,tarois,tarois,o-,false,false,,
+gauroi,2,ten-day,n,G,gauroi,gauroi,gaurois,gaurois,o-,false,false,,
+yra,2,month,n,G,yra,yra,yras,yras,o-,false,false,,
+ron,1,year,n,G,ron,ron,rons,rons,o-,false,false,,
+gauron,2,decade,n,G,gauron,gauron,gaurons,gaurons,o-,false,false,,
+curon,2,century,n,G,curon,curon,curons,curons,o-,false,false,,
+gus,1,hot,a,E,gus,gus,gus,gus,o-,false,false,,noun/adj same form; -s final whitelist exception
+fem,2,cool,a,E,fem,fem,fems,fems,o-,false,false,,
+fos,1,ice / freeze,nv,A,fos,fos,fos,fos,o-,false,false,,"noun/adj same form; -s final whitelist exception; not ""cold"" (→kop)"
+fosli,2,snow,n,A,fosli,fosli,foslis,foslis,o-,false,true,mono,
+foske,2,frost,n,A,foske,foske,foskes,foskes,o-,false,true,mono,
+foshu,2,blizzard,n,A,foshu,foshu,foshus,foshus,o-,false,true,mono,compound: fos (ice) + hu (wind)
+fosgilan,3,glacier,n,A,fosjgilan,fosvgilan,fosgijlan,fosgivlan,o-,false,true,mono,compound: fos (ice) + gilan (mountain)
+fosblon,2,avalanche,n,A,fosblon,fosblon,fosblons,fosblons,o-,false,true,mono,compound: fos (ice) + blon (collapse)
+foskaera,3,frozen soil,n,A,fosjkaera,fosvkaera,foskaejra,foskaevra,o-,false,true,mono,compound: fos (ice) + kaera (earth)
+blon,1,collapse,v,D,blon,blon,blons,blons,o-,false,false,,
+hup,1,fall,v,D,hup,hup,hups,hups,o-,false,false,,
+rolifor,3,excess,nv,E,rojlifor,rovlifor,rolijfor,rolivfor,o-,false,false,,
+aus,1,start-of,n,G,aus,aus,aus,aus,o-,false,false,,etymology: aug + genitive -si; -s final whitelist exception
+oug,1,end,n,G,oug,oug,ougs,ougs,o-,false,false,,
+ous,1,end-of,n,G,ous,ous,ous,ous,o-,false,false,,etymology: oug + genitive -si; -s final whitelist exception
+taroinous,3,weekend,n,G,taroinous,taroinous,taroinous,taroinous,o-,false,true,mono,compound: taroi (week) + ous (end-of)
+faure,2,5min,n,G,faure,faure,faures,faures,o-,false,false,,
+tlaure,2,30min,n,G,tlaure,tlaure,tlaures,tlaures,o-,false,false,,
+afaloi,3,ability / able to,nv,H,afaloi,afaloi,afaloi,afaloi,o-,false,true,mono,
+sew,1,can,v,H,sew,sew,sews,sews,o-,false,false,,
+hostak,2,must,v,H,hostak,hostak,hostaks,hostaks,o-,false,false,,
+mug,1,want,v,H,mug,mug,mugs,mugs,o-,false,false,,replaces rima
+som,1,need,v,H,som,som,soms,soms,o-,false,false,,
+shunle,2,should,v,H,shunle,shunle,shunles,shunles,o-,false,false,,
+hostakes,3,certainly / must have (deduction),av,H,hosjtakes,hosvtakes,hostajkes,hostavkes,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
+sewanes,3,might / perhaps / could be,av,H,sejwanes,sevwanes,sewajnes,sewavnes,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
+bamares,3,would have (counterfactual),av,H,bajmares,bavmares,bamajres,bamavres,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
+chorogor,3,good morning,n,H,chorogor,chorogor,chorogor,chorogor,o-,false,true,mono,compound: cho + roi + gor
+sarrogor,3,good afternoon,n,H,sarrogor,sarrogor,sarrogor,sarrogor,o-,false,true,mono,compound: sar + roi + gor
+targor,2,good evening,n,H,targor,targor,targors,targors,o-,false,true,mono,compound: tar + gor
+rokgor,2,good night,n,H,rokgor,rokgor,rokgors,rokgors,o-,false,true,mono,compound: rok + gor
+pem,1,inclusive or (either or both),v,-,pem,pem,pem,pem,o-,true,false,,closed-class; toneless; -s exempt
+pona,2,xnor (both or neither),v,-,pona,pona,pona,pona,o-,true,false,,closed-class; toneless; -s exempt
+pemna,2,nor (neither...nor),v,-,pemna,pemna,pemna,pemna,o-,true,false,,closed-class; toneless; -s exempt
+sor,1,suggestion particle (sentence-final),v,-,sor,sor,sor,sor,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 啦
+chom,1,polite request particle (pre-verbal),v,-,chom,chom,chom,chom,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 請
+maug,1,strong prohibition particle (pre-verbal),v,-,maug,maug,maug,maug,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 咪
+gin,1,progressive aspect (be X-ing),v,-,gin,gin,gin,gin,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
+ger,1,perfective aspect (have X-ed),v,-,ger,ger,ger,ger,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
+gou,1,experiential aspect (have X-ed before),v,-,gou,gou,gou,gou,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
+hei,1,hello / hey (vocative),n,I,hei,hei,heis,heis,o-,false,false,,colour prefix on vocative conveys emotional stance (異體字)
+shen,1,self (reflexive),n,I,shen,shen,shens,shens,a-,false,false,,reflexive pronoun; follows personal pronoun; open-class
+meshen,2,each other (reciprocal),av,I,meshen,meshen,meshens,meshens,o-,false,false,,pre-verbal reciprocal adverb; open-class
+mer,1,comitative particle (with),v,-,mer,mer,mer,mer,o-,true,false,,closed-class; toneless; -s exempt
+sy,1,instrumental & passive particle (by / with),v,-,sy,sy,sy,sy,o-,true,false,,closed-class; toneless; -s exempt
+ar,1,ablative particle (from),v,-,ar,ar,ar,ar,o-,true,false,,closed-class; toneless; -s exempt
+tilpe,2,locative-relational particle (between),v,-,tilpe,tilpe,tilpe,tilpe,o-,true,false,,closed-class; toneless; -s exempt
+ei,1,coordinator (and),v,-,ei,ei,ei,ei,o-,true,false,,closed-class; toneless; -s exempt
+po,1,exclusive or (either but not both),v,-,po,po,po,po,o-,true,false,,closed-class; toneless; -s exempt
+amer,2,adversative (but / however),v,-,amer,amer,amer,amer,o-,true,false,,closed-class; toneless; -s exempt
+tu,1,temporal subordinator (when / while),v,-,tu,tu,tu,tu,o-,true,false,,closed-class; toneless; -s exempt
+li,1,conditional subordinator (if),v,-,li,li,li,li,o-,true,false,,closed-class; toneless; -s exempt
+bam,1,consequential particle (then / 便 / 就),v,-,bam,bam,bam,bam,o-,true,false,,closed-class; toneless; -s exempt
+aiga,2,causal subordinator (because),v,-,aiga,aiga,aiga,aiga,o-,true,false,,closed-class; toneless; -s exempt
+hoskar,2,concessive subordinator (although),v,-,hoskar,hoskar,hoskar,hoskar,o-,true,false,,closed-class; toneless; -s exempt
+arfi,2,concessive intensifier (even),v,-,arfi,arfi,arfi,arfi,o-,true,false,,closed-class; toneless; -s exempt
+fidak,2,purpose subordinator (in order to),v,-,fidak,fidak,fidak,fidak,o-,true,false,,closed-class; toneless; -s exempt
+kus,1,relativizer & complementizer (that / which),v,-,kus,kus,kus,kus,o-,true,false,,closed-class; toneless; -s exempt
+halise,3,hope / wish,nv,I,hajlise,havlise,halijse,halivse,o-,false,true,mono,open-class; optative/desiderative/benedictive verb
+min,1,let (permissive),v,H,min,min,mins,mins,o-,false,false,,causative: let someone do something
+mingo,2,make / force (使 / 令),v,H,mingo,mingo,mingos,mingos,o-,false,false,,causative: make someone do something
+ma,1,mom,n,H,ma,ma,mas,mas,a-,false,false,,
+mamae,2,mother,n,H,mamae,mamae,mamaes,mamaes,a-,false,false,,
+fa,1,dad,n,H,fa,fa,fas,fas,a-,false,false,,
+famae,2,father,n,H,famae,famae,famaes,famaes,a-,false,false,,
+lorrak,2,language,n,H,lorrak,lorrak,lorraks,lorraks,a-,false,true,mono,
+wug,1,dog,n,B,wug,wug,wugs,wugs,a-,false,false,,
+mau,1,cat,n,B,mau,mau,maus,maus,a-,false,false,,
+onla,2,leaves,n,B,onla,onla,onlas,onlas,u-,false,false,,
+walunla,3,forest,n,A,walunla,walunla,walunlas,walunlas,u-,false,true,mono,
+rori,2,sunrise,n,A,rori,rori,roris,roris,a-,false,false,,
+aura,2,celestial object,n,A,aura,aura,auras,auras,o-,false,false,,
+auron,2,sky,n,A,auron,auron,aurons,aurons,i-,false,false,,
+aurok,2,cosmic / space,n,A,aurok,aurok,auroks,auroks,i-,false,true,mono,compound: auron + rok
+auronte,3,dome / canopy,n,A,auronte,auronte,aurontes,aurontes,i-,false,true,mono,compound: auron + tek
+thung,1,swim,v,D,thung,thung,thungs,thungs,o-,false,false,,
+latif,2,heal / save,v,D,latif,latif,latifs,latifs,o-,false,false,,
+argonnia,4,grace / grateful,na,F,argonnia,argonnia,argonnias,argonnias,o-,false,false,,4-syl: ar/gon/ni/a
+miso,2,music,n,J,miso,miso,misos,misos,o-,false,false,,
+bop,1,bottom / down,n,G,bop,bop,bops,bops,o-,false,false,,
+hap,1,right,n,G,hap,hap,haps,haps,o-,false,false,,
+fap,1,left,n,G,fap,fap,faps,faps,o-,false,false,,
+arrin,2,distance,n,G,arrin,arrin,arrins,arrins,o-,false,false,,
+arrinna,3,distant,a,G,arrinna,arrinna,arrinnas,arrinnas,o-,false,true,mono,derived from arrin
+hak,1,half,n,I,hak,hak,haks,haks,o-,false,false,,
+hakdo,2,one-fourth,n,I,hakdo,hakdo,hakdos,hakdos,o-,false,true,mono,compound: hak + do
+hakfoi,2,one-eighth,n,I,hakfoi,hakfoi,hakfois,hakfois,o-,false,true,mono,compound: hak + foi
+hakauk,2,one-sixth,n,I,hakauk,hakauk,hakauks,hakauks,o-,false,true,mono,compound: hak + auk
+dok,1,double,n,I,dok,dok,doks,doks,o-,false,false,,
+dokdo,2,four times,n,I,dokdo,dokdo,dokdos,dokdos,o-,false,true,mono,compound: dok + do
+dokfoi,2,eight times,n,I,dokfoi,dokfoi,dokfois,dokfois,o-,false,true,mono,compound: dok + foi
+dokauk,2,sixteen times,n,I,dokauk,dokauk,dokauks,dokauks,o-,false,true,mono,compound: dok + auk
+dise,2,head / facing,nv,G,dise,dise,dises,dises,o-,false,false,,
+diserin,3,direction,n,G,diserin,diserin,diserins,diserins,o-,false,true,mono,
+nordi,2,north,n,G,nordi,nordi,nordis,nordis,o-,false,false,,
+sirdi,2,south,n,G,sirdi,sirdi,sirdis,sirdis,o-,false,false,,
+aerdi,2,east,n,G,aerdi,aerdi,aerdis,aerdis,o-,false,false,,
+bordi,2,west,n,G,bordi,bordi,bordis,bordis,o-,false,false,,
+aniu,2,zero,n,I,aniu,aniu,aniu,aniu,o-,true,false,,closed-class numeral
+mo,1,one,n,I,mo,mo,mo,mo,o-,true,false,,closed-class numeral
+do,1,two,n,I,do,do,do,do,o-,true,false,,closed-class numeral
+ro,1,three,n,I,ro,ro,ro,ro,o-,true,false,,closed-class numeral
+foi,1,four,n,I,foi,foi,foi,foi,o-,true,false,,closed-class numeral
+tai,1,five,n,I,tai,tai,tai,tai,o-,true,false,,closed-class numeral
+slo,1,six,n,I,slo,slo,slo,slo,o-,true,false,,closed-class numeral
+lai,1,seven,n,I,lai,lai,lai,lai,o-,true,false,,closed-class numeral
+auk,1,eight,n,I,auk,auk,auk,auk,o-,true,false,,closed-class numeral
+wy,1,nine,n,I,wy,wy,wy,wy,o-,true,false,,closed-class numeral
+gau,1,ten,n,I,gau,gau,gau,gau,o-,true,false,,closed-class numeral
+mai,1,eleven,n,I,mai,mai,mai,mai,o-,true,false,,closed-class numeral
+doi,1,twelve,n,I,doi,doi,doi,doi,o-,true,false,,closed-class numeral
+rai,1,thirteen,n,I,rai,rai,rai,rai,o-,true,false,,closed-class numeral
+cu,1,hundred,n,I,cu,cu,cu,cu,o-,true,false,,closed-class scale marker
+kas,1,thousand,n,I,kas,kas,kas,kas,o-,true,false,,closed-class scale marker; -s exempt
+hus,1,million,n,I,hus,hus,hus,hus,o-,true,false,,closed-class scale marker; -s exempt
+tus,1,billion,n,I,tus,tus,tus,tus,o-,true,false,,closed-class scale marker; -s exempt
+rakas,2,trillion,n,I,rakas,rakas,rakas,rakas,o-,true,false,,closed-class scale marker; -s exempt
+dir,1,ordinal particle,n,I,dir,dir,dir,dir,o-,true,false,,closed-class; toneless; -s exempt
+piroi,2,yesterday,n,G,piroi,piroi,pirois,pirois,o-,false,true,mono,compound: pi + roi; see 3-subsystems/temporals.md §I-A
+paroi,2,tomorrow,n,G,paroi,paroi,parois,parois,o-,false,true,mono,compound: pa + roi; see 3-subsystems/temporals.md §I-A
+imaroi,3,today,n,G,imaroi,imaroi,imarois,imarois,o-,false,true,mono,compound: ima + roi; see 3-subsystems/temporals.md §I-A
+pimaroi,3,day before yesterday,n,G,pimaroi,pimaroi,pimarois,pimarois,o-,false,true,mono,compound: pi + ma + roi; see 3-subsystems/temporals.md §I-A
+pamaroi,3,day after tomorrow,n,G,pamaroi,pamaroi,pamarois,pamarois,o-,false,true,mono,compound: pa + ma + roi; see 3-subsystems/temporals.md §I-A
+pima,2,earlier / further back,n,G,pima,pima,pimas,pimas,o-,false,true,mono,compound: pi + ma; see 3-subsystems/temporals.md §I-B
+pama,2,later / further ahead,n,G,pama,pama,pamas,pamas,o-,false,true,mono,compound: pa + ma; see 3-subsystems/temporals.md §I-B
+esaka,3,always,av,G,esaka,esaka,esakas,esakas,o-,false,true,mono,compound: esa + sakar; see 3-subsystems/temporals.md §I-C
+slosaka,3,sometimes,av,G,slosaka,slosaka,slosakas,slosakas,o-,false,true,mono,compound: slote + sakar; see 3-subsystems/temporals.md §I-C
+nasaka,3,never,av,G,nasaka,nasaka,nasakas,nasakas,o-,false,true,mono,compound: na + sakar; see 3-subsystems/temporals.md §I-C
+foragilan,4,volcano,n,A,foragilan,foragilan,foragilans,foragilans,a-,false,true,mono,compound: fora + gilan
+lirahup,3,waterfall,n,A,lirahup,lirahup,lirahups,lirahups,i-,false,true,mono,compound: lira + hup
+roralumi,4,sunlight,n,A,roralumi,roralumi,roralumis,roralumis,o-,false,true,mono,compound: rora + lumi
+yrelumi,4,moonlight,n,A,yrelumi,yrelumi,yrelumis,yrelumis,o-,false,true,mono,compound: yre + lumi
+theprusome,4,bedroom,n,C,theprusome,theprusome,theprusomes,theprusomes,ae-,false,true,mono,compound: thep + rusome
+haminrusome,5,dining room,n,C,haminrusome,haminrusome,haminrusomes,haminrusomes,ae-,false,true,mono,compound: hamin + rusome
+latif mae,3,doctor / healer,n,I,,,,,o-,false,true,multi,
+miso mae,3,musician,n,I,,,,,o-,false,true,multi,
+miso maeha,4,musician (formal),n,I,,,,,o-,false,true,multi,
+tesak mae,3,crafter / maker,n,I,,,,,o-,false,true,multi,
+taka mae,3,eater,n,I,,,,,o-,false,true,multi,
+fei mae,2,flyer,n,I,,,,,o-,false,true,multi,
+kup tek,2,cutter (cutting tool),n,I,,,,,o-,false,true,multi,
+tesak tek,3,creation tool,n,I,,,,,o-,false,true,multi,
+gor lu,2,goodness,n,I,,,,,o-,false,true,multi,
+my lu,2,darkness,n,I,,,,,o-,false,true,multi,
+wem lu,2,warmth,n,I,,,,,o-,false,true,multi,
+shuk rin,2,speed,n,I,,,,,o-,false,true,multi,
+rali rin,3,size,n,I,,,,,o-,false,true,multi,
+tesak par,3,creation (act of creating),n,I,,,,,o-,false,true,multi,
+bau pos,2,bakery,n,I,,,,,o-,false,true,multi,
+hamin pos,3,kitchen / dining hall,n,I,,,,,o-,false,true,multi,
+ero isra,4,existentialism,n,I,,,,,o-,false,true,multi,
+afaloi taka,5,edible,na,I,,,,,o-,false,true,multi,
+narau lira,4,without water,na,I,,,,,o-,false,true,multi,
+lira nara,4,waterless,na,I,,,,,o-,false,true,multi,
+gilan fora,4,wildfire / mountain fire (山火),n,I,,,,,o-,false,true,multi,

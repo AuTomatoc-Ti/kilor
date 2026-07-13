@@ -1,92 +1,107 @@
 # Kilor Data Files
 
-Machine-readable lexical data for Kilor. These files are the single source of truth (SSOT) for the lexicon. Human-readable dictionary output is generated via `python kilor.py dict` (future command).
+Machine-readable lexical data for Kilor. The **SQLite database (`kilor.db`)** is the single source of truth (SSOT) for the lexicon.
 
-## Files
+## Quick Start
 
-| File | Purpose | Format |
-|------|---------|--------|
-| `lexicon.csv` | **Root database** — bare roots, syllables, meanings, categories, inflected forms, colour prefixes. Validated by `kilor.py check`. | CSV |
-| `compounds.json` | **Compound dictionary** — mono-word and multi-word compounds, construction metadata, meanings, patterns, rule references. | JSON |
+```bash
+python kilor.py check          # Validate the database
+python kilor.py status         # Show lexicon statistics
+python kilor.py export --format html    # Generate searchable dictionary
+```
+
+## File Inventory
+
+| File | Purpose | Updated by |
+|---|---|---|
+| `kilor.db` | **Lexicon database (SSOT)** — all words, meanings, inflections, compound metadata, examples, full-text search | `kilor.py add`, `kilor.py migrate` |
+| `dictionary.html` | **Searchable dictionary SPA** — open in a browser, search by word/meaning/example, filter by section/type/category | `kilor.py export --format html` |
+| `dictionary-data.json` | Complete dataset consumed by the dictionary SPA | `kilor.py export --format dictionary` or `--format html` |
+| `lexicon_export.csv` | CSV export of all entries | `kilor.py export --format csv` |
+| `compounds_export.json` | JSON export of compound words | `kilor.py export --format json` |
+| `AI-GUIDE.md` | **AI agent guide** — how to add roots, compounds, and examples programmatically or via CLI | Manual |
+| `SCHEMA.md` | Human-readable schema reference (tables, columns, relationships, common queries) | Manual (mirrors `kilor.db`) |
+| `schema.json` | Machine-parseable schema definition | Manual (mirrors `kilor.db`) |
+| `lexicon.csv` | Legacy root database (migration source only) | No longer updated |
+| `compounds.json` | Legacy compound dictionary (migration source only) | No longer updated |
+
+## For AI Agents
+
+### Getting Started
+- **`data/AI-GUIDE.md`** — step-by-step guide for adding roots, compounds, and examples. Start here.
+- **`data/SCHEMA.md`** — table definitions, relationships, and common queries
+- **`data/schema.json`** — machine-parseable schema (tables, columns, types, FKs, indexes)
+
+### Full-Text Search
+The database includes an FTS5 index for fast text search across form, gloss, and examples. Query via SQL:
+```sql
+SELECT rowid FROM words_fts WHERE words_fts MATCH 'volcano' ORDER BY rank;
+```
+Or use `kilor/db.py`:
+```python
+from kilor.db import fts_search
+word_ids = fts_search('volcano')
+```
+
+### Querying the Database
+```python
+from kilor.db import get_db
+conn = get_db()
+# See data/SCHEMA.md for common query patterns
+```
 
 ## Data Flow
 
 ```
-┌──────────────────┐    ┌─────────────────────┐
-│ data/lexicon.csv │    │ data/compounds.json │
-│ (roots — SSOT)   │    │ (compounds — SSOT)  │
-└────────┬─────────┘    └──────────┬──────────┘
-         │                         │
-         └───────────┬─────────────┘
-                     ▼
-            ┌─────────────────┐
-            │  kilor.py dict  │  ← future command
-            └────────┬────────┘
-                     ▼
-         ┌───────────────────────┐
-         │  dictionary output    │
-         │  (.html / .md / .pdf) │
-         └───────────────────────┘
+lexicon.csv + compounds.json  (legacy)
+        │
+        ▼
+  kilor.py migrate ──→ kilor.db (SSOT) ←── kilor.py add
+        │                       │
+        │              kilor.py export
+        │                       │
+        │         ┌─────────────┼─────────────┐
+        │         ▼             ▼             ▼
+        │   dictionary-    lexicon_     compounds_
+        │   data.json +    export.csv   export.json
+        │   dictionary.html
+        │
+  kilor.py check ──→ validation report
+  kilor.py status ──→ statistics dashboard
 ```
 
 ## SSOT Rules
 
-### `lexicon.csv` is the SSOT for:
-- Bare root form and syllable count
-- Meaning (English gloss)
-- Category (n, v, a, nv, na, av)
-- Section (A–J)
-- Inflected forms (noun, verb, adjective, adverb columns)
-- Consensus colour prefix
-- Function word status
+### `kilor.db` is the SSOT for:
+- Word form, syllable count, category, section
+- Meanings (English glosses)
+- Inflected forms (noun, verb, adjective, adverb)
+- Consensus colour prefix, function word status
+- Root vs. compound classification
+- Compound component links, pattern, and rule references
+- Usage examples
 
-### `compounds.json` is the SSOT for:
-- Construction (which roots form this compound)
-- Pattern (agentive, instrumental, property, temporal-day, etc.)
-- Rule reference (`rule_ref` — pointer to the grammar spec file)
-- Entry type (`mono` = single orthographic word; `multi` = multi-word vocab)
+### `lexicon.csv` and `compounds.json` (legacy):
+- Retained for backward compatibility and migration
+- **Not** the SSOT — do not add new entries to these files
 
-### Meaning in `compounds.json`
+## Updating the Lexicon
 
-All compounds carry a `meaning` field. For mono-word compounds also in `lexicon.csv`, this is a **lexical cache** — the canonical meaning lives in `lexicon.csv`. For multi-word compounds (which have no `lexicon.csv` entry), `compounds.json` is the sole location for the meaning.
+- **Adding a new word:** `python kilor.py add --file today.md`
+- **Validating:** `python kilor.py check`
+- **Viewing statistics:** `python kilor.py status`
+- **Exporting:** `python kilor.py export --format csv|json|html|dictionary`
+- **FTS query from Python:** `from kilor.db import fts_search`
+- **Browsing:** open `data/dictionary.html` in a browser
 
-The `in_lexicon` boolean tracks whether a compound also exists as a validated root entry.
+## Migration from Legacy Files
 
-## `lexicon.csv` Field Reference
-
-| Column | Description | Example |
-|--------|-------------|---------|
-| `bare_root` | Root form (no spaces, no tone markers for 1–2 syl) | `fora` |
-| `syl` | Syllable count | `2` |
-| `meaning` | English gloss | `fire` |
-| `category` | n, v, a, nv, na, av | `nv` |
-| `section` | A–J semantic domain | `A` |
-| `noun` | Noun form (with tone markers for 3+ syl) | `fora` |
-| `verb` | Verb form | `fora` |
-| `adjective` | Adjective form (+ `-s` for 1–2 syl) | `foras` |
-| `adverb` | Adverb form | `foras` |
-| `consensus_prefix` | Default colour prefix | `a-` |
-| `is_function_word` | `true` for closed-class; `false` for content roots | `false` |
-| `notes` | Etymology, compound construction, cross-references | `compound: fora + gilan` |
-
-## `compounds.json` Field Reference
-
-| Field | Description | Example |
-|-------|-------------|---------|
-| `type` | `mono` (single word) or `multi` (multi-word vocab) | `mono` |
-| `meaning` | English gloss | `volcano` |
-| `construction` | Array of source roots | `["fora", "gilan"]` |
-| `pattern` | Derivational or compounding pattern name | `nominal-compound` |
-| `rule_ref` | Grammar spec reference (optional) | `rules/3-subsystems/temporals.md §I-A` |
-| `in_lexicon` | Whether an entry exists in `lexicon.csv` | `true` |
-
-## Updating These Files
-
-- **Adding a new root:** add a row to `lexicon.csv`, run `python kilor.py check`
-- **Adding a new mono-word compound:** add to both `lexicon.csv` (as a root) and `compounds.json` (construction metadata + meaning cache)
-- **Adding a new multi-word compound:** add only to `compounds.json` with `in_lexicon: false`
-- **Changing a meaning:** update `lexicon.csv` (SSOT for roots); if the entry also exists in `compounds.json`, update the cached meaning there too
+```bash
+rm data/kilor.db        # Delete existing database
+python kilor.py migrate # Rebuild from legacy CSV + JSON
+python kilor.py export --format html  # Regenerate dictionary
+```
 
 ---
 
-*Last updated: 2026-07-12*
+*Last updated: 2026-07-13*

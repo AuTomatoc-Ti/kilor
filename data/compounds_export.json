@@ -1,0 +1,720 @@
+{
+  "_last_updated": "2026-07-13",
+  "_total": 73,
+  "compounds": {
+    "lunlagak": {
+      "type": "mono",
+      "meaning": "wood",
+      "construction": [
+        "lunla"
+      ],
+      "pattern": "material-compound",
+      "in_lexicon": true
+    },
+    "naram": {
+      "type": "mono",
+      "meaning": "none",
+      "construction": [
+        "nar",
+        "amin"
+      ],
+      "pattern": "negation-compound",
+      "in_lexicon": true
+    },
+    "maekoi": {
+      "type": "mono",
+      "meaning": "spirit / soul",
+      "construction": [],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "emlu": {
+      "type": "mono",
+      "meaning": "truth",
+      "construction": [],
+      "pattern": "property",
+      "in_lexicon": true
+    },
+    "sinkoi": {
+      "type": "mono",
+      "meaning": "alone / solitude",
+      "construction": [],
+      "pattern": "state-compound",
+      "in_lexicon": true
+    },
+    "ilsinkoi": {
+      "type": "mono",
+      "meaning": "together",
+      "construction": [
+        "sinkoi"
+      ],
+      "pattern": "negation-compound",
+      "in_lexicon": true
+    },
+    "pireilu": {
+      "type": "mono",
+      "meaning": "property / quality",
+      "construction": [],
+      "pattern": "property",
+      "in_lexicon": true
+    },
+    "lokisra": {
+      "type": "mono",
+      "meaning": "doctrine / system of thought",
+      "construction": [
+        "isra"
+      ],
+      "pattern": "doctrine",
+      "in_lexicon": true
+    },
+    "fosli": {
+      "type": "mono",
+      "meaning": "snow",
+      "construction": [
+        "fos",
+        "li"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "foske": {
+      "type": "mono",
+      "meaning": "frost",
+      "construction": [
+        "fos"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "foshu": {
+      "type": "mono",
+      "meaning": "blizzard",
+      "construction": [
+        "fos",
+        "hu"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "fosgilan": {
+      "type": "mono",
+      "meaning": "glacier",
+      "construction": [
+        "fos",
+        "gilan"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "fosblon": {
+      "type": "mono",
+      "meaning": "avalanche",
+      "construction": [
+        "fos",
+        "blon"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "foskaera": {
+      "type": "mono",
+      "meaning": "frozen soil",
+      "construction": [
+        "fos",
+        "kaera"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "taroinous": {
+      "type": "mono",
+      "meaning": "weekend",
+      "construction": [
+        "taroi",
+        "ous"
+      ],
+      "pattern": "temporal-compound",
+      "in_lexicon": true
+    },
+    "afaloi": {
+      "type": "mono",
+      "meaning": "ability / able to",
+      "construction": [],
+      "pattern": "capability",
+      "in_lexicon": true
+    },
+    "hostakes": {
+      "type": "mono",
+      "meaning": "certainly / must have (deduction)",
+      "construction": [
+        "hostak"
+      ],
+      "pattern": "epistemic-modal",
+      "in_lexicon": true
+    },
+    "sewanes": {
+      "type": "mono",
+      "meaning": "might / perhaps / could be",
+      "construction": [
+        "sew"
+      ],
+      "pattern": "epistemic-modal",
+      "in_lexicon": true
+    },
+    "bamares": {
+      "type": "mono",
+      "meaning": "would have (counterfactual)",
+      "construction": [
+        "bam"
+      ],
+      "pattern": "epistemic-modal",
+      "in_lexicon": true
+    },
+    "chorogor": {
+      "type": "mono",
+      "meaning": "good morning",
+      "construction": [
+        "cho",
+        "roi",
+        "gor"
+      ],
+      "pattern": "temporal-greeting",
+      "in_lexicon": true
+    },
+    "sarrogor": {
+      "type": "mono",
+      "meaning": "good afternoon",
+      "construction": [
+        "sar",
+        "roi",
+        "gor"
+      ],
+      "pattern": "temporal-greeting",
+      "in_lexicon": true
+    },
+    "targor": {
+      "type": "mono",
+      "meaning": "good evening",
+      "construction": [
+        "tar",
+        "gor"
+      ],
+      "pattern": "temporal-greeting",
+      "in_lexicon": true
+    },
+    "rokgor": {
+      "type": "mono",
+      "meaning": "good night",
+      "construction": [
+        "rok",
+        "gor"
+      ],
+      "pattern": "temporal-greeting",
+      "in_lexicon": true
+    },
+    "halise": {
+      "type": "mono",
+      "meaning": "hope / wish",
+      "construction": [],
+      "pattern": "optative",
+      "in_lexicon": true
+    },
+    "lorrak": {
+      "type": "mono",
+      "meaning": "language",
+      "construction": [],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "walunla": {
+      "type": "mono",
+      "meaning": "forest",
+      "construction": [
+        "lunla"
+      ],
+      "pattern": "collective-compound",
+      "in_lexicon": true
+    },
+    "aurok": {
+      "type": "mono",
+      "meaning": "cosmic / space",
+      "construction": [
+        "auron",
+        "rok"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "auronte": {
+      "type": "mono",
+      "meaning": "dome / canopy",
+      "construction": [
+        "auron",
+        "tek"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "arrinna": {
+      "type": "mono",
+      "meaning": "distant",
+      "construction": [
+        "arrin",
+        "na"
+      ],
+      "pattern": "derivational",
+      "in_lexicon": true
+    },
+    "hakdo": {
+      "type": "mono",
+      "meaning": "one-fourth",
+      "construction": [
+        "hak",
+        "do"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "hakfoi": {
+      "type": "mono",
+      "meaning": "one-eighth",
+      "construction": [
+        "hak",
+        "foi"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "hakauk": {
+      "type": "mono",
+      "meaning": "one-sixth",
+      "construction": [
+        "hak",
+        "auk"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "dokdo": {
+      "type": "mono",
+      "meaning": "four times",
+      "construction": [
+        "dok",
+        "do"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "dokfoi": {
+      "type": "mono",
+      "meaning": "eight times",
+      "construction": [
+        "dok",
+        "foi"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "dokauk": {
+      "type": "mono",
+      "meaning": "sixteen times",
+      "construction": [
+        "dok",
+        "auk"
+      ],
+      "pattern": "numeral-compound",
+      "in_lexicon": true
+    },
+    "diserin": {
+      "type": "mono",
+      "meaning": "direction",
+      "construction": [
+        "dise"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "piroi": {
+      "type": "mono",
+      "meaning": "yesterday",
+      "construction": [
+        "roi"
+      ],
+      "pattern": "temporal-day",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+    },
+    "paroi": {
+      "type": "mono",
+      "meaning": "tomorrow",
+      "construction": [
+        "roi"
+      ],
+      "pattern": "temporal-day",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+    },
+    "imaroi": {
+      "type": "mono",
+      "meaning": "today",
+      "construction": [
+        "ima",
+        "roi"
+      ],
+      "pattern": "temporal-day",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+    },
+    "pimaroi": {
+      "type": "mono",
+      "meaning": "day before yesterday",
+      "construction": [
+        "ma",
+        "roi"
+      ],
+      "pattern": "temporal-day",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+    },
+    "pamaroi": {
+      "type": "mono",
+      "meaning": "day after tomorrow",
+      "construction": [
+        "ma",
+        "roi"
+      ],
+      "pattern": "temporal-day",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+    },
+    "pima": {
+      "type": "mono",
+      "meaning": "earlier / further back",
+      "construction": [
+        "ma"
+      ],
+      "pattern": "temporal-distance",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-B"
+    },
+    "pama": {
+      "type": "mono",
+      "meaning": "later / further ahead",
+      "construction": [
+        "ma"
+      ],
+      "pattern": "temporal-distance",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-B"
+    },
+    "esaka": {
+      "type": "mono",
+      "meaning": "always",
+      "construction": [
+        "esa",
+        "sakar"
+      ],
+      "pattern": "frequency",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+    },
+    "slosaka": {
+      "type": "mono",
+      "meaning": "sometimes",
+      "construction": [
+        "slote",
+        "sakar"
+      ],
+      "pattern": "frequency",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+    },
+    "nasaka": {
+      "type": "mono",
+      "meaning": "never",
+      "construction": [
+        "na",
+        "sakar"
+      ],
+      "pattern": "frequency",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+    },
+    "foragilan": {
+      "type": "mono",
+      "meaning": "volcano",
+      "construction": [
+        "fora",
+        "gilan"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "lirahup": {
+      "type": "mono",
+      "meaning": "waterfall",
+      "construction": [
+        "lira",
+        "hup"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "roralumi": {
+      "type": "mono",
+      "meaning": "sunlight",
+      "construction": [
+        "rora",
+        "lumi"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "yrelumi": {
+      "type": "mono",
+      "meaning": "moonlight",
+      "construction": [
+        "yre",
+        "lumi"
+      ],
+      "pattern": "nominal-compound",
+      "in_lexicon": true
+    },
+    "theprusome": {
+      "type": "mono",
+      "meaning": "bedroom",
+      "construction": [
+        "thep",
+        "rusome"
+      ],
+      "pattern": "location-compound",
+      "in_lexicon": true
+    },
+    "haminrusome": {
+      "type": "mono",
+      "meaning": "dining room",
+      "construction": [
+        "hamin",
+        "rusome"
+      ],
+      "pattern": "location-compound",
+      "in_lexicon": true
+    },
+    "latif mae": {
+      "type": "multi",
+      "meaning": "doctor / healer",
+      "construction": [
+        "latif"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "miso mae": {
+      "type": "multi",
+      "meaning": "musician",
+      "construction": [
+        "miso"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "miso maeha": {
+      "type": "multi",
+      "meaning": "musician (formal)",
+      "construction": [
+        "miso",
+        "maeha"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "tesak mae": {
+      "type": "multi",
+      "meaning": "crafter / maker",
+      "construction": [
+        "tesak"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "taka mae": {
+      "type": "multi",
+      "meaning": "eater",
+      "construction": [
+        "taka"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "fei mae": {
+      "type": "multi",
+      "meaning": "flyer",
+      "construction": [
+        "fei"
+      ],
+      "pattern": "agentive",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
+    },
+    "kup tek": {
+      "type": "multi",
+      "meaning": "cutter (cutting tool)",
+      "construction": [
+        "kup",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B"
+    },
+    "tesak tek": {
+      "type": "multi",
+      "meaning": "creation tool",
+      "construction": [
+        "tesak",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B"
+    },
+    "gor lu": {
+      "type": "multi",
+      "meaning": "goodness",
+      "construction": [
+        "gor"
+      ],
+      "pattern": "property",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C"
+    },
+    "my lu": {
+      "type": "multi",
+      "meaning": "darkness",
+      "construction": [
+        "my"
+      ],
+      "pattern": "property",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C"
+    },
+    "wem lu": {
+      "type": "multi",
+      "meaning": "warmth",
+      "construction": [
+        "wem"
+      ],
+      "pattern": "property",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C"
+    },
+    "shuk rin": {
+      "type": "multi",
+      "meaning": "speed",
+      "construction": [
+        "shuk"
+      ],
+      "pattern": "measure",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D"
+    },
+    "rali rin": {
+      "type": "multi",
+      "meaning": "size",
+      "construction": [
+        "rali"
+      ],
+      "pattern": "measure",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D"
+    },
+    "tesak par": {
+      "type": "multi",
+      "meaning": "creation (act of creating)",
+      "construction": [
+        "tesak"
+      ],
+      "pattern": "process",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-E"
+    },
+    "bau pos": {
+      "type": "multi",
+      "meaning": "bakery",
+      "construction": [
+        "bau"
+      ],
+      "pattern": "location",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-G"
+    },
+    "hamin pos": {
+      "type": "multi",
+      "meaning": "kitchen / dining hall",
+      "construction": [
+        "hamin"
+      ],
+      "pattern": "location",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-G"
+    },
+    "ero isra": {
+      "type": "multi",
+      "meaning": "existentialism",
+      "construction": [
+        "ero",
+        "isra"
+      ],
+      "pattern": "doctrine",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-H"
+    },
+    "afaloi taka": {
+      "type": "multi",
+      "meaning": "edible",
+      "construction": [
+        "afaloi",
+        "taka"
+      ],
+      "pattern": "capability",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-I"
+    },
+    "narau lira": {
+      "type": "multi",
+      "meaning": "without water",
+      "construction": [
+        "narau",
+        "lira"
+      ],
+      "pattern": "without",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-J"
+    },
+    "lira nara": {
+      "type": "multi",
+      "meaning": "waterless",
+      "construction": [
+        "lira"
+      ],
+      "pattern": "without",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-J"
+    },
+    "gilan fora": {
+      "type": "multi",
+      "meaning": "wildfire / mountain fire (山火)",
+      "construction": [
+        "gilan",
+        "fora"
+      ],
+      "pattern": "two-word-vocab",
+      "in_lexicon": false
+    }
+  }
+}

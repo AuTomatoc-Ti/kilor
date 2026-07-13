@@ -1,7 +1,7 @@
 # Kilor Development Roadmap
 
 **Status:** Grammar complete — Phase 1 root creation underway
-**Last Updated:** 2026-07-08
+**Last Updated:** 2026-07-13
 
 ---
 
@@ -17,9 +17,21 @@
 
 ### Multiplier Explanation
 
+Steady-state targets (mature lexicon, Phase 3+):
+
 - **×2.5 derived:** Average of 2.5 productive surface forms per root (N/V pairs produce 4 forms; noun-only ~2 forms; verb-only ~2 forms; quality-only ~1.5 forms).
 - **×1 compounds:** Roughly one lexicalised compound per root, each manually coined and defined. Modeled on Mandarin (~50–70% of vocabulary is compounds), conservatively estimated.
 - **Total multiplier: ×3.5**
+
+Current Phase 1 baseline (241 roots, 2026-07-13):
+
+| Metric | Roadmap (steady-state) | Current | Notes |
+|---|---|---|---|
+| Derived multiplier | ×2.5 | **×2.06** | 30% N-only roots drag average; more verbs/qualities in remaining Phase 1 targets will improve this |
+| Compound ratio | ×1.0/root | **×0.30/root** | Expected early-stage effect — compound space grows combinatorially with root count |
+| Total multiplier | ×3.5 | **×2.59** | Excluding function words: ×2.36 |
+
+The current under-estimation is **temporal**, not structural. As more action verbs (VAD) and qualities (AD) enter the lexicon, the derived multiplier will rise. Compound density naturally increases as root count grows — compounds are coined from existing roots, so the ratio accelerates through Phase 2–3.
 
 ### English Benchmarks
 
