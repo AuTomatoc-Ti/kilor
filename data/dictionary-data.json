@@ -2,7 +2,7 @@
   "meta": {
     "exported_at": "2026-07-13",
     "version": "2.0.0",
-    "total_words": 317
+    "total_words": 361
   },
   "entries": [
     {
@@ -12,7 +12,7 @@
       "meanings": [
         "east"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -33,6 +33,50 @@
       "notes": ""
     },
     {
+      "id": 319,
+      "form": "aewei",
+      "syl_count": 2,
+      "meanings": [
+        "Who?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
+    },
+    {
+      "id": 326,
+      "form": "aeweisan",
+      "syl_count": 3,
+      "meanings": [
+        "Whose?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word (genitive of aewei)"
+    },
+    {
       "id": 181,
       "form": "afaloi",
       "syl_count": 3,
@@ -40,7 +84,7 @@
         "ability",
         "able to"
       ],
-      "category": "nv",
+      "derivation_mask": "NV",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -67,7 +111,7 @@
       "meanings": [
         "edible"
       ],
-      "category": "na",
+      "derivation_mask": "NV",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -94,11 +138,11 @@
     {
       "id": 216,
       "form": "aiga",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "causal subordinator (because)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -106,27 +150,22 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "aiga",
-        "adverb": "aiga",
-        "noun": "aiga",
-        "verb": "aiga"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 212,
       "form": "amer",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "adversative (but",
         "however)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -134,17 +173,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "amer",
-        "adverb": "amer",
-        "noun": "amer",
-        "verb": "amer"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 66,
@@ -153,7 +187,7 @@
       "meanings": [
         "any"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -180,7 +214,7 @@
       "meanings": [
         "again"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -207,7 +241,7 @@
       "meanings": [
         "zero"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -215,17 +249,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "aniu",
-        "adverb": "aniu",
-        "noun": "aniu",
-        "verb": "aniu"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 150,
@@ -234,7 +263,7 @@
       "meanings": [
         "spring"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -257,11 +286,11 @@
     {
       "id": 208,
       "form": "ar",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "ablative particle (from)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -269,26 +298,21 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "ar",
-        "adverb": "ar",
-        "noun": "ar",
-        "verb": "ar"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 218,
       "form": "arfi",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "concessive intensifier (even)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -296,17 +320,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "arfi",
-        "adverb": "arfi",
-        "noun": "arfi",
-        "verb": "arfi"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 73,
@@ -315,7 +334,7 @@
       "meanings": [
         "love"
       ],
-      "category": "v",
+      "derivation_mask": "NVAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -343,7 +362,7 @@
         "grace",
         "grateful"
       ],
-      "category": "na",
+      "derivation_mask": "NA",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -361,7 +380,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "4-syl: ar/gon/ni/a"
+      "notes": ""
     },
     {
       "id": 149,
@@ -370,7 +389,7 @@
       "meanings": [
         "season"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -397,7 +416,7 @@
       "meanings": [
         "distance"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -424,7 +443,7 @@
       "meanings": [
         "distant"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -451,7 +470,7 @@
       "pattern": "derivational",
       "rule_ref": null,
       "examples": [],
-      "notes": "derived from arrin"
+      "notes": ""
     },
     {
       "id": 71,
@@ -460,7 +479,7 @@
       "meanings": [
         "know"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -488,7 +507,7 @@
         "start",
         "begin"
       ],
-      "category": "v",
+      "derivation_mask": "NVAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -515,7 +534,7 @@
       "meanings": [
         "eight"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -523,17 +542,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "auk",
-        "adverb": "auk",
-        "noun": "auk",
-        "verb": "auk"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 125,
@@ -542,7 +556,7 @@
       "meanings": [
         "comet"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -569,7 +583,7 @@
       "meanings": [
         "enter"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -596,7 +610,7 @@
       "meanings": [
         "celestial object"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -624,7 +638,7 @@
         "cosmic",
         "space"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -651,7 +665,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: auron + rok"
+      "notes": ""
     },
     {
       "id": 235,
@@ -660,7 +674,7 @@
       "meanings": [
         "sky"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -688,7 +702,7 @@
         "dome",
         "canopy"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -715,7 +729,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: auron + tek"
+      "notes": ""
     },
     {
       "id": 175,
@@ -724,7 +738,7 @@
       "meanings": [
         "start-of"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -742,18 +756,40 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "etymology: aug + genitive -si; -s final whitelist exception"
+      "notes": ""
+    },
+    {
+      "id": 325,
+      "form": "awei",
+      "syl_count": 2,
+      "meanings": [
+        "Which?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
     },
     {
       "id": 215,
       "form": "bam",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "consequential particle (then",
         "便",
         "就)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -761,17 +797,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "bam",
-        "adverb": "bam",
-        "noun": "bam",
-        "verb": "bam"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 189,
@@ -780,7 +811,7 @@
       "meanings": [
         "would have (counterfactual)"
       ],
-      "category": "av",
+      "derivation_mask": "D",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -803,7 +834,7 @@
       "pattern": "epistemic-modal",
       "rule_ref": null,
       "examples": [],
-      "notes": "epistemic modal; pre-verbal adverb slot"
+      "notes": ""
     },
     {
       "id": 33,
@@ -812,7 +843,7 @@
       "meanings": [
         "bread"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -839,7 +870,7 @@
       "meanings": [
         "bakery"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -867,7 +898,7 @@
         "word",
         "speech"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -894,7 +925,7 @@
       "meanings": [
         "collapse"
       ],
-      "category": "v",
+      "derivation_mask": "NVAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -921,7 +952,7 @@
       "meanings": [
         "wave"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -948,7 +979,7 @@
       "meanings": [
         "bad"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -976,7 +1007,7 @@
         "bottom",
         "down"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1003,7 +1034,7 @@
       "meanings": [
         "west"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1031,7 +1062,7 @@
         "act",
         "deed"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1049,7 +1080,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form par for process derivation"
+      "notes": ""
     },
     {
       "id": 100,
@@ -1058,7 +1089,7 @@
       "meanings": [
         "early"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1076,7 +1107,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "bare root; ch onset (start-only)"
+      "notes": ""
     },
     {
       "id": 198,
@@ -1085,7 +1116,7 @@
       "meanings": [
         "polite request particle (pre-verbal)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -1093,17 +1124,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "chom",
-        "adverb": "chom",
-        "noun": "chom",
-        "verb": "chom"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; like Cantonese 請"
+      "notes": ""
     },
     {
       "id": 190,
@@ -1112,7 +1138,7 @@
       "meanings": [
         "good morning"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -1143,7 +1169,7 @@
       "pattern": "temporal-greeting",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: cho + roi + gor"
+      "notes": ""
     },
     {
       "id": 152,
@@ -1152,7 +1178,7 @@
       "meanings": [
         "autumn"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -1179,7 +1205,7 @@
       "meanings": [
         "hundred"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1187,17 +1213,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "cu",
-        "adverb": "cu",
-        "noun": "cu",
-        "verb": "cu"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class scale marker"
+      "notes": ""
     },
     {
       "id": 162,
@@ -1206,7 +1227,7 @@
       "meanings": [
         "century"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1233,7 +1254,7 @@
       "meanings": [
         "ordinal particle"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1241,17 +1262,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "dir",
-        "adverb": "dir",
-        "noun": "dir",
-        "verb": "dir"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 255,
@@ -1261,7 +1277,7 @@
         "head",
         "facing"
       ],
-      "category": "nv",
+      "derivation_mask": "NVAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1288,7 +1304,7 @@
       "meanings": [
         "direction"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1320,7 +1336,7 @@
       "meanings": [
         "two"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1328,17 +1344,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "do",
-        "adverb": "do",
-        "noun": "do",
-        "verb": "do"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 273,
@@ -1347,7 +1358,7 @@
       "meanings": [
         "twelve"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1355,17 +1366,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "doi",
-        "adverb": "doi",
-        "noun": "doi",
-        "verb": "doi"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 251,
@@ -1374,7 +1380,7 @@
       "meanings": [
         "double"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1401,7 +1407,7 @@
       "meanings": [
         "sixteen times"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1428,7 +1434,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: dok + auk"
+      "notes": ""
     },
     {
       "id": 252,
@@ -1437,7 +1443,7 @@
       "meanings": [
         "four times"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1464,7 +1470,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: dok + do"
+      "notes": ""
     },
     {
       "id": 253,
@@ -1473,7 +1479,7 @@
       "meanings": [
         "eight times"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1500,7 +1506,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: dok + foi"
+      "notes": ""
     },
     {
       "id": 29,
@@ -1509,7 +1515,7 @@
       "meanings": [
         "door"
       ],
-      "category": "nv",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -1532,11 +1538,11 @@
     {
       "id": 210,
       "form": "ei",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "coordinator (and)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -1544,17 +1550,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "ei",
-        "adverb": "ei",
-        "noun": "ei",
-        "verb": "ei"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 111,
@@ -1563,7 +1564,7 @@
       "meanings": [
         "life"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -1584,13 +1585,40 @@
       "notes": ""
     },
     {
+      "id": 361,
+      "form": "ema",
+      "syl_count": 2,
+      "meanings": [
+        "true; real"
+      ],
+      "derivation_mask": "nva",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": false,
+      "consensus_prefix": "o-",
+      "inflections": {
+        "adjective": "emas",
+        "adverb": "emas",
+        "noun": "ema",
+        "verb": "ema"
+      },
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "base root for emlu (truth); section I"
+    },
+    {
       "id": 114,
       "form": "emlu",
       "syl_count": 2,
       "meanings": [
         "truth"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -1608,7 +1636,7 @@
       "pattern": "property",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: em + lu"
+      "notes": ""
     },
     {
       "id": 128,
@@ -1618,7 +1646,7 @@
         "existential & possession - there is",
         "have"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -1626,17 +1654,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "eros",
-        "adverb": "eros",
-        "noun": "ero",
-        "verb": "ero"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class"
+      "notes": ""
     },
     {
       "id": 313,
@@ -1645,7 +1668,7 @@
       "meanings": [
         "existentialism"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -1677,7 +1700,7 @@
         "all",
         "every"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1695,7 +1718,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combines into esaka (always)"
+      "notes": ""
     },
     {
       "id": 288,
@@ -1704,7 +1727,7 @@
       "meanings": [
         "always"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1731,7 +1754,7 @@
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
       "examples": [],
-      "notes": "compound: esa + sakar; see 3-subsystems/temporals.md §I-C"
+      "notes": ""
     },
     {
       "id": 65,
@@ -1740,7 +1763,7 @@
       "meanings": [
         "each"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -1761,13 +1784,35 @@
       "notes": ""
     },
     {
+      "id": 320,
+      "form": "ewei",
+      "syl_count": 2,
+      "meanings": [
+        "What?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
+    },
+    {
       "id": 226,
       "form": "fa",
       "syl_count": 1,
       "meanings": [
         "dad"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -1794,7 +1839,7 @@
       "meanings": [
         "father"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -1821,7 +1866,7 @@
       "meanings": [
         "left"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1848,7 +1893,7 @@
       "meanings": [
         "minute"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1875,7 +1920,7 @@
       "meanings": [
         "5min"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -1903,7 +1948,7 @@
         "fly",
         "flying"
       ],
-      "category": "nv",
+      "derivation_mask": "NVAD",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -1921,7 +1966,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "bare root serves as both noun and verb; feis = adj/adv"
+      "notes": ""
     },
     {
       "id": 302,
@@ -1930,7 +1975,7 @@
       "meanings": [
         "flyer"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -1957,7 +2002,7 @@
       "meanings": [
         "bird"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -1984,7 +2029,7 @@
       "meanings": [
         "cool"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -2007,11 +2052,11 @@
     {
       "id": 219,
       "form": "fidak",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "purpose subordinator (in order to)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -2019,17 +2064,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "fidak",
-        "adverb": "fidak",
-        "noun": "fidak",
-        "verb": "fidak"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 265,
@@ -2038,7 +2078,7 @@
       "meanings": [
         "four"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2046,17 +2086,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "foi",
-        "adverb": "foi",
-        "noun": "foi",
-        "verb": "foi"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 1,
@@ -2065,7 +2100,7 @@
       "meanings": [
         "fire"
       ],
-      "category": "nv",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2092,7 +2127,7 @@
       "meanings": [
         "volcano"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2119,7 +2154,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: fora + gilan"
+      "notes": ""
     },
     {
       "id": 165,
@@ -2129,7 +2164,7 @@
         "ice",
         "freeze"
       ],
-      "category": "nv",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2147,7 +2182,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "noun/adj same form; -s final whitelist exception; not \"cold\" (→kop)"
+      "notes": ""
     },
     {
       "id": 170,
@@ -2156,7 +2191,7 @@
       "meanings": [
         "avalanche"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2183,7 +2218,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: fos (ice) + blon (collapse)"
+      "notes": ""
     },
     {
       "id": 169,
@@ -2192,7 +2227,7 @@
       "meanings": [
         "glacier"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2219,7 +2254,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: fos (ice) + gilan (mountain)"
+      "notes": ""
     },
     {
       "id": 168,
@@ -2228,7 +2263,7 @@
       "meanings": [
         "blizzard"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2255,7 +2290,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: fos (ice) + hu (wind)"
+      "notes": ""
     },
     {
       "id": 171,
@@ -2264,7 +2299,7 @@
       "meanings": [
         "frozen soil"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2291,7 +2326,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: fos (ice) + kaera (earth)"
+      "notes": ""
     },
     {
       "id": 167,
@@ -2300,7 +2335,7 @@
       "meanings": [
         "frost"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2332,7 +2367,7 @@
       "meanings": [
         "snow"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2368,7 +2403,7 @@
       "meanings": [
         "winter"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2395,7 +2430,7 @@
       "meanings": [
         "during"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -2413,7 +2448,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "related to founai"
+      "notes": ""
     },
     {
       "id": 103,
@@ -2422,7 +2457,7 @@
       "meanings": [
         "duration"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -2449,7 +2484,7 @@
       "meanings": [
         "ten"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2457,17 +2492,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "gau",
-        "adverb": "gau",
-        "noun": "gau",
-        "verb": "gau"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 158,
@@ -2476,7 +2506,7 @@
       "meanings": [
         "ten-day"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -2503,7 +2533,7 @@
       "meanings": [
         "decade"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -2530,7 +2560,7 @@
       "meanings": [
         "perfective aspect (have X-ed)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -2538,17 +2568,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "ger",
-        "adverb": "ger",
-        "noun": "ger",
-        "verb": "ger"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; post-verbal"
+      "notes": ""
     },
     {
       "id": 37,
@@ -2557,7 +2582,7 @@
       "meanings": [
         "mountain"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -2584,7 +2609,7 @@
       "meanings": [
         "wildfire / mountain fire (山火)"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -2616,7 +2641,7 @@
         "metal",
         "iron"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -2643,7 +2668,7 @@
       "meanings": [
         "progressive aspect (be X-ing)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -2651,17 +2676,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "gin",
-        "adverb": "gin",
-        "noun": "gin",
-        "verb": "gin"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; post-verbal"
+      "notes": ""
     },
     {
       "id": 57,
@@ -2670,7 +2690,7 @@
       "meanings": [
         "good"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -2697,7 +2717,7 @@
       "meanings": [
         "goodness"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -2724,7 +2744,7 @@
       "meanings": [
         "experiential aspect (have X-ed before)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -2732,17 +2752,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "gou",
-        "adverb": "gou",
-        "noun": "gou",
-        "verb": "gou"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; post-verbal"
+      "notes": ""
     },
     {
       "id": 163,
@@ -2751,7 +2766,7 @@
       "meanings": [
         "hot"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -2769,7 +2784,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "noun/adj same form; -s final whitelist exception"
+      "notes": ""
     },
     {
       "id": 151,
@@ -2778,7 +2793,7 @@
       "meanings": [
         "summer"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -2805,7 +2820,7 @@
       "meanings": [
         "half"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2832,7 +2847,7 @@
       "meanings": [
         "one-sixth"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2859,7 +2874,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: hak + auk"
+      "notes": ""
     },
     {
       "id": 248,
@@ -2868,7 +2883,7 @@
       "meanings": [
         "one-fourth"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2895,7 +2910,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: hak + do"
+      "notes": ""
     },
     {
       "id": 249,
@@ -2904,7 +2919,7 @@
       "meanings": [
         "one-eighth"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2931,7 +2946,7 @@
       "pattern": "numeral-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: hak + foi"
+      "notes": ""
     },
     {
       "id": 221,
@@ -2941,7 +2956,7 @@
         "hope",
         "wish"
       ],
-      "category": "nv",
+      "derivation_mask": "NVAD",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -2959,7 +2974,7 @@
       "pattern": "optative",
       "rule_ref": null,
       "examples": [],
-      "notes": "open-class; optative/desiderative/benedictive verb"
+      "notes": ""
     },
     {
       "id": 32,
@@ -2968,7 +2983,7 @@
       "meanings": [
         "food"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -2995,7 +3010,7 @@
       "meanings": [
         "kitchen / dining hall"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -3022,7 +3037,7 @@
       "meanings": [
         "dining room"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -3049,7 +3064,7 @@
       "pattern": "location-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: hamin + rusome"
+      "notes": ""
     },
     {
       "id": 243,
@@ -3058,7 +3073,7 @@
       "meanings": [
         "right"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3085,7 +3100,7 @@
       "meanings": [
         "back"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3103,7 +3118,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → haune (behind)"
+      "notes": ""
+    },
+    {
+      "id": 355,
+      "form": "haune",
+      "syl_count": 2,
+      "meanings": [
+        "behind"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 19,
@@ -3113,7 +3150,7 @@
         "animal",
         "beast"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -3141,7 +3178,7 @@
         "pain",
         "suffering"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -3169,7 +3206,7 @@
         "hello",
         "hey (vocative)"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3187,7 +3224,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "colour prefix on vocative conveys emotional stance (異體字)"
+      "notes": ""
     },
     {
       "id": 70,
@@ -3196,7 +3233,7 @@
       "meanings": [
         "sad"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -3223,7 +3260,7 @@
       "meanings": [
         "side"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3241,7 +3278,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → hinne (beside / near / next to)"
+      "notes": ""
     },
     {
       "id": 14,
@@ -3250,7 +3287,7 @@
       "meanings": [
         "hand"
       ],
-      "category": "n",
+      "derivation_mask": "NV",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -3271,13 +3308,35 @@
       "notes": ""
     },
     {
+      "id": 357,
+      "form": "hinne",
+      "syl_count": 2,
+      "meanings": [
+        "beside; near"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
+    },
+    {
       "id": 217,
       "form": "hoskar",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "concessive subordinator (although)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -3285,17 +3344,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "hoskar",
-        "adverb": "hoskar",
-        "noun": "hoskar",
-        "verb": "hoskar"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 183,
@@ -3304,7 +3358,7 @@
       "meanings": [
         "must"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -3332,7 +3386,7 @@
         "certainly",
         "must have (deduction)"
       ],
-      "category": "av",
+      "derivation_mask": "D",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -3355,7 +3409,7 @@
       "pattern": "epistemic-modal",
       "rule_ref": null,
       "examples": [],
-      "notes": "epistemic modal; pre-verbal adverb slot"
+      "notes": ""
     },
     {
       "id": 142,
@@ -3364,7 +3418,7 @@
       "meanings": [
         "wind"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -3391,7 +3445,7 @@
       "meanings": [
         "fall"
       ],
-      "category": "v",
+      "derivation_mask": "NVAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -3418,7 +3472,7 @@
       "meanings": [
         "rain"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -3445,7 +3499,7 @@
       "meanings": [
         "million"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3453,17 +3507,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "hus",
-        "adverb": "hus",
-        "noun": "hus",
-        "verb": "hus"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class scale marker; -s exempt"
+      "notes": ""
     },
     {
       "id": 87,
@@ -3472,7 +3521,7 @@
       "meanings": [
         "in"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3490,7 +3539,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → ikne (inside)"
+      "notes": ""
+    },
+    {
+      "id": 351,
+      "form": "ikne",
+      "syl_count": 2,
+      "meanings": [
+        "inside"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 117,
@@ -3499,7 +3570,7 @@
       "meanings": [
         "together"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3531,7 +3602,7 @@
       "meanings": [
         "now"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3549,7 +3620,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form for imaroi (today)"
+      "notes": ""
     },
     {
       "id": 283,
@@ -3558,7 +3629,7 @@
       "meanings": [
         "today"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3585,7 +3656,7 @@
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
       "examples": [],
-      "notes": "compound: ima + roi; see 3-subsystems/temporals.md §I-A"
+      "notes": ""
     },
     {
       "id": 96,
@@ -3595,7 +3666,7 @@
         "through",
         "via"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -3613,7 +3684,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → inoune (through)"
+      "notes": ""
     },
     {
       "id": 123,
@@ -3622,7 +3693,7 @@
       "meanings": [
         "idea"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3640,7 +3711,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form for doctrine derivation"
+      "notes": ""
     },
     {
       "id": 130,
@@ -3650,7 +3721,7 @@
         "yes",
         "no question + affirmative answer"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -3658,17 +3729,34 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "iu",
-        "adverb": "iu",
-        "noun": "iu",
-        "verb": "iu"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class"
+      "notes": ""
+    },
+    {
+      "id": 321,
+      "form": "iwei",
+      "syl_count": 2,
+      "meanings": [
+        "Where?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
     },
     {
       "id": 5,
@@ -3678,7 +3766,7 @@
         "earth",
         "soil"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -3705,7 +3793,7 @@
       "meanings": [
         "thousand"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3713,17 +3801,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "kas",
-        "adverb": "kas",
-        "noun": "kas",
-        "verb": "kas"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class scale marker; -s exempt"
+      "notes": ""
     },
     {
       "id": 43,
@@ -3732,7 +3815,7 @@
       "meanings": [
         "come"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -3753,6 +3836,138 @@
       "notes": ""
     },
     {
+      "id": 327,
+      "form": "ki",
+      "syl_count": 1,
+      "meanings": [
+        "I"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st singular"
+    },
+    {
+      "id": 328,
+      "form": "kil",
+      "syl_count": 1,
+      "meanings": [
+        "we"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st plural"
+    },
+    {
+      "id": 330,
+      "form": "kilin",
+      "syl_count": 2,
+      "meanings": [
+        "us (ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st plural accusative"
+    },
+    {
+      "id": 332,
+      "form": "kilis",
+      "syl_count": 2,
+      "meanings": [
+        "our (GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st plural genitive"
+    },
+    {
+      "id": 329,
+      "form": "kin",
+      "syl_count": 1,
+      "meanings": [
+        "me (ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st singular accusative"
+    },
+    {
+      "id": 331,
+      "form": "kis",
+      "syl_count": 1,
+      "meanings": [
+        "my (GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 1st singular genitive"
+    },
+    {
       "id": 27,
       "form": "klang",
       "syl_count": 1,
@@ -3760,7 +3975,7 @@
         "cloth",
         "fabric"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -3787,7 +4002,7 @@
       "meanings": [
         "cold"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -3815,7 +4030,7 @@
         "stone",
         "rock"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -3842,7 +4057,7 @@
       "meanings": [
         "cut"
       ],
-      "category": "nv",
+      "derivation_mask": "NVAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -3860,7 +4075,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "bare root serves as both noun and verb"
+      "notes": ""
     },
     {
       "id": 303,
@@ -3869,7 +4084,7 @@
       "meanings": [
         "cutter (cutting tool)"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -3896,12 +4111,12 @@
     {
       "id": 220,
       "form": "kus",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "relativizer & complementizer (that",
         "which)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -3909,17 +4124,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "kus",
-        "adverb": "kus",
-        "noun": "kus",
-        "verb": "kus"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 268,
@@ -3928,7 +4138,7 @@
       "meanings": [
         "seven"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -3936,17 +4146,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "lai",
-        "adverb": "lai",
-        "noun": "lai",
-        "verb": "lai"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 239,
@@ -3956,7 +4161,7 @@
         "heal",
         "save"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -3983,7 +4188,7 @@
       "meanings": [
         "doctor / healer"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -4006,11 +4211,11 @@
     {
       "id": 137,
       "form": "les",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "equative particle (as)"
       ],
-      "category": "",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4018,9 +4223,7 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adverb": "true"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
@@ -4030,11 +4233,11 @@
     {
       "id": 214,
       "form": "li",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "conditional subordinator (if)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -4042,17 +4245,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "li",
-        "adverb": "li",
-        "noun": "li",
-        "verb": "li"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 148,
@@ -4061,7 +4259,7 @@
       "meanings": [
         "flood"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -4088,7 +4286,7 @@
       "meanings": [
         "air"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -4115,7 +4313,7 @@
       "meanings": [
         "fish"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -4142,7 +4340,7 @@
       "meanings": [
         "water"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -4169,7 +4367,7 @@
       "meanings": [
         "waterless"
       ],
-      "category": "na",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -4196,7 +4394,7 @@
       "meanings": [
         "waterfall"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -4223,7 +4421,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: lira + hup"
+      "notes": ""
     },
     {
       "id": 38,
@@ -4232,7 +4430,7 @@
       "meanings": [
         "lake"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -4260,7 +4458,7 @@
         "power",
         "strength"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -4288,7 +4486,7 @@
         "doctrine",
         "system of thought"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4311,7 +4509,7 @@
       "pattern": "doctrine",
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form isra for doctrine derivation"
+      "notes": ""
     },
     {
       "id": 228,
@@ -4320,7 +4518,7 @@
       "meanings": [
         "language"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -4348,7 +4546,7 @@
         "anger",
         "rage"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -4376,7 +4574,7 @@
         "joy",
         "happiness"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -4403,7 +4601,7 @@
       "meanings": [
         "light"
       ],
-      "category": "na",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -4421,7 +4619,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "adj derived from noun + -s"
+      "notes": ""
     },
     {
       "id": 23,
@@ -4430,7 +4628,7 @@
       "meanings": [
         "tree"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -4457,7 +4655,7 @@
       "meanings": [
         "wood"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -4489,7 +4687,7 @@
       "meanings": [
         "mom"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -4516,7 +4714,7 @@
       "meanings": [
         "body"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -4544,7 +4742,7 @@
         "person",
         "human"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -4572,7 +4770,7 @@
         "spirit",
         "soul"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4599,7 +4797,7 @@
       "meanings": [
         "eleven"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4607,17 +4805,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "mai",
-        "adverb": "mai",
-        "noun": "mai",
-        "verb": "mai"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 30,
@@ -4627,7 +4820,7 @@
         "knife",
         "blade"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -4654,7 +4847,7 @@
       "meanings": [
         "mother"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -4677,12 +4870,12 @@
     {
       "id": 140,
       "form": "mangus",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "restrictive (among",
         "among all)"
       ],
-      "category": "",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4690,9 +4883,7 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adverb": "true"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
@@ -4706,7 +4897,7 @@
       "meanings": [
         "cat"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -4733,7 +4924,7 @@
       "meanings": [
         "strong prohibition particle (pre-verbal)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -4741,17 +4932,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "maug",
-        "adverb": "maug",
-        "noun": "maug",
-        "verb": "maug"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; like Cantonese 咪"
+      "notes": ""
     },
     {
       "id": 154,
@@ -4760,7 +4946,7 @@
       "meanings": [
         "second"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -4787,7 +4973,7 @@
       "meanings": [
         "around"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -4805,7 +4991,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → meipone (around)"
+      "notes": ""
+    },
+    {
+      "id": 360,
+      "form": "meipone",
+      "syl_count": 2,
+      "meanings": [
+        "around"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 64,
@@ -4814,7 +5022,7 @@
       "meanings": [
         "most"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -4841,7 +5049,7 @@
       "meanings": [
         "few"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -4864,11 +5072,11 @@
     {
       "id": 206,
       "form": "mer",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "comitative particle (with)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -4876,17 +5084,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "mer",
-        "adverb": "mer",
-        "noun": "mer",
-        "verb": "mer"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 134,
@@ -4895,7 +5098,7 @@
       "meanings": [
         "be slight (intensity)"
       ],
-      "category": "v",
+      "derivation_mask": "D",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -4913,7 +5116,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "derived meres = \"a bit\" (intensity); distinct from pere (amount)"
+      "notes": ""
     },
     {
       "id": 205,
@@ -4922,7 +5125,7 @@
       "meanings": [
         "each other (reciprocal)"
       ],
-      "category": "av",
+      "derivation_mask": "D",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -4940,7 +5143,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "pre-verbal reciprocal adverb; open-class"
+      "notes": ""
     },
     {
       "id": 107,
@@ -4949,7 +5152,7 @@
       "meanings": [
         "name"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -4976,7 +5179,7 @@
       "meanings": [
         "death"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -5003,7 +5206,7 @@
       "meanings": [
         "let (permissive)"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -5021,7 +5224,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "causative: let someone do something"
+      "notes": ""
     },
     {
       "id": 48,
@@ -5031,7 +5234,7 @@
         "stand",
         "stay"
       ],
-      "category": "v",
+      "derivation_mask": "NVAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -5060,7 +5263,7 @@
         "force (使",
         "令)"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -5078,7 +5281,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "causative: make someone do something"
+      "notes": ""
     },
     {
       "id": 241,
@@ -5087,7 +5290,7 @@
       "meanings": [
         "music"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "J",
       "section_label": "Sensation",
       "is_root": true,
@@ -5114,7 +5317,7 @@
       "meanings": [
         "musician"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -5141,7 +5344,7 @@
       "meanings": [
         "musician (formal)"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -5172,7 +5375,7 @@
       "meanings": [
         "one"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -5180,17 +5383,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "mo",
-        "adverb": "mo",
-        "noun": "mo",
-        "verb": "mo"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 184,
@@ -5199,7 +5397,7 @@
       "meanings": [
         "want"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -5217,7 +5415,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "replaces rima"
+      "notes": ""
     },
     {
       "id": 59,
@@ -5226,7 +5424,7 @@
       "meanings": [
         "dark"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -5253,7 +5451,7 @@
       "meanings": [
         "darkness"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -5280,7 +5478,7 @@
       "meanings": [
         "negative answer (no)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -5288,17 +5486,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "na",
-        "adverb": "na",
-        "noun": "na",
-        "verb": "na"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class"
+      "notes": ""
     },
     {
       "id": 129,
@@ -5308,7 +5501,7 @@
         "clausal",
         "constituent negation"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -5316,17 +5509,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "nar",
-        "adverb": "nar",
-        "noun": "nar",
-        "verb": "nar"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class"
+      "notes": ""
     },
     {
       "id": 67,
@@ -5335,7 +5523,7 @@
       "meanings": [
         "none"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -5362,7 +5550,7 @@
       "pattern": "negation-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: nar + amin"
+      "notes": ""
     },
     {
       "id": 124,
@@ -5372,7 +5560,7 @@
         "without",
         "lack"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -5390,7 +5578,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form nara for derivational compounding; narau + noun = without X; noun + nara = X-less"
+      "notes": ""
     },
     {
       "id": 315,
@@ -5399,7 +5587,7 @@
       "meanings": [
         "without water"
       ],
-      "category": "na",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -5430,7 +5618,7 @@
       "meanings": [
         "never"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5457,7 +5645,29 @@
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
       "examples": [],
-      "notes": "compound: na + sakar; see 3-subsystems/temporals.md §I-C"
+      "notes": ""
+    },
+    {
+      "id": 345,
+      "form": "ni",
+      "syl_count": 1,
+      "meanings": [
+        "it (sg)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living singular"
     },
     {
       "id": 68,
@@ -5466,7 +5676,7 @@
       "meanings": [
         "new"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -5487,13 +5697,123 @@
       "notes": ""
     },
     {
+      "id": 346,
+      "form": "nil",
+      "syl_count": 1,
+      "meanings": [
+        "they (pl non-living)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living plural"
+    },
+    {
+      "id": 348,
+      "form": "nilin",
+      "syl_count": 2,
+      "meanings": [
+        "them (pl non-living ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living plural accusative"
+    },
+    {
+      "id": 350,
+      "form": "nilis",
+      "syl_count": 2,
+      "meanings": [
+        "their (pl non-living GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living plural genitive"
+    },
+    {
+      "id": 347,
+      "form": "nin",
+      "syl_count": 1,
+      "meanings": [
+        "it (sg ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living singular accusative"
+    },
+    {
+      "id": 349,
+      "form": "nis",
+      "syl_count": 1,
+      "meanings": [
+        "its (sg GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd non-living singular genitive"
+    },
+    {
       "id": 69,
       "form": "noba",
       "syl_count": 2,
       "meanings": [
         "old"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -5521,7 +5841,7 @@
         "void",
         "emptiness"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -5548,7 +5868,7 @@
       "meanings": [
         "north"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5575,7 +5895,7 @@
       "meanings": [
         "leaves"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -5602,7 +5922,7 @@
       "meanings": [
         "along"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5620,7 +5940,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → orane (along)"
+      "notes": ""
     },
     {
       "id": 95,
@@ -5629,7 +5949,7 @@
       "meanings": [
         "across"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5647,7 +5967,53 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → orakne (across)"
+      "notes": ""
+    },
+    {
+      "id": 359,
+      "form": "orane",
+      "syl_count": 2,
+      "meanings": [
+        "along"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
+    },
+    {
+      "id": 318,
+      "form": "orse",
+      "syl_count": 2,
+      "meanings": [
+        "also, too, as well"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {
+        "particle": "orse"
+      },
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "additive adverb: also, too, as well"
     },
     {
       "id": 176,
@@ -5656,7 +6022,7 @@
       "meanings": [
         "end"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5683,7 +6049,7 @@
       "meanings": [
         "out"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5701,7 +6067,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → oukne (outside)"
+      "notes": ""
+    },
+    {
+      "id": 352,
+      "form": "oukne",
+      "syl_count": 2,
+      "meanings": [
+        "outside"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 177,
@@ -5710,7 +6098,7 @@
       "meanings": [
         "end-of"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5728,7 +6116,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "etymology: oug + genitive -si; -s final whitelist exception"
+      "notes": ""
+    },
+    {
+      "id": 322,
+      "form": "owei",
+      "syl_count": 2,
+      "meanings": [
+        "When?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
     },
     {
       "id": 54,
@@ -5737,7 +6147,7 @@
       "meanings": [
         "small"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -5765,7 +6175,7 @@
         "later",
         "further ahead"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5788,7 +6198,7 @@
       "pattern": "temporal-distance",
       "rule_ref": "rules/3-subsystems/temporals.md §I-B",
       "examples": [],
-      "notes": "compound: pa + ma; see 3-subsystems/temporals.md §I-B"
+      "notes": ""
     },
     {
       "id": 285,
@@ -5797,7 +6207,7 @@
       "meanings": [
         "day after tomorrow"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5824,7 +6234,7 @@
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
       "examples": [],
-      "notes": "compound: pa + ma + roi; see 3-subsystems/temporals.md §I-A"
+      "notes": ""
     },
     {
       "id": 121,
@@ -5833,7 +6243,7 @@
       "meanings": [
         "result"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -5851,7 +6261,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form param for result derivation"
+      "notes": ""
     },
     {
       "id": 282,
@@ -5860,7 +6270,7 @@
       "meanings": [
         "tomorrow"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5883,7 +6293,7 @@
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
       "examples": [],
-      "notes": "compound: pa + roi; see 3-subsystems/temporals.md §I-A"
+      "notes": ""
     },
     {
       "id": 91,
@@ -5892,7 +6302,7 @@
       "meanings": [
         "front"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -5910,7 +6320,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → paune (in front of)"
+      "notes": ""
+    },
+    {
+      "id": 356,
+      "form": "paune",
+      "syl_count": 2,
+      "meanings": [
+        "in front of"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 34,
@@ -5920,7 +6352,7 @@
         "cup",
         "container"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -5947,7 +6379,7 @@
       "meanings": [
         "inclusive or (either or both)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -5955,17 +6387,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "pem",
-        "adverb": "pem",
-        "noun": "pem",
-        "verb": "pem"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 196,
@@ -5974,7 +6401,7 @@
       "meanings": [
         "nor (neither...nor)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -5982,17 +6409,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "pemna",
-        "adverb": "pemna",
-        "noun": "pemna",
-        "verb": "pemna"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 135,
@@ -6001,7 +6423,7 @@
       "meanings": [
         "small amount"
       ],
-      "category": "n",
+      "derivation_mask": "D",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -6019,7 +6441,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "derived peres = \"little (amount)\"; distinct from mere (intensity)"
+      "notes": ""
     },
     {
       "id": 18,
@@ -6028,7 +6450,7 @@
       "meanings": [
         "blood"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -6056,7 +6478,7 @@
         "earlier",
         "further back"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6079,7 +6501,7 @@
       "pattern": "temporal-distance",
       "rule_ref": "rules/3-subsystems/temporals.md §I-B",
       "examples": [],
-      "notes": "compound: pi + ma; see 3-subsystems/temporals.md §I-B"
+      "notes": ""
     },
     {
       "id": 284,
@@ -6088,7 +6510,7 @@
       "meanings": [
         "day before yesterday"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6115,7 +6537,7 @@
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
       "examples": [],
-      "notes": "compound: pi + ma + roi; see 3-subsystems/temporals.md §I-A"
+      "notes": ""
     },
     {
       "id": 118,
@@ -6125,7 +6547,7 @@
         "property",
         "quality"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -6143,7 +6565,7 @@
       "pattern": "property",
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form lu for abstract property derivation"
+      "notes": ""
     },
     {
       "id": 281,
@@ -6152,7 +6574,7 @@
       "meanings": [
         "yesterday"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6175,16 +6597,16 @@
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
       "examples": [],
-      "notes": "compound: pi + roi; see 3-subsystems/temporals.md §I-A"
+      "notes": ""
     },
     {
       "id": 211,
       "form": "po",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "exclusive or (either but not both)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -6192,17 +6614,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "po",
-        "adverb": "po",
-        "noun": "po",
-        "verb": "po"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 195,
@@ -6211,7 +6628,7 @@
       "meanings": [
         "xnor (both or neither)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -6219,17 +6636,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "pona",
-        "adverb": "pona",
-        "noun": "pona",
-        "verb": "pona"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 86,
@@ -6239,7 +6651,7 @@
         "place",
         "location"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6266,7 +6678,7 @@
       "meanings": [
         "slow"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -6293,7 +6705,7 @@
       "meanings": [
         "thirteen"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -6301,17 +6713,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "rai",
-        "adverb": "rai",
-        "noun": "rai",
-        "verb": "rai"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 279,
@@ -6320,7 +6727,7 @@
       "meanings": [
         "trillion"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -6328,17 +6735,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "rakas",
-        "adverb": "rakas",
-        "noun": "rakas",
-        "verb": "rakas"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class scale marker; -s exempt"
+      "notes": ""
     },
     {
       "id": 53,
@@ -6348,7 +6750,7 @@
         "big",
         "large"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -6375,7 +6777,7 @@
       "meanings": [
         "size"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -6403,7 +6805,7 @@
         "top",
         "peak"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6421,7 +6823,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → rapne (above); see 3-subsystems/spatials.md"
+      "notes": ""
+    },
+    {
+      "id": 354,
+      "form": "rapne",
+      "syl_count": 2,
+      "meanings": [
+        "above"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 127,
@@ -6431,7 +6855,7 @@
         "copula - identity",
         "attribution"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -6439,17 +6863,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "res",
-        "adverb": "res",
-        "noun": "res",
-        "verb": "res"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class"
+      "notes": ""
     },
     {
       "id": 40,
@@ -6458,7 +6877,7 @@
       "meanings": [
         "drink"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -6485,7 +6904,7 @@
       "meanings": [
         "mouth"
       ],
-      "category": "nv",
+      "derivation_mask": "NV",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -6503,7 +6922,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "verb use = speak/say"
+      "notes": ""
     },
     {
       "id": 119,
@@ -6513,7 +6932,7 @@
         "measure",
         "measurement"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -6531,7 +6950,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form rin for scalar degree derivation"
+      "notes": ""
     },
     {
       "id": 264,
@@ -6540,7 +6959,7 @@
       "meanings": [
         "three"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -6548,17 +6967,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "ro",
-        "adverb": "ro",
-        "noun": "ro",
-        "verb": "ro"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 78,
@@ -6567,7 +6981,7 @@
       "meanings": [
         "day"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6594,7 +7008,7 @@
       "meanings": [
         "night"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6621,7 +7035,7 @@
       "meanings": [
         "good night"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -6648,7 +7062,7 @@
       "pattern": "temporal-greeting",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: rok + gor"
+      "notes": ""
     },
     {
       "id": 62,
@@ -6658,7 +7072,7 @@
         "lot",
         "many"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -6685,7 +7099,7 @@
       "meanings": [
         "excess"
       ],
-      "category": "nv",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -6712,7 +7126,7 @@
       "meanings": [
         "year"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6739,7 +7153,7 @@
       "meanings": [
         "sun"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -6766,7 +7180,7 @@
       "meanings": [
         "sunlight"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -6793,7 +7207,7 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: rora + lumi"
+      "notes": ""
     },
     {
       "id": 233,
@@ -6802,7 +7216,7 @@
       "meanings": [
         "sunrise"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -6830,7 +7244,7 @@
         "room",
         "chamber"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -6858,7 +7272,7 @@
         "occurrence",
         "frequency"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6876,7 +7290,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combines with esa/slote/na"
+      "notes": ""
     },
     {
       "id": 99,
@@ -6885,7 +7299,7 @@
       "meanings": [
         "late"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -6903,7 +7317,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "bare root (simplified from pusar+tlow)"
+      "notes": ""
     },
     {
       "id": 191,
@@ -6912,7 +7326,7 @@
       "meanings": [
         "good afternoon"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -6943,7 +7357,7 @@
       "pattern": "temporal-greeting",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: sar + roi + gor"
+      "notes": ""
     },
     {
       "id": 35,
@@ -6953,7 +7367,7 @@
         "path",
         "road"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -6980,7 +7394,7 @@
       "meanings": [
         "can"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7009,7 +7423,7 @@
         "perhaps",
         "could be"
       ],
-      "category": "av",
+      "derivation_mask": "D",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7032,7 +7446,7 @@
       "pattern": "epistemic-modal",
       "rule_ref": null,
       "examples": [],
-      "notes": "epistemic modal; pre-verbal adverb slot"
+      "notes": ""
     },
     {
       "id": 204,
@@ -7041,7 +7455,7 @@
       "meanings": [
         "self (reflexive)"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -7059,7 +7473,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "reflexive pronoun; follows personal pronoun; open-class"
+      "notes": ""
     },
     {
       "id": 144,
@@ -7068,7 +7482,7 @@
       "meanings": [
         "river"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -7095,7 +7509,7 @@
       "meanings": [
         "soon"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7113,7 +7527,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "bare root (simplified from shuk+tlow)"
+      "notes": ""
     },
     {
       "id": 60,
@@ -7123,7 +7537,7 @@
         "fast",
         "quick"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -7141,7 +7555,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)"
+      "notes": ""
     },
     {
       "id": 308,
@@ -7150,7 +7564,7 @@
       "meanings": [
         "speed"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -7177,7 +7591,7 @@
       "meanings": [
         "should"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7198,6 +7612,116 @@
       "notes": ""
     },
     {
+      "id": 339,
+      "form": "si",
+      "syl_count": 1,
+      "meanings": [
+        "he/she/they (sg)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living singular"
+    },
+    {
+      "id": 340,
+      "form": "sil",
+      "syl_count": 1,
+      "meanings": [
+        "they (pl living)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living plural"
+    },
+    {
+      "id": 342,
+      "form": "silin",
+      "syl_count": 2,
+      "meanings": [
+        "them (pl living ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living plural accusative"
+    },
+    {
+      "id": 344,
+      "form": "silis",
+      "syl_count": 2,
+      "meanings": [
+        "their (pl living GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living plural genitive"
+    },
+    {
+      "id": 341,
+      "form": "sin",
+      "syl_count": 1,
+      "meanings": [
+        "him/her/them (sg ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living singular accusative"
+    },
+    {
       "id": 116,
       "form": "sinkoi",
       "syl_count": 2,
@@ -7205,7 +7729,7 @@
         "alone",
         "solitude"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -7232,7 +7756,7 @@
       "meanings": [
         "south"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7253,6 +7777,28 @@
       "notes": ""
     },
     {
+      "id": 343,
+      "form": "sis",
+      "syl_count": 1,
+      "meanings": [
+        "his/her/their (sg GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 3rd living singular genitive"
+    },
+    {
       "id": 28,
       "form": "slato",
       "syl_count": 2,
@@ -7260,7 +7806,7 @@
         "house",
         "dwelling"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -7287,7 +7833,7 @@
       "meanings": [
         "six"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -7295,17 +7841,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "slo",
-        "adverb": "slo",
-        "noun": "slo",
-        "verb": "slo"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 289,
@@ -7314,7 +7855,7 @@
       "meanings": [
         "sometimes"
       ],
-      "category": "av",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7341,7 +7882,7 @@
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
       "examples": [],
-      "notes": "compound: slote + sakar; see 3-subsystems/temporals.md §I-C"
+      "notes": ""
     },
     {
       "id": 106,
@@ -7350,7 +7891,7 @@
       "meanings": [
         "some"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7368,7 +7909,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combines into slosaka (sometimes)"
+      "notes": ""
     },
     {
       "id": 24,
@@ -7377,7 +7918,7 @@
       "meanings": [
         "flower"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -7404,7 +7945,7 @@
       "meanings": [
         "star"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -7431,7 +7972,7 @@
       "meanings": [
         "need"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7458,7 +7999,7 @@
       "meanings": [
         "friend"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7486,7 +8027,7 @@
         "watch",
         "look"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -7513,7 +8054,7 @@
       "meanings": [
         "suggestion particle (sentence-final)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -7521,17 +8062,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "sor",
-        "adverb": "sor",
-        "noun": "sor",
-        "verb": "sor"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt; like Cantonese 啦"
+      "notes": ""
     },
     {
       "id": 45,
@@ -7540,7 +8076,7 @@
       "meanings": [
         "give"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -7563,12 +8099,12 @@
     {
       "id": 207,
       "form": "sy",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "instrumental & passive particle (by",
         "with)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -7576,17 +8112,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "sy",
-        "adverb": "sy",
-        "noun": "sy",
-        "verb": "sy"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 11,
@@ -7596,7 +8127,7 @@
         "smoke",
         "mist"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -7623,7 +8154,7 @@
       "meanings": [
         "five"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -7631,17 +8162,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "tai",
-        "adverb": "tai",
-        "noun": "tai",
-        "verb": "tai"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 39,
@@ -7650,7 +8176,7 @@
       "meanings": [
         "eat"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -7677,7 +8203,7 @@
       "meanings": [
         "eater"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -7704,7 +8230,7 @@
       "meanings": [
         "drink"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -7731,7 +8257,7 @@
       "meanings": [
         "dusk"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7758,7 +8284,7 @@
       "meanings": [
         "good evening"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "H",
       "section_label": "Social & Relational",
       "is_root": true,
@@ -7785,7 +8311,7 @@
       "pattern": "temporal-greeting",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: tar + gor"
+      "notes": ""
     },
     {
       "id": 157,
@@ -7794,7 +8320,7 @@
       "meanings": [
         "week"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7821,7 +8347,7 @@
       "meanings": [
         "weekend"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -7848,7 +8374,7 @@
       "pattern": "temporal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: taroi (week) + ous (end-of)"
+      "notes": ""
     },
     {
       "id": 132,
@@ -7857,7 +8383,7 @@
       "meanings": [
         "dative particle (to) & spatial root (towards)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -7865,17 +8391,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "te",
-        "adverb": "te",
-        "noun": "te",
-        "verb": "te"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; also open-class spatial root; -ne → tene (towards); see 3-subsystems/spatials.md §IV-C"
+      "notes": ""
     },
     {
       "id": 31,
@@ -7884,7 +8405,7 @@
       "meanings": [
         "tool"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -7902,7 +8423,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form for instrument derivation"
+      "notes": ""
+    },
+    {
+      "id": 358,
+      "form": "tene",
+      "syl_count": 2,
+      "meanings": [
+        "towards"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
     },
     {
       "id": 47,
@@ -7912,7 +8455,7 @@
         "make",
         "create"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -7939,7 +8482,7 @@
       "meanings": [
         "crafter / maker"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -7966,7 +8509,7 @@
       "meanings": [
         "creation (act of creating)"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -7993,7 +8536,7 @@
       "meanings": [
         "creation tool"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -8025,7 +8568,7 @@
         "there",
         "that"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8043,7 +8586,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md"
+      "notes": ""
     },
     {
       "id": 46,
@@ -8053,7 +8596,7 @@
         "take",
         "get"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -8080,7 +8623,7 @@
       "meanings": [
         "sleep"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -8107,7 +8650,7 @@
       "meanings": [
         "bedroom"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "C",
       "section_label": "Physical Objects",
       "is_root": true,
@@ -8134,7 +8677,7 @@
       "pattern": "location-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: thep + rusome"
+      "notes": ""
     },
     {
       "id": 84,
@@ -8144,7 +8687,7 @@
         "here",
         "this"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8162,7 +8705,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md"
+      "notes": ""
     },
     {
       "id": 238,
@@ -8171,7 +8714,7 @@
       "meanings": [
         "swim"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -8198,7 +8741,7 @@
       "meanings": [
         "think"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -8219,13 +8762,57 @@
       "notes": ""
     },
     {
+      "id": 333,
+      "form": "ti",
+      "syl_count": 1,
+      "meanings": [
+        "you (sg)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd singular"
+    },
+    {
+      "id": 334,
+      "form": "til",
+      "syl_count": 1,
+      "meanings": [
+        "you (pl)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd plural"
+    },
+    {
       "id": 16,
       "form": "tilda",
       "syl_count": 2,
       "meanings": [
         "ear"
       ],
-      "category": "nv",
+      "derivation_mask": "NV",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -8243,7 +8830,51 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "verb use = hear"
+      "notes": ""
+    },
+    {
+      "id": 336,
+      "form": "tilin",
+      "syl_count": 2,
+      "meanings": [
+        "you (pl ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd plural accusative"
+    },
+    {
+      "id": 338,
+      "form": "tilis",
+      "syl_count": 2,
+      "meanings": [
+        "your (pl GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd plural genitive"
     },
     {
       "id": 83,
@@ -8252,7 +8883,7 @@
       "meanings": [
         "after"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8270,16 +8901,16 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form pa in day compounds"
+      "notes": ""
     },
     {
       "id": 209,
       "form": "tilpe",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "locative-relational particle (between)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -8287,17 +8918,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "tilpe",
-        "adverb": "tilpe",
-        "noun": "tilpe",
-        "verb": "tilpe"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 82,
@@ -8306,7 +8932,7 @@
       "meanings": [
         "before"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8324,7 +8950,29 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form pi in day compounds"
+      "notes": ""
+    },
+    {
+      "id": 335,
+      "form": "tin",
+      "syl_count": 1,
+      "meanings": [
+        "you (sg ACC)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd singular accusative"
     },
     {
       "id": 10,
@@ -8333,7 +8981,7 @@
       "meanings": [
         "sky"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -8354,13 +9002,35 @@
       "notes": ""
     },
     {
+      "id": 337,
+      "form": "tis",
+      "syl_count": 1,
+      "meanings": [
+        "your (sg GEN)"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "personal pronoun, 2nd singular genitive"
+    },
+    {
       "id": 156,
       "form": "tlaur",
       "syl_count": 1,
       "meanings": [
         "hour"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8387,7 +9057,7 @@
       "meanings": [
         "30min"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8414,7 +9084,7 @@
       "meanings": [
         "wait"
       ],
-      "category": "v",
+      "derivation_mask": "VAD",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -8441,7 +9111,7 @@
       "meanings": [
         "time"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8459,16 +9129,16 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "combining form tow in temporal compounds"
+      "notes": ""
     },
     {
       "id": 136,
       "form": "tor",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "comparative particle (than)"
       ],
-      "category": "",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -8476,9 +9146,7 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adverb": "true"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
@@ -8488,11 +9156,11 @@
     {
       "id": 138,
       "form": "torra",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "superlative particle (most)"
       ],
-      "category": "",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -8500,9 +9168,7 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adverb": "true"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
@@ -8512,12 +9178,12 @@
     {
       "id": 213,
       "form": "tu",
-      "syl_count": 1,
+      "syl_count": 0,
       "meanings": [
         "temporal subordinator (when",
         "while)"
       ],
-      "category": "v",
+      "derivation_mask": "",
       "section": "-",
       "section_label": "Other",
       "is_root": true,
@@ -8525,17 +9191,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "tu",
-        "adverb": "tu",
-        "noun": "tu",
-        "verb": "tu"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class; toneless; -s exempt"
+      "notes": ""
     },
     {
       "id": 278,
@@ -8544,7 +9205,7 @@
       "meanings": [
         "billion"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -8552,17 +9213,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "tus",
-        "adverb": "tus",
-        "noun": "tus",
-        "verb": "tus"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class scale marker; -s exempt"
+      "notes": ""
     },
     {
       "id": 89,
@@ -8571,7 +9227,7 @@
       "meanings": [
         "under"
       ],
-      "category": "n",
+      "derivation_mask": "NAD",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8589,7 +9245,51 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "spatial root; -ne → umne (under)"
+      "notes": ""
+    },
+    {
+      "id": 353,
+      "form": "umne",
+      "syl_count": 2,
+      "meanings": [
+        "under"
+      ],
+      "derivation_mask": "",
+      "section": "G",
+      "section_label": "Time & Space",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "spatial postposition (-ne suffix)"
+    },
+    {
+      "id": 323,
+      "form": "uwei",
+      "syl_count": 2,
+      "meanings": [
+        "How?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
     },
     {
       "id": 232,
@@ -8598,7 +9298,7 @@
       "meanings": [
         "forest"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -8630,7 +9330,7 @@
       "meanings": [
         "fear"
       ],
-      "category": "n",
+      "derivation_mask": "NVAD",
       "section": "F",
       "section_label": "Mind & Emotion",
       "is_root": true,
@@ -8657,7 +9357,7 @@
       "meanings": [
         "intensify"
       ],
-      "category": "v",
+      "derivation_mask": "D",
       "section": "D",
       "section_label": "Actions & Motion",
       "is_root": true,
@@ -8675,7 +9375,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "derived adverb wes = \"very\""
+      "notes": ""
     },
     {
       "id": 55,
@@ -8684,7 +9384,7 @@
       "meanings": [
         "warm"
       ],
-      "category": "a",
+      "derivation_mask": "AD",
       "section": "E",
       "section_label": "Qualities & States",
       "is_root": true,
@@ -8711,7 +9411,7 @@
       "meanings": [
         "warmth"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "I",
       "section_label": "Abstract",
       "is_root": false,
@@ -8734,11 +9434,11 @@
     {
       "id": 139,
       "form": "wetor",
-      "syl_count": 2,
+      "syl_count": 0,
       "meanings": [
         "intensified comparative (much more than)"
       ],
-      "category": "",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -8746,9 +9446,7 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adverb": "true"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
@@ -8762,7 +9460,7 @@
       "meanings": [
         "eye"
       ],
-      "category": "nv",
+      "derivation_mask": "NV",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -8780,7 +9478,7 @@
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "verb use = see"
+      "notes": ""
     },
     {
       "id": 126,
@@ -8790,7 +9488,7 @@
         "colour",
         "hue"
       ],
-      "category": "n",
+      "derivation_mask": "NVA",
       "section": "J",
       "section_label": "Sensation",
       "is_root": true,
@@ -8817,7 +9515,7 @@
       "meanings": [
         "ocean"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -8844,7 +9542,7 @@
       "meanings": [
         "sea"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -8871,7 +9569,7 @@
       "meanings": [
         "dog"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "B",
       "section_label": "Living Things",
       "is_root": true,
@@ -8898,7 +9596,7 @@
       "meanings": [
         "nine"
       ],
-      "category": "n",
+      "derivation_mask": "",
       "section": "I",
       "section_label": "Abstract",
       "is_root": true,
@@ -8906,17 +9604,12 @@
       "compound_type": null,
       "is_function_word": true,
       "consensus_prefix": "o-",
-      "inflections": {
-        "adjective": "wy",
-        "adverb": "wy",
-        "noun": "wy",
-        "verb": "wy"
-      },
+      "inflections": {},
       "components": [],
       "pattern": null,
       "rule_ref": null,
       "examples": [],
-      "notes": "closed-class numeral"
+      "notes": ""
     },
     {
       "id": 159,
@@ -8925,7 +9618,7 @@
       "meanings": [
         "month"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "G",
       "section_label": "Time & Space",
       "is_root": true,
@@ -8952,7 +9645,7 @@
       "meanings": [
         "moon"
       ],
-      "category": "n",
+      "derivation_mask": "NA",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -8979,7 +9672,7 @@
       "meanings": [
         "moonlight"
       ],
-      "category": "n",
+      "derivation_mask": "N",
       "section": "A",
       "section_label": "Worlds & Elements",
       "is_root": true,
@@ -9006,7 +9699,29 @@
       "pattern": "nominal-compound",
       "rule_ref": null,
       "examples": [],
-      "notes": "compound: yre + lumi"
+      "notes": ""
+    },
+    {
+      "id": 324,
+      "form": "ywei",
+      "syl_count": 2,
+      "meanings": [
+        "Why?"
+      ],
+      "derivation_mask": "",
+      "section": "I",
+      "section_label": "Abstract",
+      "is_root": true,
+      "is_compound": false,
+      "compound_type": null,
+      "is_function_word": true,
+      "consensus_prefix": "o-",
+      "inflections": {},
+      "components": [],
+      "pattern": null,
+      "rule_ref": null,
+      "examples": [],
+      "notes": "question word"
     }
   ]
 }

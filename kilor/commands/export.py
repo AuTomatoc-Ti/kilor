@@ -3,6 +3,8 @@
 import csv
 import json
 import os
+import re
+import subprocess
 from datetime import datetime
 
 from ..db import get_db, rebuild_fts
@@ -97,29 +99,91 @@ def _export_json(conn):
 
 
 def _export_html(conn):
-    """Export the searchable dictionary SPA + its data file.
+    """Export a self-contained searchable dictionary SPA.
 
-    First generates dictionary-data.json, then writes the SPA template
-    which loads it at runtime.
+    Generates dictionary-data.json, runs Vite build, and inlines
+    all assets + data so the dictionary works from file:// URLs.
     """
-    # Generate data first
-    _export_dictionary_data(conn)
-
-    # Write the SPA template
-    html_path = os.path.join(SCRIPT_DIR, "data", "dictionary.html")
-    template_path = os.path.join(
-        SCRIPT_DIR, "kilor", "dictionary", "templates", "index.html"
+    # Build React app with Vite
+    dict_dir = os.path.join(SCRIPT_DIR, "kilor", "dictionary")
+    dist_dir = os.path.join(dict_dir, "dist")
+    print("Building React app with Vite...")
+    result = subprocess.run(
+        ["npm", "run", "build"],
+        cwd=SCRIPT_DIR,
+        capture_output=True,
+        text=True,
     )
-
-    if os.path.exists(template_path):
-        with open(template_path, "r", encoding="utf-8") as f:
-            html_content = f.read()
-    else:
+    if result.returncode != 0:
+        print("WARNING: npm run build failed — falling back to legacy template.")
+        print("stderr:", result.stderr[:500])
         html_content = _get_inline_html()
+    else:
+        static_html_path = os.path.join(dist_dir, "index.html")
+        if os.path.exists(static_html_path):
+            with open(static_html_path, "r", encoding="utf-8") as f:
+                html_content = f.read()
+            # Inline assets from the dist directory
+            assets_dir = os.path.join(dist_dir, "assets")
+            html_content = _inline_assets(html_content, assets_dir)
+        else:
+            print("WARNING: Vite dist/index.html not found — using fallback.")
+            html_content = _get_inline_html()
 
+    # Base64-encode kilor.db and sql-wasm.wasm for truly self-contained HTML
+    import base64
+    db_path = os.path.join(SCRIPT_DIR, "data", "kilor.db")
+    with open(db_path, "rb") as bf:
+        db_b64 = base64.b64encode(bf.read()).decode("ascii")
+    print(f"Encoded kilor.db: {len(db_b64)} base64 chars")
+
+    wasm_path = os.path.join(dict_dir, "public", "sql-wasm.wasm")
+    with open(wasm_path, "rb") as wf:
+        wasm_b64 = base64.b64encode(wf.read()).decode("ascii")
+    print(f"Encoded wasm: {len(wasm_b64)} base64 chars")
+
+    inline = (
+        '<script>window.__SQL_WASM_B64__="' + wasm_b64 + '";'
+        'window.__KILOR_DB_B64__="' + db_b64 + '";</script>'
+    )
+    html_content = html_content.replace("<!-- DATA_PLACEHOLDER -->", inline)
+
+    # Write self-contained output
+    html_path = os.path.join(SCRIPT_DIR, "data", "dictionary.html")
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    print(f"Exported searchable dictionary to {html_path}")
+    print(f"Exported self-contained dictionary to {html_path}")
+
+
+def _inline_assets(html, assets_dir):
+    """Inline CSS and JS assets referenced in HTML. Returns modified HTML."""
+    # Inline CSS: find <link rel="stylesheet" ... href="/assets/name.css">
+    css_pattern = re.compile(
+        r'<link\s+rel="stylesheet"\s+crossorigin\s+href="([^"]+)"\s*/?>'
+    )
+    for m in css_pattern.finditer(html):
+        url = m.group(1)
+        filename = os.path.basename(url)
+        css_path = os.path.join(assets_dir, filename)
+        if os.path.exists(css_path):
+            with open(css_path, "r", encoding="utf-8") as f:
+                css_content = f.read()
+            html = html.replace(m.group(0), '<style>\n' + css_content + '\n</style>')
+
+    # Inline JS: find <script type="module" crossorigin src="/assets/name.js"></script>
+    js_pattern = re.compile(
+        r'<script\s+type="module"\s+crossorigin\s+src="([^"]+)"\s*></script>'
+    )
+    for m in js_pattern.finditer(html):
+        url = m.group(1)
+        filename = os.path.basename(url)
+        js_path = os.path.join(assets_dir, filename)
+        if os.path.exists(js_path):
+            with open(js_path, "r", encoding="utf-8") as f:
+                js_content = f.read()
+            html = html.replace(m.group(0), '<script type="module">\n' + js_content + '\n</script>')
+
+    return html
 
 
 def _get_inline_html():
@@ -235,21 +299,29 @@ header p { font-size: .85rem; opacity: .7; }
   <div class="no-results"><div class="icon">📖</div><p>Loading dictionary data...</p></div>
 </div>
 
+<!-- DATA_PLACEHOLDER -->
+
 <script>
 let allEntries = [];
-let sectionOrder = ['A','B','C','D','E','F','G','H','I','J','-'];
-async function loadDictionary() {
+let currentView = 'table';
+let sortCol = 'form';
+let sortDir = 'asc';
+
+function loadDictionary() {
   try {
-    const resp = await fetch('dictionary-data.json');
-    const data = await resp.json();
+    var data = window.__DICT_DATA__;
+    if (!data) {
+      document.getElementById('entry-container').innerHTML = '<div class="no-results"><div class="icon">⚠️</div><p>No data found. Run: <code>python kilor.py export --format html</code></p></div>';
+      return;
+    }
     allEntries = data.entries;
     document.getElementById('header-info').textContent = data.meta.total_words + ' words · exported ' + data.meta.exported_at;
     render();
   } catch (err) {
-    document.getElementById('entry-container').innerHTML = '<div class="no-results"><div class="icon">⚠️</div><p>Could not load dictionary data. Run: <code>python kilor.py export --format dictionary</code></p></div>';
-    document.getElementById('header-info').textContent = 'Data unavailable';
+    document.getElementById('entry-container').innerHTML = '<div class="no-results"><div class="icon">⚠️</div><p>Error: ' + err.message + '</p></div>';
   }
 }
+
 function getFilteredEntries() {
   const st = document.getElementById('search').value.toLowerCase().trim();
   const sf = document.getElementById('filter-section').value;
@@ -278,6 +350,7 @@ function render() {
   const sectionActive = !!document.getElementById('filter-section').value;
   if (searchActive && !sectionActive) { container.innerHTML = filtered.map(e => entryHTML(e)).join(''); return; }
   const grouped = {};
+  const sectionOrder = ['A','B','C','D','E','F','G','H','I','J','-'];
   for (const sec of sectionOrder) grouped[sec] = [];
   for (const e of filtered) { const sec = e.section || '-'; if (!grouped[sec]) grouped[sec] = []; grouped[sec].push(e); }
   let html = '';
@@ -339,7 +412,6 @@ def _export_dictionary_data(conn):
 
     entries = []
     for w in words:
-        # Meanings
         meanings = [
             m["gloss"]
             for m in conn.execute(
@@ -348,14 +420,12 @@ def _export_dictionary_data(conn):
             ).fetchall()
         ]
 
-        # Inflections
         inflections = {}
         for row in conn.execute(
             "SELECT form_type, form FROM inflections WHERE word_id = ?", (w["id"],)
         ).fetchall():
             inflections[row["form_type"]] = row["form"]
 
-        # Compound components
         components = []
         if w["is_compound"]:
             comps = conn.execute(
@@ -367,13 +437,11 @@ def _export_dictionary_data(conn):
             ).fetchall()
             components = [{"form": c["form"], "id": c["id"]} for c in comps]
 
-        # Compound meta
         meta = conn.execute(
             "SELECT pattern, rule_ref FROM compound_meta WHERE compound_id = ?",
             (w["id"],),
         ).fetchone()
 
-        # Examples
         examples = []
         for row in conn.execute(
             "SELECT kilor_text, english_text, source FROM examples WHERE word_id = ?",
@@ -425,8 +493,6 @@ def _export_dictionary_data(conn):
 def cmd_export(fmt="json"):
     """Export the lexicon to the specified format."""
     conn = get_db()
-
-    # Rebuild FTS to keep in sync
     rebuild_fts(conn)
 
     if fmt == "csv":

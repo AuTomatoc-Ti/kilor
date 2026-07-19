@@ -22,9 +22,7 @@ python kilor.py export --format html    # Generate searchable dictionary
 | `AI-GUIDE.md` | **AI agent guide** — how to add roots, compounds, and examples programmatically or via CLI | Manual |
 | `SCHEMA.md` | Human-readable schema reference (tables, columns, relationships, common queries) | Manual (mirrors `kilor.db`) |
 | `schema.json` | Machine-parseable schema definition | Manual (mirrors `kilor.db`) |
-| `lexicon.csv` | Legacy root database (migration source only) | No longer updated |
-| `compounds.json` | Legacy compound dictionary (migration source only) | No longer updated |
-
+| `archive/` | **Archived legacy files** (`lexicon.csv`, `compounds.json`) — kept for historical reference only. Do not edit or rely on these. | N/A |
 ## For AI Agents
 
 ### Getting Started
@@ -53,7 +51,7 @@ conn = get_db()
 ## Data Flow
 
 ```
-lexicon.csv + compounds.json  (legacy)
+data/archive/lexicon.csv + compounds.json  (legacy / archived)
         │
         ▼
   kilor.py migrate ──→ kilor.db (SSOT) ←── kilor.py add
@@ -81,10 +79,10 @@ lexicon.csv + compounds.json  (legacy)
 - Compound component links, pattern, and rule references
 - Usage examples
 
-### `lexicon.csv` and `compounds.json` (legacy):
-- Retained for backward compatibility and migration
+### `archive/lexicon.csv` and `archive/compounds.json` (legacy):
+- Moved to `data/archive/` for historical reference
 - **Not** the SSOT — do not add new entries to these files
-
+- If you need to rebuild `kilor.db` from scratch, run `python kilor.py migrate` (it reads from `data/archive/`)
 ## Updating the Lexicon
 
 - **Adding a new word:** `python kilor.py add --file today.md`
@@ -96,12 +94,13 @@ lexicon.csv + compounds.json  (legacy)
 
 ## Migration from Legacy Files
 
+If you ever need to rebuild `kilor.db` from scratch (the archived legacy files in `data/archive/`):
+
 ```bash
 rm data/kilor.db        # Delete existing database
-python kilor.py migrate # Rebuild from legacy CSV + JSON
+python kilor.py migrate # Rebuild from legacy CSV + JSON in data/archive/
 python kilor.py export --format html  # Regenerate dictionary
 ```
-
 ---
 
-*Last updated: 2026-07-13*
+*Last updated: 2026-07-19*

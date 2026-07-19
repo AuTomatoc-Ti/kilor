@@ -9,8 +9,8 @@ from .. import phonology as ph
 from ..db import get_db, DB_PATH, _rebuild_fts
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CSV_PATH = os.path.join(SCRIPT_DIR, "data", "lexicon.csv")
-COMPOUNDS_PATH = os.path.join(SCRIPT_DIR, "data", "compounds.json")
+CSV_PATH = os.path.join(SCRIPT_DIR, "data", "archive", "lexicon.csv")
+COMPOUNDS_PATH = os.path.join(SCRIPT_DIR, "data", "archive", "compounds.json")
 
 
 def load_legacy_csv():

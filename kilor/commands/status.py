@@ -88,7 +88,7 @@ def cmd_status():
         (3, 3000, 10500, "Phase 3 — Intermediate"),
         (4, 4500, 15750, "Phase 4 — Advanced"),
         (5, 6000, 21000, "Phase 5 — Proficient"),
-        (6, 8600, 30100, "Phase 6 — Near-Native / Literary"),
+        (6, 8600, 30100, "Phase 6 — Native / Literary"),
     ]
     for phase, root_target, word_target, label in targets:
         root_pct = content_total / root_target * 100

@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 2.2.0
+**Last updated:** 2026-07-13
+**Version:** 2.2.1
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`
 
 ---
@@ -249,7 +249,7 @@ Kilor distinguishes two forms of compounding:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`, `orse`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
 Note: `hei` (vocative, `3-subsystems/imperatives.md`) and `shen` (reflexive, `2-predication/subordination.md` §VII) are open-class content roots, subject to `-s` derivation and not in the closed-class exemption list.
 
@@ -309,6 +309,45 @@ This is a closed-class morphological process that applies **only** to pronouns. 
 ## VII. No Possessive Suffixes
 
 Kilor has **no dedicated agglutinative possessive suffix**. Possession is expressed exclusively through the **Genitive case** suffix (`-si`/`-sa`). See `1-nominals/cases.md` for full details.
+
+---
+## VIII. Additive Adverb — `orse` (also/too/as well)
+
+`orse` is a **pre-verbal additive adverb** meaning "also, too, as well". It sits between the object and the verb in the `[Manner Adv]` slot of the clause template (§I-E).
+
+### A. Position and Scope
+
+| Scope target | Pattern | Example |
+|:---|:---|:---|
+| Subject | `Subject — orse — Object — Verb` | `ki orse bau taka.` — "I also eat bread." (I, in addition to others) |
+| Object | `Subject — Object — orse — Verb` | `ki bau orse taka.` — "I eat bread also." (bread, in addition to other foods) |
+| Verb | `Subject — Object — orse — Verb` | Ambiguous with object scope; resolved by context |
+
+When scoping over the **subject**, `orse` immediately follows the subject noun phrase (before the object). When scoping over the **object** or **verb**, `orse` follows the object and precedes the verb — context disambiguates which is in focus.
+
+### B. Examples
+
+> `ki orse fei sew.` — "I can also fly."
+>
+> `ti orse shuks sounar.` — "You also quickly go."
+>
+> `a-fora hawuni orse taka.` — "The fire also eats the animal."
+>
+> `sil orse kil mer song sounar.` — "They also go with us."
+
+### C. Negation
+
+`orse` precedes `nar`:
+
+> `ki orse bau taka nar.` — "I also do not eat bread."
+>
+> `ki bau orse taka nar.` — "I also don't eat bread."
+
+### D. Stacking with other adverbs
+
+`orse` may co-occur with manner adverbs. The fixed order is: `Object — orse — [Manner Adv] — Verb`:
+
+> `ki bau orse shuks taka.` — "I quickly also eat bread." (or scoped: "I also quickly eat bread.")
 
 ---
 

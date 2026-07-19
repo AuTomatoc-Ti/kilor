@@ -2,3 +2,9 @@
 draft/
 .clinerules/
 *.pyc
+node_modules/
+
+# Vite dev symlink
+kilor/dictionary/public/data
+# Vite build output
+kilor/dictionary/dist/

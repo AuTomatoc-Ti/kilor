@@ -6,6 +6,21 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.7.1 — 2026-07-13
+
+Additive adverb `orse` ("also/too/as well").
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.2.0→2.2.1 — Added `orse` to closed-class particle inventory (§IV-C). Added §VIII: Additive adverb `orse` — pre-verbal `[Manner Adv]` slot, three scope positions (subject/object/verb), negation and stacking rules.
+
+**Lexicon:**
+- **`data/kilor.db`** — Added `orse` (function word, 2-syl, gloss: "also, too, as well").
+
+**Validation:**
+- `python kilor.py check` — ✅ All 318 entries pass (262 content roots, 57 function words, 73 compounds).
+
+---
+
 ## workspace v1.7.0 — 2026-07-12
 
 Lexicon expansion: added 73 roots from draft plus full core numeral system (0–13, scale markers, ordinal). Created `data/` directory and `compounds.json` as SSOT for compound construction metadata (73 entries: 52 mono-word + 21 multi-word). Data flow documented in `data/README.md`: `lexicon.csv` + `compounds.json` → `kilor.py dict` → dictionary output. Whitelisted `kas`/`hus`/`tus`/`rakas` as closed-class numeral `-s` exceptions.
