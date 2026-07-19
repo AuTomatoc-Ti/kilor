@@ -2,8 +2,8 @@
 
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses, Reported Speech, Purpose Clauses, Bare Serialisation
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 2.2.1
+**Last updated:** 2026-07-19
+**Version:** 2.2.2
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`, `3-subsystems/optative.md`
 **Interacts with:** `2-predication/conditionals.md` (li, bam cross-reference), `2-predication/clause-combining.md` (ei vs bare juxtaposition)
 
@@ -131,7 +131,7 @@ Emphatic use ("I myself"):
 ### B. Reciprocal — `meshen` ("each other")
 
 Placed **pre-verbally** as an adverb:
-> `sil meshen argonna.` — "They love each other."
+> `sil meshen avrgonna.` — "They love each other."
 > `kil meshen winar.` — "We see each other."
 
 `meshen` can take `-s` via standard derivation (`meshens`), though the bare root form is standard for the reciprocal function.

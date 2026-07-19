@@ -13,6 +13,7 @@ from .commands.migrate import cmd_migrate
 from .commands.next import cmd_next
 from .commands.status import cmd_status
 from .commands.suggest import cmd_suggest
+from .commands.sync import cmd_sync
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -69,6 +70,9 @@ def main():
         print(f"Starting Kilor Dictionary API on http://localhost:{port}")
         print(f"Interactive docs at http://localhost:{port}/docs")
         uvicorn.run("kilor.api:app", host="127.0.0.1", port=port, log_level="info")
+
+    elif cmd == "sync":
+        cmd_sync()
 
     elif cmd == "suggest":
         if len(sys.argv) < 3:
