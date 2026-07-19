@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Header from './components/Header';
 import Toolbar from './components/Toolbar';
-import Legend from './components/Legend';
+import FilterPanel from './components/FilterPanel';
 import TableView from './components/TableView';
-import CardView from './components/CardView';
 import { initDatabase, queryWords, getMeta } from './db';
 
 const PREFIX_INFO = {
@@ -16,15 +15,21 @@ const PREFIX_INFO = {
   "ae-": { cls: "Earth / Boundary",  emotion: "Disgust", color: "#a16207" },
 };
 
+const ALL_PREFIX_KEYS = Object.keys(PREFIX_INFO);
+
 export default function App() {
   const [search, setSearch] = useState('');
+
   const [filterSections, setFilterSections] = useState([]);
   const [filterTypes, setFilterTypes] = useState([]);
   const [filterMasks, setFilterMasks] = useState([]);
+  const [filterPrefixes, setFilterPrefixes] = useState([]);
+  const [sylMin, setSylMin] = useState(1);
+  const [sylMax, setSylMax] = useState(10);
   const [sortCol, setSortCol] = useState('form');
   const [sortDir, setSortDir] = useState('asc');
-  const [view, setView] = useState('table');
-  const [legendOpen, setLegendOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [expandedRow, setExpandedRow] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
@@ -42,8 +47,11 @@ export default function App() {
   }, []);
 
   const entries = useMemo(
-    () => queryWords({ search, sections: filterSections, types: filterTypes, masks: filterMasks, sortCol, sortDir }),
-    [search, filterSections, filterTypes, filterMasks, sortCol, sortDir, loading]
+    () => queryWords({
+      search, sections: filterSections, types: filterTypes, masks: filterMasks,
+      prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir,
+    }),
+    [search, filterSections, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading]
   );
 
   const handleSort = useCallback((col) => {
@@ -55,6 +63,15 @@ export default function App() {
       setSortDir('asc');
       return col;
     });
+  }, []);
+
+  const handleResetFilters = useCallback(() => {
+    setFilterSections([]);
+    setFilterTypes([]);
+    setFilterMasks([]);
+    setFilterPrefixes([]);
+    setSylMin(1);
+    setSylMax(10);
   }, []);
 
   const handleSearchByForm = useCallback((form) => {
@@ -89,40 +106,41 @@ export default function App() {
         <Toolbar
           search={search}
           onSearchChange={setSearch}
-          filterSections={filterSections}
-          onFilterSectionsChange={setFilterSections}
-          filterTypes={filterTypes}
-          onFilterTypesChange={setFilterTypes}
-          filterMasks={filterMasks}
-          onFilterMasksChange={setFilterMasks}
-          view={view}
-          onViewChange={setView}
           resultCount={entries.length}
           totalCount={totalCount}
-          onLegendToggle={() => setLegendOpen(o => !o)}
+          filterOpen={filterOpen}
+          onFilterToggle={() => setFilterOpen(o => !o)}
         />
-        <Legend
-          open={legendOpen}
-          prefixInfo={PREFIX_INFO}
-        />
-      </div>
-      <div className="main-content">
-        {view === 'table' ? (
-          <TableView
-            entries={entries}
-            sortCol={sortCol}
-            sortDir={sortDir}
-            onSort={handleSort}
+        {filterOpen && (
+          <FilterPanel
             prefixInfo={PREFIX_INFO}
-            onSearchByForm={handleSearchByForm}
-          />
-        ) : (
-          <CardView
-            entries={entries}
-            prefixInfo={PREFIX_INFO}
-            onSearchByForm={handleSearchByForm}
+            filterPrefixes={filterPrefixes}
+            onFilterPrefixesChange={setFilterPrefixes}
+            filterSections={filterSections}
+            onFilterSectionsChange={setFilterSections}
+            filterTypes={filterTypes}
+            onFilterTypesChange={setFilterTypes}
+            filterMasks={filterMasks}
+            onFilterMasksChange={setFilterMasks}
+            sylMin={sylMin}
+            onSylMinChange={setSylMin}
+            sylMax={sylMax}
+            onSylMaxChange={setSylMax}
+            onResetFilters={handleResetFilters}
           />
         )}
+      </div>
+      <div className="main-content">
+        <TableView
+          entries={entries}
+          sortCol={sortCol}
+          sortDir={sortDir}
+          onSort={handleSort}
+          prefixInfo={PREFIX_INFO}
+          onSearchByForm={handleSearchByForm}
+          expandedRow={expandedRow}
+          onToggleExpand={setExpandedRow}
+        />
       </div>
     </>
   );

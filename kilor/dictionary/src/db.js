@@ -96,6 +96,9 @@ export function queryWords({
   sections = [],
   types = [],
   masks = [],
+  prefixes = [],
+  sylMin = 1,
+  sylMax = 10,
   sortCol = 'form',
   sortDir = 'asc',
 } = {}) {
@@ -127,15 +130,34 @@ export function queryWords({
   if (masks.length > 0) {
     const maskConds = [];
     for (const m of masks) {
-      if (m === 'EMPTY') {
-        maskConds.push("(w.derivation_mask IS NULL OR w.derivation_mask = '')");
-      } else {
-        maskConds.push('w.derivation_mask = ?');
-        params.push(m);
-      }
+      maskConds.push('w.derivation_mask LIKE ?');
+      params.push(`%${m}%`);
     }
     if (maskConds.length > 0) { sql += ` AND (${maskConds.join(' OR ')})`; }
   }
+
+  if (prefixes.length > 0) {
+    const prefixConds = [];
+    for (const p of prefixes) {
+      if (p === 'NONE') {
+        prefixConds.push("(w.consensus_prefix IS NULL OR w.consensus_prefix = '')");
+      } else {
+        prefixConds.push('w.consensus_prefix = ?');
+        params.push(p);
+      }
+    }
+    if (prefixConds.length > 0) { sql += ` AND (${prefixConds.join(' OR ')})`; }
+  }
+
+  if (sylMin != null && sylMin > 1) {
+    sql += ' AND w.syl_count >= ?';
+    params.push(sylMin);
+  }
+  if (sylMax != null && sylMax < 10) {
+    sql += ' AND w.syl_count <= ?';
+    params.push(sylMax);
+  }
+
   if (search) {
     sql += ' AND (LOWER(w.form) LIKE ? OR LOWER(m.gloss) LIKE ?)';
     const t = `%${search.toLowerCase()}%`;

@@ -10,15 +10,9 @@ import { initDatabase, getDB } from './db';
  * In jsdom (Node), initDatabase() reads data/kilor.db directly from the
  * filesystem via node:fs. This exercises the full initialization pipeline
  * that the browser would use — no mock injection, no synthetic test data.
- *
- * The database (as of writing) contains 361 words. Tests use concrete
- * entries known to exist in the production DB.
  */
 
 beforeAll(async () => {
-  // Initialize from the real kilor.db (Node path: reads from filesystem).
-  // The if (db) return guard in initDatabase() means it's safe to call
-  // multiple times within the same test run — only the first call does work.
   await initDatabase();
 });
 
@@ -27,19 +21,38 @@ async function waitForApp() {
   await screen.findByPlaceholderText(/Search by word/i);
 }
 
-/**
- * Click a multiselect trigger button, then toggle a checkbox option
- * inside the open dropdown. Uses getAllByText + DOM filtering because
- * section labels also appear in the Legend component.
- */
-function toggleFilter(triggerText, optionLabel) {
-  fireEvent.click(screen.getByText(triggerText));
-  // Find all elements matching the option label, pick the one inside
-  // the multiselect dropdown (wrapped in a <label>).
-  const matches = screen.getAllByText(optionLabel);
-  const label = matches.find((el) => el.closest('.multiselect-dropdown'))?.closest('label');
-  if (!label) throw new Error(`toggleFilter: "${optionLabel}" not found inside multiselect dropdown`);
-  fireEvent.click(label);
+/** Open the advanced filter panel if not already open (returns true after expand). */
+async function openFilterPanel() {
+  const btn = screen.queryByText(/Advanced filter/);
+  if (btn && btn.textContent.includes('\u25BE')) {
+    fireEvent.click(btn);
+    await waitFor(() => expect(document.querySelector('.filter-panel')).toBeInTheDocument());
+  }
+}
+
+/** Toggle a checkbox inside the filter panel by label text match. */
+async function toggleFilterCheckbox(labelText) {
+  await openFilterPanel();
+  const filterPanel = document.querySelector('.filter-panel');
+  if (!filterPanel) throw new Error('Filter panel not open');
+  const labels = filterPanel.querySelectorAll('label.filter-checkbox-row');
+  for (const label of labels) {
+    if (label.textContent.includes(labelText)) {
+      const cb = label.querySelector('input[type="checkbox"]');
+      fireEvent.click(cb);
+      return;
+    }
+  }
+  throw new Error(`toggleFilterCheckbox: "${labelText}" not found in filter panel`);
+}
+
+/** Check a mask checkbox by its data-mask attribute. */
+async function toggleMaskFilter(maskValue) {
+  await openFilterPanel();
+  const label = document.querySelector(`label[data-mask="${maskValue}"]`);
+  if (!label) throw new Error(`toggleMaskFilter: mask "${maskValue}" not found`);
+  const cb = label.querySelector('input[type="checkbox"]');
+  fireEvent.click(cb);
 }
 
 describe('App — initialization (real DB)', () => {
@@ -48,9 +61,9 @@ describe('App — initialization (real DB)', () => {
     await waitForApp();
     expect(screen.getByText('Kilor Dictionary')).toBeInTheDocument();
 
-    // "361 words" appears in both Header and Toolbar — at least 2 instances
+    // All filters start empty (= no filter applied), so all 361 words show
     const countEls = screen.getAllByText('361 words');
-    expect(countEls.length).toBeGreaterThanOrEqual(2);
+    expect(countEls.length).toBeGreaterThanOrEqual(1);
   });
 
   it('does NOT show the error state', async () => {
@@ -70,17 +83,24 @@ describe('App — initialization (real DB)', () => {
     render(<App />);
     await waitForApp();
 
-    // After loading, the table should be populated with word entries.
-    // "No words match." must NOT appear on the initial, unfiltered view.
     expect(screen.queryByText('No words match.')).not.toBeInTheDocument();
 
-    // At least some .td-form cells should contain data (word forms).
     const formCells = document.querySelectorAll('.td-form');
     expect(formCells.length).toBeGreaterThan(10);
 
-    // Verify a known word is visible — "fora" appears in the production DB
-    // early in alphabetical order and is a reliable signal that entries rendered.
     expect(screen.getAllByText('fora').length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('shows all 361 words when no filters are active (= empty arrays)', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Result count should show "361 words" — use getAllByText since header+toolbar both show it
+    const countEls = screen.getAllByText('361 words');
+    expect(countEls).toHaveLength(2);
+    // The toolbar's .result-count span should read "361 words"
+    const resultSpan = document.querySelector('.result-count');
+    expect(resultSpan.textContent).toBe('361 words');
   });
 });
 
@@ -92,11 +112,8 @@ describe('App — search (real DB)', () => {
     fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
       target: { value: 'fora' },
     });
-    // Filtered result count (fewer than 361). "fora" appears in the table.
     await waitFor(() => expect(screen.getByText(/of 361 words/)).toBeInTheDocument());
-    // "fora" appears in the table and title attributes — use getAllByText
     const foraEls = screen.getAllByText('fora');
-    // At least one should be the table cell (not the title attribute hover)
     expect(foraEls.length).toBeGreaterThanOrEqual(1);
   });
 
@@ -120,7 +137,6 @@ describe('App — search (real DB)', () => {
     fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
       target: { value: 'fire' },
     });
-    // Gloss search triggers the HAVING clause — result shows "fora"
     await waitFor(() => {
       const els = screen.getAllByText('fora');
       expect(els.length).toBeGreaterThanOrEqual(1);
@@ -136,75 +152,196 @@ describe('App — search (real DB)', () => {
     });
     await waitFor(() => expect(screen.getByText('No words match.')).toBeInTheDocument());
   });
+});
 
-  it('search partial "fein" excludes "fei" when query is exact', async () => {
+describe('App — advanced filter panel (real DB)', () => {
+  it('toggles filter panel on button click', async () => {
     render(<App />);
     await waitForApp();
 
-    // "fei" is a word ("fly / flying"), "fein" is another ("bird")
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'fein' },
+    expect(document.querySelector('.filter-panel')).toBeNull();
+
+    fireEvent.click(screen.getByText(/Advanced filter/));
+    await waitFor(() =>
+      expect(document.querySelector('.filter-panel')).toBeInTheDocument()
+    );
+
+    fireEvent.click(screen.getByText(/Advanced filter/));
+    await waitFor(() =>
+      expect(document.querySelector('.filter-panel')).toBeNull()
+    );
+  });
+
+  it('checking section A filters to only section A words', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await toggleFilterCheckbox('A — Worlds & Elements');
+
+    // Count should drop from 361
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
     });
-    await waitFor(() => expect(screen.getByText('fein')).toBeInTheDocument());
+
+    // Every visible entry should have section "A"
+    const sectionTds = document.querySelectorAll('.td-section');
+    const sections = [...sectionTds].map((td) => td.textContent.trim());
+    for (const s of sections) {
+      expect(s).toBe('A');
+    }
+  });
+
+  it('checking "Function words" type shows only function words', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await toggleFilterCheckbox('Function words');
+
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    const typeTds = document.querySelectorAll('.td-type');
+    const types = [...typeTds].map((td) => td.textContent);
+    for (const t of types) {
+      expect(t).toContain('func');
+    }
+  });
+
+  it('checking "N" mask shows words that can function as nouns', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await toggleMaskFilter('N');
+
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    const maskTds = document.querySelectorAll('.td-mask');
+    const masks = [...maskTds].map((td) => td.textContent.trim());
+    for (const m of masks) {
+      if (m !== '—') {
+        expect(m).toMatch(/N/i);
+      }
+    }
+  });
+
+  it('checking "Adv" mask shows words that can function as adverbs', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await toggleMaskFilter('D');
+
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    const maskTds = document.querySelectorAll('.td-mask');
+    const masks = [...maskTds].map((td) => td.textContent.trim());
+    for (const m of masks) {
+      if (m !== '—') {
+        expect(m).toMatch(/D/i);
+      }
+    }
+  });
+
+  it('checking "Compounds" type shows only compound words', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await toggleFilterCheckbox('Compounds');
+
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    const typeTds = document.querySelectorAll('.td-type');
+    const types = [...typeTds].map((td) => td.textContent);
+    for (const t of types) {
+      expect(t).toContain('cmpd');
+    }
+  });
+
+  it('syllable range filter limits entries', async () => {
+    render(<App />);
+    await waitForApp();
+
+    await openFilterPanel();
+
+    // Set max syllables to 2
+    const maxInput = document.querySelectorAll('.syl-input')[1];
+    fireEvent.change(maxInput, { target: { value: '2' } });
+
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    // "fora" (2 syllables) should be visible
+    const tds = document.querySelectorAll('.td-form');
+    const forms = [...tds].map((td) => td.textContent);
+    expect(forms).toContain('fora');
+
+    // All entries should have syl_count <= 2
+    const sylTds = document.querySelectorAll('.td-syl');
+    const syls = [...sylTds].map((td) => parseInt(td.textContent));
+    for (const s of syls) {
+      expect(s).toBeLessThanOrEqual(2);
+    }
+  });
+
+  it('reset filters button clears all filters back to showing 361 words', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Apply some filters first
+    await toggleFilterCheckbox('A — Worlds & Elements');
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
+    });
+
+    // Click "Reset filters"
+    const resetBtn = document.querySelector('.filter-reset-btn');
+    fireEvent.click(resetBtn);
+
+    // Should be back to showing "361 words" in the result count
+    await waitFor(() => {
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).toBe('361 words');
+    });
   });
 });
 
-describe('App — filters (real DB)', () => {
-  it('filter by section A (Worlds & Elements) shows entries', async () => {
+describe('App — prefix filter (real DB)', () => {
+  it('checking a single prefix shows only words with that prefix', async () => {
     render(<App />);
     await waitForApp();
 
-    toggleFilter('All sections', 'A — Worlds & Elements');
-    // Should display filtered count — many entries are in section A
+    await toggleFilterCheckbox('a-');
+    // Note: "a-" partial matches "ae-" too, so use the <b>a-</b> more carefully
+    // Actually "a-" appears inside <b>a-</b> and also as "ae-" prefix label.
+    // The label textContent includes both "a-" and "Alive / Energy" so it matches correctly.
+
     await waitFor(() => {
-      const countEl = screen.getByText(/of 361 words/);
-      expect(countEl).toBeInTheDocument();
+      const resultSpan = document.querySelector('.result-count');
+      expect(resultSpan.textContent).not.toBe('361 words');
     });
-  });
 
-  it('filter by type "function" shows only function words', async () => {
-    render(<App />);
-    await waitForApp();
-
-    toggleFilter('All types', 'Function words');
-    await waitFor(() => {
-      const countEl = screen.getByText(/of 361 words/);
-      expect(countEl).toBeInTheDocument();
-    });
-    // Known function word "res" should be visible
-    expect(screen.getByText('res')).toBeInTheDocument();
-    // Content root "fora" should NOT be visible
-    expect(screen.queryByText('fora')).not.toBeInTheDocument();
-  });
-
-  it('filter by type "compound" returns only compounds', async () => {
-    render(<App />);
-    await waitForApp();
-
-    toggleFilter('All types', 'Compounds');
-    // After filtering to compounds, result count should be fewer than total
-    await waitFor(() => {
-      expect(screen.getByText('lunlagak')).toBeInTheDocument();
-    });
-    // Compound filter excludes content roots — "fora" should not appear
-    // in the table. queryAllByText may match tooltip attributes, so check
-    // that the table contains no <td> with textContent === 'fora'.
-    const tds = document.querySelectorAll('.td-form');
-    const forms = [...tds].map((td) => td.textContent);
-    expect(forms).not.toContain('fora');
-  });
-
-  it('filter by mask "NVAD" returns matching entries', async () => {
-    render(<App />);
-    await waitForApp();
-
-    toggleFilter('All masks', 'NVAD');
-    await waitFor(() => {
-      const countEl = screen.getByText(/of 361 words/);
-      expect(countEl).toBeInTheDocument();
-    });
-    // "fei" is NVAD (fly/flying)
-    expect(screen.getByText('fei')).toBeInTheDocument();
+    // All visible prefix badges should contain "a-"
+    const prefixTds = document.querySelectorAll('.td-prefix');
+    const prefixTexts = [...prefixTds].map((td) => td.textContent.trim());
+    for (const p of prefixTexts) {
+      if (p !== '—') {
+        expect(p).toContain('a-');
+      }
+    }
   });
 });
 
@@ -226,7 +363,6 @@ describe('App — sorting (real DB)', () => {
     render(<App />);
     await waitForApp();
 
-    // Sort descending
     fireEvent.click(screen.getByText('Word'));
     await waitFor(() => {
       const cells = screen.getAllByRole('cell');
@@ -247,37 +383,34 @@ describe('App — sorting (real DB)', () => {
   });
 });
 
-describe('App — view toggle and legend (real DB)', () => {
-  it('toggles between table and card view', async () => {
+describe('App — inline detail expansion (real DB)', () => {
+  it('clicking a table row expands detail panel', async () => {
     render(<App />);
     await waitForApp();
 
-    // Table view is default — "Word" column header is visible
-    expect(screen.getByText('Word')).toBeInTheDocument();
+    expect(document.querySelector('.detail-panel')).toBeNull();
 
-    fireEvent.click(screen.getByText('🃏 Cards'));
-    await waitFor(() =>
-      expect(document.querySelector('.card-container')).toBeInTheDocument()
-    );
+    const firstCell = document.querySelector('.td-form');
+    fireEvent.click(firstCell);
 
-    fireEvent.click(screen.getByText('📋 Table'));
     await waitFor(() =>
-      expect(document.querySelector('table')).toBeInTheDocument()
+      expect(document.querySelector('.detail-panel')).toBeInTheDocument()
     );
   });
 
-  it('legend toggle shows/hides legend', async () => {
+  it('clicking expanded row again collapses it', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.click(screen.getByText('Legend ▾'));
+    const firstCell = document.querySelector('.td-form');
+    fireEvent.click(firstCell);
     await waitFor(() =>
-      expect(document.querySelector('.legend.open')).toBeInTheDocument(),
+      expect(document.querySelector('.detail-panel')).toBeInTheDocument()
     );
 
-    fireEvent.click(screen.getByText('Legend ▾'));
+    fireEvent.click(firstCell);
     await waitFor(() =>
-      expect(document.querySelector(':not(.legend.open)')).toBeTruthy(),
+      expect(document.querySelector('.detail-panel')).toBeNull()
     );
   });
 });

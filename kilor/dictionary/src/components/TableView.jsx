@@ -1,3 +1,5 @@
+import React from 'react';
+
 const SECTION_LABELS = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
 
 function PrefixBadge({ prefix, info }) {
@@ -40,7 +42,104 @@ function ComponentChips({ components, onSearchByForm }) {
   );
 }
 
-export default function TableView({ entries, sortCol, sortDir, onSort, prefixInfo, onSearchByForm }) {
+function DetailPanel({ entry, prefixInfo }) {
+  const inflKeys = Object.keys(entry.inflections);
+  const mask = entry.derivation_mask || '';
+
+  return (
+    <div className="detail-panel">
+      <div className="detail-columns">
+        <div className="detail-col">
+          <div className="detail-row">
+            <strong>Meanings</strong>
+            <ul className="detail-meaning-list">
+              {entry.meanings.map((m, i) => <li key={i}>{m}</li>)}
+            </ul>
+          </div>
+
+          {mask && (
+            <div className="detail-row">
+              <strong>NVAD Mask</strong> <span className="tag-mask">{mask}</span>
+            </div>
+          )}
+
+          <div className="detail-row">
+            <strong>Section</strong> {entry.section || '—'} — {SECTION_LABELS[entry.section] || 'Other'}
+          </div>
+
+          {entry.consensus_prefix && (
+            <div className="detail-row">
+              <strong>Prefix</strong> {entry.consensus_prefix}
+              {prefixInfo[entry.consensus_prefix]
+                ? ` (${prefixInfo[entry.consensus_prefix].cls} · ${prefixInfo[entry.consensus_prefix].emotion})`
+                : ''}
+            </div>
+          )}
+
+          <div className="detail-row">
+            <strong>Syllables</strong> {entry.syl_count}
+          </div>
+        </div>
+
+        <div className="detail-col">
+          {inflKeys.length > 0 && (
+            <div className="detail-row">
+              <strong>Inflections</strong>
+              <div className="infl-list">
+                {inflKeys.map(ft => (
+                  <span key={ft} className="infl-item">
+                    {entry.inflections[ft]} <span className="infl-type">({ft})</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {entry.components && entry.components.length > 0 && (
+            <div className="detail-row">
+              <strong>Components</strong>
+              <div className="component-list">
+                {entry.components.map((c, i) => (
+                  <span key={i} className="component-item">{c.form}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {entry.pattern && (
+            <div className="detail-row">
+              <strong>Pattern</strong>
+              <div className="pattern-ref">
+                <span>{entry.pattern}</span>
+                {entry.rule_ref && <span className="infl-rule">{entry.rule_ref}</span>}
+              </div>
+            </div>
+          )}
+
+          {entry.notes && (
+            <div className="detail-row">
+              <strong>Notes</strong> {entry.notes}
+            </div>
+          )}
+
+          {entry.examples && entry.examples.length > 0 && (
+            <div className="detail-row">
+              <strong>Examples</strong>
+              {entry.examples.map((ex, i) => (
+                <div key={i} className="example-block">
+                  <span className="kilor-text">{ex.kilor}</span>
+                  <span className="english-text">{ex.english}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function TableView({ entries, sortCol, sortDir, onSort, prefixInfo, onSearchByForm, expandedRow, onToggleExpand }) {
   function arrow(col) {
     if (sortCol !== col) return <span className="sort-arrow">▲</span>;
     return <span className="sort-arrow">{sortDir === 'asc' ? '▲' : '▼'}</span>;
@@ -89,19 +188,32 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
             const mask = e.derivation_mask
               ? <span className="tag-sm" style={{ background: '#e8f0fe', color: '#1a56db', fontSize: '.7rem', padding: '1px 6px', borderRadius: '10px' }}>{e.derivation_mask}</span>
               : <span className="empty-cell">—</span>;
+            const isExpanded = expandedRow === e.id;
             return (
-              <tr key={e.id}>
-                <td className="td-form" title={e.meanings.join(' / ')}>{e.form}</td>
-                <td className="td-gloss">
-                  {gloss}
-                  <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
-                </td>
-                <td className="td-section">{e.section || '—'}</td>
-                <td className="td-type"><TypeTag entry={e} /></td>
-                <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
-                <td className="td-mask">{mask}</td>
-                <td className="td-syl">{e.syl_count}</td>
-              </tr>
+              <React.Fragment key={e.id}>
+                <tr
+                  className={isExpanded ? 'row-expanded' : ''}
+                  onClick={() => onToggleExpand(isExpanded ? null : e.id)}
+                >
+                  <td className="td-form" title={e.meanings.join(' / ')}>{e.form}</td>
+                  <td className="td-gloss">
+                    {gloss}
+                    <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
+                  </td>
+                  <td className="td-section">{e.section || '—'}</td>
+                  <td className="td-type"><TypeTag entry={e} /></td>
+                  <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
+                  <td className="td-mask">{mask}</td>
+                  <td className="td-syl">{e.syl_count}</td>
+                </tr>
+                {isExpanded && (
+                  <tr className="detail-tr">
+                    <td colSpan={7}>
+                      <DetailPanel entry={e} prefixInfo={prefixInfo} />
+                    </td>
+                  </tr>
+                )}
+              </React.Fragment>
             );
           })}
         </tbody>
