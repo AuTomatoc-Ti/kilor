@@ -8,6 +8,7 @@ import subprocess
 from datetime import datetime
 
 from ..db import get_db, rebuild_fts
+from ..phonology import get_case_forms
 from ..schema import SECTION_LABELS
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -386,6 +387,12 @@ function entryHTML(e) {
     if (e.rule_ref) detail += '<span>' + esc(e.rule_ref) + '</span>';
     detail += '</span></div>';
   }
+  if (e.case_forms && Object.keys(e.case_forms).length > 0) {
+    detail += '<div class="detail-row"><strong>Case Forms:</strong><span class="infl-list">';
+    if (e.case_forms.acc) detail += '<span class="infl-item" style="background:#e8f5e9">' + esc(e.case_forms.acc) + ' <span class="infl-type">(ACC)</span></span>';
+    if (e.case_forms.gen) detail += '<span class="infl-item" style="background:#e3f2fd">' + esc(e.case_forms.gen) + ' <span class="infl-type">(GEN)</span></span>';
+    detail += '</span></div>';
+  }
   if (e.consensus_prefix && e.consensus_prefix !== 'o-') detail += '<div class="detail-row"><strong>Prefix:</strong> ' + esc(e.consensus_prefix) + '</div>';
   detail += '<div class="detail-row"><strong>Syllables:</strong> ' + e.syl_count + '</div>';
   if (e.notes) detail += '<div class="detail-row"><strong>Notes:</strong> ' + esc(e.notes) + '</div>';
@@ -453,6 +460,19 @@ def _export_dictionary_data(conn):
                 "source": row["source"],
             })
 
+        # Compute case forms (ACC/GEN) on the fly
+        case_forms = {}
+        acc, gen = get_case_forms(
+            w["form"],
+            derivation_mask=w["derivation_mask"] or None,
+            is_function_word=bool(w["is_function_word"]),
+            compound_type=w["compound_type"],
+        )
+        if acc is not None:
+            case_forms["acc"] = acc
+        if gen is not None:
+            case_forms["gen"] = gen
+
         entry = {
             "id": w["id"],
             "form": w["form"],
@@ -470,6 +490,7 @@ def _export_dictionary_data(conn):
             "components": components,
             "pattern": meta["pattern"] if meta else None,
             "rule_ref": meta["rule_ref"] if meta else None,
+            "case_forms": case_forms,
             "examples": examples,
             "notes": w["notes"] or "",
         }

@@ -187,6 +187,86 @@ export function queryWords({
   return queryAll(sql, params).map((row) => enrichEntry(row));
 }
 
+// ── Case-form generation (browser-side, mirrors kilor/phonology.py) ──────────
+
+const _PRONOUN_ACC_GEN = {
+  "ki":  ["kin",  "kis"],
+  "ti":  ["tin",  "tis"],
+  "si":  ["sin",  "sis"],
+  "ni":  ["nin",  "nis"],
+  "kil": ["kilin", "kilis"],
+  "til": ["tilin", "tilis"],
+  "sil": ["silin", "silis"],
+  "nil": ["nilin", "nilis"],
+};
+
+const _COLOUR_PREFIXES = ["ae-", "a-", "e-", "i-", "o-", "u-", "y-"];
+
+const _FRONT_VOWELS = new Set(["e", "i", "y", "ae", "ei", "eu", "iu"]);
+const _BACK_VOWELS  = new Set(["a", "o", "u", "ai", "au", "oi", "ou"]);
+const _VOWELS = new Set("aeiouy");
+const _DIPHTHONGS = new Set(["ai", "au", "ei", "eu", "iu", "oi", "ou"]);
+
+function lastNucleus(word) {
+  /* Scan right-to-left for the last vowel or diphthong.
+     Skip tone markers (j, v) and hyphens (extra-segmental). */
+  const cleaned = word.replace(/[jv]/g, "").replace(/-/g, "");
+  for (let i = cleaned.length - 1; i >= 0; i--) {
+    const pair = cleaned.slice(i - 1, i + 1).toLowerCase();
+    if (pair === "ae" || _DIPHTHONGS.has(pair)) return pair;
+    const ch = cleaned[i].toLowerCase();
+    if (_VOWELS.has(ch)) return ch;
+  }
+  return "";
+}
+
+function stripPrefix(form) {
+  for (const pfx of _COLOUR_PREFIXES) {
+    if (form.startsWith(pfx)) return [pfx, form.slice(pfx.length)];
+  }
+  return ["", form];
+}
+
+function getCaseForms(form, derivationMask, isFunctionWord) {
+  if (isFunctionWord) return {};
+  if (derivationMask && derivationMask.toUpperCase().indexOf("N") === -1) return {};
+
+  // Pronouns (invariant)
+  if (_PRONOUN_ACC_GEN[form]) {
+    const [acc, gen] = _PRONOUN_ACC_GEN[form];
+    return { acc, gen };
+  }
+
+  const words = form.split(" ");
+  if (words.length === 0) return {};
+
+  let lastWord = words[words.length - 1];
+  const [prefix, root] = stripPrefix(lastWord);
+  const nucleus = lastNucleus(root);
+  if (!nucleus) return {};
+
+  let accSuffix, genSuffix;
+  if (_FRONT_VOWELS.has(nucleus)) {
+    accSuffix = "na"; genSuffix = "sa";
+  } else if (_BACK_VOWELS.has(nucleus)) {
+    accSuffix = "ni"; genSuffix = "si";
+  } else {
+    return {};
+  }
+
+  let accForm, genForm;
+  if (words.length === 1) {
+    accForm = prefix + root + accSuffix;
+    genForm = prefix + root + genSuffix;
+  } else {
+    accForm = words.slice(0, -1).concat([prefix + root + accSuffix]).join(" ");
+    genForm = words.slice(0, -1).concat([prefix + root + genSuffix]).join(" ");
+  }
+  return { acc: accForm, gen: genForm };
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+
 function enrichEntry(row) {
   const wid = row.id;
   const meanings = (row.glosses_concat || '').split(' | ').filter(Boolean);
@@ -205,6 +285,7 @@ function enrichEntry(row) {
   const meta = queryAll('SELECT pattern, rule_ref FROM compound_meta WHERE compound_id = ?', [wid])[0] || null;
   const examples = queryAll('SELECT kilor_text, english_text, source FROM examples WHERE word_id = ?', [wid])
     .map((ex) => ({ kilor: ex.kilor_text, english: ex.english_text, source: ex.source }));
+  const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
   const SEC = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
   return {
     id: wid, form: row.form, syl_count: row.syl_count, meanings,
@@ -217,7 +298,7 @@ function enrichEntry(row) {
     inflections, components,
     pattern: meta ? meta.pattern : null,
     rule_ref: meta ? meta.rule_ref : null,
-    examples, notes: row.notes || '',
+    case_forms, examples, notes: row.notes || '',
   };
 }
 

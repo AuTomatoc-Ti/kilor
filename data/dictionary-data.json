@@ -1,6 +1,6 @@
 {
   "meta": {
-    "exported_at": "2026-07-13",
+    "exported_at": "2026-07-19",
     "version": "2.0.0",
     "total_words": 361
   },
@@ -29,6 +29,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aerdina",
+        "gen": "aerdisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -51,6 +55,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -73,6 +78,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word (genitive of aewei)"
     },
@@ -101,6 +107,10 @@
       "components": [],
       "pattern": "capability",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "afaloini",
+        "gen": "afaloisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -132,6 +142,10 @@
       ],
       "pattern": "capability",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-I",
+      "case_forms": {
+        "acc": "afaloi takani",
+        "gen": "afaloi takasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -154,6 +168,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -177,6 +192,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -204,6 +220,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -231,6 +248,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -253,6 +271,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -280,6 +299,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aparni",
+        "gen": "aparsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -302,6 +325,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -324,6 +348,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -351,6 +376,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "argonnani",
+        "gen": "argonnasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -379,6 +408,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "argonniani",
+        "gen": "argonniasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -406,6 +439,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aronni",
+        "gen": "aronsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -433,6 +470,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "arrinna",
+        "gen": "arrinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -469,6 +510,7 @@
       ],
       "pattern": "derivational",
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -496,6 +538,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -524,6 +567,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "augni",
+        "gen": "augsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -546,6 +593,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -573,6 +621,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aulina",
+        "gen": "aulisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -600,6 +652,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -627,6 +680,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aurani",
+        "gen": "aurasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -664,6 +721,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aurokni",
+        "gen": "auroksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -691,6 +752,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "auronni",
+        "gen": "auronsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -728,6 +793,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "aurontena",
+        "gen": "aurontesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -755,6 +824,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ausni",
+        "gen": "aussi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -777,6 +850,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -801,6 +875,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -833,6 +908,7 @@
       ],
       "pattern": "epistemic-modal",
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -860,6 +936,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "bauni",
+        "gen": "bausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -887,6 +967,10 @@
       ],
       "pattern": "location",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-G",
+      "case_forms": {
+        "acc": "bau posni",
+        "gen": "bau possi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -915,6 +999,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "beratni",
+        "gen": "beratsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -942,6 +1030,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "blonni",
+        "gen": "blonsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -969,6 +1061,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "blusani",
+        "gen": "blusasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -996,6 +1092,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1024,6 +1121,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "bopni",
+        "gen": "bopsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1051,6 +1152,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "bordina",
+        "gen": "bordisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1079,6 +1184,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "chapni",
+        "gen": "chapsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1106,6 +1215,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1128,6 +1238,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1168,6 +1279,10 @@
       ],
       "pattern": "temporal-greeting",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "chorogorni",
+        "gen": "chorogorsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1195,6 +1310,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "choumarni",
+        "gen": "choumarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1217,6 +1336,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1244,6 +1364,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "curonni",
+        "gen": "curonsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1266,6 +1390,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1294,6 +1419,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "disena",
+        "gen": "disesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1326,6 +1455,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "diserinna",
+        "gen": "diserinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1348,6 +1481,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1370,6 +1504,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1397,6 +1532,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "dokni",
+        "gen": "doksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1433,6 +1572,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "dokaukni",
+        "gen": "dokauksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1469,6 +1612,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "dokdoni",
+        "gen": "dokdosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1505,6 +1652,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "dokfoini",
+        "gen": "dokfoisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1532,6 +1683,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "donarni",
+        "gen": "donarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1554,6 +1709,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1581,6 +1737,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "elina",
+        "gen": "elisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1608,6 +1768,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "emani",
+        "gen": "emasi"
+      },
       "examples": [],
       "notes": "base root for emlu (truth); section I"
     },
@@ -1635,6 +1799,10 @@
       "components": [],
       "pattern": "property",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "emluni",
+        "gen": "emlusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1658,6 +1826,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1689,6 +1858,10 @@
       ],
       "pattern": "doctrine",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-H",
+      "case_forms": {
+        "acc": "ero israni",
+        "gen": "ero israsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1717,6 +1890,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1753,6 +1927,7 @@
       ],
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1780,6 +1955,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -1802,6 +1978,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -1829,6 +2006,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fani",
+        "gen": "fasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1856,6 +2037,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "famaena",
+        "gen": "famaesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1883,6 +2068,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fapni",
+        "gen": "fapsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1910,6 +2099,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "faurni",
+        "gen": "faursi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1937,6 +2130,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "faurena",
+        "gen": "fauresa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1965,6 +2162,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "feina",
+        "gen": "feisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -1992,6 +2193,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "fei maena",
+        "gen": "fei maesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2019,6 +2224,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "feinna",
+        "gen": "feinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2046,6 +2255,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2068,6 +2278,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2090,6 +2301,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2117,6 +2329,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "forani",
+        "gen": "forasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2153,6 +2369,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "foragilanni",
+        "gen": "foragilansi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2181,6 +2401,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fosni",
+        "gen": "fossi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2217,6 +2441,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fosblonni",
+        "gen": "fosblonsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2253,6 +2481,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fosgilanni",
+        "gen": "fosgilansi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2289,6 +2521,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "foshuni",
+        "gen": "foshusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2325,6 +2561,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "foskaerani",
+        "gen": "foskaerasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2357,6 +2597,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "foskena",
+        "gen": "foskesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2393,6 +2637,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "foslina",
+        "gen": "foslisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2420,6 +2668,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "fossarni",
+        "gen": "fossarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2447,6 +2699,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2474,6 +2727,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "founaini",
+        "gen": "founaisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2496,6 +2753,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2523,6 +2781,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "gauroini",
+        "gen": "gauroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2550,6 +2812,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "gauronni",
+        "gen": "gauronsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2572,6 +2838,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2599,6 +2866,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "gilanni",
+        "gen": "gilansi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2630,6 +2901,10 @@
       ],
       "pattern": "two-word-vocab",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "gilan forani",
+        "gen": "gilan forasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2658,6 +2933,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "giliuna",
+        "gen": "giliusa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2680,6 +2959,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2707,6 +2987,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2734,6 +3015,10 @@
       ],
       "pattern": "property",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C",
+      "case_forms": {
+        "acc": "gor luni",
+        "gen": "gor lusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2756,6 +3041,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2783,6 +3069,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -2810,6 +3097,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "gustarni",
+        "gen": "gustarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2837,6 +3128,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hakni",
+        "gen": "haksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2873,6 +3168,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hakaukni",
+        "gen": "hakauksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2909,6 +3208,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hakdoni",
+        "gen": "hakdosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2945,6 +3248,10 @@
       ],
       "pattern": "numeral-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hakfoini",
+        "gen": "hakfoisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -2973,6 +3280,10 @@
       "components": [],
       "pattern": "optative",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "halisena",
+        "gen": "halisesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3000,6 +3311,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "haminna",
+        "gen": "haminsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3027,6 +3342,10 @@
       ],
       "pattern": "location",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-G",
+      "case_forms": {
+        "acc": "hamin posni",
+        "gen": "hamin possi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3063,6 +3382,10 @@
       ],
       "pattern": "location-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "haminrusomena",
+        "gen": "haminrusomesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3090,6 +3413,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hapni",
+        "gen": "hapsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3117,6 +3444,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hauni",
+        "gen": "hausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3139,6 +3470,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -3167,6 +3499,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hawuni",
+        "gen": "hawusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3195,6 +3531,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "haxni",
+        "gen": "haxsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3223,6 +3563,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "heina",
+        "gen": "heisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3250,6 +3594,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3277,6 +3622,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hinna",
+        "gen": "hinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3304,6 +3653,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hinarni",
+        "gen": "hinarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3326,6 +3679,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -3348,6 +3702,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3375,6 +3730,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3408,6 +3764,7 @@
       ],
       "pattern": "epistemic-modal",
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3435,6 +3792,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "huni",
+        "gen": "husi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3462,6 +3823,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "hupni",
+        "gen": "hupsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3489,6 +3854,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "huplina",
+        "gen": "huplisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3511,6 +3880,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3538,6 +3908,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ikna",
+        "gen": "iksa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3560,6 +3934,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -3592,6 +3967,10 @@
       ],
       "pattern": "negation-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ilsinkoini",
+        "gen": "ilsinkoisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3619,6 +3998,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "imani",
+        "gen": "imasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3655,6 +4038,10 @@
       ],
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
+      "case_forms": {
+        "acc": "imaroini",
+        "gen": "imaroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3683,6 +4070,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "inouni",
+        "gen": "inousi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3710,6 +4101,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "israni",
+        "gen": "israsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3733,6 +4128,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3755,6 +4151,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -3783,6 +4180,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "kaerani",
+        "gen": "kaerasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -3805,6 +4206,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3832,6 +4234,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -3854,6 +4257,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st singular"
     },
@@ -3876,6 +4280,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st plural"
     },
@@ -3898,6 +4303,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st plural accusative"
     },
@@ -3920,6 +4326,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st plural genitive"
     },
@@ -3942,6 +4349,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st singular accusative"
     },
@@ -3964,6 +4372,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 1st singular genitive"
     },
@@ -3992,6 +4401,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "klangni",
+        "gen": "klangsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4019,6 +4432,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4047,6 +4461,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "korani",
+        "gen": "korasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4074,6 +4492,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "kupni",
+        "gen": "kupsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4105,6 +4527,10 @@
       ],
       "pattern": "instrument",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B",
+      "case_forms": {
+        "acc": "kup tekna",
+        "gen": "kup teksa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4128,6 +4554,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4150,6 +4577,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4178,6 +4606,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4205,6 +4634,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "latif maena",
+        "gen": "latif maesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4227,6 +4660,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "closed-class; toneless; -s exempt"
     },
@@ -4249,6 +4683,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4276,6 +4711,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "liforlina",
+        "gen": "liforlisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4303,6 +4742,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "limani",
+        "gen": "limasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4330,6 +4773,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lirna",
+        "gen": "lirsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4357,6 +4804,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lirani",
+        "gen": "lirasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4384,6 +4835,10 @@
       ],
       "pattern": "without",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-J",
+      "case_forms": {
+        "acc": "lira narani",
+        "gen": "lira narasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4420,6 +4875,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lirahupni",
+        "gen": "lirahupsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4447,6 +4906,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "liwatni",
+        "gen": "liwatsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4475,6 +4938,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "logerna",
+        "gen": "logersa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4508,6 +4975,10 @@
       ],
       "pattern": "doctrine",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lokisrani",
+        "gen": "lokisrasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4535,6 +5006,10 @@
       "components": [],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lorrakni",
+        "gen": "lorraksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4563,6 +5038,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "losgani",
+        "gen": "losgasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4591,6 +5070,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lostoni",
+        "gen": "lostosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4618,6 +5101,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lumina",
+        "gen": "lumisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4645,6 +5132,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lunlani",
+        "gen": "lunlasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4677,6 +5168,10 @@
       ],
       "pattern": "material-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "lunlagakni",
+        "gen": "lunlagaksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4704,6 +5199,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "mani",
+        "gen": "masi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4731,6 +5230,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "maedani",
+        "gen": "maedasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4759,6 +5262,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "maehani",
+        "gen": "maehasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4787,6 +5294,10 @@
       "components": [],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "maekoini",
+        "gen": "maekoisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4809,6 +5320,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4837,6 +5349,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "maliuna",
+        "gen": "maliusa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4864,6 +5380,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "mamaena",
+        "gen": "mamaesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4887,6 +5407,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "closed-class; toneless; -s exempt"
     },
@@ -4914,6 +5435,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "mauni",
+        "gen": "mausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4936,6 +5461,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -4963,6 +5489,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "maurni",
+        "gen": "maursi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -4990,6 +5520,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "meiponi",
+        "gen": "meiposi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5012,6 +5546,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -5039,6 +5574,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5066,6 +5602,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5088,6 +5625,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5115,6 +5653,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5142,6 +5681,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5169,6 +5709,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "mina",
+        "gen": "misa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5196,6 +5740,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "milna",
+        "gen": "milsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5223,6 +5771,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5251,6 +5800,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "minauni",
+        "gen": "minausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5280,6 +5833,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5307,6 +5861,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "misoni",
+        "gen": "misosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5334,6 +5892,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "miso maena",
+        "gen": "miso maesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5365,6 +5927,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "miso maehani",
+        "gen": "miso maehasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5387,6 +5953,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5414,6 +5981,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5441,6 +6009,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5468,6 +6037,10 @@
       ],
       "pattern": "property",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C",
+      "case_forms": {
+        "acc": "my luni",
+        "gen": "my lusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5490,6 +6063,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5513,6 +6087,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5549,6 +6124,7 @@
       ],
       "pattern": "negation-compound",
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5577,6 +6153,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "narauni",
+        "gen": "narausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5608,6 +6188,10 @@
       ],
       "pattern": "without",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-J",
+      "case_forms": {
+        "acc": "narau lirani",
+        "gen": "narau lirasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5644,6 +6228,7 @@
       ],
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5666,6 +6251,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living singular"
     },
@@ -5693,6 +6279,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5715,6 +6302,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living plural"
     },
@@ -5737,6 +6325,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living plural accusative"
     },
@@ -5759,6 +6348,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living plural genitive"
     },
@@ -5781,6 +6371,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living singular accusative"
     },
@@ -5803,6 +6394,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd non-living singular genitive"
     },
@@ -5830,6 +6422,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -5858,6 +6451,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "noini",
+        "gen": "noisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5885,6 +6482,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "nordina",
+        "gen": "nordisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5912,6 +6513,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "onlani",
+        "gen": "onlasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5939,6 +6544,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "orani",
+        "gen": "orasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5966,6 +6575,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "orakni",
+        "gen": "oraksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -5988,6 +6601,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -6012,6 +6626,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "additive adverb: also, too, as well"
     },
@@ -6039,6 +6654,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ougni",
+        "gen": "ougsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6066,6 +6685,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "oukni",
+        "gen": "ouksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6088,6 +6711,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -6115,6 +6739,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ousni",
+        "gen": "oussi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6137,6 +6765,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -6164,6 +6793,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6197,6 +6827,10 @@
       ],
       "pattern": "temporal-distance",
       "rule_ref": "rules/3-subsystems/temporals.md §I-B",
+      "case_forms": {
+        "acc": "pamani",
+        "gen": "pamasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6233,6 +6867,10 @@
       ],
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
+      "case_forms": {
+        "acc": "pamaroini",
+        "gen": "pamaroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6260,6 +6898,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "paramni",
+        "gen": "paramsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6292,6 +6934,10 @@
       ],
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
+      "case_forms": {
+        "acc": "paroini",
+        "gen": "paroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6319,6 +6965,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "pauni",
+        "gen": "pausi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6341,6 +6991,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -6369,6 +7020,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "peina",
+        "gen": "peisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6391,6 +7046,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6413,6 +7069,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6440,6 +7097,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6467,6 +7125,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "peshani",
+        "gen": "peshasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6500,6 +7162,10 @@
       ],
       "pattern": "temporal-distance",
       "rule_ref": "rules/3-subsystems/temporals.md §I-B",
+      "case_forms": {
+        "acc": "pimani",
+        "gen": "pimasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6536,6 +7202,10 @@
       ],
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
+      "case_forms": {
+        "acc": "pimaroini",
+        "gen": "pimaroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6564,6 +7234,10 @@
       "components": [],
       "pattern": "property",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "pireiluni",
+        "gen": "pireilusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6596,6 +7270,10 @@
       ],
       "pattern": "temporal-day",
       "rule_ref": "rules/3-subsystems/temporals.md §I-A",
+      "case_forms": {
+        "acc": "piroini",
+        "gen": "piroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6618,6 +7296,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6640,6 +7319,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6668,6 +7348,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "poskani",
+        "gen": "poskasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6695,6 +7379,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6717,6 +7402,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6739,6 +7425,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6767,6 +7454,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6794,6 +7482,10 @@
       ],
       "pattern": "measure",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D",
+      "case_forms": {
+        "acc": "rali rinna",
+        "gen": "rali rinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6822,6 +7514,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rapni",
+        "gen": "rapsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6844,6 +7540,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -6867,6 +7564,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6894,6 +7592,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6921,6 +7620,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rildani",
+        "gen": "rildasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6949,6 +7652,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rinokni",
+        "gen": "rinoksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -6971,6 +7678,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -6998,6 +7706,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "roini",
+        "gen": "roisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7025,6 +7737,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rokni",
+        "gen": "roksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7061,6 +7777,10 @@
       ],
       "pattern": "temporal-greeting",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rokgorni",
+        "gen": "rokgorsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7089,6 +7809,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7116,6 +7837,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7143,6 +7865,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "ronni",
+        "gen": "ronsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7170,6 +7896,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rorani",
+        "gen": "rorasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7206,6 +7936,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "roralumina",
+        "gen": "roralumisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7233,6 +7967,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rorina",
+        "gen": "rorisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7261,6 +7999,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "rusomena",
+        "gen": "rusomesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7289,6 +8031,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "sakarni",
+        "gen": "sakarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7316,6 +8062,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7356,6 +8103,10 @@
       ],
       "pattern": "temporal-greeting",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "sarrogorni",
+        "gen": "sarrogorsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7384,6 +8135,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "seloni",
+        "gen": "selosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7411,6 +8166,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7445,6 +8201,7 @@
       ],
       "pattern": "epistemic-modal",
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7472,6 +8229,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "shenna",
+        "gen": "shensa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7499,6 +8260,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "shilina",
+        "gen": "shilisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7526,6 +8291,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7554,6 +8320,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7581,6 +8348,10 @@
       ],
       "pattern": "measure",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D",
+      "case_forms": {
+        "acc": "shuk rinna",
+        "gen": "shuk rinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7608,6 +8379,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7630,6 +8402,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living singular"
     },
@@ -7652,6 +8425,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living plural"
     },
@@ -7674,6 +8448,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living plural accusative"
     },
@@ -7696,6 +8471,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living plural genitive"
     },
@@ -7718,6 +8494,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living singular accusative"
     },
@@ -7746,6 +8523,10 @@
       "components": [],
       "pattern": "state-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "sinkoini",
+        "gen": "sinkoisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7773,6 +8554,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "sirdina",
+        "gen": "sirdisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7795,6 +8580,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 3rd living singular genitive"
     },
@@ -7823,6 +8609,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "slatoni",
+        "gen": "slatosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7845,6 +8635,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7881,6 +8672,7 @@
       ],
       "pattern": "frequency",
       "rule_ref": "rules/3-subsystems/temporals.md §I-C",
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7908,6 +8700,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -7935,6 +8728,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "sluni",
+        "gen": "slusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7962,6 +8759,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "solani",
+        "gen": "solasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -7989,6 +8790,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8016,6 +8818,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "songni",
+        "gen": "songsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8044,6 +8850,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8066,6 +8873,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8093,6 +8901,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8116,6 +8925,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8144,6 +8954,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "symakni",
+        "gen": "symaksi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8166,6 +8980,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8193,6 +9008,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8220,6 +9036,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "taka maena",
+        "gen": "taka maesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8247,6 +9067,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8274,6 +9095,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tarni",
+        "gen": "tarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8310,6 +9135,10 @@
       ],
       "pattern": "temporal-greeting",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "targorni",
+        "gen": "targorsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8337,6 +9166,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "taroini",
+        "gen": "taroisi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8373,6 +9206,10 @@
       ],
       "pattern": "temporal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "taroinousni",
+        "gen": "taroinoussi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8395,6 +9232,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8422,6 +9260,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tekna",
+        "gen": "teksa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8444,6 +9286,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -8472,6 +9315,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8499,6 +9343,10 @@
       ],
       "pattern": "agentive",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A",
+      "case_forms": {
+        "acc": "tesak maena",
+        "gen": "tesak maesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8526,6 +9374,10 @@
       ],
       "pattern": "process",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-E",
+      "case_forms": {
+        "acc": "tesak parni",
+        "gen": "tesak parsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8557,6 +9409,10 @@
       ],
       "pattern": "instrument",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B",
+      "case_forms": {
+        "acc": "tesak tekna",
+        "gen": "tesak teksa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8585,6 +9441,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "thani",
+        "gen": "thasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8613,6 +9473,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8640,6 +9501,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8676,6 +9538,10 @@
       ],
       "pattern": "location-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "theprusomena",
+        "gen": "theprusomesa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8704,6 +9570,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "thinna",
+        "gen": "thinsa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8731,6 +9601,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8758,6 +9629,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8780,6 +9652,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd singular"
     },
@@ -8802,6 +9675,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd plural"
     },
@@ -8829,6 +9703,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tildani",
+        "gen": "tildasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8851,6 +9729,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd plural accusative"
     },
@@ -8873,6 +9752,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd plural genitive"
     },
@@ -8900,6 +9780,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tilpani",
+        "gen": "tilpasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8922,6 +9806,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -8949,6 +9834,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tilpina",
+        "gen": "tilpisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -8971,6 +9860,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd singular accusative"
     },
@@ -8998,6 +9888,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tirina",
+        "gen": "tirisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9020,6 +9914,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "personal pronoun, 2nd singular genitive"
     },
@@ -9047,6 +9942,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tlaurni",
+        "gen": "tlaursi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9074,6 +9973,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tlaurena",
+        "gen": "tlauresa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9101,6 +10004,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9128,6 +10032,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "tlowni",
+        "gen": "tlowsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9150,6 +10058,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "closed-class; toneless; -s exempt"
     },
@@ -9172,6 +10081,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "closed-class; toneless; -s exempt; fused from tor + rap"
     },
@@ -9195,6 +10105,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9217,6 +10128,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9244,6 +10156,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "umni",
+        "gen": "umsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9266,6 +10182,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "spatial postposition (-ne suffix)"
     },
@@ -9288,6 +10205,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     },
@@ -9320,6 +10238,10 @@
       ],
       "pattern": "collective-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "walunlani",
+        "gen": "walunlasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9347,6 +10269,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "wamyna",
+        "gen": "wamysa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9374,6 +10300,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9401,6 +10328,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9428,6 +10356,10 @@
       ],
       "pattern": "property",
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-C",
+      "case_forms": {
+        "acc": "wem luni",
+        "gen": "wem lusi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9450,6 +10382,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "closed-class; toneless; -s exempt; fused from wes + tor"
     },
@@ -9477,6 +10410,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "winarni",
+        "gen": "winarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9505,6 +10442,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "winoni",
+        "gen": "winosi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9532,6 +10473,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "wonarni",
+        "gen": "wonarsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9559,6 +10504,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "wonlina",
+        "gen": "wonlisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9586,6 +10535,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "wugni",
+        "gen": "wugsi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9608,6 +10561,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": ""
     },
@@ -9635,6 +10589,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "yrani",
+        "gen": "yrasi"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9662,6 +10620,10 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {
+        "acc": "yrena",
+        "gen": "yresa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9698,6 +10660,10 @@
       ],
       "pattern": "nominal-compound",
       "rule_ref": null,
+      "case_forms": {
+        "acc": "yrelumina",
+        "gen": "yrelumisa"
+      },
       "examples": [],
       "notes": ""
     },
@@ -9720,6 +10686,7 @@
       "components": [],
       "pattern": null,
       "rule_ref": null,
+      "case_forms": {},
       "examples": [],
       "notes": "question word"
     }

@@ -95,6 +95,24 @@ function DetailPanel({ entry, prefixInfo }) {
             </div>
           )}
 
+          {entry.case_forms && Object.keys(entry.case_forms).length > 0 && (
+            <div className="detail-row">
+              <strong>Case Forms</strong>
+              <div className="infl-list">
+                {entry.case_forms.acc && (
+                  <span className="infl-item case-form-acc">
+                    {entry.case_forms.acc} <span className="infl-type">(ACC)</span>
+                  </span>
+                )}
+                {entry.case_forms.gen && (
+                  <span className="infl-item case-form-gen">
+                    {entry.case_forms.gen} <span className="infl-type">(GEN)</span>
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
           {entry.components && entry.components.length > 0 && (
             <div className="detail-row">
               <strong>Components</strong>

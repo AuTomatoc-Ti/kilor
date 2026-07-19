@@ -17,6 +17,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from .db import get_db, fts_search
+from .phonology import get_case_forms
 from .schema import SECTION_LABELS, DERIVATION_MASK_LABELS
 
 # ── FastAPI app ──────────────────────────────────────────────────────────────
@@ -129,6 +130,19 @@ def _word_to_dict(conn, row) -> dict:
     prefix = row["consensus_prefix"] or "o-"
     prefix_info = PREFIX_INFO.get(prefix, None)
 
+    # Compute case forms (ACC/GEN) on the fly
+    case_forms = {}
+    acc, gen = get_case_forms(
+        row["form"],
+        derivation_mask=row["derivation_mask"] or None,
+        is_function_word=bool(row["is_function_word"]),
+        compound_type=row["compound_type"],
+    )
+    if acc is not None:
+        case_forms["acc"] = acc
+    if gen is not None:
+        case_forms["gen"] = gen
+
     return {
         "id": wid,
         "form": row["form"],
@@ -149,6 +163,7 @@ def _word_to_dict(conn, row) -> dict:
         "rule_ref": meta["rule_ref"] if meta else None,
         "grammar_ref": grammar_ref,
         "examples": examples,
+        "case_forms": case_forms,
         "notes": row["notes"] or "",
         "phase": row["phase"] if "phase" in row.keys() else None,
         "tags": row["tags"] if "tags" in row.keys() else None,
