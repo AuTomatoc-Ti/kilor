@@ -15,6 +15,10 @@ import sqlWasmUrl from 'sql.js/dist/sql-wasm.wasm?url';
 
 let db = null;
 
+export function isDatabaseLoaded() {
+  return db !== null;
+}
+
 function isNode() {
   return typeof process !== 'undefined' && process.versions && process.versions.node;
 }
@@ -29,6 +33,10 @@ function b64toBuf(b64) {
 export async function initDatabase() {
   if (db) return;
 
+  return _loadDatabase();
+}
+
+async function _loadDatabase() {
   if (isNode()) {
     const SQL = await initSqlJs();
     const { readFile } = await import('node:fs/promises');
@@ -68,6 +76,7 @@ export async function initDatabase() {
   }
   const buf = await resp.arrayBuffer();
   db = new SQL.Database(new Uint8Array(buf));
+  return db;
 }
 
 function queryAll(sql, params = []) {
@@ -294,7 +303,7 @@ function enrichEntry(row) {
     is_root: Boolean(row.is_root), is_compound: Boolean(row.is_compound),
     compound_type: row.compound_type || null,
     is_function_word: Boolean(row.is_function_word),
-    consensus_prefix: row.consensus_prefix || 'o-',
+    consensus_prefix: row.consensus_prefix || null,
     inflections, components,
     pattern: meta ? meta.pattern : null,
     rule_ref: meta ? meta.rule_ref : null,
@@ -322,7 +331,7 @@ export async function buildTestDB(entries) {
   const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, sort_order) VALUES (?,?,?)');
   const ii = testDB.prepare('INSERT INTO inflections (word_id, form_type, form) VALUES (?,?,?)');
   for (const e of entries) {
-    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.section, e.consensus_prefix||'o-', e.is_function_word?1:0, e.notes||'']);
+    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.section, e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
     e.meanings.forEach((m, i) => im.run([e.id, m, i]));
     if (e.inflections) Object.entries(e.inflections).forEach(([t, f]) => ii.run([e.id, t, f]));
   }
@@ -331,4 +340,31 @@ export async function buildTestDB(entries) {
 }
 
 export function setDB(testDB) { db = testDB; }
+export async function reloadDatabase() {
+  // Fetch fresh kilor.db via HTTP and replace the in-memory database.
+  // Works because public/kilor.db is a symlink to data/kilor.db.
+  const resp = await fetch('./kilor.db', { cache: 'no-store' });
+  if (!resp.ok) {
+    throw new Error(
+      `Cannot reload database: HTTP ${resp.status} fetching ./kilor.db.`
+    );
+  }
+  const buf = await resp.arrayBuffer();
+  const DatabaseCtor = db.constructor; // the Database class (from new SQL.Database(...))
+  const newDB = new DatabaseCtor(new Uint8Array(buf));
+
+  // Safety check: verify the new DB is queryable before replacing the old one
+  let count;
+  try {
+    count = newDB.exec('SELECT COUNT(*) FROM words')[0]?.values[0]?.[0] ?? 0;
+  } catch (_e) {
+    newDB.close();
+    throw new Error('Reloaded database is corrupt or unreadable');
+  }
+
+  db.close();
+  db = newDB;
+  return count;
+}
+
 export function getDB() { return db; }

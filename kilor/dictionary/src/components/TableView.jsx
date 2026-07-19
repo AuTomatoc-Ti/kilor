@@ -3,7 +3,7 @@ import React from 'react';
 const SECTION_LABELS = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
 
 function PrefixBadge({ prefix, info }) {
-  if (!prefix || prefix === 'o-' || prefix === '' || prefix === '-') return <span className="empty-cell">—</span>;
+  if (!prefix || prefix === '' || prefix === '-') return <span className="empty-cell">—</span>;
   if (!info) return <span className="empty-cell">—</span>;
   return (
     <span className="prefix-badge" style={{ background: info.color }}>

@@ -1,0 +1,136 @@
+{
+  "_description": "7-Question Filter keyword-to-prefix mapping for non-LLM auto-assignment. Ordered by filter priority (Q1→Q7). First match wins. No catch-all — NULL when uncertain.",
+  "_usage": "For each gloss, scan Q1→Q7 in order. First keyword match assigns the prefix. If multiple filters match, return NULL (ambiguous). If no filter matches, return NULL.",
+  "filters": [
+    {
+      "question": 1,
+      "prefix": "o-",
+      "ontology": "White — Void / Abstract / Formless",
+      "keywords": [
+        "abstract", "idea", "soul", "spirit", "void", "emptiness", "hope", "wish",
+        "concept", "thought", "think", "doctrine", "philosophy",
+        "property", "quality", "truth", "true", "real",
+        "name", "word", "speech", "language",
+        "result", "measure", "measurement",
+        "alone", "solitude", "together", "each other", "reciprocal",
+        "double", "half", "quarter", "sixth", "eighth", "sixteen",
+        "without", "lack",
+        "colour", "hue", "music",
+        "ability", "can", "able", "power", "strength",
+        "friend",
+        "hello", "hey",
+        "morning", "afternoon", "evening",
+        "night", "day",
+        "occurrence", "frequency",
+        "distance", "distant",
+        "time", "now", "today", "yesterday", "tomorrow",
+        "week", "month", "year", "century", "decade",
+        "minute", "second", "hour",
+        "duration", "through", "via",
+        "before", "after", "early", "late", "soon",
+        "always", "never", "sometimes", "again",
+        "all", "every", "each", "any", "none", "some", "lot", "many", "few", "most",
+        "big", "large", "small", "new", "old",
+        "bad", "good",
+        "fast", "quick", "slow",
+        "hot", "cold", "warm", "cool", "dark",
+        "facing", "head", "direction",
+        "place", "position", "location",
+        "front", "back", "left", "right", "top", "bottom",
+        "in", "out", "under", "around", "along", "across", "side",
+        "north", "south", "east", "west",
+        "season", "spring", "summer", "autumn", "winter",
+        "dusk", "dawn",
+        "start-of", "end-of",
+        "act", "deed",
+        "collapse", "fall",
+        "stand", "stay"
+      ]
+    },
+    {
+      "question": 2,
+      "prefix": "i-",
+      "ontology": "Blue — Fluid / Vast / Boundary-less",
+      "keywords": [
+        "water", "river", "rain", "wind", "ocean", "sea", "wave",
+        "ice", "snow", "frost", "blizzard",
+        "cloud", "smoke", "mist", "air", "sky", "space", "cosmic",
+        "fluid", "gas", "lake", "waterfall", "flood",
+        "comet", "celestial", "dome", "canopy",
+        "moon", "star",
+        "fly", "flying", "flight"
+      ]
+    },
+    {
+      "question": 3,
+      "prefix": "a-",
+      "ontology": "Red — Alive / Energy / Fire",
+      "keywords": [
+        "fire", "sun", "light", "sunlight", "sunrise", "moonlight",
+        "person", "human", "body", "blood",
+        "animal", "beast", "bird", "fish", "dog", "cat",
+        "father", "mother", "dad", "mom", "parent",
+        "life", "death", "dead",
+        "eye", "ear", "hand", "mouth",
+        "language", "speech", "talk",
+        "reflexive", "self",
+        "anger", "rage"
+      ]
+    },
+    {
+      "question": 4,
+      "prefix": "u-",
+      "ontology": "Green — Organic / Growth / Network",
+      "keywords": [
+        "tree", "plant", "flower", "leaf", "leaves", "forest",
+        "grass", "crop", "medicine", "fungus", "mushroom",
+        "ecosystem", "organic", "garden", "vine",
+        "grace", "grateful", "calm", "peace"
+      ]
+    },
+    {
+      "question": 5,
+      "prefix": "y-",
+      "ontology": "Black — Mass / Dense / Unyielding",
+      "keywords": [
+        "stone", "rock", "mountain", "metal", "iron",
+        "avalanche", "glacier",
+        "volcano",
+        "diamond", "crystal", "gem",
+        "knife", "blade", "sword", "axe",
+        "dense", "heavy", "hard",
+        "machine", "machinery",
+        "bedrock", "cave", "deep",
+        "fear"
+      ]
+    },
+    {
+      "question": 6,
+      "prefix": "ae-",
+      "ontology": "Brown — Earth / Boundary / Friction",
+      "keywords": [
+        "earth", "soil", "dirt", "wood", "leather",
+        "door", "wall", "room", "chamber", "house", "dwelling",
+        "path", "road",
+        "bedroom",
+        "furniture",
+        "pain", "suffering", "disgust"
+      ]
+    },
+    {
+      "question": 7,
+      "prefix": "e-",
+      "ontology": "Yellow — Crafted / Tool / Order",
+      "keywords": [
+        "bread", "food", "cloth", "fabric", "cup", "container", "tool",
+        "meal", "cooked", "crafted", "artificial",
+        "clothing", "garment", "shoe",
+        "book", "paper", "pen",
+        "smartphone", "screen", "vehicle",
+        "weapon", "armor",
+        "joy", "happiness", "love",
+        "cut", "knife"
+      ]
+    }
+  ]
+}

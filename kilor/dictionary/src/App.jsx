@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Toolbar from './components/Toolbar';
 import FilterPanel from './components/FilterPanel';
 import TableView from './components/TableView';
-import { initDatabase, queryWords, getMeta } from './db';
+import { initDatabase, queryWords, getMeta, reloadDatabase } from './db';
 
 const PREFIX_INFO = {
   "a-":  { cls: "Alive / Energy",    emotion: "Anger",   color: "#ef4444" },
@@ -19,6 +19,7 @@ const ALL_PREFIX_KEYS = Object.keys(PREFIX_INFO);
 
 export default function App() {
   const [search, setSearch] = useState('');
+  const [dbVersion, setDbVersion] = useState(0);
 
   const [filterSections, setFilterSections] = useState([]);
   const [filterTypes, setFilterTypes] = useState([]);
@@ -33,6 +34,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     initDatabase()
@@ -51,7 +53,7 @@ export default function App() {
       search, sections: filterSections, types: filterTypes, masks: filterMasks,
       prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir,
     }),
-    [search, filterSections, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading]
+    [search, filterSections, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion]
   );
 
   const handleSort = useCallback((col) => {
@@ -72,6 +74,19 @@ export default function App() {
     setFilterPrefixes([]);
     setSylMin(1);
     setSylMax(10);
+  }, []);
+
+  const handleRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      const count = await reloadDatabase();
+      setTotalCount(count);
+      setDbVersion(v => v + 1);
+    } catch (err) {
+      setError('Cannot refresh: ' + err.message);
+    } finally {
+      setRefreshing(false);
+    }
   }, []);
 
   const handleSearchByForm = useCallback((form) => {
@@ -110,6 +125,8 @@ export default function App() {
           totalCount={totalCount}
           filterOpen={filterOpen}
           onFilterToggle={() => setFilterOpen(o => !o)}
+          onRefresh={handleRefresh}
+          refreshing={refreshing}
         />
         {filterOpen && (
           <FilterPanel

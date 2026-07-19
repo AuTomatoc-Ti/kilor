@@ -2,8 +2,8 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.1.1
+**Last updated:** 2026-07-19
+**Version:** 1.2.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -13,6 +13,8 @@
 Traditional languages often bind nouns to rigid, arbitrary grammatical genders (masculine/feminine/neuter), forcing learners into a memorisation trap. Kilor replaces this with a **Cognitive Lens**.
 
 The Colour Prefix does **not** describe the visual colour of an object, nor does it dictate a fixed dictionary category. It is **subjective metadata** — reflecting the speaker's immediate physical or cognitive perception of the noun. Because the root morpheme carries the core semantic weight, the system is **fault-tolerant**: choosing a "sub-optimal" prefix does not cause catastrophic misunderstanding.
+
+The 7 ontological classes are not abstract philosophical categories imposed top-down. They are **conventionalized sensory experience**, hardened through generations of practical, embodied categorization. A pre-historic speaker categorizes by what they perceive and do with an object — is it alive? is it fluid? can I build with it? — not by abstract ontology. The colour names are mnemonics for these embodied sensory categories, not visual classification criteria.
 
 ---
 

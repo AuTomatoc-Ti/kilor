@@ -2,6 +2,7 @@ export default function Toolbar({
   search, onSearchChange,
   resultCount, totalCount,
   filterOpen, onFilterToggle,
+  onRefresh, refreshing,
 }) {
   return (
     <div className="toolbar">
@@ -18,6 +19,14 @@ export default function Toolbar({
           <span className="result-count">
             {resultCount === totalCount ? totalCount + ' words' : resultCount + ' of ' + totalCount + ' words'}
           </span>
+          <button
+            className="refresh-btn"
+            onClick={onRefresh}
+            disabled={refreshing}
+            title="Reload database from kilor.db"
+          >
+            {refreshing ? '⟳' : '↻'}
+          </button>
           <button
             className={'advanced-filter-btn' + (filterOpen ? ' active' : '')}
             onClick={onFilterToggle}
