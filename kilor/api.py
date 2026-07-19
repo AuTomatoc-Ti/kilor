@@ -48,7 +48,7 @@ PREFIX_INFO = {
     "a-":  {"class": "Alive / Energy",     "emotion": "Anger",   "color": "#ef4444"},
     "e-":  {"class": "Crafted / Tool",     "emotion": "Joy",     "color": "#f59e0b"},
     "i-":  {"class": "Fluid / Vast",       "emotion": "Sadness", "color": "#3b82f6"},
-    "o-":  {"class": "Abstract / Void",    "emotion": "Surprise","color": "#8b5cf6"},
+    "o-":  {"class": "Abstract / Void",    "emotion": "Surprise","color": "#f5f5f5"},
     "u-":  {"class": "Organic / Growth",   "emotion": "Calm",    "color": "#22c55e"},
     "y-":  {"class": "Dense / Mass",       "emotion": "Fear",    "color": "#6b7280"},
     "ae-": {"class": "Earth / Boundary",   "emotion": "Disgust", "color": "#a16207"},

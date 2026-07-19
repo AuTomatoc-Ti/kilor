@@ -21,8 +21,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .toolbar { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 24px; background: #fff; border-bottom: 1px solid #e0e0e0; align-items: center; }
 #search { flex: 1; min-width: 180px; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: .95rem; outline: none; }
 #search:focus { border-color: #4a6cf7; box-shadow: 0 0 0 3px rgba(74,108,247,.12); }
-.toolbar select { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: .85rem; outline: none; background: #fff; cursor: pointer; }
-.toolbar select:focus { border-color: #4a6cf7; }
+/* Multi-select dropdown */
+.multiselect { position: relative; }
+.multiselect-trigger { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: .85rem; outline: none; background: #fff; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
+.multiselect-trigger:hover { border-color: #4a6cf7; }
+.multiselect-trigger.has-selection { border-color: #4a6cf7; background: #f4f6ff; color: #1a56db; font-weight: 500; }
+.multiselect-arrow { font-size: .7rem; opacity: .5; }
+.multiselect-dropdown { position: absolute; top: calc(100% + 4px); left: 0; z-index: 20; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,.12); min-width: 200px; max-height: 280px; overflow-y: auto; padding: 4px 0; }
+.multiselect-option { display: flex; align-items: center; gap: 8px; padding: 6px 14px; font-size: .85rem; cursor: pointer; white-space: nowrap; }
+.multiselect-option:hover { background: #f4f6ff; }
+.multiselect-option input[type="checkbox"] { accent-color: #4a6cf7; cursor: pointer; }
 .toolbar button { padding: 8px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: .85rem; background: #fff; cursor: pointer; white-space: nowrap; }
 .toolbar button:hover { background: #f4f6ff; border-color: #4a6cf7; }
 .toolbar button.active { background: #4a6cf7; color: #fff; border-color: #4a6cf7; }

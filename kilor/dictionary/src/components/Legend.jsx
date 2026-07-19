@@ -5,7 +5,7 @@ export default function Legend({ open, prefixInfo }) {
       <div className="legend-grid">
         {Object.entries(prefixInfo).map(([key, info]) => (
           <div className="legend-item" key={key}>
-            <span className="legend-swatch" style={{ background: info.color }}></span>
+            <span className="legend-swatch" style={{ background: info.color, border: key === 'o-' ? '1px dashed #ccc' : 'none' }}></span>
             <b>{key}</b> {info.cls} · {info.emotion}
           </div>
         ))}

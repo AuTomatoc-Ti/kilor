@@ -10,7 +10,7 @@ const PREFIX_INFO = {
   "a-":  { cls: "Alive / Energy",    emotion: "Anger",   color: "#ef4444" },
   "e-":  { cls: "Crafted / Tool",    emotion: "Joy",     color: "#f59e0b" },
   "i-":  { cls: "Fluid / Vast",      emotion: "Sadness", color: "#3b82f6" },
-  "o-":  { cls: "Abstract / Void",   emotion: "Surprise",color: "#8b5cf6" },
+  "o-":  { cls: "Abstract / Void",   emotion: "Surprise",color: "#f5f5f5" },
   "u-":  { cls: "Organic / Growth",  emotion: "Calm",    color: "#22c55e" },
   "y-":  { cls: "Dense / Mass",      emotion: "Fear",    color: "#6b7280" },
   "ae-": { cls: "Earth / Boundary",  emotion: "Disgust", color: "#a16207" },
@@ -18,9 +18,9 @@ const PREFIX_INFO = {
 
 export default function App() {
   const [search, setSearch] = useState('');
-  const [filterSection, setFilterSection] = useState('');
-  const [filterType, setFilterType] = useState('');
-  const [filterMask, setFilterMask] = useState('');
+  const [filterSections, setFilterSections] = useState([]);
+  const [filterTypes, setFilterTypes] = useState([]);
+  const [filterMasks, setFilterMasks] = useState([]);
   const [sortCol, setSortCol] = useState('form');
   const [sortDir, setSortDir] = useState('asc');
   const [view, setView] = useState('table');
@@ -42,8 +42,8 @@ export default function App() {
   }, []);
 
   const entries = useMemo(
-    () => queryWords({ search, section: filterSection, filterType, filterMask, sortCol, sortDir }),
-    [search, filterSection, filterType, filterMask, sortCol, sortDir]
+    () => queryWords({ search, sections: filterSections, types: filterTypes, masks: filterMasks, sortCol, sortDir }),
+    [search, filterSections, filterTypes, filterMasks, sortCol, sortDir, loading]
   );
 
   const handleSort = useCallback((col) => {
@@ -59,9 +59,9 @@ export default function App() {
 
   const handleSearchByForm = useCallback((form) => {
     setSearch(form);
-    setFilterSection('');
-    setFilterType('');
-    setFilterMask('');
+    setFilterSections([]);
+    setFilterTypes([]);
+    setFilterMasks([]);
   }, []);
 
   if (loading) {
@@ -89,12 +89,12 @@ export default function App() {
         <Toolbar
           search={search}
           onSearchChange={setSearch}
-          filterSection={filterSection}
-          onFilterSectionChange={setFilterSection}
-          filterType={filterType}
-          onFilterTypeChange={setFilterType}
-          filterMask={filterMask}
-          onFilterMaskChange={setFilterMask}
+          filterSections={filterSections}
+          onFilterSectionsChange={setFilterSections}
+          filterTypes={filterTypes}
+          onFilterTypesChange={setFilterTypes}
+          filterMasks={filterMasks}
+          onFilterMasksChange={setFilterMasks}
           view={view}
           onViewChange={setView}
           resultCount={entries.length}

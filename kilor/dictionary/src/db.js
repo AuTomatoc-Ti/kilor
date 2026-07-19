@@ -3,7 +3,15 @@
  * Uses sql.js (SQLite compiled to WebAssembly) to read kilor.db directly.
  */
 
-import initSqlJs from 'sql.js';
+// sql.js browser build is CJS (module.exports = initSqlJs).
+// Use namespace import + default extraction for compatibility with Vite's CJS interop.
+import * as sqlJsModule from 'sql.js';
+const initSqlJs = sqlJsModule.default || sqlJsModule;
+
+// Import the wasm binary URL from the installed sql.js npm package.
+// Vite's `?url` loader resolves this to a hashed asset URL at build time
+// and serves it correctly in dev mode, avoiding MIME-type issues.
+import sqlWasmUrl from 'sql.js/dist/sql-wasm.wasm?url';
 
 let db = null;
 
@@ -40,7 +48,9 @@ export async function initDatabase() {
   if (wasmB64) {
     SQL = await initSqlJs({ wasmBinary: b64toBuf(wasmB64) });
   } else {
-    SQL = await initSqlJs({ locateFile: (file) => `/${file}` });
+    // Use the version-matched wasm from the installed sql.js package.
+    // Vite's `?url` import gives us a properly served URL with correct MIME type.
+    SQL = await initSqlJs({ locateFile: () => sqlWasmUrl });
   }
 
   const dbB64 = typeof window !== 'undefined' && window.__KILOR_DB_B64__;
@@ -83,9 +93,9 @@ function queryValue(sql, params = []) {
 
 export function queryWords({
   search = '',
-  section = '',
-  filterType = '',
-  filterMask = '',
+  sections = [],
+  types = [],
+  masks = [],
   sortCol = 'form',
   sortDir = 'asc',
 } = {}) {
@@ -99,12 +109,33 @@ export function queryWords({
   let sql = `SELECT ${cols} FROM words w LEFT JOIN meanings m ON w.id = m.word_id WHERE 1=1`;
   const params = [];
 
-  if (section) { sql += ' AND w.section = ?'; params.push(section); }
-  if (filterType === 'root') { sql += ' AND w.is_root = 1'; }
-  else if (filterType === 'compound') { sql += ' AND w.is_compound = 1'; }
-  else if (filterType === 'function') { sql += ' AND w.is_function_word = 1'; }
-  if (filterMask === 'EMPTY') { sql += " AND (w.derivation_mask IS NULL OR w.derivation_mask = '')"; }
-  else if (filterMask) { sql += ' AND w.derivation_mask = ?'; params.push(filterMask); }
+  if (sections.length > 0) {
+    sql += ` AND w.section IN (${sections.map(() => '?').join(',')})`;
+    params.push(...sections);
+  }
+
+  if (types.length > 0) {
+    const typeConds = [];
+    for (const t of types) {
+      if (t === 'root') { typeConds.push('w.is_root = 1'); }
+      else if (t === 'compound') { typeConds.push('w.is_compound = 1'); }
+      else if (t === 'function') { typeConds.push('w.is_function_word = 1'); }
+    }
+    if (typeConds.length > 0) { sql += ` AND (${typeConds.join(' OR ')})`; }
+  }
+
+  if (masks.length > 0) {
+    const maskConds = [];
+    for (const m of masks) {
+      if (m === 'EMPTY') {
+        maskConds.push("(w.derivation_mask IS NULL OR w.derivation_mask = '')");
+      } else {
+        maskConds.push('w.derivation_mask = ?');
+        params.push(m);
+      }
+    }
+    if (maskConds.length > 0) { sql += ` AND (${maskConds.join(' OR ')})`; }
+  }
   if (search) {
     sql += ' AND (LOWER(w.form) LIKE ? OR LOWER(m.gloss) LIKE ?)';
     const t = `%${search.toLowerCase()}%`;
@@ -175,7 +206,7 @@ export function getMeta() {
 
 export async function buildTestDB(entries) {
   const SQL = await initSqlJs({
-    locateFile: isNode() ? undefined : (file) => `/${file}`,
+    locateFile: isNode() ? undefined : () => sqlWasmUrl,
   });
   const testDB = new SQL.Database();
   testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, section TEXT NOT NULL, consensus_prefix TEXT, is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);

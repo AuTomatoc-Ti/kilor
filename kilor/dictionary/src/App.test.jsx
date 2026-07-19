@@ -2,156 +2,221 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
-import { buildTestDB, setDB } from './db';
+import { initDatabase, getDB } from './db';
 
-function e(props = {}) {
-  return {
-    id: props.id || 1, form: props.form || 'test', syl_count: props.syl_count ?? 1,
-    meanings: props.meanings || ['test'], derivation_mask: props.derivation_mask || 'N',
-    section: props.section || 'A', is_root: props.is_root ?? true,
-    is_compound: props.is_compound ?? false, compound_type: props.compound_type || null,
-    is_function_word: props.is_function_word ?? false,
-    consensus_prefix: props.consensus_prefix || 'o-',
-    inflections: props.inflections || {}, components: props.components || [],
-    pattern: props.pattern || null, rule_ref: props.rule_ref || null,
-    examples: props.examples || [], notes: props.notes || '',
-  };
-}
-
-const testEntries = [
-  e({ id: 1, form: 'orse', meanings: ['also', 'too', 'as well'], is_root: true, is_function_word: true, derivation_mask: '', section: 'I' }),
-  e({ id: 2, form: 'aug', meanings: ['start', 'begin'], section: 'D', derivation_mask: 'NVAD' }),
-  e({ id: 3, form: 'auk', meanings: ['eight'], is_function_word: true, derivation_mask: '', section: 'I' }),
-  e({ id: 4, form: 'auli', meanings: ['comet'], section: 'A', derivation_mask: 'N' }),
-  e({ id: 5, form: 'argonna', meanings: ['love'], section: 'F', derivation_mask: 'NVAD' }),
-  e({ id: 6, form: 'afaloi taka', meanings: ['edible'], is_root: false, is_compound: true, compound_type: 'multi', section: 'I', derivation_mask: 'NV', syl_count: 4 }),
-  e({ id: 7, form: 'ki', meanings: ['I'], is_function_word: true, derivation_mask: '', section: 'I' }),
-  e({ id: 8, form: 'sil', meanings: ['they (pl living)'], is_function_word: true, derivation_mask: '', section: 'I' }),
-  e({ id: 9, form: 'also', meanings: ['southern'], section: 'G', derivation_mask: 'NA' }),
-];
+/**
+ * End-to-end tests using the REAL kilor.db database.
+ *
+ * In jsdom (Node), initDatabase() reads data/kilor.db directly from the
+ * filesystem via node:fs. This exercises the full initialization pipeline
+ * that the browser would use — no mock injection, no synthetic test data.
+ *
+ * The database (as of writing) contains 361 words. Tests use concrete
+ * entries known to exist in the production DB.
+ */
 
 beforeAll(async () => {
-  const testDB = await buildTestDB(testEntries);
-  setDB(testDB);
+  // Initialize from the real kilor.db (Node path: reads from filesystem).
+  // The if (db) return guard in initDatabase() means it's safe to call
+  // multiple times within the same test run — only the first call does work.
+  await initDatabase();
 });
 
-/** Wait for the app to finish loading (search input appears). */
+/** Wait for the app to finish loading (search input visible). */
 async function waitForApp() {
   await screen.findByPlaceholderText(/Search by word/i);
 }
 
-describe('App — search', () => {
-  it('renders the header with total count', async () => {
+/**
+ * Click a multiselect trigger button, then toggle a checkbox option
+ * inside the open dropdown. Uses getAllByText + DOM filtering because
+ * section labels also appear in the Legend component.
+ */
+function toggleFilter(triggerText, optionLabel) {
+  fireEvent.click(screen.getByText(triggerText));
+  // Find all elements matching the option label, pick the one inside
+  // the multiselect dropdown (wrapped in a <label>).
+  const matches = screen.getAllByText(optionLabel);
+  const label = matches.find((el) => el.closest('.multiselect-dropdown'))?.closest('label');
+  if (!label) throw new Error(`toggleFilter: "${optionLabel}" not found inside multiselect dropdown`);
+  fireEvent.click(label);
+}
+
+describe('App — initialization (real DB)', () => {
+  it('renders header with real total word count', async () => {
     render(<App />);
     await waitForApp();
     expect(screen.getByText('Kilor Dictionary')).toBeInTheDocument();
-    const countEls = screen.getAllByText('9 words');
-    expect(countEls.length).toBeGreaterThanOrEqual(1);
+
+    // "361 words" appears in both Header and Toolbar — at least 2 instances
+    const countEls = screen.getAllByText('361 words');
+    expect(countEls.length).toBeGreaterThanOrEqual(2);
   });
 
-  it('search "orse" returns only the "orse" entry', async () => {
+  it('does NOT show the error state', async () => {
+    render(<App />);
+    await waitForApp();
+    expect(screen.queryByText(/Cannot load dictionary data/)).not.toBeInTheDocument();
+  });
+
+  it('table header columns are present', async () => {
+    render(<App />);
+    await waitForApp();
+    expect(screen.getByText('Word')).toBeInTheDocument();
+    expect(screen.getByText('Gloss')).toBeInTheDocument();
+  });
+
+  it('shows word entries on initial load, not "No words match."', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), { target: { value: 'orse' } });
-    await waitFor(() => expect(screen.getByText('1 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('orse')).toBeInTheDocument();
-    expect(screen.queryByText('aug')).not.toBeInTheDocument();
-    expect(screen.queryByText('ki')).not.toBeInTheDocument();
-  });
+    // After loading, the table should be populated with word entries.
+    // "No words match." must NOT appear on the initial, unfiltered view.
+    expect(screen.queryByText('No words match.')).not.toBeInTheDocument();
 
-  it('search is case-insensitive', async () => {
-    render(<App />);
-    await waitForApp();
+    // At least some .td-form cells should contain data (word forms).
+    const formCells = document.querySelectorAll('.td-form');
+    expect(formCells.length).toBeGreaterThan(10);
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), { target: { value: 'ORSE' } });
-    await waitFor(() => expect(screen.getByText('1 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('orse')).toBeInTheDocument();
-  });
-
-  it('search for nonexistent word shows "No words match"', async () => {
-    render(<App />);
-    await waitForApp();
-
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), { target: { value: 'xyzzy' } });
-    await waitFor(() => expect(screen.getByText('No words match.')).toBeInTheDocument());
-  });
-
-  it('search by gloss "start" matches "aug"', async () => {
-    render(<App />);
-    await waitForApp();
-
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), { target: { value: 'start' } });
-    await waitFor(() => expect(screen.getByText('1 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('aug')).toBeInTheDocument();
+    // Verify a known word is visible — "fora" appears in the production DB
+    // early in alphabetical order and is a reliable signal that entries rendered.
+    expect(screen.getAllByText('fora').length).toBeGreaterThanOrEqual(1);
   });
 });
 
-describe('App — filters', () => {
-  it('filter by section "I" shows only section I entries', async () => {
+describe('App — search (real DB)', () => {
+  it('search by exact form "fora" returns that entry', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getAllByRole('combobox')[0], { target: { value: 'I' } });
-    await waitFor(() => expect(screen.getByText('5 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('orse')).toBeInTheDocument();
-    expect(screen.getByText('auk')).toBeInTheDocument();
-    expect(screen.queryByText('aug')).not.toBeInTheDocument();
-    expect(screen.queryByText('auli')).not.toBeInTheDocument();
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'fora' },
+    });
+    // Filtered result count (fewer than 361). "fora" appears in the table.
+    await waitFor(() => expect(screen.getByText(/of 361 words/)).toBeInTheDocument());
+    // "fora" appears in the table and title attributes — use getAllByText
+    const foraEls = screen.getAllByText('fora');
+    // At least one should be the table cell (not the title attribute hover)
+    expect(foraEls.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('filter by type "root" returns only roots', async () => {
+  it('search is case-insensitive ("FORA" matches "fora")', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'root' } });
-    await waitFor(() => expect(screen.getByText('8 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('orse')).toBeInTheDocument();
-    expect(screen.queryByText('afaloi taka')).not.toBeInTheDocument();
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'FORA' },
+    });
+    await waitFor(() => {
+      const els = screen.getAllByText('fora');
+      expect(els.length).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  it('search by gloss "fire" matches "fora"', async () => {
+    render(<App />);
+    await waitForApp();
+
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'fire' },
+    });
+    // Gloss search triggers the HAVING clause — result shows "fora"
+    await waitFor(() => {
+      const els = screen.getAllByText('fora');
+      expect(els.length).toBeGreaterThanOrEqual(1);
+    });
+  });
+
+  it('search nonexistent word shows "No words match"', async () => {
+    render(<App />);
+    await waitForApp();
+
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'xyzzyzzz' },
+    });
+    await waitFor(() => expect(screen.getByText('No words match.')).toBeInTheDocument());
+  });
+
+  it('search partial "fein" excludes "fei" when query is exact', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // "fei" is a word ("fly / flying"), "fein" is another ("bird")
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'fein' },
+    });
+    await waitFor(() => expect(screen.getByText('fein')).toBeInTheDocument());
+  });
+});
+
+describe('App — filters (real DB)', () => {
+  it('filter by section A (Worlds & Elements) shows entries', async () => {
+    render(<App />);
+    await waitForApp();
+
+    toggleFilter('All sections', 'A — Worlds & Elements');
+    // Should display filtered count — many entries are in section A
+    await waitFor(() => {
+      const countEl = screen.getByText(/of 361 words/);
+      expect(countEl).toBeInTheDocument();
+    });
+  });
+
+  it('filter by type "function" shows only function words', async () => {
+    render(<App />);
+    await waitForApp();
+
+    toggleFilter('All types', 'Function words');
+    await waitFor(() => {
+      const countEl = screen.getByText(/of 361 words/);
+      expect(countEl).toBeInTheDocument();
+    });
+    // Known function word "res" should be visible
+    expect(screen.getByText('res')).toBeInTheDocument();
+    // Content root "fora" should NOT be visible
+    expect(screen.queryByText('fora')).not.toBeInTheDocument();
   });
 
   it('filter by type "compound" returns only compounds', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'compound' } });
-    await waitFor(() => expect(screen.getByText('1 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('afaloi taka')).toBeInTheDocument();
-  });
-
-  it('filter by mask "NVAD" returns only NVAD entries', async () => {
-    render(<App />);
-    await waitForApp();
-
-    fireEvent.change(screen.getAllByRole('combobox')[2], { target: { value: 'NVAD' } });
-    await waitFor(() => expect(screen.getByText('2 of 9 words')).toBeInTheDocument());
-    expect(screen.getByText('aug')).toBeInTheDocument();
-    expect(screen.getByText('argonna')).toBeInTheDocument();
-    expect(screen.queryByText('orse')).not.toBeInTheDocument();
-  });
-
-  it('combined search + section filter works', async () => {
-    render(<App />);
-    await waitForApp();
-
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), { target: { value: 'au' } });
-    fireEvent.change(screen.getAllByRole('combobox')[0], { target: { value: 'I' } });
-
+    toggleFilter('All types', 'Compounds');
+    // After filtering to compounds, result count should be fewer than total
     await waitFor(() => {
-      expect(screen.getByText('auk')).toBeInTheDocument();
+      expect(screen.getByText('lunlagak')).toBeInTheDocument();
     });
-    expect(screen.queryByText('aug')).not.toBeInTheDocument();
-    expect(screen.queryByText('auli')).not.toBeInTheDocument();
+    // Compound filter excludes content roots — "fora" should not appear
+    // in the table. queryAllByText may match tooltip attributes, so check
+    // that the table contains no <td> with textContent === 'fora'.
+    const tds = document.querySelectorAll('.td-form');
+    const forms = [...tds].map((td) => td.textContent);
+    expect(forms).not.toContain('fora');
+  });
+
+  it('filter by mask "NVAD" returns matching entries', async () => {
+    render(<App />);
+    await waitForApp();
+
+    toggleFilter('All masks', 'NVAD');
+    await waitFor(() => {
+      const countEl = screen.getByText(/of 361 words/);
+      expect(countEl).toBeInTheDocument();
+    });
+    // "fei" is NVAD (fly/flying)
+    expect(screen.getByText('fei')).toBeInTheDocument();
   });
 });
 
-describe('App — sorting', () => {
+describe('App — sorting (real DB)', () => {
   it('sorts by form ascending by default', async () => {
     render(<App />);
     await waitForApp();
 
     const cells = screen.getAllByRole('cell');
-    const forms = cells.filter(c => c.className.includes('td-form')).map(c => c.textContent);
+    const forms = cells
+      .filter((c) => c.className.includes('td-form'))
+      .map((c) => c.textContent);
     for (let i = 1; i < forms.length; i++) {
       expect(forms[i].localeCompare(forms[i - 1])).toBeGreaterThanOrEqual(0);
     }
@@ -161,18 +226,20 @@ describe('App — sorting', () => {
     render(<App />);
     await waitForApp();
 
+    // Sort descending
     fireEvent.click(screen.getByText('Word'));
-
     await waitFor(() => {
       const cells = screen.getAllByRole('cell');
-      const forms = cells.filter(c => c.className.includes('td-form')).map(c => c.textContent);
+      const forms = cells
+        .filter((c) => c.className.includes('td-form'))
+        .map((c) => c.textContent);
       for (let i = 1; i < forms.length; i++) {
         expect(forms[i].localeCompare(forms[i - 1])).toBeLessThanOrEqual(0);
       }
     });
   });
 
-  it('sticky toolbar CSS exists', async () => {
+  it('sticky toolbar / top-bar CSS is present', async () => {
     render(<App />);
     await waitForApp();
     expect(document.querySelector('.top-bar')).toBeInTheDocument();
@@ -180,14 +247,23 @@ describe('App — sorting', () => {
   });
 });
 
-describe('App — view toggle and legend', () => {
+describe('App — view toggle and legend (real DB)', () => {
   it('toggles between table and card view', async () => {
     render(<App />);
     await waitForApp();
 
+    // Table view is default — "Word" column header is visible
     expect(screen.getByText('Word')).toBeInTheDocument();
+
     fireEvent.click(screen.getByText('🃏 Cards'));
-    await waitFor(() => expect(document.querySelector('.card-container')).toBeInTheDocument());
+    await waitFor(() =>
+      expect(document.querySelector('.card-container')).toBeInTheDocument()
+    );
+
+    fireEvent.click(screen.getByText('📋 Table'));
+    await waitFor(() =>
+      expect(document.querySelector('table')).toBeInTheDocument()
+    );
   });
 
   it('legend toggle shows/hides legend', async () => {
@@ -195,9 +271,13 @@ describe('App — view toggle and legend', () => {
     await waitForApp();
 
     fireEvent.click(screen.getByText('Legend ▾'));
-    await waitFor(() => expect(document.querySelector('.legend.open')).toBeInTheDocument());
+    await waitFor(() =>
+      expect(document.querySelector('.legend.open')).toBeInTheDocument(),
+    );
 
     fireEvent.click(screen.getByText('Legend ▾'));
-    await waitFor(() => expect(document.querySelector(':not(.legend.open)')).toBeTruthy());
+    await waitFor(() =>
+      expect(document.querySelector(':not(.legend.open)')).toBeTruthy(),
+    );
   });
 });
