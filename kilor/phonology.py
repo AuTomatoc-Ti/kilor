@@ -1,10 +1,25 @@
-"""Phonotactics, syllable counting, and validation for Kilor words."""
+"""Phonotactics, syllable counting, and validation for Kilor words.
+
+Positional consonant classes (SSOT: rules/0-foundation/phonology.md §IV):
+  - Core (§IV-A): 15 consonants, appear anywhere
+  - Edge-Only (§IV-B): 3 consonants, word-initial or word-final only (sh, ch, th)
+  - Start-Only (§IV-C): 13 consonants, absolute word-initial only
+  - End-Only (§IV-D): 3 consonants, absolute word-final only (ng, x, rk)
+
+Mid-word disambiguation (§IV-E): multi-character sequences appearing anywhere
+other than absolute word edges are always two separate core consonants, never
+the single Kilor letter.
+"""
 
 VOWELS = set("aeiouy")
 DIPHTHONGS = {"ai", "au", "ei", "eu", "iu", "oi", "ou"}
 CORE_CONS = set("pbmfwtdnslrckgh")
-START_ONLYS = {"sh", "ch", "th", "sl", "kl", "tl", "bl", "ml"}
-END_ONLYS = {"ng", "x"}
+EDGE_ONLYS = {"sh", "ch", "th"}
+START_ONLYS = {"sl", "kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr"}
+END_ONLYS = {"ng", "x", "rk"}
+
+# All multi-character single-letter sequences (for mid-word disambiguation)
+_ALL_MULTICHAR = EDGE_ONLYS | START_ONLYS | END_ONLYS
 
 S_FINAL_WHITELIST = {
     "gus", "fos", "aus", "ous", "les", "mangus",
@@ -31,7 +46,13 @@ def count_syllables(word):
 
 
 def split_syllables(word):
-    """Greedy left-to-right syllable parser."""
+    """Greedy left-to-right syllable parser.
+
+    Respects positional consonant classes:
+      - Start-only and edge-only letters only match at i == 0 (onset)
+      - End-only and edge-only letters only match at word-final position (coda)
+      - Mid-word multi-character sequences are parsed as separate core consonants
+    """
     n = len(word)
     if n == 0:
         return []
@@ -40,13 +61,18 @@ def split_syllables(word):
     i = 0
     while i < n:
         onset = ""
+        # --- Onset ---
         if i == 0 and i + 2 <= n and word[i : i + 2] in START_ONLYS:
+            onset = word[i : i + 2]
+            i += 2
+        elif i == 0 and i + 2 <= n and word[i : i + 2] in EDGE_ONLYS:
             onset = word[i : i + 2]
             i += 2
         elif i < n and word[i] in CORE_CONS:
             onset = word[i]
             i += 1
 
+        # --- Nucleus ---
         if i >= n:
             raise ValueError(f"incomplete syllable in '{word}' at position {i}")
         nucleus_start = i
@@ -59,9 +85,15 @@ def split_syllables(word):
                 i += 1
         nucleus = word[nucleus_start:i]
 
+        # --- Coda ---
         coda = ""
         if i < n:
-            if i + 2 <= n and word[i : i + 2] in END_ONLYS:
+            # End-only letters: only at absolute word-final position
+            if i + 2 <= n and word[i : i + 2] in END_ONLYS and i + 2 == n:
+                coda = word[i : i + 2]
+                i += 2
+            # Edge-only letters: may appear as coda only at absolute word-final position
+            elif i + 2 <= n and word[i : i + 2] in EDGE_ONLYS and i + 2 == n:
                 coda = word[i : i + 2]
                 i += 2
             elif word[i] in CORE_CONS:
@@ -74,7 +106,19 @@ def split_syllables(word):
 
 
 def validate_root(root):
-    """Validate a bare root against phonotactics. Returns (is_valid, error_message)."""
+    """Validate a bare root against phonotactics. Returns (is_valid, error_message).
+
+    Positional consonant classes (start-only, end-only, edge-only) are enforced
+    structurally by the syllable parser and the mid-word disambiguation rule
+    (see rules/0-foundation/phonology.md §IV-E): any multi-character sequence
+    appearing mid-word is always parsed as two separate core consonants, never
+    as the single Kilor letter. Consequently, mid-word appearances of sequences
+    like 'sh', 'ng', 'kr', etc. are always valid — they represent separate
+    core consonants.
+
+    The only positional validation needed is at word edges, and the syllable
+    parser already enforces edge placement structurally.
+    """
     if not root:
         return False, "empty root"
     if "j" in root or "v" in root:
