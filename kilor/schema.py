@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS words (
     is_compound BOOLEAN DEFAULT 0,
     compound_type TEXT,                -- 'mono' or 'multi'; NULL for roots
     derivation_mask TEXT,              -- NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class
-    section TEXT NOT NULL,             -- A-J
+    section TEXT NOT NULL,             -- 1-8
     consensus_prefix TEXT,
     is_function_word BOOLEAN DEFAULT 0,
     notes TEXT,
@@ -114,16 +114,14 @@ END;
 # ── Section & Category Labels ────────────────────────────────────────────
 
 SECTION_LABELS = {
-    "A": "Worlds & Elements",
-    "B": "Living Things",
-    "C": "Physical Objects",
-    "D": "Actions & Motion",
-    "E": "Qualities & States",
-    "F": "Mind & Emotion",
-    "G": "Time & Space",
-    "H": "Social & Relational",
-    "I": "Abstract",
-    "J": "Sensation",
+    "1": "Concrete",
+    "2": "Living",
+    "3": "Action",
+    "4": "Quality",
+    "5": "Mental",
+    "6": "Relational",
+    "7": "Abstract",
+    "8": "Grammar",
 }
 
 DERIVATION_MASK_LABELS = {

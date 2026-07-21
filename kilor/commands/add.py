@@ -9,10 +9,10 @@ from ..phonology import validate_content_root, count_syllables
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SECTION_MAP = {
-    "body": "B", "people": "B", "action": "D", "food": "C",
-    "clothing": "C", "home": "C", "quality": "E", "nature": "A",
-    "animal": "B", "direction": "G", "tool": "C", "social": "H",
-    "general": "I",
+    "nature": "1", "body": "2", "animal": "2", "food": "1",
+    "clothing": "1", "home": "1", "tool": "1", "action": "3",
+    "quality": "4", "direction": "6", "people": "6", "social": "6",
+    "general": "7",
 }
 
 
@@ -102,7 +102,7 @@ def cmd_add(filepath):
         syl = str(count_syllables(root))
         mask = entry.get("mask", "")
         notes = entry.get("notes", entry.get("decision", "root"))
-        section = SECTION_MAP.get(domain, "I")
+        section = SECTION_MAP.get(domain, "7")
 
         try:
             conn.execute(

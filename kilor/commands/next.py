@@ -63,7 +63,7 @@ def cmd_next(count=20):
 | Kilor Root |  |
 | Syllable Count |  |
 | Category (n/v/a/av/nv/na) |  |
-| Section (A-J) |  |
+| Section (1-8) |  |
 | Decision (root/compound/derivation) |  |
 | Notes |  |
 

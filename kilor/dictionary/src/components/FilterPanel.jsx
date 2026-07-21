@@ -1,16 +1,14 @@
 import { useState } from 'react';
 
 const SECTION_OPTIONS = [
-  { value: 'A', label: 'A — Worlds & Elements' },
-  { value: 'B', label: 'B — Living Things' },
-  { value: 'C', label: 'C — Physical Objects' },
-  { value: 'D', label: 'D — Actions & Motion' },
-  { value: 'E', label: 'E — Qualities & States' },
-  { value: 'F', label: 'F — Mind & Emotion' },
-  { value: 'G', label: 'G — Time & Space' },
-  { value: 'H', label: 'H — Social & Relational' },
-  { value: 'I', label: 'I — Abstract' },
-  { value: 'J', label: 'J — Sensation' },
+  { value: '1', label: '1 — Concrete' },
+  { value: '2', label: '2 — Living' },
+  { value: '3', label: '3 — Action' },
+  { value: '4', label: '4 — Quality' },
+  { value: '5', label: '5 — Mental' },
+  { value: '6', label: '6 — Relational' },
+  { value: '7', label: '7 — Abstract' },
+  { value: '8', label: '8 — Grammar' },
 ];
 
 const TYPE_OPTIONS = [

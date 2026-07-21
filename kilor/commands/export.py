@@ -103,7 +103,7 @@ def _export_html(conn):
     """Export a self-contained searchable dictionary SPA.
 
     Generates dictionary-data.json, runs Vite build, and inlines
-    all assets + data so the dictionary works from file:// URLs.
+    all assets + data so the dictionary works from file: URLs.
     """
     # Build React app with Vite
     dict_dir = os.path.join(SCRIPT_DIR, "kilor", "dictionary")
@@ -261,16 +261,14 @@ header p { font-size: .85rem; opacity: .7; }
   <input type="text" id="search" placeholder="Search words, meanings, examples..." autofocus>
   <select id="filter-section">
     <option value="">All sections</option>
-    <option value="A">A — Worlds & Elements</option>
-    <option value="B">B — Living Things</option>
-    <option value="C">C — Physical Objects</option>
-    <option value="D">D — Actions & Motion</option>
-    <option value="E">E — Qualities & States</option>
-    <option value="F">F — Mind & Emotion</option>
-    <option value="G">G — Time & Space</option>
-    <option value="H">H — Social & Relational</option>
-    <option value="I">I — Abstract</option>
-    <option value="J">J — Sensation</option>
+    <option value="1">1 — Concrete</option>
+    <option value="2">2 — Living</option>
+    <option value="3">3 — Action</option>
+    <option value="4">4 — Quality</option>
+    <option value="5">5 — Mental</option>
+    <option value="6">6 — Relational</option>
+    <option value="7">7 — Abstract</option>
+    <option value="8">8 — Grammar</option>
   </select>
   <select id="filter-type">
     <option value="">All types</option>
@@ -351,9 +349,9 @@ function render() {
   const sectionActive = !!document.getElementById('filter-section').value;
   if (searchActive && !sectionActive) { container.innerHTML = filtered.map(e => entryHTML(e)).join(''); return; }
   const grouped = {};
-  const sectionOrder = ['A','B','C','D','E','F','G','H','I','J','-'];
+  const sectionOrder = ['1','2','3','4','5','6','7','8'];
   for (const sec of sectionOrder) grouped[sec] = [];
-  for (const e of filtered) { const sec = e.section || '-'; if (!grouped[sec]) grouped[sec] = []; grouped[sec].push(e); }
+  for (const e of filtered) { const sec = e.section || '7'; if (!grouped[sec]) grouped[sec] = []; grouped[sec].push(e); }
   let html = '';
   for (const sec of sectionOrder) {
     if (!grouped[sec] || grouped[sec].length === 0) continue;

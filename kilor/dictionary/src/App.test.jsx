@@ -172,11 +172,11 @@ describe('App — advanced filter panel (real DB)', () => {
     );
   });
 
-  it('checking section A filters to only section A words', async () => {
+  it('checking section 1 filters to only section 1 words', async () => {
     render(<App />);
     await waitForApp();
 
-    await toggleFilterCheckbox('A — Worlds & Elements');
+    await toggleFilterCheckbox('1 — Concrete');
 
     // Count should drop from 361
     await waitFor(() => {
@@ -184,11 +184,11 @@ describe('App — advanced filter panel (real DB)', () => {
       expect(resultSpan.textContent).not.toBe('361 words');
     });
 
-    // Every visible entry should have section "A"
+    // Every visible entry should have section "1"
     const sectionTds = document.querySelectorAll('.td-section');
     const sections = [...sectionTds].map((td) => td.textContent.trim());
     for (const s of sections) {
-      expect(s).toBe('A');
+      expect(s).toBe('1');
     }
   });
 
@@ -301,7 +301,7 @@ describe('App — advanced filter panel (real DB)', () => {
     await waitForApp();
 
     // Apply some filters first
-    await toggleFilterCheckbox('A — Worlds & Elements');
+    await toggleFilterCheckbox('1 — Concrete');
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
       expect(resultSpan.textContent).not.toBe('361 words');

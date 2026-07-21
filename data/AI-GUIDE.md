@@ -25,7 +25,7 @@ conn = get_db()
 form = "newroot"          # Must follow phonotactics (see §4)
 gloss = "example meaning"
 category = "n"            # n, v, a, nv, na, av
-section = "I"             # A–J (see §3)
+section = "7"             # 1-8 (see §5)
 prefix = "o-"             # Default colour prefix
 
 # ── Validate ──
@@ -86,7 +86,7 @@ conn = get_db()
 compound_form = "sori leman"       # Multi-word: space-separated
 gloss = "good person"
 component_forms = ["sori", "leman"]  # Must already exist in words table
-pattern = "nominal-compound"         # See §5 for pattern list
+pattern = "nominal-compound"         # See §6 for pattern list
 rule_ref = "rules/3-subsystems/derivational-compounding.md"  # Optional
 
 # ── Look up component IDs ──
@@ -114,7 +114,7 @@ category = cat_map.get(pattern, "n")
 conn.execute("""
     INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
                        category, section, consensus_prefix, is_function_word, notes)
-    VALUES (?, ?, 0, 1, ?, ?, 'I', 'o-', 0, ?)
+    VALUES (?, ?, 0, 1, ?, ?, '7', 'o-', 0, ?)
 """, (compound_form, syl_total, compound_type, category,
       f"compound: {' + '.join(component_forms)}"))
 compound_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -188,21 +188,32 @@ valid, error = validate_content_root(form, is_func=False, is_compound=False)
 
 ---
 
-## 5. Section Map (A–J)
+## 5. Section Map (1–8)
 
-| Code | Domain |
-|---|---|
-| A | Worlds & Elements |
-| B | Living Things |
-| C | Physical Objects |
-| D | Actions & Motion |
-| E | Qualities & States |
-| F | Mind & Emotion |
-| G | Time & Space |
-| H | Social & Relational |
-| I | Abstract |
-| J | Sensation |
+Section codes follow an ontological taxonomy from concrete to abstract. Each word gets exactly one section.
 
+See `rules/4-meta/section-taxonomy.md` for the SSOT.
+
+| Code | Domain | Boundary Test |
+|---|---|---|
+| 1 | Concrete | Tangible matter, substances, artifacts, buildings, geographic features |
+| 2 | Living | Organisms, body parts, life processes |
+| 3 | Action | Events, motions, changes, processes |
+| 4 | Quality | Properties, attributes, sensory qualities, conditions |
+| 5 | Mental | Internal experience, cognition, emotion, perception, art |
+| 6 | Relational | Positioning: spatial, temporal, social, kinship, communication |
+| 7 | Abstract | Ideas, concepts, values, systems, spirit, existence |
+| 8 | Grammar | Closed-class operators, pronouns, numerals, question words, particles, modals |
+
+### Tiebreak Rule
+
+When a word has polysemous glosses spanning multiple sections, assign the section with **lowest code number** (most concrete):
+
+**1 > 2 > 3 > 4 > 5 > 6 > 7 > 8**
+
+Example: `fos` means both "ice" (1 — Concrete) and "freeze" (3 — Action). Assign section 1 (more concrete).
+
+---
 Category codes: `n` (noun), `v` (verb), `a` (adjective), `nv` (noun/verb), `na` (noun/adjective), `av` (adjective/verb)
 
 ---
@@ -249,4 +260,4 @@ cmd_check()
 
 ---
 
-*Last updated: 2026-07-13*
+*Last updated: 2026-07-21*
