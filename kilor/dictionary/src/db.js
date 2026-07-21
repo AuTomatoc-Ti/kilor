@@ -215,11 +215,15 @@ const _FRONT_VOWELS = new Set(["e", "i", "y", "ae", "ei", "eu", "iu"]);
 const _BACK_VOWELS  = new Set(["a", "o", "u", "ai", "au", "oi", "ou"]);
 const _VOWELS = new Set("aeiouy");
 const _DIPHTHONGS = new Set(["ai", "au", "ei", "eu", "iu", "oi", "ou"]);
+const _CORE_CONS = new Set("pbmfwtdnslrckgh".split(""));
+const _EDGE_ONLYS = new Set(["sh", "ch", "th"]);
+const _START_ONLYS = new Set(["sl", "kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr"]);
+const _END_ONLYS = new Set(["ng", "x", "rk"]);
 
 function lastNucleus(word) {
   /* Scan right-to-left for the last vowel or diphthong.
      Skip tone markers (j, v) and hyphens (extra-segmental). */
-  const cleaned = word.replace(/[jv]/g, "").replace(/-/g, "");
+  const cleaned = word.replace(/[jv]/g, "").replace(/-/g, "").replace(/ /g, "");
   for (let i = cleaned.length - 1; i >= 0; i--) {
     const pair = cleaned.slice(i - 1, i + 1).toLowerCase();
     if (pair === "ae" || _DIPHTHONGS.has(pair)) return pair;
@@ -276,6 +280,86 @@ function getCaseForms(form, derivationMask, isFunctionWord) {
 
 // ──────────────────────────────────────────────────────────────────────────────
 
+function splitSyllablesJS(word) {
+  /* Greedy left-to-right syllable parser using the Maximal Onset Principle.
+     Mirrors kilor/phonology.py:split_syllables().
+
+     Strips tone markers (j, v) and prefix hyphens before parsing — these are
+     extra-segmental and float outside the syllable structure.
+
+     Positional consonant classes:
+       - Start-only and edge-only only match at i == 0 (onset)
+       - End-only and edge-only only match at word-final position (coda)
+       - Mid-word multi-char sequences are separate core consonants
+       - Intervocalic core consonant → onset of next syllable (maxonset)
+  */
+  const cleaned = word.replace(/[jv]/g, "").replace(/-/g, "");
+  const n = cleaned.length;
+  if (n === 0) return [];
+
+  const syllables = [];
+  let i = 0;
+  while (i < n) {
+    let onset = "";
+    // Onset
+    if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i === 0 && i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i < n && _CORE_CONS.has(cleaned[i])) {
+      onset = cleaned[i];
+      i += 1;
+    }
+
+    // Nucleus
+    if (i >= n) throw new Error(`incomplete syllable in '${cleaned}' at position ${i}`);
+    const nucleusStart = i;
+    if (_VOWELS.has(cleaned[i])) {
+      if (cleaned.slice(i, i + 2) === "ae") {
+        i += 2;
+      } else if (i + 1 < n && _DIPHTHONGS.has(cleaned.slice(i, i + 2))) {
+        i += 2;
+      } else {
+        i += 1;
+      }
+    }
+    const nucleus = cleaned.slice(nucleusStart, i);
+    if (!nucleus) {
+      throw new Error(
+        `degenerate syllable in '${cleaned}' at position ${i}: ` +
+        "consonant taken as onset but no vowel follows"
+      );
+    }
+
+    // Coda (maxonset: only take if no vowel follows)
+    let coda = "";
+    if (i < n) {
+      if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 1 === n && _END_ONLYS.has(cleaned[i])) {
+        // Single-char end-only letter (e.g. 'x') at word-final position
+        coda = cleaned[i];
+        i += 1;
+      } else if (_CORE_CONS.has(cleaned[i])) {
+        if (i + 1 >= n || !_VOWELS.has(cleaned[i + 1])) {
+          coda = cleaned[i];
+          i += 1;
+        }
+      }
+    }
+
+    syllables.push(onset + nucleus + coda);
+  }
+
+  return syllables;
+}
+
 function enrichEntry(row) {
   const wid = row.id;
   const meanings = (row.glosses_concat || '').split(' | ').filter(Boolean);
@@ -297,7 +381,9 @@ function enrichEntry(row) {
   const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
   const SEC = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
   return {
-    id: wid, form: row.form, syl_count: row.syl_count, meanings,
+    id: wid, form: row.form, syl_count: row.syl_count,
+    syllables: row.form.split(" ").map(w => splitSyllablesJS(w).join("/")).join(" / "),
+    meanings,
     derivation_mask: row.derivation_mask || '', section: row.section,
     section_label: SEC[row.section] || 'Other',
     is_root: Boolean(row.is_root), is_compound: Boolean(row.is_compound),

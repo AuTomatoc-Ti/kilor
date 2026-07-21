@@ -17,7 +17,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from .db import get_db, fts_search
-from .phonology import get_case_forms
+from .phonology import get_case_forms, split_syllables
 from .schema import SECTION_LABELS, DERIVATION_MASK_LABELS
 
 # ── FastAPI app ──────────────────────────────────────────────────────────────
@@ -147,6 +147,7 @@ def _word_to_dict(conn, row) -> dict:
         "id": wid,
         "form": row["form"],
         "syl_count": row["syl_count"],
+        "syllables": " / ".join("/".join(split_syllables(w)) for w in row["form"].split(" ")),
         "meanings": meanings,
         "derivation_mask": row["derivation_mask"],
         "section": row["section"],

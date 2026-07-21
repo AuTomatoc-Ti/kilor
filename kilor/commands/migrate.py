@@ -104,8 +104,7 @@ def cmd_migrate():
         if syl_raw.isdigit():
             syl = int(syl_raw)
         elif syl_raw == "":
-            # Toneless closed-class particles / empty syl column
-            syl = 0
+            syl = ph.count_syllables(bare)
         else:
             syl = ph.count_syllables(bare)
         mask = row.get("derivation_mask", row.get("category", "")).strip()

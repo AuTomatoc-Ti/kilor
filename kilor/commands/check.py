@@ -1,7 +1,7 @@
 """Validate all entries in the database."""
 
 from ..db import get_db
-from ..phonology import validate_content_root
+from ..phonology import validate_content_root, count_syllables
 
 
 def cmd_check():
@@ -49,6 +49,15 @@ def cmd_check():
             for c in comps:
                 if not c["component_id"]:
                     errors.append(f"  {form}: component at position {c['position']} not found")
+
+    # Verify syl_count matches computed syllable count
+    for w in words:
+        computed = count_syllables(w["form"])
+        stored = w["syl_count"]
+        if computed != stored:
+            errors.append(
+                f"  {w['form']}: syl_count mismatch — stored {stored}, computed {computed}"
+            )
 
     dupes = conn.execute(
         "SELECT form, COUNT(*) as cnt FROM words GROUP BY form HAVING cnt > 1"

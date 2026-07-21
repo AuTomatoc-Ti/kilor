@@ -76,9 +76,9 @@ function DetailPanel({ entry, prefixInfo }) {
             </div>
           )}
 
-          <div className="detail-row">
-            <strong>Syllables</strong> {entry.syl_count}
-          </div>
+           <div className="detail-row">
+             <strong>Syllables</strong> {entry.syl_count}{entry.syllables ? ` (${entry.syllables})` : ''}
+           </div>
         </div>
 
         <div className="detail-col">

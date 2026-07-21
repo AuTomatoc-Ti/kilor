@@ -413,4 +413,63 @@ describe('App — inline detail expansion (real DB)', () => {
       expect(document.querySelector('.detail-panel')).toBeNull()
     );
   });
+
+  it('detail panel shows syllable division with / separator', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Search for "fora" to narrow results
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'fora' },
+    });
+    await waitFor(() => {
+      const tds = document.querySelectorAll('.td-form');
+      expect(tds.length).toBeGreaterThanOrEqual(1);
+    });
+
+    // Click to expand
+    const cell = document.querySelector('.td-form');
+    fireEvent.click(cell);
+    await waitFor(() =>
+      expect(document.querySelector('.detail-panel')).toBeInTheDocument()
+    );
+
+    // Should show "Syllables" label
+    expect(screen.getByText('Syllables')).toBeInTheDocument();
+
+    // The detail panel should contain syllable division like "2 (fo/ra)"
+    // Find the detail-row that mentions the syllable count + division
+    const detailPanel = document.querySelector('.detail-panel');
+    const text = detailPanel.textContent;
+    expect(text).toMatch(/Syllables/);
+    // Should contain count and division separated by /
+    expect(text).toMatch(/fo\/ra/);
+  });
+
+  it('detail panel syllable division for single-syllable word shows no slashes', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Search for "song" — a single-syllable word
+    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
+      target: { value: 'song' },
+    });
+    await waitFor(() => {
+      const tds = document.querySelectorAll('.td-form');
+      expect(tds.length).toBeGreaterThanOrEqual(1);
+    });
+
+    // Click to expand
+    const cell = document.querySelector('.td-form');
+    fireEvent.click(cell);
+    await waitFor(() =>
+      expect(document.querySelector('.detail-panel')).toBeInTheDocument()
+    );
+
+    const detailPanel = document.querySelector('.detail-panel');
+    const text = detailPanel.textContent;
+    // Should show "Syllables 1 (song)" — no / between syllables
+    expect(text).toMatch(/Syllables/);
+    expect(text).toContain('(song)');
+  });
 });
