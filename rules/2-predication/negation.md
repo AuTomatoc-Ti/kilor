@@ -2,8 +2,8 @@
 
 **Module:** Yes/No Answers & Clausal Negation
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.0.2
+**Last updated:** 2026-07-23
+**Version:** 1.1.0
 **Depends on:** `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
@@ -32,30 +32,41 @@ All three are closed-class, toneless function words. See `0-foundation/grammar-s
 > **Example (negating a verb):** `taka nar` = "not eat"
 > **Example (negating a full clause):** `ki fora taka nar` = "I do not eat fire"
 
-### B. Scope
+### B. Scope — Uniform Postpositive Rule
 
-`nar` has a **two-tier scope rule** depending on position:
+`nar` always negates the **immediately preceding constituent**. No exceptions.
 
-#### Clause-End Position — Predicate Scope
+| Phrase | `nar` follows | Negates | Meaning |
+|:---|:---|:---|:---|
+| `ki nar fora taka` | `ki` | the subject | "Not I eat fire" (someone else does) |
+| `ki fora nar taka` | `fora` | the object | "I not-the-fire eat" (I eat something else) |
+| `ki fora taka nar` | `taka` | the verb | "I fire not-eat" = "I do not eat fire" |
 
-When `nar` appears at the **end of a clause** (after the verb), it scopes over the **entire predicate** — the whole clause is negated.
+When `nar` follows the verb at clause-end, it negates the verb — which naturally produces predicate-level negation since the verb is the clause head. No special "two-tier" rule is needed.
 
-> `ki fora taka nar` = "I do not eat fire" (entire predicate negated)
+### C. Scope with Modals
 
-#### Non-Final Position — Constituent Scope
+Root modals (`hostak`, `sew`, `som`, `mug`, `shunle`) form a `[Modal] [Verb]` complex (see `0-foundation/grammar-syntax.md` §I-E). The uniform postpositive rule cleanly disambiguates negation of the modal vs. negation of the main verb:
 
-In any other position, `nar` negates only the **immediately preceding constituent**:
+| Phrase | `nar` follows | Negates | Meaning |
+|:---|:---|:---|:---|
+| `ki hostak nar sounar` | `hostak` | the modal | "I not-must give" = "I don't have to give" |
+| `ki hostak sounar nar` | `sounar` | the verb | "I must not-give" = "I must not give" |
+| `ki sew nar fei` | `sew` | the modal | "I not-can fly" = "I can't fly" |
+| `ki sew fei nar` | `fei` | the verb | "I can not-fly" = "I can refrain from flying" |
+| `ki mug nar taka` | `mug` | the modal | "I not-want eat" = "I don't want to eat" |
+| `ki mug taka nar` | `taka` | the verb | "I want not-eat" = "I want to not eat" |
 
-| Phrase | Meaning |
-|:---|:---|
-| `ki nar fora taka` | "Not I eat fire" (someone else does) |
-| `ki fora nar taka` | "I not-the-fire eat" (I eat something else) |
+The same rule applies to stacked modals:
 
-### C. Interaction with `iu`
+> `ki mug sew nar fei` — `nar` follows `sew` → "I want to not-be-able-to fly"
+> `ki mug sew fei nar` — `nar` follows `fei` → "I want to be able to not-fly"
 
-The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti fora taka nar iu?`), `nar` is treated as clause-final — scoping over the entire predicate, not just the preceding verb. See `2-predication/interrogative.md` §IV-B.
+### D. Interaction with `iu`
 
-### D. Double Negation
+The sentence-final question particle `iu` sits **outside the clause proper** and does **not** affect `nar`'s scope determination. When `nar` appears immediately before `iu` at the end of a sentence (e.g., `ti fora taka nar iu?`), `nar` negates the preceding verb (`taka`) as usual — the uniform postpositive rule (§II-B) applies identically. See `2-predication/interrogative.md` §IV-B.
+
+### E. Double Negation
 
 **Double negation (`nar nar`) is forbidden in formal language.** Two consecutive `nar` particles are ungrammatical. To express emphasis, use contextual intensifiers or rephrase the sentence.
 

@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-07-12
-**Version:** 2.2.0
+**Last updated:** 2026-07-23
+**Version:** 2.3.0
 
 ---
 
@@ -47,6 +47,10 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `hoskar` | Although | `2-predication/subordination.md` |
 | `fidak` | In order to | `2-predication/subordination.md` |
 | `arfi` | Even | `2-predication/subordination.md` |
+| `tilpi` | Before | `2-predication/subordination.md` |
+| `tilpa` | After | `2-predication/subordination.md` |
+| `shoun` | Since (temporal) | `2-predication/subordination.md` |
+| `mitok` | Until | `2-predication/subordination.md` |
 | `kus` | Relativizer / complementizer | `2-predication/subordination.md` |
 | `thin` / `tha` | Demonstrative ("this"/"that") | `1-nominals/demonstratives.md` |
 | `gin` | Progressive aspect | `3-subsystems/aspect.md` |
@@ -195,6 +199,7 @@ When you change a file, check these dependents:
 | `1-nominals/pronouns.md` | `cases.md`, `grammar-syntax.md` |
 | `1-nominals/demonstratives.md` | `grammar-syntax.md`, `nouns-colour-prefix.md` |
 | `2-predication/conditionals.md` | `grammar-syntax.md`, `subordination.md` |
+| `2-predication/interrogative.md` | `grammar-syntax.md`, `nouns-colour-prefix.md`, `subordination.md` |
 | `2-predication/copula-existential.md` | `negation.md`, `interrogative.md` |
 | `2-predication/negation.md` | `interrogative.md` |
 | `2-predication/clause-combining.md` | `grammar-syntax.md`, `cases.md`, `negation.md` |

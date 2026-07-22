@@ -1,6 +1,6 @@
 # Kilor — Design Questions
 
-**Last Updated:** 2026-07-12
+**Last Updated:** 2026-07-23
 
 ---
 
@@ -21,6 +21,7 @@
 - [x] Demonstratives: `thin`/`tha` dual-citizenship (place noun, determiner, pronoun)
 - [x] Zero-subject clauses for weather/ambient
 - [x] Modal verb syntax: bare serial, modal between manner adv and verb
+- [x] Intensifiers on adverbs: `wes`/`meres` precede manner adverbs identically to adjectives
 
 ### Nominals
 - [x] Colour prefix ontology (7 colours → ontological classes), definiteness, 異體字 emotional override
@@ -29,16 +30,20 @@
 - [x] Passive voice via `sy`
 - [x] Genitive chains (single vs. nested possessors)
 - [x] Demonstratives (`thin`/`tha`)
+- [x] Discourse deixis: `thin`/`tha` as propositional anaphora (see `1-nominals/demonstratives.md` §III-C)
 
 ### Predication
 - [x] Coordination `ei` (and), `po` (exclusive or), `pem` (inclusive or), `pona` (XNOR), `pemna` (NOR), `amer` (but)
-- [x] Conditionals: `li` (if), `bam` (then)
+- [x] Conditionals: `li` (if), `bam` (then) — covers realis, hypothetical, and counterfactual via context (Chinese 如果…便/就 model)
 - [x] Copula `res` & existential/possession `ero`
+- [x] Existential + location: `ero` + spatial postposition per clause template (see `2-predication/copula-existential.md` §I-D)
 - [x] Predicate adjective syntax: `res` + adjective form
-- [x] Negation: `nar` (postpositive clausal/constituent), `na` (negative answer)
+- [x] Negation: `nar` (uniform postpositive — negates immediately preceding constituent), `na` (negative answer)
+- [x] Negation scope with modals: `nar` after modal negates modal ("don't have to"); `nar` after verb negates verb ("must not")
 - [x] Negation of non-verbal predicates: `ki res a-maeha nar.` / `fora res gus nar.`
 - [x] Interrogatives: 8 question words (aewei, aeweisan, awei, ewei, iwei, owei, uwei, ywei), Y/N `iu`
-- [x] Subordination: `kus` (relativizer/complementizer), `tu` (when), `aiga` (because), `hoskar` (although), `arfi` (even), `fidak` (in order to), temporal noun + clause
+- [x] Indirect questions (embedded interrogatives): `kus` + wh-fronting + `iu` (see `2-predication/subordination.md` §II-D)
+- [x] Subordination: `kus` (relativizer/complementizer), `tu` (when), `tilpi` (before), `tilpa` (after), `shoun` (since), `mitok` (until), `aiga` (because), `hoskar` (although), `arfi` (even), `fidak` (in order to)
 - [x] Reported speech: `kus` (optional) or bare juxtaposition
 - [x] Reflexive `shen`, reciprocal `meshen`
 - [x] Causatives: `min` (let), `mingo` (make/force)
@@ -60,17 +65,21 @@
 
 ## Nice-to-Have (Lower Priority — Deferred)
 
-| # | Area | Status |
-|---|---|---|
-| 10 | Serial verb / converb constructions | 🔵 Deferred |
-| 11 | Ability vs. permission distinction (`sew` vs `afaloi`) | 🔵 Deferred |
-| 12 | Evidentiality | 🔵 Deferred |
-| 13 | Honorifics beyond `chom` | 🔵 Deferred |
-| 14 | Middle voice / anticausative | 🔵 Deferred |
-| 15 | Reduplication | 🔵 Deferred |
-| 16 | Tag questions | 🔵 Deferred |
-| 17 | Topic marking | 🔵 Deferred |
+All items below are correctly deferred. Kilor's grammar is sufficient for Phases 1–2 (A1–A2, ~1,000 roots, ~3,500 words). Each would add nuance or naturalness but is not blocking for basic communication.
+
+| # | Area | Phase | Explanation |
+|---|---|---|---|
+| 10 | Serial verb / converb constructions | 4+ | Multiple verbs chained without subordinators ("go buy eat"). Common in SOV languages; adds naturalness but not required. Many languages (English, Russian) lack this entirely. |
+| 11 | Ability vs. permission distinction (`sew` vs `afaloi`) | 3 | `sew` currently covers both "can (ability)" and "may (permission)." Fine-grained distinction needs dedicated lexicon entries or a new particle. Sufficient for basic conversation. |
+| 12 | Evidentiality | 5+ | Grammatical marking of information source (witnessed, hearsay, inferred). Optional in most languages — only a few families (e.g., Quechua, Turkish) require it. |
+| 13 | Honorifics beyond `chom` | 4+ | Full honorific register (humble forms, elevated forms, kinship politeness). `chom` handles polite requests; a full system requires heavy cultural design work. |
+| 14 | Middle voice / anticausative | 4 | Distinguishing "the door opened" (by itself) from "I opened the door" (causative). Currently both use the same bare verb; passive `sy` works for agent demotion. |
+| 15 | Reduplication | 4+ | Plurality, intensity, or aspect via repetition ("big-big" = "very big"). Common in Austronesian and Sino-Tibetan but absent in most Indo-European languages. |
+| 16 | Tag questions | 3 | "..., right?" / "..., isn't it?" — conversational confirmation. Can be approximated with sentence-final `iu` but a dedicated short form would improve natural dialogue. |
+| 17 | Topic marking | 3+ | Dedicated topic particle (cf. Japanese `wa`, Korean `eun/neun`). Currently covered by OSV fronting + `arfi` emphasis. Full topic-comment structure is a Phase 3 feature. |
+
+**When to revisit:** After Phase 2 (A2, ~1,000 roots). At that point, the lexicon will have enough content to test which of these gaps actually cause friction in real communication.
 
 ---
 
-*All critical and important grammar gaps resolved. Kilor is ready for lexicon expansion.*
+*All critical and important grammar gaps resolved as of 2026-07-23. 6 gaps from the 2026-07-22 audit closed (indirect questions, negation-modal scope, before/after/since/until, existential+location, intensifiers on adverbs, discourse deixis). Kilor is ready for lexicon expansion through Phase 2.*

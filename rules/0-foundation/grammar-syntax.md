@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-13
-**Version:** 2.2.1
+**Last updated:** 2026-07-23
+**Version:** 2.2.4
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`
 
 ---
@@ -113,6 +113,9 @@ Intensity adverbs (`wes`, `meres`) precede the adjective:
 
 > `wes ralis a-maeha` — "very big person"
 
+Intensity adverbs also precede manner adverbs (derived via `-s`) using the same rule — `-s` forms serve as both adjectives and adverbs, so `wes` positions identically before either:
+
+> `wes shuks taka.` — "Eat very quickly."
 #### Oblique PPs — Fixed Order
 
 When multiple oblique prepositional phrases appear, they follow the **fixed order**:
@@ -130,12 +133,12 @@ The object (with optional ACC case suffix) and any numeral come first. When mult
 Root modal verbs (`mug` "want", `som` "need", `sew` "can", `hostak` "must", `shunle` "should") form a **bare serial construction** with the main verb. The modal directly precedes the main verb — no complementizer is used. The object stays before the modal+verb complex:
 
 > `ki bau mug taka.` — "I want to eat bread." (lit. "I bread want eat.")
-> `ki fei sew.` — "I can fly."
+> `ki sew fei.` — "I can fly."
 > `ki bau som taka.` — "I need to eat bread."
 
 Modals can **stack**:
 
-> `ki fei mug sew.` — "I want to be able to fly."
+> `ki mug sew fei.` — "I want to be able to fly."
 
 The modal sits between the manner adverb and the verb:
 
@@ -249,7 +252,7 @@ Kilor distinguishes two forms of compounding:
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
-- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`, `orse`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
+- Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`, `orse`, `tilpi`, `tilpa`, `shoun`, `mitok`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
 Note: `hei` (vocative, `3-subsystems/imperatives.md`) and `shen` (reflexive, `2-predication/subordination.md` §VII) are open-class content roots, subject to `-s` derivation and not in the closed-class exemption list.
 
@@ -327,13 +330,13 @@ When scoping over the **subject**, `orse` immediately follows the subject noun p
 
 ### B. Examples
 
-> `ki orse fei sew.` — "I can also fly."
+> `ki orse sew fei.` — "I can also fly."
 >
-> `ti orse shuks sounar.` — "You also quickly go."
+> `ti orse shuks sounar.` — "You also quickly give."
 >
 > `a-fora hawuni orse taka.` — "The fire also eats the animal."
 >
-> `sil orse kil mer song sounar.` — "They also go with us."
+> `sil orse kil mer song taka.` — "They also eat with us."
 
 ### C. Negation
 

@@ -2,8 +2,8 @@
 
 **Module:** Predication, Existence & Having
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.3.0
+**Last updated:** 2026-07-23
+**Version:** 1.4.0
 **Depends on:** `2-predication/negation.md`, `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
@@ -44,7 +44,30 @@ Subject — Complement — Verb
 > `fora ero.` — "There is fire." / "Fire exists."
 > `maeha ero.` — "There is a person."
 
-### D. Possession
+### D. Existential + Location
+
+When `ero` combines with a spatial postposition (see `3-subsystems/spatials.md`), the spatial PP occupies its standard slot between the subject and the verb per the clause template (`0-foundation/grammar-syntax.md` §I-E). No new particles or special word order is required.
+
+**Structure:** `SUBJ [spatial-ne] ero`
+
+| Kilor | Meaning |
+|:---|:---|
+| `e-buk slato-si rapne ero.` | "There is a book on the table." |
+| `lira pei-si ikne ero.` | "There is water in the cup." |
+| `maeha slato-si haune ero.` | "There is a person behind the house." |
+| `fora slato-si paune ero.` | "There is fire in front of the house." |
+
+Negation follows the standard pattern (§II-B):
+> `e-buk slato-si rapne ero nar.` — "There is no book on the table."
+> `lira pei-si ikne ero nar.` — "There is no water in the cup."
+
+Interrogatives follow standard wh-fronting (§III-B):
+> `slato-si rapne ewei ero?` — "What is on the table?"
+> `slato-si ikne ewei ero iu?` — "Is there anything in the house?"
+
+Possession (subject has entity) and existential-location (entity is at a location) use the same `ero` verb. The presence of a spatial PP with no possessor subject defaults to the existential-location reading.
+
+#### E. Possession
 
 > `ki fora ero.` — "I have fire."
 > `si lira ero.` — "He/she has water."
@@ -128,6 +151,7 @@ This is the **only** context where zero-copula is permitted. Predicate nominals 
 | Predicate Adjective | SUBJ ADJ `res` | `fora wem res` | Fire is warm |
 | Predicate Nominal | SUBJ NOUN `res` | `ki maeha res` | I am a person |
 | Existential | NOUN `ero` | `fora ero` | There is fire |
+| Existential + Location | SUBJ SPATIAL `ero` | `e-buk slato-si rapne ero` | There is a book on the table |
 | Possession | PSR PSD `ero` | `ki fora ero` | I have fire |
 | Negated copula | SUBJ COMP `res nar` | `fora wem res nar` | Fire is not warm |
 | Negated existential | NOUN `ero nar` | `fora ero nar` | There is no fire |

@@ -2,8 +2,8 @@
 
 **Module:** Demonstratives (this/that)
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 1.0.1
+**Last updated:** 2026-07-23
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -52,10 +52,24 @@ Without emotional override, the bare root is the default:
 
 `thin` / `tha` can stand alone as bare pronominal arguments (subject or object):
 
-> `thin res gor.` — "This is good."
-> `tha res bono.` — "That is bad."
+> `thin gor res.` — "This is good."
+> `tha bono res.` — "That is bad."
 > `ki mug thin.` — "I want this."
 > `ti sopa tha iu?` — "Do you see that?"
+
+### C. Propositional Anaphora (Discourse Deixis)
+
+`thin` / `tha` may refer to an entire preceding clause, proposition, or situation — equivalent to English "this" / "that" referring to a fact the speaker has just stated or heard:
+
+> `ki asdo tha.` — "I know that." (tha refers to a previously stated fact)
+> `thin gor res.` — "This is good." (thin refers to a situation/clause just mentioned)
+> `tha hap res.` — "That is right." (tha refers to what was just said)
+
+When `thin`/`tha` serves as a propositional complement of a cognition or communication verb, no `kus` subordinator is needed — the demonstrative alone is the complement, following the existing optional-`kus` pattern for non-clausal complements (see `2-predication/subordination.md` §II-B):
+
+> `ki asdo tha.` — "I know that." (not `ki asdo kus tha`)
+
+This is distinct from `kus`-complement clauses (`ki asdo kus ti kau.` — "I know that you came."), where `kus` embeds a full clause rather than an anaphoric pronoun.
 
 ---
 

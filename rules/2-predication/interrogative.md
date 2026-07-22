@@ -2,13 +2,16 @@
 
 **Module:** Wh-Questions, Genitive Questions & Yes/No Questions
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.3.0
+**Last updated:** 2026-07-22
+**Version:** 1.3.1
 **Depends on:** `1-nominals/nouns-colour-prefix.md`, `0-foundation/grammar-syntax.md`
 
 ---
 
 ## I. Core Root
+
+For embedded interrogatives (indirect questions), see `2-predication/subordination.md` §II-D.
+
 
 The root **`wei`** carries the core meaning of "question / unknown / what." It is 1-syllable and toneless (see `0-foundation/tone-prosody.md` §II-B). On its own, `wei` can be used as a general expression of uncertainty ("huh?" / "what?").
 

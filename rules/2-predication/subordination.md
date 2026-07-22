@@ -2,8 +2,8 @@
 
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses, Reported Speech, Purpose Clauses, Bare Serialisation
 **Status:** Canonical
-**Last updated:** 2026-07-19
-**Version:** 2.2.2
+**Last updated:** 2026-07-23
+**Version:** 2.4.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`, `3-subsystems/optative.md`
 **Interacts with:** `2-predication/conditionals.md` (li, bam cross-reference), `2-predication/clause-combining.md` (ei vs bare juxtaposition)
 
@@ -73,6 +73,77 @@ Kilor has no grammatical tense. Time reference is inferred from context or tempo
 
 ---
 
+### D. Indirect Questions (Embedded Interrogatives)
+
+Verbs of cognition (`asdo` "know," `thy` "think"), inquiry (`lyda` "ask," `wamy` "wonder"), and communication (`rilda` "tell," "say") may take embedded interrogative complements. Kilor uses the **same `kus` subordinator** for both declarative and interrogative complements — no new particle is required.
+
+#### D1. Wh-Complements
+
+Embedded wh-questions follow the same fronting rule as matrix questions: the question word fronts to the beginning of the embedded `kus` clause.
+
+**Structure:** `SUBJ MAIN-VERB kus [WH-WORD ... embedded SOV clause]`
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki asdo kus aewei kau.` | "I know who came." |
+| `ki asdo kus ewei ti taka.` | "I know what you ate." |
+| `ki wamy kus ywei si kau.` | "I wonder why he came." |
+| `si rilda kus uwei hawu taka.` | "He told how the animal eat." |
+
+Question words within embedded clauses retain their **case marking exemption** (see `2-predication/interrogative.md` §II-C). The animate-ambiguity rule still applies within the embedded clause:
+
+> `ki asdo kus aewei si taka.` — "I know who eats him/her." (`si` unmarked = subject)
+> `ki asdo kus aewei sin taka.` — "I know he/she eats whom." (`sin` carries ACC)
+
+#### D2. Y/N Complements ("Whether")
+
+Embedded polar (yes/no) questions use `kus` + the sentence-final `iu` particle. This is the same `iu` used in direct polar questions (see `2-predication/interrogative.md` §IV).
+
+**Structure:** `SUBJ MAIN-VERB kus [embedded SOV clause] iu`
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki wamy kus ti kau iu.` | "I wonder whether you came." |
+| `ki ti lyda kus si kau iu.` | "I ask you whether he came." |
+| `ki asdo nar kus si forani taka iu.` | "I don't know whether he eats fire." |
+
+Negation within the embedded clause uses `nar` in its standard clause-final position, before `iu`:
+
+> `ki wamy kus ti kau nar iu.` — "I wonder whether you didn't come."
+> `ki wamy kus ti forani taka nar iu.` — "I wonder whether you don't eat fire."
+
+Rhetorical embedded questions (combining `nar` + `iu` in the embedded clause) are possible but carry the same presuppositional force as matrix rhetorical questions:
+
+> `ki asdo kus ti forani taka nar iu.` — "I know whether you don't eat fire (I know you do)."
+
+#### D3. Alternative Complements ("Whether X or Y")
+
+Alternative questions within embedded clauses use the disjunction particles from `2-predication/clause-combining.md`. The `iu` particle appears only once, at the end of the embedded clause:
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki wamy kus ti kau po tle iu.` | "I wonder whether you come or wait." |
+| `ki asdo nar kus si a-fora res pem lunla iu.` | "I don't know whether it's fire or a tree." |
+
+#### D4. Bare Wh-Word Complements
+
+Following the existing pattern for optional `kus` with non-clausal complements (§II-B), a bare question word may follow `kus` when the embedded clause is fully recoverable from context:
+
+| Kilor | Meaning |
+|:---|:---|
+| `ki asdo kus aewei.` | "I know who." (who did it) |
+| `ki wamy kus ywei.` | "I wonder why." |
+| `si rilda nar kus ewei.` | "He didn't tell what." |
+
+#### D5. Interaction with Other Systems
+
+- **Aspect:** Aspect particles (`gin`, `ger`, `gou`) may appear in embedded interrogative clauses independently of the main clause. See `3-subsystems/aspect.md`.
+- **Temporals:** Temporal words scope independently within each clause. See `3-subsystems/temporals.md`.
+- **Emotional particles:** The pre-verbal `[Emo]` slot may carry an emotional particle inside the embedded clause. The clause-initial `[Emo]` slot belongs to the matrix clause. See `3-subsystems/colour-emotion.md` §IV.
+- **Reported speech:** Embedded interrogatives may appear in reported speech with the same optional-`kus` rule (§V): `si rilda [kus] aewei kau.` — "He said who came."
+- **Multiple embedding:** Interrogative complements can be nested within other `kus` clauses:
+  > `ki asdo kus si wamy kus ewei ki taka iu.` — "I know that he wonders what I ate."
+
 ## III. Adverbial Clauses
 
 ### A. Structure
@@ -89,6 +160,10 @@ Kilor has no grammatical tense. Time reference is inferred from context or tempo
 | `hoskar` | although | Concessive |
 | `fidak` | in order to | Purpose |
 | `arfi` | even | Concessive intensifier |
+| `tilpi` | before | Temporal anterior |
+| `tilpa` | after | Temporal posterior |
+| `shoun` | since | Temporal since |
+| `mitok` | until | Temporal until |
 
 ### C. Examples
 
@@ -98,6 +173,10 @@ Kilor has no grammatical tense. Time reference is inferred from context or tempo
 | `li ti lir taka, ki lira sounar` | "If you eat fish, I give water" |
 | `aiga fora fora, kora wem res` | "Because fire burns, the stone is warm" |
 | `hoskar rok my res, ki te slato kau` | "Although the night is dark, I come to the house" |
+| `tilpi ti kau, ki tle` | "Before you come, I wait" |
+| `tilpa ti tle, ki kau` | "After you wait, I come" |
+| `shoun si kau, ki losto res` | "Since he came, I am happy" |
+| `mitok ti kau, ki thep nar` | "Until you come, I don't sleep" |
 
 ### D. Interaction with Other Systems
 

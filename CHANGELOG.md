@@ -6,6 +6,34 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.8.0 — 2026-07-23
+
+Grammar gap resolution (6 gaps closed): indirect questions, negation-modal scope, temporal subordinators, existential+location, intensifiers on adverbs, discourse deixis. Plus 2 bug fixes (modal word order, copula-existential section labels). Total: 7 spec files modified, 2 new DB entries.
+
+**Predication:**
+- **`subordination.md`** v2.2.2→2.4.0 — §II-D: New section — Indirect questions (embedded interrogatives): wh-complements via `kus` + fronting, Y/N complements via `kus`...`iu`, alternative complements via disjunction particles, bare wh-word complements, system interactions. §III-B: Added 4 temporal subordinators — `tilpi` (before), `tilpa` (after), `shoun` (since), `mitok` (until) — with examples. MINOR bumps (2).
+- **`negation.md`** v1.0.2→1.1.0 — §II-B: Replaced two-tier scope rule with **uniform postpositive rule**: `nar` always negates the immediately preceding constituent. §II-C: New section — Scope with modals — `nar` after modal negates modal ("don't have to"), `nar` after verb negates verb ("must not"). §II-D (was §II-C): Updated `iu` interaction to use uniform rule. MINOR bump.
+- **`copula-existential.md`** v1.3.0→1.4.0 — §I-D: New section — Existential + location: `ero` with spatial postpositions per existing clause template. Added summary table row. Fixed section labels (I-D/I-E). MINOR bump.
+- **`interrogative.md`** v1.3.0→1.3.1 — §I: Added cross-reference to `subordination.md` §II-D for embedded interrogatives. PATCH bump.
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.2.1→2.2.4 — §I-E: Fixed modal word order bugs (`ki fei sew` → `ki sew fei`, `ki fei mug sew` → `ki mug sew fei`, `ki orse fei sew` → `ki orse sew fei`). §I-E Adjectives: Added intensifier-on-adverb example (`wes shuks taka`). §IV-C: Added `tilpi`, `tilpa`, `shoun`, `mitok` to closed-class particle inventory (SSOT). PATCH bumps (3).
+
+**Nominals:**
+- **`demonstratives.md`** v1.0.1→1.1.0 — §III-C: New section — Propositional anaphora: `thin`/`tha` as discourse deixis referring to clauses/facts. Clarified no `kus` redundancy. Also fixed pronoun-example word order (`thin res gor` → `thin gor res`, `tha res bono` → `tha bono res`). MINOR bump.
+
+**Lexicon:**
+- **`data/kilor.db`** — Added `shoun` (since, temporal, section 8 function word, 1-syl) and `mitok` (until, section 8 function word, 2-syl).
+
+**Meta:**
+- **`question.md`** — Added 6 resolved gaps to audit checklist. Expanded 7 deferred items with explanations (what each is, why deferred, when to revisit).
+- **`rules/README.md`** — Added `interrogative.md` row to dependency table. Added `tilpi`, `tilpa`, `shoun`, `mitok` to closed-class particles quick-reference table. Bumped version to 2.3.0.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 379 entries pass (346 roots, 100 function words, 85 compounds).
+
+---
+
 ## workspace v1.7.1 — 2026-07-13
 
 Additive adverb `orse` ("also/too/as well").
