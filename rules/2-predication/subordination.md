@@ -2,8 +2,8 @@
 
 **Module:** Relative Clauses, Complement Clauses, Adverbial Clauses, Reported Speech, Purpose Clauses, Bare Serialisation
 **Status:** Canonical
-**Last updated:** 2026-07-23
-**Version:** 2.4.0
+**Last updated:** 2026-07-24
+**Version:** 2.5.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/interrogative.md`, `2-predication/negation.md`, `1-nominals/cases.md`, `3-subsystems/aspect.md`, `3-subsystems/optative.md`
 **Interacts with:** `2-predication/conditionals.md` (li, bam cross-reference), `2-predication/clause-combining.md` (ei vs bare juxtaposition)
 
@@ -46,6 +46,32 @@ Each level uses its own `kus`:
 |:---|:---|:---|
 | **Relative** | Head noun immediately precedes `kus` | `fora kus [lunla fora]` — "fire that burns tree" |
 | **Complement** | No head noun; main verb precedes `kus` | `ki asdo kus [fora lunla fora]` — "I know that fire burns tree" |
+
+### E. Oblique Relativization — Pied-Piping
+
+Oblique roles (instrumental, comitative, spatial, ablative, dative) are relativized by moving the **entire oblique phrase** before `kus`. The relative clause keeps standard SOV word order; the oblique phrase's original slot in the clause template is a gap.
+
+**Structure:** `[OBLIQUE_PHRASE] kus [ ... gap ... clause ]`
+
+| Role | Structure | Kilor | Meaning |
+|:---|:---|:---|:---|
+| **Instrumental** (`sy`) | `sy NOUN kus [S O gap V]` | `sy maliu kus ki bau kup` | "the knife with which I cut bread" |
+| **Comitative** (`mer`) | `mer NOUN kus [S gap V]` | `mer song kus ki taka` | "the friend with whom I eat" |
+| **Dative** (`te`) | `te NOUN kus [S O gap V]` | `te maeha kus ki bau sounar` | "the person to whom I give bread" |
+| **Ablative** (`ar`) | `ar NOUN kus [S gap V]` | `ar selo kus ki kau` | "the market from which I come" |
+| **Spatial** (`-ne`) | `NOUN-GEN spatial-ne kus [S gap V]` | `slato-si ikne kus ki thep` | "the house inside which I sleep" |
+| **Between** (`tilpe`) | `NOUN-GEN tilpe kus [S gap V]` | `lunla do-si tilpe kus ki minau` | "the two trees between which I stand" |
+
+**Rules:**
+1. The oblique phrase retains its full form — spatial landmarks keep Genitive case (`slato-si ikne`, not `slato ikne`)
+2. `kus` alone suffices; no new particle or inflection is needed
+3. Multiple obliques may appear inside the relative clause — only the relativized one is fronted; the rest remain in their normal clause-internal positions per the clause template (`0-foundation/grammar-syntax.md` §I-E)
+4. Bare `kus` without a preceding oblique phrase retains its subject-gap interpretation (§I-B)
+
+**Contrast with core argument relativization:**
+
+> `maliu kus bau kup` — "the knife that cuts bread" (subject gap)
+> `sy maliu kus ki bau kup` — "the knife with which I cut bread" (instrumental gap)
 
 ---
 

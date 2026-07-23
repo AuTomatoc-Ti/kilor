@@ -6,6 +6,23 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.9.0 — 2026-07-24
+
+Grammar gap resolution (5 issues closed): oblique relativization, aspect slot in clause template, `hei` classification, spatial postposition counts, roadmap stale paths.
+
+**Predication:**
+- **`subordination.md`** v2.4.0→2.5.0 — §I-E: New section — Oblique relativization via pied-piping. All 6 oblique types (`sy`, `mer`, `te`, `ar`, spatial `-ne`, `tilpe`) relativized by moving the entire oblique phrase before `kus`. Spatial landmarks retain GEN case. MINOR bump.
+
+**Foundation:**
+- **`grammar-syntax.md`** v2.2.4→2.2.6 — §I-E: Added `[Aspect]` slot between `[Verb]` and `[nar]` in full clause template (matching `aspect.md` §I). §IV-C: Reclassified `hei` as open-class content noun (mask `n` only; no `-s` derivation; colour prefixes follow 異體字 override). PATCH bumps (2).
+
+**Meta:**
+- **`question.md`** — Added `[x] Oblique relativization via pied-piping` to Predication checklist. Fixed spatial postposition count: "13 forms via `-ne` suffix (…tilpe)" → "12 forms via `-ne` suffix (…inoune); plus `tilpe` (standalone closed-class)".
+- **`rules/README.md`** — Added `orakne` (across) and `inoune` (through/via) to Spatial Postpositions quick-reference table (was missing 2 of 12 entries).
+- **`roadmap.md`** — Updated `Last Updated:` to 2026-07-24. Grammar Foundation table: replaced all 11 stale `rules/foundation/` paths with correct layer-qualified paths; added 9 missing domains (demonstratives, conditionals, clause combining, aspect, comparatives, imperatives, spatials, temporals, emotional particles).
+
+---
+
 ## workspace v1.8.0 — 2026-07-23
 
 Grammar gap resolution (6 gaps closed): indirect questions, negation-modal scope, temporal subordinators, existential+location, intensifiers on adverbs, discourse deixis. Plus 2 bug fixes (modal word order, copula-existential section labels). Total: 7 spec files modified, 2 new DB entries.

@@ -90,6 +90,8 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `tene` | towards | `3-subsystems/spatials.md` |
 | `orane` | along | `3-subsystems/spatials.md` |
 | `meipone` | around | `3-subsystems/spatials.md` |
+| `orakne` | across | `3-subsystems/spatials.md` |
+| `inoune` | through / via | `3-subsystems/spatials.md` |
 
 ### Case Suffixes & Tone Markers
 

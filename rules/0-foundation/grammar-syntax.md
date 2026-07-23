@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-23
-**Version:** 2.2.4
+**Last updated:** 2026-07-24
+**Version:** 2.2.6
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`
 
 ---
@@ -149,7 +149,7 @@ Epistemic modals (`hostakes` "certainly", `sewanes` "might", `bamares` "would ha
 #### Full Clause Template (SOV)
 
 ```
-[Emo]  [Temporal]  [Intensity Adv]  [NPSUBJ]  [NPOBJ]  [Numeral]  [sy Instr]  [mer Com]  [spatial-ne / tilpe]  [ar Abl]  [te Dat]  [Manner Adv]  [Modal]  [Emo]  [Verb]  [nar]
+  [Emo]  [Temporal]  [Intensity Adv]  [NPSUBJ]  [NPOBJ]  [Numeral]  [sy Instr]  [mer Com]  [spatial-ne / tilpe]  [ar Abl]  [te Dat]  [Manner Adv]  [Modal]  [Emo]  [Verb]  [Aspect]  [nar]
 ```
 
 Where NPSUBJ and NPOBJ expand to:
@@ -254,7 +254,7 @@ Kilor distinguishes two forms of compounding:
 - Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
 - Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`, `orse`, `tilpi`, `tilpa`, `shoun`, `mitok`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
-Note: `hei` (vocative, `3-subsystems/imperatives.md`) and `shen` (reflexive, `2-predication/subordination.md` §VII) are open-class content roots, subject to `-s` derivation and not in the closed-class exemption list.
+Note: `shen` (reflexive, `2-predication/subordination.md` §VII) is an open-class content root, subject to `-s` derivation. `hei` (vocative, `3-subsystems/imperatives.md`) is an open-class content noun with mask `n` only — colour prefixes follow the 異體字 emotional override pattern (`imperatives.md` §III); `-s` derivation does not apply since the mask excludes `A`/`D`.
 
 ---
 

@@ -1,7 +1,7 @@
 # Kilor Development Roadmap
 
 **Status:** Grammar complete — Phase 1 root creation underway
-**Last Updated:** 2026-07-13
+**Last Updated:** 2026-07-24
 
 ---
 
@@ -52,17 +52,26 @@ All core grammar is designed and codified. No blocking design questions remain. 
 
 | Domain | File |
 |---|---|
-| Sound system | `rules/foundation/phonology.md` |
-| Tone & prosody | `rules/foundation/tone-prosody.md` |
-| 3-case system (NOM/ACC/GEN) | `rules/foundation/cases.md` |
-| Word order, compounding, derivations | `rules/foundation/grammar-syntax.md` |
-| 7-colour prefix system | `rules/foundation/nouns-colour-prefix.md` |
-| Pronoun inventory | `rules/foundation/pronouns.md` |
-| Interrogative | `rules/foundation/interrogative.md` |
-| Negation | `rules/foundation/negation.md` |
-| Copula & existential | `rules/foundation/copula-existential.md` |
-| Subordination & relativization | `rules/foundation/subordination.md` |
-| Numeral system | `rules/num.md` |
+| Sound system | `rules/0-foundation/phonology.md` |
+| Tone & prosody | `rules/0-foundation/tone-prosody.md` |
+| Word order, compounding, derivations | `rules/0-foundation/grammar-syntax.md` |
+| 7-colour prefix system | `rules/1-nominals/nouns-colour-prefix.md` |
+| 3-case system (NOM/ACC/GEN) | `rules/1-nominals/cases.md` |
+| Pronoun inventory | `rules/1-nominals/pronouns.md` |
+| Demonstratives | `rules/1-nominals/demonstratives.md` |
+| Interrogative | `rules/2-predication/interrogative.md` |
+| Negation | `rules/2-predication/negation.md` |
+| Copula & existential | `rules/2-predication/copula-existential.md` |
+| Subordination & relativization | `rules/2-predication/subordination.md` |
+| Conditionals | `rules/2-predication/conditionals.md` |
+| Clause combining | `rules/2-predication/clause-combining.md` |
+| Aspect | `rules/3-subsystems/aspect.md` |
+| Comparatives | `rules/3-subsystems/comparatives.md` |
+| Imperatives | `rules/3-subsystems/imperatives.md` |
+| Numerals | `rules/3-subsystems/numerals.md` |
+| Spatials | `rules/3-subsystems/spatials.md` |
+| Temporals | `rules/3-subsystems/temporals.md` |
+| Emotional particles | `rules/3-subsystems/colour-emotion.md` |
 
 ---
 

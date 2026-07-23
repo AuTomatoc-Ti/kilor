@@ -31,6 +31,7 @@
 - [x] Genitive chains (single vs. nested possessors)
 - [x] Demonstratives (`thin`/`tha`)
 - [x] Discourse deixis: `thin`/`tha` as propositional anaphora (see `1-nominals/demonstratives.md` §III-C)
+- [x] Oblique relativization via pied-piping: `[OBLIQUE_PHRASE] kus [clause with gap]` (see `2-predication/subordination.md` §I-E)
 
 ### Predication
 - [x] Coordination `ei` (and), `po` (exclusive or), `pem` (inclusive or), `pona` (XNOR), `pemna` (NOR), `amer` (but)
@@ -58,7 +59,7 @@
 - [x] Numerals: core 1–10, powers-of-ten, measure words, ordinals (`dir`)
 - [x] Optative, desiderative, benedictive: `halise`
 - [x] Temporals: day/week/month/year scale, `-saka` frequency paradigm, temporal compounds
-- [x] Spatial postpositions: 13 forms via `-ne` suffix (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `orakne`, `inoune`, `tilpe`)
+- [x] Spatial postpositions: 12 forms via `-ne` suffix (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `orakne`, `inoune`); plus `tilpe` (between, standalone closed-class)
 - [x] Directional / motion-path: spatial postpositions + motion verb = direction
 
 ---
