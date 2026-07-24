@@ -2,15 +2,15 @@
 
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-07-24
-**Version:** 2.2.0
+**Last updated:** 2026-07-25
+**Version:** 2.3.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
 
 Kilor derivation uses two complementary mechanisms:
 
-1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process, similative, relational) and one semi-productive suffix for numinous life-conditions (`-lise`)
+1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process, similative, relational, abundative) and one semi-productive suffix for numinous life-conditions (`-lise`)
 2. **Multi-word compounding** — productive head-final compounds for concrete and multi-syllable heads (result, location, doctrine, capability, without/lack)
 
 This split is motivated by phonology and aesthetics: 1-syllable abstract heads fuse cleanly into a single word; heavier or semantically concrete heads retain their two-word rhythm.
@@ -31,6 +31,7 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 | 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
 | 7 | `-ius` | Similative | `rius` | n | similar to / like / -ish |
 | 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
+| 9 | `-ia` | Abundative | `nia` | n | full of / abounding in / rich with |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced the multi-word combining forms, carried one step further to full fusion.
 
@@ -138,6 +139,23 @@ For roots ending in an end-only or edge-only consonant, `-eus` appears in its fu
 
 Both `-ius` and `-eus` are fully productive and are commonly used for person and place names: `Austareus` (personal name: "one of the dusk sky"), `Auronius` (personal name: "sky-like one"), `Songeus` (personal name: "one of friendship").
 
+### I. Abundative — `noun + -ia` / `noun + nia` (multi-word form)
+
+| Form | Meaning |
+|---|---|
+| `fosia` | full of ice / icy (from `fos`, "ice") |
+| `foraia` | full of fire / fiery (from `fora`, "fire") |
+| `auronia` | full of sky / vast (from `auron`, "sky") |
+| `song nia` | rich in friends (from `song`, "friend" — phonotactic block) |
+
+`-ia` derives an abundative noun from a base noun — "one full of X, abounding in X." The suffix form is the shortened combining form of `nia` ("abundance, fullness").
+
+Abundative-derived words **inherit the colour prefix of the base**: `a-foraia` (from `a-fora`, "fire"), `a-song nia` (from `a-song`, "friend"). See §V.
+
+For roots ending in an end-only or edge-only consonant, `-ia` appears in its full-root multi-word form `nia` (§III-B.1). Example: `song nia` = "rich in friends" (not `*songia`).
+
+`-ia` contrasts with `-ius` (similative): `foraius` = fire-like (outward resemblance); `foraia` = full of fire / fiery (inward pervasion).
+
 ---
 
 ## II. Multi-Word Compounding Heads
@@ -151,6 +169,7 @@ Heads that are 2+ syllables or semantically concrete remain as separate words in
 | 9 | `isra` | `lokisra` | Doctrine | n | doctrine / system |
 | 10 | `afaloi` | `afaloi` | Capability | nv | ability / able to |
 | 11 | `nara` / `narau` | `narau` | Without/Lack | n | without / -less |
+| 12 | `posia` | `posia` | Realm/Land | n | land of / realm of |
 
 All heads are open-class content roots — they carry colour prefixes and accept `-s` derivation per standard rules.
 
@@ -204,6 +223,17 @@ Two syntactic patterns with the same root:
 
 The postposed form `nara` follows the standard head-last compounding pattern. Takes colour prefix `o-` (abstract).
 
+### F. Realm/Land — `noun + posia`
+
+| Form | Meaning |
+|---|---|
+| `fos posia` | land of ice |
+| `fora posia` | fire-realm / land of fire |
+
+`posia` is a content root meaning "land, realm, domain" — the elevated counterpart to everyday `pos` ("place"). While `pos` forms practical location compounds (bakery, greenhouse), `posia` forms names for countries, regions, mythical realms, and poetic toponyms.
+
+Takes colour prefix `ae-` (physical boundaries/earth): `ae-fos posia` = "the land of ice."
+
 ---
 
 ## III. Syntax & Wordhood
@@ -230,7 +260,7 @@ Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`,
 | `song` (friend) | end-only `ng` | `*songlise` | `song lise` | phonotactic block |
 | `taka` (eat) | core vowel | `takamae` | — | clean fuse |
 
-This constraint applies identically to all suffixes (including `-ius` and `-eus`) and all heads.
+This constraint applies identically to all suffixes (including `-ius`, `-eus`, and `-ia`) and all heads.
 
 ### B. Multi-Word Compounds
 
@@ -275,6 +305,7 @@ For the suffix system, the formal register preserves the full root as a suffix:
 |---|---|---|
 | `takamae` | `misomaeha` | eater |
 | `wem pos` | `wem poska` | warm-place |
+| `foraia` | `fora nia` | full of fire |
 
 Agent suffix `-maeha` (from `maeha`, "person") is the only suffix with a distinct formal register form. Other suffixes use their everyday form in all registers.
 
@@ -282,15 +313,32 @@ Agent suffix `-maeha` (from `maeha`, "person") is the only suffix with a distinc
 
 ## V. Interaction with the Colour Prefix System
 
-Derivational forms inherit the colour prefix of their **semantic class**, not their base:
+Derivational forms follow one of two prefix rules, determined by the base type:
+
+### A. Fixed Semantic-Class Prefix
+
+For derivations from verbs, adjectives, or any-root stems (semi-productive `-lise`), the colour prefix is fixed by the semantic class of the output:
 
 | Semantic Class | Prefix | Applies to |
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
 | Crafted tools | `e-` | Instrument nouns (`-tek`) |
 | Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Process (`-par`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
-| Physical boundaries/earth | `ae-` | Location nouns (`pos`) |
-| Base-dependent | Inherits from base | Similative (`-ius`), Relational (`-eus`) |
+| Physical boundaries/earth | `ae-` | Location nouns (`pos`, `posia`) |
+
+Verb roots and adjective roots do not carry colour prefixes of their own, so inheritance is not applicable — the fixed semantic-class prefix provides the only source.
+
+### B. Base-Dependent — Inherit from Base Noun
+
+For derivations from nouns — where the base already carries a colour prefix — the derived word inherits that prefix:
+
+| Suffix | Domain | Example |
+|---|---|---|
+| `-ius` | Similative | `i-auronius` (from `i-auron`, "sky") |
+| `-eus` | Relational | `i-auroneus` (from `i-auron`, "sky") |
+| `-ia` | Abundative | `a-foraia` (from `a-fora`, "fire") |
+
+Multi-word heads (`pos`, `posia`, `param`, `isra`, etc.) carry their own prefix as head nouns; the compound's prefix comes from the head (`ae-bau pos` = "the bakery", `ae-fos posia` = "the land of ice"), not from the modifier. This is standard head-last compounding (§III-B), distinct from the base-inheritance rule for fused suffixes.
 
 ---
 

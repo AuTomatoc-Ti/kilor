@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.11.0
+**Current Version:** v1.12.0
 **Last Updated:** 2026-07-25
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -15,6 +15,22 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.12.0 — 2026-07-25
+
+Added abundative suffix `-ia`/`nia` ("full of X") as fully productive noun-derived suffix, and `posia` as new multi-word compounding head ("land/realm of X"). Restructured colour prefix rules (§V) into two tiers: fixed semantic-class (for verb/adj derivations) and base-inheritance (for noun-derived suffixes).
+
+**Subsystems:**
+- **`derivational-compounding.md`** v2.2.0→2.3.0 — Added suffix 9 (`-ia` from `nia`, Abundative) to Table I. Added §I-I (Abundative) with examples, base-prefix inheritance, phonotactic-block multi-word form `nia`, and contrast with `-ius`. Added `posia` to Table II as compounding head #12. Added §II-F (Realm/Land). Restructured §V into §V-A (fixed semantic-class) and §V-B (base-dependent — inherit from noun). Updated phonotactic constraint to include `-ia`. Fixed all examples to use existing DB roots (`fora` for fire, `fos` for ice, `auron` for sky).
+
+**DB:**
+- **`data/kilor.db`** — 2 new entries: `nia` (abundance, fullness; o-; section 7) and `posia` (land, realm, domain; ae-; section 6). Both are content roots. `posia` prefix corrected post-insert via `edit --set-prefix ae-`.
+
+**Draft:**
+- **`draft/future-suffix-ideas.md`** — Recorded adoption of `-ia`/`nia` (abundative) and `posia` (realm/land). Struck `riel` as superseded by `posia`. Updated productive suffix list and prefix inheritance notes.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 390 entries pass (1 near-collision: ema vs nia)
 
 ## workspace v1.11.0 — 2026-07-25
 
