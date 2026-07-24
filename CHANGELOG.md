@@ -1,12 +1,24 @@
 # Changelog
 
-Each entry is a workspace version bump (`rules/README.md`). Only changed files listed.
+**Current Version:** v1.10.0
+**Last Updated:** 2026-07-24
+**Format:** `**file** vX.Y.Z — what changed`
 
-Format: `**file** vX.Y.Z — what changed`
+## Template (for next entry):
+
+## workspace v{VERSION} — {DATE}
+
+{One-line summary}
+
+**Category:**
+- **`file.md`** vX.Y.Z→X.Y.Z — What changed
+
+**Validation:**
+- `python kilor.py check` — ✅ All N entries pass
 
 ---
 
-## workspace v1.10.0 — 2026-07-24
+[Historical entries below - DO NOT READ when writing new entry]
 
 Derivational morphology restructure: 14 multi-word compounds migrated to mono-word suffixes; `-lise` redefined as semi-productive numinous life-condition; positional consonant constraints and one-fuse-per-word rule formalised.
 
