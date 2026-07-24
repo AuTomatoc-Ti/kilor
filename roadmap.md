@@ -175,9 +175,11 @@ Edge cases, rare concepts, highly specific terminology. Historical and archaic r
 
 | Tool / Asset | Purpose |
 |---|---|
-| `lexicon.csv` | Root database — structured format for search, dedup, collision checking |
-| `kilor.py` | Constraint validator — checks new roots against phonotactics |
+| `data/kilor.db` | **Lexicon database (SSOT)** — all words, meanings, inflections, compounds, examples |
+| `kilor.py` | CLI tool — add, check, export, migrate, edit lexicon entries |
 | `wordlist/` | English-meaning targets organized by semantic category |
+| `data/AI-GUIDE.md` | AI agent guide — how to add roots, compounds, examples |
+| `rules/4-meta/word-creation-pipeline.md` | 4-phase workflow specification (human design → AI validation → human review → DB insert) |
 | Compound dictionary | (Future) Separate inventory of all defined compounds with meanings and 共識 prefixes |
 | Compounding style guide | (Future) Rules for idiomatic vs compositional compounds |
 | Etymology convention | (Future) Kilor-internal etymologies for consistency |

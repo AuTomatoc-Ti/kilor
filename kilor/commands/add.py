@@ -4,7 +4,7 @@ import os
 import re
 
 from ..db import get_db, rebuild_fts
-from ..phonology import validate_content_root, count_syllables
+from ..phonology import validate_content_root, count_syllables, get_case_forms
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -13,6 +13,22 @@ SECTION_MAP = {
     "clothing": "1", "home": "1", "tool": "1", "action": "3",
     "quality": "4", "direction": "6", "people": "6", "social": "6",
     "general": "7",
+}
+
+# Derivation mask to form_type mapping
+MASK_TO_FORMS = {
+    'N': ['noun'],
+    'V': ['verb'],
+    'A': ['adjective'],
+    'D': ['adverb'],
+    'NV': ['noun', 'verb'],
+    'NA': ['noun', 'adjective'],
+    'AV': ['adjective', 'verb'],
+    'AD': ['adjective', 'adverb'],
+    'NVAD': ['noun', 'verb', 'adjective', 'adverb'],
+    'NVA': ['noun', 'verb', 'adjective'],
+    'NAD': ['noun', 'adjective', 'adverb'],
+    'VAD': ['verb', 'adjective', 'adverb'],
 }
 
 
@@ -121,10 +137,19 @@ def cmd_add(filepath):
             (word_id, english, "en", 0),
         )
 
-        for ft in ("noun", "verb", "adjective", "adverb"):
+        # Conditional inflection generation based on derivation mask
+        # (SSOT: rules/4-meta/word-creation-pipeline.md §V-D)
+        mask = (mask or "").upper()
+        form_types = MASK_TO_FORMS.get(mask, ['noun', 'verb', 'adjective', 'adverb'])
+        
+        for ft in form_types:
+            if ft in ("adjective", "adverb"):
+                form = f"{root}s"
+            else:
+                form = root
             conn.execute(
                 "INSERT INTO inflections (word_id, form_type, form) VALUES (?, ?, ?)",
-                (word_id, ft, f"{root}s" if ft in ("adjective", "adverb") else root),
+                (word_id, ft, form),
             )
 
         added += 1

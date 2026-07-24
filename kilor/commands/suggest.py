@@ -33,9 +33,9 @@ def cmd_suggest(word):
             print(f"  {r['form']} = {r['gloss']} ({mask})")
 
             if mask and 'N' in mask:
-                print(f"    → Adverb form: {r['form']}s")
+                print(f"    → Noun form: {r['form']}")
             if mask and 'V' in mask:
-                print(f"    → Adjective form: {r['form']}s")
+                print(f"    → Verb form: {r['form']}")
             if mask and 'A' in mask:
                 print(f"    → Adjective form: {r['form']}s")
             if mask and 'D' in mask:

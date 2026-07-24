@@ -8,6 +8,7 @@ import sys
 
 from .commands.add import cmd_add
 from .commands.check import cmd_check
+from .commands.edit import cmd_edit
 from .commands.export import cmd_export
 from .commands.migrate import cmd_migrate
 from .commands.next import cmd_next
@@ -79,6 +80,45 @@ def main():
             print("Usage: python -m kilor suggest WORD")
             return
         cmd_suggest(sys.argv[2])
+
+    elif cmd == "edit":
+        if len(sys.argv) < 3:
+            print("Usage: python -m kilor edit <form> [options]")
+            print("Options:")
+            print("  --add-meaning \"gloss\"")
+            print("  --set-prefix \"a-\"")
+            print("  --set-mask \"nv\"")
+            print("  --add-example \"kilor text\" \"english text\"")
+            print("  --remove-example <id>")
+            print("  --fix-typo \"newform\"")
+            return
+        
+        form = sys.argv[2]
+        kwargs = {}
+        i = 3
+        while i < len(sys.argv):
+            if sys.argv[i] == "--add-meaning" and i + 1 < len(sys.argv):
+                kwargs["add_meaning"] = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--set-prefix" and i + 1 < len(sys.argv):
+                kwargs["set_prefix"] = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--set-mask" and i + 1 < len(sys.argv):
+                kwargs["set_mask"] = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--add-example" and i + 2 < len(sys.argv):
+                kwargs["add_example"] = (sys.argv[i + 1], sys.argv[i + 2])
+                i += 3
+            elif sys.argv[i] == "--remove-example" and i + 1 < len(sys.argv):
+                kwargs["remove_example"] = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--fix-typo" and i + 1 < len(sys.argv):
+                kwargs["fix_typo"] = sys.argv[i + 1]
+                i += 2
+            else:
+                i += 1
+        
+        cmd_edit(form, **kwargs)
 
     else:
         print(f"Unknown command: {cmd}")

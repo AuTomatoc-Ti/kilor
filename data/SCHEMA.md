@@ -15,7 +15,7 @@
 | `is_compound` | BOOLEAN | DEFAULT 0 | True for compounds |
 | `compound_type` | TEXT | `mono` or `multi`; NULL for roots | Compound classification |
 | `category` | TEXT | NOT NULL | `n`, `v`, `a`, `nv`, `na`, `av` |
-| `section` | TEXT | NOT NULL | A–J semantic domain |
+| `section` | TEXT | NOT NULL | 1–8 semantic domain (1=Concrete, 2=Living, 3=Action, 4=Quality, 5=Mental, 6=Relational, 7=Abstract, 8=Grammar) |
 | `consensus_prefix` | TEXT | | Default colour prefix (e.g. `o-`) |
 | `is_function_word` | BOOLEAN | DEFAULT 0 | True for closed-class particles |
 | `notes` | TEXT | | Free-text notes |
