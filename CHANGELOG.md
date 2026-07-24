@@ -6,6 +6,24 @@ Format: `**file** vX.Y.Z — what changed`
 
 ---
 
+## workspace v1.10.0 — 2026-07-24
+
+Derivational morphology restructure: 14 multi-word compounds migrated to mono-word suffixes; `-lise` redefined as semi-productive numinous life-condition; positional consonant constraints and one-fuse-per-word rule formalised.
+
+**DB Migration:**
+- **`data/kilor.db`** — 14 multi-word derivational compounds converted to mono-word suffix forms: 6 agent (`latif mae`→`latifmae`, `miso mae`→`misomae`, `miso maeha`→`misomaeha`, `tesak mae`→`tesakmae`, `taka mae`→`takamae`, `fei mae`→`feimae`), 2 instrument (`kup tek`→`kuptek`, `tesak tek`→`tesaktek`), 3 property (`gor lu`→`gorlu`, `my lu`→`mylu`, `wem lu`→`wemlu`), 2 measure (`shuk rin`→`shukrin`, `rali rin`→`ralirin`), 1 process (`tesak par`→`tesakpar`). `compound_type` multi→mono, `compound_meta.pattern` updated, `syl_count` recomputed, FTS rebuilt. 7 multi-word compounds unchanged (`bau pos`, `hamin pos`, `ero isra`, `afaloi taka`, `narau lira`, `lira nara`, `gilan fora`).
+
+**Subsystems:**
+- **`derivational-compounding.md`** v1.1.0→2.1.0 — Major restructure (2.0.0): renamed to Derivational Morphology; split into §I Derivational Suffixes (6 mono-word: `-mae`, `-tek`, `-lu`, `-rin`, `-par`, `-lise`) and §II Multi-Word Compounding Heads (5: `param`, `pos`, `isra`, `afaloi`, `nara`); §III split into suffix rules (colour prefix on fused word, case on end) and multi-word rules (colour prefix on head, case on head). §IV formal register retained (agent `-maeha`). Update (2.1.0): `-lise` redefined from "fate/destiny (closed set)" to "numinous life-condition (semi-productive)"; §III-A added fusion constraint (one suffix per word) and phonotactic constraint (end-only/edge-only consonant roots block fusion → multi-word); §III-B added three multi-word triggers (phonotactic block, derived stem + head, multi-syllable/concrete heads); §VI deleted (`-lise` now fills the -hood/-ship gap); `phonology.md` added to Depends on.
+
+**Draft:**
+- **`draft/lise-concepts.md`** — New: eligibility guide for `-lise` suffixation. Eligible categories: life arcs, existential states, commitments/bonds, fortunes/arcs, spiritual conditions, love/desire. Borderline cases noted (happiness, sadness, health, wisdom, courage, faith). Explicit NOT-eligible table with correct suffix cross-references.
+
+**Validation:**
+- `python kilor.py check` — ✅ All 379 entries pass (346 roots, 100 function words, 85 compounds). Positional consonant check: 0 violations.
+
+---
+
 ## workspace v1.9.0 — 2026-07-24
 
 Grammar gap resolution (5 issues closed): oblique relativization, aspect slot in clause template, `hei` classification, spatial postposition counts, roadmap stale paths.

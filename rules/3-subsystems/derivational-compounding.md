@@ -1,93 +1,134 @@
-# Kilor Derivational Compounding
+# Kilor Derivational Morphology
 
-**Module:** Derivation via Light-Noun Compounding
+**Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 1.1.0
-**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`
+**Last updated:** 2026-07-24
+**Version:** 2.1.0
+**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
 
-Kilor derives agent, instrument, property, measure, process, result, location, and doctrine nouns through **multi-word compounding** with light noun heads. No dedicated derivational suffixes — the existing compounding infrastructure (§IV of grammar-syntax.md) handles all derivations.
+Kilor derivation uses two complementary mechanisms:
 
-Each head is a full root in `lexicon.csv` that also appears in a shortened combining form in compounds.
+1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process) and one semi-productive suffix for numinous life-conditions (`-lise`)
+2. **Multi-word compounding** — productive head-final compounds for concrete and multi-syllable heads (result, location, doctrine, capability, without/lack)
+
+This split is motivated by phonology and aesthetics: 1-syllable abstract heads fuse cleanly into a single word; heavier or semantically concrete heads retain their two-word rhythm.
 
 ---
 
-## I. Head Inventory
+## I. Derivational Suffixes (Mono-Word)
 
-| # | Domain | Full Root | Comb. Form | Category | Section | Meaning |
-|---|---|---|---|---|---|---|
-| 1 | Agent | `maeha` | `mae` | n | B | person / human |
-| 2 | Instrument | `tek` | `tek` | n | C | tool |
-| 3 | Property | `pireilu` | `lu` | n | I | property / quality |
-| 4 | Measure | `rinok` | `rin` | n | I | measure / measurement |
-| 5 | Process | `chap` | `par` | n | I | act / deed |
-| 6 | Result | `param` | `param` | n | I | result |
-| 7 | Location | `poska` | `pos` | n | G | place / location |
-| 8 | Doctrine | `lokisra` | `isra` | n | I | doctrine / system of thought |
-| 9 | Capability | `afaloi` | `afaloi` | nv | H | ability / able to |
-| 10 | Without/Lack | `narau` | `nara` | n | I | without / lack |
+1-syllable heads with abstract grammatical meaning fuse directly to the root as suffixes. The resulting word is a single tone domain.
+
+| # | Suffix | Domain | From Root | Category | Meaning |
+|---|---|---|---|---|---|
+| 1 | `-mae` | Agent | `maeha` | n | person / -er |
+| 2 | `-tek` | Instrument | `tek` | n | tool / -er |
+| 3 | `-lu` | Property | `pireilu` | n | -ness / quality |
+| 4 | `-rin` | Measure | `rinok` | n | -th / degree |
+| 5 | `-par` | Process | `chap` | n | -tion / act of |
+| 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
+
+All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced the multi-word combining forms, carried one step further to full fusion.
+
+### A. Agent — `verb + -mae` / `verb + -maeha` (formal)
+
+| Form | Meaning |
+|---|---|
+| `takamae` | eater |
+| `misomaeha` | eater (formal, with full root) |
+| `tesakmae` | creator / maker |
+| `feimae` | flyer |
+| `latifmae` | learner |
+
+Agent suffixes use the verb's bare root (no `-s`). The agent noun takes colour prefix `a-` (living beings): `a-takamae` = "the eater". The formal form `-maeha` preserves the full root for ceremonial or disambiguating contexts.
+
+### B. Instrument — `verb + -tek`
+
+| Form | Meaning |
+|---|---|
+| `kuptek` | cutter (cutting tool) |
+| `tesaktek` | creation tool |
+
+Takes colour prefix `e-` (crafted tools): `e-kuptek` = "the cutting tool".
+
+### C. Property — `adjective-root + -lu`
+
+| Form | Meaning |
+|---|---|
+| `gorlu` | goodness |
+| `mylu` | darkness |
+| `wemlu` | warmth |
+
+The adjective root appears bare (no `-s`). Takes colour prefix `o-` (abstract). The form `emlu` ("truth") is a lexicalised instance of this suffix.
+
+### D. Measure — `adjective-root + -rin`
+
+| Form | Meaning |
+|---|---|
+| `shukrin` | speed (fast-degree) |
+| `ralirin` | size (big-degree) |
+
+`-rin` nominalises a scalar quality as a measurable degree. Contrasts with `-lu`, which nominalises an inherent property: `wemlu` = warmth (the quality), `wemrin` = temperature (the measurable degree). Takes colour prefix `o-` (abstract).
+
+### E. Process — `verb + -par`
+
+| Form | Meaning |
+|---|---|
+| `tesakpar` | creation (act of creating) |
+
+Takes colour prefix `o-` (abstract).
+
+### F. Life-Condition — `root + -lise` (semi-productive)
+
+| Form | Meaning |
+|---|---|
+| `elise` | survival; to endure (life as lived) |
+| `milise` | dying; to fade (death as lived) |
+| `halise` | prayer; wish (hope manifested as act) |
+| `rildalise` | vow; oath (pledge as lived bond) |
+| `gorlise` | good fortune |
+| `bonolise` | misfortune |
+| `mylise` | dark fate |
+| `luminlise` | bright fate |
+| `huplise` | downfall; devolution |
+| `hoplise` | luck; fortune |
+| `shenlise` | one's own destiny |
+| `maelise` | fate; destiny |
+| `song lise` | fated friend (multi-word; see §III-B) |
+
+`-lise` nominalises a root into a **numinous life-condition** — a concept of existential weight. Unlike the other five suffixes, which are fully productive and semantically lightweight (any compatible root works), `-lise` is **semi-productive**: new coinages are limited to concepts with existential significance — life arcs, fortunes, binding commitments, spiritual conditions. It is the suffix for naming something that defines a life.
+
+`-lise` is the only suffix with more than one syllable. It derives from the root `lise` ("fate, destiny") and takes colour prefix `o-` (abstract).
+
+For roots ending in an end-only or edge-only consonant, `-lise` appears in multi-word form — see §III-B.1.
+
+---
+
+## II. Multi-Word Compounding Heads
+
+Heads that are 2+ syllables or semantically concrete remain as separate words in productive two-word compounds.
+
+| # | Head | Full Root | Domain | Category | Meaning |
+|---|---|---|---|---|---|
+| 7 | `param` | `param` | Result | n | result / thing made |
+| 8 | `pos` | `poska` | Location | n | place |
+| 9 | `isra` | `lokisra` | Doctrine | n | doctrine / system |
+| 10 | `afaloi` | `afaloi` | Capability | nv | ability / able to |
+| 11 | `nara` / `narau` | `narau` | Without/Lack | n | without / -less |
 
 All heads are open-class content roots — they carry colour prefixes and accept `-s` derivation per standard rules.
 
----
-
-## II. Compounding Patterns
-
-### A. Agent — `verb + mae(ha)`
-
-| Form | Meaning |
-|---|---|
-| `taka mae` | eater (one who eats) |
-| `taka maeha` | eater (formal, with full root) |
-| `tesak mae` | creator / maker |
-| `fei mae` | flyer |
-
-Agent compounds use the verb's bare root (no `-s`). The agent noun may take a colour prefix: `a-taka mae` = "the eater" (living agent).
-
-### B. Instrument — `verb + tek`
-
-| Form | Meaning |
-|---|---|
-| `kup tek` | cutter (cutting tool) |
-| `tesak tek` | creation tool |
-
-### C. Property — `adjective-root + lu`
-
-| Form | Meaning |
-|---|---|
-| `ema lu` | truth (true-ness) |
-| `gor lu` | goodness |
-| `my lu` | darkness |
-| `wem lu` | warmth |
-
-The adjective root appears bare (no `-s`), since the compound head `lu` signals the nominalisation. Existing entries formed with this pattern (e.g., `emlu`) are lexicalised mono-word compounds and coexist with the productive multi-word form.
-
-### D. Measure — `adjective-root + rin`
-
-| Form | Meaning |
-|---|---|
-| `shuk rin` | speed (fast-degree) |
-| `rali rin` | size (big-degree) |
-| `kop rin` | coldness (cold-degree, measurable) |
-
-`rin` nominalises a scalar quality as a measurable degree. Contrasts with `lu`, which nominalises an inherent property.
-
-### E. Process — `verb + par`
-
-| Form | Meaning |
-|---|---|
-| `tesak par` | creation (act of creating) |
-| `thy par` | thought (act of thinking) |
-
-### F. Result — `verb + param`
+### A. Result — `verb + param`
 
 | Form | Meaning |
 |---|---|
 | `tesak param` | creation (thing created) |
 
-### G. Location — `noun + pos`
+Takes colour prefix `o-` (abstract).
+
+### B. Location — `noun + pos`
 
 | Form | Meaning |
 |---|---|
@@ -95,14 +136,18 @@ The adjective root appears bare (no `-s`), since the compound head `lu` signals 
 | `bau pos` | bread-place (bakery) |
 | `hamin pos` | food-place (kitchen/dining hall) |
 
-### H. Doctrine — `noun + isra`
+Takes colour prefix `ae-` (physical boundaries/earth).
+
+### C. Doctrine — `noun + isra`
 
 | Form | Meaning |
 |---|---|
 | `ero isra` | existentialism (existence-doctrine) |
 | `eli isra` | vitalism (life-doctrine) |
 
-### I. Capability — `afaloi + verb`
+Takes colour prefix `o-` (abstract system).
+
+### D. Capability — `afaloi + verb`
 
 | Form | Meaning |
 |---|---|
@@ -110,9 +155,9 @@ The adjective root appears bare (no `-s`), since the compound head `lu` signals 
 | `afaloi taki` | drinkable |
 | `afaloi tesak` | creatable / makeable |
 
-`afaloi` precedes the verb (modifier position). This pattern is distinct from the periphrastic `sew + verb` ("can X" as a verb phrase) — `afaloi taka` is a nominal/adjectival compound ("edible"), while `sew taka` is a predicate ("can eat").
+`afaloi` precedes the verb (modifier position). This pattern is distinct from the periphrastic `sew + verb` ("can X" as a verb phrase) — `afaloi taka` is a nominal/adjectival compound ("edible"), while `sew taka` is a predicate ("can eat"). Takes colour prefix `o-` (abstract).
 
-### J. Without/Lack — `narau + noun` / `noun + nara`
+### E. Without/Lack — `narau + noun` / `noun + nara`
 
 | Form | Meaning |
 |---|---|
@@ -123,59 +168,95 @@ Two syntactic patterns with the same root:
 - **Preposed `narau`:** prepositional usage — `narau lira` = "without water"
 - **Postposed `nara`:** derivational compounding — `lira nara` = "waterless"
 
-The combining form `nara` follows the standard head-last compounding pattern.
+The postposed form `nara` follows the standard head-last compounding pattern. Takes colour prefix `o-` (abstract).
 
 ---
 
 ## III. Syntax & Wordhood
 
-### A. Multi-Word Compounds
+### A. Suffix Forms (Mono-Word)
 
-All derivational compounds are **multi-word vocabs** (two orthographic words with a space). Each word is processed independently per Modular Stitching (`0-foundation/tone-prosody.md` §IV-D).
+Suffix-derived words are single orthographic words with one tone domain per `0-foundation/tone-prosody.md`:
+
+- 1–2 syllable words: toneless (flat mid)
+- 3+ syllable words: receive tone markers (`j`/`v`) on the last three syllables
+
+Colour prefixes attach to the fused word as a whole: `a-takamae` (the eater), `e-kuptek` (the cutting tool). Case suffixes attach to the end of the fused word: `takamaeni` (eater-ACC), `kupteksi` (cutter-GEN).
+
+#### Fusion constraint: one suffix per word
+
+At most one derivational suffix can fuse to the bare root. When an additional derivational head is needed, it appears as a separate word following head-last semantics (§III-B.2).
+
+#### Phonotactic constraint: end-only and edge-only consonants
+
+Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`, `x`, `rk`, `sh`, `ch`, `th`) cannot appear word-medially. When a root ends in one of these consonants, fusing a suffix would place the consonant in medial position. In this case, the suffix **must** appear as a separate word (§III-B.1).
+
+| Root | Ending type | Fused form | Valid form | Rule |
+|---|---|---|---|---|
+| `song` (friend) | end-only `ng` | `*songlise` | `song lise` | phonotactic block |
+| `taka` (eat) | core vowel | `takamae` | — | clean fuse |
+
+This constraint applies identically to all six suffixes and all eleven heads.
+
+### B. Multi-Word Compounds
+
+Multi-word compounds are two orthographic words with a space. Each word is processed independently per Modular Stitching (`0-foundation/tone-prosody.md` §IV-D):
 
 - 1–2 syllable heads: toneless (flat mid)
 - 3+ syllable heads: follow their own Last-3 Domain
 
-Colour prefixes attach to the **head noun**, not the modifier: `a-taka mae` (the eater), `e-kup tek` (the cutting tool).
+Colour prefixes attach to the **head noun** (the last word): `ae-bau pos` (the bakery). Case suffixes attach only to the head: `bau posni` — bakery (ACC).
 
-### B. Case Suffix Distribution
+Three situations produce multi-word forms:
 
-When a derivational compound receives a case suffix, the suffix attaches **only to the head (last word)** per `0-foundation/grammar-syntax.md` §IV-B:
+#### 1. Phonotactic block
 
-> `kup tekni` — cutter (ACC)
-> `taka maesi` — eater's (GEN)
+When a root ends in an end-only or edge-only consonant, fusion is blocked (§III-A). The head appears as a separate word:
+
+| Form | Meaning | Rule |
+|---|---|---|
+| `song lise` | fated friend | `song` ends in end-only `ng` |
+| `bash mae` | (hypothetical) person-who-bash | `bash` ends in edge-only `sh` |
+
+#### 2. Derived stem + head
+
+When a head attaches to a word that already carries a derivational suffix (a derived stem), the head appears as a separate word. Head-last semantics apply: the rightmost element is the head; everything left modifies it.
+
+| Form | Structure | Meaning |
+|---|---|---|
+| `argonnalise mae` | `[[argonna]-lise] mae` | person characterized by fated love |
+| `takamae lise` | `[[taka]-mae] lise` | the lived condition of being an eater |
+
+#### 3. Multi-syllable / semantically concrete heads
+
+Heads in §II (`param`, `pos`, `isra`, `afaloi`, `nara`) always appear as separate words regardless of the root they attach to.
 
 ---
 
-## IV. Combining Form vs. Full Root
+## IV. Formal Register: Full-Root Forms
 
-The combining form and full root are interchangeable. The combining form is preferred in everyday speech; the full root is used in formal registers or for disambiguation.
+For the suffix system, the formal register preserves the full root as a suffix:
 
 | Everyday | Formal | Meaning |
 |---|---|---|
-| `taka mae` | `taka maeha` | eater |
+| `takamae` | `misomaeha` | eater |
 | `wem pos` | `wem poska` | warm-place |
+
+Agent suffix `-maeha` (from `maeha`, "person") is the only suffix with a distinct formal register form. Other suffixes use their everyday form in all registers.
 
 ---
 
 ## V. Interaction with the Colour Prefix System
 
-Derivational compounds inherit the colour prefix of their **semantic class**, not their modifier:
+Derivational forms inherit the colour prefix of their **semantic class**, not their base:
 
-- Agent nouns: `a-` (living beings)
-- Instrument nouns: `e-` (crafted tools)
-- Property/Measure/Process/Result nouns: `o-` (abstract)
-- Location nouns: `ae-` (physical boundaries/earth)
-- Doctrine nouns: `o-` (abstract system)
-- Capability compounds: `o-` (abstract)
-- Without/Lack compounds: `o-` (abstract)
-
----
-
-## VI. No Productive -hood/-ship Derivation
-
-Kilor does not have a dedicated compounding head for relational states (English -hood, -ship). Concepts like "childhood," "friendship," and "freedom" are coined ad-hoc using existing compounds (e.g., `pag maeha tlow` = child-time, `song losga` = friend-bond) or dedicated roots.
+| Semantic Class | Prefix | Applies to |
+|---|---|---|
+| Living beings | `a-` | Agent nouns (`-mae`) |
+| Crafted tools | `e-` | Instrument nouns (`-tek`) |
+| Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Process (`-par`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
+| Physical boundaries/earth | `ae-` | Location nouns (`pos`) |
 
 ---
 
-*End of Derivational Compounding Specification.*
+*End of Derivational Morphology Specification.*
