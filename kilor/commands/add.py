@@ -105,7 +105,8 @@ def cmd_add(filepath):
             errors.append(f"'{english}': no Kilor root provided")
             continue
 
-        valid, err = validate_content_root(root)
+        is_compound = " " in root
+        valid, err = validate_content_root(root, is_compound=is_compound)
         if not valid:
             errors.append(f"'{root}' ({english}): {err}")
             continue

@@ -23,6 +23,7 @@ _ALL_MULTICHAR = EDGE_ONLYS | START_ONLYS | END_ONLYS
 
 S_FINAL_WHITELIST = {
     "gus", "fos", "aus", "ous", "les", "mangus",
+    "rius", "meus",
     "kas", "hus", "tus", "rakas", "fidak",
 }
 

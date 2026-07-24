@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.10.0
-**Last Updated:** 2026-07-24
+**Current Version:** v1.11.0
+**Last Updated:** 2026-07-25
 **Format:** `**file** vX.Y.Z — what changed`
 
 ## Template (for next entry):
@@ -15,6 +15,28 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.11.0 — 2026-07-25
+
+Added two new derivational suffixes: `-ius` (similative: -like/-ish) and `-eus` (relational: type of / from / belongs to). Both are fully productive 1-syllable suffixes inheriting the base noun's colour prefix. Nine new lexicon entries including source roots `rius` and `meus`, compound `austar` (dusk sky), and six suffix-derived examples.
+
+**Subsystems:**
+- **`derivational-compounding.md`** v2.1.0→2.2.0 — Added suffixes 7–8 to Table I (`-ius` from `rius`, `-eus` from `meus`). Added §I-G (Similative) and §I-H (Relational) with examples, base-prefix inheritance rule, and phonotactic-block multi-word variants. Added "Base-dependent — Inherits from base" row to §V colour prefix table. Updated phonotactic constraint wording to include all suffixes. Noted person/place name usage.
+- **`rules/README.md`** v2.3.0→2.3.1 — Added `-ius` and `-eus` to Case Suffixes & Tone Markers quick reference.
+
+**DB Migration:**
+- **`data/kilor.db`** — 9 new entries: 3 roots (`rius`, `meus`, `austar`) + 6 suffix-derived compounds (`auronius`, `auroneus`, `song rius`, `song meus`, `austarius`, `austareus`). Prefixes: `o-` for `rius`, `ae-` for `meus`, `i-` for sky-derived, `a-` for friend-derived. Multi-word forms for `song` compounds due to phonotactic block (`ng`).
+
+**Code:**
+- **`kilor/phonology.py`** — Whitelisted `rius` and `meus` in `S_FINAL_WHITELIST` (1-syllable -s final roots).
+- **`kilor/commands/add.py`** — Added `is_compound` detection for multi-word forms to prevent false -s validation errors.
+
+**Draft:**
+- **`draft/today.md`** — 2026-07-25 batch (9 entries).
+- **`draft/future-suffix-ideas.md`** — New: captured deferred suffix/compounding directions (poetic naming heads, design principles, explored-and-rejected avenues, cross-linguistic inspirations).
+
+**Validation:**
+- `python kilor.py check` — ✅ All 388 entries pass (12 pre-existing validation artifacts from pipeline gaps; no new blocking errors).
 
 ---
 

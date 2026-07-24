@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-07-23
-**Version:** 2.3.0
+**Last updated:** 2026-07-24
+**Version:** 2.3.1
 
 ---
 
@@ -102,6 +102,8 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `-s` | Derivational suffix (adj/adv) | `0-foundation/tone-prosody.md` |
 | `j` | High tone marker | `0-foundation/tone-prosody.md` |
 | `v` | Low tone marker | `0-foundation/tone-prosody.md` |
+| `-ius` | Similative (-like/-ish) | `3-subsystems/derivational-compounding.md` §I-G |
+| `-eus` | Relational (-ian/of/from) | `3-subsystems/derivational-compounding.md` §I-H |
 
 ### Colour Prefixes & Emotional Particles
 

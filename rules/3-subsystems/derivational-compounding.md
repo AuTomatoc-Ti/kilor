@@ -3,14 +3,14 @@
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
 **Last updated:** 2026-07-24
-**Version:** 2.1.0
+**Version:** 2.2.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
 
 Kilor derivation uses two complementary mechanisms:
 
-1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process) and one semi-productive suffix for numinous life-conditions (`-lise`)
+1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process, similative, relational) and one semi-productive suffix for numinous life-conditions (`-lise`)
 2. **Multi-word compounding** — productive head-final compounds for concrete and multi-syllable heads (result, location, doctrine, capability, without/lack)
 
 This split is motivated by phonology and aesthetics: 1-syllable abstract heads fuse cleanly into a single word; heavier or semantically concrete heads retain their two-word rhythm.
@@ -29,6 +29,8 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 | 4 | `-rin` | Measure | `rinok` | n | -th / degree |
 | 5 | `-par` | Process | `chap` | n | -tion / act of |
 | 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
+| 7 | `-ius` | Similative | `rius` | n | similar to / like / -ish |
+| 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced the multi-word combining forms, carried one step further to full fusion.
 
@@ -103,6 +105,38 @@ Takes colour prefix `o-` (abstract).
 `-lise` is the only suffix with more than one syllable. It derives from the root `lise` ("fate, destiny") and takes colour prefix `o-` (abstract).
 
 For roots ending in an end-only or edge-only consonant, `-lise` appears in multi-word form — see §III-B.1.
+
+### G. Similative — `noun + -ius` / `noun + rius` (multi-word form)
+
+| Form | Meaning |
+|---|---|
+| `auronius` | sky-like (from `auron`, "sky") |
+| `austarius` | dusk-sky-like (from `austar`, "dusk sky") |
+| `song rius` | friend-like, friendly (from `song`, "friend" — phonotactic block) |
+| `lira rius` | water-like (from `lira`, "water") |
+
+`-ius` derives a similative noun from a base root. The suffix form is the shortened combining form of `rius` ("likeness, resemblance").
+
+Unlike the other fully productive suffixes, similative-derived words **inherit the colour prefix of the base** rather than a fixed semantic-class prefix: `i-auronius` (from `i-auron`, "sky"), `a-song rius` (from `a-song`, "friend"). See §V.
+
+For roots ending in an end-only or edge-only consonant, `-ius` appears in its full-root multi-word form `rius` (§III-B.1). Example: `song rius` = "friend-like" (not `*songius`).
+
+### H. Relational — `noun + -eus` / `noun + meus` (multi-word form)
+
+| Form | Meaning |
+|---|---|
+| `auroneus` | of the sky, sky-born (from `auron`, "sky") |
+| `austareus` | of the dusk sky (from `austar`, "dusk sky") |
+| `song meus` | of friendship, belonging to friends (from `song`, "friend" — phonotactic block) |
+| `lira meus` | of water (from `lira`, "water") |
+
+`-eus` derives a relational noun from a base root. The suffix form is the shortened combining form of `meus` ("kind, origin, belonging").
+
+Relational-derived words **inherit the colour prefix of the base**: `i-auroneus` (from `i-auron`, "sky"), `a-song meus` (from `a-song`, "friend"). See §V.
+
+For roots ending in an end-only or edge-only consonant, `-eus` appears in its full-root multi-word form `meus` (§III-B.1). Example: `song meus` = "of friendship" (not `*songeus`).
+
+Both `-ius` and `-eus` are fully productive and are commonly used for person and place names: `Austareus` (personal name: "one of the dusk sky"), `Auronius` (personal name: "sky-like one"), `Songeus` (personal name: "one of friendship").
 
 ---
 
@@ -196,7 +230,7 @@ Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`,
 | `song` (friend) | end-only `ng` | `*songlise` | `song lise` | phonotactic block |
 | `taka` (eat) | core vowel | `takamae` | — | clean fuse |
 
-This constraint applies identically to all six suffixes and all eleven heads.
+This constraint applies identically to all suffixes (including `-ius` and `-eus`) and all heads.
 
 ### B. Multi-Word Compounds
 
@@ -256,6 +290,7 @@ Derivational forms inherit the colour prefix of their **semantic class**, not th
 | Crafted tools | `e-` | Instrument nouns (`-tek`) |
 | Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Process (`-par`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
 | Physical boundaries/earth | `ae-` | Location nouns (`pos`) |
+| Base-dependent | Inherits from base | Similative (`-ius`), Relational (`-eus`) |
 
 ---
 

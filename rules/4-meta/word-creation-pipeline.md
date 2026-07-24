@@ -24,7 +24,7 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 | b | **Meaning** (English gloss) | `#` | Human | From wordlist (`wordlist/`) or ad-hoc |
 | c | **Section** (1–8) | `#` | Human | Semantic domain classification |
 | d | **Type** (root / compound / derivation) | `#` | Human | If compound: specify component roots + pattern name |
-| e | **Colour prefix** (共識 default) | `*/#` | AI suggests → human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
+| e | **Colour prefix** (共識 default) | `*` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
 | f | **Derivation mask** (NVAD) | `#` | Human | `n`, `v`, `a`, `d`, `nv`, `na`, `av`, `nva`, `nav`, `nvd`, `avd`, `nvad` |
 | g | **Syllable count** | `*` | AI auto-computes | `count_syllables(form)` |
 | h | **Syllable division** | `*?` | AI auto-computes → human reviews edge cases | `split_syllables(form)`; compound-boundary ambiguity flagged |
@@ -46,8 +46,8 @@ The human fills in the creative fields in `today.md`:
 4. **Type** — `root`, `compound-mono`, or `compound-multi`
 5. **If compound:** component roots (by form) + pattern name
 6. **Derivation mask** — `n`, `v`, `a`, `nv`, etc.
+7. **Colour prefix suggestion**
 
-The `consensus_prefix` is *optional* at this stage — the AI will auto-suggest in Phase 2.
 
 ### Phase 2: AI Validation + Computation (one CLI command)
 
@@ -83,7 +83,6 @@ Runs all automated checks and computations. Outputs a summary report. If errors 
 |---|---|
 | Syllable count | `count_syllables(form)` |
 | Syllable division | `split_syllables(form)` |
-| Colour prefix suggestion | 7-Question Filter (`nouns-colour-prefix.md` §V) |
 | Inflections (conditional) | Only for form types present in derivation mask |
 | Acc/gen forms | `get_case_forms(form, mask)` |
 
@@ -97,7 +96,6 @@ Runs all automated checks and computations. Outputs a summary report. If errors 
 
 Human reviews the Phase 2 summary report:
 
-- **Colour prefix suggestion** → accept or override in `today.md`
 - **Syllable division (boundary cases)** → confirm or specify alternative parse
 - **Near-collision warnings** → decide to proceed or redesign the form
 - **Inflections** → sanity-check the generated forms
