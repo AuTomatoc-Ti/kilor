@@ -76,7 +76,7 @@ Spatial postpositions follow the landmark noun, which carries **Genitive case**:
 
 ### B. Pronoun Landmarks
 
-Pronouns use their Genitive form (`kis`, `tis`, `sis`, `nis`, `kils`, `tils`, `sils`, `nils`; see `1-nominals/pronouns.md` §III):
+Pronouns use their Genitive form (`kis`, `tis`, `sis`, `nis`, `kilos`, `tilos`, `silos`, `nilos`; see `1-nominals/pronouns.md` §III):
 
 > `kis hinne` — "beside me" / "near me"
 > `sis paune` — "in front of them"

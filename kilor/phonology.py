@@ -180,14 +180,14 @@ def validate_content_root(root, is_func=False, is_compound=False):
 
 # Pronouns use invariant reduced case endings (SSOT: rules/1-nominals/pronouns.md §III)
 _PRONOUN_ACC_GEN = {
-    "ki":  ("kin",  "kis"),
-    "ti":  ("tin",  "tis"),
-    "si":  ("sin",  "sis"),
-    "ni":  ("nin",  "nis"),
-    "kil": ("kilin", "kilis"),
-    "til": ("tilin", "tilis"),
-    "sil": ("silin", "silis"),
-    "nil": ("nilin", "nilis"),
+    "ki":   ("kin",   "kis"),
+    "ti":   ("tin",   "tis"),
+    "si":   ("sin",   "sis"),
+    "ni":   ("nin",   "nis"),
+    "kilo": ("kilon", "kilos"),
+    "tilo": ("tilon", "tilos"),
+    "silo": ("silon", "silos"),
+    "nilo": ("nilon", "nilos"),
 }
 
 # Colour prefixes that may appear on the form (SSOT: rules/0-foundation/philosophy.md)

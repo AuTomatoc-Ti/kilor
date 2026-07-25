@@ -2,9 +2,9 @@
 
 **Module:** Pronoun Inventory & Declension
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.0.1
-**Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`
+**Last updated:** 2026-07-26
+**Version:** 2.0.1
+**Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`, `3-subsystems/derivational-compounding.md` §II
 
 ---
 
@@ -12,7 +12,7 @@
 
 Pronouns in Kilor form a **closed-class irregular paradigm**. They follow the same 3-case system as regular nouns (Nominative unmarked, Accusative, Genitive) but use **reduced case endings** that are exceptions to the standard suffix inventory.
 
-This irregularity is intentional — natural languages nearly always have irregular pronoun paradigms (English *I/me/my*, Japanese *watashi/watashi no*), and Kilor embraces this as a naturalistic feature.
+This irregularity is intentional — natural languages nearly always have irregular pronoun paradigms (English *I/me/my*, Japanese *watashi/watashitachi*), and Kilor embraces this as a naturalistic feature.
 
 ---
 
@@ -24,23 +24,16 @@ Kilor distinguishes **1st, 2nd, and 3rd person**, with a **living vs. non-living
 
 | Person | Singular | Plural | Description |
 |:---|:---|:---|:---|
-| **1st** | `ki` | `kil` | I / we |
-| **2nd** | `ti` | `til` | you (singular) / you (plural) |
-| **3rd Living** | `si` | `sil` | he, she, living thing / they (living) |
-| **3rd Non-Living** | `ni` | `nil` | it, dead thing, abstract / they (non-living) |
+| **1st** | `ki` | `kilo` | I / we |
+| **2nd** | `ti` | `tilo` | you (singular) / you (plural) |
+| **3rd Living** | `si` | `silo` | he, she, living thing / they (living) |
+| **3rd Non-Living** | `ni` | `nilo` | it, dead thing, abstract / they (non-living) |
 
-### B. Plural Formation
+### B. Plural Formation — The `-lo` Suffix
 
-Pronouns form plurals with the **plural marker `-l(i)-`**. This is a **pronoun-only** closed-class process — regular nouns have no plural marking (see `0-foundation/grammar-syntax.md` §VI).
+Pronouns form plurals with the fused suffix **`-lo`**. This is a **pronoun-only** closed-class process — the suffix descends from the content root `lote` ("group, multitude, collective"; see `3-subsystems/derivational-compounding.md` §II), but unlike human nouns (which use the multi-word form `lote`), pronoun plurals fuse `-lo` directly to the pronoun root as a single word.
 
-The marker surfaces in two forms depending on what follows:
-
-- **`-l`** when word-final (Nominative, no case suffix): `ki` → `kil` (we)
-- **`-li-`** when a consonant-initial case suffix follows (Accusative `-n`, Genitive `-s`): `ki` → `kilin` (us), `ki` → `kilis` (our)
-
-The epenthetic `-i-` in the `-li-` form prevents forbidden consonant clusters (`-ln-`, `-ls-`) while keeping the root and ending phonotactically legal.
-
-> **Rule:** This is a closed-class morphological process that does not extend to nouns.
+The `-lo` suffix is a pronominal closed-class morphological process that does not extend to nouns. Human nouns form collectives with the separate word `lote` (head-final compounding, `derivational-compounding.md` §II). Regular nouns (animals, objects, abstracts) have no plural marking (see `0-foundation/grammar-syntax.md` §VI).
 
 ---
 
@@ -58,7 +51,7 @@ Pronouns use **reduced case endings** instead of the standard `-ni`/`-na` (Accus
 
 Pronoun case endings are **invariant**. They do not participate in the Contrastive Suffix Rule. The endings `-n` and `-s` are always used regardless of vowel class. This is a closed-class exception to `1-nominals/cases.md` §II.
 
-Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `0-foundation/tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lin`, `ki-lis` = CVC). Since all pronouns are 1–2 syllables and toneless (see `0-foundation/tone-prosody.md` §II-B), there are no tone contours to participate in — the endings are flat mid, same as the pronoun roots.
+Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic for tone purposes (see `0-foundation/tone-prosody.md` §IV-B), the reduced pronoun endings are **fully syllabified**: `-n` and `-s` become the coda of the preceding syllable (e.g., `ki-lo-n`, `ki-lo-s` = CV.CVC). Since all pronouns are 1–2 syllables and toneless (see `0-foundation/tone-prosody.md` §II-B), there are no tone contours to participate in — the endings are flat mid, same as the pronoun roots.
 
 ### B. Full Declension Table
 
@@ -68,16 +61,16 @@ Unlike regular case suffixes (`-ni`/`-na`, `-si`/`-sa`), which are extrasyllabic
 | **2nd Sg** | ti | tin | tis |
 | **3rd Living Sg** | si | sin | sis |
 | **3rd Non-Living Sg** | ni | nin | nis |
-| **1st Pl** | kil | kilin | kilis |
-| **2nd Pl** | til | tilin | tilis |
-| **3rd Living Pl** | sil | silin | silis |
-| **3rd Non-Living Pl** | nil | nilin | nilis |
+| **1st Pl** | kilo | kilon | kilos |
+| **2nd Pl** | tilo | tilon | tilos |
+| **3rd Living Pl** | silo | silon | silos |
+| **3rd Non-Living Pl** | nilo | nilon | nilos |
 
 ---
 
 ## IV. Tone
 
-Pronouns are 1–2 syllable words and are **toneless** — pronounced with flat mid-tone (see `0-foundation/tone-prosody.md` §II-B). This applies to all forms: singular (`ki`, `kin`, `kis`), plural (`kil`, `kilin`, `kilis`), and all other persons. No `j`/`v` tone markers are used in pronoun spelling or pronunciation.
+Pronouns are 1–2 syllable words and are **toneless** — pronounced with flat mid-tone (see `0-foundation/tone-prosody.md` §II-B). This applies to all forms: singular (`ki`, `kin`, `kis`), plural (`kilo`, `kilon`, `kilos`), and all other persons. No `j`/`v` tone markers are used in pronoun spelling or pronunciation.
 
 ---
 
@@ -103,14 +96,38 @@ The `-s` on a pronoun form (e.g., `kis`, `tis`, `sis`, `nis`, and their plural c
 
 ---
 
-## VI. Summary of Irregularities
+## VI. Human Noun Collectives — Fused `-lo` / Multi-Word `lote`
+
+Human nouns form collective plurals following standard head-final compounding rules (see `3-subsystems/derivational-compounding.md` §II-G), with two surface forms depending on the base:
+
+| Form | Structure | Meaning | Rule |
+|:---|:---|:---|:---|
+| `maehalo` | person + `-lo` | people (collective) | Bare root, clean fuse |
+| `mamaelo` | mother + `-lo` | mothers (collective) | Bare root, clean fuse |
+| `famaelo` | father + `-lo` | fathers (collective) | Bare root, clean fuse |
+| `song lote` | friend + group | friends (collective) | End-only `ng` blocks fusion |
+| `takamae lote` | eater + group | eaters (collective) | Derived stem — `-mae` slot consumed |
+
+- **Fused `-lo`:** When the human noun is a bare root with no prior derivational suffix and no phonotactic block (end-only/edge-only consonant at root end). The shortened combining form of `lote` fuses directly.
+- **Multi-word `lote`:** When a blocker applies — derived stem (already has a suffix), or phonotactic block (end-only/edge-only consonant).
+
+Fused forms use **standard case suffixes** (`-ni`/`-si`), not the reduced pronoun endings: `maehaloni` (ACC), `maehalosi` (GEN). Multi-word forms attach case to the head `lote`: `takamae loteni` (ACC).
+
+**Numeral constraint:** `-lo` / `lote` never co-occurs with numerals. Use either `a-song ro` (three friends) or `song lote` (friends, collective, unspecified number), never `*song lote ro`. This mirrors the Chinese 們/number mutual-exclusion pattern.
+
+**Rhetorical personification:** In poetry, children's stories, and metaphor, `-lo` / `lote` may be used with animal or non-living nouns as a stylistic device (Chinese 擬人). This is documented in `guide/` and is not productive grammar — it does not appear in the spec-level rules.
+
+---
+
+## VII. Summary of Irregularities
 
 | Rule | Standard | Pronoun Exception |
 |:---|:---|:---|
 | Accusative suffix | `-ni` / `-na` | `-n` (invariant) |
 | Genitive suffix | `-si` / `-sa` | `-s` (invariant) |
 | Contrastive Suffix Rule | Required | Exempt (invariant endings) |
-| Plural marking | None | `-l(i)-` marker (pronoun-only, surfaces as `-l` word-finally, `-li-` before a consonant-initial suffix) |
+| Plural marking | None (regular nouns) | `-lo` fused suffix (pronoun-only) |
+| Human collective | Multi-word `lote` | Fused `-lo` (closed-class fusion) |
 
 ---
 

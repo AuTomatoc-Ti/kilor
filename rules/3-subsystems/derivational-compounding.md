@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-07-25
-**Version:** 2.3.0
+**Last updated:** 2026-07-26
+**Version:** 2.4.1
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -170,6 +170,7 @@ Heads that are 2+ syllables or semantically concrete remain as separate words in
 | 10 | `afaloi` | `afaloi` | Capability | nv | ability / able to |
 | 11 | `nara` / `narau` | `narau` | Without/Lack | n | without / -less |
 | 12 | `posia` | `posia` | Realm/Land | n | land of / realm of |
+| 13 | `lote` | `lote` | Collective | n | group / multitude (human nouns only; see §II-G) |
 
 All heads are open-class content roots — they carry colour prefixes and accept `-s` derivation per standard rules.
 
@@ -233,6 +234,30 @@ The postposed form `nara` follows the standard head-last compounding pattern. Ta
 `posia` is a content root meaning "land, realm, domain" — the elevated counterpart to everyday `pos` ("place"). While `pos` forms practical location compounds (bakery, greenhouse), `posia` forms names for countries, regions, mythical realms, and poetic toponyms.
 
 Takes colour prefix `ae-` (physical boundaries/earth): `ae-fos posia` = "the land of ice."
+
+### G. Collective (Human Nouns) — `noun + -lo` / `noun + lote`
+
+| Form | Meaning | Rule |
+|---|---|---|
+| `maehalo` | people (collective, unspecified number) | Bare root, clean fuse |
+| `mamaelo` | mothers (collective) | Bare root, clean fuse (reduplicative, not agent-derived) |
+| `famae` → `famaelo` | fathers (collective) | Bare root, clean fuse |
+| `song lote` | friends (collective) | End-only `ng` blocks fusion (§III-B.1) |
+| `takamae lote` | eaters (collective) | Derived stem — `-mae` already consumed the one-suffix slot (§III-B.2) |
+
+`lote` is a content root meaning "group, multitude, collective." It forms collective plurals for **human nouns only**, with two surface forms:
+
+- **Fused `-lo`:** When the human noun is a bare root with no prior derivational suffix AND no phonotactic block (end-only/edge-only consonant at the root boundary). The shortened combining form `-lo` fuses directly: `maehalo`, `mamaelo`, `famaelo`.
+- **Multi-word `lote`:** When any of these blockers apply:
+  - **One-suffix-per-word constraint** (§III-A): the noun already carries a derivational suffix (e.g., `takamae` with `-mae`).
+  - **Phonotactic constraint** (§III-B.1): the bare root ends in an end-only or edge-only consonant (e.g., `song` with `ng`).
+  - **Semantic concreteness** (§II header): `lote` is a 2-syllable, semantically concrete content root — this is a fallback condition that applies only when fusion is blocked by the first two rules.
+
+Pronouns are a **closed class** that always fuses `-lo`: `kilo`, `tilo`, `silo`, `nilo`. See `1-nominals/pronouns.md` for the full pronoun paradigm.
+
+**Numeral constraint:** `-lo` / `lote` never co-occurs with numerals. Use either `a-song ro` (three friends) or `song lote` (friends, collective, unspecified number), never `*song lote ro`. This mirrors the Chinese 們/number mutual-exclusion pattern.
+
+Takes colour prefix `a-` (living beings/human): `a-maehalo` = "the people," `a-mamaelo` = "the mothers."
 
 ---
 

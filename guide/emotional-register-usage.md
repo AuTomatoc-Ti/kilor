@@ -196,7 +196,7 @@ Quick-reference examples for each emotional particle.
 
 ### Green — Calm (`u`)
 
-> `u, sil thep.` — "(With calm,) they sleep."
+> `u, silo thep.` — "(With calm,) they sleep."
 > `ki u lirani taki.` — "I drink water (with calm)."
 
 ### Black — Fear (`y`)

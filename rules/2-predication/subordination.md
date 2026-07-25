@@ -223,9 +223,9 @@ Following the existing pattern for optional `kus` with non-clausal complements (
 | `ki shen` | myself |
 | `ti shen` | yourself |
 | `si shen` | himself / herself |
-| `kil shen` | ourselves |
-| `til shen` | yourselves |
-| `sil shen` | themselves |
+| `kilo shen` | ourselves |
+| `tilo shen` | yourselves |
+| `silo shen` | themselves |
 
 The reflexive occupies the object slot and may take ACC case:
 > `ki ki shenna winar.` — "I see myself." (`e` = Front → Back `-na`)
@@ -236,8 +236,8 @@ Emphatic use ("I myself"):
 ### B. Reciprocal — `meshen` ("each other")
 
 Placed **pre-verbally** as an adverb:
-> `sil meshen avrgonna.` — "They love each other."
-> `kil meshen winar.` — "We see each other."
+> `silo meshen avrgonna.` — "They love each other."
+> `kilo meshen winar.` — "We see each other."
 
 `meshen` can take `-s` via standard derivation (`meshens`), though the bare root form is standard for the reciprocal function.
 

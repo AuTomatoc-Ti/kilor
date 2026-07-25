@@ -192,14 +192,14 @@ export function queryWords({
 // ── Case-form generation (browser-side, mirrors kilor/phonology.py) ──────────
 
 const _PRONOUN_ACC_GEN = {
-  "ki":  ["kin",  "kis"],
-  "ti":  ["tin",  "tis"],
-  "si":  ["sin",  "sis"],
-  "ni":  ["nin",  "nis"],
-  "kil": ["kilin", "kilis"],
-  "til": ["tilin", "tilis"],
-  "sil": ["silin", "silis"],
-  "nil": ["nilin", "nilis"],
+  "ki":   ["kin",   "kis"],
+  "ti":   ["tin",   "tis"],
+  "si":   ["sin",   "sis"],
+  "ni":   ["nin",   "nis"],
+  "kilo": ["kilon", "kilos"],
+  "tilo": ["tilon", "tilos"],
+  "silo": ["silon", "silos"],
+  "nilo": ["nilon", "nilos"],
 };
 
 const _COLOUR_PREFIXES = ["ae-", "a-", "e-", "i-", "o-", "u-", "y-"];

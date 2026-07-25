@@ -96,7 +96,7 @@ To restrict the scope, use `mangus` (among). `mangus` may appear with or without
 
 `mangus` may take an explicit reference group as its object:
 
-> **Example:** `ki mangus kil ralis.`
+> **Example:** `ki mangus kilo ralis.`
 > (I among us big)
 > "I am the biggest among us."
 

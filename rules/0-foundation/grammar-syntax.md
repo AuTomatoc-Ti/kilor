@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-07-24
-**Version:** 2.2.6
+**Last updated:** 2026-07-25
+**Version:** 2.3.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`
 
 ---
@@ -168,7 +168,7 @@ piroi  wes  ralis  a-maeha  kus kin avrgonna  bauni ro  sy y-maliu  mer kis song
 
 ei  imaroi  bau  sy a-fora  taka.
 
-amer  ki  mangus kil  torra  ralis.
+amer  ki  mangus kilo  torra  ralis.
 ```
 
 **Translation:** "Yesterday the very big person who loves me did not quickly give three breads to you with an iron knife with my friend inside the house. And today the bread was eaten by the fire. But I am the biggest among us."
@@ -251,7 +251,7 @@ Kilor distinguishes two forms of compounding:
 - No consonant clusters
 - No 1- or 2-syllable root may end in `s` natively — `-s` is reserved as the modifier derivational suffix
 - 3+ syllable roots **may** end in `s` natively (e.g., `marokas`), pronounced as English plural `-s` (`/s/` or `/z/`). This is permitted because the `-s` derivational suffix does not apply to 3+ syllable words — tone pattern alone distinguishes categories at that length, so there is no ambiguity.
-- Pronoun genitive forms (`kis`, `tis`, `sis`, `nis` and their plurals) are **inflected**, not roots, and are exempt from the `-s` constraint
+- Pronoun genitive forms (`kis`, `tis`, `sis`, `nis`, `kilos`, `tilos`, `silos`, `nilos`) are **inflected**, not roots, and are exempt from the `-s` constraint
 - Closed-class function words (`res`, `ero`, `nar`, `iu`, `na`, `te`, `mer`, `sy`, `ar`, `tilpe`, `ei`, `po`, `pem`, `pona`, `pemna`, `amer`, `tu`, `li`, `aiga`, `hoskar`, `kus`, `tor`, `les`, `torra`, `wetor`, `mangus`, `sor`, `chom`, `maug`, `gin`, `ger`, `gou`, `bam`, `fidak`, `arfi`, `orse`, `tilpi`, `tilpa`, `shoun`, `mitok`) are **exempt** from the `-s` constraint. Numerals (`mo`, `do`, `ro`, `foi`, `tai`, `slo`, `lai`, `auk`, `wy`, `gau`, `mai`, `doi`, `rai`, `aniu`, `cu`, `kas`, `hus`, `tus`, `rakas`) are a **closed class** and are also exempt. This is the **single source of truth** for the closed-class particle inventory — all other files reference this list. The `-s` restriction applies only to open-class content roots (Nouns, Verbs, Adjectives, Adverbs) that participate in the derivational `-s` system. Function words and numerals are a fixed inventory and never receive derivational morphology.
 
 Note: `shen` (reflexive, `2-predication/subordination.md` §VII) is an open-class content root, subject to `-s` derivation. `hei` (vocative, `3-subsystems/imperatives.md`) is an open-class content noun with mask `n` only — colour prefixes follow the 異體字 emotional override pattern (`imperatives.md` §III); `-s` derivation does not apply since the mask excludes `A`/`D`.
@@ -284,9 +284,9 @@ The bare root serves as both noun and verb. Adding `-s` creates the modifier for
 
 ---
 
-## VI. Plural Strategy — No Plural Marking
+## VI. Plural Strategy — Collective `-lo` / `lote`
 
-Kilor has **no plural marking** — neither suffixes, nor prefixes, nor tonal changes indicate plurality. This follows the Chinese approach: number is inferred from **context, quantifiers, and numerals**.
+Kilor has **no grammatical number marking** on regular nouns — neither suffixes, nor prefixes, nor tonal changes indicate plurality. Number is inferred from **context, quantifiers, and numerals** following the Chinese approach.
 
 To express quantity explicitly, use **numeral + optional measure word + noun** constructions (see `3-subsystems/numerals.md` §VI) or quantifier words (many, few, all, some, three, etc.).
 
@@ -294,18 +294,31 @@ To express quantity explicitly, use **numeral + optional measure word + noun** c
 > *lira pei ro* (= three cups of water)
 > *lira* (could be one or more, depending on context)
 
-### Pronoun Exception
+### Pronoun Collective Plural — Fused `-lo`
 
-The **only exception** to the no-plural-marking rule is the pronoun system. Pronouns use a dedicated **`-l(i)-` plural marker** to distinguish singular from plural:
+Pronouns form collective plurals with the fused suffix **`-lo`** (descended from `lote`, "group, multitude, collective"). This is a **pronoun-only** closed-class morphological process:
 
 | | Singular | Plural |
 |---|---------|--------|
-| 1st | ki | kil |
-| 2nd | ti | til |
-| 3rd Living | si | sil |
-| 3rd Non-Living | ni | nil |
+| 1st | ki | kilo |
+| 2nd | ti | tilo |
+| 3rd Living | si | silo |
+| 3rd Non-Living | ni | nilo |
 
-This is a closed-class morphological process that applies **only** to pronouns. See `1-nominals/pronouns.md` §II-B for full details.
+Pronoun plurals use the same reduced case endings (`-n` ACC, `-s` GEN) as singular pronouns: `kilo / kilon / kilos`. See `1-nominals/pronouns.md` for full declension tables.
+
+### Human Noun Collective — Fused `-lo` / Multi-Word `lote`
+
+Human nouns form collective plurals following standard head-final rules (see `3-subsystems/derivational-compounding.md` §II-G), with two surface forms:
+
+- **Fused `-lo`:** Bare human roots with no prior derivational suffix and no phonotactic block fuse the shortened combining form: `maehalo` (people), `mamaelo` (mothers), `famaelo` (fathers).
+- **Multi-word `lote`:** When the root carries a derivational suffix (`takamae lote` — eaters) or has a phonotactic block (`song lote` — friends).
+
+Fused forms use **standard case suffixes** (`-ni`/`-si`): `maehaloni` (ACC), `maehalosi` (GEN). Multi-word forms attach case to the head `lote`: `takamae loteni` (ACC).
+
+**Numeral constraint:** `lote` / `-lo` never co-occurs with numerals. Use either `a-song ro` (three friends) or `song lote` (friends, collective, unspecified number), never `*song lote ro`. This mirrors the Chinese 們/number mutual-exclusion pattern.
+
+Regular nouns (animals, objects, abstracts) have no collective marking. Rhetorical personification with `lote` (poetry, children's stories) is a stylistic device documented in `guide/`, not productive grammar.
 
 ---
 
@@ -336,7 +349,7 @@ When scoping over the **subject**, `orse` immediately follows the subject noun p
 >
 > `a-fora hawuni orse taka.` — "The fire also eats the animal."
 >
-> `sil orse kil mer song taka.` — "They also eat with us."
+> `silo orse kilo mer song taka.` — "They also eat with us."
 
 ### C. Negation
 

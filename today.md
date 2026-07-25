@@ -21,3 +21,14 @@
 | Derivation Mask | N |
 | Decision | root |
 | Notes | Multi-word head for realm-naming. Elevated counterpart to pos/poska. Syllables: po/si/a. Prefix: ae-. |
+
+---
+
+### group, multitude, collective (social)
+
+| Field | Value |
+|---|---|
+| Kilor Root | lote |
+| Derivation Mask | N |
+| Decision | root |
+| Notes | Source of -lo pronoun plural suffix (fused) and lote multi-word collective marker for human nouns. Syllables: lo/te. Prefix: a-. |

@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.12.0
+**Current Version:** v1.14.0
 **Last Updated:** 2026-07-25
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -15,6 +15,35 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.14.0 — 2026-07-25
+
+Replaced `-l(i)-` pronoun plural infix with `-lo` fused suffix (from root `lote` "group/multitude/collective"). Extended collective marking to human nouns via multi-word `lote` (head-final compounding, Chinese 們 style). Pronoun-only closed-class fusion; human nouns use separate `lote` word; numerals and `lote` never co-occur.
+
+**Spec:**
+- **`pronouns.md`** v1.0.1→2.0.0 — Replaced `-l(i)-` infix with `-lo` suffix. New declension: `kilo/kilon/kilos` etc. Added §VI human noun collectives + `lote` etymology.
+- **`grammar-syntax.md`** v2.2.6→2.3.0 — §VI rewritten from "No Plural Marking" to "Collective -lo / lote". Updated pronoun examples (lines 171, 254, 339).
+- **`derivational-compounding.md`** v2.3.0→2.4.0 — Added `lote` as §II-#13 multi-word compounding head. Added §II-G subsection with full specification.
+- **`spatials.md`** v1.1.1→1.1.2 — Updated pronoun genitive forms.
+- **`subordination.md`** v2.5.0→2.6.0 — Updated reflexive/reciprocal pronoun examples.
+- **`comparatives.md`** v1.1.1→1.1.2 — Updated example sentence.
+- **`README.md`** v2.3.1→2.3.2 — Updated pronoun table in summary.
+- **`guide/emotional-register-usage.md`** — Updated `sil`→`silo`.
+
+**Code:**
+- **`phonology.py`** — Updated `_PRONOUN_ACC_GEN` dict (`kilo/kilon/kilos` etc.).
+- **`db.js`** — Updated `_PRONOUN_ACC_GEN` object in dictionary frontend case-form generator.
+
+**DB:**
+- Added 1 new root: `lote` (section A, gloss "group / multitude / collective", mask N, prefix a-).
+- Deleted 12 old pronoun forms (`kil/til/sil/nil` + ACC/GEN variants).
+- Inserted 12 new pronoun forms (`kilo/tilo/silo/nilo` + ACC/GEN variants).
+- Rebuilt DB schema (fixed FK references from broken section removal migration).
+
+**Clarification (2026-07-26):** Bare human roots that have no prior derivational suffix and no phonotactic block now fuse `-lo` directly (e.g., `maehalo`, `mamaelo`, `famaelo`), not just multi-word `lote`. The three blockers (one-suffix-per-word, phonotactic block, semantic concreteness) are conditions, not absolutes — when none apply, fusion is the preferred form.
+
+**Validation:**
+- `python kilor.py check` — ✅ All entries pass (near-collision warnings only)
 
 ## workspace v1.13.0 — 2026-07-25
 

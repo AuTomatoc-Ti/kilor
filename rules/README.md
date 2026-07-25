@@ -136,10 +136,10 @@ See `2-predication/interrogative.md` for full details.
 
 | | Singular | Plural |
 |---|---|---|
-| 1st | `ki` | `kil` |
-| 2nd | `ti` | `til` |
-| 3rd Living | `si` | `sil` |
-| 3rd Non-Living | `ni` | `nil` |
+| 1st | `ki` | `kilo` |
+| 2nd | `ti` | `tilo` |
+| 3rd Living | `si` | `silo` |
+| 3rd Non-Living | `ni` | `nilo` |
 
 See `1-nominals/pronouns.md` for declension (ACC `-n`, GEN `-s`).
 

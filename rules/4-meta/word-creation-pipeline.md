@@ -23,7 +23,7 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 | a | **Word form** (Kilor root/compound) | `*/#` | Human designs → AI validates | Phonotactic check + duplicate check + near-collision flag |
 | b | **Meaning** (English gloss) | `#` | Human | From wordlist (`wordlist/`) or ad-hoc |
 | c | **Type** (root / compound / derivation) | `#` | Human | If compound: specify component roots + pattern name |
-| d | **Colour prefix** (共識 default) | `*` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
+| d | **Colour prefix** (共識 default) | `#` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
 | e | **Derivation mask** (NVAD) | `#` | Human | `n`, `v`, `a`, `d`, `nv`, `na`, `av`, `nva`, `nav`, `nvd`, `avd`, `nvad` |
 | f | **Syllable count** | `*` | AI auto-computes | `count_syllables(form)` |
 | g | **Syllable division** | `*?` | AI auto-computes → human reviews edge cases | `split_syllables(form)`; compound-boundary ambiguity flagged |
