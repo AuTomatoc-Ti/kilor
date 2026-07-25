@@ -1,34 +1,100 @@
-# Kilor Translation — 2026-07-25
+# Kilor Translation — 2026-07-26
 # Fill in the Kilor column. Leave 'Decision' blank — the add command will classify.
 # Constraints reminder: no j/v in bare roots; 1-2 syl roots cannot end in s
 
-### abundance, fullness (general)
+### male (kinship)
 
 | Field | Value |
 |---|---|
-| Kilor Root | nia |
+| Kilor Root | tam |
 | Derivation Mask | N |
 | Decision | root |
-| Notes | Full-root form of abundative suffix -ia. Syllables: ni/a. Prefix: o-. |
+| Notes | Syllables: tam. Prefix: a-. |
 
 ---
 
-### land, realm, domain (social)
+### female (kinship)
 
 | Field | Value |
 |---|---|
-| Kilor Root | posia |
+| Kilor Root | shem |
 | Derivation Mask | N |
 | Decision | root |
-| Notes | Multi-word head for realm-naming. Elevated counterpart to pos/poska. Syllables: po/si/a. Prefix: ae-. |
+| Notes | Syllables: shem. Prefix: a-. |
 
 ---
 
-### group, multitude, collective (social)
+### man (kinship)
 
 | Field | Value |
 |---|---|
-| Kilor Root | lote |
+| Kilor Root | tamae |
 | Derivation Mask | N |
 | Decision | root |
-| Notes | Source of -lo pronoun plural suffix (fused) and lote multi-word collective marker for human nouns. Syllables: lo/te. Prefix: a-. |
+| Notes | Syllables: ta/mae. Prefix: a-. |
+
+---
+
+### women (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | shemae |
+| Derivation Mask | N |
+| Decision | root |
+| Notes | Syllables: she/mae. Prefix: a-. |
+
+---
+
+### child (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | chel |
+| Derivation Mask | N |
+| Decision | root |
+| Notes | Syllables: chel. Prefix: a-. |
+
+---
+
+### girl (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | ler |
+| Derivation Mask | N |
+| Decision | root |
+| Notes | Syllables: ler. Prefix: a-. |
+
+---
+
+### boy (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | lar |
+| Derivation Mask | N |
+| Decision | root |
+| Notes | Syllables: lar. Prefix: a-. |
+
+---
+
+### son (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | chellar |
+| Derivation Mask | N |
+| Decision | compound-mono |
+| Notes | chel + lar. Syllables: chel/lar. Prefix: a-. |
+
+---
+
+### daught (kinship)
+
+| Field | Value |
+|---|---|
+| Kilor Root | cheller |
+| Derivation Mask | N |
+| Decision | compound-mono |
+| Notes | chel + ler. Syllables: chel/ler. Prefix: a-. |
