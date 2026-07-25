@@ -102,7 +102,6 @@ function queryValue(sql, params = []) {
 
 export function queryWords({
   search = '',
-  sections = [],
   types = [],
   masks = [],
   prefixes = [],
@@ -114,17 +113,12 @@ export function queryWords({
   if (!db) return [];
 
   const cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
-    w.compound_type, w.derivation_mask, w.section, w.consensus_prefix,
+    w.compound_type, w.derivation_mask, w.consensus_prefix,
     w.is_function_word, w.notes,
     GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat`;
 
   let sql = `SELECT ${cols} FROM words w LEFT JOIN meanings m ON w.id = m.word_id WHERE 1=1`;
   const params = [];
-
-  if (sections.length > 0) {
-    sql += ` AND w.section IN (${sections.map(() => '?').join(',')})`;
-    params.push(...sections);
-  }
 
   if (types.length > 0) {
     const typeConds = [];
@@ -185,7 +179,6 @@ export function queryWords({
   switch (sortCol) {
     case 'form': sql += ` ORDER BY LOWER(w.form) ${dir}`; break;
     case 'gloss': sql += ` ORDER BY LOWER(MIN(m.gloss)) ${dir}`; break;
-    case 'section': sql += ` ORDER BY w.section ${dir}`; break;
     case 'prefix': sql += ` ORDER BY w.consensus_prefix ${dir}`; break;
     case 'mask': sql += ` ORDER BY w.derivation_mask ${dir}`; break;
     case 'syl': sql += ` ORDER BY w.syl_count ${dir}`; break;
@@ -379,13 +372,11 @@ function enrichEntry(row) {
   const examples = queryAll('SELECT kilor_text, english_text, source FROM examples WHERE word_id = ?', [wid])
     .map((ex) => ({ kilor: ex.kilor_text, english: ex.english_text, source: ex.source }));
   const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
-  const SEC = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
   return {
     id: wid, form: row.form, syl_count: row.syl_count,
     syllables: row.form.split(" ").map(w => splitSyllablesJS(w).join("/")).join(" / "),
     meanings,
-    derivation_mask: row.derivation_mask || '', section: row.section,
-    section_label: SEC[row.section] || 'Other',
+    derivation_mask: row.derivation_mask || '',
     is_root: Boolean(row.is_root), is_compound: Boolean(row.is_compound),
     compound_type: row.compound_type || null,
     is_function_word: Boolean(row.is_function_word),
@@ -407,17 +398,17 @@ export async function buildTestDB(entries) {
     locateFile: isNode() ? undefined : () => sqlWasmUrl,
   });
   const testDB = new SQL.Database();
-  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, section TEXT NOT NULL, consensus_prefix TEXT, is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
+  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
   testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, sort_order INTEGER DEFAULT 0)`);
   testDB.run(`CREATE TABLE inflections (word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, form_type TEXT NOT NULL, form TEXT NOT NULL, PRIMARY KEY (word_id, form_type))`);
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);
   testDB.run(`CREATE TABLE compound_meta (compound_id INTEGER PRIMARY KEY REFERENCES words(id) ON DELETE CASCADE, pattern TEXT NOT NULL, rule_ref TEXT)`);
   testDB.run(`CREATE TABLE examples (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, kilor_text TEXT NOT NULL, english_text TEXT NOT NULL, source TEXT DEFAULT 'canonical')`);
-  const iw = testDB.prepare('INSERT INTO words (id,form,syl_count,is_root,is_compound,compound_type,derivation_mask,section,consensus_prefix,is_function_word,notes) VALUES (?,?,?,?,?,?,?,?,?,?,?)');
+  const iw = testDB.prepare('INSERT INTO words (id,form,syl_count,is_root,is_compound,compound_type,derivation_mask,consensus_prefix,is_function_word,notes) VALUES (?,?,?,?,?,?,?,?,?,?)');
   const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, sort_order) VALUES (?,?,?)');
   const ii = testDB.prepare('INSERT INTO inflections (word_id, form_type, form) VALUES (?,?,?)');
   for (const e of entries) {
-    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.section, e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
+    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
     e.meanings.forEach((m, i) => im.run([e.id, m, i]));
     if (e.inflections) Object.entries(e.inflections).forEach(([t, f]) => ii.run([e.id, t, f]));
   }

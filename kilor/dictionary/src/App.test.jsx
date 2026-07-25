@@ -172,26 +172,6 @@ describe('App — advanced filter panel (real DB)', () => {
     );
   });
 
-  it('checking section 1 filters to only section 1 words', async () => {
-    render(<App />);
-    await waitForApp();
-
-    await toggleFilterCheckbox('1 — Concrete');
-
-    // Count should drop from 361
-    await waitFor(() => {
-      const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
-    });
-
-    // Every visible entry should have section "1"
-    const sectionTds = document.querySelectorAll('.td-section');
-    const sections = [...sectionTds].map((td) => td.textContent.trim());
-    for (const s of sections) {
-      expect(s).toBe('1');
-    }
-  });
-
   it('checking "Function words" type shows only function words', async () => {
     render(<App />);
     await waitForApp();
@@ -301,7 +281,7 @@ describe('App — advanced filter panel (real DB)', () => {
     await waitForApp();
 
     // Apply some filters first
-    await toggleFilterCheckbox('1 — Concrete');
+    await toggleFilterCheckbox('Function words');
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
       expect(resultSpan.textContent).not.toBe('361 words');

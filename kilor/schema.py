@@ -57,7 +57,6 @@ CREATE TABLE IF NOT EXISTS examples (
 
 CREATE INDEX IF NOT EXISTS idx_words_form ON words(form);
 CREATE INDEX IF NOT EXISTS idx_words_derivation_mask ON words(derivation_mask);
-CREATE INDEX IF NOT EXISTS idx_words_section ON words(section);
 CREATE INDEX IF NOT EXISTS idx_meanings_word_id ON meanings(word_id);
 CREATE INDEX IF NOT EXISTS idx_compound_components_component_id ON compound_components(component_id);
 """
@@ -111,18 +110,7 @@ BEGIN
 END;
 """
 
-# ── Section & Category Labels ────────────────────────────────────────────
-
-SECTION_LABELS = {
-    "1": "Concrete",
-    "2": "Living",
-    "3": "Action",
-    "4": "Quality",
-    "5": "Mental",
-    "6": "Relational",
-    "7": "Abstract",
-    "8": "Grammar",
-}
+# ── Category Labels ──────────────────────────────────────────────────────
 
 DERIVATION_MASK_LABELS = {
     "N": "Noun",

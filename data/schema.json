@@ -11,7 +11,6 @@
         {"name": "is_compound", "type": "BOOLEAN", "default": 0, "description": "True for compounds"},
         {"name": "compound_type", "type": "TEXT", "nullable": true, "description": "mono or multi; NULL for roots"},
         {"name": "derivation_mask", "type": "TEXT", "nullable": true, "description": "NVAD mask: which derivations are semantically natural. N=noun, V=verb, A=adjective, D=adverb. Empty for closed-class."},
-        {"name": "section", "type": "TEXT", "nullable": false, "description": "A-J semantic domain"},
         {"name": "consensus_prefix", "type": "TEXT", "nullable": true, "description": "Default colour prefix, e.g. o-"},
         {"name": "is_function_word", "type": "BOOLEAN", "default": 0},
         {"name": "notes", "type": "TEXT", "nullable": true},
@@ -20,8 +19,7 @@
       ],
       "indexes": [
         {"name": "idx_words_form", "columns": ["form"]},
-        {"name": "idx_words_derivation_mask", "columns": ["derivation_mask"]},
-        {"name": "idx_words_section", "columns": ["section"]}
+        {"name": "idx_words_derivation_mask", "columns": ["derivation_mask"]}
       ]
     },
     "meanings": {
@@ -88,18 +86,6 @@
       "content_table": "words",
       "content_rowid": "id"
     }
-  },
-  "section_labels": {
-    "A": "Worlds & Elements",
-    "B": "Living Things",
-    "C": "Physical Objects",
-    "D": "Actions & Motion",
-    "E": "Qualities & States",
-    "F": "Mind & Emotion",
-    "G": "Time & Space",
-    "H": "Social & Relational",
-    "I": "Abstract",
-    "J": "Sensation"
   },
   "derivation_mask_labels": {
     "N": "Noun",

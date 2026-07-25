@@ -14,15 +14,14 @@
 | `is_root` | BOOLEAN | DEFAULT 0 | True for bare roots |
 | `is_compound` | BOOLEAN | DEFAULT 0 | True for compounds |
 | `compound_type` | TEXT | `mono` or `multi`; NULL for roots | Compound classification |
-| `category` | TEXT | NOT NULL | `n`, `v`, `a`, `nv`, `na`, `av` |
-| `section` | TEXT | NOT NULL | 1–8 semantic domain (1=Concrete, 2=Living, 3=Action, 4=Quality, 5=Mental, 6=Relational, 7=Abstract, 8=Grammar) |
+| `derivation_mask` | TEXT | | NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class |
 | `consensus_prefix` | TEXT | | Default colour prefix (e.g. `o-`) |
 | `is_function_word` | BOOLEAN | DEFAULT 0 | True for closed-class particles |
 | `notes` | TEXT | | Free-text notes |
 | `created_at` | TEXT | DEFAULT (datetime('now')) | Creation timestamp |
 | `updated_at` | TEXT | DEFAULT (datetime('now')) | Last update timestamp |
 
-Indexes: `idx_words_form` (form), `idx_words_category` (category), `idx_words_section` (section)
+Indexes: `idx_words_form` (form), `idx_words_derivation_mask` (derivation_mask)
 
 ### `meanings` — glosses per word
 

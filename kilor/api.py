@@ -18,7 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .db import get_db, fts_search
 from .phonology import get_case_forms, split_syllables
-from .schema import SECTION_LABELS, DERIVATION_MASK_LABELS
+from .schema import DERIVATION_MASK_LABELS
 
 # ── FastAPI app ──────────────────────────────────────────────────────────────
 
@@ -150,8 +150,6 @@ def _word_to_dict(conn, row) -> dict:
         "syllables": " / ".join("/".join(split_syllables(w)) for w in row["form"].split(" ")),
         "meanings": meanings,
         "derivation_mask": row["derivation_mask"],
-        "section": row["section"],
-        "section_label": SECTION_LABELS.get(row["section"], "Other"),
         "is_root": bool(row["is_root"]),
         "is_compound": bool(row["is_compound"]),
         "compound_type": row["compound_type"],
@@ -176,7 +174,6 @@ def _word_to_dict(conn, row) -> dict:
 @app.get("/api/words")
 def get_words(
     q: Optional[str] = Query(None, description="Search query (substring match across form, meanings, examples)"),
-    section: Optional[str] = Query(None, description="Filter by section (A-J)"),
     derivation_mask: Optional[str] = Query(None, description="Filter by derivation mask (N, V, A, D, NV, NA, NVAD, ...)"),
     phase: Optional[int] = Query(None, description="Filter by learning phase (1-6)"),
     tags: Optional[str] = Query(None, description="Filter by semantic tag (comma-separated)"),
@@ -189,9 +186,6 @@ def get_words(
         query = "SELECT * FROM words WHERE 1=1"
         params = []
 
-        if section:
-            query += " AND section = ?"
-            params.append(section)
         if derivation_mask:
             query += " AND derivation_mask = ?"
             params.append(derivation_mask)
@@ -314,18 +308,6 @@ def get_status():
             ).fetchall()
         ]
 
-        # Section breakdown
-        secs = [
-            {
-                "section": r["section"],
-                "label": SECTION_LABELS.get(r["section"], "Unknown"),
-                "count": r["cnt"],
-            }
-            for r in conn.execute(
-                "SELECT section, COUNT(*) as cnt FROM words WHERE section != '' GROUP BY section ORDER BY section"
-            ).fetchall()
-        ]
-
         # Syllable breakdown
         syls = [
             {"syl_count": r["syl_count"], "count": r["cnt"]}
@@ -364,7 +346,6 @@ def get_status():
                 "total_words": total_words,
             },
             "by_derivation_mask": cats,
-            "by_section": secs,
             "by_syllable_count": syls,
             "roadmap": roadmap_targets,
             "prefix_info": PREFIX_INFO,

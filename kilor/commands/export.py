@@ -9,7 +9,6 @@ from datetime import datetime
 
 from ..db import get_db, rebuild_fts
 from ..phonology import get_case_forms
-from ..schema import SECTION_LABELS
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -26,7 +25,7 @@ def _export_csv(conn):
     with open(output_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "form", "syl_count", "meaning", "derivation_mask", "section",
+            "form", "syl_count", "meaning", "derivation_mask",
             "noun", "verb", "adjective", "adverb",
             "consensus_prefix", "is_function_word", "is_compound",
             "compound_type", "notes",
@@ -41,7 +40,7 @@ def _export_csv(conn):
             writer.writerow([
                 w["form"], w["syl_count"],
                 w["meanings_concat"] or "",
-                w["derivation_mask"], w["section"],
+                w["derivation_mask"],
                 infls.get("noun", ""), infls.get("verb", ""),
                 infls.get("adjective", ""), infls.get("adverb", ""),
                 w["consensus_prefix"] or "o-",
@@ -208,8 +207,6 @@ header p { font-size: .85rem; opacity: .7; }
 .toolbar select:focus { border-color: #4a6cf7; }
 #result-count { font-size: .85rem; color: #666; white-space: nowrap; margin-left: 8px; }
 .container { max-width: 960px; margin: 0 auto; padding: 20px 24px; }
-.section-header { font-size: 1.25rem; font-weight: 700; color: #4a6cf7; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #e0e0e0; display: flex; align-items: baseline; gap: 10px; }
-.section-header .count { font-size: .85rem; color: #888; font-weight: 400; }
 .entry { background: #fff; border-radius: 8px; margin: 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,.06); overflow: hidden; transition: box-shadow .15s; }
 .entry:hover { box-shadow: 0 2px 8px rgba(0,0,0,.1); }
 .entry-header { display: flex; align-items: baseline; padding: 14px 18px; cursor: pointer; user-select: none; gap: 12px; flex-wrap: wrap; }
@@ -259,17 +256,6 @@ header p { font-size: .85rem; opacity: .7; }
 
 <div class="toolbar">
   <input type="text" id="search" placeholder="Search words, meanings, examples..." autofocus>
-  <select id="filter-section">
-    <option value="">All sections</option>
-    <option value="1">1 — Concrete</option>
-    <option value="2">2 — Living</option>
-    <option value="3">3 — Action</option>
-    <option value="4">4 — Quality</option>
-    <option value="5">5 — Mental</option>
-    <option value="6">6 — Relational</option>
-    <option value="7">7 — Abstract</option>
-    <option value="8">8 — Grammar</option>
-  </select>
   <select id="filter-type">
     <option value="">All types</option>
     <option value="root">Roots</option>
@@ -323,11 +309,9 @@ function loadDictionary() {
 
 function getFilteredEntries() {
   const st = document.getElementById('search').value.toLowerCase().trim();
-  const sf = document.getElementById('filter-section').value;
   const tf = document.getElementById('filter-type').value;
   const cf = document.getElementById('filter-mask').value;
   return allEntries.filter(e => {
-    if (sf && e.section !== sf) return false;
     if (tf === 'root' && !e.is_root) return false;
     if (tf === 'compound' && !e.is_compound) return false;
     if (tf === 'function' && !e.is_function_word) return false;
@@ -345,21 +329,7 @@ function render() {
   const container = document.getElementById('entry-container');
   document.getElementById('result-count').textContent = filtered.length === allEntries.length ? allEntries.length + ' words' : filtered.length + ' of ' + allEntries.length + ' words';
   if (filtered.length === 0) { container.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>No words match your search.</p></div>'; return; }
-  const searchActive = !!document.getElementById('search').value.trim();
-  const sectionActive = !!document.getElementById('filter-section').value;
-  if (searchActive && !sectionActive) { container.innerHTML = filtered.map(e => entryHTML(e)).join(''); return; }
-  const grouped = {};
-  const sectionOrder = ['1','2','3','4','5','6','7','8'];
-  for (const sec of sectionOrder) grouped[sec] = [];
-  for (const e of filtered) { const sec = e.section || '7'; if (!grouped[sec]) grouped[sec] = []; grouped[sec].push(e); }
-  let html = '';
-  for (const sec of sectionOrder) {
-    if (!grouped[sec] || grouped[sec].length === 0) continue;
-    const secLabel = grouped[sec][0].section_label || 'Other';
-    html += '<div class="section-header">' + sec + ' — ' + secLabel + '<span class="count">' + grouped[sec].length + '</span></div>';
-    html += grouped[sec].map(e => entryHTML(e)).join('');
-  }
-  container.innerHTML = html;
+  container.innerHTML = filtered.map(e => entryHTML(e)).join('');
 }
 function entryHTML(e) {
   const tags = [];
@@ -402,7 +372,6 @@ function entryHTML(e) {
 }
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 document.getElementById('search').addEventListener('input', render);
-document.getElementById('filter-section').addEventListener('change', render);
 document.getElementById('filter-type').addEventListener('change', render);
 document.getElementById('filter-mask').addEventListener('change', render);
 loadDictionary();
@@ -477,8 +446,6 @@ def _export_dictionary_data(conn):
             "syl_count": w["syl_count"],
             "meanings": meanings,
             "derivation_mask": w["derivation_mask"],
-            "section": w["section"],
-            "section_label": SECTION_LABELS.get(w["section"], "Other"),
             "is_root": bool(w["is_root"]),
             "is_compound": bool(w["is_compound"]),
             "compound_type": w["compound_type"],

@@ -1,7 +1,5 @@
 import React from 'react';
 
-const SECTION_LABELS = { A:'Worlds & Elements', B:'Living Things', C:'Physical Objects', D:'Actions & Motion', E:'Qualities & States', F:'Mind & Emotion', G:'Time & Space', H:'Social & Relational', I:'Abstract', J:'Sensation' };
-
 function PrefixBadge({ prefix, info }) {
   if (!prefix || prefix === '' || prefix === '-') return <span className="empty-cell">—</span>;
   if (!info) return <span className="empty-cell">—</span>;
@@ -62,10 +60,6 @@ function DetailPanel({ entry, prefixInfo }) {
               <strong>NVAD Mask</strong> <span className="tag-mask">{mask}</span>
             </div>
           )}
-
-          <div className="detail-row">
-            <strong>Section</strong> {entry.section || '—'} — {SECTION_LABELS[entry.section] || 'Other'}
-          </div>
 
           {entry.consensus_prefix && (
             <div className="detail-row">
@@ -183,9 +177,6 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
             <th className={sortCol === 'gloss' ? 'sorted' : ''} onClick={() => onSort('gloss')}>
               Gloss {arrow('gloss')}
             </th>
-            <th className={sortCol === 'section' ? 'sorted' : ''} onClick={() => onSort('section')}>
-              § {arrow('section')}
-            </th>
             <th className={sortCol === 'type' ? 'sorted' : ''} onClick={() => onSort('type')}>
               Type {arrow('type')}
             </th>
@@ -218,7 +209,6 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
                     {gloss}
                     <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
                   </td>
-                  <td className="td-section">{e.section || '—'}</td>
                   <td className="td-type"><TypeTag entry={e} /></td>
                   <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
                   <td className="td-mask">{mask}</td>
@@ -226,7 +216,7 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
                 </tr>
                 {isExpanded && (
                   <tr className="detail-tr">
-                    <td colSpan={7}>
+                    <td colSpan={6}>
                       <DetailPanel entry={e} prefixInfo={prefixInfo} />
                     </td>
                   </tr>

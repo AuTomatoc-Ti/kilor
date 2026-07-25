@@ -16,6 +16,41 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+## workspace v1.13.0 — 2026-07-25
+
+Removed section classification (1–8) from the lexicon. Section was a semantic-domain label that required human judgment during word creation but provided minimal value — the colour prefix system already provides ontological classification. Removed from DB writes/reads, API, dictionary UI, and all documentation. Polysemy merge/split test now uses only prefix + mask.
+
+**Meta:**
+- **`word-creation-pipeline.md`** v1.1.0→2.0.0 — Removed field `c` (Section) from field table, Phase 1 steps, and both templates. Updated polysemy compatibility test to use only prefix + mask. MAJOR bump (structural change).
+- **`section-taxonomy.md`** — Deleted (82 lines, no remaining consumers).
+- **`rules/README.md`** v2.3.1→2.3.2 — Removed `section-taxonomy.md` from directory structure and dependency table. PATCH bump.
+
+**DB:**
+- **`kilor/schema.py`** — Removed `SECTION_LABELS` dict and `idx_words_section` index.
+- **`kilor/commands/add.py`** — Removed `SECTION_MAP` dict and `section` from INSERT.
+- **`kilor/commands/migrate.py`** — Removed `section` from INSERT statements.
+- **`kilor/commands/status.py`** — Removed "By Section" output section.
+- **`kilor/commands/export.py`** — Removed `section` from CSV export, dictionary data export, and inline HTML fallback (section filter dropdown + grouped rendering).
+- **`kilor/api.py`** — Removed `section` from `_word_to_dict()`, `?section=` query param, and `by_section` from `/api/status`.
+- **`kilor/tests/test_api_syllables.py`** — Removed `section` from test schema.
+
+**Dictionary:**
+- **`kilor/dictionary/src/db.js`** — Removed `section` from SELECT columns, filter logic, sort cases, and `enrichEntry()`.
+- **`kilor/dictionary/src/components/FilterPanel.jsx`** — Removed "Section" column and `SECTION_OPTIONS`.
+- **`kilor/dictionary/src/components/TableView.jsx`** — Removed "§" column from table header/body and "Section" from `DetailPanel`.
+- **`kilor/dictionary/src/App.jsx`** — Removed `filterSections` state and prop passing.
+- **`kilor/dictionary/src/App.test.jsx`** — Removed section filter test.
+
+**Docs:**
+- **`data/AI-GUIDE.md`** — Removed §5 (Section Map) and `section` from code examples.
+- **`data/AGENT-QUICKSTART.md`** — Removed section table, tiebreak rule, `section` from code examples, validation checklist, schema table, and `?section=` curl example.
+- **`data/SCHEMA.md`** — Removed `section` column from `words` table and `idx_words_section` from indexes.
+- **`data/schema.json`** — Removed `section` column, `idx_words_section` index, and `section_labels` top-level key.
+- **`data/README.md`** — Removed "filter by section" from dictionary description and "section" from SSOT list.
+
+**Validation:**
+- `python kilor.py check` — ✅ All N entries pass
+
 ## workspace v1.12.0 — 2026-07-25
 
 Added abundative suffix `-ia`/`nia` ("full of X") as fully productive noun-derived suffix, and `posia` as new multi-word compounding head ("land/realm of X"). Restructured colour prefix rules (§V) into two tiers: fixed semantic-class (for verb/adj derivations) and base-inheritance (for noun-derived suffixes).

@@ -108,14 +108,13 @@ def cmd_migrate():
         else:
             syl = ph.count_syllables(bare)
         mask = row.get("derivation_mask", row.get("category", "")).strip()
-        section = row.get("section", "").strip() or "I"
 
         try:
             conn.execute(
                 """INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
-                   derivation_mask, section, consensus_prefix, is_function_word, notes)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (bare, syl, 1, 0, None, mask, section, consensus_prefix or "o-", 1 if is_func else 0, notes_val),
+                   derivation_mask, consensus_prefix, is_function_word, notes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (bare, syl, 1, 0, None, mask, consensus_prefix or "o-", 1 if is_func else 0, notes_val),
             )
             word_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         except sqlite3.IntegrityError as e:
@@ -174,15 +173,14 @@ def cmd_migrate():
             "without": "N", "epistemic-modal": "D",
         }
         mask = mask_map.get(pattern, "N")
-        sec = "I"
         syl_total = sum(ph.count_syllables(c) for c in construction)
 
         try:
             conn.execute(
                 """INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
-                   derivation_mask, section, consensus_prefix, is_function_word, notes)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (form, syl_total, 0, 1, "multi", mask, sec, "o-", 0, ""),
+                   derivation_mask, consensus_prefix, is_function_word, notes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (form, syl_total, 0, 1, "multi", mask, "o-", 0, ""),
             )
             word_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         except sqlite3.IntegrityError:

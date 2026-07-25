@@ -22,7 +22,6 @@ def conn():
             is_compound BOOLEAN DEFAULT 0,
             compound_type TEXT,
             derivation_mask TEXT,
-            section TEXT DEFAULT 'I',
             consensus_prefix TEXT DEFAULT 'o-',
             is_function_word BOOLEAN DEFAULT 0,
             notes TEXT DEFAULT ''
@@ -39,17 +38,17 @@ def conn():
 def _insert_word(conn, wid, form, syl_count, **kwargs):
     defaults = {
         "is_root": 1, "is_compound": 0, "compound_type": None,
-        "derivation_mask": "NVA", "section": "I", "consensus_prefix": "o-",
+        "derivation_mask": "NVA", "consensus_prefix": "o-",
         "is_function_word": 0, "notes": "",
     }
     defaults.update(kwargs)
     conn.execute(
         """INSERT INTO words (id, form, syl_count, is_root, is_compound,
-           compound_type, derivation_mask, section, consensus_prefix,
+           compound_type, derivation_mask, consensus_prefix,
            is_function_word, notes)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (wid, form, syl_count, defaults["is_root"], defaults["is_compound"],
-         defaults["compound_type"], defaults["derivation_mask"], defaults["section"],
+         defaults["compound_type"], defaults["derivation_mask"],
          defaults["consensus_prefix"], defaults["is_function_word"], defaults["notes"]),
     )
 

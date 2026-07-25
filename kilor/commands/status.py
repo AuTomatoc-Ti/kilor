@@ -1,7 +1,6 @@
 """Print lexicon statistics from the database."""
 
 from ..db import get_db
-from ..schema import SECTION_LABELS
 
 
 def cmd_status():
@@ -44,10 +43,6 @@ def cmd_status():
         "SELECT derivation_mask, COUNT(*) as cnt FROM words GROUP BY derivation_mask ORDER BY cnt DESC"
     ).fetchall()
 
-    secs = conn.execute(
-        "SELECT section, COUNT(*) as cnt FROM words WHERE section != '' GROUP BY section ORDER BY section"
-    ).fetchall()
-
     syls = conn.execute(
         "SELECT syl_count, COUNT(*) as cnt FROM words GROUP BY syl_count ORDER BY syl_count"
     ).fetchall()
@@ -65,12 +60,6 @@ def cmd_status():
     for c in cats:
         label = c['derivation_mask'] or '(closed-class)'
         print(f"  {label}: {c['cnt']}")
-
-    print()
-    print("-- By Section --")
-    for s in secs:
-        name = SECTION_LABELS.get(s['section'], 'Unknown')
-        print(f"  {s['section']} ({name}): {s['cnt']}")
 
     print()
     print("-- By Syllable Count --")

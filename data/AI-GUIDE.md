@@ -10,7 +10,7 @@ This document teaches an AI agent how to **add new roots, compounds, and example
 
 ```bash
 python kilor.py next                    # Generate today.md with untranslated words
-# → Edit today.md, fill in Kilor Root, Category, Section, etc.
+# → Edit today.md, fill in Kilor Root, Derivation Mask, etc.
 python kilor.py add --file today.md     # Validate and insert into kilor.db
 ```
 
@@ -24,8 +24,7 @@ conn = get_db()
 
 form = "newroot"          # Must follow phonotactics (see §4)
 gloss = "example meaning"
-category = "n"            # n, v, a, nv, na, av
-section = "7"             # 1-8 (see §5)
+mask = "N"                # NVAD mask (N, V, A, D, NV, NA, etc.)
 prefix = "o-"             # Default colour prefix
 
 # ── Validate ──
@@ -37,9 +36,9 @@ if not valid:
 # ── Insert word ──
 conn.execute("""
     INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
-                       category, section, consensus_prefix, is_function_word, notes)
-    VALUES (?, ?, 1, 0, NULL, ?, ?, ?, 0, '')
-""", (form, count_syllables(form), category, section, prefix))
+                       derivation_mask, consensus_prefix, is_function_word, notes)
+    VALUES (?, ?, 1, 0, NULL, ?, ?, 0, '')
+""", (form, count_syllables(form), mask, prefix))
 word_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
 
 # ── Insert meaning ──
@@ -48,12 +47,17 @@ conn.execute(
     (word_id, gloss)
 )
 
-# ── Insert inflections (default: form + -s for adj/adv) ──
-for ft in ('noun', 'verb', 'adjective', 'adverb'):
-    conn.execute(
-        "INSERT INTO inflections (word_id, form_type, form) VALUES (?, ?, ?)",
-        (word_id, ft, f"{form}s" if ft in ('adjective', 'adverb') else form)
-    )
+# ── Insert inflections (conditional on mask) ──
+# Only generate forms that the mask allows
+mask_upper = (mask or "").upper()
+if 'N' in mask_upper:
+    conn.execute("INSERT INTO inflections (word_id, form_type, form) VALUES (?, 'noun', ?)", (word_id, form))
+if 'V' in mask_upper:
+    conn.execute("INSERT INTO inflections (word_id, form_type, form) VALUES (?, 'verb', ?)", (word_id, form))
+if 'A' in mask_upper:
+    conn.execute("INSERT INTO inflections (word_id, form_type, form) VALUES (?, 'adjective', ?)", (word_id, f"{form}s"))
+if 'D' in mask_upper:
+    conn.execute("INSERT INTO inflections (word_id, form_type, form) VALUES (?, 'adverb', ?)", (word_id, f"{form}s"))
 
 conn.commit()
 rebuild_fts(conn)    # CRITICAL: keep FTS in sync
@@ -102,20 +106,20 @@ syl_total = sum(count_syllables(c) for c in component_forms)
 # ── Determine compound type ──
 compound_type = "multi" if " " in compound_form else "mono"
 
-# ── Determine category from pattern ──
-cat_map = {
-    "agentive": "n", "instrument": "n", "property": "n", "measure": "n",
-    "process": "n", "location": "n", "doctrine": "n", "capability": "na",
-    "without": "na", "epistemic-modal": "na", "nominal-compound": "n",
+# ── Determine mask from pattern ──
+mask_map = {
+    "agentive": "N", "instrument": "N", "property": "N", "measure": "N",
+    "process": "N", "location": "N", "doctrine": "N", "capability": "NA",
+    "without": "NA", "epistemic-modal": "NA", "nominal-compound": "N",
 }
-category = cat_map.get(pattern, "n")
+mask = mask_map.get(pattern, "N")
 
 # ── Insert word ──
 conn.execute("""
     INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
-                       category, section, consensus_prefix, is_function_word, notes)
-    VALUES (?, ?, 0, 1, ?, ?, '7', 'o-', 0, ?)
-""", (compound_form, syl_total, compound_type, category,
+                       derivation_mask, consensus_prefix, is_function_word, notes)
+    VALUES (?, ?, 0, 1, ?, ?, 'o-', 0, ?)
+""", (compound_form, syl_total, compound_type, mask,
       f"compound: {' + '.join(component_forms)}"))
 compound_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
 
@@ -188,37 +192,7 @@ valid, error = validate_content_root(form, is_func=False, is_compound=False)
 
 ---
 
-## 5. Section Map (1–8)
-
-Section codes follow an ontological taxonomy from concrete to abstract. Each word gets exactly one section.
-
-See `rules/4-meta/section-taxonomy.md` for the SSOT.
-
-| Code | Domain | Boundary Test |
-|---|---|---|
-| 1 | Concrete | Tangible matter, substances, artifacts, buildings, geographic features |
-| 2 | Living | Organisms, body parts, life processes |
-| 3 | Action | Events, motions, changes, processes |
-| 4 | Quality | Properties, attributes, sensory qualities, conditions |
-| 5 | Mental | Internal experience, cognition, emotion, perception, art |
-| 6 | Relational | Positioning: spatial, temporal, social, kinship, communication |
-| 7 | Abstract | Ideas, concepts, values, systems, spirit, existence |
-| 8 | Grammar | Closed-class operators, pronouns, numerals, question words, particles, modals |
-
-### Tiebreak Rule
-
-When a word has polysemous glosses spanning multiple sections, assign the section with **lowest code number** (most concrete):
-
-**1 > 2 > 3 > 4 > 5 > 6 > 7 > 8**
-
-Example: `fos` means both "ice" (1 — Concrete) and "freeze" (3 — Action). Assign section 1 (more concrete).
-
----
-Category codes: `n` (noun), `v` (verb), `a` (adjective), `nv` (noun/verb), `na` (noun/adjective), `av` (adjective/verb)
-
----
-
-## 6. Compound Pattern Names
+## 5. Compound Pattern Names
 
 Valid values for `compound_meta.pattern`:
 ```
@@ -228,7 +202,7 @@ doctrine, capability, without, epistemic-modal, nominal-compound
 
 ---
 
-## 7. Verification & Export After Changes
+## 6. Verification & Export After Changes
 
 ```bash
 # Always run after changes:
@@ -246,7 +220,7 @@ cmd_check()
 
 ---
 
-## 8. Critical Rules
+## 7. Critical Rules
 
 1. **Always rebuild FTS after any INSERT/UPDATE/DELETE** — call `rebuild_fts(conn)` after committing. Without this, the search index will be stale.
 
@@ -260,4 +234,4 @@ cmd_check()
 
 ---
 
-*Last updated: 2026-07-21*
+*Last updated: 2026-07-25*

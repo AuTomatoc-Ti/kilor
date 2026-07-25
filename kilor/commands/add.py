@@ -2,18 +2,12 @@
 
 import os
 import re
+import sqlite3
 
 from ..db import get_db, rebuild_fts
 from ..phonology import validate_content_root, count_syllables, get_case_forms
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-SECTION_MAP = {
-    "nature": "1", "body": "2", "animal": "2", "food": "1",
-    "clothing": "1", "home": "1", "tool": "1", "action": "3",
-    "quality": "4", "direction": "6", "people": "6", "social": "6",
-    "general": "7",
-}
 
 # Derivation mask to form_type mapping
 MASK_TO_FORMS = {
@@ -119,14 +113,13 @@ def cmd_add(filepath):
         syl = str(count_syllables(root))
         mask = entry.get("mask", "")
         notes = entry.get("notes", entry.get("decision", "root"))
-        section = SECTION_MAP.get(domain, "7")
 
         try:
             conn.execute(
                 """INSERT INTO words (form, syl_count, is_root, is_compound, compound_type,
-                   derivation_mask, section, consensus_prefix, is_function_word, notes)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (root, int(syl), 1, 0, None, mask, section, "o-", 0, notes),
+                   derivation_mask, consensus_prefix, is_function_word, notes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (root, int(syl), 1, 0, None, mask, "o-", 0, notes),
             )
             word_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         except sqlite3.IntegrityError as e:

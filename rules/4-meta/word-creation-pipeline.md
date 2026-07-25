@@ -2,8 +2,8 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-07-22
-**Version:** 1.1.0
+**Last updated:** 2026-07-25
+**Version:** 2.0.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`
 
 ---
@@ -22,14 +22,13 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 |---|---|---|---|---|
 | a | **Word form** (Kilor root/compound) | `*/#` | Human designs → AI validates | Phonotactic check + duplicate check + near-collision flag |
 | b | **Meaning** (English gloss) | `#` | Human | From wordlist (`wordlist/`) or ad-hoc |
-| c | **Section** (1–8) | `#` | Human | Semantic domain classification |
-| d | **Type** (root / compound / derivation) | `#` | Human | If compound: specify component roots + pattern name |
-| e | **Colour prefix** (共識 default) | `*` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
-| f | **Derivation mask** (NVAD) | `#` | Human | `n`, `v`, `a`, `d`, `nv`, `na`, `av`, `nva`, `nav`, `nvd`, `avd`, `nvad` |
-| g | **Syllable count** | `*` | AI auto-computes | `count_syllables(form)` |
-| h | **Syllable division** | `*?` | AI auto-computes → human reviews edge cases | `split_syllables(form)`; compound-boundary ambiguity flagged |
-| i | **Inflections** | `*` | AI auto-generates (conditional on mask) | Only generates applicable form types; applies tone markers for 3+ syllable words |
-| j | **Acc/gen forms** | `*` | AI auto-computes → stores in DB | `get_case_forms(form, mask)`; Contrastive Suffix Rule |
+| c | **Type** (root / compound / derivation) | `#` | Human | If compound: specify component roots + pattern name |
+| d | **Colour prefix** (共識 default) | `*` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
+| e | **Derivation mask** (NVAD) | `#` | Human | `n`, `v`, `a`, `d`, `nv`, `na`, `av`, `nva`, `nav`, `nvd`, `avd`, `nvad` |
+| f | **Syllable count** | `*` | AI auto-computes | `count_syllables(form)` |
+| g | **Syllable division** | `*?` | AI auto-computes → human reviews edge cases | `split_syllables(form)`; compound-boundary ambiguity flagged |
+| h | **Inflections** | `*` | AI auto-generates (conditional on mask) | Only generates applicable form types; applies tone markers for 3+ syllable words |
+| i | **Acc/gen forms** | `*` | AI auto-computes → stores in DB | `get_case_forms(form, mask)`; Contrastive Suffix Rule |
 | H | **Sentences** (examples) | `?` | Optional: LLM drafts via `--with-examples` flag; human accepts/rejects/edits in Phase 3 | 1–3 example sentences per word; must follow grammar, tone, and lexicon constraints (§V-F). Also insertable later via `edit` command |
 
 ---
@@ -42,11 +41,10 @@ The human fills in the creative fields in `today.md`:
 
 1. **Meaning** — from `wordlist/` or ad-hoc
 2. **Kilor form** — invent the root or compose the compound
-3. **Section** (1–8) — semantic domain
-4. **Type** — `root`, `compound-mono`, or `compound-multi`
-5. **If compound:** component roots (by form) + pattern name
-6. **Derivation mask** — `n`, `v`, `a`, `nv`, etc.
-7. **Colour prefix suggestion**
+3. **Type** — `root`, `compound-mono`, or `compound-multi`
+4. **If compound:** component roots (by form) + pattern name
+5. **Derivation mask** — `n`, `v`, `a`, `nv`, etc.
+6. **Colour prefix suggestion**
 
 
 ### Phase 2: AI Validation + Computation (one CLI command)
@@ -120,7 +118,7 @@ Without `--dry-run`, the command inserts all validated entries:
 | `compound_meta` | If compound: 1 row with pattern + rule_ref |
 | `examples` | If `--with-examples`: 1–3 rows with `source = 'canonical'` (only human-accepted sentences are stored) |
 
-Output: `Added 'a-fora' (fire, n, section 1). Total entries: 42.`
+Output: `Added 'a-fora' (fire, n). Total entries: 42.`
 
 ---
 
@@ -135,14 +133,13 @@ Output: `Added 'a-fora' (fire, n, section 1). Total entries: 42.`
 |---|---|
 | Kilor Form |  |
 | Meaning |  |
-| Section (1–8) |  |
 | Type | root |
 | Derivation Mask (N/V/A/D) |  |
 | Consensus Prefix |  |
 | Notes |  |
 ```
 
-**Human fills:** Kilor Form, Meaning, Section, Type, Derivation Mask.  
+**Human fills:** Kilor Form, Meaning, Type, Derivation Mask.  
 **AI fills during Phase 2:** Consensus Prefix (auto-suggest).  
 **AI computes:** Syllable Count, Syllable Division, Inflections, ACC/GEN — these are not displayed in the template; they appear in the Phase 2 summary report and are stored directly in DB.
 
@@ -155,7 +152,6 @@ Output: `Added 'a-fora' (fire, n, section 1). Total entries: 42.`
 |---|---|
 | Kilor Form |  |
 | Meaning |  |
-| Section (1–8) |  |
 | Type | compound-mono / compound-multi |
 | Derivation Mask (N/V/A/D) |  |
 | Consensus Prefix |  |
@@ -165,7 +161,7 @@ Output: `Added 'a-fora' (fire, n, section 1). Total entries: 42.`
 | Notes |  |
 ```
 
-**Human fills:** Kilor Form, Meaning, Section, Type, Derivation Mask, Components, Pattern, Rule Ref.  
+**Human fills:** Kilor Form, Meaning, Type, Derivation Mask, Components, Pattern, Rule Ref.  
 **AI validates:** Component roots exist in DB.  
 **AI auto-suggests:** Consensus Prefix (from compound head rules, `derivational-compounding.md` §V).
 
@@ -293,7 +289,7 @@ Only human-accepted sentences are committed to the DB in Phase 4. Sentences can 
 
 When two meanings share the same form and **at least one** of the following holds:
 - The meanings are semantically related
-- They can share the same `consensus_prefix`, `derivation_mask`, and `section`
+- They can share the same `consensus_prefix` and `derivation_mask`
 
 → Insert one `words` row, multiple `meanings` rows with distinct `sort_order`.
 
@@ -304,7 +300,7 @@ python kilor.py edit <form> --add-meaning "second gloss"
 
 ### Escape Hatch: Split (Subscript Convention)
 
-When two meanings are genuinely unrelated AND they cannot share prefix + mask + section:
+When two meanings are genuinely unrelated AND they cannot share prefix + mask:
 
 → Create two `words` rows with subscripted forms: `form₁`, `form₂`.
 
@@ -316,7 +312,7 @@ This escape hatch will rarely be used in a constructed language; the lexicon is 
 
 To decide merge vs. split, ask:
 
-> **Can both meanings coexist under one `consensus_prefix`, one `derivation_mask`, and one `section`?**
+> **Can both meanings coexist under one `consensus_prefix` and one `derivation_mask`?**
 
 If yes → Merge. If no → Split.
 

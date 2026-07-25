@@ -179,7 +179,6 @@ rules/
 │   └── temporals.md            — Temporal expression
 └── 4-meta/                     ← Project governance
     ├── lexicon-roadmap.md      — Lexicon development plan
-    └── section-taxonomy.md     — Section taxonomy (1-8) SSOT
 
 guide/                          ← Usage guides (examples, style, rhetoric)
 ├── README.md
@@ -217,7 +216,6 @@ When you change a file, check these dependents:
 | `3-subsystems/comparatives.md` | `grammar-syntax.md`, `copula-existential.md` |
 | `3-subsystems/derivational-compounding.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
 | `3-subsystems/spatials.md` | `grammar-syntax.md`, `cases.md` |
-| `4-meta/section-taxonomy.md` | `kilor/commands/add.py`, `data/AI-GUIDE.md`, `kilor/schema.py`, `kilor/dictionary/src/components/FilterPanel.jsx`, `kilor/commands/export.py` |
 
 ---
 

@@ -15,7 +15,7 @@ python kilor.py export --format html    # Generate searchable dictionary
 | File | Purpose | Updated by |
 |---|---|---|
 | `kilor.db` | **Lexicon database (SSOT)** — all words, meanings, inflections, compound metadata, examples, full-text search | `kilor.py add`, `kilor.py migrate` |
-| `dictionary.html` | **Searchable dictionary SPA** — open in a browser, search by word/meaning/example, filter by section/type/category | `kilor.py export --format html` |
+| `dictionary.html` | **Searchable dictionary SPA** — open in a browser, search by word/meaning/example, filter by type/category | `kilor.py export --format html` |
 | `dictionary-data.json` | Complete dataset consumed by the dictionary SPA | `kilor.py export --format dictionary` or `--format html` |
 | `lexicon_export.csv` | CSV export of all entries | `kilor.py export --format csv` |
 | `compounds_export.json` | JSON export of compound words | `kilor.py export --format json` |
@@ -71,7 +71,7 @@ data/archive/lexicon.csv + compounds.json  (legacy / archived)
 ## SSOT Rules
 
 ### `kilor.db` is the SSOT for:
-- Word form, syllable count, category, section
+- Word form, syllable count, category
 - Meanings (English glosses)
 - Inflected forms (noun, verb, adjective, adverb)
 - Consensus colour prefix, function word status

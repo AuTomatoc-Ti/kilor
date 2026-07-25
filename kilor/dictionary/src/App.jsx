@@ -21,7 +21,6 @@ export default function App() {
   const [search, setSearch] = useState('');
   const [dbVersion, setDbVersion] = useState(0);
 
-  const [filterSections, setFilterSections] = useState([]);
   const [filterTypes, setFilterTypes] = useState([]);
   const [filterMasks, setFilterMasks] = useState([]);
   const [filterPrefixes, setFilterPrefixes] = useState([]);
@@ -50,10 +49,10 @@ export default function App() {
 
   const entries = useMemo(
     () => queryWords({
-      search, sections: filterSections, types: filterTypes, masks: filterMasks,
+      search, types: filterTypes, masks: filterMasks,
       prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir,
     }),
-    [search, filterSections, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion]
+    [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion]
   );
 
   const handleSort = useCallback((col) => {
@@ -68,7 +67,6 @@ export default function App() {
   }, []);
 
   const handleResetFilters = useCallback(() => {
-    setFilterSections([]);
     setFilterTypes([]);
     setFilterMasks([]);
     setFilterPrefixes([]);
@@ -91,7 +89,6 @@ export default function App() {
 
   const handleSearchByForm = useCallback((form) => {
     setSearch(form);
-    setFilterSections([]);
     setFilterTypes([]);
     setFilterMasks([]);
   }, []);
@@ -133,8 +130,6 @@ export default function App() {
             prefixInfo={PREFIX_INFO}
             filterPrefixes={filterPrefixes}
             onFilterPrefixesChange={setFilterPrefixes}
-            filterSections={filterSections}
-            onFilterSectionsChange={setFilterSections}
             filterTypes={filterTypes}
             onFilterTypesChange={setFilterTypes}
             filterMasks={filterMasks}

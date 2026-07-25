@@ -1,16 +1,5 @@
 import { useState } from 'react';
 
-const SECTION_OPTIONS = [
-  { value: '1', label: '1 — Concrete' },
-  { value: '2', label: '2 — Living' },
-  { value: '3', label: '3 — Action' },
-  { value: '4', label: '4 — Quality' },
-  { value: '5', label: '5 — Mental' },
-  { value: '6', label: '6 — Relational' },
-  { value: '7', label: '7 — Abstract' },
-  { value: '8', label: '8 — Grammar' },
-];
-
 const TYPE_OPTIONS = [
   { value: 'root', label: 'Roots' },
   { value: 'compound', label: 'Compounds' },
@@ -36,7 +25,6 @@ function CheckboxRow({ checked, onChange, children }) {
 export default function FilterPanel({
   prefixInfo,
   filterPrefixes, onFilterPrefixesChange,
-  filterSections, onFilterSectionsChange,
   filterTypes, onFilterTypesChange,
   filterMasks, onFilterMasksChange,
   sylMin, onSylMinChange,
@@ -80,20 +68,6 @@ export default function FilterPanel({
             <span className="legend-swatch none-swatch"></span>
             <b>(none)</b> <span className="filter-hint">No prefix</span>
           </CheckboxRow>
-        </div>
-
-        {/* Column: Section */}
-        <div className="filter-section">
-          <h4>Section</h4>
-          {SECTION_OPTIONS.map(opt => (
-            <CheckboxRow
-              key={opt.value}
-              checked={filterSections.includes(opt.value)}
-              onChange={() => toggleInList(filterSections, onFilterSectionsChange, opt.value)}
-            >
-              {opt.label}
-            </CheckboxRow>
-          ))}
         </div>
 
         {/* Column: Type */}
