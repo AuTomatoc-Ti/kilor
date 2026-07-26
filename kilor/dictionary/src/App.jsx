@@ -9,7 +9,7 @@ const PREFIX_INFO = {
   "a-":  { cls: "Alive / Energy",    emotion: "Anger",   color: "#ef4444" },
   "e-":  { cls: "Crafted / Tool",    emotion: "Joy",     color: "#f59e0b" },
   "i-":  { cls: "Fluid / Vast",      emotion: "Sadness", color: "#3b82f6" },
-  "o-":  { cls: "Abstract / Void",   emotion: "Surprise",color: "#f5f5f5" },
+  "o-":  { cls: "Abstract / Void",   emotion: "Surprise",color: "#d2d2d2" },
   "u-":  { cls: "Organic / Growth",  emotion: "Calm",    color: "#22c55e" },
   "y-":  { cls: "Dense / Mass",      emotion: "Fear",    color: "#6b7280" },
   "ae-": { cls: "Earth / Boundary",  emotion: "Disgust", color: "#a16207" },
