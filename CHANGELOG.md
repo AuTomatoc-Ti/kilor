@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.15.0
+**Current Version:** v1.16.0
 **Last Updated:** 2026-07-26
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -18,6 +18,21 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.16.0 — 2026-07-26
+
+Added `pos` column to `meanings` table with 15-value PoS taxonomy (N/V/A/D + PRON/NUM/CCONJ/SCONJ/ADP/PART/MODAL/DEM/Q/CLF/INTERJ/PROPN). Redesigned `today.md` templates to two-tier system (content word per-PoS fields, function word `POS` field). `edit --add-meaning` accepts `--pos` flag.
+
+**Spec:**
+- **`word-creation-pipeline.md`** v2.0.0→2.1.0 — §III templates redesigned: Content Word template (per-PoS `Meaning (N)`, `Meaning (V)`, etc.), Function Word template (`POS` field + single `Meaning`), Compound extension. §D polysemy updated with `--pos` flag. Added `kilor/schema.py` to depends-on list.
+- **`schema.py`** (new metadata) — `VALID_POS` frozenset and `POS_LABELS` dict now the SSOT for valid PoS tag values used by `add.py`, `edit.py`, and frontend.
+
+**Infrastructure:**
+- **`add.py`** — New `_parse_field()` parses both template formats. Comma-separated senses → multiple meanings rows. Function words set `is_function_word=1` and skip inflection generation.
+- **`edit.py`** — `--add-meaning` accepts optional `--pos N|V|A|D|...`. `sort_order` scoped within same pos.
+- **`__main__.py`** — Wired `--pos` flag for CLI edit command.
+
+**Cross-reference:** `CHANGELOG-app.md` v1.1.0 for DB migration and frontend changes.
 
 ## workspace v1.14.0 — 2026-07-25
 

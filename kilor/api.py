@@ -71,9 +71,9 @@ def _word_to_dict(conn, row) -> dict:
 
     # Meanings
     meanings = [
-        m["gloss"]
+        {"gloss": m["gloss"], "pos": m["pos"]}
         for m in conn.execute(
-            "SELECT gloss FROM meanings WHERE word_id = ? ORDER BY sort_order",
+            "SELECT gloss, pos FROM meanings WHERE word_id = ? ORDER BY sort_order",
             (wid,),
         ).fetchall()
     ]
@@ -210,7 +210,7 @@ def get_words(
             if q:
                 searchable = " ".join([
                     entry["form"],
-                    *entry["meanings"],
+                    *[m["gloss"] for m in entry["meanings"]],
                     *[c["form"] for c in entry["components"]],
                     *[ex["kilor"] + " " + ex["english"] for ex in entry["examples"]],
                     entry.get("pattern") or "",

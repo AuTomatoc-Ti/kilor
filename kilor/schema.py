@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS meanings (
     word_id INTEGER REFERENCES words(id) ON DELETE CASCADE,
     gloss TEXT NOT NULL,
     language TEXT DEFAULT 'en',
-    sort_order INTEGER DEFAULT 0
+    sort_order INTEGER DEFAULT 0,
+    pos TEXT DEFAULT ''
 );
 
 CREATE TABLE IF NOT EXISTS compound_components (
@@ -126,4 +127,37 @@ DERIVATION_MASK_LABELS = {
     "VAD": "Verb / Adjective / Adverb",
     "AD": "Adjective / Adverb",
     "": "Closed-class",
+}
+
+# ── Valid POS tags (application-layer validation; no DB CHECK constraint for future flexibility) ──
+
+VALID_POS = frozenset({
+    "N", "V", "A", "D",          # open-class content (derivation_mask letters)
+    "PRON", "NUM",                # closed-class content-like (pronouns, numerals)
+    "CCONJ", "SCONJ",             # conjunctions (coordinating, subordinating)
+    "ADP",                         # adpositions (te, sy, mer, ar, tilpe, na, spatial postpositions)
+    "PART",                        # particles (negation, modal, interrogative, emotional)
+    "MODAL", "DEM", "Q",          # modal verbs, demonstratives, question words
+    "CLF", "INTERJ", "PROPN",     # classifiers, interjections, proper nouns (future/partial)
+    "",                            # unset / legacy
+})
+
+POS_LABELS = {
+    "N": "Noun",
+    "V": "Verb",
+    "A": "Adjective",
+    "D": "Adverb",
+    "PRON": "Pronoun",
+    "NUM": "Numeral",
+    "CCONJ": "Coordinating Conjunction",
+    "SCONJ": "Subordinating Conjunction",
+    "ADP": "Adposition",
+    "PART": "Particle",
+    "MODAL": "Modal Verb",
+    "DEM": "Demonstrative",
+    "Q": "Question Word",
+    "CLF": "Classifier / Measure Word",
+    "INTERJ": "Interjection",
+    "PROPN": "Proper Noun",
+    "": "Unset",
 }

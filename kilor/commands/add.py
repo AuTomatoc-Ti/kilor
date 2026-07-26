@@ -6,6 +6,7 @@ import sqlite3
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables, get_case_forms
+from ..schema import VALID_POS
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -24,6 +25,70 @@ MASK_TO_FORMS = {
     'NAD': ['noun', 'adjective', 'adverb'],
     'VAD': ['verb', 'adjective', 'adverb'],
 }
+
+
+def _parse_field(line, current):
+    """Parse a single table row line into the current entry dict.
+
+    Supports both legacy formats and the new 2.1.0 templates:
+    - Content words: | Meaning (N) | ... |, | Meaning (V) | ...
+    - Function words: | POS | ... |
+    """
+    parts = line.split("|")
+    if len(parts) < 3:
+        return
+
+    key = parts[1].strip()
+    val = parts[2].strip()
+    if not val:
+        return
+
+    # --- Kilor Form (legacy: "Kilor Root") ---
+    if key in ("Kilor Root", "Kilor Form"):
+        current["root"] = val
+
+    # --- Derivation Mask ---
+    elif "Derivation Mask" in key:
+        current["mask"] = val
+
+    # --- POS (function word template) ---
+    elif key == "POS":
+        pos_val = val.strip().upper()
+        if pos_val in VALID_POS:
+            current["pos"] = pos_val
+            current["mask"] = ""  # function words have empty mask
+        else:
+            current["_pos_warn"] = f"POS '{pos_val}' not in VALID_POS"
+
+    # --- Per-PoS Meaning: | Meaning (N) | ... | ---
+    elif m := re.match(r"^Meaning \((N|V|A|D)\)$", key):
+        pos = m.group(1)
+        if "meanings" not in current:
+            current["meanings"] = {}
+        # Comma-separated multiple senses
+        glosses = [g.strip() for g in val.split(",") if g.strip()]
+        current["meanings"][pos] = glosses
+
+    # --- Legacy single Meaning field ---
+    elif key == "Meaning" and "meanings" not in current:
+        current["_legacy_meaning"] = val
+
+    # --- Syllable Count ---
+    elif key == "Syllable Count":
+        if val.isdigit():
+            current["syl"] = val
+
+    # --- Decision ---
+    elif key == "Decision":
+        current["decision"] = val
+
+    # --- Notes ---
+    elif key == "Notes":
+        current["notes"] = val
+
+    # --- Consensus Prefix ---
+    elif key == "Consensus Prefix":
+        current["consensus_prefix"] = val
 
 
 def cmd_add(filepath):
@@ -47,40 +112,10 @@ def cmd_add(filepath):
             current = {"english": m_sec.group(1).strip(), "domain": m_sec.group(2).strip()}
             continue
 
-        if current:
-            if "| Kilor Root |" in line:
-                parts = line.split("|")
-                if len(parts) >= 3:
-                    val = parts[2].strip()
-                    if val:
-                        current["root"] = val
-            elif "| Category" in line or "| Derivation Mask" in line:
-                parts = line.split("|")
-                if len(parts) >= 3:
-                    val = parts[2].strip()
-                    if val:
-                        current["mask"] = val
-            elif "| Syllable Count |" in line:
-                parts = line.split("|")
-                if len(parts) >= 3:
-                    val = parts[2].strip()
-                    if val and val.isdigit():
-                        current["syl"] = val
-            elif "| Decision" in line:
-                parts = line.split("|")
-                if len(parts) >= 3:
-                    val = parts[2].strip()
-                    if val:
-                        current["decision"] = val
-            elif "| Notes |" in line:
-                parts = line.split("|")
-                if len(parts) >= 3:
-                    val = parts[2].strip()
-                    if val:
-                        current["notes"] = val
+        if not current:
+            continue
 
-    if current and current.get("root"):
-        entries.append(current)
+        _parse_field(line, current)
 
     if not entries:
         print("No entries found in today.md. Make sure you've filled in the Kilor Root column.")
@@ -126,16 +161,44 @@ def cmd_add(filepath):
             errors.append(f"'{root}' ({english}): {e}")
             continue
 
-        conn.execute(
-            "INSERT INTO meanings (word_id, gloss, language, sort_order) VALUES (?, ?, ?, ?)",
-            (word_id, english, "en", 0),
-        )
+        # Insert meanings with pos tags
+        meanings = entry.get("meanings")
+        if meanings:
+            # New template: per-PoS meaning fields
+            sort_counter = {}
+            for pos_letter in ("N", "V", "A", "D"):
+                glosses = meanings.get(pos_letter, [])
+                for gloss in glosses:
+                    so = sort_counter.get(pos_letter, 0)
+                    conn.execute(
+                        "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+                        (word_id, gloss, "en", so, pos_letter),
+                    )
+                    sort_counter[pos_letter] = so + 1
+        elif entry.get("pos") and entry.get("_legacy_meaning"):
+            # Function word template: single meaning with explicit POS
+            conn.execute(
+                "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+                (word_id, entry["_legacy_meaning"], "en", 0, entry["pos"]),
+            )
+        elif entry.get("_legacy_meaning"):
+            # Legacy template: meaning without pos — insert with empty pos
+            conn.execute(
+                "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+                (word_id, entry["_legacy_meaning"], "en", 0, ""),
+            )
+
+        # Determine is_function_word
+        is_func = 1 if entry.get("pos") else 0
 
         # Conditional inflection generation based on derivation mask
         # (SSOT: rules/4-meta/word-creation-pipeline.md §V-D)
         mask = (mask or "").upper()
-        form_types = MASK_TO_FORMS.get(mask, ['noun', 'verb', 'adjective', 'adverb'])
-        
+        if is_func or not mask:
+            form_types = []
+        else:
+            form_types = MASK_TO_FORMS.get(mask, ['noun', 'verb', 'adjective', 'adverb'])
+
         for ft in form_types:
             if ft in ("adjective", "adverb"):
                 form = f"{root}s"

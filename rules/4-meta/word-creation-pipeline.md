@@ -2,9 +2,9 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-07-25
-**Version:** 2.0.0
-**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`
+**Last updated:** 2026-07-26
+**Version:** 2.1.0
+**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
 
@@ -124,7 +124,11 @@ Output: `Added 'a-fora' (fire, n). Total entries: 42.`
 
 ## III. today.md Template Specification
 
-### Bare Root Template
+Two templates exist: **Content Word** (derivation_mask = N/V/A/D) and **Function Word** (no mask; single POS tag).
+
+### A. Content Word Template (N/V/A/D)
+
+For open-class roots and compounds. Meanings are split by word class — each PoS in the derivation mask gets its own meaning field. Multiple senses within the same PoS are comma-separated.
 
 ```markdown
 ### {english} ({domain})
@@ -132,18 +136,24 @@ Output: `Added 'a-fora' (fire, n). Total entries: 42.`
 | Field | Value |
 |---|---|
 | Kilor Form |  |
-| Meaning |  |
-| Type | root |
+| Type | root / compound-mono / compound-multi |
 | Derivation Mask (N/V/A/D) |  |
 | Consensus Prefix |  |
+| Meaning (N) |  |
+| Meaning (V) |  |
+| Meaning (A) |  |
+| Meaning (D) |  |
 | Notes |  |
 ```
 
-**Human fills:** Kilor Form, Meaning, Type, Derivation Mask.  
+**Human fills:** Kilor Form, Type, Derivation Mask, per-PoS meanings (only lines matching mask letters are required).  
+**Parser behaviour:** Only non-empty per-PoS meaning fields are inserted. Each field becomes one `meanings` row with `pos = N|V|A|D`. Comma-separated senses within a field → multiple `meanings` rows with same `pos` and ascending `sort_order`.  
 **AI fills during Phase 2:** Consensus Prefix (auto-suggest).  
 **AI computes:** Syllable Count, Syllable Division, Inflections, ACC/GEN — these are not displayed in the template; they appear in the Phase 2 summary report and are stored directly in DB.
 
-### Compound Template
+### B. Function Word / Closed-Class Template
+
+For function words, pronouns, numerals, modals, and other closed-class items. Uses a single `POS` field instead of a derivation mask.
 
 ```markdown
 ### {english} ({domain})
@@ -151,29 +161,44 @@ Output: `Added 'a-fora' (fire, n). Total entries: 42.`
 | Field | Value |
 |---|---|
 | Kilor Form |  |
+| Type | function |
+| POS |  |
+| Consensus Prefix | o- |
 | Meaning |  |
-| Type | compound-mono / compound-multi |
-| Derivation Mask (N/V/A/D) |  |
-| Consensus Prefix |  |
-| Components | root1-form + root2-form |
-| Pattern | Agent / Instrument / Property / Measure / Process / Result / Location / Doctrine / Capability / Without |
-| Rule Ref | rules/3-subsystems/derivational-compounding.md §II-{section} |
 | Notes |  |
 ```
 
-**Human fills:** Kilor Form, Meaning, Type, Derivation Mask, Components, Pattern, Rule Ref.  
+**`POS` values** (from `kilor/schema.py:VALID_POS`):
+
+| Content words | Closed-class |
+|---|---|
+| `N`, `V`, `A`, `D` | `PRON`, `NUM`, `CCONJ`, `SCONJ`, `ADP`, `PART`, `MODAL`, `DEM`, `Q`, `CLF`, `INTERJ`, `PROPN` |
+
+**Parser behaviour:** `POS` is stored as `pos` on each `meanings` row. `derivation_mask` is set to `""`. `is_function_word` = 1.
+
+### C. Compound Template (Content Word Extension)
+
+Add the following fields to the Content Word template above:
+
+```markdown
+| Components | root1-form + root2-form |
+| Pattern | Agent / Instrument / Property / Measure / Process / Result / Location / Doctrine / Capability / Without |
+| Rule Ref | rules/3-subsystems/derivational-compounding.md §II-{section} |
+```
+
+**Human fills:** Kilor Form, per-PoS Meaning, Type, Derivation Mask, Components, Pattern, Rule Ref.  
 **AI validates:** Component roots exist in DB.  
 **AI auto-suggests:** Consensus Prefix (from compound head rules, `derivational-compounding.md` §V).
 
-### Polysemy (Adding a Meaning to an Existing Word)
+### D. Polysemy (Adding a Meaning to an Existing Word)
 
-Use the `edit` command (post-creation):
+Use the `edit` command with a `--pos` flag:
 
 ```
-python kilor.py edit existing-form --add-meaning "new gloss"
+python kilor.py edit existing-form --add-meaning "new gloss" --pos N
 ```
 
-Inserts a new `meanings` row with incremented `sort_order`.
+Inserts a new `meanings` row with the specified `pos` and incremented `sort_order` (scoped within the same `pos`).
 
 ---
 

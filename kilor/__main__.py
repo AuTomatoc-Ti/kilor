@@ -100,6 +100,9 @@ def main():
             if sys.argv[i] == "--add-meaning" and i + 1 < len(sys.argv):
                 kwargs["add_meaning"] = sys.argv[i + 1]
                 i += 2
+            elif sys.argv[i] == "--pos" and i + 1 < len(sys.argv):
+                kwargs["add_meaning_pos"] = sys.argv[i + 1].upper()
+                i += 2
             elif sys.argv[i] == "--set-prefix" and i + 1 < len(sys.argv):
                 kwargs["set_prefix"] = sys.argv[i + 1]
                 i += 2

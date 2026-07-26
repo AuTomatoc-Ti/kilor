@@ -142,7 +142,8 @@ export function queryWords({
   let cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
     w.compound_type, w.derivation_mask, w.consensus_prefix,
     w.is_function_word, w.notes,
-    GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat`;
+    GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat,
+    GROUP_CONCAT(m.pos, ' | ') AS poses_concat`;
 
   // Add relevance score when searching (4 tiers)
   if (hasSearch) {
@@ -712,7 +713,12 @@ function enrichEntries(rows) {
   // Assemble final entries
   return rows.map((row) => {
     const frag = wordMap[row.id];
-    const meanings = (row.glosses_concat || '').split(' | ').filter(Boolean);
+    const glosses = (row.glosses_concat || '').split(' | ').filter(Boolean);
+    const poses = (row.poses_concat || '').split(' | ');
+    const meanings = glosses.map((gloss, i) => ({
+      gloss,
+      pos: poses[i] || '',
+    }));
     const meta = frag.meta;
     const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
     const mask = row.derivation_mask || '';

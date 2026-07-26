@@ -5,13 +5,14 @@ import sys
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables
+from ..schema import VALID_POS
 
 
 def cmd_edit(form, **kwargs):
     """Edit an existing word.
     
     Usage:
-        python kilor.py edit <form> --add-meaning "new gloss"
+        python kilor.py edit <form> --add-meaning "new gloss" [--pos N|V|A|D|...]
         python kilor.py edit <form> --set-prefix "a-"
         python kilor.py edit <form> --set-mask "nv"
         python kilor.py edit <form> --add-example "kilor text" "english text"
@@ -33,14 +34,27 @@ def cmd_edit(form, **kwargs):
     # Add meaning
     if "add_meaning" in kwargs:
         gloss = kwargs["add_meaning"]
-        sort_order = conn.execute(
-            "SELECT MAX(sort_order) FROM meanings WHERE word_id = ?", (word_id,)
-        ).fetchone()[0] or 0
+        pos = kwargs.get("add_meaning_pos", "")
+        if pos and pos not in VALID_POS:
+            print(f"Warning: POS '{pos}' not in VALID_POS — storing as-is.")
+        # sort_order scoped within the same pos
+        if pos:
+            sort_order = conn.execute(
+                "SELECT MAX(sort_order) FROM meanings WHERE word_id = ? AND pos = ?",
+                (word_id, pos),
+            ).fetchone()[0] or 0
+        else:
+            sort_order = conn.execute(
+                "SELECT MAX(sort_order) FROM meanings WHERE word_id = ?", (word_id,),
+            ).fetchone()[0] or 0
         conn.execute(
-            "INSERT INTO meanings (word_id, gloss, language, sort_order) VALUES (?, ?, ?, ?)",
-            (word_id, gloss, "en", sort_order + 1),
+            "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+            (word_id, gloss, "en", sort_order + 1, pos),
         )
-        changes.append(f"Added meaning: '{gloss}'")
+        label = f"'{gloss}'"
+        if pos:
+            label += f" (pos={pos})"
+        changes.append(f"Added meaning: {label}")
     
     # Set prefix
     if "set_prefix" in kwargs:

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Header from './components/Header';
 import Toolbar from './components/Toolbar';
 import FilterPanel from './components/FilterPanel';
-import { TableHeader, TableBody } from './components/TableView';
+import { TableHeader, TableBody, WordDetailPage } from './components/TableView';
 import { initDatabase, queryWords, getMeta, reloadDatabase, autocompleteSearch, fuzzySearch } from './db';
 
 const PREFIX_INFO = {
@@ -27,6 +27,7 @@ function readStateFromURL() {
     const v = parseInt(sp.get(key));
     return isNaN(v) ? fallback : v;
   };
+  const detailRaw = parseInt(sp.get('detail'));
   return {
     search: sp.get('q') || '',
     types: parseList('type'),
@@ -37,6 +38,7 @@ function readStateFromURL() {
     sortCol: sp.get('sort') || 'form',
     sortDir: sp.get('dir') === 'desc' ? 'desc' : 'asc',
     filterOpen: sp.get('filt') === '1',
+    detailId: isNaN(detailRaw) ? null : detailRaw,
   };
 }
 
@@ -51,6 +53,7 @@ function writeStateToURL(state) {
   if (state.sortCol !== 'form') sp.set('sort', state.sortCol);
   if (state.sortDir !== 'asc') sp.set('dir', state.sortDir);
   if (state.filterOpen) sp.set('filt', '1');
+  if (state.detailId) sp.set('detail', state.detailId);
   const qs = sp.toString();
   const url = window.location.pathname + (qs ? '?' + qs : '');
   window.history.replaceState(null, '', url);
@@ -115,6 +118,7 @@ export default function App() {
   const [sortDir, setSortDir] = useState(initial.sortDir);
   const [filterOpen, setFilterOpen] = useState(initial.filterOpen);
   const [expandedRow, setExpandedRow] = useState(null);
+  const [detailId, setDetailId] = useState(initial.detailId);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
@@ -129,9 +133,9 @@ export default function App() {
   // URL sync
   useEffect(() => {
     if (!loading) {
-      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen });
+      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, detailId });
     }
-  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, loading]);
+  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, loading, detailId]);
 
   // Autocomplete
   const handleSearchChange = useCallback((val) => {
@@ -211,6 +215,15 @@ export default function App() {
     setToast(msg);
   }, []);
 
+  const handleViewFull = useCallback((id) => {
+    setDetailId(id);
+    setExpandedRow(null);
+  }, []);
+
+  const handleBackFromDetail = useCallback(() => {
+    setDetailId(null);
+  }, []);
+
   // ── Keyboard handler (only active when search input is focused) ──────
   useEffect(() => {
     const handler = (e) => {
@@ -276,6 +289,12 @@ export default function App() {
   }, [autocompleteItems, autocompleteIndex, entries, keyboardRowIndex, expandedRow, filterOpen, selectAutocomplete]);
 
   const hasFilters = filterTypes.length > 0 || filterMasks.length > 0 || filterPrefixes.length > 0 || sylMin > 1 || sylMax < 10;
+
+  // Find the currently-viewed detail entry
+  const detailEntry = useMemo(() => {
+    if (!detailId) return null;
+    return entries.find(e => e.id === detailId) || null;
+  }, [detailId, entries]);
 
   // Fuzzy fallback: if search returns 0 exact results, try fuzzy
   const fuzzyResults = useMemo(() => {
@@ -354,26 +373,39 @@ export default function App() {
           />
         </div>
       )}
-      <div className="table-header-bar">
-        <TableHeader sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
-      </div>
-      <div className="main-content">
-        {fuzzyResults.length > 0 && (
-          <div className="fuzzy-banner">
-            No exact matches for "<strong>{search}</strong>". Showing similar words:
-          </div>
-        )}
-        <TableBody
-          entries={fuzzyResults.length > 0 ? fuzzyResults : entries}
+      {detailId ? (
+        <WordDetailPage
+          entry={detailEntry}
           prefixInfo={PREFIX_INFO}
+          onBack={handleBackFromDetail}
           onSearchByForm={handleSearchByForm}
-          expandedRow={expandedRow}
-          onToggleExpand={setExpandedRow}
-          search={search}
-          keyboardRowIndex={keyboardRowIndex}
           onCopyToast={handleCopyToast}
         />
-      </div>
+      ) : (
+        <>
+          <div className="table-header-bar">
+            <TableHeader sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
+          </div>
+          <div className="main-content">
+            {fuzzyResults.length > 0 && (
+              <div className="fuzzy-banner">
+                No exact matches for "<strong>{search}</strong>". Showing similar words:
+              </div>
+            )}
+            <TableBody
+              entries={fuzzyResults.length > 0 ? fuzzyResults : entries}
+              prefixInfo={PREFIX_INFO}
+              onSearchByForm={handleSearchByForm}
+              expandedRow={expandedRow}
+              onToggleExpand={setExpandedRow}
+              search={search}
+              keyboardRowIndex={keyboardRowIndex}
+              onCopyToast={handleCopyToast}
+              onViewFull={handleViewFull}
+            />
+          </div>
+        </>
+      )}
     </>
   );
 }

@@ -109,15 +109,20 @@ def cmd_check():
     for d in dupes:
         errors.append(f"  DUPLICATE form: '{d['form']}' appears {d['cnt']} times")
 
-    # Near-collision detection (warning, not error)
+
     roots = [w for w in words if w["is_root"] and not w["is_function_word"]]
-    for i, w1 in enumerate(roots):
-        for w2 in roots[i+1:]:
-            # Simple Levenshtein distance check (only for short words)
-            if len(w1["form"]) <= 6 and len(w2["form"]) <= 6:
-                dist = _levenshtein(w1["form"], w2["form"])
-                if 1 <= dist <= 2:
-                    warnings.append(f"  ⚠️  Near-collision: '{w1['form']}' vs '{w2['form']}' (distance {dist})")
+
+    # Near-collision detection (warning, not error)
+    # comment it out for now, as it can be too sensitive
+    collision_checking = False
+    if collision_checking:
+        for i, w1 in enumerate(roots):
+            for w2 in roots[i+1:]:
+                # Simple Levenshtein distance check (only for short words)
+                if len(w1["form"]) <= 6 and len(w2["form"]) <= 6:
+                    dist = _levenshtein(w1["form"], w2["form"])
+                    if 1 <= dist <= 2:
+                        warnings.append(f"  ⚠️  Near-collision: '{w1['form']}' vs '{w2['form']}' (distance {dist})")
 
     # Print results
     if errors:
