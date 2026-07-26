@@ -1,5 +1,18 @@
 import React from 'react';
 
+function highlightMatch(text, term) {
+  if (!term || term.length === 0) return text;
+  const idx = text.toLowerCase().indexOf(term.toLowerCase());
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <mark className="search-highlight">{text.slice(idx, idx + term.length)}</mark>
+      {text.slice(idx + term.length)}
+    </>
+  );
+}
+
 function PrefixBadge({ prefix, info }) {
   if (!prefix || prefix === '' || prefix === '-') return <span className="empty-cell">—</span>;
   if (!info) return <span className="empty-cell">—</span>;
@@ -41,7 +54,9 @@ function ComponentChips({ components, onSearchByForm }) {
 }
 
 function DetailPanel({ entry, prefixInfo }) {
-  const inflKeys = Object.keys(entry.inflections);
+  const infl = entry.inflections || {};
+  const inflOrder = ['noun', 'verb', 'adjective', 'adverb'];
+  const inflPresent = inflOrder.filter(k => infl[k]);
   const mask = entry.derivation_mask || '';
 
   return (
@@ -73,18 +88,36 @@ function DetailPanel({ entry, prefixInfo }) {
            <div className="detail-row">
              <strong>Syllables</strong> {entry.syl_count}{entry.syllables ? ` (${entry.syllables})` : ''}
            </div>
+
+          {entry.ipa && (
+            <div className="detail-row">
+              <strong>IPA</strong> <span className="ipa-text">/{entry.ipa}/</span>
+            </div>
+          )}
         </div>
 
         <div className="detail-col">
-          {inflKeys.length > 0 && (
+          {inflPresent.length > 0 && (
             <div className="detail-row">
               <strong>Inflections</strong>
               <div className="infl-list">
-                {inflKeys.map(ft => (
-                  <span key={ft} className="infl-item">
-                    {entry.inflections[ft]} <span className="infl-type">({ft})</span>
-                  </span>
-                ))}
+                {inflPresent.map(k => {
+                  const val = infl[k];
+                  // Single-mask words have array [base, tonemarked]
+                  if (Array.isArray(val)) {
+                    const [base, toned] = val;
+                    return (
+                      <span key={k} className="infl-item">
+                        {base} / {toned} <span className="infl-type">({k})</span>
+                      </span>
+                    );
+                  }
+                  return (
+                    <span key={k} className="infl-item">
+                      {val} <span className="infl-type">({k})</span>
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -151,24 +184,27 @@ function DetailPanel({ entry, prefixInfo }) {
   );
 }
 
-export default function TableView({ entries, sortCol, sortDir, onSort, prefixInfo, onSearchByForm, expandedRow, onToggleExpand }) {
-  function arrow(col) {
-    if (sortCol !== col) return <span className="sort-arrow">▲</span>;
-    return <span className="sort-arrow">{sortDir === 'asc' ? '▲' : '▼'}</span>;
-  }
+const COLGROUP = (
+  <colgroup>
+    <col style={{ width: '18%' }} />
+    <col style={{ width: '42%' }} />
+    <col style={{ width: '12%' }} />
+    <col style={{ width: '16%' }} />
+    <col style={{ width: '6%' }} />
+    <col style={{ width: '6%' }} />
+  </colgroup>
+);
 
-  if (entries.length === 0) {
-    return (
-      <div className="no-results">
-        <div className="icon">🔍</div>
-        <p>No words match.</p>
-      </div>
-    );
+export function TableHeader({ sortCol, sortDir, onSort }) {
+  function arrow(col) {
+    if (sortCol !== col) return <span className="sort-arrow sort-inactive">↕</span>;
+    return <span className="sort-arrow sort-active">{sortDir === 'asc' ? '▲' : '▼'}</span>;
   }
 
   return (
-    <div className="table-wrap">
-      <table className="word-table">
+    <div className="table-header-wrap">
+      <table className="word-table word-table-header">
+        {COLGROUP}
         <thead>
           <tr>
             <th className={sortCol === 'form' ? 'sorted' : ''} onClick={() => onSort('form')}>
@@ -191,22 +227,52 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
             </th>
           </tr>
         </thead>
+      </table>
+    </div>
+  );
+}
+
+export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast }) {
+  const handleCopy = (e, form) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(form).then(() => {
+        if (onCopyToast) onCopyToast('Copied: ' + form);
+      }).catch(() => {});
+    }
+  };
+
+  if (entries.length === 0) {
+    return (
+      <div className="no-results">
+        <div className="icon">🔍</div>
+        <p>No words match.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="table-body-wrap">
+      <table className="word-table word-table-body">
+        {COLGROUP}
         <tbody>
-          {entries.map(e => {
+          {entries.map((e, i) => {
             const gloss = e.meanings[0] || '';
             const mask = e.derivation_mask
               ? <span className="tag-sm" style={{ background: '#e8f0fe', color: '#1a56db', fontSize: '.7rem', padding: '1px 6px', borderRadius: '10px' }}>{e.derivation_mask}</span>
               : <span className="empty-cell">—</span>;
             const isExpanded = expandedRow === e.id;
+            const isKeyboardSelected = keyboardRowIndex === i;
             return (
               <React.Fragment key={e.id}>
                 <tr
-                  className={isExpanded ? 'row-expanded' : ''}
+                  className={(isExpanded ? 'row-expanded' : '') + (isKeyboardSelected ? ' row-keyboard-selected' : '')}
                   onClick={() => onToggleExpand(isExpanded ? null : e.id)}
                 >
-                  <td className="td-form" title={e.meanings.join(' / ')}>{e.form}</td>
+                  <td className="td-form" title={e.meanings.join(' / ')} onClick={(ev) => handleCopy(ev, e.form)}>
+                    {highlightMatch(e.form, search)}
+                  </td>
                   <td className="td-gloss">
-                    {gloss}
+                    {highlightMatch(gloss, search)}
                     <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
                   </td>
                   <td className="td-type"><TypeTag entry={e} /></td>
@@ -227,5 +293,23 @@ export default function TableView({ entries, sortCol, sortDir, onSort, prefixInf
         </tbody>
       </table>
     </div>
+  );
+}
+
+export default function TableView(props) {
+  return (
+    <>
+      <TableHeader sortCol={props.sortCol} sortDir={props.sortDir} onSort={props.onSort} />
+      <TableBody
+        entries={props.entries}
+        prefixInfo={props.prefixInfo}
+        onSearchByForm={props.onSearchByForm}
+        expandedRow={props.expandedRow}
+        onToggleExpand={props.onToggleExpand}
+        search={props.search}
+        keyboardRowIndex={props.keyboardRowIndex}
+        onCopyToast={props.onCopyToast}
+      />
+    </>
   );
 }

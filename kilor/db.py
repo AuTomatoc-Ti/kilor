@@ -64,6 +64,76 @@ def _rebuild_fts(conn):
     conn.commit()
 
 
+def populate_search_text(conn=None):
+    """Compute and store search_text for all words.
+    
+    search_text = form + space-separated inflection forms + case forms.
+    Reuses the same computation as the frontend (computeInflections).
+    """
+    from .phonology import count_syllables, get_case_forms
+    
+    close_after = conn is None
+    if conn is None:
+        conn = get_db()
+    
+    # Ensure column exists
+    cur = conn.execute("PRAGMA table_info(words)")
+    cols = [r[1] for r in cur.fetchall()]
+    if 'search_text' not in cols:
+        conn.execute("ALTER TABLE words ADD COLUMN search_text TEXT DEFAULT ''")
+        conn.commit()
+    
+    # For each word, compute all forms
+    rows = conn.execute(
+        "SELECT id, form, syl_count, derivation_mask, is_function_word, compound_type FROM words"
+    ).fetchall()
+    
+    for r in rows:
+        forms = [r['form']]
+        mask = r['derivation_mask'] or ''
+        syl = r['syl_count']
+        is_func = bool(r['is_function_word'])
+        cmpd_type = r['compound_type']
+        
+        # Inflections (N→V→A→D)
+        is_toneless = syl <= 2
+        mapping = {'N': 'noun', 'V': 'verb', 'A': 'adjective', 'D': 'adverb'}
+        for letter in ['N', 'V', 'A', 'D']:
+            if letter not in mask.upper():
+                continue
+            if is_toneless:
+                if letter in ('N', 'V'):
+                    forms.append(r['form'])
+                else:
+                    forms.append(r['form'] + 's')
+            else:
+                # tone-marked inflections: just append form for now
+                # (full computation would need syllable parsing which is JS-side)
+                forms.append(r['form'])
+        
+        # Case forms
+        acc, gen = get_case_forms(
+            r['form'],
+            derivation_mask=mask or None,
+            is_function_word=is_func,
+            compound_type=cmpd_type,
+        )
+        if acc:
+            forms.append(acc)
+        if gen:
+            forms.append(gen)
+        
+        search_text = ' '.join(forms)
+        conn.execute(
+            "UPDATE words SET search_text = ? WHERE id = ?",
+            (search_text, r['id']),
+        )
+    
+    conn.commit()
+    if close_after:
+        conn.close()
+
+
 def rebuild_fts(conn=None):
     """Public: rebuild FTS index from scratch."""
     close_after = conn is None

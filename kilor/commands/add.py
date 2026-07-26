@@ -4,7 +4,7 @@ import os
 import re
 import sqlite3
 
-from ..db import get_db, rebuild_fts
+from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables, get_case_forms
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -149,6 +149,7 @@ def cmd_add(filepath):
         added += 1
 
     conn.commit()
+    populate_search_text(conn)
     rebuild_fts(conn)
 
     if errors:

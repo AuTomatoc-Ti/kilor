@@ -100,6 +100,30 @@ function queryValue(sql, params = []) {
   return Object.values(rows[0])[0];
 }
 
+// ── Autocomplete query (top 5 form matches) ──────────────────────────────────
+
+/**
+ * Returns up to 5 words whose form contains the search term,
+ * ordered by prefix-match priority then alphabetically.
+ * Used for the search-box autocomplete dropdown.
+ */
+export function autocompleteSearch(term) {
+  if (!db || !term || term.length < 1) return [];
+  const t = term.toLowerCase();
+  const sql = `SELECT w.id, w.form FROM words w
+    WHERE LOWER(w.form) LIKE ?
+    ORDER BY
+      CASE
+        WHEN LOWER(w.form) LIKE ? THEN 0
+        ELSE 1
+      END,
+      LOWER(w.form)
+    LIMIT 5`;
+  return queryAll(sql, [`%${t}%`, `${t}%`]).map((r) => ({ id: r.id, form: r.form }));
+}
+
+// ── Main word query with relevance-ranked search ─────────────────────────────
+
 export function queryWords({
   search = '',
   types = [],
@@ -112,10 +136,25 @@ export function queryWords({
 } = {}) {
   if (!db) return [];
 
-  const cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
+  const hasSearch = search && search.trim().length > 0;
+  const searchTerm = hasSearch ? search.toLowerCase() : '';
+
+  let cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
     w.compound_type, w.derivation_mask, w.consensus_prefix,
     w.is_function_word, w.notes,
     GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat`;
+
+  // Add relevance score when searching (4 tiers)
+  if (hasSearch) {
+    cols += `,
+      CASE
+        WHEN LOWER(w.form) LIKE '${searchTerm}%' THEN 4
+        WHEN LOWER(w.form) LIKE '%${searchTerm}%' THEN 3
+        WHEN LOWER(w.search_text) LIKE '%${searchTerm}%' THEN 2
+        WHEN LOWER(GROUP_CONCAT(m.gloss, ' | ')) LIKE '%${searchTerm}%' THEN 1
+        ELSE 0
+      END AS relevance`;
+  }
 
   let sql = `SELECT ${cols} FROM words w LEFT JOIN meanings m ON w.id = m.word_id WHERE 1=1`;
   const params = [];
@@ -161,32 +200,39 @@ export function queryWords({
     params.push(sylMax);
   }
 
-  if (search) {
-    sql += ' AND (LOWER(w.form) LIKE ? OR LOWER(m.gloss) LIKE ?)';
-    const t = `%${search.toLowerCase()}%`;
-    params.push(t, t);
+  // Search filter (pre-GROUP BY) — also matches search_text for inflection/case form search
+  if (hasSearch) {
+    sql += ` AND (LOWER(w.form) LIKE '%' || ? || '%' OR LOWER(m.gloss) LIKE '%' || ? || '%' OR LOWER(w.search_text) LIKE '%' || ? || '%')`;
+    params.push(searchTerm, searchTerm, searchTerm);
   }
 
   sql += ' GROUP BY w.id';
 
-  if (search) {
-    sql += ' HAVING LOWER(w.form) LIKE ? OR LOWER(GROUP_CONCAT(m.gloss, \' | \')) LIKE ?';
-    const t = `%${search.toLowerCase()}%`;
-    params.push(t, t);
+  // Search filter (post-GROUP BY / HAVING)
+  if (hasSearch) {
+    sql += ` HAVING relevance > 0`;
   }
 
   const dir = sortDir === 'desc' ? 'DESC' : 'ASC';
-  switch (sortCol) {
-    case 'form': sql += ` ORDER BY LOWER(w.form) ${dir}`; break;
-    case 'gloss': sql += ` ORDER BY LOWER(MIN(m.gloss)) ${dir}`; break;
-    case 'prefix': sql += ` ORDER BY w.consensus_prefix ${dir}`; break;
-    case 'mask': sql += ` ORDER BY w.derivation_mask ${dir}`; break;
-    case 'syl': sql += ` ORDER BY w.syl_count ${dir}`; break;
-    case 'type': sql += ` ORDER BY w.is_function_word ${dir}, w.is_compound ${dir}`; break;
-    default: sql += ` ORDER BY LOWER(w.form) ${dir}`;
+  const defaultOrder = hasSearch ? 'relevance DESC, LOWER(w.form) ASC' : `LOWER(w.form) ${dir}`;
+
+  // When searching, always use relevance ordering (overrides sortCol)
+  if (hasSearch) {
+    sql += ` ORDER BY ${defaultOrder}`;
+  } else {
+    switch (sortCol) {
+      case 'form': sql += ` ORDER BY LOWER(w.form) ${dir}`; break;
+      case 'gloss': sql += ` ORDER BY LOWER(MIN(m.gloss)) ${dir}`; break;
+      case 'prefix': sql += ` ORDER BY w.consensus_prefix ${dir}`; break;
+      case 'mask': sql += ` ORDER BY w.derivation_mask ${dir}`; break;
+      case 'syl': sql += ` ORDER BY w.syl_count ${dir}`; break;
+      case 'type': sql += ` ORDER BY w.is_function_word ${dir}, w.is_compound ${dir}`; break;
+      default: sql += ` ORDER BY LOWER(w.form) ${dir}`;
+    }
   }
 
-  return queryAll(sql, params).map((row) => enrichEntry(row));
+  const rows = queryAll(sql, params);
+  return enrichEntries(rows);
 }
 
 // ── Case-form generation (browser-side, mirrors kilor/phonology.py) ──────────
@@ -353,39 +399,412 @@ function splitSyllablesJS(word) {
   return syllables;
 }
 
-function enrichEntry(row) {
-  const wid = row.id;
-  const meanings = (row.glosses_concat || '').split(' | ').filter(Boolean);
-  const inflections = {};
-  for (const ir of queryAll('SELECT form_type, form FROM inflections WHERE word_id = ?', [wid])) {
-    inflections[ir.form_type] = ir.form;
+// ── IPA mapping ─────────────────────────────────────────────────────────────
+
+const _IPA_MAP = {
+  a: 'ɑ', e: 'ɛ', i: 'i', o: 'ɔ', u: 'u', y: 'y', ae: 'æ',
+  p: 'p', b: 'b', m: 'm', f: 'f', w: 'w',
+  t: 't', d: 'd', n: 'n', s: 's', l: 'l', r: 'r', c: 'ts',
+  k: 'k', g: 'g', h: 'h',
+  sh: 'ʃ', ch: 'tʃ', th: 'θ', ng: 'ŋ', x: 'x', rk: 'ɾk',
+  sl: 's͜l', kl: 'k͜l', tl: 't͜l', bl: 'b͜l', ml: 'm͜l',
+  kr: 'k͡r', br: 'b͡r', gr: 'ɡ͡r', fr: 'f͡r', pr: 'p͡r',
+  j: '˥', v: '˩',
+  'ai': 'aɪ', 'au': 'aʊ', 'ei': 'eɪ', 'eu': 'eʊ',
+  'iu': 'ju', 'oi': 'ɔɪ', 'ou': 'oʊ',
+  '-': '', ' ': ' ',
+};
+
+const _IPA_MULTICHAR_KEYS = Object.keys(_IPA_MAP).filter((k) => k.length > 1).sort((a, b) => b.length - a.length);
+
+function toIPA(word) {
+  if (!word) return '';
+  let result = '';
+  let i = 0;
+  while (i < word.length) {
+    let matched = false;
+    for (const mk of _IPA_MULTICHAR_KEYS) {
+      if (word.slice(i, i + mk.length).toLowerCase() === mk) {
+        result += _IPA_MAP[mk] || mk;
+        i += mk.length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) {
+      const ch = word[i].toLowerCase();
+      result += _IPA_MAP[ch] || word[i];
+      i += 1;
+    }
   }
-  let components = [];
-  if (row.is_compound) {
-    components = queryAll(
-      `SELECT w2.form, w2.id, cc.position FROM compound_components cc
+  return result;
+}
+
+// ── Tone-preserving syllable splitter ───────────────────────────────────────
+
+/**
+ * Split a word into syllable objects with start/end offsets in the *original* string.
+ * Unlike splitSyllablesJS, this preserves tone marker positions — j/v are not
+ * stripped; they float between syllables.
+ *
+ * Returns array of { onset, nucleus, coda, start, end } where start/end
+ * reference positions in the *cleaned* word (after stripping tone markers for
+ * parsing, but we track where the vowel of each syllable lives).
+ */
+function _syllablePositions(word) {
+  const cleaned = word.replace(/[jv]/g, '').replace(/-/g, '');
+  const toneStripped = word.replace(/[jv]/g, '');
+
+  // Build mapping: each position in cleaned → position in original word
+  const cleanedToOrig = [];
+  let ci = 0;
+  for (let oi = 0; oi < word.length; oi++) {
+    const ch = word[oi];
+    if (ch === 'j' || ch === 'v' || ch === '-') continue;
+    if (ci < cleaned.length && cleaned[ci] === ch) {
+      cleanedToOrig[ci] = oi;
+      ci++;
+    }
+  }
+
+  const n = cleaned.length;
+  if (n === 0) return [];
+
+  const syllables = [];
+  let i = 0;
+  while (i < n) {
+    const onsetStart = i;
+
+    let onset = '';
+    if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i === 0 && i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i < n && _CORE_CONS.has(cleaned[i])) {
+      onset = cleaned[i];
+      i += 1;
+    }
+
+    if (i >= n) throw new Error(`incomplete syllable in '${cleaned}' at position ${i}`);
+
+    const nucleusStart = i;
+    if (_VOWELS.has(cleaned[i])) {
+      if (cleaned.slice(i, i + 2) === 'ae') {
+        i += 2;
+      } else if (i + 1 < n && _DIPHTHONGS.has(cleaned.slice(i, i + 2))) {
+        i += 2;
+      } else {
+        i += 1;
+      }
+    }
+    const nucleus = cleaned.slice(nucleusStart, i);
+
+    let coda = '';
+    if (i < n) {
+      if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 1 === n && _END_ONLYS.has(cleaned[i])) {
+        coda = cleaned[i];
+        i += 1;
+      } else if (_CORE_CONS.has(cleaned[i])) {
+        if (i + 1 >= n || !_VOWELS.has(cleaned[i + 1])) {
+          coda = cleaned[i];
+          i += 1;
+        }
+      }
+    }
+
+    // vowel end position in the *original* word (the position right after the
+    // nucleus vowel, where we'd insert a tone marker)
+    const vowelEndCleaned = nucleusStart + nucleus.length;
+    const vowelEndOrig = cleanedToOrig[vowelEndCleaned - 1] !== undefined
+      ? cleanedToOrig[vowelEndCleaned - 1] + 1
+      : vowelEndCleaned;
+
+    syllables.push({
+      onset, nucleus, coda,
+      vowelEndOrig,
+    });
+  }
+
+  return syllables;
+}
+
+// ── Inflection computation (replaces stored inflections table) ──────────────
+
+/**
+ * Compute correct Kilor inflections from the prosody rules.
+ *
+ * Rules (from rules/0-foundation/tone-prosody.md §II, §III):
+ *   - 1–2 syllable words: toneless. N/V = bare root, A/D = root + '-s'.
+ *   - 3+ syllable words: tone markers j/v inserted into last-3 domain.
+ *     Noun: j on 1st of last-3. Verb: v on 1st of last-3.
+ *     Adj: j on 2nd of last-3. Adv: v on 2nd of last-3.
+ *   - Only compute for categories present in the derivation_mask.
+ *   - Single-mask words: include toneless form alongside tonemarked form.
+ *   - For compounds: tone markers apply to the whole form (mono) or last word (multi).
+ *   - Return result in N → V → A → D order with single-value entries.
+ *
+ * @returns {Object} — e.g. { noun: 'forajgilan', adjective: 'foragijlan' }
+ */
+function computeInflections(form, sylCount, derivationMask) {
+  if (!derivationMask) return {};
+  const mask = derivationMask.toUpperCase();
+  const result = {};
+  const maskLetters = ['N', 'V', 'A', 'D'];
+
+  const isToneless = sylCount <= 2;
+
+  // For multi-word compounds (with spaces), tone markers go on the last word.
+  const words = form.split(' ');
+  const lastWordIdx = words.length - 1;
+
+  for (const letter of maskLetters) {
+    if (!mask.includes(letter)) continue;
+
+    if (isToneless) {
+      if (letter === 'N' || letter === 'V') {
+        result[_maskKey(letter)] = form;
+      } else {
+        result[_maskKey(letter)] = form + 's';
+      }
+    } else {
+      // 3+ syllable word — apply tone markers to the last word (for multi-word)
+      // or the only word (for mono).
+      const targetWord = words[lastWordIdx];
+      const syls = _syllablePositions(targetWord);
+
+      if (syls.length < 3) {
+        // Fallback: should not happen for 3+ syllable words, but just in case
+        result[_maskKey(letter)] = form;
+        continue;
+      }
+
+      const last3 = syls.slice(-3);
+      const anchorIdx = letter === 'N' || letter === 'V' ? 0 : 1;
+      const anchor = last3[anchorIdx];
+      const toneChar = letter === 'N' || letter === 'A' ? 'j' : 'v';
+
+      // Insert tone marker after the vowel nucleus of the anchor syllable
+      const vowelEnd = anchor.vowelEndOrig;
+      const tonedLastWord = targetWord.slice(0, vowelEnd) + toneChar + targetWord.slice(vowelEnd);
+
+      if (words.length === 1) {
+        result[_maskKey(letter)] = tonedLastWord;
+      } else {
+        result[_maskKey(letter)] = [...words.slice(0, -1), tonedLastWord].join(' ');
+      }
+
+      // For single-mask words: also include the base form (toneless).
+      // This handles the "only 1 mask" case (2c) — show base + tonemarked.
+      if (mask.length === 1) {
+        // We already set the tonemarked form above; for display we'll
+        // mark it as a tuple [base, tonemarked].
+        // Store as { noun: [base, tonemarked] } for single-mask words.
+        const base = form;
+        result[_maskKey(letter)] = [base, result[_maskKey(letter)]];
+      }
+    }
+  }
+
+  return result;
+}
+
+function _maskKey(letter) {
+  switch (letter) {
+    case 'N': return 'noun';
+    case 'V': return 'verb';
+    case 'A': return 'adjective';
+    case 'D': return 'adverb';
+    default: return '';
+  }
+}
+
+// ── Batch enrichment — avoids N+1 query pattern ─────────────────────────────
+
+/**
+ * Enrich all result rows in one pass using 4 batched queries instead of
+ * 4 queries per row. At 10k results, goes from 40,000 queries to 4.
+ */
+function enrichEntries(rows) {
+  if (rows.length === 0) return [];
+
+  const ids = rows.map((r) => r.id);
+  const idSet = new Set(ids);
+  const idList = ids.join(',');
+  if (!idList) return [];
+
+  // Build id → enriched fragment maps
+  const wordMap = {};
+  for (const row of rows) {
+    wordMap[row.id] = {
+      row,
+      inflections: {},
+      components: [],
+      meta: null,
+      examples: [],
+    };
+  }
+
+  // 1. Batch inflections
+  for (const ir of queryAll(
+    `SELECT word_id, form_type, form FROM inflections WHERE word_id IN (${idList})`
+  )) {
+    if (wordMap[ir.word_id]) {
+      wordMap[ir.word_id].inflections[ir.form_type] = ir.form;
+    }
+  }
+
+  // 2. Batch compound components (only for compound words)
+  const compoundIds = rows.filter((r) => r.is_compound).map((r) => r.id);
+  if (compoundIds.length > 0) {
+    const cList = compoundIds.join(',');
+    const compRows = queryAll(
+      `SELECT cc.compound_id, w2.form, w2.id AS component_wid, cc.position
+       FROM compound_components cc
        JOIN words w2 ON cc.component_id = w2.id
-       WHERE cc.compound_id = ? ORDER BY cc.position`, [wid]
-    ).map((c) => ({ form: c.form, id: c.id }));
+       WHERE cc.compound_id IN (${cList})
+       ORDER BY cc.compound_id, cc.position`
+    );
+    const compMap = {};
+    for (const cr of compRows) {
+      if (!compMap[cr.compound_id]) compMap[cr.compound_id] = [];
+      compMap[cr.compound_id].push({ form: cr.form, id: cr.component_wid });
+    }
+    for (const cid of compoundIds) {
+      if (wordMap[cid]) {
+        wordMap[cid].components = compMap[cid] || [];
+      }
+    }
   }
-  const meta = queryAll('SELECT pattern, rule_ref FROM compound_meta WHERE compound_id = ?', [wid])[0] || null;
-  const examples = queryAll('SELECT kilor_text, english_text, source FROM examples WHERE word_id = ?', [wid])
-    .map((ex) => ({ kilor: ex.kilor_text, english: ex.english_text, source: ex.source }));
-  const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
-  return {
-    id: wid, form: row.form, syl_count: row.syl_count,
-    syllables: row.form.split(" ").map(w => splitSyllablesJS(w).join("/")).join(" / "),
-    meanings,
-    derivation_mask: row.derivation_mask || '',
-    is_root: Boolean(row.is_root), is_compound: Boolean(row.is_compound),
-    compound_type: row.compound_type || null,
-    is_function_word: Boolean(row.is_function_word),
-    consensus_prefix: row.consensus_prefix || null,
-    inflections, components,
-    pattern: meta ? meta.pattern : null,
-    rule_ref: meta ? meta.rule_ref : null,
-    case_forms, examples, notes: row.notes || '',
-  };
+
+  // 3. Batch compound meta
+  if (compoundIds.length > 0) {
+    const cmList = compoundIds.join(',');
+    for (const cm of queryAll(
+      `SELECT compound_id, pattern, rule_ref FROM compound_meta WHERE compound_id IN (${cmList})`
+    )) {
+      if (wordMap[cm.compound_id]) {
+        wordMap[cm.compound_id].meta = { pattern: cm.pattern, rule_ref: cm.rule_ref };
+      }
+    }
+  }
+
+  // 4. Batch examples
+  for (const ex of queryAll(
+    `SELECT word_id, kilor_text, english_text, source FROM examples WHERE word_id IN (${idList})`
+  )) {
+    if (wordMap[ex.word_id]) {
+      wordMap[ex.word_id].examples.push({
+        kilor: ex.kilor_text,
+        english: ex.english_text,
+        source: ex.source,
+      });
+    }
+  }
+
+  // Assemble final entries
+  return rows.map((row) => {
+    const frag = wordMap[row.id];
+    const meanings = (row.glosses_concat || '').split(' | ').filter(Boolean);
+    const meta = frag.meta;
+    const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
+    const mask = row.derivation_mask || '';
+    const computedInfl = computeInflections(row.form, row.syl_count, mask);
+    return {
+      id: row.id,
+      form: row.form,
+      syl_count: row.syl_count,
+      syllables: row.form.split(" ").map((w) => splitSyllablesJS(w).join("/")).join(" / "),
+      ipa: row.form.split(" ").map((w) => toIPA(w)).join(" "),
+      meanings,
+      derivation_mask: mask,
+      is_root: Boolean(row.is_root),
+      is_compound: Boolean(row.is_compound),
+      compound_type: row.compound_type || null,
+      is_function_word: Boolean(row.is_function_word),
+      consensus_prefix: row.consensus_prefix || null,
+      inflections: computedInfl,
+      components: frag.components,
+      pattern: meta ? meta.pattern : null,
+      rule_ref: meta ? meta.rule_ref : null,
+      case_forms,
+      examples: frag.examples,
+      notes: row.notes || '',
+      relevance: row.relevance != null ? row.relevance : undefined,
+    };
+  });
+}
+
+// ── Fuzzy search (Levenshtein fallback for 0-result queries) ───────────────
+
+/**
+ * Levenshtein distance between two strings.
+ */
+function levenshtein(a, b) {
+  const alen = a.length;
+  const blen = b.length;
+  if (alen === 0) return blen;
+  if (blen === 0) return alen;
+
+  let prev = new Array(blen + 1);
+  let curr = new Array(blen + 1);
+  for (let j = 0; j <= blen; j++) prev[j] = j;
+
+  for (let i = 1; i <= alen; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= blen; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+    }
+    const tmp = prev; prev = curr; curr = tmp;
+  }
+  return prev[blen];
+}
+
+/**
+ * Returns up to 10 words within Levenshtein distance threshold.
+ * Threshold: ≤1 for 1–3 char words, ≤2 for 4–6 char words, ≤3 for 7+ char words.
+ */
+export function fuzzySearch(term) {
+  if (!db || !term || term.length < 2) return [];
+  const t = term.toLowerCase();
+  const threshold = t.length <= 3 ? 1 : t.length <= 6 ? 2 : 3;
+
+  const rows = queryAll('SELECT id, form FROM words');
+
+  const scored = rows
+    .map((r) => ({ ...r, dist: levenshtein(t, r.form.toLowerCase()) }))
+    .filter((r) => r.dist <= threshold)
+    .sort((a, b) => a.dist - b.dist || a.form.localeCompare(b.form))
+    .slice(0, 10);
+
+  if (scored.length === 0) return [];
+
+  // Fetch full word data for fuzzy-matched IDs
+  const idList = scored.map((r) => r.id).join(',');
+  const fullRows = queryAll(
+    `SELECT w.id, w.form, w.syl_count, w.is_root, w.is_compound,
+      w.compound_type, w.derivation_mask, w.consensus_prefix,
+      w.is_function_word, w.notes,
+      GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat
+    FROM words w LEFT JOIN meanings m ON w.id = m.word_id
+    WHERE w.id IN (${idList})
+    GROUP BY w.id
+    ORDER BY LOWER(w.form)`
+  );
+
+  const enriched = enrichEntries(fullRows);
+  // Attach fuzzy distance to entries
+  const distMap = {};
+  for (const r of scored) distMap[r.id] = r.dist;
+  return enriched.map((e) => ({ ...e, fuzzyDistance: distMap[e.id] }));
 }
 
 export function getMeta() {
@@ -398,7 +817,7 @@ export async function buildTestDB(entries) {
     locateFile: isNode() ? undefined : () => sqlWasmUrl,
   });
   const testDB = new SQL.Database();
-  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
+  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
   testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, sort_order INTEGER DEFAULT 0)`);
   testDB.run(`CREATE TABLE inflections (word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, form_type TEXT NOT NULL, form TEXT NOT NULL, PRIMARY KEY (word_id, form_type))`);
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);

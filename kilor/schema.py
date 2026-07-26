@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS words (
     derivation_mask TEXT,              -- NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class
     section TEXT NOT NULL,             -- 1-8
     consensus_prefix TEXT,
+    search_text TEXT DEFAULT '',
     is_function_word BOOLEAN DEFAULT 0,
     notes TEXT,
     created_at TEXT DEFAULT (datetime('now')),

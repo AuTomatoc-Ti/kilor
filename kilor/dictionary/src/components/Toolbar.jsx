@@ -3,18 +3,36 @@ export default function Toolbar({
   resultCount, totalCount,
   filterOpen, onFilterToggle,
   onRefresh, refreshing,
+  autocompleteItems, autocompleteIndex,
+  onSelectAutocomplete, searchRef,
 }) {
   return (
     <div className="toolbar">
       <div className="toolbar-main">
-        <input
-          type="text"
-          id="search"
-          placeholder="Search by word or gloss…"
-          autoFocus
-          value={search}
-          onChange={e => onSearchChange(e.target.value)}
-        />
+        <div className="search-wrapper">
+          <input
+            ref={searchRef}
+            type="text"
+            id="search"
+            placeholder="Search by word or gloss…"
+            autoFocus
+            value={search}
+            onChange={e => onSearchChange(e.target.value)}
+          />
+          {autocompleteItems.length > 0 && (
+            <ul className="autocomplete-dropdown">
+              {autocompleteItems.map((item, i) => (
+                <li
+                  key={item.id}
+                  className={'autocomplete-item' + (i === autocompleteIndex ? ' active' : '')}
+                  onMouseDown={(e) => { e.preventDefault(); onSelectAutocomplete(item.form); }}
+                >
+                  {item.form}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         <div className="toolbar-right">
           <span className="result-count">
             {resultCount === totalCount ? totalCount + ' words' : resultCount + ' of ' + totalCount + ' words'}

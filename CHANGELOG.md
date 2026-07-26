@@ -1,8 +1,11 @@
 # Changelog
 
-**Current Version:** v1.14.0
-**Last Updated:** 2026-07-25
+**Current Version:** v1.15.0
+**Last Updated:** 2026-07-26
 **Format:** `**file** vX.Y.Z — what changed`
+
+> **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
+> For cross-cutting changes (e.g., DB schema + frontend query), see both files with cross-references.
 
 ## Template (for next entry):
 

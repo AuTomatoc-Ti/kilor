@@ -3,7 +3,7 @@
 import os
 import sys
 
-from ..db import get_db, rebuild_fts
+from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables
 
 
@@ -144,6 +144,7 @@ def cmd_edit(form, **kwargs):
     
     # Commit changes
     conn.commit()
+    populate_search_text(conn)
     rebuild_fts(conn)
     conn.close()
     
