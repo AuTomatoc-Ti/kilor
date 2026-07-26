@@ -2,8 +2,8 @@
 
 **Module:** Demonstratives (this/that)
 **Status:** Canonical
-**Last updated:** 2026-07-23
-**Version:** 1.1.0
+**Last updated:** 2026-07-26
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -39,14 +39,14 @@ No far-distal ("yonder") form exists. `tha` covers all non-proximate referents.
 
 When the speaker wishes to express an emotional stance toward the referent, the colour prefix is **retained** after the demonstrative. This follows the standard 異體字 pattern (see `1-nominals/nouns-colour-prefix.md` §VI):
 
-> `thin a-bau` — "this bread" (Red emotional colouring: anger towards the bread)
-> `tha o-slato` — "that house" (White emotional colouring: surprise or regret about the house)
-> `thin u-lunla` — "this tree" (Green emotional colouring: calm/faith regarding the tree)
+> `thin a'bau` — "this bread" (Red emotional colouring: anger towards the bread)
+> `tha o'slato` — "that house" (White emotional colouring: surprise or regret about the house)
+> `thin u'lunla` — "this tree" (Green emotional colouring: calm/faith regarding the tree)
 
 Without emotional override, the bare root is the default:
 
 > `thin bau` — "this bread" (neutral)
-> `thin a-bau` — "this bread" (emotional: Red/anger)
+> `thin a'bau` — "this bread" (emotional: Red/anger)
 
 ### B. Demonstrative Pronoun
 
@@ -103,7 +103,7 @@ When a demonstrative-pronoun receives case, the case suffix attaches to the demo
 | Bare noun | `bau` | Indefinite | Neutral |
 | Colour-prefixed noun | `e-bau` | Definite | Neutral (Yellow = crafted class) |
 | Demonstrative + bare noun | `thin bau` | Definite (deictic) | Neutral |
-| Demonstrative + colour-prefixed noun | `thin e-bau` | Definite (deictic) | Emotional (異體字) |
+| Demonstrative + colour-prefixed noun | `thin e'bau` | Definite (deictic) | Emotional (異體字) |
 
 ---
 

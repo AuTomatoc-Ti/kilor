@@ -3,7 +3,7 @@
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
 **Last updated:** 2026-07-26
-**Version:** 2.1.0
+**Version:** 2.2.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
@@ -357,7 +357,73 @@ python kilor.py edit <form> --remove-example <example_id>
 
 ---
 
-## VIII. Known Infrastructure Gaps
+## VIII. Editorial Policy — When to Store Derived & Compound Words
+
+Derivational suffixes (`-mae`, `-tek`, `-lu`, `-rin`, `-par`, `-ius`, `-eus`, `-ia`) and compounding heads (`param`, `pos`, `isra`, etc.) are **productive** — a speaker can form new words by rule. Not every rule-produced form deserves a lexicon entry. The question is the same one dictionary editors face in every language: does this word name a recognizable category, or can a speaker compute it from root + rule alone?
+
+### Decision checklist
+
+For any suffix-derived or compound word candidate, ask:
+
+| # | Question | If yes → | If no → |
+|---|---|---|---|
+| 1 | Is the meaning **non-compositional**? (Semantic drift, idiomatic shift, cultural referent) | ✅ Store | → continue |
+| 2 | Is it a **proper noun**? (Personal name, place name) | ✅ Store | → continue |
+| 3 | Is it a **`-lise` word**? (Semi-productive — every coinage is intentional) | ✅ Store | → continue |
+| 4 | Is it a **closed-class grammatical form**? (Pronoun collective, numeral compound) | ✅ Store | → continue |
+| 5 | Does it name a **high-frequency cultural category**? (Profession, institution, common concept) | 🤔 Store | → continue |
+| 6 | Is it fully transparent and not culturally anchored? | ❌ Skip | |
+
+### By suffix/head type
+
+| Type | Policy |
+|---|---|
+| **Roots** | ✅ Always store |
+| **Closed-class forms** (pronouns, numerals, etc.) | ✅ Always store |
+| **`-lise` words** | ✅ Store all — each coinage is a deliberate act of naming |
+| **Productive suffixes** (`-mae`, `-tek`, `-lu`, `-rin`, `-par`, `-ius`, `-eus`, `-ia`) | Check list above. Default: *do not store* unless lexicalized, proper-noun, or high-frequency |
+| **Multi-word compounds** (`param`, `pos`, `isra`, etc.) | Same as productive suffixes — skip transparent compounds; store culturally fixed names |
+| **`-lo` / `lote` collectives** | ❌ Never store — purely computed, like Chinese 朋友們 |
+
+### Concrete examples
+
+| Form | Store? | Why |
+|---|---|---|
+| `takamae` (eater) | ❌ | Transparent agent. "Anyone who eats" — not a cultural category. |
+| `misomae` (musician) | 🤔 | Names a profession. Culturally anchored — probably merits an entry. |
+| `forania` (fiery) | ❌ | Transparent abundative. Computed from `fora` + `-ia`. |
+| `maelise` (fate) | ✅ | Semi-productive `-lise` — meaning is existential, not compositional. |
+| `auronius` (sky-like) | ❌ | Transparent similative. |
+| `auronius` (personal name) | ✅ | Proper noun — culturally assigned, not computed. |
+| `fora posia` (Fire Realm) | ✅ | Culturally fixed toponym — not any old "fire-place." |
+| `bau pos` (bakery) | ❌ | Transparent location compound. |
+| `takamae lote` (eaters, collective) | ❌ | Collective of derived agent — double computation, no special meaning. |
+| `maehalo` (people) | ❌ | Purely computed collective — like 人們. |
+
+### Cross-language parallel
+
+| Kilor | Analog | Stored? |
+|---|---|---|
+| `maehalo` | Chinese 人們 | ❌ Not in dictionary |
+| `kilo` | Chinese 我們 | ✅ In dictionary (closed-class pronoun) |
+| `takamae` | English `eater` | ❌ Not a common dictionary entry |
+| `misomae` | English `musician` | ✅ Profession earns an entry |
+| `fora posia` | English `Fire Realm` (mythical) | ✅ Proper name |
+| `song lote` | Chinese 朋友們 | ❌ Purely compositional |
+
+### Recording rationale
+
+When storing a word that passes checklist item 1–5, record the reason in the `notes` field:
+- `"semantically shifted"` — meaning differs from compositional reading
+- `"proper noun"` — personal/place name
+- `"professional term"` — culturally anchored category
+- `"high-frequency exemplar"` — core vocabulary despite transparency
+
+This is **editorial judgment**, not an algorithmic rule. When in doubt, lean toward **not storing** — transparent derivatives cost the learner nothing to miss, and the DB stays cleaner for genuinely meaningful entries.
+
+---
+
+## IX. Known Infrastructure Gaps
 
 Priority-ordered list of pipeline features not yet implemented (as of 2026-07-22):
 
@@ -373,7 +439,7 @@ Priority-ordered list of pipeline features not yet implemented (as of 2026-07-22
 
 ---
 
-## IX. Cross-References
+## X. Cross-References
 
 - **Phonotactic rules:** `0-foundation/phonology.md`
 - **Tone application:** `0-foundation/tone-prosody.md`

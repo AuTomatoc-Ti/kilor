@@ -2,8 +2,8 @@
 
 **Module:** Numeral System, Quantification & Ranking
 **Status:** Canonical
-**Last updated:** 2026-07-10
-**Version:** 1.1.0
+**Last updated:** 2026-07-26
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `0-foundation/phonology.md`
 
 ---
@@ -209,11 +209,11 @@ When no measure word is used, the numeral directly quantifies the noun:
 Quantified nouns are **indefinite** — the colour prefix is omitted per `1-nominals/nouns-colour-prefix.md` §IV-B:
 
 > ✅ `lira ro` = three waters (generic)
-> ❌ `i-lira ro` = three the-waters (contradiction: quantified nouns are indefinite by nature)
+> ❌ `i'lira ro` = three the-waters (contradiction: quantified nouns are indefinite by nature)
 
 A colour prefix may be retained when the quantification is part of a larger definite noun phrase (e.g., "the three cups of water that I drank" — the noun phrase as a whole is definite). In that case, the prefix attaches to the main noun, not the measure word:
 
-> `i-lira pei ro dir` = the third cup of water (specific, identifiable water)
+> `i'lira pei ro dir` = the third cup of water (specific, identifiable water)
 
 ---
 

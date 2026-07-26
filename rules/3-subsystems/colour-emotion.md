@@ -2,8 +2,8 @@
 
 **Module:** Emotional Particles
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 2.4.0
+**Last updated:** 2026-07-26
+**Version:** 2.5.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concept meanings), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system, 異體字 override)
 **Interacts with:** `3-subsystems/imperatives.md` (co-occurrence in commands)
 
@@ -108,20 +108,26 @@ The manner adverb precedes the emotional particle. See `0-foundation/grammar-syn
 
 ### F. Clause-Initial Fusion — Casual Shorthand
 
-When a clause-initial emotional particle immediately precedes the subject noun, the particle and the noun's colour prefix may **fuse** in casual speech. The comma is dropped; the emotional particle's colour takes orthographic priority:
+When a clause-initial emotional particle immediately precedes the subject noun, the particle and the noun's colour prefix may **fuse** in casual speech. The fused form uses the **apostrophe connector** (`'`) to distinguish it from the standard foregrounded form (hyphen):
 
 | Full Form | Fused Form | Meaning |
 |---|---|---|
-| `a, a-maeha taka.` | `a-maeha taka.` | "(With anger,) the person eats." |
-| `e, a-maeha taka.` | `e-maeha taka.` | "(With joy,) the person eats." |
-| `i, y-gilan sopa.` | `i-gilan sopa.` | "(With sadness,) s/he looks at the mountain." |
+| `a, a-maeha taka.` | `a'maeha taka.` | "(With anger,) the person eats." |
+| `e, a-maeha taka.` | `e'maeha taka.` | "(With joy,) the person eats." |
+| `i, y-gilan sopa.` | `i'gilan sopa.` | "(With sadness,) s/he looks at the mountain." |
+
+When the subject noun is **indefinite** (no colour prefix), fusion does not apply — the emotional particle stands alone with optional comma:
+
+| Full Form | Casual | Meaning |
+|---|---|---|
+| `a, maeha taka.` | `a maeha taka.` | "(With anger,) a person eats." |
+| `e, maeha taka.` | `e maeha taka.` | "(With joy,) a person eats." |
 
 **Constraints:**
 - Only clause-initially, with no intervening words.
-- The noun remains **definite** — only the ontological classification is suppressed.
+- The noun remains **definite** when fusion applies — only the ontological classification is suppressed.
 - Fusion is **optional** — the full form is always grammatical and preferred in formal registers.
-
-Fusion creates acknowledged ambiguity (is `a-maeha` fused anger + person, or standard Red ontological prefix?). Context resolves most cases. When the emotional colour matches the noun's 共識 prefix, only the full form unambiguously signals emotional register.
+- The apostrophe in the fused form (`a'maeha`) distinguishes emotional fusion from the standard foregrounded prefix (`a-maeha`). When the emotional colour matches the noun's 共識 prefix, only the full form unambiguously signals emotional register.
 
 ---
 
@@ -165,10 +171,10 @@ The emotional particles and noun colour prefixes share the same 7 forms but serv
 
 | | Noun Colour Prefix | Emotional Particle |
 |:---|:---|:---|
-| **Form** | `a-`, `e-`, `i-`, `o-`, `u-`, `y-`, `ae-` (hyphenated) | `a`, `e`, `i`, `o`, `u`, `y`, `ae` (standalone) |
+| **Form** | `a-`, `e-`, `i-`, `o-`, `u-`, `y-`, `ae-` (hyphen, foregrounded) / `a'`, `e'`, `i'`, `o'`, `u'`, `y'`, `ae'` (apostrophe, emotional/proper — see `nouns-colour-prefix.md` §II-A) | `a`, `e`, `i`, `o`, `u`, `y`, `ae` (standalone) |
 | **Attaches to** | A noun root | A clause or verb |
-| **Encodes** | Ontological class + definiteness | Emotional register |
-| **Optional?** | Required for definite nouns | Always optional |
+| **Encodes** | Ontological class + definiteness (hyphen) or emotional/proper override (apostrophe) | Emotional register |
+| **Optional?** | Required for definite nouns; optional for emotional/proper | Always optional |
 
 ### Simultaneous Use
 
@@ -186,13 +192,13 @@ Both systems operate independently on different grammatical targets:
 
 > **This section is a summary.** The authoritative specification for emotional override on nouns lives in `1-nominals/nouns-colour-prefix.md` §VI (Speaker Override / 異體字).
 
-A speaker may override a definite noun's 共識 default prefix with a different colour for emotional effect (異體字):
+A speaker may override a definite noun's 共識 default prefix with a different colour for emotional effect (異體字). Emotional overrides use the **apostrophe connector** (`'`):
 
-> 共識: `a-fora` (Red) — fire as alive/energy
-> 異體字: `y-fora` (Black) — fire tinted with fear
-> 異體字: `ae-fora` (Brown) — fire tinted with disgust
+> 共識: `a-fora` (Red) — fire as alive/energy (hyphen)
+> 異體字: `y'fora` (Black) — fire tinted with fear (apostrophe)
+> 異體字: `ae'fora` (Brown) — fire tinted with disgust (apostrophe)
 
-On indefinite nouns, a colour prefix may be retained optionally for emotional colouring (`i-lira` — "sadness-tinged water"). See `1-nominals/nouns-colour-prefix.md` §VI for the full specification.
+On indefinite nouns, a colour prefix may be retained optionally for emotional colouring, also with the apostrophe (`i'lira` — "sadness-tinged water"). See `1-nominals/nouns-colour-prefix.md` §II-A and §VI for the full specification.
 
 ---
 

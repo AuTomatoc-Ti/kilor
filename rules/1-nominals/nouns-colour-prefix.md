@@ -2,8 +2,8 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
-**Last updated:** 2026-07-19
-**Version:** 1.2.0
+**Last updated:** 2026-07-26
+**Version:** 1.3.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -34,19 +34,31 @@ Each prefix is a single vowel (V template), aligning with Kilor's syllable struc
 
 > **Crucial:** The Diphthong Plural Shift from earlier drafts has been **removed**. Prefixes retain only their monophthong form regardless of number. Plurality is handled contextually — see `0-foundation/grammar-syntax.md` §VI.
 
-### A. Hyphen — Mandatory Orthographic Rule
+### A. Colour Prefix Connectors — Hyphen and Apostrophe
 
-The hyphen between the colour prefix and the root is **mandatory** in written Kilor. It is never omitted. This ensures unambiguous parsing between the two-letter Brown prefix `ae-` and roots beginning with `/æ/` (`ae`):
+The colour prefix connects to the root using two orthographic connectors, determined by **context**:
+
+| Connector | Context | Example |
+|:---|:---|:---|
+| **`-` (hyphen)** | **Foregrounded** (definite, 共識 default, Tier 1 fluid choice) — standard ontological classification | `a-fora`, `e-bau`, `i-auron`, `ae-pos` |
+| **`'` (apostrophe)** | **Emotional** (異體字 override) — speaker intentionally substitutes a non-standard prefix for emotional or contextual effect | `y'fora`, `ae'fora`, `i'lira` |
+| **`'` (apostrophe)** | **Proper nouns** — culturally assigned prefix on a personal or place name (inherently definite, no 共識 requirement) | `e'austareus`, `i'auronius` |
+
+A bare root with no prefix is always valid — it represents a generic/indefinite noun (see §IV-B).
+
+#### Disambiguation: `ae-` vs `a-`
+
+The connector ensures unambiguous parsing between the two-letter Brown prefix `ae-` and roots beginning with `/æ/` (`ae`):
 
 | Written | Parsing |
 |---|---|
-| `ae-kora` | Brown prefix `ae-` + root `kora` |
-| `a-ekora` | Red prefix `a-` + root `ekora` |
+| `ae-kora` | Brown prefix `ae-` + root `kora` (foregrounded) |
+| `a-ekora` | Red prefix `a-` + root `ekora` (foregrounded) |
 | `aekora` | Single bare root `aekora` — no prefix (generic/indefinite) |
 
-Without the mandatory hyphen, `aekora` would be ambiguous: Brown-prefix `kora` vs bare root `aekora`. The hyphen eliminates this ambiguity entirely.
+The apostrophe carries the same disambiguation: `ae'kora` = Brown emotional/proper, `a'ekora` = Red emotional/proper.
 
-> **Exception — Question words:** Question words formed from `wei` with a colour prefix (`awei`, `ewei`, `iwei`, `owei`, `uwei`, `ywei`, `aewei`) are **exempt** from the mandatory hyphen rule. The merged form without a hyphen is the sole written form for question words. See `2-predication/interrogative.md` §II.
+> **Exception — Question words:** Question words formed from `wei` with a colour prefix (`awei`, `ewei`, `iwei`, `owei`, `uwei`, `ywei`, `aewei`) are **exempt** from the connector rules. The merged form without a connector is the sole written form for question words. See `2-predication/interrogative.md` §II.
 
 ---
 
@@ -99,6 +111,7 @@ When the noun is **generic or indefinite** (not tied to a specific referent), th
 Proper nouns (personal names, place names, etc.) are **exempt from both the definiteness prefix requirement (§IV-A) and the classification rules (§V)**:
 
 - A proper name **may** carry any colour prefix, or **no prefix at all** — both are common. Unlike common nouns, proper nouns are **not** required to carry a prefix when definite (they are inherently definite by nature). In practice, some proper terms in everyday usage appear without a colour prefix, and others carry one assigned by **historical or cultural convention** rather than by the ontological properties of the referent.
+- When a prefix is applied to a proper noun, it uses the **apostrophe connector** (`'`): `e'austareus`, `i'auronius`, `o'songeus`. The apostrophe signals that the prefix is culturally assigned, not the 共識 ontological default.
 - The 7-Question Filter (§V) applies only to common nouns and should not be used to determine a proper noun's prefix.
 - When a prefix is used on a proper name, the same city might carry a different prefix in different historical eras, or a person's name might inherit a prefix from a founding myth.
 
@@ -148,9 +161,9 @@ The 共識 default is the conventional form, but a speaker may intentionally sub
 A speaker who uses a non-standard prefix does not cause confusion; the root morpheme carries the core semantic weight. The variant prefix acts as a deliberate "camera lens" that highlights a specific property the speaker wishes to foreground, even if it deviates from convention.
 
 > **Example (共識 + 異體字):**
-> 共識: `a-fora` (Red) — fire's conventional framing as alive/energy
-> 異體字: `y-fora` (Black) — fire framed as a dangerous, dense, unyielding destructive mass
-> 異體字: `o-fora` (White) — fire framed abstractly, as concept or spirit
+> 共識: `a-fora` (Red) — fire's conventional framing as alive/energy (hyphen)
+> 異體字: `y'fora` (Black) — fire framed as a dangerous, dense, unyielding destructive mass (apostrophe)
+> 異體字: `o'fora` (White) — fire framed abstractly, as concept or spirit (apostrophe)
 
 Tier 1 (Contextual Fluidity) and the 異體字 override are distinct: Tier 1 applies to objects that genuinely have no single conventional framing and the speaker selects freely; 異體字 applies to nouns that have a known 共識 default which the speaker chooses to override. Emotional colouring is one legitimate motivation for a 異體字 override — a speaker may deliberately substitute a non-standard colour prefix to tint a definite noun with a specific emotional register, independent of its ontological properties (see `3-subsystems/colour-emotion.md` for the full emotional register system).
 

@@ -3,8 +3,8 @@
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
 **Last updated:** 2026-07-26
-**Version:** 2.4.1
-**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
+**Version:** 2.5.0
+**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E, §III Restored Consonant Rule), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
 
@@ -144,17 +144,17 @@ Both `-ius` and `-eus` are fully productive and are commonly used for person and
 | Form | Meaning |
 |---|---|
 | `fosia` | full of ice / icy (from `fos`, "ice") |
-| `foraia` | full of fire / fiery (from `fora`, "fire") |
+| `forania` | full of fire / fiery (from `fora`, "fire") |
 | `auronia` | full of sky / vast (from `auron`, "sky") |
 | `song nia` | rich in friends (from `song`, "friend" — phonotactic block) |
 
 `-ia` derives an abundative noun from a base noun — "one full of X, abounding in X." The suffix form is the shortened combining form of `nia` ("abundance, fullness").
 
-Abundative-derived words **inherit the colour prefix of the base**: `a-foraia` (from `a-fora`, "fire"), `a-song nia` (from `a-song`, "friend"). See §V.
+Abundative-derived words **inherit the colour prefix of the base**: `a-forania` (from `a-fora`, "fire"), `a-song nia` (from `a-song`, "friend"). See §V.
 
 For roots ending in an end-only or edge-only consonant, `-ia` appears in its full-root multi-word form `nia` (§III-B.1). Example: `song nia` = "rich in friends" (not `*songia`).
 
-`-ia` contrasts with `-ius` (similative): `foraius` = fire-like (outward resemblance); `foraia` = full of fire / fiery (inward pervasion).
+`-ia` contrasts with `-ius` (similative): `forarius` = fire-like (outward resemblance); `forania` = full of fire / fiery (inward pervasion).
 
 ---
 
@@ -287,6 +287,20 @@ Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`,
 
 This constraint applies identically to all suffixes (including `-ius`, `-eus`, and `-ia`) and all heads.
 
+#### Restored Consonant Constraint: vowel-initial suffixes
+
+The suffixes `-ius`, `-eus`, and `-ia` are shortened combining forms of full content roots (`rius`, `meus`, `nia`). When the base root **ends in a vowel**, fusing the suffix would create a vowel-vowel hiatus at the morpheme boundary. In this case, the suffix's **elided first consonant is restored** from the full root:
+
+| Suffix | Full Root | Restored Consonant | Vowel-final root example | Consonant-final example (no change) |
+|:---|:---|:---|:---|:---|
+| `-ius` | `rius` | `r` | `fora` + `-ius` → `forarius` | `auron` + `-ius` → `auronius` |
+| `-eus` | `meus` | `m` | `lira` + `-eus` → `lirameus` | `auron` + `-eus` → `auroneus` |
+| `-ia` | `nia` | `n` | `fora` + `-ia` → `forania` | `fos` + `-ia` → `fosia` |
+
+Consonant-final roots fuse cleanly — the suffix's vowel-initial form attaches directly with no restoration. When the root's final consonant happens to match the restored consonant (e.g., `auror` + `-ius` → `aurorius` vs. `auro` + `-ius` → `aurorius`), homographs may result. Context disambiguates.
+
+This rule is formalised in `0-foundation/grammar-syntax.md` §III.
+
 ### B. Multi-Word Compounds
 
 Multi-word compounds are two orthographic words with a space. Each word is processed independently per Modular Stitching (`0-foundation/tone-prosody.md` §IV-D):
@@ -330,7 +344,7 @@ For the suffix system, the formal register preserves the full root as a suffix:
 |---|---|---|
 | `takamae` | `misomaeha` | eater |
 | `wem pos` | `wem poska` | warm-place |
-| `foraia` | `fora nia` | full of fire |
+| `forania` | `fora nia` | full of fire |
 
 Agent suffix `-maeha` (from `maeha`, "person") is the only suffix with a distinct formal register form. Other suffixes use their everyday form in all registers.
 
@@ -361,7 +375,7 @@ For derivations from nouns — where the base already carries a colour prefix �
 |---|---|---|
 | `-ius` | Similative | `i-auronius` (from `i-auron`, "sky") |
 | `-eus` | Relational | `i-auroneus` (from `i-auron`, "sky") |
-| `-ia` | Abundative | `a-foraia` (from `a-fora`, "fire") |
+| `-ia` | Abundative | `a-forania` (from `a-fora`, "fire") |
 
 Multi-word heads (`pos`, `posia`, `param`, `isra`, etc.) carry their own prefix as head nouns; the compound's prefix comes from the head (`ae-bau pos` = "the bakery", `ae-fos posia` = "the land of ice"), not from the modifier. This is standard head-last compounding (§III-B), distinct from the base-inheritance rule for fused suffixes.
 

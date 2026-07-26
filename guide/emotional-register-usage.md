@@ -115,15 +115,15 @@ The most straightforward form: one colour frames the entire scene, another colou
 
 A clause-level (or verb-level) emotional particle combines with one or more nouns bearing emotional-override prefixes (異體字). The emotional particle colours the proposition; the prefix override colours the speaker's subjective perception of the noun itself.
 
-> **`a, y-fora auvltake.`**
+> **`a, y'fora auvltake.`**
 > — "(With anger,) the fire (tinted with fear) entered."
 >
-> Red (`a`, anger) at clause level. `y-fora` uses Black override (共識 is `a-fora`) — the fire is perceived as fearsome, dense, unyielding. The speaker is furious *that* this terrifying fire has entered.
+> Red (`a`, anger) at clause level. `y'fora` uses Black override (共識 is `a-fora`) — the fire is perceived as fearsome, dense, unyielding. The speaker is furious *that* this terrifying fire has entered.
 
-> **`e, ki i-lira lirani taki.`**
+> **`e, ki i'lira lirani taki.`**
 > — "(With joy,) I drink the water (tinted with sadness)."
 >
-> Yellow (`e`, joy) frames the scene. `i-lira` uses Blue emotional override on an indefinite noun — the water carries melancholy. Drinking from a stream that stirs nostalgic memories: present joy meeting the sadness borne by the water itself.
+> Yellow (`e`, joy) frames the scene. `i'lira` uses Blue emotional override on an indefinite noun — the water carries melancholy. Drinking from a stream that stirs nostalgic memories: present joy meeting the sadness borne by the water itself.
 
 > **`o, ki y-gilan sopa.`**
 > — "(With surprise,) I look at the mountain (tinted with awe)."
@@ -134,14 +134,14 @@ A clause-level (or verb-level) emotional particle combines with one or more noun
 
 Three or more colour tokens across clause-level, verb-level, and multiple noun overrides — distinct emotional dimensions operating simultaneously.
 
-> **`i, a-maeha y-forani ae-berat a rilda.`**
+> **`i, a-maeha y'forani ae'berat a rilda.`**
 > — "(With sadness,) the person speaks the awe-tinted fire-words of disgust (with anger)."
 >
 > Colour architecture:
 > - **`i`** — Blue, clause-level: the whole scene is drenched in sadness
 > - **`a-maeha`** — Red, standard ontological prefix: "the person" (living being)
-> - **`y-forani`** — Black 異體字 on `fora` (共識 `a-`): fire-words that evoke awe/fear
-> - **`ae-berat`** — Brown 異體字 on `berat`: words tinted with disgust
+> - **`y'forani`** — Black 異體字 on `fora` (共識 `a-`): fire-words that evoke awe/fear
+> - **`ae'berat`** — Brown 異體字 on `berat`: words tinted with disgust
 > - **`a rilda`** — Red, verb-level: the act of speaking is done with anger
 >
 > Five colour tokens, three distinct emotional dimensions. A mourner delivering a furious eulogy that mixes reverence for the dead with disgust at the circumstances of their death. The root meaning remains transparent (`fora` = fire, `berat` = word, `maeha` = person, `rilda` = speak); colour is purely expressive.
@@ -155,7 +155,7 @@ An emotional particle may contradict the lexical content for ironic or dissonant
 >
 > Yellow (`e`, joy) particle contradicts `hik` (to be sad). Bittersweet irony — grinning through pain, or finding strange comfort in melancholy.
 
-> **`u, y-fora auvltake.`**
+> **`u, y'fora auvltake.`**
 > — "(With calm,) the fear-tinted fire entered."
 >
 > Green (`u`, calm) clause particle + Black 異體字 on `fora`. The speaker narrates a terrifying event with deadpan composure — stoicism, dark humour, or someone in shock narrating their own disaster.

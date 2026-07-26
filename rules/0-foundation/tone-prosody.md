@@ -2,8 +2,8 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
-**Last updated:** 2026-07-12
-**Version:** 2.0.3
+**Last updated:** 2026-07-26
+**Version:** 2.1.0
 **Depends on:**
 
 ---
@@ -159,6 +159,27 @@ This is consistent with how tonal languages (Mandarin, Cantonese, Thai, Vietname
 3. **Colour prefixes** — ontological class provides additional semantic grounding
 
 This is not a grammatical rule but a **performance convention**. No morphological changes, prefixes, or alternative spellings are required — the poet or composer simply prioritises the composition's melodic contour over lexical tone, and the grammar's existing redundancy carries the disambiguation burden.
+
+### G. Tone Omission for Single-Category Words
+
+Words of 3+ syllables whose **derivation mask has exactly one letter** (N, V, ADJ, or ADV only) may **omit** `j`/`v` tone markers. Omission is **optional** but preferred. When tone is omitted, the word is written without `j` or `v` and pronounced all flat-mid.
+
+Motivation: tone markers exist to disambiguate category. A word that can only be one category has no ambiguity to resolve — tone is redundant. The `-s` suffix (for 1–2 syllable words) and colour prefixes already provide partial disambiguation for listeners; syntactic position handles the rest.
+
+| Mask | Example | With tone (allowed) | Without tone (preferred) |
+|:---|:---|:---|:---|
+| `n` | `austareus` (personal name) | `austajreus` (noun tone: `j` 1st of last-3) | `austareus` |
+| `n` | `auronius` (personal name) | `aujronius` | `auronius` |
+| `n` | `songeus` (personal name) | `songjeus` | `songeus` |
+| `v` | (hypothetical verb-only term) | `takavnak` | `takavnak` or `takanak` |
+| `a` | (hypothetical adj-only term) | `raljnikor` | `ralnikor` |
+| `d` | (hypothetical adv-only term) | `shukvnali` | `shuknali` |
+
+**Applies to:** proper nouns (e.g. personal names, place names, technical terminology), and any word whose derivation mask is a single letter.
+
+**Does not apply to:** words with 2+ mask letters (NV, NA, ND, AV, etc.) — these still require tone to disambiguate category at runtime. 1–2 syllable words are already toneless (§II-B) and unaffected.
+
+**Interaction with other rules:** the Colour Prefix Exemption (§IV-C), Tone Lock Rule (§IV-B), and Musical Tone Override (§IV-F) all apply to toneless forms exactly as they would to toned forms — the absence of `j`/`v` changes only the pitch contour of the word itself, not its prosodic relationship to prefixes, suffixes, or surrounding words.
 
 ---
 

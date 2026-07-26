@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.16.0
+**Current Version:** v1.17.0
 **Last Updated:** 2026-07-26
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -15,6 +15,27 @@
 
 **Category:**
 - **`file.md`** vX.Y.Z→X.Y.Z — What changed
+
+**Validation:**
+- `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.17.0 — 2026-07-26
+
+Three new phonological/orthographic rules: Restored Consonant Rule for vowel-initial suffixes,
+Tone Omission for single-category words, and orthographic split (hyphen vs apostrophe)
+for colour prefix connectors.
+
+**Spec:**
+- **`grammar-syntax.md`** v2.3.0→2.4.0 — §III replaced: Diphthong Merge → Restored Consonant Rule. Vowel-final roots + vowel-initial suffixes (`-ius`/`-eus`/`-ia`) restore the suffix's elided first consonant (`r`/`m`/`n` from `rius`/`meus`/`nia`).
+- **`derivational-compounding.md`** v2.4.1→2.5.0 — Updated examples (`foraia`→`forania`, `foraius`→`forarius`). New §III-A sub-rule: Restored Consonant Constraint for vowel-initial suffixes.
+- **`tone-prosody.md`** v2.0.3→2.1.0 — New §IV-G: Tone Omission for Single-Category Words. 3+ syllable words with single-letter derivation mask may omit `j`/`v` tone markers. Applies to names, terminology, and any mask=`n`/`v`/`a`/`d` words.
+- **`nouns-colour-prefix.md`** v1.2.0→1.3.0 — §II-A rewritten: two-connector system (hyphen `-` for foregrounded/共識, apostrophe `'` for emotional 異體字 and proper nouns). §IV-C proper noun apostrophe convention (`e'austareus`). §VI 異體字 examples updated.
+- **`colour-emotion.md`** v2.4.0→2.5.0 — §IV-F clause-initial fusion rewritten with apostrophe fused form (`a'maeha`) and bare-noun casual variant (`a maeha`). §VII table and §VIII examples updated.
+- **`numerals.md`** v1.1.0→1.1.1 — `i-lira` → `i'lira` (apostrophe for emotional override on indefinite nouns).
+- **`demonstratives.md`** v1.1.0→1.1.1 — Emotional override examples (`thin e'bau`, `thin a'bau`, etc.) → apostrophe.
+- **`imperatives.md`** v1.1.0→1.1.1 — Vocative `hei` colour forms (`e'hei`, `i'hei`, etc.) → apostrophe.
+- **`word-creation-pipeline.md`** v2.1.0→2.2.0 — New §VIII: Editorial Policy — When to Store Derived & Compound Words. Decision checklist (6 questions), per-type policy table, cross-language parallels (Chinese 朋友們, English baker), concrete examples, and `notes`-field rationale recording convention.
+- **`guide/emotional-register-usage.md`** — All 異體字 examples updated to apostrophe connector.
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass

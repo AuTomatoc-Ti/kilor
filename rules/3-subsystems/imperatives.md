@@ -2,8 +2,8 @@
 
 **Module:** Imperative Mood, Suggestion, Prohibition, Vocative
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.0
+**Last updated:** 2026-07-26
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `2-predication/negation.md`, `3-subsystems/colour-emotion.md`
 **Interacts with:** `3-subsystems/optative.md` (hortative cross-reference), `3-subsystems/aspect.md` (aspect in commands)
 
@@ -82,14 +82,14 @@ A colour prefix may optionally attach to `hei` for emotional nuance (異體字 p
 | Form | Emotional Nuance |
 |---|---|
 | `a-hei` | Calling with passion or anger |
-| `e-hei` | Calling with warmth, cheerful |
-| `i-hei` | Calling with melancholy |
-| `o-hei` | Calling with reverence, formal |
-| `u-hei` | Calling with joy |
-| `y-hei` | Calling with curiosity or surprise |
-| `ae-hei` | Calling dismissively, condescending |
+| `e'hei` | Calling with warmth, cheerful |
+| `i'hei` | Calling with melancholy |
+| `o'hei` | Calling with reverence, formal |
+| `u'hei` | Calling with joy |
+| `y'hei` | Calling with curiosity or surprise |
+| `ae'hei` | Calling dismissively, condescending |
 
-> `ae-hei, ti!` — "Hey, you!" (dismissive)
+> `ae'hei, ti!` — "Hey, you!" (dismissive)
 
 ### Vocative Position
 
