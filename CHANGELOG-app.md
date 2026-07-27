@@ -1,4 +1,4 @@
-**Current Version:** v1.4.1
+**Current Version:** v1.5.0
 **Last Updated:** 2026-07-27
 **Format:** `**file** — what changed`
 
@@ -19,7 +19,26 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
----
+## workspace v1.5.0 — 2026-07-28
+
+IPA-to-speech audio pronunciation (experimental, off by default). espeak-ng + ffmpeg generate Ogg Opus files. 🔊 button appears next to IPA when enabled in Settings.
+
+**Frontend:**
+- **`TableView.jsx`** — Added `PronounceButton` component (🔊) in IPA column of table rows, detail panel, and word detail page. Button renders only when `showAudio` is true. Uses persistent `<audio id="audio-player">` element to avoid browser autoplay-policy issues. Audio URL is `./audio/{id}.ogg` (relative, works with Vite base path).
+- **`SettingsPanel.jsx`** — Added "Audio pronunciation 🔊 (experimental)" checkbox (default off).
+- **`Header.jsx`** — Forwards `showAudio`/`onToggleAudio` props to SettingsPanel.
+- **`App.jsx`** — Added `showAudio` state (default false), passes to Header, TableBody, and WordDetailPage. Added hidden `<audio id="audio-player" preload="auto">` element.
+- **`App.css`** — `.pronounce-btn`, `.pronounce-btn-inline`, `.pronounce-btn-detail` styles. `.td-form` cursor:copy moved to `.td-form-text`.
+
+**DB / Backend:**
+- **`kilor/commands/audio.py`** (new) — CLI command: `python kilor.py audio --generate` synthesizes `.ogg` Opus files for all words via espeak-ng → temp WAV → ffmpeg pipeline. Also supports `--id WORD_ID` and `--check`.
+- **`kilor/__main__.py`** — Registered `audio` subcommand.
+- **`kilor/dictionary/public/audio/`** — 403 `.ogg` audio files (2.0 MB total, ~9.5× smaller than WAV). Tracked in git (removed from .gitignore).
+
+**Validation:**
+- `python kilor.py check` — ✅ All entries pass
+- `npx vitest --run src/App.test.jsx` — ✅ 50/50 pass
+
 
 ## workspace v1.4.1 — 2026-07-27
 
