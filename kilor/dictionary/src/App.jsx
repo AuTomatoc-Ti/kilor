@@ -38,6 +38,7 @@ function readStateFromURL() {
     sortCol: sp.get('sort') || 'form',
     sortDir: sp.get('dir') === 'desc' ? 'desc' : 'asc',
     filterOpen: sp.get('filt') === '1',
+    page: parseIntSafe('page', 1),
     detailId: isNaN(detailRaw) ? null : detailRaw,
   };
 }
@@ -53,6 +54,7 @@ function writeStateToURL(state) {
   if (state.sortCol !== 'form') sp.set('sort', state.sortCol);
   if (state.sortDir !== 'asc') sp.set('dir', state.sortDir);
   if (state.filterOpen) sp.set('filt', '1');
+  if (state.page > 1) sp.set('page', state.page);
   if (state.detailId) sp.set('detail', state.detailId);
   const qs = sp.toString();
   const url = window.location.pathname + (qs ? '?' + qs : '');
@@ -104,9 +106,12 @@ function FilterChips({
 
 // ── Main App ────────────────────────────────────────────────────────────────
 
+const PAGE_SIZE = 50;
+
 export default function App() {
   const initial = readStateFromURL();
 
+  const [searchDraft, setSearchDraft] = useState(initial.search);
   const [search, setSearch] = useState(initial.search);
   const [dbVersion, setDbVersion] = useState(0);
   const [filterTypes, setFilterTypes] = useState(initial.types);
@@ -121,31 +126,48 @@ export default function App() {
   const [detailId, setDetailId] = useState(initial.detailId);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [totalCount, setTotalCount] = useState(0);
+  const [totalWordCount, setTotalWordCount] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const [toast, setToast] = useState(null);
   const [autocompleteItems, setAutocompleteItems] = useState([]);
   const [autocompleteIndex, setAutocompleteIndex] = useState(-1);
   const [keyboardRowIndex, setKeyboardRowIndex] = useState(-1);
+  const [page, setPage] = useState(initial.page);
+  const [queryTotalCount, setQueryTotalCount] = useState(0);
 
   const searchRef = useRef(null);
+
+  // ── 300ms debounce for search ─────────────────────────────────────────
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearch(searchDraft);
+      setPage(1); // reset to page 1 on new search
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchDraft]);
+
+  // Reset page when filters change
+  useEffect(() => {
+    setPage(1);
+  }, [filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir]);
 
   // URL sync
   useEffect(() => {
     if (!loading) {
-      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, detailId });
+      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, page, detailId });
     }
-  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, loading, detailId]);
+  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, loading, page, detailId]);
 
   // Autocomplete
   const handleSearchChange = useCallback((val) => {
-    setSearch(val);
+    setSearchDraft(val);
     const items = autocompleteSearch(val);
     setAutocompleteItems(items);
     setAutocompleteIndex(-1);
   }, []);
 
   const selectAutocomplete = useCallback((form) => {
+    setSearchDraft(form);
     setSearch(form);
     setAutocompleteItems([]);
     setAutocompleteIndex(-1);
@@ -154,7 +176,7 @@ export default function App() {
   useEffect(() => {
     initDatabase()
       .then(() => {
-        setTotalCount(getMeta().total);
+        setTotalWordCount(getMeta().total);
         setLoading(false);
       })
       .catch(err => {
@@ -163,13 +185,22 @@ export default function App() {
       });
   }, []);
 
-  const entries = useMemo(
+  const result = useMemo(
     () => queryWords({
       search, types: filterTypes, masks: filterMasks,
       prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir,
+      page, pageSize: PAGE_SIZE,
     }),
-    [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion]
+    [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion, page]
   );
+
+  // Sync query total count for display
+  useEffect(() => {
+    setQueryTotalCount(result.totalCount);
+  }, [result.totalCount]);
+
+  const entries = result.rows;
+  const totalPages = Math.max(1, Math.ceil(result.totalCount / PAGE_SIZE));
 
   const handleSort = useCallback((col) => {
     if (sortCol === col) {
@@ -196,8 +227,9 @@ export default function App() {
     setRefreshing(true);
     try {
       const count = await reloadDatabase();
-      setTotalCount(count);
+      setTotalWordCount(count);
       setDbVersion(v => v + 1);
+      setPage(1);
     } catch (err) {
       setError('Cannot refresh: ' + err.message);
     } finally {
@@ -206,6 +238,7 @@ export default function App() {
   }, []);
 
   const handleSearchByForm = useCallback((form) => {
+    setSearchDraft(form);
     setSearch(form);
     setFilterTypes([]);
     setFilterMasks([]);
@@ -230,7 +263,6 @@ export default function App() {
       const target = e.target;
       const isSearchFocused = target && target.id === 'search';
 
-      // Only handle when search is focused or the event target is the document body
       if (!isSearchFocused && target !== document.body && target !== document.documentElement) return;
 
       // Autocomplete open → navigate autocomplete
@@ -258,7 +290,7 @@ export default function App() {
         }
       }
 
-      // Row keyboard navigation (when search is focused or no autocomplete open)
+      // Row keyboard navigation
       if (e.key === 'ArrowDown' && entries.length > 0) {
         e.preventDefault();
         setKeyboardRowIndex(i => Math.min(i + 1, entries.length - 1));
@@ -279,6 +311,7 @@ export default function App() {
         e.preventDefault();
         if (expandedRow) { setExpandedRow(null); return; }
         if (filterOpen) { setFilterOpen(false); return; }
+        setSearchDraft('');
         setSearch('');
         setKeyboardRowIndex(-1);
         return;
@@ -297,11 +330,11 @@ export default function App() {
   }, [detailId, entries]);
 
   // Fuzzy fallback: if search returns 0 exact results, try fuzzy
-  const fuzzyResults = useMemo(() => {
+  const fuzzyResult = useMemo(() => {
     if (search && entries.length === 0 && !filterTypes.length && !filterMasks.length && !filterPrefixes.length && sylMin <= 1 && sylMax >= 10) {
       return fuzzySearch(search);
     }
-    return [];
+    return { rows: [], totalCount: 0 };
   }, [search, entries.length, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax]);
 
   if (loading) {
@@ -326,12 +359,12 @@ export default function App() {
     <>
       {toast && <Toast text={toast} onDone={() => setToast(null)} />}
       <div className="top-bar">
-        <Header total={totalCount} />
+        <Header total={totalWordCount} />
         <Toolbar
-          search={search}
+          search={searchDraft}
           onSearchChange={handleSearchChange}
-          resultCount={entries.length}
-          totalCount={totalCount}
+          resultCount={result.totalCount}
+          totalCount={totalWordCount}
           filterOpen={filterOpen}
           onFilterToggle={() => setFilterOpen(o => !o)}
           onRefresh={handleRefresh}
@@ -387,13 +420,13 @@ export default function App() {
             <TableHeader sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
           </div>
           <div className="main-content">
-            {fuzzyResults.length > 0 && (
+            {fuzzyResult.rows.length > 0 && (
               <div className="fuzzy-banner">
                 No exact matches for "<strong>{search}</strong>". Showing similar words:
               </div>
             )}
             <TableBody
-              entries={fuzzyResults.length > 0 ? fuzzyResults : entries}
+              entries={fuzzyResult.rows.length > 0 ? fuzzyResult.rows : entries}
               prefixInfo={PREFIX_INFO}
               onSearchByForm={handleSearchByForm}
               expandedRow={expandedRow}
@@ -402,6 +435,10 @@ export default function App() {
               keyboardRowIndex={keyboardRowIndex}
               onCopyToast={handleCopyToast}
               onViewFull={handleViewFull}
+              page={page}
+              totalPages={totalPages}
+              totalCount={result.totalCount}
+              onPageChange={setPage}
             />
           </div>
         </>

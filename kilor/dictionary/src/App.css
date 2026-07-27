@@ -178,6 +178,74 @@ mark.search-highlight { background: #fef08a; color: inherit; padding: 0 1px; bor
 .pos-meaning-item { padding: 2px 0; font-size: .88rem; }
 .notes-text { color: #555; font-size: .88rem; line-height: 1.6; white-space: pre-wrap; }
 
+/* ── IPA column in table ──────────────────────────────────────────────── */
+
+.td-ipa { color: #888; font-size: .82rem; white-space: nowrap; }
+.td-ipa .ipa-text { font-family: 'Gentium Plus', 'Charis SIL', 'DejaVu Sans', serif; }
+
+/* ── Prefix legend modal ────────────────────────────────────────────────── */
+
+.prefix-legend-trigger {
+  display: inline-block;
+  width: 16px; height: 16px;
+  line-height: 16px; text-align: center;
+  font-size: .7rem; font-weight: 700;
+  color: #4a6cf7;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+.prefix-legend-trigger:hover { background: #c7d2fe; color: #1a56db; }
+
+.prefix-legend-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+}
+.prefix-legend-modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 28px;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.prefix-legend-modal h3 { margin-bottom: 16px; font-size: 1.1rem; }
+.prefix-legend-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.prefix-legend-row { display: flex; align-items: center; gap: 10px; font-size: .88rem; }
+.prefix-legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+.prefix-legend-label { min-width: 32px; }
+.prefix-legend-cls { color: #555; }
+.prefix-legend-emotion { color: #999; font-size: .8rem; }
+.prefix-legend-note { font-size: .78rem; color: #888; margin-bottom: 12px; line-height: 1.5; }
+.prefix-legend-close {
+  background: #4a6cf7; color: #fff; border: none;
+  border-radius: 6px; padding: 6px 16px; font-size: .85rem; cursor: pointer;
+}
+.prefix-legend-close:hover { background: #1a56db; }
+
+/* ── Pagination bar ─────────────────────────────────────────────────────── */
+
+.pagination-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; padding: 14px 24px;
+  background: #fff; border-top: 1px solid #e0e0e0;
+  font-size: .85rem; color: #555;
+}
+.pagination-btn {
+  background: #f4f6ff; border: 1px solid #c7d2fe;
+  border-radius: 6px; padding: 5px 14px;
+  font-size: .82rem; cursor: pointer; color: #4a6cf7;
+}
+.pagination-btn:hover:not(:disabled) { background: #c7d2fe; }
+.pagination-btn:disabled { opacity: .4; cursor: default; }
+.pagination-info { color: #888; }
+.pagination-page { font-weight: 600; color: #333; }
+
 @media (max-width: 768px) {
   .header { padding: 12px 16px; }
   .toolbar-main { padding: 10px 16px; flex-wrap: wrap; }

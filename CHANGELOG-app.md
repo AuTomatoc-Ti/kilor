@@ -1,5 +1,5 @@
-**Current Version:** v1.1.0
-**Last Updated:** 2026-07-26
+**Current Version:** v1.4.0
+**Last Updated:** 2026-07-27
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -20,6 +20,59 @@
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
 ---
+
+## workspace v1.4.0 — 2026-07-27
+
+Stream C UI features + export flags: IPA column in table, colour prefix legend modal, --lite and --no-standalone export flags, schema indexes. See also: CHANGELOG.md v1.19.0.
+
+**Frontend:**
+- **`TableView.jsx`** — New IPA column in main table (7-column layout: Word, IPA, Gloss, Type, Prefix, NVAD, Syl). New `PrefixLegend` component: `?` icon in Prefix header opens modal overlay with all 7 colour prefixes, swatches, class names, and emotions. `detail-tr` colSpan updated to 7.
+- **`App.css`** — IPA column styles (`.td-ipa`, serif font). Prefix legend styles: trigger button (`.prefix-legend-trigger`), overlay (`.prefix-legend-overlay`), modal (`.prefix-legend-modal`), grid rows (`.prefix-legend-row`, `.prefix-legend-swatch`, `.prefix-legend-label`), close button. Pagination bar styles (`.pagination-bar`, `.pagination-btn`).
+
+**DB / Backend:**
+- **`export.py`** — `_export_html()` and `cmd_export()` accept `lite` and `no_standalone` kwargs. `--lite`: creates temp stripped DB (drops `examples`, `compound_meta`, `compound_components`, `inflections`) and VACUUMs. `--no-standalone`: skips base64 embedding, outputs companion `dictionary.db` alongside `dictionary.html`; app fetches via `./dictionary.db`. Temp dir cleanup after export.
+- **`__main__.py`** — Parses `--lite` and `--no-standalone` flags for `export` command, passes to `cmd_export()`.
+- **`data/kilor.db`** — `idx_words_colour` and `idx_words_syl_count` indexes created on live DB (already in `SCHEMA_SQL`).
+
+**Validation:**
+- `npx vitest run` — ✅ 34/34 pass
+- `npx vite build` — ✅ Clean: 274KB JS, 12KB CSS, 660KB WASM
+- `python kilor.py check` — ✅ 25 pre-existing errors (none new)
+
+## workspace v1.3.0 — 2026-07-27
+
+Frontend scaling: SQL-level pagination (50 words/page), 300ms search debounce, fuzzy search capped at 30 results. Stale `react-window` dependency removed. See also: CHANGELOG.md v1.19.0.
+
+**Frontend:**
+- **`db.js`** — `queryWords()` now returns `{ rows, totalCount }` with `page`/`pageSize` params. Added `LIMIT`/`OFFSET` to SQL queries. Added separate COUNT query for total. Extracted `buildFilterClauses()` to share WHERE logic across both queries. `fuzzySearch()` returns `{ rows, totalCount }`, capped to top 30 (was unbounded). `buildTestDB()` schema: added `pos` column to `meanings` table + accepts mixed string/object meanings.
+- **`App.jsx`** — Added `searchDraft`/`search` split with 300ms debounce via `useEffect` + `setTimeout`. Added `page` state, resets to 1 on search/filter/sort change. Wires `page` and `totalPages` to `TableView`. Updated `fuzzySearch` caller to use `fuzzyResult.rows`.
+- **`TableView.jsx`** — New `PaginationBar` component (Previous/Next buttons, "X–Y of Z" indicator, page count, attached below table). Hidden when only 1 page. `TableBody` accepts and forwards `page`, `totalPages`, `totalCount`, `onPageChange` props.
+- **`vite.config.js`** — Fixed WASM path: `fs.allow` from `['..']` to `['../..']` (sql.js WASM lives at root `node_modules/`, two levels up from `kilor/dictionary/`).
+- **`package.json`** — Removed stale `react-window` dependency (leftover from 3 failed virtual scrolling attempts).
+
+**Tests:**
+- **`App.test.jsx`** — Updated all tests: dynamic word count (no hardcoded "361"), `typeAndWait()` helper for 300ms debounce, `beforeEach`/`afterEach` for URL reset + cleanup. Removed stale `.section` references. Added "view full entry" workflow test (search → expand → full detail → back). 25/25 pass.
+- **`db.reload.test.js`** — Updated all tests for `{ rows, totalCount }` return type from `queryWords()`. Fixed all synthetic test words to use valid Kilor forms (consonant-final words crashed `splitSyllablesJS`). 9/9 pass.
+
+**Validation:**
+- `npx vitest run` — ✅ 34/34 pass (25 App + 9 db.reload)
+- `npx vite build` — ✅ 44 modules, 272KB JS, 10KB CSS, 660KB WASM
+- `python kilor.py check` — ✅ 25 pre-existing errors (none new)
+
+## workspace v1.2.0 — 2026-07-27
+
+Compound backfill review applied to live DB. 67 flagged compounds corrected: 6 prefix updates, 16 component re-links, 51 is_root conversions, 1 deletion (arrinna), 1 rename (ero isra→erolise isra), 2 meaning updates. Four new suffix roots added (lu, rin, par, nous). ous renamed to nous. Spec updated: derivational-compounding.md v2.5.0→2.6.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 67 compound entries updated across `words`, `meanings`, `compound_components`, `compound_meta` tables. 1 word deleted (arrinna, ID 246). 1 word renamed (ero isra→erolise isra, ID 313). 4 new roots added: `lu` (o-, N), `rin` (o-, N), `par` (e-, NV), `nous` (o-, N, renamed from `ous` ID 177). 1 new compound: `rinok param` (ID 413, multi, result pattern, measurement). `rinok` mask N→NV. `pireilu` is_compound→0, is_root→1. `nous` is_function_word=1. FTS rebuilt.
+
+**Spec:**
+- **`rules/3-subsystems/derivational-compounding.md`** — v2.5.0→2.6.0. §I table: From Root updated (pireilu→lu, rinok→rin, chap→par). §I-E Process prefix: o-→e-. §V-A: Process nouns moved from Abstract to Crafted.
+
+**Validation:**
+- `python kilor.py check` — ✅ 25 errors (all pre-existing; no new errors from our changes)
+
+See also: `CHANGELOG.md` v1.18.0 for spec-side details.
 
 ## workspace v1.1.0 — 2026-07-26
 

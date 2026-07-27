@@ -122,8 +122,78 @@ export function autocompleteSearch(term) {
   return queryAll(sql, [`%${t}%`, `${t}%`]).map((r) => ({ id: r.id, form: r.form }));
 }
 
-// ── Main word query with relevance-ranked search ─────────────────────────────
+// ── SQL building helpers for queryWords / countWords ─────────────────────────
 
+/**
+ * Build the shared WHERE clause and params for filters.
+ * Returns { whereClauses, params } to be joined with ' AND '.
+ */
+function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) {
+  const clauses = [];
+  const params = [];
+
+  const hasSearch = search && search.trim().length > 0;
+  const searchTerm = hasSearch ? search.toLowerCase() : '';
+
+  if (types.length > 0) {
+    const typeConds = [];
+    for (const t of types) {
+      if (t === 'root') { typeConds.push('w.is_root = 1'); }
+      else if (t === 'compound') { typeConds.push('w.is_compound = 1'); }
+      else if (t === 'function') { typeConds.push('w.is_function_word = 1'); }
+    }
+    if (typeConds.length > 0) { clauses.push(`(${typeConds.join(' OR ')})`); }
+  }
+
+  if (masks.length > 0) {
+    const maskConds = [];
+    for (const m of masks) {
+      maskConds.push('w.derivation_mask LIKE ?');
+      params.push(`%${m}%`);
+    }
+    if (maskConds.length > 0) { clauses.push(`(${maskConds.join(' OR ')})`); }
+  }
+
+  if (prefixes.length > 0) {
+    const prefixConds = [];
+    for (const p of prefixes) {
+      if (p === 'NONE') {
+        prefixConds.push("(w.consensus_prefix IS NULL OR w.consensus_prefix = '')");
+      } else {
+        prefixConds.push('w.consensus_prefix = ?');
+        params.push(p);
+      }
+    }
+    if (prefixConds.length > 0) { clauses.push(`(${prefixConds.join(' OR ')})`); }
+  }
+
+  if (sylMin != null && sylMin > 1) {
+    clauses.push('w.syl_count >= ?');
+    params.push(sylMin);
+  }
+  if (sylMax != null && sylMax < 10) {
+    clauses.push('w.syl_count <= ?');
+    params.push(sylMax);
+  }
+
+  // Search filter (pre-GROUP BY) — also matches search_text for inflection/case form search
+  if (hasSearch) {
+    clauses.push(`(LOWER(w.form) LIKE '%' || ? || '%' OR LOWER(m.gloss) LIKE '%' || ? || '%' OR LOWER(w.search_text) LIKE '%' || ? || '%')`);
+    params.push(searchTerm, searchTerm, searchTerm);
+  }
+
+  return { clauses, params, hasSearch, searchTerm };
+}
+
+// ── Main word query with relevance-ranked search + pagination ────────────────
+
+/**
+ * Query words with optional filters, search, sorting, and pagination.
+ *
+ * @returns {{ rows: Array, totalCount: number }}
+ *   - rows: enriched word entries for the current page (max pageSize items)
+ *   - totalCount: total number of matching rows (for pagination controls)
+ */
 export function queryWords({
   search = '',
   types = [],
@@ -133,12 +203,41 @@ export function queryWords({
   sylMax = 10,
   sortCol = 'form',
   sortDir = 'asc',
+  page = 1,
+  pageSize = 50,
 } = {}) {
-  if (!db) return [];
+  if (!db) return { rows: [], totalCount: 0 };
 
-  const hasSearch = search && search.trim().length > 0;
-  const searchTerm = hasSearch ? search.toLowerCase() : '';
+  const { clauses, params: filterParams, hasSearch, searchTerm } = buildFilterClauses({
+    search, types, masks, prefixes, sylMin, sylMax,
+  });
 
+  // ── Total count query ──────────────────────────────────────────────
+  let countSQL = `SELECT COUNT(DISTINCT w.id) AS cnt FROM words w LEFT JOIN meanings m ON w.id = m.word_id`;
+  if (clauses.length > 0) {
+    countSQL += ` WHERE ${clauses.join(' AND ')}`;
+  }
+  // For search: apply HAVING relevance > 0 which requires GROUP BY
+  if (hasSearch) {
+    countSQL = `SELECT COUNT(*) AS cnt FROM (
+      SELECT w.id,
+        CASE
+          WHEN LOWER(w.form) LIKE '${searchTerm}%' THEN 4
+          WHEN LOWER(w.form) LIKE '%${searchTerm}%' THEN 3
+          WHEN LOWER(w.search_text) LIKE '%${searchTerm}%' THEN 2
+          WHEN LOWER(GROUP_CONCAT(m.gloss, ' | ')) LIKE '%${searchTerm}%' THEN 1
+          ELSE 0
+        END AS relevance
+      FROM words w LEFT JOIN meanings m ON w.id = m.word_id
+      WHERE ${clauses.join(' AND ')}
+      GROUP BY w.id
+      HAVING relevance > 0
+    )`;
+  }
+  const totalCount = queryValue(countSQL, [...filterParams]);
+  if (totalCount === 0) return { rows: [], totalCount: 0 };
+
+  // ── Data query with pagination ─────────────────────────────────────
   let cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
     w.compound_type, w.derivation_mask, w.consensus_prefix,
     w.is_function_word, w.notes,
@@ -157,56 +256,10 @@ export function queryWords({
       END AS relevance`;
   }
 
-  let sql = `SELECT ${cols} FROM words w LEFT JOIN meanings m ON w.id = m.word_id WHERE 1=1`;
-  const params = [];
-
-  if (types.length > 0) {
-    const typeConds = [];
-    for (const t of types) {
-      if (t === 'root') { typeConds.push('w.is_root = 1'); }
-      else if (t === 'compound') { typeConds.push('w.is_compound = 1'); }
-      else if (t === 'function') { typeConds.push('w.is_function_word = 1'); }
-    }
-    if (typeConds.length > 0) { sql += ` AND (${typeConds.join(' OR ')})`; }
+  let sql = `SELECT ${cols} FROM words w LEFT JOIN meanings m ON w.id = m.word_id`;
+  if (clauses.length > 0) {
+    sql += ` WHERE ${clauses.join(' AND ')}`;
   }
-
-  if (masks.length > 0) {
-    const maskConds = [];
-    for (const m of masks) {
-      maskConds.push('w.derivation_mask LIKE ?');
-      params.push(`%${m}%`);
-    }
-    if (maskConds.length > 0) { sql += ` AND (${maskConds.join(' OR ')})`; }
-  }
-
-  if (prefixes.length > 0) {
-    const prefixConds = [];
-    for (const p of prefixes) {
-      if (p === 'NONE') {
-        prefixConds.push("(w.consensus_prefix IS NULL OR w.consensus_prefix = '')");
-      } else {
-        prefixConds.push('w.consensus_prefix = ?');
-        params.push(p);
-      }
-    }
-    if (prefixConds.length > 0) { sql += ` AND (${prefixConds.join(' OR ')})`; }
-  }
-
-  if (sylMin != null && sylMin > 1) {
-    sql += ' AND w.syl_count >= ?';
-    params.push(sylMin);
-  }
-  if (sylMax != null && sylMax < 10) {
-    sql += ' AND w.syl_count <= ?';
-    params.push(sylMax);
-  }
-
-  // Search filter (pre-GROUP BY) — also matches search_text for inflection/case form search
-  if (hasSearch) {
-    sql += ` AND (LOWER(w.form) LIKE '%' || ? || '%' OR LOWER(m.gloss) LIKE '%' || ? || '%' OR LOWER(w.search_text) LIKE '%' || ? || '%')`;
-    params.push(searchTerm, searchTerm, searchTerm);
-  }
-
   sql += ' GROUP BY w.id';
 
   // Search filter (post-GROUP BY / HAVING)
@@ -215,11 +268,10 @@ export function queryWords({
   }
 
   const dir = sortDir === 'desc' ? 'DESC' : 'ASC';
-  const defaultOrder = hasSearch ? 'relevance DESC, LOWER(w.form) ASC' : `LOWER(w.form) ${dir}`;
 
   // When searching, always use relevance ordering (overrides sortCol)
   if (hasSearch) {
-    sql += ` ORDER BY ${defaultOrder}`;
+    sql += ` ORDER BY relevance DESC, LOWER(w.form) ASC`;
   } else {
     switch (sortCol) {
       case 'form': sql += ` ORDER BY LOWER(w.form) ${dir}`; break;
@@ -232,8 +284,15 @@ export function queryWords({
     }
   }
 
-  const rows = queryAll(sql, params);
-  return enrichEntries(rows);
+  // Pagination
+  const safePage = Math.max(1, page);
+  const safePageSize = Math.max(1, Math.min(pageSize, 200));
+  const offset = (safePage - 1) * safePageSize;
+  sql += ` LIMIT ? OFFSET ?`;
+
+  const allParams = [...filterParams, safePageSize, offset];
+  const rows = queryAll(sql, allParams);
+  return { rows: enrichEntries(rows), totalCount };
 }
 
 // ── Case-form generation (browser-side, mirrors kilor/phonology.py) ──────────
@@ -603,11 +662,7 @@ function computeInflections(form, sylCount, derivationMask) {
       }
 
       // For single-mask words: also include the base form (toneless).
-      // This handles the "only 1 mask" case (2c) — show base + tonemarked.
       if (mask.length === 1) {
-        // We already set the tonemarked form above; for display we'll
-        // mark it as a tuple [base, tonemarked].
-        // Store as { noun: [base, tonemarked] } for single-mask words.
         const base = form;
         result[_maskKey(letter)] = [base, result[_maskKey(letter)]];
       }
@@ -775,11 +830,13 @@ function levenshtein(a, b) {
 }
 
 /**
- * Returns up to 10 words within Levenshtein distance threshold.
+ * Returns up to 30 words within Levenshtein distance threshold.
  * Threshold: ≤1 for 1–3 char words, ≤2 for 4–6 char words, ≤3 for 7+ char words.
+ *
+ * @returns {{ rows: Array, totalCount: number }}
  */
 export function fuzzySearch(term) {
-  if (!db || !term || term.length < 2) return [];
+  if (!db || !term || term.length < 2) return { rows: [], totalCount: 0 };
   const t = term.toLowerCase();
   const threshold = t.length <= 3 ? 1 : t.length <= 6 ? 2 : 3;
 
@@ -789,9 +846,9 @@ export function fuzzySearch(term) {
     .map((r) => ({ ...r, dist: levenshtein(t, r.form.toLowerCase()) }))
     .filter((r) => r.dist <= threshold)
     .sort((a, b) => a.dist - b.dist || a.form.localeCompare(b.form))
-    .slice(0, 10);
+    .slice(0, 30);
 
-  if (scored.length === 0) return [];
+  if (scored.length === 0) return { rows: [], totalCount: 0 };
 
   // Fetch full word data for fuzzy-matched IDs
   const idList = scored.map((r) => r.id).join(',');
@@ -799,7 +856,8 @@ export function fuzzySearch(term) {
     `SELECT w.id, w.form, w.syl_count, w.is_root, w.is_compound,
       w.compound_type, w.derivation_mask, w.consensus_prefix,
       w.is_function_word, w.notes,
-      GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat
+      GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat,
+      GROUP_CONCAT(m.pos, ' | ') AS poses_concat
     FROM words w LEFT JOIN meanings m ON w.id = m.word_id
     WHERE w.id IN (${idList})
     GROUP BY w.id
@@ -810,7 +868,10 @@ export function fuzzySearch(term) {
   // Attach fuzzy distance to entries
   const distMap = {};
   for (const r of scored) distMap[r.id] = r.dist;
-  return enriched.map((e) => ({ ...e, fuzzyDistance: distMap[e.id] }));
+  return {
+    rows: enriched.map((e) => ({ ...e, fuzzyDistance: distMap[e.id] })),
+    totalCount: enriched.length,
+  };
 }
 
 export function getMeta() {
@@ -824,17 +885,21 @@ export async function buildTestDB(entries) {
   });
   const testDB = new SQL.Database();
   testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
-  testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, sort_order INTEGER DEFAULT 0)`);
+  testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, pos TEXT DEFAULT '', sort_order INTEGER DEFAULT 0)`);
   testDB.run(`CREATE TABLE inflections (word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, form_type TEXT NOT NULL, form TEXT NOT NULL, PRIMARY KEY (word_id, form_type))`);
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);
   testDB.run(`CREATE TABLE compound_meta (compound_id INTEGER PRIMARY KEY REFERENCES words(id) ON DELETE CASCADE, pattern TEXT NOT NULL, rule_ref TEXT)`);
   testDB.run(`CREATE TABLE examples (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, kilor_text TEXT NOT NULL, english_text TEXT NOT NULL, source TEXT DEFAULT 'canonical')`);
   const iw = testDB.prepare('INSERT INTO words (id,form,syl_count,is_root,is_compound,compound_type,derivation_mask,consensus_prefix,is_function_word,notes) VALUES (?,?,?,?,?,?,?,?,?,?)');
-  const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, sort_order) VALUES (?,?,?)');
+  const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, pos, sort_order) VALUES (?,?,?,?)');
   const ii = testDB.prepare('INSERT INTO inflections (word_id, form_type, form) VALUES (?,?,?)');
   for (const e of entries) {
     iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
-    e.meanings.forEach((m, i) => im.run([e.id, m, i]));
+    e.meanings.forEach((m, i) => {
+      const gloss = typeof m === 'string' ? m : m.gloss;
+      const pos = typeof m === 'string' ? '' : (m.pos || '');
+      im.run([e.id, gloss, pos, i]);
+    });
     if (e.inflections) Object.entries(e.inflections).forEach(([t, f]) => ii.run([e.id, t, f]));
   }
   iw.free(); im.free(); ii.free();

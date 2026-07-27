@@ -27,7 +27,6 @@ function makeEntry(id, form, gloss, opts = {}) {
     is_compound: opts.is_compound ?? 0,
     compound_type: opts.compound_type ?? null,
     derivation_mask: opts.derivation_mask ?? 'N',
-    section: opts.section ?? 'G',
     consensus_prefix: opts.consensus_prefix ?? 'o-',
     is_function_word: opts.is_function_word ?? 0,
     notes: opts.notes ?? '',
@@ -49,12 +48,10 @@ async function initWithEntries(entries) {
 
 describe('reloadDatabase() — red-team E2E', () => {
   beforeEach(() => {
-    // Reset global fetch mock between tests
     vi.restoreAllMocks();
   });
 
   afterEach(() => {
-    // Close DB to prevent leaks
     const d = getDB();
     if (d) {
       try { d.close(); } catch (_) { /* already closed */ }
@@ -67,24 +64,23 @@ describe('reloadDatabase() — red-team E2E', () => {
   it('Scenario 1: Basic reload — count changes and queries return new data', async () => {
     const oldEntries = [
       makeEntry(1, 'testa', 'apple'),
-      makeEntry(2, 'testb', 'banana'),
-      makeEntry(3, 'testc', 'cherry'),
-      makeEntry(4, 'testd', 'date'),
-      makeEntry(5, 'teste', 'elderberry'),
+      makeEntry(2, 'testiba', 'banana'),
+      makeEntry(3, 'testica', 'cherry'),
+      makeEntry(4, 'testida', 'date'),
+      makeEntry(5, 'testiea', 'elderberry'),
     ];
     await initWithEntries(oldEntries);
     expect(getMeta().total).toBe(5);
-    expect(queryWords({}).length).toBe(5);
+    expect(queryWords({}).totalCount).toBe(5);
 
     const newEntries = [
-      makeEntry(10, 'newword', 'new meaning', { section: 'A', consensus_prefix: 'i-' }),
-      makeEntry(11, 'another', 'another meaning', { section: 'B', consensus_prefix: 'a-' }),
-      makeEntry(12, 'thirdword', 'third meaning', { section: 'C' }),
+      makeEntry(10, 'novora', 'new meaning', { consensus_prefix: 'i-' }),
+      makeEntry(11, 'anotera', 'another meaning', { consensus_prefix: 'a-' }),
+      makeEntry(12, 'tira', 'third meaning'),
     ];
     const newDB = await buildTestDB(newEntries);
     const newBuf = dbToArrayBuffer(newDB);
 
-    // Mock fetch to return new DB
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       arrayBuffer: () => Promise.resolve(newBuf),
@@ -95,51 +91,48 @@ describe('reloadDatabase() — red-team E2E', () => {
     expect(getMeta().total).toBe(3);
 
     const results = queryWords({});
-    expect(results.length).toBe(3);
-    expect(results.map(r => r.form).sort()).toEqual(['another', 'newword', 'thirdword']);
+    expect(results.totalCount).toBe(3);
+    expect(results.rows.map(r => r.form).sort()).toEqual(['anotera', 'novora', 'tira']);
 
-    // Verify arbitrary query against new data works
     const filtered = queryWords({ prefixes: ['i-'] });
-    expect(filtered.length).toBe(1);
-    expect(filtered[0].form).toBe('newword');
-    expect(filtered[0].consensus_prefix).toBe('i-');
+    expect(filtered.totalCount).toBe(1);
+    expect(filtered.rows[0].form).toBe('novora');
+    expect(filtered.rows[0].consensus_prefix).toBe('i-');
   });
 
   // ─── 2. Double reload ───────────────────────────────────────────────────
 
   it('Scenario 2: Double reload — both reloads work independently', async () => {
-    await initWithEntries([makeEntry(1, 'first', 'first word')]);
+    await initWithEntries([makeEntry(1, 'fira', 'first word')]);
     expect(getMeta().total).toBe(1);
 
-    const midDB = await buildTestDB([makeEntry(20, 'middle', 'middle word')]);
-    const finalDB = await buildTestDB([makeEntry(30, 'final', 'final word')]);
+    const midDB = await buildTestDB([makeEntry(20, 'midola', 'middle word')]);
+    const finalDB = await buildTestDB([makeEntry(30, 'finala', 'final word')]);
 
     const midBuf = dbToArrayBuffer(midDB);
     const finalBuf = dbToArrayBuffer(finalDB);
 
-    // First reload
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       arrayBuffer: () => Promise.resolve(midBuf),
     });
     await reloadDatabase();
     expect(getMeta().total).toBe(1);
-    expect(queryWords({})[0].form).toBe('middle');
+    expect(queryWords({}).rows[0].form).toBe('midola');
 
-    // Second reload
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       arrayBuffer: () => Promise.resolve(finalBuf),
     });
     await reloadDatabase();
     expect(getMeta().total).toBe(1);
-    expect(queryWords({})[0].form).toBe('final');
+    expect(queryWords({}).rows[0].form).toBe('finala');
   });
 
   // ─── 3. Empty DB ────────────────────────────────────────────────────────
 
   it('Scenario 3: Empty DB — reloadDatabase() returns 0, queries return empty', async () => {
-    await initWithEntries([makeEntry(1, 'hasdata', 'has data')]);
+    await initWithEntries([makeEntry(1, 'hasada', 'has data')]);
     expect(getMeta().total).toBe(1);
 
     const emptyDB = await buildTestDB([]);
@@ -151,8 +144,10 @@ describe('reloadDatabase() — red-team E2E', () => {
     const count = await reloadDatabase();
     expect(count).toBe(0);
     expect(getMeta().total).toBe(0);
-    expect(queryWords({})).toEqual([]);
-    expect(queryWords({ search: 'anything' })).toEqual([]);
+    const result = queryWords({});
+    expect(result.rows).toEqual([]);
+    expect(result.totalCount).toBe(0);
+    expect(queryWords({ search: 'anything' }).totalCount).toBe(0);
   });
 
   // ─── 4. HTTP error (500) ────────────────────────────────────────────────
@@ -169,14 +164,13 @@ describe('reloadDatabase() — red-team E2E', () => {
 
     await expect(reloadDatabase()).rejects.toThrow('HTTP 500');
 
-    // Old state intact
     expect(getDB()).toBe(oldDB);
     expect(isDatabaseLoaded()).toBe(true);
     expect(getMeta().total).toBe(1);
     const results = queryWords({});
-    expect(results.length).toBe(1);
-    expect(results[0].form).toBe('safe');
-    expect(results[0].consensus_prefix).toBe('a-');
+    expect(results.totalCount).toBe(1);
+    expect(results.rows[0].form).toBe('safe');
+    expect(results.rows[0].consensus_prefix).toBe('a-');
   });
 
   // ─── 5. Corrupt binary ──────────────────────────────────────────────────
@@ -185,7 +179,6 @@ describe('reloadDatabase() — red-team E2E', () => {
     await initWithEntries([makeEntry(1, 'safe', 'safe word')]);
     expect(getMeta().total).toBe(1);
 
-    // Random bytes that are not a valid SQLite DB
     const corrupt = new Uint8Array([0xDE, 0xAD, 0xBE, 0xEF, 0x00, 0x01, 0x02, 0x03]);
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
@@ -194,38 +187,36 @@ describe('reloadDatabase() — red-team E2E', () => {
 
     await expect(reloadDatabase()).rejects.toThrow();
 
-    // Old state still works
     expect(isDatabaseLoaded()).toBe(true);
     expect(getMeta().total).toBe(1);
-    expect(queryWords({})[0].form).toBe('safe');
+    expect(queryWords({}).rows[0].form).toBe('safe');
   });
 
   // ─── 6. Network rejection (fetch throws, not HTTP error) ────────────────
 
   it('Scenario 6: Network failure — fetch() rejects, old state preserved', async () => {
-    await initWithEntries([makeEntry(1, 'networksafe', 'network safe')]);
+    await initWithEntries([makeEntry(1, 'netora', 'network safe')]);
     expect(getMeta().total).toBe(1);
 
     global.fetch = vi.fn().mockRejectedValue(new Error('Network timeout'));
 
     await expect(reloadDatabase()).rejects.toThrow('Network timeout');
 
-    // Old state works
     expect(isDatabaseLoaded()).toBe(true);
     expect(getMeta().total).toBe(1);
-    expect(queryWords({})[0].form).toBe('networksafe');
+    expect(queryWords({}).rows[0].form).toBe('netora');
   });
 
   // ─── 7. Rapid sequential reloads (concurrency stress) ───────────────────
 
   it('Scenario 7: Three rapid reloads — all resolve, last one wins coherently', async () => {
-    await initWithEntries([makeEntry(1, 'initial', 'initial word')]);
+    await initWithEntries([makeEntry(1, 'inila', 'initial word')]);
 
-    const db1 = await buildTestDB([makeEntry(100, 'db1', 'DB1 word', { section: 'A' })]);
-    const db2 = await buildTestDB([makeEntry(200, 'db2', 'DB2 word', { section: 'B' })]);
+    const db1 = await buildTestDB([makeEntry(100, 'dibona', 'DB1 word')]);
+    const db2 = await buildTestDB([makeEntry(200, 'dibita', 'DB2 word')]);
     const db3 = await buildTestDB([
-      makeEntry(300, 'db3alpha', 'DB3 word A', { section: 'C' }),
-      makeEntry(301, 'db3beta', 'DB3 word B', { section: 'D' }),
+      makeEntry(300, 'terealfa', 'DB3 word A'),
+      makeEntry(301, 'terebeta', 'DB3 word B'),
     ]);
 
     let callCount = 0;
@@ -239,41 +230,36 @@ describe('reloadDatabase() — red-team E2E', () => {
       });
     });
 
-    // Fire three reloads rapidly — don't await each individually
     const [r1, r2, r3] = await Promise.all([
       reloadDatabase(),
       reloadDatabase(),
       reloadDatabase(),
     ]);
 
-    // All returned a count (not undefined)
     expect(r1).toBeGreaterThanOrEqual(1);
     expect(r2).toBeGreaterThanOrEqual(1);
     expect(r3).toBeGreaterThanOrEqual(1);
 
-    // DB is in a coherent state (can query without error)
     expect(isDatabaseLoaded()).toBe(true);
     const results = queryWords({});
-    expect(results.length).toBeGreaterThanOrEqual(1);
+    expect(results.totalCount).toBeGreaterThanOrEqual(1);
 
-    // Each result has required fields (not corrupted)
-    for (const r of results) {
+    for (const r of results.rows) {
       expect(r.form).toBeTruthy();
       expect(r.meanings.length).toBeGreaterThan(0);
-      expect(r.section).toBeTruthy();
     }
   });
 
   // ─── 8. Query with filters after reload ─────────────────────────────────
 
   it('Scenario 8: Filtered queries work after reload', async () => {
-    await initWithEntries([makeEntry(1, 'old', 'old word', { section: 'A' })]);
+    await initWithEntries([makeEntry(1, 'oloda', 'old word')]);
 
     const newDB = await buildTestDB([
-      makeEntry(10, 'a-fish', 'fish', { section: 'B', consensus_prefix: 'a-' }),
-      makeEntry(11, 'i-water', 'water', { section: 'A', consensus_prefix: 'i-' }),
-      makeEntry(12, 'y-rock', 'rock', { section: 'C', consensus_prefix: 'y-' }),
-      makeEntry(13, 'nullword', 'no prefix', { consensus_prefix: '' }),
+      makeEntry(10, 'afis', 'fish', { consensus_prefix: 'a-' }),
+      makeEntry(11, 'iwota', 'water', { consensus_prefix: 'i-' }),
+      makeEntry(12, 'yroka', 'rock', { consensus_prefix: 'y-' }),
+      makeEntry(13, 'nulora', 'no prefix', { consensus_prefix: '' }),
     ]);
 
     global.fetch = vi.fn().mockResolvedValue({
@@ -283,41 +269,33 @@ describe('reloadDatabase() — red-team E2E', () => {
 
     await reloadDatabase();
 
-    // Filter by section
-    expect(queryWords({ sections: ['A'] }).length).toBe(1);
-    expect(queryWords({ sections: ['A'] })[0].form).toBe('i-water');
-
     // Filter by prefix
-    expect(queryWords({ prefixes: ['a-'] }).length).toBe(1);
-    expect(queryWords({ prefixes: ['a-'] })[0].form).toBe('a-fish');
+    expect(queryWords({ prefixes: ['a-'] }).totalCount).toBe(1);
+    expect(queryWords({ prefixes: ['a-'] }).rows[0].form).toBe('afis');
 
-    // Filter by NONE prefix (empty string prefix)
-    expect(queryWords({ prefixes: ['NONE'] }).length).toBe(1);
-    expect(queryWords({ prefixes: ['NONE'] })[0].form).toBe('nullword');
+    // Filter by NONE prefix
+    expect(queryWords({ prefixes: ['NONE'] }).totalCount).toBe(1);
+    expect(queryWords({ prefixes: ['NONE'] }).rows[0].form).toBe('nulora');
 
     // Combined filters
-    const combined = queryWords({ sections: ['B'], prefixes: ['a-'] });
-    expect(combined.length).toBe(1);
-    expect(combined[0].form).toBe('a-fish');
-
-    // No-match filter returns empty
-    expect(queryWords({ sections: ['J'] }).length).toBe(0);
+    const combined = queryWords({ prefixes: ['i-'] });
+    expect(combined.totalCount).toBe(1);
+    expect(combined.rows[0].form).toBe('iwota');
 
     // Search filter
     const searched = queryWords({ search: 'water' });
-    expect(searched.length).toBe(1);
-    expect(searched[0].form).toBe('i-water');
+    expect(searched.totalCount).toBe(1);
+    expect(searched.rows[0].form).toBe('iwota');
   });
 
-  // ─── 9. Reload from actual project DB file (integration smoke test) ─────
+  // ─── 9. Integration — reload from actual project DB artifact ────────────
 
   it('Scenario 9: Integration — reload from actual kilor.db artifact', async () => {
-    // Use the project's own buildTestDB to simulate what the symlink provides
     const realEntries = [
-      makeEntry(1, 'fora', 'fire', { section: 'A', consensus_prefix: 'a-', derivation_mask: 'NVAD' }),
-      makeEntry(2, 'lira', 'water', { section: 'A', consensus_prefix: 'i-', derivation_mask: 'N' }),
-      makeEntry(3, 'lunla', 'tree', { section: 'B', consensus_prefix: 'u-', derivation_mask: 'N' }),
-      makeEntry(4, 'tlow', 'time', { section: 'G', consensus_prefix: 'o-', derivation_mask: 'NA' }),
+      makeEntry(1, 'fora', 'fire', { consensus_prefix: 'a-', derivation_mask: 'NVAD' }),
+      makeEntry(2, 'lira', 'water', { consensus_prefix: 'i-', derivation_mask: 'N' }),
+      makeEntry(3, 'lunla', 'tree', { consensus_prefix: 'u-', derivation_mask: 'N' }),
+      makeEntry(4, 'tlow', 'time', { consensus_prefix: 'o-', derivation_mask: 'NA' }),
     ];
     const realDB = await buildTestDB(realEntries);
 
@@ -326,24 +304,23 @@ describe('reloadDatabase() — red-team E2E', () => {
       arrayBuffer: () => Promise.resolve(dbToArrayBuffer(realDB)),
     });
 
-    await initWithEntries([makeEntry(1, 'dummy', 'placeholder')]);
+    await initWithEntries([makeEntry(1, 'dumila', 'placeholder')]);
     await reloadDatabase();
 
     expect(getMeta().total).toBe(4);
 
     // Verify each ontology domain is represented
-    const all = queryWords({});
+    const all = queryWords({}).rows;
     const prefixes = all.map(r => r.consensus_prefix).sort();
     expect(prefixes).toContain('a-');
     expect(prefixes).toContain('i-');
     expect(prefixes).toContain('u-');
     expect(prefixes).toContain('o-');
 
-    // Verify enrichment (inflections, case forms)
+    // Verify enrichment (inflections, case forms) — meanings are now objects
     const fora = all.find(r => r.form === 'fora');
     expect(fora).toBeTruthy();
-    expect(fora.meanings).toContain('fire');
-    expect(fora.section).toBe('A');
+    expect(fora.meanings.map(m => m.gloss)).toContain('fire');
     expect(fora.consensus_prefix).toBe('a-');
   });
 });

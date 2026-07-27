@@ -1,7 +1,7 @@
 """Validate all entries in the database."""
 
 from ..db import get_db
-from ..phonology import validate_content_root, count_syllables, split_syllables
+from ..phonology import validate_content_root, count_syllables, split_syllables, to_ipa
 
 
 def cmd_check():
@@ -86,14 +86,9 @@ def cmd_check():
                 if comp_row and comp_row["is_compound"]:
                     errors.append(f"  {form}: component '{c['component_form']}' is a compound, not a root")
 
-        # Tone markers on 3+ syllable inflected forms
+        # Tone markers on 3+ syllable inflected forms (skipped for now)
         if syl_count >= 3 and not is_func:
-            for infl in conn.execute(
-                "SELECT form_type, form FROM inflections WHERE word_id = ?", (w["id"],)
-            ).fetchall():
-                # Check if form should have tone markers but doesn't
-                # (skip this check for now as it requires complex tone placement logic)
-                pass
+            pass
 
         # Syllable count verification
         computed = count_syllables(form)
@@ -102,6 +97,20 @@ def cmd_check():
                 f"  {form}: syl_count mismatch — stored {syl_count}, computed {computed}"
             )
 
+        # IPA verification — check stored IPA matches computed IPA
+        stored_ipa = w["ipa"] if "ipa" in w.keys() else ""
+        if stored_ipa:
+            if " " in form:
+                # Multi-word compound: handle each word
+                subwords = form.split()
+                expected_ipa = " ".join(to_ipa(sw) for sw in subwords)
+            else:
+                expected_ipa = to_ipa(form)
+            if stored_ipa != expected_ipa:
+                errors.append(
+                    f"  {form}: ipa mismatch — stored {stored_ipa}, computed {expected_ipa}"
+                )
+
     # Duplicate forms
     dupes = conn.execute(
         "SELECT form, COUNT(*) as cnt FROM words GROUP BY form HAVING cnt > 1"
@@ -109,16 +118,13 @@ def cmd_check():
     for d in dupes:
         errors.append(f"  DUPLICATE form: '{d['form']}' appears {d['cnt']} times")
 
-
     roots = [w for w in words if w["is_root"] and not w["is_function_word"]]
 
     # Near-collision detection (warning, not error)
-    # comment it out for now, as it can be too sensitive
     collision_checking = False
     if collision_checking:
         for i, w1 in enumerate(roots):
             for w2 in roots[i+1:]:
-                # Simple Levenshtein distance check (only for short words)
                 if len(w1["form"]) <= 6 and len(w2["form"]) <= 6:
                     dist = _levenshtein(w1["form"], w2["form"])
                     if 1 <= dist <= 2:
@@ -137,11 +143,11 @@ def cmd_check():
     
     if not errors and not warnings:
         total = conn.execute("SELECT COUNT(*) FROM words").fetchone()[0]
-        roots = conn.execute("SELECT COUNT(*) FROM words WHERE is_root = 1").fetchone()[0]
+        roots_n = conn.execute("SELECT COUNT(*) FROM words WHERE is_root = 1").fetchone()[0]
         func = conn.execute("SELECT COUNT(*) FROM words WHERE is_function_word = 1").fetchone()[0]
         compounds = conn.execute("SELECT COUNT(*) FROM words WHERE is_compound = 1").fetchone()[0]
         print(f"✅ All {total} entries pass validation.")
-        print(f"  Roots: {roots}")
+        print(f"  Roots: {roots_n}")
         print(f"  Function words: {func}")
         print(f"  Compounds: {compounds}")
 

@@ -59,7 +59,9 @@ def main():
             idx = sys.argv.index("--format")
             if idx + 1 < len(sys.argv):
                 fmt = sys.argv[idx + 1]
-        cmd_export(fmt)
+        lite = "--lite" in sys.argv
+        no_standalone = "--no-standalone" in sys.argv
+        cmd_export(fmt, lite=lite, no_standalone=no_standalone)
 
     elif cmd == "serve":
         port = 8765

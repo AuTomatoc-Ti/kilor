@@ -15,13 +15,19 @@
 | `is_compound` | BOOLEAN | DEFAULT 0 | True for compounds |
 | `compound_type` | TEXT | `mono` or `multi`; NULL for roots | Compound classification |
 | `derivation_mask` | TEXT | | NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class |
-| `consensus_prefix` | TEXT | | Default colour prefix (e.g. `o-`) |
+| `consensus_prefix` | TEXT | | Default colour prefix (e.g. `o-`); NULL or empty for words without prefix |
 | `is_function_word` | BOOLEAN | DEFAULT 0 | True for closed-class particles |
 | `notes` | TEXT | | Free-text notes |
+| `ipa` | TEXT | DEFAULT '' | Auto-computed IPA transcription (e.g. `/ˈfɔ.rɑ/`) |
+| `syllables` | TEXT | DEFAULT '' | Auto-computed syllable division (e.g. `fo.ra`) |
+| `status` | TEXT | DEFAULT 'active' CHECK(status IN ('draft','active','deprecated','superseded')) | Word lifecycle status |
+| `superseded_by` | INTEGER | FK → `words.id` | Replacement word if deprecated/superseded |
+| `source_wordlist` | TEXT | DEFAULT '' | Source wordlist file (e.g. `phase1-core300`) |
+| `source_line` | INTEGER | DEFAULT 0 | Line number in source wordlist |
 | `created_at` | TEXT | DEFAULT (datetime('now')) | Creation timestamp |
 | `updated_at` | TEXT | DEFAULT (datetime('now')) | Last update timestamp |
 
-Indexes: `idx_words_form` (form), `idx_words_derivation_mask` (derivation_mask)
+Indexes: `idx_words_form` (form), `idx_words_derivation_mask` (derivation_mask), `idx_words_colour` (consensus_prefix), `idx_words_syl_count` (syl_count)
 
 ### `meanings` — glosses per word
 

@@ -1,10 +1,14 @@
 """Export lexicon to CSV, JSON, HTML dictionary, or dictionary data."""
 
+import base64
 import csv
 import json
 import os
 import re
+import shutil
+import sqlite3
 import subprocess
+import tempfile
 from datetime import datetime
 
 from ..db import get_db, rebuild_fts
@@ -98,11 +102,15 @@ def _export_json(conn):
     print(f"Exported to {output_path}")
 
 
-def _export_html(conn):
+def _export_html(conn, lite=False, no_standalone=False):
     """Export a self-contained searchable dictionary SPA.
 
     Generates dictionary-data.json, runs Vite build, and inlines
     all assets + data so the dictionary works from file: URLs.
+
+    Args:
+        lite: If True, strip non-essential tables from bundled DB.
+        no_standalone: If True, skip base64 embedding and output a companion .db file.
     """
     # Build React app with Vite
     dict_dir = os.path.join(SCRIPT_DIR, "kilor", "dictionary")
@@ -130,29 +138,74 @@ def _export_html(conn):
             print("WARNING: Vite dist/index.html not found — using fallback.")
             html_content = _get_inline_html()
 
-    # Base64-encode kilor.db and sql-wasm.wasm for truly self-contained HTML
-    import base64
+    # Prepare DB path — may be stripped for --lite
     db_path = os.path.join(SCRIPT_DIR, "data", "kilor.db")
-    with open(db_path, "rb") as bf:
-        db_b64 = base64.b64encode(bf.read()).decode("ascii")
-    print(f"Encoded kilor.db: {len(db_b64)} base64 chars")
+    export_db_path = db_path
+    temp_dir = None
 
+    if lite:
+        # Create a stripped copy of the DB with only essential tables
+        temp_dir = tempfile.mkdtemp(prefix="kilor-export-")
+        export_db_path = os.path.join(temp_dir, "kilor-lite.db")
+        shutil.copy2(db_path, export_db_path)
+        lite_conn = sqlite3.connect(export_db_path)
+        # Drop non-essential tables (inflections computed client-side, compounds, examples)
+        for tbl in ["examples", "compound_meta", "compound_components", "inflections"]:
+            lite_conn.execute(f"DROP TABLE IF EXISTS {tbl}")
+        lite_conn.execute("VACUUM")
+        lite_conn.close()
+        orig_size = os.path.getsize(db_path)
+        lite_size = os.path.getsize(export_db_path)
+        print(f"Lite DB: {orig_size/1024:.0f}KB → {lite_size/1024:.0f}KB")
+
+    # Base64-encode kilor.db and sql-wasm.wasm for truly self-contained HTML
     wasm_path = os.path.join(dict_dir, "public", "sql-wasm.wasm")
-    with open(wasm_path, "rb") as wf:
-        wasm_b64 = base64.b64encode(wf.read()).decode("ascii")
-    print(f"Encoded wasm: {len(wasm_b64)} base64 chars")
+    wasm_b64 = None
+    db_b64 = None
 
-    inline = (
-        '<script>window.__SQL_WASM_B64__="' + wasm_b64 + '";'
-        'window.__KILOR_DB_B64__="' + db_b64 + '";</script>'
-    )
-    html_content = html_content.replace("<!-- DATA_PLACEHOLDER -->", inline)
+    if not no_standalone:
+        with open(export_db_path, "rb") as bf:
+            db_b64 = base64.b64encode(bf.read()).decode("ascii")
+        print(f"Encoded kilor.db: {len(db_b64)} base64 chars")
 
-    # Write self-contained output
-    html_path = os.path.join(SCRIPT_DIR, "data", "dictionary.html")
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
-    print(f"Exported self-contained dictionary to {html_path}")
+        with open(wasm_path, "rb") as wf:
+            wasm_b64 = base64.b64encode(wf.read()).decode("ascii")
+        print(f"Encoded wasm: {len(wasm_b64)} base64 chars")
+
+    if no_standalone:
+        # Two-file deployment: HTML + companion .db
+        html_path = os.path.join(SCRIPT_DIR, "data", "dictionary.html")
+        db_out_path = os.path.join(SCRIPT_DIR, "data", "dictionary.db")
+
+        # Copy the DB to output
+        shutil.copy2(export_db_path, db_out_path)
+        db_size = os.path.getsize(db_out_path) / 1024
+
+        # Strip base64 placeholders — the app will fetch ./dictionary.db
+        inline = '<script>/* NO_STANDALONE: app fetches ./dictionary.db */</script>'
+        html_content = html_content.replace("<!-- DATA_PLACEHOLDER -->", inline)
+
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        html_size = os.path.getsize(html_path) / 1024
+        print(f"Exported two-file dictionary: {html_path} ({html_size:.0f}KB) + {db_out_path} ({db_size:.0f}KB)")
+    else:
+        # Self-contained single-file HTML
+        inline = (
+            '<script>window.__SQL_WASM_B64__="' + wasm_b64 + '";'
+            'window.__KILOR_DB_B64__="' + db_b64 + '";</script>'
+        )
+        html_content = html_content.replace("<!-- DATA_PLACEHOLDER -->", inline)
+
+        html_path = os.path.join(SCRIPT_DIR, "data", "dictionary.html")
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        html_size = os.path.getsize(html_path) / 1024
+        print(f"Exported self-contained dictionary to {html_path} ({html_size:.0f}KB)")
+
+    # Cleanup temp dir
+    if temp_dir:
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
 
 def _inline_assets(html, assets_dir):
@@ -476,8 +529,14 @@ def _export_dictionary_data(conn):
     print(f"Exported {len(entries)} entries to {output_path}")
 
 
-def cmd_export(fmt="json"):
-    """Export the lexicon to the specified format."""
+def cmd_export(fmt="json", lite=False, no_standalone=False):
+    """Export the lexicon to the specified format.
+
+    Args:
+        fmt: Export format — csv, json, html, or dictionary.
+        lite: If True, strip non-essential tables from bundled DB (html format only).
+        no_standalone: If True, output two-file deployment (html format only).
+    """
     conn = get_db()
     rebuild_fts(conn)
 
@@ -486,7 +545,7 @@ def cmd_export(fmt="json"):
     elif fmt == "json":
         _export_json(conn)
     elif fmt == "html":
-        _export_html(conn)
+        _export_html(conn, lite=lite, no_standalone=no_standalone)
     elif fmt == "dictionary":
         _export_dictionary_data(conn)
     else:

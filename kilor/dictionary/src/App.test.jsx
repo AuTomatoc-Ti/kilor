@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, vi } from 'vitest';
+import { render, screen, fireEvent, waitFor, cleanup, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 import { initDatabase, getDB } from './db';
@@ -12,13 +12,32 @@ import { initDatabase, getDB } from './db';
  * that the browser would use — no mock injection, no synthetic test data.
  */
 
+let totalWordCount = 0;
+
 beforeAll(async () => {
   await initDatabase();
+  totalWordCount = (getDB().exec('SELECT COUNT(*) FROM words')[0]?.values[0]?.[0]) || 400;
+});
+
+beforeEach(() => {
+  // Reset URL state to prevent search/param leakage between tests in jsdom
+  window.history.replaceState(null, '', window.location.pathname);
+});
+
+afterEach(() => {
+  cleanup();
 });
 
 /** Wait for the app to finish loading (search input visible). */
 async function waitForApp() {
   await screen.findByPlaceholderText(/Search by word/i);
+}
+
+/** Advance past the 300ms search debounce after typing. */
+async function typeAndWait(input, value) {
+  fireEvent.change(input, { target: { value } });
+  // Wait 350ms for the 300ms debounce to fire + re-render
+  await new Promise(r => setTimeout(r, 350));
 }
 
 /** Open the advanced filter panel if not already open (returns true after expand). */
@@ -56,13 +75,14 @@ async function toggleMaskFilter(maskValue) {
 }
 
 describe('App — initialization (real DB)', () => {
-  it('renders header with real total word count', async () => {
+  it('renders header with dynamic total word count', async () => {
     render(<App />);
     await waitForApp();
     expect(screen.getByText('Kilor Dictionary')).toBeInTheDocument();
 
-    // All filters start empty (= no filter applied), so all 361 words show
-    const countEls = screen.getAllByText('361 words');
+    // Count should be a positive integer, not tied to a hardcoded value
+    const countText = `${totalWordCount} words`;
+    const countEls = screen.getAllByText(countText);
     expect(countEls.length).toBeGreaterThanOrEqual(1);
   });
 
@@ -85,22 +105,22 @@ describe('App — initialization (real DB)', () => {
 
     expect(screen.queryByText('No words match.')).not.toBeInTheDocument();
 
+    // With pagination (50/page), verify at least one page worth of entries
     const formCells = document.querySelectorAll('.td-form');
     expect(formCells.length).toBeGreaterThan(10);
-
-    expect(screen.getAllByText('fora').length).toBeGreaterThanOrEqual(1);
+    // Page 1 may not include 'fora' depending on sort order; it's fine
   });
 
-  it('shows all 361 words when no filters are active (= empty arrays)', async () => {
+  it('shows all words when no filters are active (= empty arrays)', async () => {
     render(<App />);
     await waitForApp();
 
-    // Result count should show "361 words" — use getAllByText since header+toolbar both show it
-    const countEls = screen.getAllByText('361 words');
+    // Result count should show total word count — use getAllByText since header+toolbar both show it
+    const countText = `${totalWordCount} words`;
+    const countEls = screen.getAllByText(countText);
     expect(countEls).toHaveLength(2);
-    // The toolbar's .result-count span should read "361 words"
     const resultSpan = document.querySelector('.result-count');
-    expect(resultSpan.textContent).toBe('361 words');
+    expect(resultSpan.textContent).toBe(countText);
   });
 });
 
@@ -109,10 +129,9 @@ describe('App — search (real DB)', () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'fora' },
-    });
-    await waitFor(() => expect(screen.getByText(/of 361 words/)).toBeInTheDocument());
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'fora');
+
     const foraEls = screen.getAllByText('fora');
     expect(foraEls.length).toBeGreaterThanOrEqual(1);
   });
@@ -121,35 +140,31 @@ describe('App — search (real DB)', () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'FORA' },
-    });
-    await waitFor(() => {
-      const els = screen.getAllByText('fora');
-      expect(els.length).toBeGreaterThanOrEqual(1);
-    });
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'FORA');
+
+    const els = screen.getAllByText('fora');
+    expect(els.length).toBeGreaterThanOrEqual(1);
   });
 
   it('search by gloss "fire" matches "fora"', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'fire' },
-    });
-    await waitFor(() => {
-      const els = screen.getAllByText('fora');
-      expect(els.length).toBeGreaterThanOrEqual(1);
-    });
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'fire');
+
+    const els = screen.getAllByText('fora');
+    expect(els.length).toBeGreaterThanOrEqual(1);
   });
 
   it('search nonexistent word shows "No words match"', async () => {
     render(<App />);
     await waitForApp();
 
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'xyzzyzzz' },
-    });
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'xyzzyzzz');
+
     await waitFor(() => expect(screen.getByText('No words match.')).toBeInTheDocument());
   });
 });
@@ -180,7 +195,7 @@ describe('App — advanced filter panel (real DB)', () => {
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     const typeTds = document.querySelectorAll('.td-type');
@@ -198,7 +213,7 @@ describe('App — advanced filter panel (real DB)', () => {
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     const maskTds = document.querySelectorAll('.td-mask');
@@ -218,7 +233,7 @@ describe('App — advanced filter panel (real DB)', () => {
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     const maskTds = document.querySelectorAll('.td-mask');
@@ -238,7 +253,7 @@ describe('App — advanced filter panel (real DB)', () => {
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     const typeTds = document.querySelectorAll('.td-type');
@@ -260,10 +275,13 @@ describe('App — advanced filter panel (real DB)', () => {
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
-    // "fora" (2 syllables) should be visible
+    // Search for a known 2-syllable word to verify it's visible on this page
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'fora');
+
     const tds = document.querySelectorAll('.td-form');
     const forms = [...tds].map((td) => td.textContent);
     expect(forms).toContain('fora');
@@ -276,7 +294,7 @@ describe('App — advanced filter panel (real DB)', () => {
     }
   });
 
-  it('reset filters button clears all filters back to showing 361 words', async () => {
+  it('reset filters button clears all filters back to showing dynamic word count', async () => {
     render(<App />);
     await waitForApp();
 
@@ -284,17 +302,17 @@ describe('App — advanced filter panel (real DB)', () => {
     await toggleFilterCheckbox('Function words');
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     // Click "Reset filters"
     const resetBtn = document.querySelector('.filter-reset-btn');
     fireEvent.click(resetBtn);
 
-    // Should be back to showing "361 words" in the result count
+    // Should be back to showing dynamic word count
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).toBe('361 words');
+      expect(resultSpan.textContent).toBe(`${totalWordCount} words`);
     });
   });
 });
@@ -305,13 +323,10 @@ describe('App — prefix filter (real DB)', () => {
     await waitForApp();
 
     await toggleFilterCheckbox('a-');
-    // Note: "a-" partial matches "ae-" too, so use the <b>a-</b> more carefully
-    // Actually "a-" appears inside <b>a-</b> and also as "ae-" prefix label.
-    // The label textContent includes both "a-" and "Alive / Energy" so it matches correctly.
 
     await waitFor(() => {
       const resultSpan = document.querySelector('.result-count');
-      expect(resultSpan.textContent).not.toBe('361 words');
+      expect(resultSpan.textContent).not.toBe(`${totalWordCount} words`);
     });
 
     // All visible prefix badges should contain "a-"
@@ -344,11 +359,13 @@ describe('App — sorting (real DB)', () => {
     await waitForApp();
 
     fireEvent.click(screen.getByText('Word'));
+
     await waitFor(() => {
       const cells = screen.getAllByRole('cell');
       const forms = cells
         .filter((c) => c.className.includes('td-form'))
         .map((c) => c.textContent);
+      // Sorted descending
       for (let i = 1; i < forms.length; i++) {
         expect(forms[i].localeCompare(forms[i - 1])).toBeLessThanOrEqual(0);
       }
@@ -371,6 +388,7 @@ describe('App — inline detail expansion (real DB)', () => {
     expect(document.querySelector('.detail-panel')).toBeNull();
 
     const firstCell = document.querySelector('.td-form');
+    expect(firstCell).toBeTruthy();
     fireEvent.click(firstCell);
 
     await waitFor(() =>
@@ -383,6 +401,7 @@ describe('App — inline detail expansion (real DB)', () => {
     await waitForApp();
 
     const firstCell = document.querySelector('.td-form');
+    expect(firstCell).toBeTruthy();
     fireEvent.click(firstCell);
     await waitFor(() =>
       expect(document.querySelector('.detail-panel')).toBeInTheDocument()
@@ -399,13 +418,11 @@ describe('App — inline detail expansion (real DB)', () => {
     await waitForApp();
 
     // Search for "fora" to narrow results
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'fora' },
-    });
-    await waitFor(() => {
-      const tds = document.querySelectorAll('.td-form');
-      expect(tds.length).toBeGreaterThanOrEqual(1);
-    });
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'fora');
+
+    const tds = document.querySelectorAll('.td-form');
+    expect(tds.length).toBeGreaterThanOrEqual(1);
 
     // Click to expand
     const cell = document.querySelector('.td-form');
@@ -414,15 +431,11 @@ describe('App — inline detail expansion (real DB)', () => {
       expect(document.querySelector('.detail-panel')).toBeInTheDocument()
     );
 
-    // Should show "Syllables" label
     expect(screen.getByText('Syllables')).toBeInTheDocument();
 
-    // The detail panel should contain syllable division like "2 (fo/ra)"
-    // Find the detail-row that mentions the syllable count + division
     const detailPanel = document.querySelector('.detail-panel');
     const text = detailPanel.textContent;
     expect(text).toMatch(/Syllables/);
-    // Should contain count and division separated by /
     expect(text).toMatch(/fo\/ra/);
   });
 
@@ -431,13 +444,11 @@ describe('App — inline detail expansion (real DB)', () => {
     await waitForApp();
 
     // Search for "song" — a single-syllable word
-    fireEvent.change(screen.getByPlaceholderText(/Search by word/i), {
-      target: { value: 'song' },
-    });
-    await waitFor(() => {
-      const tds = document.querySelectorAll('.td-form');
-      expect(tds.length).toBeGreaterThanOrEqual(1);
-    });
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'song');
+
+    const tds = document.querySelectorAll('.td-form');
+    expect(tds.length).toBeGreaterThanOrEqual(1);
 
     // Click to expand
     const cell = document.querySelector('.td-form');
@@ -448,8 +459,46 @@ describe('App — inline detail expansion (real DB)', () => {
 
     const detailPanel = document.querySelector('.detail-panel');
     const text = detailPanel.textContent;
-    // Should show "Syllables 1 (song)" — no / between syllables
     expect(text).toMatch(/Syllables/);
     expect(text).toContain('(song)');
+  });
+});
+
+describe('App — view full entry workflow', () => {
+  it('search → expand → view full entry → back to table', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Search for "fora"
+    const input = screen.getByPlaceholderText(/Search by word/i);
+    await typeAndWait(input, 'fora');
+
+    expect(screen.getAllByText('fora').length).toBeGreaterThanOrEqual(1);
+
+    // Click to expand detail
+    const cell = document.querySelector('.td-form');
+    fireEvent.click(cell);
+    await waitFor(() =>
+      expect(document.querySelector('.detail-panel')).toBeInTheDocument()
+    );
+
+    // Click "View full entry →"
+    const viewFullBtn = document.querySelector('.view-full-link');
+    expect(viewFullBtn).toBeTruthy();
+    fireEvent.click(viewFullBtn);
+
+    // Verify full detail page renders
+    await waitFor(() => {
+      expect(document.querySelector('.word-detail-page')).toBeInTheDocument();
+      expect(document.querySelector('.detail-word-form').textContent).toContain('fora');
+      expect(screen.getByText('Meanings')).toBeInTheDocument();
+    });
+
+    // Click "← Back to dictionary"
+    fireEvent.click(screen.getByText('← Back to dictionary'));
+    await waitFor(() =>
+      expect(document.querySelector('.word-detail-page')).toBeNull()
+    );
+    expect(screen.getByText('Kilor Dictionary')).toBeInTheDocument();
   });
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MASK_LABELS = { N: 'Noun', V: 'Verb', A: 'Adjective', D: 'Adverb' };
 
@@ -23,6 +23,16 @@ const POS_FULL = {
   CLF: 'Classifier / Measure Word', INTERJ: 'Interjection', PROPN: 'Proper Noun',
   '': 'Other',
 };
+
+const PREFIX_LEGEND = [
+  { prefix: 'a-',  cls: 'Alive / Energy',    emotion: 'Anger',   color: '#ef4444' },
+  { prefix: 'e-',  cls: 'Crafted / Tool',    emotion: 'Joy',     color: '#f59e0b' },
+  { prefix: 'i-',  cls: 'Fluid / Vast',      emotion: 'Sadness', color: '#3b82f6' },
+  { prefix: 'o-',  cls: 'Abstract / Void',   emotion: 'Surprise',color: '#d2d2d2' },
+  { prefix: 'u-',  cls: 'Organic / Growth',  emotion: 'Calm',    color: '#22c55e' },
+  { prefix: 'y-',  cls: 'Dense / Mass',      emotion: 'Fear',    color: '#6b7280' },
+  { prefix: 'ae-', cls: 'Earth / Boundary',  emotion: 'Disgust', color: '#a16207' },
+];
 
 function highlightMatch(text, term) {
   if (!term || term.length === 0) return text;
@@ -81,17 +91,14 @@ function ComponentChips({ components, onSearchByForm }) {
 function GlossWithPos({ meanings, search }) {
   if (!meanings || meanings.length === 0) return <span className="empty-cell">—</span>;
 
-  // Get the gloss strings (works with both old flat array and new object array)
   const items = typeof meanings[0] === 'string'
     ? meanings.map((g, i) => ({ gloss: g, pos: '' }))
     : meanings;
 
-  // For single-meaning words with no pos, show just the gloss
   if (items.length === 1 && !items[0].pos) {
     return highlightMatch(items[0].gloss, search);
   }
 
-  // Limit display: show first 4, then "+N more"
   const maxShow = 4;
   const shown = items.slice(0, maxShow);
   const remaining = items.length - maxShow;
@@ -106,6 +113,45 @@ function GlossWithPos({ meanings, search }) {
         </span>
       ))}
       {remaining > 0 && <span className="gloss-more"> +{remaining} more</span>}
+    </>
+  );
+}
+
+/** Colour Prefix Legend — modal popup triggered by a "?" icon in table header. */
+function PrefixLegend() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <span
+        className="prefix-legend-trigger"
+        onClick={(e) => { e.stopPropagation(); setOpen(true); }}
+        title="Colour prefix legend"
+      >
+        ?
+      </span>
+      {open && (
+        <div className="prefix-legend-overlay" onClick={() => setOpen(false)}>
+          <div className="prefix-legend-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>Colour Prefix Legend</h3>
+            <div className="prefix-legend-grid">
+              {PREFIX_LEGEND.map((p) => (
+                <div key={p.prefix} className="prefix-legend-row">
+                  <span className="prefix-legend-swatch" style={{ background: p.color }}></span>
+                  <span className="prefix-legend-label"><strong>{p.prefix}</strong></span>
+                  <span className="prefix-legend-cls">{p.cls}</span>
+                  <span className="prefix-legend-emotion">({p.emotion})</span>
+                </div>
+              ))}
+            </div>
+            <p className="prefix-legend-note">
+              The colour prefix is part of the word's identity, encoding its ontological class and associated emotion.
+              See <em>rules/1-nominals/nouns-colour-prefix.md</em>.
+            </p>
+            <button className="prefix-legend-close" onClick={() => setOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -177,7 +223,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
   const mask = entry.derivation_mask || '';
   const meanings = entry.meanings || [];
 
-  // Group meanings by pos
   const grouped = {};
   for (const m of meanings) {
     const gl = typeof m === 'string' ? m : m.gloss;
@@ -186,12 +231,10 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
     grouped[p].push(gl);
   }
 
-  // Determine display order: N, V, A, D first, then any other tags
   const posOrder = ['N', 'V', 'A', 'D'];
   const extraOrder = Object.keys(grouped).filter(p => p && !posOrder.includes(p));
   const sections = [...posOrder.filter(p => grouped[p]), ...extraOrder];
 
-  // Inflections (N→V→A→D order)
   const infl = entry.inflections || {};
   const inflOrder = ['noun', 'verb', 'adjective', 'adverb'];
   const inflPresent = inflOrder.filter(k => infl[k]);
@@ -202,7 +245,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
         <button className="back-button" onClick={onBack}>← Back to dictionary</button>
       </div>
 
-      {/* ── Identity Card ─────────────────────────────────────── */}
       <div className="detail-identity-card">
         <div className="detail-word-row">
           <h2 className="detail-word-form">{entry.form}</h2>
@@ -223,7 +265,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
       </div>
 
       <div className="detail-content-columns">
-        {/* ── Meanings by PoS ─────────────────────────────────── */}
         <div className="detail-main">
           <div className="detail-section">
             <h3>Meanings</h3>
@@ -243,7 +284,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
             )}
           </div>
 
-          {/* ── Inflections ────────────────────────────────────── */}
           {inflPresent.length > 0 && (
             <div className="detail-section">
               <h3>Inflections</h3>
@@ -268,7 +308,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
             </div>
           )}
 
-          {/* ── Case Forms ─────────────────────────────────────── */}
           {entry.case_forms && Object.keys(entry.case_forms).length > 0 && (
             <div className="detail-section">
               <h3>Case Forms</h3>
@@ -287,7 +326,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
             </div>
           )}
 
-          {/* ── Notes ──────────────────────────────────────────── */}
           {entry.notes && (
             <div className="detail-section">
               <h3>Notes</h3>
@@ -296,7 +334,6 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
           )}
         </div>
 
-        {/* ── Sidebar: Components, Pattern, Examples ──────────── */}
         <div className="detail-sidebar">
           {entry.components && entry.components.length > 0 && (
             <div className="detail-section">
@@ -338,15 +375,16 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
   );
 }
 
-// ── Table Header (unchanged) ────────────────────────────────────────────
+// ── Table Header ─────────────────────────────────────────────────────────
 
 const COLGROUP = (
   <colgroup>
-    <col style={{ width: '18%' }} />
-    <col style={{ width: '42%' }} />
+    <col style={{ width: '16%' }} />
+    <col style={{ width: '10%' }} />
+    <col style={{ width: '32%' }} />
     <col style={{ width: '12%' }} />
     <col style={{ width: '16%' }} />
-    <col style={{ width: '6%' }} />
+    <col style={{ width: '8%' }} />
     <col style={{ width: '6%' }} />
   </colgroup>
 );
@@ -366,6 +404,9 @@ export function TableHeader({ sortCol, sortDir, onSort }) {
             <th className={sortCol === 'form' ? 'sorted' : ''} onClick={() => onSort('form')}>
               Word {arrow('form')}
             </th>
+            <th className={sortCol === 'form' ? 'sorted' : ''} onClick={() => onSort('form')}>
+              IPA {arrow('form')}
+            </th>
             <th className={sortCol === 'gloss' ? 'sorted' : ''} onClick={() => onSort('gloss')}>
               Gloss {arrow('gloss')}
             </th>
@@ -373,7 +414,7 @@ export function TableHeader({ sortCol, sortDir, onSort }) {
               Type {arrow('type')}
             </th>
             <th className={sortCol === 'prefix' ? 'sorted' : ''} onClick={() => onSort('prefix')}>
-              Prefix {arrow('prefix')}
+              Prefix <PrefixLegend /> {arrow('prefix')}
             </th>
             <th className={sortCol === 'mask' ? 'sorted' : ''} onClick={() => onSort('mask')}>
               NVAD {arrow('mask')}
@@ -388,9 +429,45 @@ export function TableHeader({ sortCol, sortDir, onSort }) {
   );
 }
 
-// ── Table Body (updated: PoS gloss, trimmed detail, onViewFull prop) ───
+// ── Pagination Controls ──────────────────────────────────────────────────
 
-export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull }) {
+function PaginationBar({ page, totalPages, totalCount, pageSize, onPageChange }) {
+  if (totalPages <= 1) return null;
+
+  const startItem = (page - 1) * pageSize + 1;
+  const endItem = Math.min(page * pageSize, totalCount);
+
+  return (
+    <div className="pagination-bar">
+      <span className="pagination-info">
+        {startItem}–{endItem} of {totalCount}
+      </span>
+      <button
+        className="pagination-btn"
+        disabled={page <= 1}
+        onClick={() => onPageChange(page - 1)}
+      >
+        ← Previous
+      </button>
+      <span className="pagination-page">
+        Page {page} of {totalPages}
+      </span>
+      <button
+        className="pagination-btn"
+        disabled={page >= totalPages}
+        onClick={() => onPageChange(page + 1)}
+      >
+        Next →
+      </button>
+    </div>
+  );
+}
+
+// ── Table Body ────────────────────────────────────────────────────────────
+
+const PAGE_SIZE = 50;
+
+export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull, page, totalPages, totalCount, onPageChange }) {
   const handleCopy = (e, form) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(form).then(() => {
@@ -409,49 +486,60 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
   }
 
   return (
-    <div className="table-body-wrap">
-      <table className="word-table word-table-body">
-        {COLGROUP}
-        <tbody>
-          {entries.map((e, i) => {
-            const mask = e.derivation_mask
-              ? <span className="tag-sm" style={{ background: '#e8f0fe', color: '#1a56db', fontSize: '.7rem', padding: '1px 6px', borderRadius: '10px' }}>{e.derivation_mask}</span>
-              : <span className="empty-cell">—</span>;
-            const isExpanded = expandedRow === e.id;
-            const isKeyboardSelected = keyboardRowIndex === i;
-            // Build title for tooltip
-            const allGlosses = (e.meanings || []).map(m => (typeof m === 'string' ? m : m.gloss)).join(' / ');
-            return (
-              <React.Fragment key={e.id}>
-                <tr
-                  className={(isExpanded ? 'row-expanded' : '') + (isKeyboardSelected ? ' row-keyboard-selected' : '')}
-                  onClick={() => onToggleExpand(isExpanded ? null : e.id)}
-                >
-                  <td className="td-form" title={allGlosses} onClick={(ev) => handleCopy(ev, e.form)}>
-                    {highlightMatch(e.form, search)}
-                  </td>
-                  <td className="td-gloss">
-                    <GlossWithPos meanings={e.meanings} search={search} />
-                    <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
-                  </td>
-                  <td className="td-type"><TypeTag entry={e} /></td>
-                  <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
-                  <td className="td-mask">{mask}</td>
-                  <td className="td-syl">{e.syl_count}</td>
-                </tr>
-                {isExpanded && (
-                  <tr className="detail-tr">
-                    <td colSpan={6}>
-                      <DetailPanel entry={e} prefixInfo={prefixInfo} onViewFull={onViewFull} />
+    <>
+      <div className="table-body-wrap">
+        <table className="word-table word-table-body">
+          {COLGROUP}
+          <tbody>
+            {entries.map((e, i) => {
+              const mask = e.derivation_mask
+                ? <span className="tag-sm" style={{ background: '#e8f0fe', color: '#1a56db', fontSize: '.7rem', padding: '1px 6px', borderRadius: '10px' }}>{e.derivation_mask}</span>
+                : <span className="empty-cell">—</span>;
+              const isExpanded = expandedRow === e.id;
+              const isKeyboardSelected = keyboardRowIndex === i;
+              const allGlosses = (e.meanings || []).map(m => (typeof m === 'string' ? m : m.gloss)).join(' / ');
+              return (
+                <React.Fragment key={e.id}>
+                  <tr
+                    className={(isExpanded ? 'row-expanded' : '') + (isKeyboardSelected ? ' row-keyboard-selected' : '')}
+                    onClick={() => onToggleExpand(isExpanded ? null : e.id)}
+                  >
+                    <td className="td-form" title={allGlosses} onClick={(ev) => handleCopy(ev, e.form)}>
+                      {highlightMatch(e.form, search)}
                     </td>
+                    <td className="td-ipa" title={e.ipa}>
+                      <span className="ipa-text">/{e.ipa}/</span>
+                    </td>
+                    <td className="td-gloss">
+                      <GlossWithPos meanings={e.meanings} search={search} />
+                      <ComponentChips components={e.components} onSearchByForm={onSearchByForm} />
+                    </td>
+                    <td className="td-type"><TypeTag entry={e} /></td>
+                    <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
+                    <td className="td-mask">{mask}</td>
+                    <td className="td-syl">{e.syl_count}</td>
                   </tr>
-                )}
-              </React.Fragment>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+                  {isExpanded && (
+                    <tr className="detail-tr">
+                      <td colSpan={7}>
+                        <DetailPanel entry={e} prefixInfo={prefixInfo} onViewFull={onViewFull} />
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <PaginationBar
+        page={page}
+        totalPages={totalPages}
+        totalCount={totalCount}
+        pageSize={PAGE_SIZE}
+        onPageChange={onPageChange}
+      />
+    </>
   );
 }
 
@@ -469,6 +557,10 @@ export default function TableView(props) {
         keyboardRowIndex={props.keyboardRowIndex}
         onCopyToast={props.onCopyToast}
         onViewFull={props.onViewFull}
+        page={props.page}
+        totalPages={props.totalPages}
+        totalCount={props.totalCount}
+        onPageChange={props.onPageChange}
       />
     </>
   );

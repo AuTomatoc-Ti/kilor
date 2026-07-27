@@ -2,8 +2,8 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-07-26
-**Version:** 2.2.0
+**Last updated:** 2026-07-27
+**Version:** 2.3.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
@@ -30,6 +30,9 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 | h | **Inflections** | `*` | AI auto-generates (conditional on mask) | Only generates applicable form types; applies tone markers for 3+ syllable words |
 | i | **Acc/gen forms** | `*` | AI auto-computes → stores in DB | `get_case_forms(form, mask)`; Contrastive Suffix Rule |
 | H | **Sentences** (examples) | `?` | Optional: LLM drafts via `--with-examples` flag; human accepts/rejects/edits in Phase 3 | 1–3 example sentences per word; must follow grammar, tone, and lexicon constraints (§V-F). Also insertable later via `edit` command |
+| j | **IPA transcription** | `*` | AI auto-computes | `to_ipa(form)` — stored in `words.ipa` column; used for pronunciation display in dictionary app |
+| k | **Syllables** (stored string) | `*` | AI auto-computes | `split_syllables(form)` — stored in `words.syllables` column (e.g. `fo.ra`); IPA and division are independent computations |
+| l | **Status** (word lifecycle) | `*?` | AI auto-sets → human can override | `draft` (default for new), `active`, `deprecated`, `superseded` — stored in `words.status`; `superseded_by` FK set via `edit` command |
 
 ---
 

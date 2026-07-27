@@ -13,7 +13,7 @@ export default defineConfig({
     port: 3000,
     open: false,
     fs: {
-      allow: ['..'],
+      allow: ['../..'],
     },
   },
   test: {

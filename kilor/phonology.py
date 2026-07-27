@@ -437,3 +437,120 @@ def detect_syllable_ambiguities(db_path):
 
     db.close()
     return ambiguities
+
+
+# ── IPA Transcription ─────────────────────────────────────────────────────────
+
+# Kilor → IPA mappings (SSOT: rules/0-foundation/phonology.md §II–IV)
+_VOWEL_IPA = {
+    "a": "ɑ", "e": "ɛ", "i": "i", "o": "ɔ", "u": "u", "y": "y", "ae": "æ",
+}
+_DIPHTHONG_IPA = {
+    "ai": "aɪ", "au": "aʊ", "ei": "eɪ", "eu": "eʊ",
+    "iu": "ju", "oi": "ɔɪ", "ou": "oʊ",
+}
+_CORE_IPA = {
+    "p": "p", "b": "b", "m": "m", "f": "f", "w": "w",
+    "t": "t", "d": "d", "n": "n", "s": "s", "l": "l",
+    "r": "r", "c": "ts", "k": "k", "g": "g", "h": "h",
+}
+_EDGE_IPA = {"sh": "ʃ", "ch": "tʃ", "th": "θ"}
+_START_IPA = {
+    "sl": "s͜l", "kl": "k͜l", "tl": "t͜l", "bl": "b͜l", "ml": "m͜l",
+    "kr": "k͡r", "br": "b͡r", "gr": "ɡ͡r", "fr": "f͡r", "pr": "p͡r",
+}
+_END_IPA = {"ng": "ŋ", "x": "x", "rk": "ɾk"}
+
+
+def _syllable_to_ipa(syl, is_word_start=False, is_word_end=False):
+    """Map a single Kilor syllable string to its IPA segments.
+    
+    Uses positional consonant class rules from phonology.md:
+    - Start-only consonants only at word-initial (§IV-C)
+    - End-only consonants only at word-final (§IV-D)
+    - Edge-only consonants only at word edges (§IV-B)
+    - Mid-word multi-char sequences are separate core consonants (§IV-E)
+    """
+    n = len(syl)
+    i = 0
+    segments = []
+
+    # ── Onset ──
+    if i < n and syl[i] not in VOWELS:
+        if is_word_start:
+            # Word-initial onset: check start-only, then edge-only, then core
+            if i + 2 <= n and syl[i:i+2] in _START_IPA:
+                segments.append(_START_IPA[syl[i:i+2]])
+                i += 2
+            elif i + 2 <= n and syl[i:i+2] in _EDGE_IPA:
+                segments.append(_EDGE_IPA[syl[i:i+2]])
+                i += 2
+            elif syl[i] in _CORE_IPA:
+                segments.append(_CORE_IPA[syl[i]])
+                i += 1
+        else:
+            # Mid-word onset: only core consonants
+            if syl[i] in _CORE_IPA:
+                segments.append(_CORE_IPA[syl[i]])
+                i += 1
+
+    # ── Nucleus ──
+    if i >= n:
+        return segments
+    if syl[i:i+2] == "ae":
+        segments.append(_VOWEL_IPA["ae"])
+        i += 2
+    elif i + 1 < n and syl[i:i+2] in _DIPHTHONG_IPA:
+        segments.append(_DIPHTHONG_IPA[syl[i:i+2]])
+        i += 2
+    elif syl[i] in _VOWEL_IPA:
+        segments.append(_VOWEL_IPA[syl[i]])
+        i += 1
+
+    # ── Coda ──
+    if i >= n:
+        return segments
+    if is_word_end:
+        # Word-final coda: check end-only, then edge-only, then core
+        if i + 2 <= n and syl[i:i+2] in _END_IPA and i + 2 == n:
+            segments.append(_END_IPA[syl[i:i+2]])
+            i += 2
+        elif i + 2 <= n and syl[i:i+2] in _EDGE_IPA and i + 2 == n:
+            segments.append(_EDGE_IPA[syl[i:i+2]])
+            i += 2
+        elif i + 1 == n and syl[i] in _END_IPA:
+            segments.append(_END_IPA[syl[i]])
+            i += 1
+        elif syl[i] in _CORE_IPA:
+            segments.append(_CORE_IPA[syl[i]])
+            i += 1
+    else:
+        # Mid-word coda: only core consonants
+        if syl[i] in _CORE_IPA:
+            segments.append(_CORE_IPA[syl[i]])
+            i += 1
+
+    return segments
+
+
+def to_ipa(form):
+    """Convert a Kilor written form to IPA transcription with syllable boundaries.
+    
+    Returns a string like "/ˈfɔ.rɑ.gi.lɑn/" with stress mark on the first syllable
+    and syllable dots between syllables.
+    
+    Uses positional consonant class rules from phonology.md §IV.
+    Tone markers (j, v) are stripped — they are extra-segmental (§V-A).
+    """
+    syllables = split_syllables(form)
+    if not syllables:
+        return ""
+    
+    ipa_parts = []
+    for idx, syl in enumerate(syllables):
+        is_first = (idx == 0)
+        is_last = (idx == len(syllables) - 1)
+        segs = _syllable_to_ipa(syl, is_word_start=is_first, is_word_end=is_last)
+        ipa_parts.append("".join(segs))
+    
+    return "/ˈ" + ".".join(ipa_parts) + "/"

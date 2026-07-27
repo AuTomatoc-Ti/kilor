@@ -2,7 +2,7 @@
 
 **Purpose:** Fast decision-making for common Kilor lexicon tasks.  
 **For detailed specs:** See `data/AI-GUIDE.md`, `rules/4-meta/word-creation-pipeline.md`, `data/SCHEMA.md`  
-**Last updated:** 2026-07-25
+**Last updated:** 2026-07-27
 
 ---
 
@@ -64,9 +64,18 @@ python kilor.py add --file today.md
 - Validates phonotactics (no `j`/`v`, max 5 syllables, `-s` constraint)
 - Checks for duplicates
 - Counts syllables
+- Computes IPA transcription (`words.ipa`) and syllable division string (`words.syllables`)
+- Sets word status to `draft` by default
 - Generates inflections **based on derivation mask** (not all 4 forms!)
 - Inserts into `words`, `meanings`, `inflections` tables
 - Rebuilds FTS search index
+
+**New auto-computed fields** (since 2026-07-27):
+| Column | What | Example |
+|--------|------|---------|
+| `words.ipa` | IPA transcription via `to_ipa()` | `/ˈfɔ.rɑ/` |
+| `words.syllables` | Syllable division string | `fo.ra` |
+| `words.status` | Word lifecycle: `draft` / `active` / `deprecated` / `superseded` | `draft` (default) |
 
 ### 2. Add a New Root (Python API Method)
 

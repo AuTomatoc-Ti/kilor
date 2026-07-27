@@ -16,6 +16,12 @@ CREATE TABLE IF NOT EXISTS words (
     search_text TEXT DEFAULT '',
     is_function_word BOOLEAN DEFAULT 0,
     notes TEXT,
+    ipa TEXT DEFAULT '',               -- auto-computed IPA transcription
+    syllables TEXT DEFAULT '',         -- auto-computed syllable division (e.g. "ta.ma.e")
+    status TEXT DEFAULT 'active' CHECK(status IN ('draft','active','deprecated','superseded')),
+    superseded_by INTEGER REFERENCES words(id),
+    source_wordlist TEXT DEFAULT '',   -- e.g. 'phase1-core300'
+    source_line INTEGER DEFAULT 0,     -- line number in source wordlist
     created_at TEXT DEFAULT (datetime('now')),
     updated_at TEXT DEFAULT (datetime('now'))
 );
@@ -59,6 +65,8 @@ CREATE TABLE IF NOT EXISTS examples (
 
 CREATE INDEX IF NOT EXISTS idx_words_form ON words(form);
 CREATE INDEX IF NOT EXISTS idx_words_derivation_mask ON words(derivation_mask);
+CREATE INDEX IF NOT EXISTS idx_words_colour ON words(consensus_prefix);
+CREATE INDEX IF NOT EXISTS idx_words_syl_count ON words(syl_count);
 CREATE INDEX IF NOT EXISTS idx_meanings_word_id ON meanings(word_id);
 CREATE INDEX IF NOT EXISTS idx_compound_components_component_id ON compound_components(component_id);
 """

@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-07-26
-**Version:** 2.5.0
+**Last updated:** 2026-07-27
+**Version:** 2.6.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E, §III Restored Consonant Rule), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -25,9 +25,9 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 |---|---|---|---|---|---|
 | 1 | `-mae` | Agent | `maeha` | n | person / -er |
 | 2 | `-tek` | Instrument | `tek` | n | tool / -er |
-| 3 | `-lu` | Property | `pireilu` | n | -ness / quality |
-| 4 | `-rin` | Measure | `rinok` | n | -th / degree |
-| 5 | `-par` | Process | `chap` | n | -tion / act of |
+| 3 | `-lu` | Property | `lu` | n | -ness / quality |
+| 4 | `-rin` | Measure | `rin` | n | -th / degree |
+| 5 | `-par` | Process | `par` | n | -tion / act of |
 | 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
 | 7 | `-ius` | Similative | `rius` | n | similar to / like / -ish |
 | 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
@@ -81,7 +81,7 @@ The adjective root appears bare (no `-s`). Takes colour prefix `o-` (abstract). 
 |---|---|
 | `tesakpar` | creation (act of creating) |
 
-Takes colour prefix `o-` (abstract).
+Takes colour prefix `e-` (crafted/abstract).
 
 ### F. Life-Condition — `root + -lise` (semi-productive)
 
@@ -361,8 +361,8 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 | Semantic Class | Prefix | Applies to |
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
-| Crafted tools | `e-` | Instrument nouns (`-tek`) |
-| Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Process (`-par`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
+| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`) |
+| Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
 | Physical boundaries/earth | `ae-` | Location nouns (`pos`, `posia`) |
 
 Verb roots and adjective roots do not carry colour prefixes of their own, so inheritance is not applicable — the fixed semantic-class prefix provides the only source.

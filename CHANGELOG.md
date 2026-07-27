@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.17.0
-**Last Updated:** 2026-07-26
+**Current Version:** v1.19.0
+**Last Updated:** 2026-07-27
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,34 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.19.0 — 2026-07-27
+
+Red-team audit: Streams B & C complete. Frontend scaling (SQL pagination, search debounce, fuzzy cap), UI features (IPA column, colour prefix legend), export flags (--lite, --no-standalone), schema indexes, documentation Quick Wins. See also: CHANGELOG-app.md v1.3.0. See `draft/red-team/STATUS.md` for full audit status.
+
+**Spec:**
+- **`word-creation-pipeline.md`** v2.2.0→2.3.0 — §I field table: added rows j (IPA), k (syllables string), l (status). Bumped version + date.
+
+**Guide:**
+- **`data/AGENT-QUICKSTART.md`** — Updated "What add.py does automatically" section with ipa/syllables/status columns. Added new auto-computed fields table. Bumped date.
+
+**Meta:**
+- **`draft/red-team/STATUS.md`** — Updated: Stream B/C marked complete, all non-human tasks done, cross-reference map updated.
+
+**Validation:**
+- `python kilor.py check` — ✅ 25 errors (all pre-existing; no new errors)
+
+## workspace v1.18.0 — 2026-07-27
+
+Compound backfill review: 67 flagged compounds corrected. Derivational suffix table updated — combining forms (`lu`, `rin`, `par`) replace legacy full-root references (`pireilu`, `rinok`, `chap`). Process prefix changed from `o-` to `e-`. Four suffix roots added to DB (`lu`, `rin`, `par`, `nous`). `ous` renamed to `nous`. `arrinna` deleted.
+
+**Spec:**
+- **`derivational-compounding.md`** v2.5.0→2.6.0 — §I suffix table: From Root column updated (rows 3–5: `pireilu`→`lu`, `rinok`→`rin`, `chap`→`par`). §I-E Process prefix: `o-` → `e-`. §V-A table: Process nouns moved from Abstract (`o-`) to Crafted (`e-`).
+
+**Validation:**
+- `python kilor.py check` — ✅ 25 errors (all pre-existing; no new errors from spec change)
+
+See also: `CHANGELOG-app.md` v1.2.0 for corresponding DB changes.
 
 ## workspace v1.17.0 — 2026-07-26
 
