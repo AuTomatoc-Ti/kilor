@@ -611,3 +611,139 @@ describe('App — table alignment (real DB)', () => {
     }
   });
 });
+
+describe('App — prefix legend modal (visual/accessibility)', () => {
+  it('opens prefix legend modal and shows all 7 prefixes', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Click the "?" trigger in the Prefix column header
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    expect(trigger).toBeTruthy();
+    fireEvent.click(trigger);
+
+    // Modal should be visible
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    // All 7 prefix rows should be present
+    const rows = document.querySelectorAll('.prefix-legend-row');
+    expect(rows.length).toBe(7);
+
+    // Verify specific prefixes
+    const prefixes = ['a-', 'e-', 'i-', 'o-', 'u-', 'y-', 'ae-'];
+    const labels = document.querySelectorAll('.prefix-legend-label strong');
+    const labelTexts = [...labels].map(el => el.textContent);
+    expect(labelTexts).toEqual(prefixes);
+  });
+
+  it('prefix legend text is selectable (user-select: text)', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    fireEvent.click(trigger);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    // Read the CSS file and verify user-select: text is present for legend elements
+    const { readFileSync } = await import('node:fs');
+    const { resolve, dirname } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const cssPath = resolve(__dirname, 'App.css');
+    const css = readFileSync(cssPath, 'utf-8');
+
+    // Verify user-select: text is set on legend elements
+    expect(css).toContain('.prefix-legend-row {');
+    expect(css).toContain('user-select: text');
+    expect(css).toContain('.prefix-legend-cls {');
+    expect(css).toContain('.prefix-legend-emotion {');
+    expect(css).toContain('.prefix-legend-note {');
+  });
+
+
+  it('prefix legend modal has proper overflow handling to prevent viewport overflow', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    fireEvent.click(trigger);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    // Read the CSS file and verify overflow handling
+    const { readFileSync } = await import('node:fs');
+    const { resolve, dirname } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const cssPath = resolve(__dirname, 'App.css');
+    const css = readFileSync(cssPath, 'utf-8');
+
+    // Verify modal has overflow-y: auto and max-height to prevent viewport overflow
+    expect(css).toContain('.prefix-legend-modal {');
+    expect(css).toContain('overflow-y: auto');
+    expect(css).toContain('max-height: 90vh');
+  });
+
+  it('prefix legend uses CSS Grid for proper text wrapping', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    fireEvent.click(trigger);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    // Read the CSS file and verify CSS Grid layout is used
+    const { readFileSync } = await import('node:fs');
+    const { resolve, dirname } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const cssPath = resolve(__dirname, 'App.css');
+    const css = readFileSync(cssPath, 'utf-8');
+
+    // Verify CSS Grid layout and word-wrap for proper text wrapping
+    expect(css).toContain('.prefix-legend-row {');
+    expect(css).toContain('display: grid');
+    expect(css).toContain('grid-template-columns: 14px 32px 1fr 1fr');
+    expect(css).toContain('.prefix-legend-cls {');
+    expect(css).toContain('word-wrap: break-word');
+    expect(css).toContain('.prefix-legend-emotion {');
+    expect(css).toContain('word-wrap: break-word');
+  });
+
+  it('closes modal when Close button is clicked', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    fireEvent.click(trigger);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    const closeBtn = document.querySelector('.prefix-legend-close');
+    expect(closeBtn).toBeTruthy();
+    fireEvent.click(closeBtn);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeNull());
+  });
+
+  it('closes modal when overlay is clicked', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const trigger = document.querySelector('.prefix-legend-trigger');
+    fireEvent.click(trigger);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeInTheDocument());
+
+    const overlay = document.querySelector('.prefix-legend-overlay');
+    expect(overlay).toBeTruthy();
+    fireEvent.click(overlay);
+
+    await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeNull());
+  });
+});

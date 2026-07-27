@@ -146,7 +146,7 @@ function PrefixLegend() {
             </div>
             <p className="prefix-legend-note">
               The colour prefix is part of the word's identity, encoding its ontological class and associated emotion.
-              See <em>rules/1-nominals/nouns-colour-prefix.md</em>.
+              {" "}See <em>rules/1-nominals/nouns-colour-prefix.md</em>.
             </p>
             <button className="prefix-legend-close" onClick={() => setOpen(false)}>Close</button>
           </div>
