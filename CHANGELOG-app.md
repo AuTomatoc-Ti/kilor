@@ -1,5 +1,5 @@
-**Current Version:** v1.5.0
-**Last Updated:** 2026-07-27
+**Current Version:** v1.5.1
+**Last Updated:** 2026-07-28
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,18 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v1.5.1 — 2026-07-28
+
+Audio hygiene: orphaned file detection & cleanup, bidirectional `audio --check`, auto-regenerate audio after `--fix-typo` rename.
+
+**DB / Backend:**
+- **`kilor/commands/edit.py`** — `--fix-typo` now auto-regenerates audio for the renamed word (if espeak-ng + ffmpeg are available). Falls back to a warning with manual regeneration command if toolchain is unavailable. Added `_regenerate_audio_after_rename()` helper.
+- **`kilor/commands/audio.py`** — Added `--check-orphaned` action: lists `.ogg` files with no matching DB row. Added `--cleanup` action: deletes orphaned files (prompts for confirmation unless `--yes` passed). `--check` is now bidirectional: reports both missing files (DB→disk) and orphaned files (disk→DB). Added `_find_orphaned_audio()` helper.
+- **`kilor/__main__.py`** — Wired `--check-orphaned`, `--cleanup`, and `--yes` flags for the `audio` subcommand.
+
+**Validation:**
+- `python kilor.py check` — ✅ All entries pass
 
 ## workspace v1.5.0 — 2026-07-28
 

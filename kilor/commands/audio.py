@@ -76,23 +76,50 @@ def _generate_one(word_id, form, output_path):
     return True
 
 
-def cmd_audio(action=None, word_id=None):
+def cmd_audio(action=None, word_id=None, check_orphaned=False, cleanup=False, yes=False):
     """Handle the 'audio' CLI command."""
     if action is None:
         print("Usage: python kilor.py audio --generate [--id WORD_ID]")
         print("       python kilor.py audio --check")
+        print("       python kilor.py audio --check-orphaned")
+        print("       python kilor.py audio --cleanup [--yes]")
         return
 
     if action == "check":
         _cmd_check()
+    elif action == "check-orphaned":
+        _cmd_check_orphaned(delete=False)
+    elif action == "cleanup":
+        _cmd_check_orphaned(delete=True, yes=yes)
     elif action == "generate":
         _cmd_generate(word_id)
     else:
         print(f"Unknown audio action: {action}")
 
 
+def _find_orphaned_audio():
+    """Return a sorted list of .ogg file IDs that have no matching word in the DB."""
+    if not os.path.isdir(_AUDIO_DIR):
+        return []
+    db = sqlite3.connect(_DB_PATH)
+    active_ids = set(row[0] for row in db.execute("SELECT id FROM words").fetchall())
+    db.close()
+    orphaned = []
+    for fname in os.listdir(_AUDIO_DIR):
+        if not fname.endswith(".ogg"):
+            continue
+        try:
+            fid = int(fname.replace(".ogg", ""))
+        except ValueError:
+            continue
+        if fid not in active_ids:
+            orphaned.append((fid, os.path.join(_AUDIO_DIR, fname)))
+    orphaned.sort(key=lambda x: x[0])
+    return orphaned
+
+
 def _cmd_check():
-    """Report which words are missing audio files."""
+    """Report which words are missing audio files, and which audio files are orphaned."""
     db = sqlite3.connect(_DB_PATH)
     rows = db.execute("SELECT id, form FROM words ORDER BY id").fetchall()
     db.close()
@@ -108,6 +135,36 @@ def _cmd_check():
             print(f"  Missing: {wid:>5}  {form}")
 
     print(f"\nAudio status: {present} present, {missing} missing ({len(rows)} total)")
+
+    # Also report orphaned files (disk → DB direction)
+    orphaned = _find_orphaned_audio()
+    if orphaned:
+        print(f"\nOrphaned audio files (no matching word): {len(orphaned)}")
+        for fid, fpath in orphaned:
+            print(f"  Orphaned: {fid:>5}  {fpath}")
+        print("  Run 'python kilor.py audio --cleanup' to delete these files.")
+
+
+def _cmd_check_orphaned(delete=False, yes=False):
+    """List (and optionally delete) .ogg files with no matching word."""
+    orphaned = _find_orphaned_audio()
+    if not orphaned:
+        print("No orphaned audio files found.")
+        return
+
+    print(f"Orphaned audio files (no matching word): {len(orphaned)}")
+    for fid, fpath in orphaned:
+        print(f"  {fid:>5}  {fpath}")
+
+    if delete:
+        if not yes:
+            response = input(f"\nDelete {len(orphaned)} orphaned file(s)? [y/N] ").strip().lower()
+            if response != 'y':
+                print("Aborted — no files deleted.")
+                return
+        for _, fpath in orphaned:
+            os.unlink(fpath)
+        print(f"Deleted {len(orphaned)} orphaned file(s).")
 
 
 def _cmd_generate(word_id=None):

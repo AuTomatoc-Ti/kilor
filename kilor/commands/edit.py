@@ -7,6 +7,33 @@ from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables
 from ..schema import VALID_POS
 
+_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "dictionary", "public", "audio")
+
+
+def _regenerate_audio_after_rename(word_id, new_form):
+    """Attempt to regenerate audio after a --fix-typo rename.
+
+    The old audio file ({word_id}.ogg) still contains the old pronunciation.
+    Try to regenerate it; warn if the toolchain is unavailable.
+    """
+    old_path = os.path.join(_AUDIO_DIR, f"{word_id}.ogg")
+    if not os.path.isfile(old_path):
+        # No existing audio — nothing to regenerate
+        return
+    try:
+        from .audio import _generate_one
+    except ImportError:
+        print(f"\n  ⚠️  Audio for ID {word_id} still contains the old pronunciation.\n"
+              f"     Regenerate manually:  python kilor.py audio --generate --id {word_id}")
+        return
+    print(f"\n  🔊 Regenerating audio for the new form '{new_form}'…")
+    ok = _generate_one(word_id, new_form, old_path)
+    if ok:
+        print(f"  ✅ Audio regenerated for ID {word_id}")
+    else:
+        print(f"  ⚠️  Audio regeneration failed. Run manually:\n"
+              f"     python kilor.py audio --generate --id {word_id}")
+
 
 def cmd_edit(form, **kwargs):
     """Edit an existing word.
@@ -150,6 +177,9 @@ def cmd_edit(form, **kwargs):
             (new_form, new_syl, word_id),
         )
         changes.append(f"Changed form from '{form}' to '{new_form}'")
+        
+        # Regenerate audio for the renamed word
+        _regenerate_audio_after_rename(word_id, new_form)
     
     if not changes:
         print(f"No changes specified for '{form}'.")

@@ -87,15 +87,20 @@ def main():
     elif cmd == "audio":
         action = None
         word_id = None
+        yes = "--yes" in sys.argv
         if "--generate" in sys.argv:
             action = "generate"
             if "--id" in sys.argv:
                 idx = sys.argv.index("--id")
                 if idx + 1 < len(sys.argv):
                     word_id = int(sys.argv[idx + 1])
+        elif "--check-orphaned" in sys.argv:
+            action = "check-orphaned"
+        elif "--cleanup" in sys.argv:
+            action = "cleanup"
         elif "--check" in sys.argv:
             action = "check"
-        cmd_audio(action=action, word_id=word_id)
+        cmd_audio(action=action, word_id=word_id, yes=yes)
 
     elif cmd == "edit":
         if len(sys.argv) < 3:
