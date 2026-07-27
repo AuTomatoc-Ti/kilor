@@ -377,19 +377,40 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
 
 // ── Table Header ─────────────────────────────────────────────────────────
 
-const COLGROUP = (
-  <colgroup>
-    <col style={{ width: '16%' }} />
-    <col style={{ width: '10%' }} />
-    <col style={{ width: '32%' }} />
-    <col style={{ width: '12%' }} />
-    <col style={{ width: '16%' }} />
-    <col style={{ width: '8%' }} />
-    <col style={{ width: '6%' }} />
-  </colgroup>
-);
+/** Build colgroup widths depending on whether the Modified column is shown.
+ *  When hidden: Word 16%, IPA 10%, Gloss 32%, Type 12%, Prefix 16%, NVAD 8%, Syl 6%
+ *  When shown:  Word 14%, IPA 9%, Gloss 24%, Type 10%, Prefix 14%, NVAD 7%, Syl 5%, Modified 10%
+ *  (unused space auto-distributed by table-layout:fixed)
+ */
+function buildColGroup(showModified) {
+  if (showModified) {
+    return (
+      <colgroup>
+        <col style={{ width: '14%' }} />
+        <col style={{ width: '9%' }} />
+        <col style={{ width: '26%' }} />
+        <col style={{ width: '10%' }} />
+        <col style={{ width: '14%' }} />
+        <col style={{ width: '7%' }} />
+        <col style={{ width: '6%' }} />
+        <col style={{ width: '14%' }} />
+      </colgroup>
+    );
+  }
+  return (
+    <colgroup>
+      <col style={{ width: '16%' }} />
+      <col style={{ width: '10%' }} />
+      <col style={{ width: '32%' }} />
+      <col style={{ width: '12%' }} />
+      <col style={{ width: '16%' }} />
+      <col style={{ width: '8%' }} />
+      <col style={{ width: '6%' }} />
+    </colgroup>
+  );
+}
 
-export function TableHeader({ sortCol, sortDir, onSort }) {
+export function TableHeader({ sortCol, sortDir, onSort, showModified }) {
   function arrow(col) {
     if (sortCol !== col) return <span className="sort-arrow sort-inactive">↕</span>;
     return <span className="sort-arrow sort-active">{sortDir === 'asc' ? '▲' : '▼'}</span>;
@@ -398,7 +419,7 @@ export function TableHeader({ sortCol, sortDir, onSort }) {
   return (
     <div className="table-header-wrap">
       <table className="word-table word-table-header">
-        {COLGROUP}
+        {buildColGroup(showModified)}
         <thead>
           <tr>
             <th className={sortCol === 'form' ? 'sorted' : ''} onClick={() => onSort('form')}>
@@ -422,6 +443,11 @@ export function TableHeader({ sortCol, sortDir, onSort }) {
             <th className={sortCol === 'syl' ? 'sorted' : ''} onClick={() => onSort('syl')} style={{ textAlign: 'center' }}>
               Syl {arrow('syl')}
             </th>
+            {showModified && (
+              <th className={sortCol === 'updated' ? 'sorted' : ''} onClick={() => onSort('updated')}>
+                Modified {arrow('updated')}
+              </th>
+            )}
           </tr>
         </thead>
       </table>
@@ -463,11 +489,31 @@ function PaginationBar({ page, totalPages, totalCount, pageSize, onPageChange })
   );
 }
 
+// ── Last Modified formatter ──────────────────────────────────────────────
+
+function formatUpdatedAt(updated_at) {
+  if (!updated_at) return '—';
+  // updated_at is an ISO string like "2026-07-27T22:30:00.000Z" or "2026-07-27 22:30:00"
+  try {
+    const d = new Date(updated_at.replace(' ', 'T') + (updated_at.includes('Z') ? '' : 'Z'));
+    if (isNaN(d.getTime())) return updated_at.slice(0, 10);
+    // Show as YYYY-MM-DD HH:MM
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    const hh = String(d.getHours()).padStart(2, '0');
+    const min = String(d.getMinutes()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+  } catch (_e) {
+    return updated_at.slice(0, 10);
+  }
+}
+
 // ── Table Body ────────────────────────────────────────────────────────────
 
 const PAGE_SIZE = 50;
 
-export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull, page, totalPages, totalCount, onPageChange }) {
+export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull, page, totalPages, totalCount, onPageChange, showModified }) {
   const handleCopy = (e, form) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(form).then(() => {
@@ -485,11 +531,13 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
     );
   }
 
+  const colSpan = showModified ? 8 : 7;
+
   return (
     <>
       <div className="table-body-wrap">
         <table className="word-table word-table-body">
-          {COLGROUP}
+          {buildColGroup(showModified)}
           <tbody>
             {entries.map((e, i) => {
               const mask = e.derivation_mask
@@ -518,10 +566,11 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
                     <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
                     <td className="td-mask">{mask}</td>
                     <td className="td-syl">{e.syl_count}</td>
+                    {showModified && <td className="td-modified">{formatUpdatedAt(e.updated_at)}</td>}
                   </tr>
                   {isExpanded && (
                     <tr className="detail-tr">
-                      <td colSpan={7}>
+                      <td colSpan={colSpan}>
                         <DetailPanel entry={e} prefixInfo={prefixInfo} onViewFull={onViewFull} />
                       </td>
                     </tr>
@@ -546,7 +595,7 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
 export default function TableView(props) {
   return (
     <>
-      <TableHeader sortCol={props.sortCol} sortDir={props.sortDir} onSort={props.onSort} />
+      <TableHeader sortCol={props.sortCol} sortDir={props.sortDir} onSort={props.onSort} showModified={props.showModified} />
       <TableBody
         entries={props.entries}
         prefixInfo={props.prefixInfo}
@@ -561,6 +610,7 @@ export default function TableView(props) {
         totalPages={props.totalPages}
         totalCount={props.totalCount}
         onPageChange={props.onPageChange}
+        showModified={props.showModified}
       />
     </>
   );

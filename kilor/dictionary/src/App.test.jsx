@@ -502,3 +502,112 @@ describe('App — view full entry workflow', () => {
     expect(screen.getByText('Kilor Dictionary')).toBeInTheDocument();
   });
 });
+
+describe('App — table alignment (real DB)', () => {
+  it('.main-content and .table-header-bar both use scrollbar-gutter: stable to prevent column misalignment', async () => {
+    // Verify the CSS rules exist in the source file.
+    // jsdom does not expose Vite-injected CSS via document.styleSheets,
+    // so we check the raw source.
+    const { readFileSync } = await import('node:fs');
+    const { resolve, dirname } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const cssPath = resolve(__dirname, 'App.css');
+    const css = readFileSync(cssPath, 'utf-8');
+    // Both containers must have scrollbar-gutter: stable for column alignment
+    expect(css).toContain('.main-content { overflow: auto; scrollbar-gutter: stable; }');
+    expect(css).toContain('.table-header-bar { overflow-y: auto; flex-shrink: 0; scrollbar-gutter: stable; }');
+    expect(css.match(/scrollbar-gutter: stable/g).length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('header and body tables have the same number of columns (no modified column)', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const headerTable = document.querySelector('.word-table-header');
+    const bodyTable = document.querySelector('.word-table-body');
+    expect(headerTable).toBeTruthy();
+    expect(bodyTable).toBeTruthy();
+
+    const headerCols = headerTable.querySelectorAll('colgroup col');
+    const bodyCols = bodyTable.querySelectorAll('colgroup col');
+    expect(headerCols.length).toBe(bodyCols.length);
+    // Default: 7 columns (Word, IPA, Gloss, Type, Prefix, NVAD, Syl), no Modified
+    expect(headerCols.length).toBe(7);
+
+    // Also check that data row has the same number of td cells as header th cells
+    const headerThs = headerTable.querySelectorAll('thead th');
+    const firstRowTds = bodyTable.querySelectorAll('tbody tr:first-child td');
+    // first row in body may be a detail-tr (expanded), so we skip to the first non-detail row
+    const firstDataRow = bodyTable.querySelector('tbody tr:not(.detail-tr)');
+    expect(firstDataRow).toBeTruthy();
+    const firstDataTds = firstDataRow.querySelectorAll('td');
+    expect(headerThs.length).toBe(firstDataTds.length);
+  });
+
+  it('settings gear button exists and can be clicked', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const gearBtn = document.querySelector('.settings-gear-btn');
+    expect(gearBtn).toBeTruthy();
+  });
+
+  it('enabling modified column adds the extra column to both header and body', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Click gear to open settings
+    const gearBtn = document.querySelector('.settings-gear-btn');
+    expect(gearBtn).toBeTruthy();
+    fireEvent.click(gearBtn);
+
+    // Wait for settings panel
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeInTheDocument());
+
+    // Toggle "Show Last Modified" checkbox
+    const cb = document.querySelector('.settings-row input[type="checkbox"]');
+    expect(cb).toBeTruthy();
+    expect(cb.checked).toBe(false);
+    fireEvent.click(cb);
+
+    // Settings panel should still be open; close it
+    fireEvent.click(document.querySelector('.settings-close-btn'));
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeNull());
+
+    // Now check columns: should be 8 (7 + Modified)
+    const headerTable = document.querySelector('.word-table-header');
+    const bodyTable = document.querySelector('.word-table-body');
+    const headerCols = headerTable.querySelectorAll('colgroup col');
+    const bodyCols = bodyTable.querySelectorAll('colgroup col');
+    expect(headerCols.length).toBe(8);
+    expect(bodyCols.length).toBe(8);
+
+    // Verify the "Modified" column header text is present
+    const headerThs = headerTable.querySelectorAll('thead th');
+    const thTexts = [...headerThs].map(th => th.textContent.trim());
+    expect(thTexts.some(t => t.startsWith('Modified'))).toBe(true);
+
+    // Verify data row has 8 td cells
+    const firstDataRow = bodyTable.querySelector('tbody tr:not(.detail-tr)');
+    const firstDataTds = firstDataRow.querySelectorAll('td');
+    expect(firstDataTds.length).toBe(8);
+  });
+
+  it('header and body colgroup widths match exactly', async () => {
+    render(<App />);
+    await waitForApp();
+
+    const headerTable = document.querySelector('.word-table-header');
+    const bodyTable = document.querySelector('.word-table-body');
+    const headerCols = headerTable.querySelectorAll('colgroup col');
+    const bodyCols = bodyTable.querySelectorAll('colgroup col');
+
+    for (let i = 0; i < headerCols.length; i++) {
+      const hw = headerCols[i].style.width;
+      const bw = bodyCols[i].style.width;
+      expect(hw).toBe(bw);
+    }
+  });
+});

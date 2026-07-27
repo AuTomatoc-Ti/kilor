@@ -1,4 +1,4 @@
-**Current Version:** v1.4.0
+**Current Version:** v1.4.1
 **Last Updated:** 2026-07-27
 **Format:** `**file** — what changed`
 
@@ -20,6 +20,25 @@
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
 ---
+
+## workspace v1.4.1 — 2026-07-27
+
+Settings panel, last-modified column, table header/body column alignment fix, autocomplete dismissal on table hover.
+
+**Frontend:**
+- **`SettingsPanel.jsx`** (new) — Gear icon (⚙) in header opens settings dropdown with "Show Last Modified column" checkbox. Dropdown dismissed by clicking outside or the close button.
+- **`Header.jsx`** — Added gear icon button and `SettingsPanel` to header-right.
+- **`App.jsx`** — Added `showModified` state (default false, persisted to URL `?mod=1`) and `settingsOpen` state. Passed `showModified` to `TableHeader` and `TableBody`. Added `onMouseEnter={() => setAutocompleteItems([])}` to `.table-header-bar` and `.main-content` — moving cursor to table area dismisses autocomplete suggestions so results are visible.
+- **`Toolbar.jsx`** — Added `onFocus` handler to re-show autocomplete suggestions when clicking back into the search box after dismissal.
+- **`TableView.jsx`** — `buildColGroup()` now takes `showModified` prop and returns 7 or 8 `<col>` elements. `TableHeader` and `TableBody` render conditional "Modified" column. `formatUpdatedAt()` formats `updated_at` as `YYYY-MM-DD HH:MM`. Detail row `colSpan` is dynamic (7 or 8).
+- **`App.css`** — `.settings-gear-btn`, `.settings-overlay`, `.settings-dropdown`, `.settings-header`, `.settings-row` styles. Settings dropdown: `position: fixed; top: 56px; right: 24px`. `.table-header-bar`: `overflow-y: auto; scrollbar-gutter: stable` (was `overflow: hidden` — needed for `scrollbar-gutter` to work). `.word-table-header`: added `width: 100%; border-collapse: separate; border-spacing: 0` to match `.word-table-body` exactly. `.td-modified` style.
+
+**DB / Backend:**
+- **`db.js`** — `queryWords()` SELECT includes `w.updated_at`. `enrichEntries()` passes `updated_at` through to entry objects. `buildTestDB()` table schema includes `updated_at TEXT`. Added `case 'updated'` sort switch handler. Fuzzy search query also fetches `w.updated_at`.
+
+**Validation:**
+- `npx vitest run` — ✅ 39/39 pass (30 App + 9 db.reload)
+- New tests: 5 table alignment tests (dual `scrollbar-gutter`, column parity default & with modified column, gear button existence, colgroup width match)
 
 ## workspace v1.4.0 — 2026-07-27
 

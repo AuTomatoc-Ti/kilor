@@ -240,7 +240,7 @@ export function queryWords({
   // ── Data query with pagination ─────────────────────────────────────
   let cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
     w.compound_type, w.derivation_mask, w.consensus_prefix,
-    w.is_function_word, w.notes,
+    w.is_function_word, w.notes, w.updated_at,
     GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat,
     GROUP_CONCAT(m.pos, ' | ') AS poses_concat`;
 
@@ -280,6 +280,7 @@ export function queryWords({
       case 'mask': sql += ` ORDER BY w.derivation_mask ${dir}`; break;
       case 'syl': sql += ` ORDER BY w.syl_count ${dir}`; break;
       case 'type': sql += ` ORDER BY w.is_function_word ${dir}, w.is_compound ${dir}`; break;
+      case 'updated': sql += ` ORDER BY w.updated_at ${dir}`; break;
       default: sql += ` ORDER BY LOWER(w.form) ${dir}`;
     }
   }
@@ -798,6 +799,7 @@ function enrichEntries(rows) {
       case_forms,
       examples: frag.examples,
       notes: row.notes || '',
+      updated_at: row.updated_at || null,
       relevance: row.relevance != null ? row.relevance : undefined,
     };
   });
@@ -884,7 +886,7 @@ export async function buildTestDB(entries) {
     locateFile: isNode() ? undefined : () => sqlWasmUrl,
   });
   const testDB = new SQL.Database();
-  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT)`);
+  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT, updated_at TEXT)`);
   testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, pos TEXT DEFAULT '', sort_order INTEGER DEFAULT 0)`);
   testDB.run(`CREATE TABLE inflections (word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, form_type TEXT NOT NULL, form TEXT NOT NULL, PRIMARY KEY (word_id, form_type))`);
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);

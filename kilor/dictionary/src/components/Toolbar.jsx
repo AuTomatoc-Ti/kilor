@@ -18,6 +18,7 @@ export default function Toolbar({
             autoFocus
             value={search}
             onChange={e => onSearchChange(e.target.value)}
+            onFocus={e => onSearchChange(e.target.value)}
           />
           {autocompleteItems.length > 0 && (
             <ul className="autocomplete-dropdown">

@@ -38,6 +38,7 @@ function readStateFromURL() {
     sortCol: sp.get('sort') || 'form',
     sortDir: sp.get('dir') === 'desc' ? 'desc' : 'asc',
     filterOpen: sp.get('filt') === '1',
+    showModified: sp.get('mod') === '1',
     page: parseIntSafe('page', 1),
     detailId: isNaN(detailRaw) ? null : detailRaw,
   };
@@ -54,6 +55,7 @@ function writeStateToURL(state) {
   if (state.sortCol !== 'form') sp.set('sort', state.sortCol);
   if (state.sortDir !== 'asc') sp.set('dir', state.sortDir);
   if (state.filterOpen) sp.set('filt', '1');
+  if (state.showModified) sp.set('mod', '1');
   if (state.page > 1) sp.set('page', state.page);
   if (state.detailId) sp.set('detail', state.detailId);
   const qs = sp.toString();
@@ -124,6 +126,8 @@ export default function App() {
   const [filterOpen, setFilterOpen] = useState(initial.filterOpen);
   const [expandedRow, setExpandedRow] = useState(null);
   const [detailId, setDetailId] = useState(initial.detailId);
+  const [showModified, setShowModified] = useState(initial.showModified);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [totalWordCount, setTotalWordCount] = useState(0);
@@ -154,9 +158,9 @@ export default function App() {
   // URL sync
   useEffect(() => {
     if (!loading) {
-      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, page, detailId });
+      writeStateToURL({ search, types: filterTypes, masks: filterMasks, prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, showModified, page, detailId });
     }
-  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, loading, page, detailId]);
+  }, [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, filterOpen, showModified, loading, page, detailId]);
 
   // Autocomplete
   const handleSearchChange = useCallback((val) => {
@@ -359,7 +363,13 @@ export default function App() {
     <>
       {toast && <Toast text={toast} onDone={() => setToast(null)} />}
       <div className="top-bar">
-        <Header total={totalWordCount} />
+        <Header
+          total={totalWordCount}
+          settingsOpen={settingsOpen}
+          onSettingsToggle={() => setSettingsOpen(o => !o)}
+          showModified={showModified}
+          onToggleModified={() => setShowModified(m => !m)}
+        />
         <Toolbar
           search={searchDraft}
           onSearchChange={handleSearchChange}
@@ -416,10 +426,10 @@ export default function App() {
         />
       ) : (
         <>
-          <div className="table-header-bar">
-            <TableHeader sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
+          <div className="table-header-bar" onMouseEnter={() => setAutocompleteItems([])}>
+            <TableHeader sortCol={sortCol} sortDir={sortDir} onSort={handleSort} showModified={showModified} />
           </div>
-          <div className="main-content">
+          <div className="main-content" onMouseEnter={() => setAutocompleteItems([])}>
             {fuzzyResult.rows.length > 0 && (
               <div className="fuzzy-banner">
                 No exact matches for "<strong>{search}</strong>". Showing similar words:
@@ -439,6 +449,7 @@ export default function App() {
               totalPages={totalPages}
               totalCount={result.totalCount}
               onPageChange={setPage}
+              showModified={showModified}
             />
           </div>
         </>
