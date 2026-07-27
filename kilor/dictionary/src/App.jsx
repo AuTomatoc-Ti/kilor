@@ -127,6 +127,7 @@ export default function App() {
   const [expandedRow, setExpandedRow] = useState(null);
   const [detailId, setDetailId] = useState(initial.detailId);
   const [showModified, setShowModified] = useState(initial.showModified);
+  const [showAudio, setShowAudio] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -361,6 +362,7 @@ export default function App() {
 
   return (
     <>
+      <audio id="audio-player" preload="auto" style={{ display: 'none' }} />
       {toast && <Toast text={toast} onDone={() => setToast(null)} />}
       <div className="top-bar">
         <Header
@@ -369,6 +371,8 @@ export default function App() {
           onSettingsToggle={() => setSettingsOpen(o => !o)}
           showModified={showModified}
           onToggleModified={() => setShowModified(m => !m)}
+          showAudio={showAudio}
+          onToggleAudio={() => setShowAudio(a => !a)}
         />
         <Toolbar
           search={searchDraft}
@@ -423,6 +427,7 @@ export default function App() {
           onBack={handleBackFromDetail}
           onSearchByForm={handleSearchByForm}
           onCopyToast={handleCopyToast}
+          showAudio={showAudio}
         />
       ) : (
         <>
@@ -449,6 +454,7 @@ export default function App() {
               totalPages={totalPages}
               totalCount={result.totalCount}
               onPageChange={setPage}
+              showAudio={showAudio}
               showModified={showModified}
             />
           </div>

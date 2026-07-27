@@ -7,6 +7,7 @@ import os
 import sys
 
 from .commands.add import cmd_add
+from .commands.audio import cmd_audio
 from .commands.check import cmd_check
 from .commands.edit import cmd_edit
 from .commands.export import cmd_export
@@ -82,6 +83,19 @@ def main():
             print("Usage: python -m kilor suggest WORD")
             return
         cmd_suggest(sys.argv[2])
+
+    elif cmd == "audio":
+        action = None
+        word_id = None
+        if "--generate" in sys.argv:
+            action = "generate"
+            if "--id" in sys.argv:
+                idx = sys.argv.index("--id")
+                if idx + 1 < len(sys.argv):
+                    word_id = int(sys.argv[idx + 1])
+        elif "--check" in sys.argv:
+            action = "check"
+        cmd_audio(action=action, word_id=word_id)
 
     elif cmd == "edit":
         if len(sys.argv) < 3:

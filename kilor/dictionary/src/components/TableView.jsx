@@ -34,6 +34,31 @@ const PREFIX_LEGEND = [
   { prefix: 'ae-', cls: 'Earth / Boundary',  emotion: 'Disgust', color: '#a16207' },
 ];
 
+/** Play audio for a word by its ID using a persistent audio element to
+ *  avoid browser autoplay-policy issues with repeatedly-created Audio objects. */
+function handlePronounce(e, wordId) {
+  e.stopPropagation();
+  const player = document.getElementById('audio-player');
+  if (!player) return;
+  player.src = `./audio/${wordId}.ogg`;
+  player.load();
+  const promise = player.play();
+  if (promise) promise.catch(() => {});
+}
+
+/** Speaker icon used as pronounce button in multiple locations. */
+function PronounceButton({ wordId, className }) {
+  return (
+    <span
+      className={className || 'pronounce-btn'}
+      onClick={(e) => handlePronounce(e, wordId)}
+      title="Listen to pronunciation"
+    >
+      🔊
+    </span>
+  );
+}
+
 function highlightMatch(text, term) {
   if (!term || term.length === 0) return text;
   const idx = text.toLowerCase().indexOf(term.toLowerCase());
@@ -157,7 +182,7 @@ function PrefixLegend() {
 }
 
 /** Trimmed inline preview — form, IPA, prefix, mask, quick gloss view + link to full entry. */
-function DetailPanel({ entry, prefixInfo, onViewFull }) {
+function DetailPanel({ entry, prefixInfo, onViewFull, showAudio }) {
   const mask = entry.derivation_mask || '';
   const glossesAll = (entry.meanings || []).map(m => (typeof m === 'string' ? m : m.gloss)).join(' / ');
 
@@ -170,7 +195,7 @@ function DetailPanel({ entry, prefixInfo, onViewFull }) {
           </div>
           {entry.ipa && (
             <div className="detail-row">
-              <strong>IPA</strong> <span className="ipa-text">/{entry.ipa}/</span>
+              <strong>IPA</strong> {showAudio && <PronounceButton wordId={entry.id} className="pronounce-btn pronounce-btn-inline" />} <span className="ipa-text">/{entry.ipa}/</span>
             </div>
           )}
           <div className="detail-row">
@@ -209,7 +234,7 @@ function DetailPanel({ entry, prefixInfo, onViewFull }) {
 
 // ── Full Word Detail Page (subpage) ─────────────────────────────────────────
 
-export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCopyToast }) {
+export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCopyToast, showAudio }) {
   if (!entry) return null;
 
   const handleCopy = (e, form) => {
@@ -254,6 +279,7 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
           </span>
         </div>
         <div className="detail-word-meta">
+          {showAudio && <PronounceButton wordId={entry.id} className="pronounce-btn pronounce-btn-detail" />}
           {entry.ipa && <span className="meta-item">/{entry.ipa}/</span>}
           <span className="meta-item">{entry.syl_count} syll · {entry.syllables}</span>
           {entry.consensus_prefix && (
@@ -513,7 +539,7 @@ function formatUpdatedAt(updated_at) {
 
 const PAGE_SIZE = 50;
 
-export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull, page, totalPages, totalCount, onPageChange, showModified }) {
+export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, onToggleExpand, search, keyboardRowIndex, onCopyToast, onViewFull, page, totalPages, totalCount, onPageChange, showAudio, showModified }) {
   const handleCopy = (e, form) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(form).then(() => {
@@ -552,10 +578,13 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
                     className={(isExpanded ? 'row-expanded' : '') + (isKeyboardSelected ? ' row-keyboard-selected' : '')}
                     onClick={() => onToggleExpand(isExpanded ? null : e.id)}
                   >
-                    <td className="td-form" title={allGlosses} onClick={(ev) => handleCopy(ev, e.form)}>
-                      {highlightMatch(e.form, search)}
+                    <td className="td-form" title={allGlosses}>
+                      <span className="td-form-text" onClick={(ev) => handleCopy(ev, e.form)}>
+                        {highlightMatch(e.form, search)}
+                      </span>
                     </td>
                     <td className="td-ipa" title={e.ipa}>
+                      {showAudio && <PronounceButton wordId={e.id} />}
                       <span className="ipa-text">/{e.ipa}/</span>
                     </td>
                     <td className="td-gloss">
@@ -571,7 +600,7 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
                   {isExpanded && (
                     <tr className="detail-tr">
                       <td colSpan={colSpan}>
-                        <DetailPanel entry={e} prefixInfo={prefixInfo} onViewFull={onViewFull} />
+                        <DetailPanel entry={e} prefixInfo={prefixInfo} onViewFull={onViewFull} showAudio={showAudio} />
                       </td>
                     </tr>
                   )}
@@ -598,6 +627,7 @@ export default function TableView(props) {
       <TableHeader sortCol={props.sortCol} sortDir={props.sortDir} onSort={props.onSort} showModified={props.showModified} />
       <TableBody
         entries={props.entries}
+        showAudio={props.showAudio}
         prefixInfo={props.prefixInfo}
         onSearchByForm={props.onSearchByForm}
         expandedRow={props.expandedRow}

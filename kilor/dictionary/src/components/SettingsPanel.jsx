@@ -1,4 +1,4 @@
-export default function SettingsPanel({ showModified, onToggleModified, onClose }) {
+export default function SettingsPanel({ showModified, onToggleModified, showAudio, onToggleAudio, onClose }) {
   return (
     <div className="settings-overlay" onClick={onClose}>
       <div className="settings-dropdown" onClick={(e) => e.stopPropagation()}>
@@ -13,6 +13,14 @@ export default function SettingsPanel({ showModified, onToggleModified, onClose 
             onChange={onToggleModified}
           />
           <span>Show "Last Modified" column</span>
+        </label>
+        <label className="settings-row">
+          <input
+            type="checkbox"
+            checked={showAudio}
+            onChange={onToggleAudio}
+          />
+          <span>Audio pronunciation 🔊 (experimental)</span>
         </label>
       </div>
     </div>

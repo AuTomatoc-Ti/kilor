@@ -1,6 +1,6 @@
 import SettingsPanel from './SettingsPanel';
 
-export default function Header({ total, exportedAt, settingsOpen, onSettingsToggle, showModified, onToggleModified }) {
+export default function Header({ total, exportedAt, settingsOpen, onSettingsToggle, showModified, onToggleModified, showAudio, onToggleAudio }) {
   return (
     <header className="header">
       <div className="header-left">
@@ -19,6 +19,8 @@ export default function Header({ total, exportedAt, settingsOpen, onSettingsTogg
           <SettingsPanel
             showModified={showModified}
             onToggleModified={onToggleModified}
+            showAudio={showAudio}
+            onToggleAudio={onToggleAudio}
             onClose={onSettingsToggle}
           />
         )}

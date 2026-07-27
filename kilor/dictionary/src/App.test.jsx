@@ -282,7 +282,7 @@ describe('App — advanced filter panel (real DB)', () => {
     const input = screen.getByPlaceholderText(/Search by word/i);
     await typeAndWait(input, 'fora');
 
-    const tds = document.querySelectorAll('.td-form');
+    const tds = document.querySelectorAll('.td-form-text');
     const forms = [...tds].map((td) => td.textContent);
     expect(forms).toContain('fora');
 
@@ -745,5 +745,132 @@ describe('App — prefix legend modal (visual/accessibility)', () => {
     fireEvent.click(overlay);
 
     await waitFor(() => expect(document.querySelector('.prefix-legend-modal')).toBeNull());
+  });
+});
+
+describe('App — audio pronunciation (filesystem + DOM)', () => {
+  it('audio .ogg files exist and are non-empty for every word in the lexicon', async () => {
+    // Read the audio directory from disk and verify content
+    const { readdirSync, statSync } = await import('node:fs');
+    const { resolve, dirname } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const audioDir = resolve(__dirname, '..', 'public', 'audio');
+
+    const files = readdirSync(audioDir).filter(f => f.endsWith('.ogg'));
+    expect(files.length).toBeGreaterThan(100); // at least 100 audio files
+
+    for (const f of files) {
+      const path = resolve(audioDir, f);
+      const st = statSync(path);
+      expect(st.size).toBeGreaterThan(0);
+    }
+  });
+
+  it('pronounce buttons are hidden by default (experimental off)', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // No pronounce buttons should be visible when showAudio is false
+    const buttons = document.querySelectorAll('.td-ipa .pronounce-btn');
+    expect(buttons.length).toBe(0);
+  });
+
+  it('enabling audio via Settings shows pronounce buttons', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Open settings via gear button
+    const gearBtn = document.querySelector('.settings-gear-btn');
+    expect(gearBtn).toBeTruthy();
+    fireEvent.click(gearBtn);
+
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeInTheDocument());
+
+    // Toggle "Audio pronunciation 🔊 (experimental)" checkbox
+    const rows = document.querySelectorAll('.settings-row');
+    expect(rows.length).toBeGreaterThanOrEqual(2);
+    const audioRow = rows[1]; // second row = audio toggle
+    const audioCb = audioRow.querySelector('input[type="checkbox"]');
+    expect(audioCb).toBeTruthy();
+    expect(audioCb.checked).toBe(false);
+    fireEvent.click(audioCb);
+
+    // Close settings
+    fireEvent.click(document.querySelector('.settings-close-btn'));
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeNull());
+
+    // Pronounce buttons should now appear
+    const buttons = document.querySelectorAll('.td-ipa .pronounce-btn');
+    expect(buttons.length).toBeGreaterThan(0);
+
+    // Click the first one — should not throw
+    expect(() => fireEvent.click(buttons[0])).not.toThrow();
+
+    // Verify the hidden audio player exists and its src was set
+    const player = document.getElementById('audio-player');
+    expect(player).toBeTruthy();
+    expect(player.src).toMatch(/\/audio\/\d+\.ogg/);
+  });
+
+  it('pronounce button appears in the detail panel when audio enabled', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Enable audio via settings
+    const gearBtn = document.querySelector('.settings-gear-btn');
+    fireEvent.click(gearBtn);
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeInTheDocument());
+    const rows = document.querySelectorAll('.settings-row');
+    fireEvent.click(rows[1].querySelector('input[type="checkbox"]'));
+    fireEvent.click(document.querySelector('.settings-close-btn'));
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeNull());
+
+    // Click first row to expand inline detail
+    const firstRow = document.querySelector('.td-ipa');
+    expect(firstRow).toBeTruthy();
+    fireEvent.click(firstRow);
+
+    await waitFor(() => expect(document.querySelector('.detail-panel')).toBeInTheDocument());
+
+    // Detail panel should have a pronounce button next to IPA
+    const panel = document.querySelector('.detail-panel');
+    const ipaRow = panel.querySelector('.detail-row:nth-child(2)');
+    expect(ipaRow).toBeTruthy();
+    expect(ipaRow.textContent).toContain('IPA');
+    const panelBtn = panel.querySelector('.pronounce-btn');
+    expect(panelBtn).toBeTruthy();
+  });
+
+  it('pronounce button appears in the word detail page when audio enabled', async () => {
+    render(<App />);
+    await waitForApp();
+
+    // Enable audio via settings
+    const gearBtn = document.querySelector('.settings-gear-btn');
+    fireEvent.click(gearBtn);
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeInTheDocument());
+    const rows = document.querySelectorAll('.settings-row');
+    fireEvent.click(rows[1].querySelector('input[type="checkbox"]'));
+    fireEvent.click(document.querySelector('.settings-close-btn'));
+    await waitFor(() => expect(document.querySelector('.settings-dropdown')).toBeNull());
+
+    // Click first row, then "View full entry" to open detail page
+    const firstRow = document.querySelector('.td-ipa');
+    fireEvent.click(firstRow);
+    await waitFor(() => expect(document.querySelector('.detail-panel')).toBeInTheDocument());
+
+    const viewFullBtn = document.querySelector('.view-full-link');
+    expect(viewFullBtn).toBeTruthy();
+    fireEvent.click(viewFullBtn);
+
+    await waitFor(() => expect(document.querySelector('.word-detail-page')).toBeInTheDocument());
+
+    // Detail page should have pronounce button in the meta row
+    const metaRow = document.querySelector('.detail-word-meta');
+    expect(metaRow).toBeTruthy();
+    const pageBtn = metaRow.querySelector('.pronounce-btn');
+    expect(pageBtn).toBeTruthy();
   });
 });
