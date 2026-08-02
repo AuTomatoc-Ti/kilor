@@ -6,6 +6,7 @@ const MASK_LABELS = { N: 'Noun', V: 'Verb', A: 'Adjective', D: 'Adverb' };
 const POS_INLINE = {
   N: 'N', V: 'V', A: 'A', D: 'D',
   PRON: 'PRON', NUM: 'NUM',
+  DET: 'DET',
   CCONJ: 'CONJ', SCONJ: 'CONJ',
   ADP: 'ADP', PART: 'PART', MODAL: 'MOD',
   DEM: 'DEM', Q: 'Q',
@@ -17,6 +18,7 @@ const POS_INLINE = {
 const POS_FULL = {
   N: 'Noun', V: 'Verb', A: 'Adjective', D: 'Adverb',
   PRON: 'Pronoun', NUM: 'Numeral',
+  DET: 'Determiner',
   CCONJ: 'Coordinating Conjunction', SCONJ: 'Subordinating Conjunction',
   ADP: 'Adposition', PART: 'Particle', MODAL: 'Modal Verb',
   DEM: 'Demonstrative', Q: 'Question Word',

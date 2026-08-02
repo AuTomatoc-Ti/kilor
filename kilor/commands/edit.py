@@ -78,6 +78,10 @@ def cmd_edit(form, **kwargs):
             "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
             (word_id, gloss, "en", sort_order + 1, pos),
         )
+        conn.execute(
+            "UPDATE words SET updated_at = datetime('now') WHERE id = ?",
+            (word_id,),
+        )
         label = f"'{gloss}'"
         if pos:
             label += f" (pos={pos})"
@@ -87,7 +91,7 @@ def cmd_edit(form, **kwargs):
     if "set_prefix" in kwargs:
         new_prefix = kwargs["set_prefix"]
         conn.execute(
-            "UPDATE words SET consensus_prefix = ? WHERE id = ?",
+            "UPDATE words SET consensus_prefix = ?, updated_at = datetime('now') WHERE id = ?",
             (new_prefix, word_id),
         )
         changes.append(f"Set prefix to '{new_prefix}'")
@@ -107,7 +111,7 @@ def cmd_edit(form, **kwargs):
             return False
         
         conn.execute(
-            "UPDATE words SET derivation_mask = ? WHERE id = ?",
+            "UPDATE words SET derivation_mask = ?, updated_at = datetime('now') WHERE id = ?",
             (new_mask, word_id),
         )
         changes.append(f"Set derivation mask to '{new_mask}'")
@@ -140,6 +144,10 @@ def cmd_edit(form, **kwargs):
             "INSERT INTO examples (word_id, kilor_text, english_text, source) VALUES (?, ?, ?, ?)",
             (word_id, kilor_text, english_text, "canonical"),
         )
+        conn.execute(
+            "UPDATE words SET updated_at = datetime('now') WHERE id = ?",
+            (word_id,),
+        )
         changes.append(f"Added example: '{kilor_text}' = '{english_text}'")
     
     # Remove example
@@ -147,6 +155,10 @@ def cmd_edit(form, **kwargs):
         example_id = int(kwargs["remove_example"])
         conn.execute("DELETE FROM examples WHERE id = ? AND word_id = ?", (example_id, word_id))
         if conn.rowcount > 0:
+            conn.execute(
+                "UPDATE words SET updated_at = datetime('now') WHERE id = ?",
+                (word_id,),
+            )
             changes.append(f"Removed example ID {example_id}")
         else:
             print(f"Warning: example ID {example_id} not found for this word.")
@@ -173,7 +185,7 @@ def cmd_edit(form, **kwargs):
         # Update form and syllable count
         new_syl = count_syllables(new_form)
         conn.execute(
-            "UPDATE words SET form = ?, syl_count = ? WHERE id = ?",
+            "UPDATE words SET form = ?, syl_count = ?, updated_at = datetime('now') WHERE id = ?",
             (new_form, new_syl, word_id),
         )
         changes.append(f"Changed form from '{form}' to '{new_form}'")

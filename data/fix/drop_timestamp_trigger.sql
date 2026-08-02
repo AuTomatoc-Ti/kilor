@@ -1,0 +1,12 @@
+-- Fix: Drop trg_words_updated trigger that mass-bumps all updated_at timestamps.
+-- 
+-- Root cause: populate_search_text() iterates ALL words with UPDATE search_text,
+-- and trg_words_updated fires on EVERY UPDATE, setting updated_at = datetime('now').
+-- Result: after any audit run, all 409 words get the same timestamp.
+--
+-- Safety: every application code path (audit_apply.py, edit.py) already sets
+-- updated_at = datetime('now') explicitly on semantic changes. Infrastructure
+-- UPDATEs (search_text, FTS sync) must NOT touch timestamps.
+--
+-- Verified on mimic DB — no production DB touched until user approves.
+DROP TRIGGER IF EXISTS trg_words_updated;

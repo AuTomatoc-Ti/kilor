@@ -90,8 +90,14 @@ def cmd_check():
         if syl_count >= 3 and not is_func:
             pass
 
+        # Skip phonology checks for subscripted forms (metadata-only per pipeline §VI)
+        has_subscript = any(ord(ch) >= 0x2080 and ord(ch) <= 0x2089 for ch in form)
+
         # Syllable count verification
-        computed = count_syllables(form)
+        if has_subscript:
+            computed = syl_count  # pass through
+        else:
+            computed = count_syllables(form)
         if computed != syl_count:
             errors.append(
                 f"  {form}: syl_count mismatch — stored {syl_count}, computed {computed}"
@@ -99,7 +105,7 @@ def cmd_check():
 
         # IPA verification — check stored IPA matches computed IPA
         stored_ipa = w["ipa"] if "ipa" in w.keys() else ""
-        if stored_ipa:
+        if stored_ipa and not has_subscript:
             if " " in form:
                 # Multi-word compound: handle each word
                 subwords = form.split()

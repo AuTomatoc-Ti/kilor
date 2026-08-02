@@ -8,6 +8,8 @@ import sys
 
 from .commands.add import cmd_add
 from .commands.audio import cmd_audio
+from .commands.audit_apply import cmd_audit_apply
+from .commands.audit_export import cmd_audit_export
 from .commands.check import cmd_check
 from .commands.edit import cmd_edit
 from .commands.export import cmd_export
@@ -101,6 +103,42 @@ def main():
         elif "--check" in sys.argv:
             action = "check"
         cmd_audio(action=action, word_id=word_id, yes=yes)
+
+    elif cmd == "audit-export":
+        output_path = None
+        if "--output" in sys.argv:
+            idx = sys.argv.index("--output")
+            if idx + 1 < len(sys.argv):
+                output_path = sys.argv[idx + 1]
+        split = "--split" in sys.argv
+        batch_size = 50
+        if "--batch-size" in sys.argv:
+            idx = sys.argv.index("--batch-size")
+            if idx + 1 < len(sys.argv):
+                batch_size = int(sys.argv[idx + 1])
+        cmd_audit_export(output_path, split=split, batch_size=batch_size)
+
+    elif cmd == "audit-apply":
+        filepath = None
+        if "--file" in sys.argv:
+            idx = sys.argv.index("--file")
+            if idx + 1 < len(sys.argv):
+                filepath = sys.argv[idx + 1]
+        batch_size = 20
+        if "--batch-size" in sys.argv:
+            idx = sys.argv.index("--batch-size")
+            if idx + 1 < len(sys.argv):
+                batch_size = int(sys.argv[idx + 1])
+        batch_start = 0
+        if "--batch-start" in sys.argv:
+            idx = sys.argv.index("--batch-start")
+            if idx + 1 < len(sys.argv):
+                batch_start = int(sys.argv[idx + 1])
+        dry_run = "--dry-run" in sys.argv
+        commit = "--commit" in sys.argv
+        only_reviewed = "--only-reviewed" in sys.argv
+        cmd_audit_apply(filepath=filepath, batch_size=batch_size, batch_start=batch_start,
+                        dry_run=dry_run, commit=commit, only_reviewed=only_reviewed)
 
     elif cmd == "edit":
         if len(sys.argv) < 3:

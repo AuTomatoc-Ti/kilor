@@ -142,6 +142,7 @@ DERIVATION_MASK_LABELS = {
 VALID_POS = frozenset({
     "N", "V", "A", "D",          # open-class content (derivation_mask letters)
     "PRON", "NUM",                # closed-class content-like (pronouns, numerals)
+    "DET",                         # determiners / quantifiers (any, each, some, few, most, none)
     "CCONJ", "SCONJ",             # conjunctions (coordinating, subordinating)
     "ADP",                         # adpositions (te, sy, mer, ar, tilpe, na, spatial postpositions)
     "PART",                        # particles (negation, modal, interrogative, emotional)
@@ -157,6 +158,7 @@ POS_LABELS = {
     "D": "Adverb",
     "PRON": "Pronoun",
     "NUM": "Numeral",
+    "DET": "Determiner",
     "CCONJ": "Coordinating Conjunction",
     "SCONJ": "Subordinating Conjunction",
     "ADP": "Adposition",

@@ -380,6 +380,10 @@ function getCaseForms(form, derivationMask, isFunctionWord) {
 
 // ──────────────────────────────────────────────────────────────────────────────
 
+function _hasSubscript(word) {
+  return /[\u2080-\u2089]/.test(word);
+}
+
 function splitSyllablesJS(word) {
   /* Greedy left-to-right syllable parser using the Maximal Onset Principle.
      Mirrors kilor/phonology.py:split_syllables().
@@ -392,7 +396,9 @@ function splitSyllablesJS(word) {
        - End-only and edge-only only match at word-final position (coda)
        - Mid-word multi-char sequences are separate core consonants
        - Intervocalic core consonant → onset of next syllable (maxonset)
-  */
+   */
+  // Skip subscripted forms (metadata-only per pipeline §VI)
+  if (_hasSubscript(word)) return [word];
   const cleaned = word.replace(/[jv]/g, "").replace(/-/g, "");
   const n = cleaned.length;
   if (n === 0) return [];

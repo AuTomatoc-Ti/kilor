@@ -1,5 +1,5 @@
-**Current Version:** v1.5.1
-**Last Updated:** 2026-07-28
+**Current Version:** v1.6.0
+**Last Updated:** 2026-08-02
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,29 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v1.6.0 — 2026-08-02
+
+Full lexicon audit complete: 9 batches, ~411 words human-reviewed. Meanings, derivation masks, consensus prefixes, word types, POS tags, notes, and inflections corrected across all existing DB entries. New `audit-apply` and `audit-export` pipeline. Subscript form guards in Python & JS phonology. `updated_at` discipline fixed (application-layer only; recursive trigger removed). `D`-without-`A` mask constraint relaxed.
+
+**Frontend:**
+- **`db.js`** — `splitSyllablesJS()`: subscript guard — words with Unicode subscript characters (U+2080–U+2089) skip syllable parsing and return `[word]`. Prevents crash on subscripted pipeline escape-hatch forms like `ero₁`.
+- **`TableView.jsx`** — Minor subscript display handling.
+
+**DB / Backend:**
+- **`kilor/commands/audit_apply.py`** (new) — Batch audit change application. Parses human-reviewed audit `.md` sheets; applies form renames, word type reclassifications, derivation mask changes, consensus prefix updates, meaning/POS corrections, notes cleanup, compound component re-links, and inflection auto-regeneration. Handles `(CLOSED-CLASS)`→`""` normalization, POS canonicalization (`adj`→`A`, `adv`→`D`, `v`→`V`, `n`→`N`), `(clear)`/`(delete)`/`(remove)`→`""` Notes normalization, and `wrong tone marker` diagnostic→auto-regeneration. 4-phase workflow: preview→commit with `--commit` flag. Sets `updated_at` on every mutation.
+- **`kilor/commands/audit_export.py`** (new) — Generates per-batch human-review audit sheets (`.md` format) from the DB. Each word rendered as a table with current values and blank Desired Change column.
+- **`kilor/__main__.py`** — Wired `audit-apply` and `audit-export` subcommands. `audit-apply` accepts `--file`, `--batch-size` (default 50), and `--commit`.
+- **`kilor/commands/check.py`** — Subscript guard: words with Unicode subscript characters (U+2080–U+2089) skip IPA validation and syllable count checks (subscripted forms are metadata-only per pipeline §VI). Removed `D`-without-`A` mask validation — standalone `D` is valid per grammar spec.
+- **`kilor/commands/edit.py`** — `--fix-typo` now sets `updated_at = datetime('now')` on the words table UPDATE.
+- **`kilor/schema.py`** — `VALID_POS` added `MODAL`, `DEM`, `Q`, `CLF`, `INTERJ`, `PROPN` tags for future/partial use.
+- **`kilor/tests/test_updated_at.py`** (new) — Tests verifying `updated_at` is set on INSERT and bumped on UPDATE via `audit_apply.py` and `edit.py`.
+- **`data/kilor.db`** — Audit batches 001–009 applied: all ~411 existing words human-reviewed. Corrections across meanings (typos, missing glosses, POS tag canonicalization), derivation masks (VAD→NVAD, NAD→D, N→NAD, etc.), consensus prefixes (o-/None→e-/u-/a-, etc.), word types (root↔function per Mistake 13), forms (thanar→thaki, wonar→wonir, tlaure→tlaurhak), notes (tor/torra cleanup), compound components (tesakmae, shemae, tamae, takamae → maeha), and inflections (auto-regenerated for all mask-change words + "wrong tone marker" diagnostics). `updated_at` timestamps updated for all modified words via application-layer discipline.
+- **`data/fix/drop_timestamp_trigger.sql`** (new) — Cleanup script to drop the recursive `AFTER UPDATE` trigger (postmortem Mistake 14). Not applied — informational only.
+
+**Validation:**
+- `python kilor.py check` — ✅ 35 errors (5 new from batch-008 single-form masks, 30 pre-existing; no regressions)
+- See `draft/audit-batch-postmortem.md` for full audit pipeline postmortem (16 documented mistakes & lessons)
 
 ## workspace v1.5.1 — 2026-07-28
 
