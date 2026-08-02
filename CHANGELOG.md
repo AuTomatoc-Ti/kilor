@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.20.0
-**Last Updated:** 2026-08-02
+**Current Version:** v1.20.1
+**Last Updated:** 2026-08-03
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,18 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.20.1 — 2026-08-03
+
+20 missing consensus_prefix assigned to nouns; no spec changes.
+
+**Data:**
+- **`data/kilor.db`** — 20 nouns assigned colour prefix: asdo (o-), aultake (ae-), gor (o-), gus (a-), hostak (o-), kau (o-), kop (o-), meki (o-), mekri (o-), mug (u-), naram (o-), niba (u-), noba (u-), pusar (o-), retanik (u-), roli (o-), rolifor (o-), taka (u-), taki (u-), tle (o-).
+
+**Validation:**
+- `python kilor.py check` — 0 prefix-mask errors, 12 prefix-mask warnings (pre-existing stale prefixes on non-nouns); 35 total errors (all pre-existing noise)
+
+> **Tooling changes** tracked in `CHANGELOG-app.md` v1.8.0.
 
 ## workspace v1.20.0 — 2026-08-02
 

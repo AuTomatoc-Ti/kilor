@@ -797,7 +797,7 @@ function enrichEntries(rows) {
       is_compound: Boolean(row.is_compound),
       compound_type: row.compound_type || null,
       is_function_word: Boolean(row.is_function_word),
-      consensus_prefix: row.consensus_prefix || null,
+      consensus_prefix: (row.consensus_prefix && mask.includes('N')) ? row.consensus_prefix : null,
       inflections: computedInfl,
       components: frag.components,
       pattern: meta ? meta.pattern : null,

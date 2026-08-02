@@ -1,5 +1,5 @@
-**Current Version:** v1.6.0
-**Last Updated:** 2026-08-02
+**Current Version:** v1.8.0
+**Last Updated:** 2026-08-03
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,24 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v1.8.0 — 2026-08-03
+
+Prefix-mask consistency enforcement: add.py requires prefix for nouns, edit.py warns/blocks on mask changes, check.py validates, dictionary app hides stale prefixes on non-nouns.
+
+**Frontend:**
+- **`kilor/dictionary/src/db.js`** — `enrichEntries()` now nulls `consensus_prefix` when N ∉ derivation_mask (stale prefixes hidden in display, filtering, detail page)
+
+**DB / Backend:**
+- **`kilor/commands/add.py`** — `_validate_and_resolve_prefix()` now requires non-empty `consensus_prefix` when N ∈ mask (blocking error); auto-clears to NULL when N ∉ mask
+- **`kilor/commands/edit.py`** — `--set-mask` warns when removing N while prefix still set; blocks when adding N to mask without existing prefix
+- **`kilor/commands/check.py`** — New validation: error for noun with no prefix, warning for non-noun with stale prefix
+- **`data/kilor.db`** — 20 nouns assigned missing `consensus_prefix` via batch edit (asdo, aultake, gor, gus, hostak, kau, kop, meki, mekri, mug, naram, niba, noba, pusar, retanik, roli, rolifor, taka, taki, tle)
+
+**Validation:**
+- `python kilor.py check` — 0 prefix-mask errors, 12 prefix-mask warnings (pre-existing stale prefixes on non-nouns)
+
+> **Data corrections** tracked in `CHANGELOG.md` v1.20.1.
 
 ## workspace v1.7.0 — 2026-08-02
 

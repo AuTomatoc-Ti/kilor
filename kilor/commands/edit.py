@@ -110,6 +110,30 @@ def cmd_edit(form, **kwargs):
             conn.close()
             return False
         
+        # ── Prefix-mask consistency check ──
+        old_mask = (word["derivation_mask"] or "").upper()
+        old_has_n = "N" in old_mask
+        new_has_n = "N" in new_mask
+        current_prefix = word["consensus_prefix"] or ""
+        
+        if new_has_n and not old_has_n and not current_prefix:
+            # Adding N to a word that has no prefix → blocking error
+            print(
+                f"Error: mask '{new_mask}' includes N but no consensus_prefix is set. "
+                "Set it first with --set-prefix."
+            )
+            conn.close()
+            return False
+        
+        if not new_has_n and old_has_n and current_prefix:
+            # Removing N from a word that had a prefix → warning only
+            print(
+                f"Warning: N removed from mask (was '{old_mask}', now '{new_mask}'), "
+                f"but consensus_prefix '{current_prefix}' is still set. "
+                "The prefix will be ignored in display. "
+                f"Clear it with --set-prefix '' if unintended."
+            )
+        
         conn.execute(
             "UPDATE words SET derivation_mask = ?, updated_at = datetime('now') WHERE id = ?",
             (new_mask, word_id),

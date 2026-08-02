@@ -115,25 +115,36 @@ def _validate_and_resolve_prefix(entry, root, english, errors):
     Returns (prefix_value, should_continue).
     prefix_value: the string to store (or None for NULL).
     should_continue: False if a blocking error occurred and this entry should be skipped.
+    
+    Rule: consensus_prefix is only meaningful when the derivation mask includes N.
+    - N in mask: prefix is REQUIRED. Missing/invalid = blocking error.
+    - N not in mask: prefix is silently cleared (auto-NULL). No error on missing prefix.
     """
+    mask = (entry.get("mask", "") or "").upper()
+    has_n = "N" in mask
     prefix = entry.get("consensus_prefix", "").strip()
     
+    # ── Handle explicit "none" / "--" ──
+    if prefix in ("--", "none"):
+        prefix = ""
+    
+    # ── N not in mask: prefix not meaningful, auto-clear ──
+    if not has_n:
+        return None, True
+    
+    # ── N in mask: prefix is REQUIRED ──
     if not prefix:
         errors.append(
-            f"'{root}' ({english}): missing consensus prefix — "
+            f"'{root}' ({english}): mask '{mask}' includes N but no consensus prefix — "
             "please fill in the Consensus Prefix field "
-            "(see rules/1-nominals/nouns-colour-prefix.md §V). "
-            "Use '--' or 'none' for words that do not take a colour prefix."
+            "(see rules/1-nominals/nouns-colour-prefix.md §V)"
         )
         return None, False
-    
-    if prefix in ("--", "none"):
-        return None, True
     
     if prefix not in _VALID_PREFIXES:
         errors.append(
             f"'{root}' ({english}): invalid consensus prefix '{prefix}' — "
-            f"must be one of {sorted(_VALID_PREFIXES)} or '--' / 'none'"
+            f"must be one of {sorted(_VALID_PREFIXES)}"
         )
         return None, False
     

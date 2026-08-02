@@ -86,6 +86,26 @@ def cmd_check():
                 if comp_row and comp_row["is_compound"]:
                     errors.append(f"  {form}: component '{c['component_form']}' is a compound, not a root")
 
+        # ── Prefix-mask consistency ──
+        # Rule: consensus_prefix is only meaningful when N ∈ derivation_mask.
+        # - N in mask + no prefix → ERROR (noun requires prefix)
+        # - N not in mask + prefix set → WARNING (stale prefix on non-noun)
+        mask = (w["derivation_mask"] or "").upper()
+        has_n = "N" in mask
+        prefix = w["consensus_prefix"] or ""
+        
+        if has_n and not prefix:
+            errors.append(
+                f"  {form}: noun (mask '{mask}') has no consensus_prefix set"
+            )
+        
+        if not has_n and prefix and mask:
+            # Non-noun content word with a prefix that should be cleared
+            warnings.append(
+                f"  {form}: non-noun (mask '{mask}') has consensus_prefix '{prefix}' set "
+                f"— prefix only applies to nouns; may be stale"
+            )
+
         # Tone markers on 3+ syllable inflected forms (skipped for now)
         if syl_count >= 3 and not is_func:
             pass
