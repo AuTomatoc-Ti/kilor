@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-07-27
-**Version:** 2.6.0
+**Last updated:** 2026-08-02
+**Version:** 2.7.2
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E, §III Restored Consonant Rule), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -25,7 +25,7 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 |---|---|---|---|---|---|
 | 1 | `-mae` | Agent | `maeha` | n | person / -er |
 | 2 | `-tek` | Instrument | `tek` | n | tool / -er |
-| 3 | `-lu` | Property | `lu` | n | -ness / quality |
+| 3 | `-lu` | Property | `lu` | n | -ness / quality (concrete noun → abstract property) |
 | 4 | `-rin` | Measure | `rin` | n | -th / degree |
 | 5 | `-par` | Process | `par` | n | -tion / act of |
 | 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
@@ -56,15 +56,19 @@ Agent suffixes use the verb's bare root (no `-s`). The agent noun takes colour p
 
 Takes colour prefix `e-` (crafted tools): `e-kuptek` = "the cutting tool".
 
-### C. Property — `adjective-root + -lu`
+### C. Property — `concrete noun + -lu` / `noun + lu` (multi-word form)
 
 | Form | Meaning |
 |---|---|
-| `gorlu` | goodness |
-| `mylu` | darkness |
-| `wemlu` | warmth |
+| `klush lu` | courage (lit. "blood-ness", 血性; from `klush`, "blood") |
 
-The adjective root appears bare (no `-s`). Takes colour prefix `o-` (abstract). The form `emlu` ("truth") is a lexicalised instance of this suffix.
+`-lu` derives an abstract property from a concrete noun base — "the quality or nature of X." The suffix form is the shortened combining form of `pireilu` ("property, quality"), descended from the full content root `lu`.
+
+Unlike quality roots (`gor`, `my`, `ema`), whose bare form already nominalises their inherent property (goodness, darkness, truth), `-lu` bridges the gap for concrete nouns where the bare root refers to a physical substance or object, not an abstraction.
+
+Takes colour prefix inherited from the base noun (§V-B): `a-klush lu` = "the courage" (from `a-klush`, "the blood").
+
+For roots ending in an end-only or edge-only consonant, `-lu` appears in its full-root multi-word form `lu` (§III-B.1). Example: `klush lu` = "courage" (not `*klushlu`).
 
 ### D. Measure — `adjective-root + -rin`
 
@@ -73,7 +77,7 @@ The adjective root appears bare (no `-s`). Takes colour prefix `o-` (abstract). 
 | `shukrin` | speed (fast-degree) |
 | `ralirin` | size (big-degree) |
 
-`-rin` nominalises a scalar quality as a measurable degree. Contrasts with `-lu`, which nominalises an inherent property: `wemlu` = warmth (the quality), `wemrin` = temperature (the measurable degree). Takes colour prefix `o-` (abstract).
+`-rin` nominalises a scalar quality as a measurable degree. Contrasts with `-lu` (§I-C), which derives an abstract property from a concrete noun base. Takes colour prefix `o-` (abstract).
 
 ### E. Process — `verb + -par`
 
@@ -93,13 +97,8 @@ Takes colour prefix `e-` (crafted/abstract).
 | `rildalise` | vow; oath (pledge as lived bond) |
 | `gorlise` | good fortune |
 | `bonolise` | misfortune |
-| `mylise` | dark fate |
-| `luminlise` | bright fate |
-| `huplise` | downfall; devolution |
-| `hoplise` | luck; fortune |
-| `shenlise` | one's own destiny |
-| `maelise` | fate; destiny |
-| `song lise` | fated friend (multi-word; see §III-B) |
+
+
 
 `-lise` nominalises a root into a **numinous life-condition** — a concept of existential weight. Unlike the other five suffixes, which are fully productive and semantically lightweight (any compatible root works), `-lise` is **semi-productive**: new coinages are limited to concepts with existential significance — life arcs, fortunes, binding commitments, spiritual conditions. It is the suffix for naming something that defines a life.
 
@@ -154,6 +153,8 @@ Abundative-derived words **inherit the colour prefix of the base**: `a-forania` 
 
 For roots ending in an end-only or edge-only consonant, `-ia` appears in its full-root multi-word form `nia` (§III-B.1). Example: `song nia` = "rich in friends" (not `*songia`).
 
+Unlike quality roots (e.g., `losto`, "happiness"), whose bare form already nominalises the property, `-ia` derives a genuinely distinct concept only from a **concrete noun** base. Applying `-ia` to a quality root would be redundant (†lostonia = "full of happiness" ≈ "happiness").
+
 `-ia` contrasts with `-ius` (similative): `forarius` = fire-like (outward resemblance); `forania` = full of fire / fiery (inward pervasion).
 
 ---
@@ -168,7 +169,7 @@ Heads that are 2+ syllables or semantically concrete remain as separate words in
 | 8 | `pos` | `poska` | Location | n | place |
 | 9 | `isra` | `lokisra` | Doctrine | n | doctrine / system |
 | 10 | `afaloi` | `afaloi` | Capability | nv | ability / able to |
-| 11 | `nara` / `narau` | `narau` | Without/Lack | n | without / -less |
+| 11 | `naras` / `narau` | `narau` | Without/Lack | n | without / -less |
 | 12 | `posia` | `posia` | Realm/Land | n | land of / realm of |
 | 13 | `lote` | `lote` | Collective | n | group / multitude (human nouns only; see §II-G) |
 
@@ -211,18 +212,18 @@ Takes colour prefix `o-` (abstract system).
 
 `afaloi` precedes the verb (modifier position). This pattern is distinct from the periphrastic `sew + verb` ("can X" as a verb phrase) — `afaloi taka` is a nominal/adjectival compound ("edible"), while `sew taka` is a predicate ("can eat"). Takes colour prefix `o-` (abstract).
 
-### E. Without/Lack — `narau + noun` / `noun + nara`
+### E. Without/Lack — `narau + noun` / `noun + naras`
 
 | Form | Meaning |
 |---|---|
 | `narau lira` | without water (prepositional) |
-| `lira nara` | waterless (derivational) |
+| `lira naras` | waterless (derivational) |
 
 Two syntactic patterns with the same root:
 - **Preposed `narau`:** prepositional usage — `narau lira` = "without water"
-- **Postposed `nara`:** derivational compounding — `lira nara` = "waterless"
+- **Postposed `naras`:** derivational compounding — `lira naras` = "waterless"
 
-The postposed form `nara` follows the standard head-last compounding pattern. Takes colour prefix `o-` (abstract).
+The postposed form `naras` follows the standard head-last compounding pattern. Takes colour prefix `o-` (abstract).
 
 ### F. Realm/Land — `noun + posia`
 
@@ -318,6 +319,7 @@ When a root ends in an end-only or edge-only consonant, fusion is blocked (§III
 
 | Form | Meaning | Rule |
 |---|---|---|
+| `klush lu` | courage | `klush` ends in edge-only `sh` |
 | `song lise` | fated friend | `song` ends in end-only `ng` |
 | `bash mae` | (hypothetical) person-who-bash | `bash` ends in edge-only `sh` |
 
@@ -332,7 +334,7 @@ When a head attaches to a word that already carries a derivational suffix (a der
 
 #### 3. Multi-syllable / semantically concrete heads
 
-Heads in §II (`param`, `pos`, `isra`, `afaloi`, `nara`) always appear as separate words regardless of the root they attach to.
+Heads in §II (`param`, `pos`, `isra`, `afaloi`, `naras`) always appear as separate words regardless of the root they attach to.
 
 ---
 
@@ -362,7 +364,7 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
 | Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`) |
-| Abstract | `o-` | Property (`-lu`), Measure (`-rin`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`nara`) |
+| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`naras`) |
 | Physical boundaries/earth | `ae-` | Location nouns (`pos`, `posia`) |
 
 Verb roots and adjective roots do not carry colour prefixes of their own, so inheritance is not applicable — the fixed semantic-class prefix provides the only source.
@@ -376,6 +378,7 @@ For derivations from nouns — where the base already carries a colour prefix �
 | `-ius` | Similative | `i-auronius` (from `i-auron`, "sky") |
 | `-eus` | Relational | `i-auroneus` (from `i-auron`, "sky") |
 | `-ia` | Abundative | `a-forania` (from `a-fora`, "fire") |
+| `-lu` | Property | `a-klush lu` (from `a-klush`, "blood") |
 
 Multi-word heads (`pos`, `posia`, `param`, `isra`, etc.) carry their own prefix as head nouns; the compound's prefix comes from the head (`ae-bau pos` = "the bakery", `ae-fos posia` = "the land of ice"), not from the modifier. This is standard head-last compounding (§III-B), distinct from the base-inheritance rule for fused suffixes.
 

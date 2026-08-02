@@ -19,6 +19,16 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
+## workspace v1.7.0 — 2026-08-02
+
+Derivational suffix audit DB cleanup: removed 4 redundant -lu doublets, created `klush lu` compound, unified question word POS to Q. See also: CHANGELOG.md v1.20.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — Deleted: gorlu (305), mylu (306), emalu (114), wemlu (307) — 4 redundant -lu doublets of quality roots. Modified: wem (55) — added "warmth" as noun meaning. Created: `klush lu` (423) — multi-word compound, mask=N, prefix=a-, meaning=courage (血性), components klush+lu. Question word POS unified to Q: awei, aeweisan, aewei updated in meanings table.
+
+**Validation:**
+- `python kilor.py check` — 35 errors (all pre-existing noise)
+
 ## workspace v1.6.0 — 2026-08-02
 
 Full lexicon audit complete: 9 batches, ~411 words human-reviewed. Meanings, derivation masks, consensus prefixes, word types, POS tags, notes, and inflections corrected across all existing DB entries. New `audit-apply` and `audit-export` pipeline. Subscript form guards in Python & JS phonology. `updated_at` discipline fixed (application-layer only; recursive trigger removed). `D`-without-`A` mask constraint relaxed.

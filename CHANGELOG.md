@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.19.0
-**Last Updated:** 2026-07-27
+**Current Version:** v1.20.0
+**Last Updated:** 2026-08-02
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,18 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.20.0 — 2026-08-02
+
+Derivational suffix red-team audit: removed redundant -lu doublets, re-scoped -lu to concrete nouns, added -ia quality-root caveat, renamed nara→naras.
+
+**Spec:**
+- **`derivational-compounding.md`** v2.6.0→2.7.2 — Red-team audit of all 9 suffixes against NVAD collision risk. `-lu` redefined: concrete noun → abstract property (quality roots already nominalise — removed gorlu, mylu, emalu, wemlu). Added quality-root caveat to `-ia`. New canonical example: `klush lu` (courage, 血性). Renamed derivational compound form nara→naras to match existing `lira naras`. Added `-lu` row to §V-B base-dependent prefix table.
+
+**Validation:**
+- `python kilor.py check` — 35 validation errors (all pre-existing noise unrelated to this changeset)
+
+> **DB changes** tracked in `CHANGELOG-app.md` v1.7.0.
 
 ## workspace v1.19.0 — 2026-07-27
 
