@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.20.1
+**Current Version:** v1.21.0
 **Last Updated:** 2026-08-03
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -18,6 +18,24 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.21.0 — 2026-08-03
+
+POS mask system: replaced derivation_mask (NVAD) with auto-computed pos_mask in word creation pipeline.
+
+**Spec:**
+- **`word-creation-pipeline.md`** v2.3.0→2.4.0 — §I: replaced row e (Derivation mask, manual) with e (POS tags per meaning, manual) + e₂ (pos_mask, auto-computed from meanings via compute_pos_mask()). MODAL→V, PROPN→N, closed-class tags contribute nothing. A and D are independent (D-only pos_mask valid). §II: Phase 1 step 5 changed from "Derivation mask" to "Per-meaning POS tags". Phase 2 validation: replaced derivation mask character check with POS-in-VALID_POS check; added pos_mask auto-computation step. §III: Content Word template removed Derivation Mask row. Function Word template: is_function_word→pos_mask auto-compute. §IV-B: complete rewrite — POS tag validation + compute_pos_mask() mapping table, D-must-co-occur-with-A removed, mixed content+grammar words documented. §V-D: new inflection generation table from pos_mask via POS_TO_INFLECTION, including pos_mask derivation matrix. §IX: removed resolved gaps 1,2,5 (conditional inflection, hardcoded prefix, tone markers). Added "Resolved (v2.4.0)" section.
+
+**Data:**
+- **`data/SCHEMA.md`** — Documented pos_mask column; deprecated derivation_mask and is_function_word.
+
+**Validation:**
+- `python kilor.py check` — ✅ 5 pre-existing errors, 0 new
+
+> **POS mask system migration** tracked in `CHANGELOG-app.md` v2.0.0.
+> **Grammar badge sync, tonal inflection, compound fixes** tracked in `CHANGELOG-app.md` v2.0.2.
+> **UI/UX overhaul** tracked in `CHANGELOG-app.md` v2.0.1.
+
 
 ## workspace v1.20.1 — 2026-08-03
 
