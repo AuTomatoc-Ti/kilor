@@ -2,6 +2,7 @@
 
 from ..db import get_db
 from ..phonology import validate_content_root, count_syllables, split_syllables, to_ipa
+from ..schema import compute_pos_mask
 
 
 def cmd_check():
@@ -30,24 +31,41 @@ def cmd_check():
         if meaning_count == 0 and not is_func:
             errors.append(f"  {form}: missing meaning")
 
-        # Inflection check
-        if not is_func and not is_compound:
+        # ── pos_mask validation ──
+        pos_mask = (w["pos_mask"] or "").upper()
+        
+        # Check pos_mask matches computed from meanings
+        meanings_rows = conn.execute(
+            "SELECT pos FROM meanings WHERE word_id = ? AND pos != ''", (w["id"],)
+        ).fetchall()
+        computed_pos = compute_pos_mask([{'pos': m['pos']} for m in meanings_rows])
+        if pos_mask != computed_pos:
+            errors.append(
+                f"  {form}: pos_mask mismatch — stored '{pos_mask}', computed '{computed_pos}'"
+            )
+        
+        # Warn on zero meanings
+        meaning_count = conn.execute(
+            "SELECT COUNT(*) FROM meanings WHERE word_id = ?", (w["id"],)
+        ).fetchone()[0]
+        if meaning_count == 0:
+            errors.append(f"  {form}: no meanings — cannot determine pos_mask")
+        
+        # Inflection check — skip for grammar particles (empty pos_mask)
+        if pos_mask:
             infl_count = conn.execute(
                 "SELECT COUNT(*) FROM inflections WHERE word_id = ?", (w["id"],)
             ).fetchone()[0]
-            if infl_count < 2:
-                errors.append(f"  {form}: has only {infl_count} inflected form(s)")
             
-            # Check that inflections match derivation mask
-            mask = (w["derivation_mask"] or "").upper()
+            # Check that inflections match pos_mask
             expected_types = set()
-            if 'N' in mask:
+            if 'N' in pos_mask:
                 expected_types.add('noun')
-            if 'V' in mask:
+            if 'V' in pos_mask:
                 expected_types.add('verb')
-            if 'A' in mask:
+            if 'A' in pos_mask:
                 expected_types.add('adjective')
-            if 'D' in mask:
+            if 'D' in pos_mask:
                 expected_types.add('adverb')
             
             actual_types = set(
@@ -58,7 +76,12 @@ def cmd_check():
             
             if expected_types and not expected_types.issubset(actual_types):
                 missing = expected_types - actual_types
-                errors.append(f"  {form}: missing inflections for {', '.join(missing)} (mask: {mask})")
+                errors.append(f"  {form}: missing inflections for {', '.join(missing)} (pos_mask: {pos_mask})")
+            
+            if expected_types != actual_types:
+                extra = actual_types - expected_types
+                if extra:
+                    errors.append(f"  {form}: extra inflections for {', '.join(extra)} not in pos_mask")
 
         # Compound validation
         if is_compound:
@@ -87,22 +110,21 @@ def cmd_check():
                     errors.append(f"  {form}: component '{c['component_form']}' is a compound, not a root")
 
         # ── Prefix-mask consistency ──
-        # Rule: consensus_prefix is only meaningful when N ∈ derivation_mask.
+        # Rule: consensus_prefix is only meaningful when N ∈ pos_mask.
         # - N in mask + no prefix → ERROR (noun requires prefix)
         # - N not in mask + prefix set → WARNING (stale prefix on non-noun)
-        mask = (w["derivation_mask"] or "").upper()
-        has_n = "N" in mask
+        has_n = "N" in pos_mask
         prefix = w["consensus_prefix"] or ""
         
         if has_n and not prefix:
             errors.append(
-                f"  {form}: noun (mask '{mask}') has no consensus_prefix set"
+                f"  {form}: noun (pos_mask '{pos_mask}') has no consensus_prefix set"
             )
         
-        if not has_n and prefix and mask:
+        if not has_n and prefix and pos_mask:
             # Non-noun content word with a prefix that should be cleared
             warnings.append(
-                f"  {form}: non-noun (mask '{mask}') has consensus_prefix '{prefix}' set "
+                f"  {form}: non-noun (pos_mask '{pos_mask}') has consensus_prefix '{prefix}' set "
                 f"— prefix only applies to nouns; may be stale"
             )
 
@@ -170,11 +192,11 @@ def cmd_check():
     if not errors and not warnings:
         total = conn.execute("SELECT COUNT(*) FROM words").fetchone()[0]
         roots_n = conn.execute("SELECT COUNT(*) FROM words WHERE is_root = 1").fetchone()[0]
-        func = conn.execute("SELECT COUNT(*) FROM words WHERE is_function_word = 1").fetchone()[0]
+        func = conn.execute("SELECT COUNT(*) FROM words WHERE pos_mask = ''").fetchone()[0]
         compounds = conn.execute("SELECT COUNT(*) FROM words WHERE is_compound = 1").fetchone()[0]
         print(f"✅ All {total} entries pass validation.")
         print(f"  Roots: {roots_n}")
-        print(f"  Function words: {func}")
+        print(f"  Grammar (empty pos_mask): {func}")
         print(f"  Compounds: {compounds}")
 
     conn.close()

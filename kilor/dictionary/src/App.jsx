@@ -15,7 +15,7 @@ const PREFIX_INFO = {
   "ae-": { cls: "Earth / Boundary",  emotion: "Disgust", color: "#a16207" },
 };
 
-const TYPE_LABELS = { root: 'Roots', compound: 'Compounds', function: 'Function words' };
+const TYPE_LABELS = { root: 'Roots', compound: 'Compounds' };
 const MASK_LABELS = { N: 'Noun', V: 'Verb', A: 'Adjective', D: 'Adverb' };
 
 // ── URL state helpers ──────────────────────────────────────────────────────

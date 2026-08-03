@@ -1,4 +1,4 @@
-**Current Version:** v1.8.0
+**Current Version:** v2.0.1
 **Last Updated:** 2026-08-03
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,46 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.0.1 — 2026-08-03
+
+UI/UX overhaul: full POS filter grid, NVAD column removed, independent structural+grammar badges, POS legend modal, 25/45/30 layout.
+
+**Frontend:**
+- **`kilor/dictionary/src/components/FilterPanel.jsx`** — Replaced NVAD mask checkboxes with full 17-tag POS grid: Content (6 tags) and Grammar (11 tags), 3 per row via CSS grid. Added "All Content" and "All Grammar" toggle checkboxes. POS Legend modal with 2-column safe layout (70px tag + flex desc). Columns: 25% | 45% | 30%. Word Type filter removed "Grammar" option.
+- **`kilor/dictionary/src/db.js`** — `buildFilterClauses` mask filter uses `EXISTS (SELECT 1 FROM meanings WHERE ... pos = ?)` — per-meaning POS matching. Type filter dropped `function`.
+- **`kilor/dictionary/src/components/TableView.jsx`** — `TypeTag` renders two independent badges (structural + grammar). NVAD column removed (8→7 cols). `colSpan` updated.
+- **`kilor/dictionary/src/App.jsx`** — `TYPE_LABELS` removed `function`.
+- **`kilor/dictionary/src/App.css`** — Added `.pos-grid`, `.pos-grid-row`, `.pos-toggle-all`, `.pos-legend-*` styles. Removed `.td-mask`. Fixed `.filter-columns` flex-wrap causing third column to drop.
+
+**Validation:**
+- `npm run build` — ✅ 45 modules, 769ms
+
+## workspace v2.0.0 — 2026-08-03
+
+POS mask system: replaced `derivation_mask` + `is_function_word` with unified `pos_mask` column auto-computed from `meanings.pos` on every write.
+
+**Frontend:**
+- **`kilor/dictionary/src/db.js`** — `enrichEntries()` uses `pos_mask || derivation_mask` as `effectiveMask`, emits `is_grammar` flag; `buildFilterClauses` matches against `pos_mask` with fallback to `derivation_mask`; `buildTestDB` includes `pos_mask` column
+- **`kilor/dictionary/src/components/FilterPanel.jsx`** — Type filter relabeled "Function words" → "Grammar"; mask column relabeled "NVAD Mask" → "POS Mask"
+- **`kilor/dictionary/src/components/TableView.jsx`** — `TypeTag` uses `entry.is_grammar` (was `is_function_word`); `DetailPanel` uses `pos_mask` for mask display
+- **`kilor/dictionary/src/App.jsx`** — `TYPE_LABELS.function` → "Grammar"
+
+**DB / Backend:**
+- **`kilor/schema.py`** — Added `pos_mask` column, `compute_pos_mask()`, `POS_TO_INFLECTION` mapping, `CLOSED_CLASS_POS` set, `CASE_SUFFIXES` list, `generate_inflection_forms()`
+- **`kilor/db.py`** — `populate_search_text()` reads `pos_mask` with `derivation_mask` fallback
+- **`kilor/commands/add.py`** — Writes `pos_mask = ""` on insert, computes from meanings after insert, regenerates inflections from `POS_TO_INFLECTION`; D-must-co-occur-with-A constraint removed
+- **`kilor/commands/edit.py`** — Recomputation of pos_mask + inflection regeneration on meaning add/remove; `--set-mask` updates both `derivation_mask` and `pos_mask`
+- **`kilor/commands/check.py`** — Validates pos_mask matches computed from meanings; validates inflections match pos_mask; reports drift
+- **`kilor/api.py`** — `_word_to_dict()` uses `pos_mask` with fallback, emits `pos_mask` and `is_grammar` fields; `/api/status` queries and `/api/word-of-day` use `pos_mask`
+- **`kilor/commands/export.py`** — `_export_dictionary_data()` emits `pos_mask` and `is_grammar` fields
+- **`data/kilor.db`** — Migration: added `pos_mask` column, populated 299 words, fixed 5 root modals (mug,som,sew,hostak,shunle) from function→content with V mask, cleaned 290 non-standard inflection rows (case forms were incorrectly stored)
+- **`data/SCHEMA.md`** — Documented `pos_mask`, deprecated `derivation_mask`/`is_function_word`
+
+**Validation:**
+- `python kilor.py check` — ✅ 5 pre-existing errors (unrelated), 12 pre-existing warnings; 0 new pos_mask mismatches
+
+> See also `CHANGELOG.md` for rule-level documentation changes.
 
 ## workspace v1.8.0 — 2026-08-03
 

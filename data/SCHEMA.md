@@ -14,9 +14,10 @@
 | `is_root` | BOOLEAN | DEFAULT 0 | True for bare roots |
 | `is_compound` | BOOLEAN | DEFAULT 0 | True for compounds |
 | `compound_type` | TEXT | `mono` or `multi`; NULL for roots | Compound classification |
-| `derivation_mask` | TEXT | | NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class |
+| `derivation_mask` | TEXT | | DEPRECATED — NVAD mask (superseded by pos_mask) |
+| `pos_mask` | TEXT | DEFAULT '' | POS aggregate for inflection generation (e.g. `NV`, `AD`, `""` = grammar particle) |
 | `consensus_prefix` | TEXT | | Default colour prefix (e.g. `o-`); NULL or empty for words without prefix |
-| `is_function_word` | BOOLEAN | DEFAULT 0 | True for closed-class particles |
+| `is_function_word` | BOOLEAN | DEFAULT 0 | DEPRECATED — derived from pos_mask at query time |
 | `notes` | TEXT | | Free-text notes |
 | `ipa` | TEXT | DEFAULT '' | Auto-computed IPA transcription (e.g. `/ˈfɔ.rɑ/`) |
 | `syllables` | TEXT | DEFAULT '' | Auto-computed syllable division (e.g. `fo.ra`) |
@@ -27,7 +28,7 @@
 | `created_at` | TEXT | DEFAULT (datetime('now')) | Creation timestamp |
 | `updated_at` | TEXT | DEFAULT (datetime('now')) | Last update timestamp |
 
-Indexes: `idx_words_form` (form), `idx_words_derivation_mask` (derivation_mask), `idx_words_colour` (consensus_prefix), `idx_words_syl_count` (syl_count)
+Indexes: `idx_words_form` (form), `idx_words_colour` (consensus_prefix), `idx_words_syl_count` (syl_count), `idx_words_pos_mask` (pos_mask)
 
 ### `meanings` — glosses per word
 

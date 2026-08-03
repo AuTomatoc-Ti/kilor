@@ -85,14 +85,15 @@ def populate_search_text(conn=None):
     
     # For each word, compute all forms
     rows = conn.execute(
-        "SELECT id, form, syl_count, derivation_mask, is_function_word, compound_type FROM words"
+        "SELECT id, form, syl_count, pos_mask, derivation_mask, is_function_word, compound_type FROM words"
     ).fetchall()
     
     for r in rows:
         forms = [r['form']]
-        mask = r['derivation_mask'] or ''
+        mask = r['pos_mask'] or r['derivation_mask'] or ''
         syl = r['syl_count']
-        is_func = bool(r['is_function_word'])
+        # Function word detection: empty pos_mask OR all-closed-class
+        is_grammar = (mask == '')
         cmpd_type = r['compound_type']
         
         # Inflections (N→V→A→D)
@@ -111,11 +112,11 @@ def populate_search_text(conn=None):
                 # (full computation would need syllable parsing which is JS-side)
                 forms.append(r['form'])
         
-        # Case forms
+        # Case forms (Nouns only)
         acc, gen = get_case_forms(
             r['form'],
             derivation_mask=mask or None,
-            is_function_word=is_func,
+            is_function_word=is_grammar,
             compound_type=cmpd_type,
         )
         if acc:

@@ -130,12 +130,16 @@ def _word_to_dict(conn, row) -> dict:
     prefix = row["consensus_prefix"] or "o-"
     prefix_info = PREFIX_INFO.get(prefix, None)
 
+    # Use pos_mask as primary; fall back to derivation_mask
+    mask = row["pos_mask"] if "pos_mask" in row.keys() else row["derivation_mask"]
+    is_grammar = (mask == '')
+
     # Compute case forms (ACC/GEN) on the fly
     case_forms = {}
     acc, gen = get_case_forms(
         row["form"],
-        derivation_mask=row["derivation_mask"] or None,
-        is_function_word=bool(row["is_function_word"]),
+        derivation_mask=mask or None,
+        is_function_word=is_grammar,
         compound_type=row["compound_type"],
     )
     if acc is not None:
@@ -149,11 +153,13 @@ def _word_to_dict(conn, row) -> dict:
         "syl_count": row["syl_count"],
         "syllables": " / ".join("/".join(split_syllables(w)) for w in row["form"].split(" ")),
         "meanings": meanings,
-        "derivation_mask": row["derivation_mask"],
+        "derivation_mask": mask,
+        "pos_mask": mask,
         "is_root": bool(row["is_root"]),
         "is_compound": bool(row["is_compound"]),
         "compound_type": row["compound_type"],
-        "is_function_word": bool(row["is_function_word"]),
+        "is_function_word": is_grammar,
+        "is_grammar": is_grammar,
         "consensus_prefix": prefix,
         "prefix_info": prefix_info,
         "inflections": inflections,
@@ -276,10 +282,10 @@ def get_status():
     try:
         total = conn.execute("SELECT COUNT(*) FROM words").fetchone()[0]
         roots = conn.execute(
-            "SELECT COUNT(*) FROM words WHERE is_root = 1 AND is_function_word = 0"
+            "SELECT COUNT(*) FROM words WHERE is_root = 1 AND (pos_mask != '' OR pos_mask IS NULL)"
         ).fetchone()[0]
         func = conn.execute(
-            "SELECT COUNT(*) FROM words WHERE is_function_word = 1"
+            "SELECT COUNT(*) FROM words WHERE pos_mask = ''"
         ).fetchone()[0]
         compounds = conn.execute(
             "SELECT COUNT(*) FROM words WHERE is_compound = 1"
@@ -297,14 +303,14 @@ def get_status():
         derived = conn.execute(
             """SELECT COUNT(*) FROM inflections
                WHERE word_id IN (SELECT id FROM words
-                                 WHERE is_root = 1 AND is_function_word = 0)"""
+                                 WHERE is_root = 1 AND (pos_mask != '' OR pos_mask IS NULL))"""
         ).fetchone()[0]
 
         # Category breakdown
         cats = [
-            {"derivation_mask": r["derivation_mask"], "count": r["cnt"]}
+            {"pos_mask": r["pos_mask"] or r["derivation_mask"] or "", "count": r["cnt"]}
             for r in conn.execute(
-                "SELECT derivation_mask, COUNT(*) as cnt FROM words GROUP BY derivation_mask ORDER BY cnt DESC"
+                "SELECT COALESCE(pos_mask, derivation_mask, '') as pos_mask, COUNT(*) as cnt FROM words GROUP BY pos_mask ORDER BY cnt DESC"
             ).fetchall()
         ]
 
@@ -345,7 +351,7 @@ def get_status():
                 "derived_forms": derived,
                 "total_words": total_words,
             },
-            "by_derivation_mask": cats,
+            "by_pos_mask": cats,
             "by_syllable_count": syls,
             "roadmap": roadmap_targets,
             "prefix_info": PREFIX_INFO,
@@ -360,7 +366,7 @@ def word_of_day():
     conn = _get_conn()
     try:
         row = conn.execute(
-            "SELECT * FROM words WHERE is_root = 1 AND is_function_word = 0 ORDER BY RANDOM() LIMIT 1"
+            "SELECT * FROM words WHERE is_root = 1 AND pos_mask != '' ORDER BY RANDOM() LIMIT 1"
         ).fetchone()
         if not row:
             row = conn.execute("SELECT * FROM words ORDER BY RANDOM() LIMIT 1").fetchone()

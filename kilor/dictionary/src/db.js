@@ -140,7 +140,6 @@ function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) 
     for (const t of types) {
       if (t === 'root') { typeConds.push('w.is_root = 1'); }
       else if (t === 'compound') { typeConds.push('w.is_compound = 1'); }
-      else if (t === 'function') { typeConds.push('w.is_function_word = 1'); }
     }
     if (typeConds.length > 0) { clauses.push(`(${typeConds.join(' OR ')})`); }
   }
@@ -148,8 +147,8 @@ function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) 
   if (masks.length > 0) {
     const maskConds = [];
     for (const m of masks) {
-      maskConds.push('w.derivation_mask LIKE ?');
-      params.push(`%${m}%`);
+      maskConds.push('EXISTS (SELECT 1 FROM meanings WHERE word_id = w.id AND pos = ?)');
+      params.push(m);
     }
     if (maskConds.length > 0) { clauses.push(`(${maskConds.join(' OR ')})`); }
   }
@@ -212,6 +211,11 @@ export function queryWords({
     search, types, masks, prefixes, sylMin, sylMax,
   });
 
+  // Ensure pos_mask column exists (migration guard)
+  try {
+    db.run("ALTER TABLE words ADD COLUMN pos_mask TEXT DEFAULT ''");
+  } catch (_e) { /* column already exists */ }
+
   // ── Total count query ──────────────────────────────────────────────
   let countSQL = `SELECT COUNT(DISTINCT w.id) AS cnt FROM words w LEFT JOIN meanings m ON w.id = m.word_id`;
   if (clauses.length > 0) {
@@ -239,7 +243,7 @@ export function queryWords({
 
   // ── Data query with pagination ─────────────────────────────────────
   let cols = `w.id, w.form, w.syl_count, w.is_root, w.is_compound,
-    w.compound_type, w.derivation_mask, w.consensus_prefix,
+    w.compound_type, w.derivation_mask, w.pos_mask, w.consensus_prefix,
     w.is_function_word, w.notes, w.updated_at,
     GROUP_CONCAT(m.gloss, ' | ') AS glosses_concat,
     GROUP_CONCAT(m.pos, ' | ') AS poses_concat`;
@@ -782,9 +786,11 @@ function enrichEntries(rows) {
       pos: poses[i] || '',
     }));
     const meta = frag.meta;
-    const case_forms = getCaseForms(row.form, row.derivation_mask || null, Boolean(row.is_function_word));
-    const mask = row.derivation_mask || '';
-    const computedInfl = computeInflections(row.form, row.syl_count, mask);
+    // Use pos_mask as primary source; fall back to derivation_mask
+    const effectiveMask = (row.pos_mask || row.derivation_mask || '');
+    const isGrammar = (effectiveMask === '');
+    const case_forms = getCaseForms(row.form, effectiveMask || null, isGrammar);
+    const computedInfl = computeInflections(row.form, row.syl_count, effectiveMask);
     return {
       id: row.id,
       form: row.form,
@@ -792,12 +798,14 @@ function enrichEntries(rows) {
       syllables: row.form.split(" ").map((w) => splitSyllablesJS(w).join("/")).join(" / "),
       ipa: row.form.split(" ").map((w) => toIPA(w)).join(" "),
       meanings,
-      derivation_mask: mask,
+      derivation_mask: effectiveMask,
+      pos_mask: effectiveMask,
       is_root: Boolean(row.is_root),
       is_compound: Boolean(row.is_compound),
       compound_type: row.compound_type || null,
-      is_function_word: Boolean(row.is_function_word),
-      consensus_prefix: (row.consensus_prefix && mask.includes('N')) ? row.consensus_prefix : null,
+      is_function_word: isGrammar,
+      is_grammar: isGrammar,
+      consensus_prefix: (row.consensus_prefix && effectiveMask.includes('N')) ? row.consensus_prefix : null,
       inflections: computedInfl,
       components: frag.components,
       pattern: meta ? meta.pattern : null,
@@ -892,7 +900,7 @@ export async function buildTestDB(entries) {
     locateFile: isNode() ? undefined : () => sqlWasmUrl,
   });
   const testDB = new SQL.Database();
-  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT, updated_at TEXT)`);
+  testDB.run(`CREATE TABLE words (id INTEGER PRIMARY KEY, form TEXT NOT NULL, syl_count INTEGER NOT NULL, is_root BOOLEAN DEFAULT 0, is_compound BOOLEAN DEFAULT 0, compound_type TEXT, derivation_mask TEXT, pos_mask TEXT DEFAULT '', consensus_prefix TEXT, search_text TEXT DEFAULT '', is_function_word BOOLEAN DEFAULT 0, notes TEXT, updated_at TEXT)`);
   testDB.run(`CREATE TABLE meanings (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, gloss TEXT NOT NULL, pos TEXT DEFAULT '', sort_order INTEGER DEFAULT 0)`);
   testDB.run(`CREATE TABLE inflections (word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, form_type TEXT NOT NULL, form TEXT NOT NULL, PRIMARY KEY (word_id, form_type))`);
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);
@@ -902,7 +910,7 @@ export async function buildTestDB(entries) {
   const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, pos, sort_order) VALUES (?,?,?,?)');
   const ii = testDB.prepare('INSERT INTO inflections (word_id, form_type, form) VALUES (?,?,?)');
   for (const e of entries) {
-    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
+    iw.run([e.id, e.form, e.syl_count, e.is_root?1:0, e.is_compound?1:0, e.compound_type||null, e.derivation_mask||'', e.pos_mask||e.derivation_mask||'', e.consensus_prefix ?? 'o-', e.is_function_word?1:0, e.notes||'']);
     e.meanings.forEach((m, i) => {
       const gloss = typeof m === 'string' ? m : m.gloss;
       const pos = typeof m === 'string' ? '' : (m.pos || '');

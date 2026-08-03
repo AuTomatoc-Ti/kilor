@@ -86,10 +86,19 @@ function PrefixBadge({ prefix, info }) {
 }
 
 function TypeTag({ entry }) {
-  if (entry.is_function_word) return <span className="tag-sm tag-function">func</span>;
-  if (entry.is_compound) return <span className="tag-sm tag-compound">{entry.compound_type || '?'}-cmpd</span>;
-  if (entry.is_root) return <span className="tag-sm tag-root">root</span>;
-  return null;
+  const badges = [];
+  // Structural badge
+  if (entry.is_compound) {
+    badges.push(<span key="struct" className="tag-sm tag-compound">{entry.compound_type || '?'}-cmpd</span>);
+  } else if (entry.is_root) {
+    badges.push(<span key="struct" className="tag-sm tag-root">root</span>);
+  }
+  // Grammar badge (independent of structural)
+  if (entry.is_grammar) {
+    badges.push(<span key="grammar" className="tag-sm tag-function">grammar</span>);
+  }
+  if (badges.length === 0) return null;
+  return <>{badges}</>;
 }
 
 function ComponentChips({ components, onSearchByForm }) {
@@ -185,7 +194,7 @@ function PrefixLegend() {
 
 /** Trimmed inline preview — form, IPA, prefix, mask, quick gloss view + link to full entry. */
 function DetailPanel({ entry, prefixInfo, onViewFull, showAudio }) {
-  const mask = entry.derivation_mask || '';
+  const mask = entry.pos_mask || entry.derivation_mask || '';
   const glossesAll = (entry.meanings || []).map(m => (typeof m === 'string' ? m : m.gloss)).join(' / ');
 
   return (
@@ -406,34 +415,30 @@ export function WordDetailPage({ entry, prefixInfo, onBack, onSearchByForm, onCo
 // ── Table Header ─────────────────────────────────────────────────────────
 
 /** Build colgroup widths depending on whether the Modified column is shown.
- *  When hidden: Word 16%, IPA 10%, Gloss 32%, Type 12%, Prefix 16%, NVAD 8%, Syl 6%
- *  When shown:  Word 14%, IPA 9%, Gloss 24%, Type 10%, Prefix 14%, NVAD 7%, Syl 5%, Modified 10%
- *  (unused space auto-distributed by table-layout:fixed)
+ *  7 columns: Word | IPA | Gloss | Type | Prefix | Syl | Modified
  */
 function buildColGroup(showModified) {
   if (showModified) {
     return (
       <colgroup>
-        <col style={{ width: '14%' }} />
-        <col style={{ width: '9%' }} />
-        <col style={{ width: '26%' }} />
+        <col style={{ width: '15%' }} />
         <col style={{ width: '10%' }} />
-        <col style={{ width: '14%' }} />
+        <col style={{ width: '27%' }} />
+        <col style={{ width: '11%' }} />
+        <col style={{ width: '15%' }} />
         <col style={{ width: '7%' }} />
-        <col style={{ width: '6%' }} />
-        <col style={{ width: '14%' }} />
+        <col style={{ width: '15%' }} />
       </colgroup>
     );
   }
   return (
     <colgroup>
-      <col style={{ width: '16%' }} />
-      <col style={{ width: '10%' }} />
-      <col style={{ width: '32%' }} />
-      <col style={{ width: '12%' }} />
-      <col style={{ width: '16%' }} />
-      <col style={{ width: '8%' }} />
-      <col style={{ width: '6%' }} />
+      <col style={{ width: '17%' }} />
+      <col style={{ width: '11%' }} />
+      <col style={{ width: '33%' }} />
+      <col style={{ width: '13%' }} />
+      <col style={{ width: '17%' }} />
+      <col style={{ width: '9%' }} />
     </colgroup>
   );
 }
@@ -464,9 +469,6 @@ export function TableHeader({ sortCol, sortDir, onSort, showModified }) {
             </th>
             <th className={sortCol === 'prefix' ? 'sorted' : ''} onClick={() => onSort('prefix')}>
               Prefix <PrefixLegend /> {arrow('prefix')}
-            </th>
-            <th className={sortCol === 'mask' ? 'sorted' : ''} onClick={() => onSort('mask')}>
-              NVAD {arrow('mask')}
             </th>
             <th className={sortCol === 'syl' ? 'sorted' : ''} onClick={() => onSort('syl')} style={{ textAlign: 'center' }}>
               Syl {arrow('syl')}
@@ -559,7 +561,7 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
     );
   }
 
-  const colSpan = showModified ? 8 : 7;
+  const colSpan = showModified ? 7 : 6;
 
   return (
     <>
@@ -568,9 +570,6 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
           {buildColGroup(showModified)}
           <tbody>
             {entries.map((e, i) => {
-              const mask = e.derivation_mask
-                ? <span className="tag-sm" style={{ background: '#e8f0fe', color: '#1a56db', fontSize: '.7rem', padding: '1px 6px', borderRadius: '10px' }}>{e.derivation_mask}</span>
-                : <span className="empty-cell">—</span>;
               const isExpanded = expandedRow === e.id;
               const isKeyboardSelected = keyboardRowIndex === i;
               const allGlosses = (e.meanings || []).map(m => (typeof m === 'string' ? m : m.gloss)).join(' / ');
@@ -595,7 +594,6 @@ export function TableBody({ entries, prefixInfo, onSearchByForm, expandedRow, on
                     </td>
                     <td className="td-type"><TypeTag entry={e} /></td>
                     <td className="td-prefix"><PrefixBadge prefix={e.consensus_prefix} info={prefixInfo[e.consensus_prefix]} /></td>
-                    <td className="td-mask">{mask}</td>
                     <td className="td-syl">{e.syl_count}</td>
                     {showModified && <td className="td-modified">{formatUpdatedAt(e.updated_at)}</td>}
                   </tr>

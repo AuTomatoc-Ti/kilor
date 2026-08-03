@@ -5,7 +5,7 @@ import sys
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables
-from ..schema import VALID_POS
+from ..schema import VALID_POS, POS_TO_INFLECTION, compute_pos_mask
 
 _AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "dictionary", "public", "audio")
 
@@ -105,19 +105,14 @@ def cmd_edit(form, **kwargs):
             print(f"Error: invalid mask '{new_mask}'. Must contain only N, V, A, D.")
             conn.close()
             return False
-        if 'D' in new_mask and 'A' not in new_mask:
-            print(f"Error: mask '{new_mask}' invalid — D (adverb) requires A (adjective).")
-            conn.close()
-            return False
         
         # ── Prefix-mask consistency check ──
-        old_mask = (word["derivation_mask"] or "").upper()
+        old_mask = (word["pos_mask"] or word["derivation_mask"] or "").upper()
         old_has_n = "N" in old_mask
         new_has_n = "N" in new_mask
         current_prefix = word["consensus_prefix"] or ""
         
         if new_has_n and not old_has_n and not current_prefix:
-            # Adding N to a word that has no prefix → blocking error
             print(
                 f"Error: mask '{new_mask}' includes N but no consensus_prefix is set. "
                 "Set it first with --set-prefix."
@@ -126,7 +121,6 @@ def cmd_edit(form, **kwargs):
             return False
         
         if not new_has_n and old_has_n and current_prefix:
-            # Removing N from a word that had a prefix → warning only
             print(
                 f"Warning: N removed from mask (was '{old_mask}', now '{new_mask}'), "
                 f"but consensus_prefix '{current_prefix}' is still set. "
@@ -135,30 +129,12 @@ def cmd_edit(form, **kwargs):
             )
         
         conn.execute(
-            "UPDATE words SET derivation_mask = ?, updated_at = datetime('now') WHERE id = ?",
-            (new_mask, word_id),
+            "UPDATE words SET derivation_mask = ?, pos_mask = ?, updated_at = datetime('now') WHERE id = ?",
+            (new_mask, new_mask, word_id),
         )
         changes.append(f"Set derivation mask to '{new_mask}'")
         
-        # Regenerate inflections based on new mask
-        conn.execute("DELETE FROM inflections WHERE word_id = ?", (word_id,))
-        root = word["form"]
-        mask_to_forms = {
-            'N': ['noun'], 'V': ['verb'], 'A': ['adjective'], 'D': ['adverb'],
-            'NV': ['noun', 'verb'], 'NA': ['noun', 'adjective'],
-            'AV': ['adjective', 'verb'], 'AD': ['adjective', 'adverb'],
-            'NVAD': ['noun', 'verb', 'adjective', 'adverb'],
-            'NVA': ['noun', 'verb', 'adjective'],
-            'NAD': ['noun', 'adjective', 'adverb'],
-            'VAD': ['verb', 'adjective', 'adverb'],
-        }
-        form_types = mask_to_forms.get(new_mask, ['noun', 'verb', 'adjective', 'adverb'])
-        for ft in form_types:
-            form = f"{root}s" if ft in ("adjective", "adverb") else root
-            conn.execute(
-                "INSERT INTO inflections (word_id, form_type, form) VALUES (?, ?, ?)",
-                (word_id, ft, form),
-            )
+        _regenerate_inflections(conn, word_id, word["form"], word["syl_count"], new_mask)
         changes.append(f"Regenerated inflections for mask '{new_mask}'")
     
     # Add example
@@ -190,7 +166,6 @@ def cmd_edit(form, **kwargs):
     # Fix typo (change form)
     if "fix_typo" in kwargs:
         new_form = kwargs["fix_typo"]
-        # Validate new form
         is_func = bool(word["is_function_word"])
         is_compound = bool(word["is_compound"])
         valid, err = validate_content_root(new_form, is_func=is_func, is_compound=is_compound)
@@ -199,14 +174,12 @@ def cmd_edit(form, **kwargs):
             conn.close()
             return False
         
-        # Check for duplicates
         existing = conn.execute("SELECT id FROM words WHERE form = ? AND id != ?", (new_form, word_id)).fetchone()
         if existing:
             print(f"Error: '{new_form}' already exists in database.")
             conn.close()
             return False
         
-        # Update form and syllable count
         new_syl = count_syllables(new_form)
         conn.execute(
             "UPDATE words SET form = ?, syl_count = ?, updated_at = datetime('now') WHERE id = ?",
@@ -214,13 +187,35 @@ def cmd_edit(form, **kwargs):
         )
         changes.append(f"Changed form from '{form}' to '{new_form}'")
         
-        # Regenerate audio for the renamed word
         _regenerate_audio_after_rename(word_id, new_form)
     
     if not changes:
         print(f"No changes specified for '{form}'.")
         conn.close()
         return False
+    
+    # ── Recompute pos_mask after meaning changes ──
+    if "add_meaning" in kwargs or "remove_meaning" in kwargs:
+        meanings_after = conn.execute(
+            "SELECT pos FROM meanings WHERE word_id = ? AND pos != ''", (word_id,)
+        ).fetchall()
+        computed_mask = compute_pos_mask([{'pos': m['pos']} for m in meanings_after])
+        
+        has_explicit_mask = "set_mask" in kwargs
+        if not has_explicit_mask:
+            conn.execute(
+                "UPDATE words SET pos_mask = ?, updated_at = datetime('now') WHERE id = ?",
+                (computed_mask, word_id),
+            )
+            changes.append(f"Recomputed pos_mask = '{computed_mask}'")
+            
+            _regenerate_inflections(conn, word_id, word["form"], word["syl_count"], computed_mask)
+            changes.append("Regenerated inflections")
+        
+        if computed_mask == '':
+            conn.execute("UPDATE words SET is_function_word = 1 WHERE id = ?", (word_id,))
+        else:
+            conn.execute("UPDATE words SET is_function_word = 0 WHERE id = ?", (word_id,))
     
     # Commit changes
     conn.commit()
@@ -233,3 +228,28 @@ def cmd_edit(form, **kwargs):
         print(f"  • {change}")
     
     return True
+
+
+def _regenerate_inflections(conn, word_id, root, syl_count, pos_mask):
+    """Delete existing and insert new inflections based on pos_mask."""
+    conn.execute("DELETE FROM inflections WHERE word_id = ?", (word_id,))
+    
+    if not pos_mask:
+        return
+    
+    form_types_list = []
+    for letter in pos_mask:
+        ft = POS_TO_INFLECTION.get(letter)
+        if ft and ft not in form_types_list:
+            form_types_list.append(ft)
+    
+    is_toneless = syl_count <= 2
+    for ft in sorted(form_types_list):
+        if is_toneless:
+            sform = root if ft in ("noun", "verb") else f"{root}s"
+        else:
+            sform = root if ft in ("noun", "verb") else f"{root}s"
+        conn.execute(
+            "INSERT INTO inflections (word_id, form_type, form) VALUES (?, ?, ?)",
+            (word_id, ft, sform),
+        )

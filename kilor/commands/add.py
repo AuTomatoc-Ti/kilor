@@ -6,7 +6,7 @@ import sqlite3
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables, get_case_forms, split_syllables, to_ipa
-from ..schema import VALID_POS
+from ..schema import VALID_POS, POS_TO_INFLECTION, compute_pos_mask
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -154,28 +154,29 @@ def _validate_and_resolve_prefix(entry, root, english, errors):
 def _resolve_compound_type(entry, root, english, errors):
     """Resolve entry type and compound flags from the template.
     
-    Returns (is_root, is_compound, compound_type, is_function_word, is_func, should_continue).
+    Returns (is_root, is_compound, compound_type, should_continue).
+    is_function_word is no longer a separate flag — it's derived from pos_mask.
     """
     entry_type = entry.get("entry_type", "").strip().lower()
-    is_func = 1 if entry.get("pos") else 0
     
     if entry_type == "function":
-        return 0, 0, None, 1, 1, True
+        # Function words are still "roots" structurally — pos_mask will be '' (grammar)
+        return 1, 0, None, True
     
     if entry_type in ("compound-mono", "compound-multi"):
         is_compound_val = 1
         compound_type_val = "mono" if entry_type == "compound-mono" else "multi"
-        return 0, is_compound_val, compound_type_val, 0, is_func, True
+        return 0, is_compound_val, compound_type_val, True
     
     if entry_type in ("root", ""):
-        return 1, 0, None, is_func, is_func, True
+        return 1, 0, None, True
     
     # Unknown type
     errors.append(
         f"'{root}' ({english}): unknown Type '{entry.get('entry_type', '')}' — "
         "must be 'root', 'function', 'compound-mono', or 'compound-multi'"
     )
-    return None, None, None, None, None, False
+    return None, None, None, False
 
 
 def _insert_compound_data(conn, word_id, entry, root, english, errors):
@@ -288,7 +289,7 @@ def cmd_add(filepath):
             continue
 
         # ── Entry type resolution ──
-        is_root_val, is_compound_val, compound_type_val, is_func_val, is_func, type_ok = \
+        is_root_val, is_compound_val, compound_type_val, type_ok = \
             _resolve_compound_type(entry, root, english, errors)
         if not type_ok:
             continue
@@ -298,19 +299,19 @@ def cmd_add(filepath):
         ipa_val = to_ipa(root)
         syl_division = ".".join(split_syllables(root))
 
-        mask = entry.get("mask", "")
+        mask = (entry.get("mask", "") or "").upper()
         notes = entry.get("notes", entry.get("decision", "root"))
 
-        # ── Insert into words ──
+        # ── Insert into words (pos_mask computed after meanings) ──
         try:
             conn.execute(
                 """INSERT INTO words 
                    (form, syl_count, is_root, is_compound, compound_type,
-                    derivation_mask, consensus_prefix, is_function_word, notes,
+                    derivation_mask, pos_mask, consensus_prefix, is_function_word, notes,
                     ipa, syllables)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (root, int(syl), is_root_val, is_compound_val, compound_type_val,
-                 mask, prefix, is_func_val, notes,
+                 mask, "", prefix, 0, notes,
                  ipa_val, syl_division),
             )
             word_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
@@ -354,22 +355,43 @@ def cmd_add(filepath):
                 conn.execute("DELETE FROM meanings WHERE word_id = ?", (word_id,))
                 continue
 
-        # ── Inflection generation (conditional on derivation mask) ──
-        # SSOT: rules/4-meta/word-creation-pipeline.md §V-D
-        mask = (mask or "").upper()
-        if is_func or not mask:
-            form_types = []
-        else:
-            form_types = MASK_TO_FORMS.get(mask, ['noun', 'verb', 'adjective', 'adverb'])
-
-        for ft in form_types:
-            if ft in ("adjective", "adverb"):
-                form = f"{root}s"
+        # ── Compute pos_mask from meanings ──
+        inserted_meanings = conn.execute(
+            "SELECT pos FROM meanings WHERE word_id = ? AND pos != ''", (word_id,)
+        ).fetchall()
+        pos_mask = compute_pos_mask([{'pos': m['pos']} for m in inserted_meanings])
+        
+        # Update the word's pos_mask
+        conn.execute(
+            "UPDATE words SET pos_mask = ? WHERE id = ?",
+            (pos_mask, word_id),
+        )
+        
+        # Determine is_function_word from pos_mask (only for backwards compat)
+        if pos_mask == '' and entry.get("pos"):
+            conn.execute(
+                "UPDATE words SET is_function_word = 1 WHERE id = ?",
+                (word_id,),
+            )
+        
+        # ── Inflection generation from pos_mask ──
+        # Collect unique form_types from pos_mask
+        form_types_list = []
+        for letter in pos_mask:
+            ft = POS_TO_INFLECTION.get(letter)
+            if ft and ft not in form_types_list:
+                form_types_list.append(ft)
+        
+        syl_int = int(syl)
+        is_toneless = syl_int <= 2
+        for ft in sorted(form_types_list):
+            if is_toneless:
+                sform = root if ft in ("noun", "verb") else f"{root}s"
             else:
-                form = root
+                sform = root if ft in ("noun", "verb") else f"{root}s"
             conn.execute(
                 "INSERT INTO inflections (word_id, form_type, form) VALUES (?, ?, ?)",
-                (word_id, ft, form),
+                (word_id, ft, sform),
             )
 
         added += 1

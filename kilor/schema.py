@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS words (
     is_root BOOLEAN DEFAULT 0,
     is_compound BOOLEAN DEFAULT 0,
     compound_type TEXT,                -- 'mono' or 'multi'; NULL for roots
-    derivation_mask TEXT,              -- NVAD mask (N=noun, V=verb, A=adjective, D=adverb); empty for closed-class
+    derivation_mask TEXT,              -- DEPRECATED (superseded by pos_mask)
+    pos_mask TEXT DEFAULT '',          -- POS aggregate for inflection generation (e.g. 'NV', 'AD', '' = grammar)
     section TEXT NOT NULL,             -- 1-8
     consensus_prefix TEXT,
     search_text TEXT DEFAULT '',
@@ -171,3 +172,104 @@ POS_LABELS = {
     "PROPN": "Proper Noun",
     "": "Unset",
 }
+
+# ── POS → Inflection Mapping ─────────────────────────────────────────────
+
+# POS tags that generate tonal inflections — maps to form_type in inflections table
+POS_TO_INFLECTION = {
+    "N":     "noun",
+    "V":     "verb",
+    "A":     "adjective",
+    "D":     "adverb",
+    "MODAL": "verb",      # modals surface in verb form
+    "PROPN": "noun",      # proper names take noun form (for case suffixes)
+}
+
+# POS tags that are closed-class / grammar — produce NO inflections
+CLOSED_CLASS_POS = {"PRON", "NUM", "DET", "CCONJ", "SCONJ", "ADP", "PART", "DEM", "Q", "CLF", "INTERJ"}
+
+# Known case suffixes for search stripping
+CASE_SUFFIXES = ["-ni", "-si", "-na", "-sa", "-va", "-ma", "-ke", "-to", "-las"]
+
+# ── POS Mask Computation ─────────────────────────────────────────────────
+
+def compute_pos_mask(word_meanings):
+    """Compute pos_mask from a word's aggregate meanings.
+
+    Args:
+        word_meanings: list of dicts with 'pos' key, or list of POS strings.
+
+    Returns:
+        str: e.g. 'NV', 'AD', 'NAVD', or '' for grammar particles.
+
+    Rules:
+        - N, V, A, D → mapped directly
+        - MODAL → V (modals surface in verb form)
+        - PROPN → N (proper names take noun form)
+        - Closed-class POS tags (PRON, NUM, PART, DET, etc.) → contribute nothing
+        - A and D are independent (no forced co-occurrence)
+        - Empty string if all POS tags are closed-class or no meanings exist
+    """
+    if not word_meanings:
+        return ""
+
+    # Collect POS tags
+    pos_tags = set()
+    for m in word_meanings:
+        pos = m.get("pos", "") if isinstance(m, dict) else str(m)
+        if pos:
+            pos_tags.add(pos)
+
+    if not pos_tags:
+        return ""
+
+    # Map to NVAD letters
+    mapped = set()
+    for tag in sorted(pos_tags):
+        if tag in ("N", "V", "A", "D"):
+            mapped.add(tag)
+        elif tag == "MODAL":
+            mapped.add("V")
+        elif tag == "PROPN":
+            mapped.add("N")
+        # Closed-class tags → contribute nothing
+
+    if not mapped:
+        return ""
+
+    # Sort: N → V → A → D
+    order = {"N": 0, "V": 1, "A": 2, "D": 3}
+    return "".join(sorted(mapped, key=lambda x: order.get(x, 99)))
+
+# ── Inflection Form Generation ────────────────────────────────────────────
+
+def generate_inflection_forms(root, form_type, syl_count):
+    """Generate the surface form for a given inflection type.
+
+    Args:
+        root: bare word form (e.g. 'fora')
+        form_type: 'noun' | 'verb' | 'adjective' | 'adverb'
+        syl_count: integer syllable count
+
+    Returns:
+        str surface form.
+
+    Rules:
+        - 1-2 syllable: N/V = bare root, A/D = root + 's'
+        - 3+ syllable: tone markers applied (handled by JS/computeInflections)
+        - Python-side: we store the forms that are computable without tone marking
+          (the JS-side computeInflections handles tonal variants)
+    """
+    is_toneless = syl_count <= 2
+    if is_toneless:
+        if form_type in ("noun", "verb"):
+            return root
+        else:
+            return root + "s"
+    else:
+        # For 3+ syllable words, store bare/toneless as the DB form.
+        # Tonal variants are computed client-side by computeInflections() in db.js.
+        if form_type in ("noun", "verb"):
+            return root
+        else:
+            return root + "s"

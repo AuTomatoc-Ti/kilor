@@ -3,14 +3,50 @@ import { useState } from 'react';
 const TYPE_OPTIONS = [
   { value: 'root', label: 'Roots' },
   { value: 'compound', label: 'Compounds' },
-  { value: 'function', label: 'Function words' },
 ];
 
-const MASK_OPTIONS = [
-  { value: 'N', label: 'N' },
-  { value: 'V', label: 'V' },
-  { value: 'A', label: 'Adj' },
-  { value: 'D', label: 'Adv' },
+const POS_CONTENT = [
+  { value: 'N', label: 'Noun' },
+  { value: 'V', label: 'Verb' },
+  { value: 'A', label: 'Adjective' },
+  { value: 'D', label: 'Adverb' },
+  { value: 'MODAL', label: 'Modal Verb' },
+  { value: 'PROPN', label: 'Proper Noun' },
+];
+
+const POS_GRAMMAR = [
+  { value: 'PRON', label: 'Pronoun' },
+  { value: 'PART', label: 'Particle' },
+  { value: 'NUM', label: 'Numeral' },
+  { value: 'ADP', label: 'Adposition' },
+  { value: 'DET', label: 'Determiner' },
+  { value: 'DEM', label: 'Demonstrative' },
+  { value: 'CCONJ', label: 'Coord Conj' },
+  { value: 'SCONJ', label: 'Subord Conj' },
+  { value: 'Q', label: 'Question Word' },
+  { value: 'CLF', label: 'Classifier' },
+  { value: 'INTERJ', label: 'Interjection' },
+];
+
+/** Full descriptions for the POS legend modal. */
+const POS_LEGEND = [
+  { tag: 'N',     desc: 'Person, place, thing, concept' },
+  { tag: 'V',     desc: 'Action, event, state' },
+  { tag: 'A',     desc: 'Quality, property' },
+  { tag: 'D',     desc: 'Manner, degree' },
+  { tag: 'MODAL', desc: 'Ability, obligation, possibility' },
+  { tag: 'PROPN', desc: 'Name of person, place' },
+  { tag: 'PRON',  desc: 'Personal, demonstrative pronouns' },
+  { tag: 'NUM',   desc: 'Cardinal numbers' },
+  { tag: 'DET',   desc: 'Articles, quantifiers' },
+  { tag: 'CCONJ', desc: 'and, but, or' },
+  { tag: 'SCONJ', desc: 'because, if, when' },
+  { tag: 'ADP',   desc: 'Preposition / postposition' },
+  { tag: 'PART',  desc: 'Negation, interrogative, emphasis' },
+  { tag: 'DEM',   desc: 'this, that' },
+  { tag: 'Q',     desc: 'who, what, where, when' },
+  { tag: 'CLF',   desc: 'Measure word / counter' },
+  { tag: 'INTERJ',desc: 'Exclamation, response particle' },
 ];
 
 function CheckboxRow({ checked, onChange, children }) {
@@ -19,6 +55,42 @@ function CheckboxRow({ checked, onChange, children }) {
       <input type="checkbox" checked={checked} onChange={onChange} />
       {children}
     </label>
+  );
+}
+
+/** POS Legend modal — triggered by ℹ icon in POS header. */
+function POSLegend() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <span
+        className="prefix-legend-trigger"
+        onClick={(e) => { e.stopPropagation(); setOpen(true); }}
+        title="Part-of-speech legend"
+      >
+        ?
+      </span>
+      {open && (
+        <div className="prefix-legend-overlay" onClick={() => setOpen(false)}>
+          <div className="prefix-legend-modal pos-legend-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>Part of Speech Legend</h3>
+            <div className="pos-legend-grid">
+              {POS_LEGEND.map((p) => (
+                <div key={p.tag} className="pos-legend-row">
+                  <span className="pos-legend-tag">{p.tag}</span>
+                  <span className="pos-legend-desc">{p.desc}</span>
+                </div>
+              ))}
+            </div>
+            <p className="prefix-legend-note">
+              POS tags are stored per-meaning. Filtering by a tag shows words that have at least one meaning with that tag.
+            </p>
+            <button className="prefix-legend-close" onClick={() => setOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -70,7 +142,120 @@ export default function FilterPanel({
           </CheckboxRow>
         </div>
 
-        {/* Column: Type */}
+        {/* Column: Part of Speech */}
+        <div className="filter-section">
+          <h4>
+            Part of Speech
+            <POSLegend />
+          </h4>
+          <div className="pos-grid">
+            {/* Content section */}
+            <label className="pos-toggle-all">
+              <input
+                type="checkbox"
+                checked={POS_CONTENT.every(opt => filterMasks.includes(opt.value))}
+                onChange={() => {
+                  const allTags = POS_CONTENT.map(opt => opt.value);
+                  const allChecked = allTags.every(t => filterMasks.includes(t));
+                  if (allChecked) {
+                    onFilterMasksChange(filterMasks.filter(m => !allTags.includes(m)));
+                  } else {
+                    onFilterMasksChange([...new Set([...filterMasks, ...allTags])]);
+                  }
+                }}
+              />
+              All Content
+            </label>
+            <div className="pos-section-label">▸ Content</div>
+            <div className="pos-grid-row">
+              {POS_CONTENT.slice(0, 3).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+            <div className="pos-grid-row">
+              {POS_CONTENT.slice(3, 6).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+
+            {/* Grammar section */}
+            <label className="pos-toggle-all" style={{ marginTop: 4 }}>
+              <input
+                type="checkbox"
+                checked={POS_GRAMMAR.every(opt => filterMasks.includes(opt.value))}
+                onChange={() => {
+                  const allTags = POS_GRAMMAR.map(opt => opt.value);
+                  const allChecked = allTags.every(t => filterMasks.includes(t));
+                  if (allChecked) {
+                    onFilterMasksChange(filterMasks.filter(m => !allTags.includes(m)));
+                  } else {
+                    onFilterMasksChange([...new Set([...filterMasks, ...allTags])]);
+                  }
+                }}
+              />
+              All Grammar
+            </label>
+            <div className="pos-section-label" style={{ marginTop: 6 }}>▸ Grammar</div>
+            <div className="pos-grid-row">
+              {POS_GRAMMAR.slice(0, 3).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+            <div className="pos-grid-row">
+              {POS_GRAMMAR.slice(3, 6).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+            <div className="pos-grid-row">
+              {POS_GRAMMAR.slice(6, 9).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+            <div className="pos-grid-row">
+              {POS_GRAMMAR.slice(9, 11).map(opt => (
+                <CheckboxRow
+                  key={opt.value}
+                  checked={filterMasks.includes(opt.value)}
+                  onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)}
+                >
+                  <b>{opt.value}</b> <span className="filter-hint">{opt.label}</span>
+                </CheckboxRow>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Column: Word Type + Syllable Range */}
         <div className="filter-section">
           <h4>Word Type</h4>
           {TYPE_OPTIONS.map(opt => (
@@ -82,24 +267,6 @@ export default function FilterPanel({
               {opt.label}
             </CheckboxRow>
           ))}
-        </div>
-
-        {/* Column: NVAD Mask + Syllable Range */}
-        <div className="filter-section">
-          <h4>
-            NVAD Mask
-            <span className="mask-info-icon" title="Derivation masks — each word can function as Noun, Verb, Adjective, and/or Adverb. Check a box to show words that can function in that role.">
-              ℹ
-            </span>
-          </h4>
-          <div className="mask-grid" data-testid="mask-grid">
-            {MASK_OPTIONS.map(opt => (
-              <label key={opt.value} className="filter-checkbox-row" data-mask={opt.value}>
-                <input type="checkbox" checked={filterMasks.includes(opt.value)} onChange={() => toggleInList(filterMasks, onFilterMasksChange, opt.value)} />
-                {opt.label}
-              </label>
-            ))}
-          </div>
 
           <h4 style={{ marginTop: 12 }}>Syllable Range</h4>
           <div className="syl-range-row">
