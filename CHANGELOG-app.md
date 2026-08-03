@@ -1,4 +1,4 @@
-**Current Version:** v2.0.1
+**Current Version:** v2.0.2
 **Last Updated:** 2026-08-03
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,29 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.0.2 — 2026-08-03
+
+Grammar badge consolidation, tonal inflection search, compound fixes, type sort fix, reloadDatabase guard.
+
+**Frontend:**
+- **`kilor/dictionary/src/db.js`** — `is_grammar` badge changed from `pos_mask == ''` to per-meaning POS check via `GRAMMAR_TAGS` Set — matches filter logic (e.g. `aniu` with meaning "zero/NUM" now shows `[grammar]`). `buildFilterClauses` supports `grammar` type with EXISTS subquery. `reloadDatabase()` null-guard: auto-reinitializes if `db` is null. Type sort CASE uses EXISTS subquery instead of `pos_mask` — eliminates root→root+grammar→root jumble. Fixed `buildTestDB` INSERT column count (10→11) to include `pos_mask`.
+- **`kilor/dictionary/src/components/FilterPanel.jsx`** — Added synced "Grammar" checkbox in Word Type column (pink label): toggling it checks/unchecks all 11 grammar POS tags, and "All Grammar" toggle syncs back. Fixed `React.Fragment` crash by importing `Fragment`. Added mono/multi sub-checkboxes under "Compounds" (indented, `compound-sub-row`).
+- **`kilor/dictionary/src/App.jsx`** — `filterCompoundTypes` state wired through to `queryWords()`; `TYPE_LABELS` removed `function`.
+- **`kilor/dictionary/src/components/TableView.jsx`** — `TypeTag` renders two independent badges (structural + grammar). NVAD column removed (7-col table). Type sort column header updated.
+- **`kilor/dictionary/src/App.css`** — Added `.compound-sub-row { padding-left: 22px }` for indented mono/multi sub-options. Fixed `.filter-columns` flex-wrap (removed) to prevent third column wrapping.
+
+**DB / Backend:**
+- **`kilor/phonology.py`** — Added `syllable_positions()` and `compute_tonal_inflections()` — ported from JS for 3+ syllable tonal form generation.
+- **`kilor/db.py`** — `populate_search_text()` uses `compute_tonal_inflections()` for 3+ syllable words.
+- **`data/kilor.db`** — Fixed 4 multi-word compounds mislabeled as mono (hamin pos, lira naras, song rius, song meus → multi). Regenerated inflections + search_text for all 299 content words — 99 tonal forms now stored (e.g. `wajlunla`, `waluvnla`).
+
+**Tests:**
+- **`kilor/dictionary/src/FilterPanel.test.jsx`** (new) — jsdom tests: verifies mono/multi sub-checkboxes render/hide correctly. 2 tests passing.
+- `npx vitest run` — ✅ 11/11 pass (2 FilterPanel + 9 db.reload)
+- `npm run build` — ✅ 45 modules, 743ms
+- `python kilor.py check` — ✅ 5 pre-existing errors, 0 new
+
 
 ## workspace v2.0.1 — 2026-08-03
 

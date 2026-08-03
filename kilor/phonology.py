@@ -554,3 +554,159 @@ def to_ipa(form):
         ipa_parts.append("".join(segs))
     
     return "/ˈ" + ".".join(ipa_parts) + "/"
+
+
+# ── Tonal Inflection Computation (3+ syllable words) ─────────────────────────
+
+def syllable_positions(word):
+    """Split a word into syllable objects with vowel-end offsets.
+
+    Like split_syllables() but returns each syllable as a dict with:
+      onset, nucleus, coda, vowel_end: int (position in the cleaned word
+      right after the nucleus vowel, where tone markers are inserted).
+
+    Tone markers (j, v) and hyphens are stripped before parsing.
+    Mirrors db.js:_syllablePositions().
+
+    Returns:
+        list of dicts, one per syllable.
+    """
+    import re as _re
+    cleaned = _re.sub(r'[jv-]', '', word)
+    n = len(cleaned)
+    if n == 0:
+        return []
+
+    # Build mapping: cleaned[i] → index in the original (pre-strip) word
+    cleaned_to_orig = []
+    ci = 0
+    for oi, ch in enumerate(word):
+        if ch in ('j', 'v', '-'):
+            continue
+        if ci < n and cleaned[ci] == ch:
+            cleaned_to_orig.append(oi)
+            ci += 1
+
+    syllables = []
+    i = 0
+    while i < n:
+        onset = ''
+        # Onset
+        if i == 0 and i + 2 <= n and cleaned[i:i+2] in START_ONLYS:
+            onset = cleaned[i:i+2]
+            i += 2
+        elif i == 0 and i + 2 <= n and cleaned[i:i+2] in EDGE_ONLYS:
+            onset = cleaned[i:i+2]
+            i += 2
+        elif i < n and cleaned[i] in CORE_CONS:
+            onset = cleaned[i]
+            i += 1
+
+        if i >= n:
+            raise ValueError(f"incomplete syllable in '{cleaned}' at position {i}")
+
+        nucleus_start = i
+        if cleaned[i] in VOWELS:
+            if cleaned[i:i+2] == 'ae':
+                i += 2
+            elif i + 1 < n and cleaned[i:i+2] in DIPHTHONGS:
+                i += 2
+            else:
+                i += 1
+        nucleus = cleaned[nucleus_start:i]
+
+        coda = ''
+        if i < n:
+            if i + 2 <= n and cleaned[i:i+2] in END_ONLYS and i + 2 == n:
+                coda = cleaned[i:i+2]
+                i += 2
+            elif i + 2 <= n and cleaned[i:i+2] in EDGE_ONLYS and i + 2 == n:
+                coda = cleaned[i:i+2]
+                i += 2
+            elif i + 1 == n and cleaned[i] in END_ONLYS:
+                coda = cleaned[i]
+                i += 1
+            elif cleaned[i] in CORE_CONS:
+                if i + 1 >= n or cleaned[i + 1] not in VOWELS:
+                    coda = cleaned[i]
+                    i += 1
+
+        # Vowel end position in the cleaned word (after the nucleus)
+        vowel_end_cleaned = nucleus_start + len(nucleus)
+        vowel_end_orig = cleaned_to_orig[vowel_end_cleaned - 1] + 1 if vowel_end_cleaned > 0 and (vowel_end_cleaned - 1) < len(cleaned_to_orig) else vowel_end_cleaned
+
+        syllables.append({
+            'onset': onset,
+            'nucleus': nucleus,
+            'coda': coda,
+            'vowel_end_orig': vowel_end_orig,
+        })
+
+    return syllables
+
+
+def compute_tonal_inflections(form, syl_count, pos_mask):
+    """Compute tonal inflection forms for a Kilor word.
+
+    Args:
+        form: bare word form (e.g. 'walunla', 'foragilan')
+        syl_count: integer syllable count
+        pos_mask: NVAD mask string (e.g. 'NV', 'AD', 'NVAD')
+
+    Returns:
+        dict: {form_type: form} e.g. {'noun': 'walujnla', 'adverb': 'waluvnla'}
+        For 1-2 syllable words, returns toneless forms (N/V=bare, A/D=+s).
+
+    Rules (SSOT: tone-prosody.md §II-III):
+        - 1-2 syl: toneless. N/V = bare root, A/D = root + 's'
+        - 3+ syl: Last-3 Domain tone markers.
+          N: j on 1st of last-3.  V: v on 1st of last-3.
+          A: j on 2nd of last-3. D: v on 2nd of last-3.
+        - Multi-word compounds: tone markers on last word only.
+    """
+    if not pos_mask:
+        return {}
+
+    mask = pos_mask.upper()
+    result = {}
+    mask_letters = ['N', 'V', 'A', 'D']
+    is_toneless = syl_count <= 2
+
+    words = form.split(' ')
+    last_word_idx = len(words) - 1
+
+    form_type_map = {'N': 'noun', 'V': 'verb', 'A': 'adjective', 'D': 'adverb'}
+
+    for letter in mask_letters:
+        if letter not in mask:
+            continue
+
+        ft = form_type_map[letter]
+
+        if is_toneless:
+            if letter in ('N', 'V'):
+                result[ft] = form
+            else:
+                result[ft] = form + 's'
+        else:
+            target_word = words[last_word_idx]
+            syls = syllable_positions(target_word)
+
+            if len(syls) < 3:
+                result[ft] = form
+                continue
+
+            last3 = syls[-3:]
+            anchor_idx = 0 if letter in ('N', 'V') else 1
+            anchor = last3[anchor_idx]
+            tone_char = 'j' if letter in ('N', 'A') else 'v'
+
+            vowel_end = anchor['vowel_end_orig']
+            toned_last = target_word[:vowel_end] + tone_char + target_word[vowel_end:]
+
+            if len(words) == 1:
+                result[ft] = toned_last
+            else:
+                result[ft] = ' '.join(words[:-1] + [toned_last])
+
+    return result

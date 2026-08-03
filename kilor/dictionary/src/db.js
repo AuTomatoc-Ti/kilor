@@ -128,7 +128,7 @@ export function autocompleteSearch(term) {
  * Build the shared WHERE clause and params for filters.
  * Returns { whereClauses, params } to be joined with ' AND '.
  */
-function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) {
+function buildFilterClauses({ search, types, compoundTypes, masks, prefixes, sylMin, sylMax }) {
   const clauses = [];
   const params = [];
 
@@ -139,7 +139,17 @@ function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) 
     const typeConds = [];
     for (const t of types) {
       if (t === 'root') { typeConds.push('w.is_root = 1'); }
-      else if (t === 'compound') { typeConds.push('w.is_compound = 1'); }
+      else if (t === 'compound') {
+        if (compoundTypes && compoundTypes.length > 0 && compoundTypes.length < 2) {
+          typeConds.push('(w.is_compound = 1 AND w.compound_type = ?)');
+          params.push(compoundTypes[0]);
+        } else {
+          typeConds.push('w.is_compound = 1');
+        }
+      }
+      else if (t === 'grammar') {
+        typeConds.push(`EXISTS (SELECT 1 FROM meanings WHERE word_id = w.id AND pos IN ('PRON','NUM','DET','CCONJ','SCONJ','ADP','PART','DEM','Q','CLF','INTERJ'))`);
+      }
     }
     if (typeConds.length > 0) { clauses.push(`(${typeConds.join(' OR ')})`); }
   }
@@ -196,6 +206,7 @@ function buildFilterClauses({ search, types, masks, prefixes, sylMin, sylMax }) 
 export function queryWords({
   search = '',
   types = [],
+  compoundTypes = [],
   masks = [],
   prefixes = [],
   sylMin = 1,
@@ -208,7 +219,7 @@ export function queryWords({
   if (!db) return { rows: [], totalCount: 0 };
 
   const { clauses, params: filterParams, hasSearch, searchTerm } = buildFilterClauses({
-    search, types, masks, prefixes, sylMin, sylMax,
+    search, types, compoundTypes, masks, prefixes, sylMin, sylMax,
   });
 
   // Ensure pos_mask column exists (migration guard)
@@ -283,7 +294,20 @@ export function queryWords({
       case 'prefix': sql += ` ORDER BY w.consensus_prefix ${dir}`; break;
       case 'mask': sql += ` ORDER BY w.derivation_mask ${dir}`; break;
       case 'syl': sql += ` ORDER BY w.syl_count ${dir}`; break;
-      case 'type': sql += ` ORDER BY w.is_function_word ${dir}, w.is_compound ${dir}`; break;
+      case 'type': {
+        const grammarTags = "'PRON','NUM','DET','CCONJ','SCONJ','ADP','PART','DEM','Q','CLF','INTERJ'";
+        sql += ` ORDER BY
+        CASE
+          WHEN w.is_root = 1 AND NOT EXISTS (SELECT 1 FROM meanings WHERE word_id = w.id AND pos IN (${grammarTags})) THEN 0
+          WHEN w.is_root = 1 THEN 1
+          WHEN w.is_compound = 1 AND w.compound_type = 'mono' AND NOT EXISTS (SELECT 1 FROM meanings WHERE word_id = w.id AND pos IN (${grammarTags})) THEN 2
+          WHEN w.is_compound = 1 AND w.compound_type = 'mono' THEN 3
+          WHEN w.is_compound = 1 AND w.compound_type = 'multi' AND NOT EXISTS (SELECT 1 FROM meanings WHERE word_id = w.id AND pos IN (${grammarTags})) THEN 4
+          WHEN w.is_compound = 1 AND w.compound_type = 'multi' THEN 5
+          ELSE 6
+        END ${dir}`;
+        break;
+      }
       case 'updated': sql += ` ORDER BY w.updated_at ${dir}`; break;
       default: sql += ` ORDER BY LOWER(w.form) ${dir}`;
     }
@@ -788,7 +812,11 @@ function enrichEntries(rows) {
     const meta = frag.meta;
     // Use pos_mask as primary source; fall back to derivation_mask
     const effectiveMask = (row.pos_mask || row.derivation_mask || '');
-    const isGrammar = (effectiveMask === '');
+    // Grammar detection: per-meaning POS check (matches filter logic)
+    const GRAMMAR_TAGS = new Set([
+      'PRON','NUM','DET','CCONJ','SCONJ','ADP','PART','DEM','Q','CLF','INTERJ'
+    ]);
+    const isGrammar = meanings.some(m => GRAMMAR_TAGS.has(m.pos));
     const case_forms = getCaseForms(row.form, effectiveMask || null, isGrammar);
     const computedInfl = computeInflections(row.form, row.syl_count, effectiveMask);
     return {
@@ -906,7 +934,7 @@ export async function buildTestDB(entries) {
   testDB.run(`CREATE TABLE compound_components (compound_id INTEGER REFERENCES words(id) ON DELETE CASCADE, component_id INTEGER REFERENCES words(id) ON DELETE CASCADE, position INTEGER NOT NULL, PRIMARY KEY (compound_id, position))`);
   testDB.run(`CREATE TABLE compound_meta (compound_id INTEGER PRIMARY KEY REFERENCES words(id) ON DELETE CASCADE, pattern TEXT NOT NULL, rule_ref TEXT)`);
   testDB.run(`CREATE TABLE examples (id INTEGER PRIMARY KEY AUTOINCREMENT, word_id INTEGER REFERENCES words(id) ON DELETE CASCADE, kilor_text TEXT NOT NULL, english_text TEXT NOT NULL, source TEXT DEFAULT 'canonical')`);
-  const iw = testDB.prepare('INSERT INTO words (id,form,syl_count,is_root,is_compound,compound_type,derivation_mask,consensus_prefix,is_function_word,notes) VALUES (?,?,?,?,?,?,?,?,?,?)');
+  const iw = testDB.prepare('INSERT INTO words (id,form,syl_count,is_root,is_compound,compound_type,derivation_mask,pos_mask,consensus_prefix,is_function_word,notes) VALUES (?,?,?,?,?,?,?,?,?,?,?)');
   const im = testDB.prepare('INSERT INTO meanings (word_id, gloss, pos, sort_order) VALUES (?,?,?,?)');
   const ii = testDB.prepare('INSERT INTO inflections (word_id, form_type, form) VALUES (?,?,?)');
   for (const e of entries) {
@@ -926,6 +954,11 @@ export function setDB(testDB) { db = testDB; }
 export async function reloadDatabase() {
   // Fetch fresh kilor.db via HTTP and replace the in-memory database.
   // Works because public/kilor.db is a symlink to data/kilor.db.
+  if (!db) {
+    // DB was never initialized — try loading from scratch
+    await _loadDatabase();
+    return db ? queryValue('SELECT COUNT(*) FROM words') || 0 : 0;
+  }
   const resp = await fetch('./kilor.db', { cache: 'no-store' });
   if (!resp.ok) {
     throw new Error(
@@ -945,7 +978,7 @@ export async function reloadDatabase() {
     throw new Error('Reloaded database is corrupt or unreadable');
   }
 
-  db.close();
+  if (db) db.close();
   db = newDB;
   return count;
 }

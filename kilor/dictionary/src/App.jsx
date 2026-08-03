@@ -117,6 +117,7 @@ export default function App() {
   const [search, setSearch] = useState(initial.search);
   const [dbVersion, setDbVersion] = useState(0);
   const [filterTypes, setFilterTypes] = useState(initial.types);
+  const [filterCompoundTypes, setFilterCompoundTypes] = useState([]);
   const [filterMasks, setFilterMasks] = useState(initial.masks);
   const [filterPrefixes, setFilterPrefixes] = useState(initial.prefixes);
   const [sylMin, setSylMin] = useState(initial.sylMin);
@@ -192,11 +193,11 @@ export default function App() {
 
   const result = useMemo(
     () => queryWords({
-      search, types: filterTypes, masks: filterMasks,
+      search, types: filterTypes, compoundTypes: filterCompoundTypes, masks: filterMasks,
       prefixes: filterPrefixes, sylMin, sylMax, sortCol, sortDir,
       page, pageSize: PAGE_SIZE,
     }),
-    [search, filterTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion, page]
+    [search, filterTypes, filterCompoundTypes, filterMasks, filterPrefixes, sylMin, sylMax, sortCol, sortDir, loading, dbVersion, page]
   );
 
   // Sync query total count for display
@@ -218,6 +219,7 @@ export default function App() {
 
   const handleResetFilters = useCallback(() => {
     setFilterTypes([]);
+    setFilterCompoundTypes([]);
     setFilterMasks([]);
     setFilterPrefixes([]);
     setSylMin(1);
@@ -246,6 +248,7 @@ export default function App() {
     setSearchDraft(form);
     setSearch(form);
     setFilterTypes([]);
+    setFilterCompoundTypes([]);
     setFilterMasks([]);
   }, []);
 
@@ -395,6 +398,8 @@ export default function App() {
             onFilterPrefixesChange={setFilterPrefixes}
             filterTypes={filterTypes}
             onFilterTypesChange={setFilterTypes}
+            filterCompoundTypes={filterCompoundTypes}
+            onFilterCompoundTypesChange={setFilterCompoundTypes}
             filterMasks={filterMasks}
             onFilterMasksChange={setFilterMasks}
             sylMin={sylMin}

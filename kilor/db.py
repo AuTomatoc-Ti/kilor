@@ -70,7 +70,7 @@ def populate_search_text(conn=None):
     search_text = form + space-separated inflection forms + case forms.
     Reuses the same computation as the frontend (computeInflections).
     """
-    from .phonology import count_syllables, get_case_forms
+    from .phonology import count_syllables, get_case_forms, compute_tonal_inflections
     
     close_after = conn is None
     if conn is None:
@@ -96,21 +96,10 @@ def populate_search_text(conn=None):
         is_grammar = (mask == '')
         cmpd_type = r['compound_type']
         
-        # Inflections (N→V→A→D)
-        is_toneless = syl <= 2
-        mapping = {'N': 'noun', 'V': 'verb', 'A': 'adjective', 'D': 'adverb'}
-        for letter in ['N', 'V', 'A', 'D']:
-            if letter not in mask.upper():
-                continue
-            if is_toneless:
-                if letter in ('N', 'V'):
-                    forms.append(r['form'])
-                else:
-                    forms.append(r['form'] + 's')
-            else:
-                # tone-marked inflections: just append form for now
-                # (full computation would need syllable parsing which is JS-side)
-                forms.append(r['form'])
+        # Inflections (N→V→A→D) — now includes tonal forms for 3+ syl words
+        tonal = compute_tonal_inflections(r['form'], syl, mask)
+        for ft, sform in tonal.items():
+            forms.append(sform)
         
         # Case forms (Nouns only)
         acc, gen = get_case_forms(

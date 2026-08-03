@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 const TYPE_OPTIONS = [
   { value: 'root', label: 'Roots' },
   { value: 'compound', label: 'Compounds' },
+];
+
+const COMPOUND_SUB_OPTIONS = [
+  { value: 'mono', label: 'mono' },
+  { value: 'multi', label: 'multi' },
 ];
 
 const POS_CONTENT = [
@@ -98,6 +103,7 @@ export default function FilterPanel({
   prefixInfo,
   filterPrefixes, onFilterPrefixesChange,
   filterTypes, onFilterTypesChange,
+  filterCompoundTypes, onFilterCompoundTypesChange,
   filterMasks, onFilterMasksChange,
   sylMin, onSylMinChange,
   sylMax, onSylMaxChange,
@@ -191,7 +197,7 @@ export default function FilterPanel({
             </div>
 
             {/* Grammar section */}
-            <label className="pos-toggle-all" style={{ marginTop: 4 }}>
+            <label className="pos-toggle-all" style={{ marginTop: 4 } }>
               <input
                 type="checkbox"
                 checked={POS_GRAMMAR.every(opt => filterMasks.includes(opt.value))}
@@ -258,15 +264,46 @@ export default function FilterPanel({
         {/* Column: Word Type + Syllable Range */}
         <div className="filter-section">
           <h4>Word Type</h4>
-          {TYPE_OPTIONS.map(opt => (
-            <CheckboxRow
-              key={opt.value}
-              checked={filterTypes.includes(opt.value)}
-              onChange={() => toggleInList(filterTypes, onFilterTypesChange, opt.value)}
-            >
-              {opt.label}
-            </CheckboxRow>
-          ))}
+          {TYPE_OPTIONS.map(opt => {
+            const isCompound = opt.value === 'compound';
+            return (
+              <Fragment key={opt.value}>
+                <CheckboxRow
+                  checked={filterTypes.includes(opt.value)}
+                  onChange={() => toggleInList(filterTypes, onFilterTypesChange, opt.value)}
+                >
+                  {opt.label}
+                </CheckboxRow>
+                {isCompound && filterTypes.includes('compound') && (
+                  <div className="compound-sub-row">
+                    {COMPOUND_SUB_OPTIONS.map(sub => (
+                      <CheckboxRow
+                        key={sub.value}
+                        checked={(filterCompoundTypes || []).includes(sub.value)}
+                        onChange={() => toggleInList(filterCompoundTypes || [], onFilterCompoundTypesChange, sub.value)}
+                      >
+                        <span className="filter-hint">{sub.label}</span>
+                      </CheckboxRow>
+                    ))}
+                  </div>
+                )}
+              </Fragment>
+            );
+          })}
+          <CheckboxRow
+            checked={filterTypes.includes('grammar')}
+            onChange={() => {
+              if (filterTypes.includes('grammar')) {
+                onFilterTypesChange(filterTypes.filter(t => t !== 'grammar'));
+                onFilterMasksChange(filterMasks.filter(m => !POS_GRAMMAR.map(o => o.value).includes(m)));
+              } else {
+                onFilterTypesChange([...filterTypes, 'grammar']);
+                onFilterMasksChange([...new Set([...filterMasks, ...POS_GRAMMAR.map(o => o.value)])]);
+              }
+            }}
+          >
+            <span style={{ color: '#be185d' }}>Grammar</span>
+          </CheckboxRow>
 
           <h4 style={{ marginTop: 12 }}>Syllable Range</h4>
           <div className="syl-range-row">
