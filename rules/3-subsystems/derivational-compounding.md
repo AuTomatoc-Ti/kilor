@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes & Light-Noun Compounding
 **Status:** Canonical
-**Last updated:** 2026-08-02
-**Version:** 2.7.2
+**Last updated:** 2026-08-04
+**Version:** 2.8.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E, §III Restored Consonant Rule), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 ---
@@ -28,7 +28,7 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 | 3 | `-lu` | Property | `lu` | n | -ness / quality (concrete noun → abstract property) |
 | 4 | `-rin` | Measure | `rin` | n | -th / degree |
 | 5 | `-par` | Process | `par` | n | -tion / act of |
-| 6 | `-lise` | Life-condition | `lise` | n | numinous life-condition (semi-productive) |
+| 6 | `-lise` | Ordained occurrence | `lise` | n | holistic ordained occurrence (semi-productive; broad-domain) |
 | 7 | `-ius` | Similative | `rius` | n | similar to / like / -ish |
 | 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
 | 9 | `-ia` | Abundative | `nia` | n | full of / abounding in / rich with |
@@ -87,22 +87,27 @@ For roots ending in an end-only or edge-only consonant, `-lu` appears in its ful
 
 Takes colour prefix `e-` (crafted/abstract).
 
-### F. Life-Condition — `root + -lise` (semi-productive)
+### F. Ordained Occurrence — `root + -lise` (semi-productive; broad-domain)
 
 | Form | Meaning |
 |---|---|
-| `elise` | survival; to endure (life as lived) |
-| `milise` | dying; to fade (death as lived) |
-| `halise` | prayer; wish (hope manifested as act) |
-| `rildalise` | vow; oath (pledge as lived bond) |
-| `gorlise` | good fortune |
-| `bonolise` | misfortune |
+| `elise` | lifetime; appointed span of life |
+| `milise` | appointed death; time of dying; sacrifice; to fade away |
+| `halise` | piety; religious devotion; to pray in a formal way |
+| `rildalise` | oracle; prophetic utterance; to prophesy |
+| `gorlise` | good fortune; appointed goodness; fortunate |
+| `bonaklise` | appointed adversity; season of hardship; misfortunate |
+| `erolise` | existence; to exist; existent |
+| `hoplise` | formal blessing; benediction; to bestow a formal blessing |
+| `huplise` | appointed decline; time of falling; apocalypse |
+| `luminlise` | bright turning; appointed dawn; season of hope; having good luck in future |
+| `mylise` | dark turning; appointed dusk; season of foreboding; having bad luck in future |
+| `shenlise` | one's appointed occurrence; personal destiny |
+| `maelise` | human fate; mortal destiny; the appointed condition of humanity |
 
+`-lise` nominalises a root into a **holistic ordained occurrence** — the base concept as it unfolds under divine appointment. It captures the full providential sweep: when, how, to whom, in what manner — everything that makes the occurrence an *assigned* state, not a random one. Unlike the other eight suffixes (each narrow — agent, instrument, property, etc.), `-lise` is the sole **broad-domain** suffix and is **semi-productive**: new coinages are limited to concepts with existential or spiritual significance — life arcs, fortunes, sacred commitments, seasons of the soul.
 
-
-`-lise` nominalises a root into a **numinous life-condition** — a concept of existential weight. Unlike the other five suffixes, which are fully productive and semantically lightweight (any compatible root works), `-lise` is **semi-productive**: new coinages are limited to concepts with existential significance — life arcs, fortunes, binding commitments, spiritual conditions. It is the suffix for naming something that defines a life.
-
-`-lise` is the only suffix with more than one syllable. It derives from the root `lise` ("fate, destiny") and takes colour prefix `o-` (abstract).
+`-lise` derives from the root `lise` ("assigned state; divine season; appointed time; providential ordering; sacred rhythm") and takes colour prefix `o-` (abstract). Etymologically, the suffix originated in `maelise` ("human-fate" — `mae` combining form of `maeha` "person" + `lise`) and generalised to all ordained occurrences.
 
 For roots ending in an end-only or edge-only consonant, `-lise` appears in multi-word form — see §III-B.1.
 

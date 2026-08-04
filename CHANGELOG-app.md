@@ -1,5 +1,5 @@
-**Current Version:** v2.0.2
-**Last Updated:** 2026-08-03
+**Current Version:** v2.0.3
+**Last Updated:** 2026-08-04
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.0.3 — 2026-08-04
+
+`-lise` compound audit: 14 compounds reviewed, 13 meaning sets revised, 1 removed (`song lise`). Root `lise` redefined.
+
+**DB / Backend:**
+- **`data/kilor.db`** — Root `lise`: meaning changed from "fate, destiny" to "assigned state; divine season; appointed time; providential ordering; sacred rhythm". 13 compounds with revised meanings per `CHANGELOG.md` v1.22.0: `elise`, `milise`, `halise`, `rildalise`, `erolise`, `bonaklise`, `gorlise`, `hoplise`, `huplise`, `luminlise`, `mylise`, `shenlise`, `maelise`. Deleted: `song lise` (id=377). `search_text` regenerated via `populate_search_text()`.
+- **`draft/update_lise_meanings.py`** (new, temp) — Batch update script for the above changes.
+
+**Validation:**
+- `python kilor.py check` — ✅
+
+> See also: `CHANGELOG.md` v1.22.0.
 
 ## workspace v2.0.2 — 2026-08-03
 

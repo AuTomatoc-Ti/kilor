@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.21.0
-**Last Updated:** 2026-08-03
+**Current Version:** v1.22.0
+**Last Updated:** 2026-08-04
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,18 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.22.0 — 2026-08-04
+
+`-lise` suffix redefined: from "numinous life-condition" to "holistic ordained occurrence." Root `lise` redefined. All 14 compounds audited — 13 revised, 1 removed (`song lise`).
+
+**Spec:**
+- **`derivational-compounding.md`** v2.7.2→2.8.0 — §I table row 6: Domain "Life-condition" → "Ordained occurrence", Meaning column updated. §I-F rewritten: `-lise` now broad-domain ("holistic ordained occurrence"), root `lise` gloss changed to "assigned state; divine season; appointed time; providential ordering; sacred rhythm." Example table: all 13 compounds with revised glosses. Etymology note added (originated in `maelise`). MINOR bump.
+
+**Validation:**
+- `python kilor.py check` — ✅
+
+> **DB changes** tracked in `CHANGELOG-app.md` v2.0.3.
 
 ## workspace v1.21.0 — 2026-08-03
 
