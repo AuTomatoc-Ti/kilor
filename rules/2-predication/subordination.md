@@ -182,7 +182,7 @@ Following the existing pattern for optional `kus` with non-clausal complements (
 |:---|:---|:---|
 | `tu` | when / while | Temporal |
 | `li` | if | Conditional (see `conditionals.md`) |
-| `aiga` | because | Causal |
+| `amo` | because | Causal |
 | `hoskar` | although | Concessive |
 | `fidak` | in order to | Purpose |
 | `arfi` | even | Concessive intensifier |
@@ -197,7 +197,7 @@ Following the existing pattern for optional `kus` with non-clausal complements (
 |:---|:---|
 | `tu ti kau, ki losto res` | "When you come, I am happy" |
 | `li ti lir taka, ki lira sounar` | "If you eat fish, I give water" |
-| `aiga fora fora, kora wem res` | "Because fire burns, the stone is warm" |
+| `amo fora fora, kora wem res` | "Because fire burns, the stone is warm" |
 | `hoskar rok my res, ki te slato kau` | "Although the night is dark, I come to the house" |
 | `tilpi ti kau, ki tle` | "Before you come, I wait" |
 | `tilpa ti tle, ki kau` | "After you wait, I come" |

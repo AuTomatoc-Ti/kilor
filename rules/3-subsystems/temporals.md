@@ -63,7 +63,7 @@ Optional aspect particles (`gin`, `ger`, `gou`; see `3-subsystems/aspect.md`) pr
 | `shu` | 1 | soon | Simplified from `shuk` + `tlow` |
 | `sar` | 1 | late | Simplified from `pusar` + `tlow` |
 | `cho` | 1 | early | Bare root, `ch` onset (start-only) |
-| `amo` | 2 | again | Bare root |
+| `aiga` | 2 | again | Bare root |
 | `fou` | 1 | during | Related to `founai` (duration) |
 
 > **Tone:** All bare temporal roots (1–2 syllables) are toneless (flat mid-tone), consistent with the 1–2 syllable toneless rule (`0-foundation/tone-prosody.md` §II-B).

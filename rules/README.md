@@ -43,7 +43,7 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `li` | If | `2-predication/conditionals.md` |
 | `bam` | Then / consequently | `2-predication/conditionals.md` |
 | `tu` | When / while | `2-predication/subordination.md` |
-| `aiga` | Because | `2-predication/subordination.md` |
+| `amo` | Because | `2-predication/subordination.md` |
 | `hoskar` | Although | `2-predication/subordination.md` |
 | `fidak` | In order to | `2-predication/subordination.md` |
 | `arfi` | Even | `2-predication/subordination.md` |

@@ -1,4 +1,4 @@
-**Current Version:** v2.0.3
+**Current Version:** v2.0.4
 **Last Updated:** 2026-08-04
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,18 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.0.4 — 2026-08-04
+
+`amo`/`aiga` swapped (because ↔ again), `fru` gloss edit (flowery→floral), `argonnamae` + `argonnamae lise` added.
+
+**DB / Backend:**
+- **`data/kilor.db`** — `fru`: gloss `flowery` (A) → `floral` (A). `amo`: meaning "again" (D) → "because" (PART), pos_mask `D`→``, is_function_word 0→1. `aiga`: meaning "because" (PART) → "again" (D), pos_mask empty→`D`, is_function_word 1→0. 2 new compounds: `argonnamae` (id=425, agent: argonna+maeha, N, `a-`) and `argonnamae lise` (id=426, ordained occurrence: argonnamae+lise, N, `a-`). `search_text` regenerated.
+
+**Validation:**
+- `python kilor.py check` — ✅ 0 new errors
+
+> See also: `CHANGELOG.md` v1.23.0.
 
 ## workspace v2.0.3 — 2026-08-04
 

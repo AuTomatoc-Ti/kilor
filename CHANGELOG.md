@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.22.0
+**Current Version:** v1.23.0
 **Last Updated:** 2026-08-04
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -18,6 +18,21 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.23.0 — 2026-08-04
+
+`amo`/`aiga` swapped (because ↔ again), `fru` gloss edit (flowery→floral), `argonnamae` + `argonnamae lise` added.
+
+**Spec:**
+- **`grammar-syntax.md`** v2.4.0→2.4.1 — Closed-class SSOT: `aiga` → `amo`. PATCH bump.
+- **`subordination.md`** — Causal subordinator table + example sentence: `aiga` → `amo`.
+- **`README.md`** — Particles quick-reference: `aiga` → `amo`.
+- **`temporals.md`** — Iterative temporal table: `amo` → `aiga`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 0 new errors
+
+> **DB changes** tracked in `CHANGELOG-app.md` v2.0.4.
 
 ## workspace v1.22.0 — 2026-08-04
 
