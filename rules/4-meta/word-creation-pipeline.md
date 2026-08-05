@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-08-03
 **Version:** 2.4.0
-**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
+**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
 
@@ -23,7 +23,7 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 | a | **Word form** (Kilor root/compound) | `*/#` | Human designs → AI validates | Phonotactic check + duplicate check + near-collision flag |
 | b | **Meaning** (English gloss) | `#` | Human | From wordlist (`wordlist/`) or ad-hoc |
 | c | **Type** (root / compound / derivation) | `#` | Human | If compound: specify component roots + pattern name |
-| d | **Colour prefix** (共識 default) | `#` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`derivational-compounding.md` §V) |
+| d | **Colour prefix** (共識 default) | `#` | completely human confirms | 7-Question Filter (`nouns-colour-prefix.md` §V) + compound head rules (`compounding.md` §IV, `derivational-suffixes.md` §IV) |
 | e | **POS tags per meaning** | `#` | Human | Each meaning line carries a POS tag (`N`, `V`, `A`, `D` for content words; closed-class tags from `VALID_POS` for function words per §III-B). Multiple PoS senses → use separate `Meaning (N)`, `Meaning (V)`, etc. fields. |
 | e₂ | **`pos_mask`** (aggregate NVAD) | `*` | AI auto-computes | `compute_pos_mask(meanings)` — derives NVAD from per-meaning POS tags. Maps MODAL→V, PROPN→N; closed-class tags (PRON, NUM, PART, etc.) contribute nothing. Empty (`""`) for grammar-only words. |
 | f | **Syllable count** | `*` | AI auto-computes | `count_syllables(form)` |
@@ -187,12 +187,12 @@ Add the following fields to the Content Word template above:
 ```markdown
 | Components | root1-form + root2-form |
 | Pattern | Agent / Instrument / Property / Measure / Process / Result / Location / Doctrine / Capability / Without |
-| Rule Ref | rules/3-subsystems/derivational-compounding.md §II-{section} |
+| Rule Ref | rules/3-subsystems/compounding.md §I-{section} |
 ```
 
 **Human fills:** Kilor Form, per-PoS Meaning, Type, Components, Pattern, Rule Ref.  
 **AI validates:** Component roots exist in DB.  
-**AI auto-suggests:** Consensus Prefix (from compound head rules, `derivational-compounding.md` §V).
+**AI auto-suggests:** Consensus Prefix (from compound head rules, `compounding.md` §IV and `derivational-suffixes.md` §IV).
 
 ### D. Polysemy (Adding a Meaning to an Existing Word)
 
@@ -250,7 +250,7 @@ A and D are independent — no forced co-occurrence. `D`-only pos_mask is valid.
 
 Run the ordered checklist from `nouns-colour-prefix.md` §V. The **first question that strongly resonates** dictates the suggestion.
 
-For **compounds**, the prefix follows the semantic class of the head noun (`derivational-compounding.md` §V):
+For **compounds**, the prefix follows the semantic class of the head noun (`compounding.md` §IV):
 
 | Compound Type | Suggested Prefix |
 |---|---|
@@ -469,7 +469,7 @@ Priority-ordered list of pipeline features not yet implemented:
 - **Phonotactic rules:** `0-foundation/phonology.md`
 - **Tone application:** `0-foundation/tone-prosody.md`
 - **7-Question Filter & colour prefix ontology:** `1-nominals/nouns-colour-prefix.md` §V
-- **Compound head prefix rules:** `3-subsystems/derivational-compounding.md` §V
+- **Compound head prefix rules:** `3-subsystems/compounding.md` §IV and `3-subsystems/derivational-suffixes.md` §IV
 - **Case suffix rules (Contrastive Suffix Rule):** `1-nominals/cases.md` §II
 - **DB schema reference:** `data/SCHEMA.md`
 - **POS tag set & pos_mask computation:** `kilor/schema.py`

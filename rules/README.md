@@ -102,8 +102,8 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `-s` | Derivational suffix (adj/adv) | `0-foundation/tone-prosody.md` |
 | `j` | High tone marker | `0-foundation/tone-prosody.md` |
 | `v` | Low tone marker | `0-foundation/tone-prosody.md` |
-| `-ius` | Similative (-like/-ish) | `3-subsystems/derivational-compounding.md` §I-G |
-| `-eus` | Relational (-ian/of/from) | `3-subsystems/derivational-compounding.md` §I-H |
+| `-ius` | Similative (-like/-ish) | `3-subsystems/derivational-suffixes.md` §I-G |
+| `-eus` | Relational (-ian/of/from) | `3-subsystems/derivational-suffixes.md` §I-H |
 
 ### Colour Prefixes & Emotional Particles
 
@@ -171,7 +171,8 @@ rules/
 │   ├── aspect.md               — Optional aspect particles
 │   ├── colour-emotion.md       — Emotional particles
 │   ├── comparatives.md         — Comparatives & superlatives
-│   ├── derivational-compounding.md — Derivational compounding via light-noun heads
+│   ├── derivational-suffixes.md — 9 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia)
+│   ├── compounding.md          — Multi-word compounding heads, mono/multi decision rules
 │   ├── imperatives.md          — Commands, suggestions, prohibitions, vocative
 │   ├── numerals.md             — Numerals, measure words, ordinals
 │   ├── optative.md             — Optative, desiderative & benedictive mood
@@ -214,7 +215,8 @@ When you change a file, check these dependents:
 | `3-subsystems/colour-emotion.md` | `philosophy.md`, `nouns-colour-prefix.md`, `grammar-syntax.md` |
 | `3-subsystems/temporals.md` | `grammar-syntax.md` |
 | `3-subsystems/comparatives.md` | `grammar-syntax.md`, `copula-existential.md` |
-| `3-subsystems/derivational-compounding.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
+| `3-subsystems/derivational-suffixes.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
+| `3-subsystems/compounding.md` | `derivational-suffixes.md`, `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
 | `3-subsystems/spatials.md` | `grammar-syntax.md`, `cases.md` |
 
 ---

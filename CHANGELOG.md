@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.23.0
-**Last Updated:** 2026-08-04
+**Current Version:** v1.25.0
+**Last Updated:** 2026-08-05
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,35 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.25.0 — 2026-08-05
+
+Split `derivational-compounding.md` (572 lines) into two files: `derivational-suffixes.md` (~225 lines) and `compounding.md` (~305 lines). No content deleted — all rules, examples, and tables preserved with cross-references between companion files.
+
+**Spec:**
+- **`derivational-suffixes.md`** v1.0.0 — New file: 9 derivational suffixes (§I A–I), suffix syntax & wordhood (§II A–C), formal register (§III), colour prefix rules for suffixes (§IV A–B). Cross-references to `compounding.md` for multi-word triggers and compound head prefix rules.
+- **`compounding.md`** v1.0.0 — New file: 7 multi-word compounding heads (§I A–G), multi-word compound syntax (§II), mono/multi decision rules (§III: Rules 1–7, flowchart, non-colour prefixes, modifier tone, quick reference), compound colour prefix rules (§IV). Cross-references to `derivational-suffixes.md` for suffix rules.
+- **`derivational-compounding.md`** — **Deleted** (content migrated to the two new files).
+
+**Cross-references updated (5 files):**
+- **`grammar-syntax.md`** — Depends on updated, §III and §VI refs updated.
+- **`pronouns.md`** — Depends on updated, 3 internal refs updated.
+- **`word-creation-pipeline.md`** — Depends on updated, 6 internal refs updated.
+- **`rules/README.md`** — Directory structure, quick-ref table, dependency table: 2 entries replace 1.
+- **`.clinerules/kilor.md`** — File structure diagram updated.
+
+**Validation:**
+- `python kilor.py check` — ✅ 7 errors, 12 warnings (all pre-existing, 0 new)
+
+## workspace v1.24.0 — 2026-08-05
+
+Mono vs. multi compound formation rules codified: 7-rule priority system, non-colour prefix specification, modifier tone in multi-word compounds.
+
+**Spec:**
+- **`derivational-compounding.md`** v2.8.0→3.0.0 — Added §III-C: mono/multi decision rules for content-root compounds (Rules 1–7, flowchart, definitions), non-colour prefix specification (§III-C.3), modifier tone in multi-word compounds via Modular Stitching (§III-C.4), quick reference table (§III-C.5). §II heads now carry an upgrade note (optional mono fusion). Updated Depends on for tone-prosody.md §IV-D.
+
+**Validation:**
+- `python kilor.py check` — ✅ All entries pass
 
 ## workspace v1.23.0 — 2026-08-04
 

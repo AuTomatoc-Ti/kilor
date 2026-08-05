@@ -1,25 +1,22 @@
-# Kilor Derivational Morphology
+# Kilor Derivational Suffixes
 
-**Module:** Derivational Suffixes & Light-Noun Compounding
+**Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-04
-**Version:** 2.8.0
-**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E, §III Restored Consonant Rule), `0-foundation/tone-prosody.md`, `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
+**Last updated:** 2026-08-05
+**Version:** 1.0.0
+**Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
+
+**Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
 
 ---
 
-Kilor derivation uses two complementary mechanisms:
+Kilor derivation uses derivational suffixes — 1-syllable abstract heads that fuse directly to the root as a single word. The resulting word is a single tone domain.
 
-1. **Derivational suffixes** — mono-word fusion for highly grammaticalised domains (agent, instrument, property, measure, process, similative, relational, abundative) and one semi-productive suffix for numinous life-conditions (`-lise`)
-2. **Multi-word compounding** — productive head-final compounds for concrete and multi-syllable heads (result, location, doctrine, capability, without/lack)
-
-This split is motivated by phonology and aesthetics: 1-syllable abstract heads fuse cleanly into a single word; heavier or semantically concrete heads retain their two-word rhythm.
+For multi-word compounding (content-root heads, mono/multi decision rules), see `3-subsystems/compounding.md`.
 
 ---
 
-## I. Derivational Suffixes (Mono-Word)
-
-1-syllable heads with abstract grammatical meaning fuse directly to the root as suffixes. The resulting word is a single tone domain.
+## I. Suffix Inventory
 
 | # | Suffix | Domain | From Root | Category | Meaning |
 |---|---|---|---|---|---|
@@ -33,7 +30,7 @@ This split is motivated by phonology and aesthetics: 1-syllable abstract heads f
 | 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
 | 9 | `-ia` | Abundative | `nia` | n | full of / abounding in / rich with |
 
-All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced the multi-word combining forms, carried one step further to full fusion.
+All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced multi-word combining forms, carried one step further to full fusion.
 
 ### A. Agent — `verb + -mae` / `verb + -maeha` (formal)
 
@@ -66,9 +63,9 @@ Takes colour prefix `e-` (crafted tools): `e-kuptek` = "the cutting tool".
 
 Unlike quality roots (`gor`, `my`, `ema`), whose bare form already nominalises their inherent property (goodness, darkness, truth), `-lu` bridges the gap for concrete nouns where the bare root refers to a physical substance or object, not an abstraction.
 
-Takes colour prefix inherited from the base noun (§V-B): `a-klush lu` = "the courage" (from `a-klush`, "the blood").
+Takes colour prefix inherited from the base noun (§IV-B): `a-klush lu` = "the courage" (from `a-klush`, "the blood").
 
-For roots ending in an end-only or edge-only consonant, `-lu` appears in its full-root multi-word form `lu` (§III-B.1). Example: `klush lu` = "courage" (not `*klushlu`).
+For roots ending in an end-only or edge-only consonant, `-lu` appears in its full-root multi-word form `lu` (§II-B). Example: `klush lu` = "courage" (not `*klushlu`).
 
 ### D. Measure — `adjective-root + -rin`
 
@@ -109,7 +106,7 @@ Takes colour prefix `e-` (crafted/abstract).
 
 `-lise` derives from the root `lise` ("assigned state; divine season; appointed time; providential ordering; sacred rhythm") and takes colour prefix `o-` (abstract). Etymologically, the suffix originated in `maelise` ("human-fate" — `mae` combining form of `maeha` "person" + `lise`) and generalised to all ordained occurrences.
 
-For roots ending in an end-only or edge-only consonant, `-lise` appears in multi-word form — see §III-B.1.
+For roots ending in an end-only or edge-only consonant, `-lise` appears in multi-word form — see §II-B.
 
 ### G. Similative — `noun + -ius` / `noun + rius` (multi-word form)
 
@@ -122,9 +119,9 @@ For roots ending in an end-only or edge-only consonant, `-lise` appears in multi
 
 `-ius` derives a similative noun from a base root. The suffix form is the shortened combining form of `rius` ("likeness, resemblance").
 
-Unlike the other fully productive suffixes, similative-derived words **inherit the colour prefix of the base** rather than a fixed semantic-class prefix: `i-auronius` (from `i-auron`, "sky"), `a-song rius` (from `a-song`, "friend"). See §V.
+Unlike the other fully productive suffixes, similative-derived words **inherit the colour prefix of the base** rather than a fixed semantic-class prefix: `i-auronius` (from `i-auron`, "sky"), `a-song rius` (from `a-song`, "friend"). See §IV.
 
-For roots ending in an end-only or edge-only consonant, `-ius` appears in its full-root multi-word form `rius` (§III-B.1). Example: `song rius` = "friend-like" (not `*songius`).
+For roots ending in an end-only or edge-only consonant, `-ius` appears in its full-root multi-word form `rius` (§II-B). Example: `song rius` = "friend-like" (not `*songius`).
 
 ### H. Relational — `noun + -eus` / `noun + meus` (multi-word form)
 
@@ -137,9 +134,9 @@ For roots ending in an end-only or edge-only consonant, `-ius` appears in its fu
 
 `-eus` derives a relational noun from a base root. The suffix form is the shortened combining form of `meus` ("kind, origin, belonging").
 
-Relational-derived words **inherit the colour prefix of the base**: `i-auroneus` (from `i-auron`, "sky"), `a-song meus` (from `a-song`, "friend"). See §V.
+Relational-derived words **inherit the colour prefix of the base**: `i-auroneus` (from `i-auron`, "sky"), `a-song meus` (from `a-song`, "friend"). See §IV.
 
-For roots ending in an end-only or edge-only consonant, `-eus` appears in its full-root multi-word form `meus` (§III-B.1). Example: `song meus` = "of friendship" (not `*songeus`).
+For roots ending in an end-only or edge-only consonant, `-eus` appears in its full-root multi-word form `meus` (§II-B). Example: `song meus` = "of friendship" (not `*songeus`).
 
 Both `-ius` and `-eus` are fully productive and are commonly used for person and place names: `Austareus` (personal name: "one of the dusk sky"), `Auronius` (personal name: "sky-like one"), `Songeus` (personal name: "one of friendship").
 
@@ -154,9 +151,9 @@ Both `-ius` and `-eus` are fully productive and are commonly used for person and
 
 `-ia` derives an abundative noun from a base noun — "one full of X, abounding in X." The suffix form is the shortened combining form of `nia` ("abundance, fullness").
 
-Abundative-derived words **inherit the colour prefix of the base**: `a-forania` (from `a-fora`, "fire"), `a-song nia` (from `a-song`, "friend"). See §V.
+Abundative-derived words **inherit the colour prefix of the base**: `a-forania` (from `a-fora`, "fire"), `a-song nia` (from `a-song`, "friend"). See §IV.
 
-For roots ending in an end-only or edge-only consonant, `-ia` appears in its full-root multi-word form `nia` (§III-B.1). Example: `song nia` = "rich in friends" (not `*songia`).
+For roots ending in an end-only or edge-only consonant, `-ia` appears in its full-root multi-word form `nia` (§II-B). Example: `song nia` = "rich in friends" (not `*songia`).
 
 Unlike quality roots (e.g., `losto`, "happiness"), whose bare form already nominalises the property, `-ia` derives a genuinely distinct concept only from a **concrete noun** base. Applying `-ia` to a quality root would be redundant (†lostonia = "full of happiness" ≈ "happiness").
 
@@ -164,110 +161,7 @@ Unlike quality roots (e.g., `losto`, "happiness"), whose bare form already nomin
 
 ---
 
-## II. Multi-Word Compounding Heads
-
-Heads that are 2+ syllables or semantically concrete remain as separate words in productive two-word compounds.
-
-| # | Head | Full Root | Domain | Category | Meaning |
-|---|---|---|---|---|---|
-| 7 | `param` | `param` | Result | n | result / thing made |
-| 8 | `pos` | `poska` | Location | n | place |
-| 9 | `isra` | `lokisra` | Doctrine | n | doctrine / system |
-| 10 | `afaloi` | `afaloi` | Capability | nv | ability / able to |
-| 11 | `naras` / `narau` | `narau` | Without/Lack | n | without / -less |
-| 12 | `posia` | `posia` | Realm/Land | n | land of / realm of |
-| 13 | `lote` | `lote` | Collective | n | group / multitude (human nouns only; see §II-G) |
-
-All heads are open-class content roots — they carry colour prefixes and accept `-s` derivation per standard rules.
-
-### A. Result — `verb + param`
-
-| Form | Meaning |
-|---|---|
-| `tesak param` | creation (thing created) |
-
-Takes colour prefix `o-` (abstract).
-
-### B. Location — `noun + pos`
-
-| Form | Meaning |
-|---|---|
-| `wem pos` | warm-place (greenhouse) |
-| `bau pos` | bread-place (bakery) |
-| `hamin pos` | food-place (kitchen/dining hall) |
-
-Takes colour prefix `ae-` (physical boundaries/earth).
-
-### C. Doctrine — `noun + isra`
-
-| Form | Meaning |
-|---|---|
-| `ero isra` | existentialism (existence-doctrine) |
-| `eli isra` | vitalism (life-doctrine) |
-
-Takes colour prefix `o-` (abstract system).
-
-### D. Capability — `afaloi + verb`
-
-| Form | Meaning |
-|---|---|
-| `afaloi taka` | edible (able-to-eat) |
-| `afaloi taki` | drinkable |
-| `afaloi tesak` | creatable / makeable |
-
-`afaloi` precedes the verb (modifier position). This pattern is distinct from the periphrastic `sew + verb` ("can X" as a verb phrase) — `afaloi taka` is a nominal/adjectival compound ("edible"), while `sew taka` is a predicate ("can eat"). Takes colour prefix `o-` (abstract).
-
-### E. Without/Lack — `narau + noun` / `noun + naras`
-
-| Form | Meaning |
-|---|---|
-| `narau lira` | without water (prepositional) |
-| `lira naras` | waterless (derivational) |
-
-Two syntactic patterns with the same root:
-- **Preposed `narau`:** prepositional usage — `narau lira` = "without water"
-- **Postposed `naras`:** derivational compounding — `lira naras` = "waterless"
-
-The postposed form `naras` follows the standard head-last compounding pattern. Takes colour prefix `o-` (abstract).
-
-### F. Realm/Land — `noun + posia`
-
-| Form | Meaning |
-|---|---|
-| `fos posia` | land of ice |
-| `fora posia` | fire-realm / land of fire |
-
-`posia` is a content root meaning "land, realm, domain" — the elevated counterpart to everyday `pos` ("place"). While `pos` forms practical location compounds (bakery, greenhouse), `posia` forms names for countries, regions, mythical realms, and poetic toponyms.
-
-Takes colour prefix `ae-` (physical boundaries/earth): `ae-fos posia` = "the land of ice."
-
-### G. Collective (Human Nouns) — `noun + -lo` / `noun + lote`
-
-| Form | Meaning | Rule |
-|---|---|---|
-| `maehalo` | people (collective, unspecified number) | Bare root, clean fuse |
-| `mamaelo` | mothers (collective) | Bare root, clean fuse (reduplicative, not agent-derived) |
-| `famae` → `famaelo` | fathers (collective) | Bare root, clean fuse |
-| `song lote` | friends (collective) | End-only `ng` blocks fusion (§III-B.1) |
-| `takamae lote` | eaters (collective) | Derived stem — `-mae` already consumed the one-suffix slot (§III-B.2) |
-
-`lote` is a content root meaning "group, multitude, collective." It forms collective plurals for **human nouns only**, with two surface forms:
-
-- **Fused `-lo`:** When the human noun is a bare root with no prior derivational suffix AND no phonotactic block (end-only/edge-only consonant at the root boundary). The shortened combining form `-lo` fuses directly: `maehalo`, `mamaelo`, `famaelo`.
-- **Multi-word `lote`:** When any of these blockers apply:
-  - **One-suffix-per-word constraint** (§III-A): the noun already carries a derivational suffix (e.g., `takamae` with `-mae`).
-  - **Phonotactic constraint** (§III-B.1): the bare root ends in an end-only or edge-only consonant (e.g., `song` with `ng`).
-  - **Semantic concreteness** (§II header): `lote` is a 2-syllable, semantically concrete content root — this is a fallback condition that applies only when fusion is blocked by the first two rules.
-
-Pronouns are a **closed class** that always fuses `-lo`: `kilo`, `tilo`, `silo`, `nilo`. See `1-nominals/pronouns.md` for the full pronoun paradigm.
-
-**Numeral constraint:** `-lo` / `lote` never co-occurs with numerals. Use either `a-song ro` (three friends) or `song lote` (friends, collective, unspecified number), never `*song lote ro`. This mirrors the Chinese 們/number mutual-exclusion pattern.
-
-Takes colour prefix `a-` (living beings/human): `a-maehalo` = "the people," `a-mamaelo` = "the mothers."
-
----
-
-## III. Syntax & Wordhood
+## II. Syntax & Wordhood
 
 ### A. Suffix Forms (Mono-Word)
 
@@ -280,11 +174,11 @@ Colour prefixes attach to the fused word as a whole: `a-takamae` (the eater), `e
 
 #### Fusion constraint: one suffix per word
 
-At most one derivational suffix can fuse to the bare root. When an additional derivational head is needed, it appears as a separate word following head-last semantics (§III-B.2).
+At most one derivational suffix can fuse to the bare root. When an additional derivational head is needed, it appears as a separate word following head-last semantics — see `3-subsystems/compounding.md` §II for multi-word triggers.
 
 #### Phonotactic constraint: end-only and edge-only consonants
 
-Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`, `x`, `rk`, `sh`, `ch`, `th`) cannot appear word-medially. When a root ends in one of these consonants, fusing a suffix would place the consonant in medial position. In this case, the suffix **must** appear as a separate word (§III-B.1).
+Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`, `x`, `rk`, `sh`, `ch`, `th`) cannot appear word-medially. When a root ends in one of these consonants, fusing a suffix would place the consonant in medial position. In this case, the suffix **must** appear as a separate word (see `3-subsystems/compounding.md` §II).
 
 | Root | Ending type | Fused form | Valid form | Rule |
 |---|---|---|---|---|
@@ -307,20 +201,9 @@ Consonant-final roots fuse cleanly — the suffix's vowel-initial form attaches 
 
 This rule is formalised in `0-foundation/grammar-syntax.md` §III.
 
-### B. Multi-Word Compounds
+### B. Phonotactic Block → Multi-Word
 
-Multi-word compounds are two orthographic words with a space. Each word is processed independently per Modular Stitching (`0-foundation/tone-prosody.md` §IV-D):
-
-- 1–2 syllable heads: toneless (flat mid)
-- 3+ syllable heads: follow their own Last-3 Domain
-
-Colour prefixes attach to the **head noun** (the last word): `ae-bau pos` (the bakery). Case suffixes attach only to the head: `bau posni` — bakery (ACC).
-
-Three situations produce multi-word forms:
-
-#### 1. Phonotactic block
-
-When a root ends in an end-only or edge-only consonant, fusion is blocked (§III-A). The head appears as a separate word:
+When a root ends in an end-only or edge-only consonant, fusion is blocked (§II-A). The head appears as a separate word. This is further detailed in `3-subsystems/compounding.md` §II.
 
 | Form | Meaning | Rule |
 |---|---|---|
@@ -328,38 +211,35 @@ When a root ends in an end-only or edge-only consonant, fusion is blocked (§III
 | `song lise` | fated friend | `song` ends in end-only `ng` |
 | `bash mae` | (hypothetical) person-who-bash | `bash` ends in edge-only `sh` |
 
-#### 2. Derived stem + head
+### C. Derived Stem + Head
 
-When a head attaches to a word that already carries a derivational suffix (a derived stem), the head appears as a separate word. Head-last semantics apply: the rightmost element is the head; everything left modifies it.
+When a head attaches to a word that already carries a derivational suffix (a derived stem), the head appears as a separate word. Head-last semantics apply: the rightmost element is the head; everything left modifies it. See `3-subsystems/compounding.md` §II for details.
 
 | Form | Structure | Meaning |
 |---|---|---|
 | `argonnalise mae` | `[[argonna]-lise] mae` | person characterized by fated love |
 | `takamae lise` | `[[taka]-mae] lise` | the lived condition of being an eater |
 
-#### 3. Multi-syllable / semantically concrete heads
-
-Heads in §II (`param`, `pos`, `isra`, `afaloi`, `naras`) always appear as separate words regardless of the root they attach to.
-
 ---
 
-## IV. Formal Register: Full-Root Forms
+## III. Formal Register: Full-Root Forms
 
 For the suffix system, the formal register preserves the full root as a suffix:
 
 | Everyday | Formal | Meaning |
 |---|---|---|
 | `takamae` | `misomaeha` | eater |
-| `wem pos` | `wem poska` | warm-place |
 | `forania` | `fora nia` | full of fire |
 
 Agent suffix `-maeha` (from `maeha`, "person") is the only suffix with a distinct formal register form. Other suffixes use their everyday form in all registers.
 
+For the companion multi-word compounding formal register, see `3-subsystems/compounding.md` §II (full-root forms for compound heads).
+
 ---
 
-## V. Interaction with the Colour Prefix System
+## IV. Interaction with the Colour Prefix System
 
-Derivational forms follow one of two prefix rules, determined by the base type:
+Derivational forms follow one of two prefix rules, determined by the base type.
 
 ### A. Fixed Semantic-Class Prefix
 
@@ -369,8 +249,9 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
 | Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`) |
-| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Result (`param`), Doctrine (`isra`), Capability (`afaloi`), Without/Lack (`naras`) |
-| Physical boundaries/earth | `ae-` | Location nouns (`pos`, `posia`) |
+| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`) |
+
+> **Compound heads** (`param`, `pos`, `isra`, `afaloi`, `naras`, `posia`) carry their own colour prefix as head nouns. See `3-subsystems/compounding.md` §IV.
 
 Verb roots and adjective roots do not carry colour prefixes of their own, so inheritance is not applicable — the fixed semantic-class prefix provides the only source.
 
@@ -385,8 +266,6 @@ For derivations from nouns — where the base already carries a colour prefix �
 | `-ia` | Abundative | `a-forania` (from `a-fora`, "fire") |
 | `-lu` | Property | `a-klush lu` (from `a-klush`, "blood") |
 
-Multi-word heads (`pos`, `posia`, `param`, `isra`, etc.) carry their own prefix as head nouns; the compound's prefix comes from the head (`ae-bau pos` = "the bakery", `ae-fos posia` = "the land of ice"), not from the modifier. This is standard head-last compounding (§III-B), distinct from the base-inheritance rule for fused suffixes.
-
 ---
 
-*End of Derivational Morphology Specification.*
+*End of Derivational Suffixes Specification.*

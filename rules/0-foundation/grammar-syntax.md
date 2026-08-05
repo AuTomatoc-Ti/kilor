@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-26
 **Version:** 2.4.0
-**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`, `3-subsystems/derivational-compounding.md`
+**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/compounding.md`
 
 ---
 
@@ -218,7 +218,7 @@ Consonant-final roots fuse cleanly — no restoration occurs: `auron` + `-ius` �
 
 This rule applies only to derivational suffix fusion. The morphological `-s` suffix is a **toneless extrasyllabic appendix** that attaches directly without any boundary adjustment: a root ending in a vowel (e.g., `kora`) simply takes `-s` → `kora-s`. Case suffixes (`-ni`/`-na`, `-si`/`-sa`) begin with consonants and are unaffected.
 
-Emotional particles and colour prefixes form their own phonological words (§I-E, §II); the vowel hiatus at a particle→word or prefix→root boundary (e.g., `a-ajkora`) is phonotactically legal and does not trigger this rule. See also `3-subsystems/derivational-compounding.md` §III-A for the full fusion constraint.
+Emotional particles and colour prefixes form their own phonological words (§I-E, §II); the vowel hiatus at a particle→word or prefix→root boundary (e.g., `a-ajkora`) is phonotactically legal and does not trigger this rule. See also `3-subsystems/derivational-suffixes.md` §II-A for the full fusion constraint.
 
 When the root's final consonant happens to match the restored consonant (e.g., `auror` + `-ius` → `aurorius` vs. `auro` + `-ius` → `aurorius`), homographs may result. Context disambiguates.
 
@@ -309,7 +309,7 @@ Pronoun plurals use the same reduced case endings (`-n` ACC, `-s` GEN) as singul
 
 ### Human Noun Collective — Fused `-lo` / Multi-Word `lote`
 
-Human nouns form collective plurals following standard head-final rules (see `3-subsystems/derivational-compounding.md` §II-G), with two surface forms:
+Human nouns form collective plurals following standard head-final rules (see `3-subsystems/compounding.md` §I-G), with two surface forms:
 
 - **Fused `-lo`:** Bare human roots with no prior derivational suffix and no phonotactic block fuse the shortened combining form: `maehalo` (people), `mamaelo` (mothers), `famaelo` (fathers).
 - **Multi-word `lote`:** When the root carries a derivational suffix (`takamae lote` — eaters) or has a phonotactic block (`song lote` — friends).

@@ -4,7 +4,7 @@
 **Status:** Canonical
 **Last updated:** 2026-07-26
 **Version:** 2.0.1
-**Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`, `3-subsystems/derivational-compounding.md` §II
+**Depends on:** `1-nominals/cases.md`, `0-foundation/grammar-syntax.md` §VI, `0-foundation/tone-prosody.md`, `3-subsystems/compounding.md` §I
 
 ---
 
@@ -31,9 +31,9 @@ Kilor distinguishes **1st, 2nd, and 3rd person**, with a **living vs. non-living
 
 ### B. Plural Formation — The `-lo` Suffix
 
-Pronouns form plurals with the fused suffix **`-lo`**. This is a **pronoun-only** closed-class process — the suffix descends from the content root `lote` ("group, multitude, collective"; see `3-subsystems/derivational-compounding.md` §II), but unlike human nouns (which use the multi-word form `lote`), pronoun plurals fuse `-lo` directly to the pronoun root as a single word.
+Pronouns form plurals with the fused suffix **`-lo`**. This is a **pronoun-only** closed-class process — the suffix descends from the content root `lote` ("group, multitude, collective"; see `3-subsystems/compounding.md` §I), but unlike human nouns (which use the multi-word form `lote`), pronoun plurals fuse `-lo` directly to the pronoun root as a single word.
 
-The `-lo` suffix is a pronominal closed-class morphological process that does not extend to nouns. Human nouns form collectives with the separate word `lote` (head-final compounding, `derivational-compounding.md` §II). Regular nouns (animals, objects, abstracts) have no plural marking (see `0-foundation/grammar-syntax.md` §VI).
+The `-lo` suffix is a pronominal closed-class morphological process that does not extend to nouns. Human nouns form collectives with the separate word `lote` (head-final compounding, `3-subsystems/compounding.md` §I). Regular nouns (animals, objects, abstracts) have no plural marking (see `0-foundation/grammar-syntax.md` §VI).
 
 ---
 
@@ -98,7 +98,7 @@ The `-s` on a pronoun form (e.g., `kis`, `tis`, `sis`, `nis`, and their plural c
 
 ## VI. Human Noun Collectives — Fused `-lo` / Multi-Word `lote`
 
-Human nouns form collective plurals following standard head-final compounding rules (see `3-subsystems/derivational-compounding.md` §II-G), with two surface forms depending on the base:
+Human nouns form collective plurals following standard head-final compounding rules (see `3-subsystems/compounding.md` §I-G), with two surface forms depending on the base:
 
 | Form | Structure | Meaning | Rule |
 |:---|:---|:---|:---|
