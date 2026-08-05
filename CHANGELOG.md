@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.25.0
+**Current Version:** v1.25.1
 **Last Updated:** 2026-08-05
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -18,6 +18,13 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.25.1 — 2026-08-05
+
+Phonestheme observation guide: documented recurring sub-morphemic patterns (water `li-`, time `roi`/`tar`/`saka`, etc.) vs. productive compound roots. No spec or DB changes.
+
+**Guide:**
+- **`guide/phonesthemes.md`** v1.0.0 — New file: 11 semantic-domain observations (water, ice, sky, mountain, fire, time, good, light, room, person/agent, ordained occurrence). Distinguishes productive roots (e.g. `fos`, `auron`, `gilan`) from sub-morphemic echoes (e.g. `li-` in *shili/wonli*, `roi` in *piroi/paroi*). Cross-linguistic parallels included.
 
 ## workspace v1.25.0 — 2026-08-05
 
