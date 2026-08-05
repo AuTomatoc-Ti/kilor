@@ -6,7 +6,7 @@ import sqlite3
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables, get_case_forms, split_syllables, to_ipa
-from ..schema import VALID_POS, POS_TO_INFLECTION, compute_pos_mask
+from ..schema import VALID_POS, POS_TO_INFLECTION, compute_pos_mask, COMPOUND_PATTERN_MAP
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -212,15 +212,23 @@ def _insert_compound_data(conn, word_id, entry, root, english, errors):
             (word_id, cid, pos),
         )
     
-    # Insert compound_meta if pattern is provided
+    # Auto-compute pattern from last component if not manually specified
     pattern = entry.get("compound_pattern", "")
     rule_ref = entry.get("compound_rule_ref", "")
+
+    if not pattern:
+        last_component_form = components[-1] if components else None
+        if last_component_form:
+            auto_pattern = COMPOUND_PATTERN_MAP.get(last_component_form)
+            if auto_pattern:
+                pattern = auto_pattern
+
     if pattern:
         conn.execute(
             "INSERT INTO compound_meta (compound_id, pattern, rule_ref) VALUES (?, ?, ?)",
             (word_id, pattern, rule_ref),
         )
-    
+
     return True
 
 

@@ -2,6 +2,36 @@
 
 # ── Core Schema ──────────────────────────────────────────────────────────
 
+# ── Compound Pattern Auto-Computation ─────────────────────────────────────
+# SSOT: rules/3-subsystems/derivational-suffixes.md §I + compounding.md §I.
+# When adding a new suffix or compounding head, update BOTH this dict
+# and the corresponding spec file.
+# Key = full-root form of the head (as stored in compound_components).
+# Value = canonical pattern name stored in compound_meta.pattern.
+COMPOUND_PATTERN_MAP = {
+    # ── Derivational suffixes (derivational-suffixes.md §I) ──
+    "maeha": "agent",
+    "tek": "instrument",
+    "lu": "property",
+    "rin": "measure",
+    "par": "process",
+    "lise": "ordained-occurrence",
+    "rius": "similative",
+    "meus": "relational",
+    "nia": "abundative",
+    # ── Compounding heads (compounding.md §I) ──
+    "poska": "location",
+    "param": "result",
+    "isra": "doctrine",
+    "lokisra": "doctrine",
+    "afaloi": "capability",
+    "narau": "without",
+    "naras": "without",
+    "posia": "realm",
+    "lote": "collective",
+}
+
+
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS words (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

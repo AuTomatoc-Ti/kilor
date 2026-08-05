@@ -1,5 +1,5 @@
-**Current Version:** v2.0.4
-**Last Updated:** 2026-08-04
+**Current Version:** v2.1.0
+**Last Updated:** 2026-08-05
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,21 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.1.0 — 2026-08-05
+
+Compound pattern system overhaul: auto-compute from last component (zero human judgment), DB normalization (36→17 canonical patterns, 45 non-spec patterns cleared), misomae fix.
+
+**DB / Backend:**
+- **`kilor/schema.py`** — Added `COMPOUND_PATTERN_MAP` (SSOT): 16 canonical pattern names keyed by full-root component forms (e.g. `maeha`→`agent`, `lise`→`ordained-occurrence`, `poska`→`location`). When adding a new suffix or compounding head, update both this dict and the corresponding spec file.
+- **`kilor/commands/add.py`** — `_insert_compound_data()` now auto-computes `pattern` from `COMPOUND_PATTERN_MAP.get(last_component)` when no manual pattern is specified in `today.md`. Zero human judgment needed for spec-defined heads. Manual `Pattern` field still works as override.
+- **`data/kilor.db`** — Fix script normalized all compound patterns: 32 renamed (e.g. `Fate`→`ordained-occurrence`, `agentive-suffix`→`agent`, `Life-condition`→`ordained-occurrence`), 45 non-spec `compound_meta` rows deleted (ordinary content-root compounds: `nominal-compound`, `temporal-day`, `numeral-compound`, `frequency`, etc.), one component fix (`misomae` now has `maeha` component matching all other agent compounds). From ~36 different pattern names → 17 canonical.
+- **`draft/fix_compounds.py`** (new, temp, deleted after use) — One-shot script for DB normalization. Investigated 8 single-component compounds: `lokisra` (doctrine, missing `loki` root), `bamares`/`hostakes` (legitimate epistemic modals), `auronte`/`foske`/`lunlagak`/`walunla` (missing components). No deletion — investigation only.
+
+**Validation:**
+- `python kilor.py check` — ✅ 7 errors, 12 warnings (all pre-existing, 0 new)
+
+> See also: `CHANGELOG.md` v1.25.0 (spec split) and v1.24.0 (mono/multi rules).
 
 ## workspace v2.0.4 — 2026-08-04
 
