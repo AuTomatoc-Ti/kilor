@@ -2,8 +2,8 @@
 
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
-**Last updated:** 2026-07-21
-**Version:** 1.3.0
+**Last updated:** 2026-08-06
+**Version:** 2.0.0
 **Depends on:**
 
 ---
@@ -28,9 +28,10 @@ Kilor has its own native script. The ASCII transcription is a romanisation — i
 | `ch` | one letter | /tʃ/ | one glyph |
 | `th` | one letter | /θ/ | one glyph |
 | `ng` | one letter | /ŋ/ | one glyph |
-| `rk` | one letter | /ɾk/ (coarticulated) | one glyph |
-| `sl`, `kl`, `tl`, `bl`, `ml` | one letter each | lateral-release coarticulations | one glyph each |
-| `kr`, `br`, `gr`, `fr`, `pr` | one letter each | trill-release coarticulations | one glyph each |
+| `rk` | one letter | /ɹk/ | one glyph |
+| `kl`, `tl`, `bl`, `ml` | one letter each | lateral-release | one glyph each |
+| `kr`, `br`, `gr`, `fr`, `pr`, `sr` | one letter each | approximant-release | one glyph each |
+| `qy` | one letter | /j/ | one glyph |
 
 When a reader sees `pesha` in the ASCII transcription, it represents the Kilor letters: **p, e, s, h, a** — five separate letters. The sequence `sh` in mid-word position is never the single Kilor letter for /ʃ/; it is two distinct letters (`s` immediately followed by `h`). See §III-E for the formal disambiguation rule.
 
@@ -44,13 +45,13 @@ Pure, ungliding vowel sounds.
 
 | Letter | IPA | Sound Description | English Example |
 |:---|:---|:---|:---|
-| **a** | /ɑ/ | ah | f**a**ther |
-| **e** | /ɛ/ | eh | b**e**d |
+| **a** | /a/ | ah (central-low) | Spanish c**a**sa, Japanese **あ** |
+| **e** | /e/ | mid-high eh | Spanish qu**e**, French ét**é** |
 | **i** | /i/ | ee | mach**i**ne |
-| **o** | /ɔ/ | aw | l**o**t / th**ough**t |
+| **o** | /ɔ/ | aw | th**ough**t, d**aw**n, s**aw** |
 | **u** | /u/ | oo | fl**u**te |
 | **y** | /y/ | ü | German *über* |
-| **ae** | /æ/ | short a | c**a**t / **ai**r |
+| **ae** | /æ/ | short a | c**a**t, b**a**t |
 
 ### B. The 7 Permitted Diphthongs
 
@@ -61,8 +62,8 @@ Two vowels that merge into a **single syllable nucleus**. These are the **only**
 | **ai** | /aɪ/ | eye | m**y** / b**uy** |
 | **au** | /aʊ/ | ow | c**ow** / h**ow** |
 | **ei** | /eɪ/ | ay | d**ay** / s**ay** |
-| **eu** | /eʊ/ | ew | m**ew** / f**ew** |
-| **iu** | /ju/ | you | **you** / **use** |
+| **eu** | /eʊ/ | eh-oo | Spanish n**eu**tro |
+| **iu** | /i̯u/ | ee-oo glide | — |
 | **oi** | /ɔɪ/ | oy | b**oy** / t**oy** |
 | **ou** | /oʊ/ | oh | g**o** / sn**ow** |
 
@@ -74,7 +75,7 @@ Kilor consonants belong to one of four positional classes. A consonant's class d
 
 ### A. Core Consonants (Appear Anywhere)
 
-15 consonants that may appear word-initially, word-medially, or word-finally. Grouped by articulatory mechanics.
+16 consonants that may appear word-initially, word-medially, or word-finally. Grouped by articulatory mechanics.
 
 **Labial** (lips / lip-teeth):
 
@@ -95,16 +96,22 @@ Kilor consonants belong to one of four positional classes. A consonant's class d
 | **n** | /n/ | Alveolar nasal | **n**o |
 | **s** | /s/ | Voiceless alveolar fricative | **s**ee |
 | **l** | /l/ | Alveolar lateral approximant | **l**ight |
-| **r** | /r/ | Alveolar trill | Spanish pe**rr**o |
-| **c** | /ts/ | Voiceless alveolar affricate | pi**zz**a |
+| **r** | /ɹ/ | Voiced alveolar approximant | **r**ed |
+| **c** | /ts/ | Voiceless alveolar affricate (alveolar counterpart of `ch`) | pi**zz**a, Japanese **ts**u (つ), German **Z**eit |
 
 **Dorsal & Glottal** (velar / glottis):
 
 | Letter | IPA | Sound Description | English Example |
 |:---|:---|:---|:---|
 | **k** | /k/ | Voiceless velar plosive | s**k**y |
-| **g** | /g/ | Voiced velar plosive | **g**o |
+| **g** | /ɡ/ | Voiced velar plosive | **g**o |
 | **h** | /h/ | Voiceless glottal fricative | **h**at |
+
+**Palatal** (hard palate):
+
+| Letter | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **qy** | /j/ | Voiced palatal approximant | **y**es, Japanese **y**a (や), Mandarin **y**ě (也) |
 
 ### B. Edge-Only Consonants
 
@@ -122,31 +129,33 @@ Kilor consonants belong to one of four positional classes. A consonant's class d
 
 ### C. Start-Only Consonants
 
-13 single-letter consonants that may appear **only at the absolute beginning of a word** (word-initial position). No vowel may precede them. Each is one continuous articulatory gesture — a single phoneme, one Kilor letter.
+10 single-letter consonants that may appear **only at the absolute beginning of a word** (word-initial position). No vowel may precede them. Each is one continuous articulatory gesture — a single phoneme, one Kilor letter.
 
-**Lateral-release onsets:** The tongue tip presses to the roof, and air releases over the sides into the vowel.
+They fall into two families:
 
-| Letters | IPA | Sound Description | English Example |
-|:---|:---|:---|:---|
-| **sl** | /s͜l/ | `s` released laterally | whi**stl**e (without the 't') |
-| **kl** | /k͜l/ | `k` released laterally | **cl**ick |
-| **tl** | /t͜l/ | `t` released laterally | bo**ttl**e |
-| **bl** | /b͜l/ | `b` released laterally | bub**bl**e |
-| **ml** | /m͜l/ | `m` released laterally | ha**ml**et (compressed) |
-
-**Trill-release onsets:** The consonant releases directly into an alveolar trill as one continuous motion.
+**Lateral-release:** The plosive releases with air escaping over the sides of the tongue. The tongue tip touches the alveolar ridge (as for /l/) during the release, giving a distinctive "spreading" sensation.
 
 | Letters | IPA | Sound Description | English Example |
 |:---|:---|:---|:---|
-| **kr** | /k͡r/ | `k` released into trill | **cr**y (coarticulated) |
-| **br** | /b͡r/ | `b` released into trill | **br**ight (coarticulated) |
-| **gr** | /ɡ͡r/ | `g` released into trill | **gr**een (coarticulated) |
-| **fr** | /f͡r/ | `f` released into trill | **fr**ee (coarticulated) |
-| **pr** | /p͡r/ | `p` released into trill | **pr**oud (coarticulated) |
+| **kl** | /kˡ/ | `k` with lateral release | like `k` + brief `l` touch |
+| **tl** | /tˡ/ | `t` with lateral release | like `t` + brief `l` touch |
+| **bl** | /bˡ/ | `b` with lateral release | like `b` + brief `l` touch |
+| **ml** | /mˡ/ | `m` with lateral release | like `m` + brief `l` touch |
+
+**Approximant-release:** The consonant releases into a smooth, flowing English-style r-sound (/ɹ/), giving each one a European-language texture.
+
+| Letters | IPA | Sound Description | English Example |
+|:---|:---|:---|:---|
+| **kr** | /kɹ/ | `k` released into approximant r | **cr**y |
+| **br** | /bɹ/ | `b` released into approximant r | **br**ight |
+| **gr** | /ɡɹ/ | `g` released into approximant r | **gr**een |
+| **fr** | /fɹ/ | `f` released into approximant r | **fr**ee |
+| **pr** | /pɹ/ | `p` released into approximant r | **pr**oud |
+| **sr** | /sɹ/ | `s` released into approximant r | S**ri** Lanka |
 
 > **Compounding restriction:** These start-only consonants are restricted to **absolute word-initial** position. A root beginning with a start-only consonant may not appear as the second or later element in a mono-word compound (where it would become word-medial). Such combinations must use multi-word compounds instead. Roots beginning with a core consonant (see §IV-A) may appear in any position within a compound.
 
-> **Mid-word appearance:** The sequences `sl`, `kl`, `tl`, `bl`, `ml`, `kr`, `br`, `gr`, `fr`, `pr` appearing mid-word are always two separate core consonants, never the single start-only letter. See §IV-E.
+> **Mid-word appearance:** The sequences `kl`, `tl`, `bl`, `ml`, `kr`, `br`, `gr`, `fr`, `pr`, `sr` appearing mid-word are always two separate core consonants, never the single start-only letter. `qy` appearing mid-word is two separate core consonants (`q` + `y`), never the single Kilor letter. See §IV-E.
 
 ### D. End-Only Consonants
 
@@ -156,13 +165,13 @@ Kilor consonants belong to one of four positional classes. A consonant's class d
 |:---|:---|:---|:---|
 | **ng** | /ŋ/ | Velar nasal | si**ng** |
 | **x** | /x/ | Voiceless uvular/velar fricative | Scottish Lo**ch** |
-| **rk** | /ɾk/ | Rhotic-velar coarticulated coda | a**rk**, da**rk** |
+| **rk** | /ɹk/ | Approximant-velar coda | a**rk**, da**rk** |
 
 > **Mid-word appearance:** The sequences `ng` and `rk` appearing mid-word are always two separate core consonants (`n`+`g`, `r`+`k`), never the single end-only letter. See §IV-E.
 
 ### E. Mid-Word Disambiguation Rule
 
-When a multi-character ASCII sequence (e.g., `sh`, `ng`, `kr`, `rk`, `sl` …) appears **inside** a word — not at the absolute start or end — it is always parsed as two separate core consonants, never as the single Kilor letter. The single letter only exists at word edges.
+When a multi-character ASCII sequence (e.g., `sh`, `ng`, `kr`, `rk`, `kl` …) appears **inside** a word — not at the absolute start or end — it is always parsed as two separate core consonants, never as the single Kilor letter. The single letter only exists at word edges.
 
 **Examples:**
 
@@ -181,12 +190,12 @@ When a multi-character ASCII sequence (e.g., `sh`, `ng`, `kr`, `rk`, `sl` …) a
 
 | Class | Count | Appears | Examples |
 |:---|:---|:---|:---|
-| Core (§IV-A) | 15 | Anywhere (initial, medial, final) | `p, b, m, f, w, t, d, n, s, l, r, c, k, g, h` |
+| Core (§IV-A) | 16 | Anywhere (initial, medial, final) | `p, b, m, f, w, t, d, n, s, l, r, c, k, g, h, qy` |
 | Edge-Only (§IV-B) | 3 | Absolute word-initial or word-final only | `sh, ch, th` |
-| Start-Only (§IV-C) | 13 | Absolute word-initial only | `sl, kl, tl, bl, ml, kr, br, gr, fr, pr` |
+| Start-Only (§IV-C) | 10 | Absolute word-initial only | `kl, tl, bl, ml, kr, br, gr, fr, pr, sr` |
 | End-Only (§IV-D) | 3 | Absolute word-final only | `ng, x, rk` |
 
-> **Total consonants:** 34 (15 core + 3 edge-only + 13 start-only + 3 end-only)
+> **Total consonants:** 32 (16 core + 3 edge-only + 10 start-only + 3 end-only)
 
 > **No `j` or `v` permitted** as consonants — these are reserved for tone markers (§I).
 

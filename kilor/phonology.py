@@ -15,11 +15,12 @@ VOWELS = set("aeiouy")
 DIPHTHONGS = {"ai", "au", "ei", "eu", "iu", "oi", "ou"}
 CORE_CONS = set("pbmfwtdnslrckgh")
 EDGE_ONLYS = {"sh", "ch", "th"}
-START_ONLYS = {"sl", "kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr"}
+START_ONLYS = {"kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr", "sr"}
 END_ONLYS = {"ng", "x", "rk"}
+_MULTICHAR_CORE = {"qy"}  # Core consonants represented by two ASCII characters
 
 # All multi-character single-letter sequences (for mid-word disambiguation)
-_ALL_MULTICHAR = EDGE_ONLYS | START_ONLYS | END_ONLYS
+_ALL_MULTICHAR = EDGE_ONLYS | START_ONLYS | END_ONLYS | _MULTICHAR_CORE
 
 S_FINAL_WHITELIST = {
     "gus", "fos", "aus", "ous", "les", "mangus",
@@ -72,7 +73,11 @@ def split_syllables(word):
     while i < n:
         onset = ""
         # --- Onset ---
-        if i == 0 and i + 2 <= n and word[i : i + 2] in START_ONLYS:
+        # Multi-char core consonants (e.g. qy) can be onset anywhere
+        if i + 2 <= n and word[i : i + 2] in _MULTICHAR_CORE:
+            onset = word[i : i + 2]
+            i += 2
+        elif i == 0 and i + 2 <= n and word[i : i + 2] in START_ONLYS:
             onset = word[i : i + 2]
             i += 2
         elif i == 0 and i + 2 <= n and word[i : i + 2] in EDGE_ONLYS:
@@ -105,12 +110,17 @@ def split_syllables(word):
         # the next syllable. A consonant is only taken as coda when:
         #   - it is a multi-char end-only/edge-only letter at absolute word end, OR
         #   - it is a single-char end-only letter at absolute word end, OR
+        #   - it is a multi-char core consonant at word end, OR
         #   - it is a core consonant at word end (no following vowel), OR
         #   - it is a core consonant followed by another consonant
         coda = ""
         if i < n:
+            # Multi-char core consonants: can be coda at word-final
+            if i + 2 <= n and word[i : i + 2] in _MULTICHAR_CORE and i + 2 == n:
+                coda = word[i : i + 2]
+                i += 2
             # End-only letters (multi-char): only at absolute word-final position
-            if i + 2 <= n and word[i : i + 2] in END_ONLYS and i + 2 == n:
+            elif i + 2 <= n and word[i : i + 2] in END_ONLYS and i + 2 == n:
                 coda = word[i : i + 2]
                 i += 2
             # Edge-only letters (multi-char): may appear as coda only at word-final
@@ -443,23 +453,25 @@ def detect_syllable_ambiguities(db_path):
 
 # Kilor → IPA mappings (SSOT: rules/0-foundation/phonology.md §II–IV)
 _VOWEL_IPA = {
-    "a": "ɑ", "e": "ɛ", "i": "i", "o": "ɔ", "u": "u", "y": "y", "ae": "æ",
+    "a": "a", "e": "e", "i": "i", "o": "ɔ", "u": "u", "y": "y", "ae": "æ",
 }
 _DIPHTHONG_IPA = {
     "ai": "aɪ", "au": "aʊ", "ei": "eɪ", "eu": "eʊ",
-    "iu": "ju", "oi": "ɔɪ", "ou": "oʊ",
+    "iu": "i̯u", "oi": "ɔɪ", "ou": "oʊ",
 }
 _CORE_IPA = {
     "p": "p", "b": "b", "m": "m", "f": "f", "w": "w",
     "t": "t", "d": "d", "n": "n", "s": "s", "l": "l",
-    "r": "r", "c": "ts", "k": "k", "g": "g", "h": "h",
+    "r": "ɹ", "c": "ts", "k": "k", "g": "ɡ", "h": "h",
+    "qy": "j",
 }
 _EDGE_IPA = {"sh": "ʃ", "ch": "tʃ", "th": "θ"}
 _START_IPA = {
-    "sl": "s͜l", "kl": "k͜l", "tl": "t͜l", "bl": "b͜l", "ml": "m͜l",
-    "kr": "k͡r", "br": "b͡r", "gr": "ɡ͡r", "fr": "f͡r", "pr": "p͡r",
+    "kl": "kˡ", "tl": "tˡ", "bl": "bˡ", "ml": "mˡ",
+    "kr": "kɹ", "br": "bɹ", "gr": "ɡɹ", "fr": "fɹ", "pr": "pɹ",
+    "sr": "sɹ",
 }
-_END_IPA = {"ng": "ŋ", "x": "x", "rk": "ɾk"}
+_END_IPA = {"ng": "ŋ", "x": "x", "rk": "ɹk"}
 
 
 def _syllable_to_ipa(syl, is_word_start=False, is_word_end=False):
@@ -485,12 +497,18 @@ def _syllable_to_ipa(syl, is_word_start=False, is_word_end=False):
             elif i + 2 <= n and syl[i:i+2] in _EDGE_IPA:
                 segments.append(_EDGE_IPA[syl[i:i+2]])
                 i += 2
+            elif i + 2 <= n and syl[i:i+2] in _CORE_IPA:
+                segments.append(_CORE_IPA[syl[i:i+2]])
+                i += 2
             elif syl[i] in _CORE_IPA:
                 segments.append(_CORE_IPA[syl[i]])
                 i += 1
         else:
-            # Mid-word onset: only core consonants
-            if syl[i] in _CORE_IPA:
+            # Mid-word onset: only core consonants (single-char or multi-char)
+            if i + 2 <= n and syl[i:i+2] in _CORE_IPA:
+                segments.append(_CORE_IPA[syl[i:i+2]])
+                i += 2
+            elif syl[i] in _CORE_IPA:
                 segments.append(_CORE_IPA[syl[i]])
                 i += 1
 
@@ -511,7 +529,7 @@ def _syllable_to_ipa(syl, is_word_start=False, is_word_end=False):
     if i >= n:
         return segments
     if is_word_end:
-        # Word-final coda: check end-only, then edge-only, then core
+        # Word-final coda: check end-only, then edge-only, then core (incl. multi-char)
         if i + 2 <= n and syl[i:i+2] in _END_IPA and i + 2 == n:
             segments.append(_END_IPA[syl[i:i+2]])
             i += 2
@@ -521,12 +539,18 @@ def _syllable_to_ipa(syl, is_word_start=False, is_word_end=False):
         elif i + 1 == n and syl[i] in _END_IPA:
             segments.append(_END_IPA[syl[i]])
             i += 1
+        elif i + 2 <= n and syl[i:i+2] in _CORE_IPA:
+            segments.append(_CORE_IPA[syl[i:i+2]])
+            i += 2
         elif syl[i] in _CORE_IPA:
             segments.append(_CORE_IPA[syl[i]])
             i += 1
     else:
-        # Mid-word coda: only core consonants
-        if syl[i] in _CORE_IPA:
+        # Mid-word coda: only core consonants (single-char or multi-char)
+        if i + 2 <= n and syl[i:i+2] in _CORE_IPA:
+            segments.append(_CORE_IPA[syl[i:i+2]])
+            i += 2
+        elif syl[i] in _CORE_IPA:
             segments.append(_CORE_IPA[syl[i]])
             i += 1
 
@@ -537,11 +561,22 @@ def to_ipa(form):
     """Convert a Kilor written form to IPA transcription with syllable boundaries.
     
     Returns a string like "/ˈfɔ.rɑ.gi.lɑn/" with stress mark on the first syllable
-    and syllable dots between syllables.
+    and syllable dots between syllables. Multi-word compounds return space-separated
+    IPA blocks: "/ˈfɔs/ /ˈbˡɔn/".
     
     Uses positional consonant class rules from phonology.md §IV.
     Tone markers (j, v) are stripped — they are extra-segmental (§V-A).
     """
+    # Multi-word compounds: process each word separately
+    words = form.split()
+    if len(words) > 1:
+        ipa_blocks = []
+        for word in words:
+            block = to_ipa(word)
+            if block:
+                ipa_blocks.append(block)
+        return " ".join(ipa_blocks) if ipa_blocks else ""
+
     syllables = split_syllables(form)
     if not syllables:
         return ""
@@ -591,8 +626,11 @@ def syllable_positions(word):
     i = 0
     while i < n:
         onset = ''
-        # Onset
-        if i == 0 and i + 2 <= n and cleaned[i:i+2] in START_ONLYS:
+        # Onset — multi-char core (e.g. qy) can be onset anywhere
+        if i + 2 <= n and cleaned[i:i+2] in _MULTICHAR_CORE:
+            onset = cleaned[i:i+2]
+            i += 2
+        elif i == 0 and i + 2 <= n and cleaned[i:i+2] in START_ONLYS:
             onset = cleaned[i:i+2]
             i += 2
         elif i == 0 and i + 2 <= n and cleaned[i:i+2] in EDGE_ONLYS:
@@ -617,7 +655,11 @@ def syllable_positions(word):
 
         coda = ''
         if i < n:
-            if i + 2 <= n and cleaned[i:i+2] in END_ONLYS and i + 2 == n:
+            # Multi-char core: can be coda at word-final
+            if i + 2 <= n and cleaned[i:i+2] in _MULTICHAR_CORE and i + 2 == n:
+                coda = cleaned[i:i+2]
+                i += 2
+            elif i + 2 <= n and cleaned[i:i+2] in END_ONLYS and i + 2 == n:
                 coda = cleaned[i:i+2]
                 i += 2
             elif i + 2 <= n and cleaned[i:i+2] in EDGE_ONLYS and i + 2 == n:

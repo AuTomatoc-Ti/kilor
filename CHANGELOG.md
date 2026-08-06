@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v1.26.0
+**Current Version:** v2.0.0
 **Last Updated:** 2026-08-06
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -18,6 +18,36 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+
+
+## workspace v2.0.0 — 2026-08-06
+
+Phonology MAJOR revision: 14 vowels re-audited, 16 non-core consonants restructured into 2 Start-Only families (lateral-release + approximant-release), sl→sr renamed, r changed from trill /r/ to English approximant /ɹ/ for European texture, IPA tables fully rewritten. DB migration applied: 4 sl-words renamed, 405 IPA fields recomputed.
+
+**Spec:**
+- **`0-foundation/phonology.md`** v1.3.0→2.0.0 — Full rewrite.
+  - Vowels: a /ɑ/→/a/, e /ɛ/→/e/, iu /ju/→/i̯u/; fixed o, eu, ae English examples.
+  - Core consonants: r /r/→/ɹ/, g /g/→/ɡ/.
+  - Start-Only restructured from 13 (lateral-release + trill-release with tie bars) to 10 (2 families: lateral-release /Cˡ/: kl/tl/bl/ml; approximant-release /Cɹ/: kr/br/gr/fr/pr/sr).
+  - sl renamed to sr (/sɹ/), moved from lateral-release to approximant-release.
+  - New core consonant: `qy` /j/ (voiced palatal approximant), multi-char core consonant. Consonant count: 34→33.
+  - All tie bars removed.
+  - Sound description/example audit: `c` example expanded (pizza + tsu + Zeit), `iu` example removed (no accurate English match), all ASCII fields cleared of IPA-only glyph `ɡ`.
+- **`guide/phonology-texture.md`** — New file: aesthetic/texture/tone-type reference for all 31 phonemes, with design principles for word creation. Later updated with real DB-verified examples for every phoneme.
+- **`guide/README.md`** v1.0.0→1.1.0 — Added phonology-texture.md entry.
+- **`draft/phonology-ipa-audit.md`** — Full audit log with rationale for all 14 structural changes + type-by-type consonant review.
+
+**Tooling:**
+- **`kilor/phonology.py`** — IPA lookup tables updated to v2.0.0 mappings. `to_ipa()` now handles multi-word compounds (space-separated IPA blocks). START_ONLYS set updated (sl→sr). `_MULTICHAR_CORE = {"qy"}` for multi-char core consonant support. `split_syllables`, `syllable_positions`, `_syllable_to_ipa` all support multi-char core consonants in onset and coda positions.
+
+**DB:**
+- sl→sr rename: 4 words (slato, slo, slosaka, slote → srato, sro, srosaka, srote).
+- Full IPA recomputation: 405 of 406 words updated to new phonology.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors (nous, austar components, etc.), 0 new
+
 
 ## workspace v1.26.0 — 2026-08-06
 

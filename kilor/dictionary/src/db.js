@@ -344,8 +344,9 @@ const _BACK_VOWELS  = new Set(["a", "o", "u", "ai", "au", "oi", "ou"]);
 const _VOWELS = new Set("aeiouy");
 const _DIPHTHONGS = new Set(["ai", "au", "ei", "eu", "iu", "oi", "ou"]);
 const _CORE_CONS = new Set("pbmfwtdnslrckgh".split(""));
+const _MULTICHAR_CORE = new Set(["qy"]);
 const _EDGE_ONLYS = new Set(["sh", "ch", "th"]);
-const _START_ONLYS = new Set(["sl", "kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr"]);
+const _START_ONLYS = new Set(["kl", "tl", "bl", "ml", "kr", "br", "gr", "fr", "pr", "sr"]);
 const _END_ONLYS = new Set(["ng", "x", "rk"]);
 
 function lastNucleus(word) {
@@ -435,8 +436,11 @@ function splitSyllablesJS(word) {
   let i = 0;
   while (i < n) {
     let onset = "";
-    // Onset
-    if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
+    // Onset — multi-char core (e.g. qy) can be onset anywhere
+    if (i + 2 <= n && _MULTICHAR_CORE.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
       onset = cleaned.slice(i, i + 2);
       i += 2;
     } else if (i === 0 && i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2))) {
@@ -470,7 +474,11 @@ function splitSyllablesJS(word) {
     // Coda (maxonset: only take if no vowel follows)
     let coda = "";
     if (i < n) {
-      if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+      // Multi-char core: can be coda at word-final
+      if (i + 2 <= n && _MULTICHAR_CORE.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
         coda = cleaned.slice(i, i + 2);
         i += 2;
       } else if (i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
@@ -497,16 +505,17 @@ function splitSyllablesJS(word) {
 // ── IPA mapping ─────────────────────────────────────────────────────────────
 
 const _IPA_MAP = {
-  a: 'ɑ', e: 'ɛ', i: 'i', o: 'ɔ', u: 'u', y: 'y', ae: 'æ',
+  a: 'a', e: 'e', i: 'i', o: 'ɔ', u: 'u', y: 'y', ae: 'æ',
   p: 'p', b: 'b', m: 'm', f: 'f', w: 'w',
-  t: 't', d: 'd', n: 'n', s: 's', l: 'l', r: 'r', c: 'ts',
-  k: 'k', g: 'g', h: 'h',
-  sh: 'ʃ', ch: 'tʃ', th: 'θ', ng: 'ŋ', x: 'x', rk: 'ɾk',
-  sl: 's͜l', kl: 'k͜l', tl: 't͜l', bl: 'b͜l', ml: 'm͜l',
-  kr: 'k͡r', br: 'b͡r', gr: 'ɡ͡r', fr: 'f͡r', pr: 'p͡r',
+  t: 't', d: 'd', n: 'n', s: 's', l: 'l', r: 'ɹ', c: 'ts',
+  k: 'k', g: 'ɡ', h: 'h', qy: 'j',
+  sh: 'ʃ', ch: 'tʃ', th: 'θ', ng: 'ŋ', x: 'x', rk: 'ɹk',
+  kl: 'kˡ', tl: 'tˡ', bl: 'bˡ', ml: 'mˡ',
+  kr: 'kɹ', br: 'bɹ', gr: 'ɡɹ', fr: 'fɹ', pr: 'pɹ',
+  sr: 'sɹ',
   j: '˥', v: '˩',
   'ai': 'aɪ', 'au': 'aʊ', 'ei': 'eɪ', 'eu': 'eʊ',
-  'iu': 'ju', 'oi': 'ɔɪ', 'ou': 'oʊ',
+  'iu': 'i̯u', 'oi': 'ɔɪ', 'ou': 'oʊ',
   '-': '', ' ': ' ',
 };
 
@@ -571,7 +580,11 @@ function _syllablePositions(word) {
     const onsetStart = i;
 
     let onset = '';
-    if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
+    // Multi-char core (e.g. qy) can be onset anywhere
+    if (i + 2 <= n && _MULTICHAR_CORE.has(cleaned.slice(i, i + 2))) {
+      onset = cleaned.slice(i, i + 2);
+      i += 2;
+    } else if (i === 0 && i + 2 <= n && _START_ONLYS.has(cleaned.slice(i, i + 2))) {
       onset = cleaned.slice(i, i + 2);
       i += 2;
     } else if (i === 0 && i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2))) {
@@ -598,7 +611,11 @@ function _syllablePositions(word) {
 
     let coda = '';
     if (i < n) {
-      if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+      // Multi-char core: can be coda at word-final
+      if (i + 2 <= n && _MULTICHAR_CORE.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
+        coda = cleaned.slice(i, i + 2);
+        i += 2;
+      } else if (i + 2 <= n && _END_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {
         coda = cleaned.slice(i, i + 2);
         i += 2;
       } else if (i + 2 <= n && _EDGE_ONLYS.has(cleaned.slice(i, i + 2)) && i + 2 === n) {

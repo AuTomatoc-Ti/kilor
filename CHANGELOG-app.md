@@ -1,4 +1,4 @@
-**Current Version:** v2.2.0
+**Current Version:** v2.3.0
 **Last Updated:** 2026-08-06
 **Format:** `**file** — what changed`
 
@@ -34,6 +34,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ 7 pre-existing errors, 0 new
 - Frontend: `dictionary.html` rebuilt with updated JS
+
+## workspace v2.3.0 — 2026-08-06
+
+Phonology v2.0.0 frontend/backend sync: sl→sr rename, all IPA mappings updated, new `qy` /j/ multi-char core consonant. See also: CHANGELOG.md v2.0.0.
+
+**Frontend:**
+- **`kilor/dictionary/src/db.js`** — Synced `_START_ONLYS` (sl→sr), `_IPA_MAP` (all v2.0.0 vowel/consonant mappings: a→a, e→e, r→ɹ, g→ɡ, iu→i̯u, lateral-release /Cˡ/, approximant-release /Cɹ/), `_CORE_CONS` split to single-char + `_MULTICHAR_CORE` (new `qy` /j/), `splitSyllablesJS` and `_syllablePositions` updated for multi-char core consonant support in onset and coda.
+
+**DB / Backend:**
+- **`kilor/phonology.py`** — IPA lookup tables synced to v2.0.0. `START_ONLYS` updated (sl→sr). `_MULTICHAR_CORE = {"qy"}` for multi-char core consonant. `split_syllables`, `syllable_positions`, `_syllable_to_ipa` all support multi-char core consonants in onset/coda.
+- **`data/kilor.db`** — sl→sr rename: 4 words (slato, slo, slosaka, slote → srato, sro, srosaka, srote). Full IPA recomputation: 405 of 406 words updated to v2.0.0 phonology.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 ## workspace v2.1.0 — 2026-08-05
 
