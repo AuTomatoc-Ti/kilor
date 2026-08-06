@@ -2,8 +2,8 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
-**Last updated:** 2026-07-26
-**Version:** 2.1.0
+**Last updated:** 2026-08-06
+**Version:** 2.2.0
 **Depends on:**
 
 ---
@@ -79,6 +79,17 @@ The **bare root** serves as both noun and verb. The **`-s` suffixed form** serve
 > **Example:** `shuk` (bare root) = "fast" (quality root, category `a` in lexicon). `shuks` (root + `-s`) = "quickly" (manner adverb).
 
 **Constraint:** No 1- or 2-syllable root may end in `s` natively. This preserves `-s` as an unambiguous modifier marker.
+
+**Exception — `-es` allomorph:** A small set of grandfathered 1-syllable roots ending in `s` (`fos`, `gus`, `meus`, `rius`) take the epenthetic variant `-es` instead of `-s` for adjective/adverb forms. This follows the general Kilor schwa-epenthesis strategy (see `0-foundation/phonology.md` §V-F): inserting `e` /ə/ breaks the illegal geminate `-ss` that would otherwise result. Examples:
+
+| Root | A/D form (not `*-ss`) | Gloss |
+|------|----------------------|-------|
+| `fos` | `foses` | icy, frozen |
+| `gus` | `guses` | hot, hotly |
+| `meus` | `meuses` | -ian, -ese, characteristic of |
+| `rius` | `riuses` | similar, kind of |
+
+The `-es` suffix adds one syllable (as in English bus→buses). New roots should not end in `s` — this exception exists solely for the four grandfathered forms.
 
 ---
 
@@ -162,7 +173,7 @@ This is not a grammatical rule but a **performance convention**. No morphologica
 
 ### G. Tone Omission for Single-Category Words
 
-Words of 3+ syllables whose **derivation mask has exactly one letter** (N, V, ADJ, or ADV only) may **omit** `j`/`v` tone markers. Omission is **optional** but preferred. When tone is omitted, the word is written without `j` or `v` and pronounced all flat-mid.
+Words of **any syllable count** whose **derivation mask has exactly one NVAD letter** (N, V, A, or D only) may **omit** their category marker (tone markers for 3+ syllable words; `-s`/`-es` suffix for 1–2 syllable words). Omission is **optional** but preferred. The bare root serves as the form for that single category.
 
 Motivation: tone markers exist to disambiguate category. A word that can only be one category has no ambiguity to resolve — tone is redundant. The `-s` suffix (for 1–2 syllable words) and colour prefixes already provide partial disambiguation for listeners; syntactic position handles the rest.
 
@@ -175,9 +186,9 @@ Motivation: tone markers exist to disambiguate category. A word that can only be
 | `a` | (hypothetical adj-only term) | `raljnikor` | `ralnikor` |
 | `d` | (hypothetical adv-only term) | `shukvnali` | `shuknali` |
 
-**Applies to:** proper nouns (e.g. personal names, place names, technical terminology), and any word whose derivation mask is a single letter.
+**Applies to:** words of any syllable count whose derivation mask is a single NVAD letter. For 3+ syllable words, tone markers are optional; for 1–2 syllable words, both bare root and `-s`/`-es` suffixed forms are acceptable (e.g., `meus` mask=`A`: both `meus` and `meuses`).
 
-**Does not apply to:** words with 2+ mask letters (NV, NA, ND, AV, etc.) — these still require tone to disambiguate category at runtime. 1–2 syllable words are already toneless (§II-B) and unaffected.
+**Does not apply to:** words with 2+ mask letters (NV, NA, ND, AV, etc.) — these still require their category marker to disambiguate at runtime. Words with an empty mask (closed-class particles) are unaffected.
 
 **Interaction with other rules:** the Colour Prefix Exemption (§IV-C), Tone Lock Rule (§IV-B), and Musical Tone Override (§IV-F) all apply to toneless forms exactly as they would to toned forms — the absence of `j`/`v` changes only the pitch contour of the word itself, not its prosodic relationship to prefixes, suffixes, or surrounding words.
 

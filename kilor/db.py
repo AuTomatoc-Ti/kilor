@@ -99,7 +99,10 @@ def populate_search_text(conn=None):
         # Inflections (N→V→A→D) — now includes tonal forms for 3+ syl words
         tonal = compute_tonal_inflections(r['form'], syl, mask)
         for ft, sform in tonal.items():
-            forms.append(sform)
+            if isinstance(sform, list):
+                forms.extend(sform)
+            else:
+                forms.append(sform)
         
         # Case forms (Nouns only)
         acc, gen = get_case_forms(

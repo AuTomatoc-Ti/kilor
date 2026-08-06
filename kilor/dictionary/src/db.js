@@ -665,9 +665,15 @@ function computeInflections(form, sylCount, derivationMask) {
 
     if (isToneless) {
       if (letter === 'N' || letter === 'V') {
-        result[_maskKey(letter)] = form;
+        result[_maskKey(letter)] = mask.length === 1 ? [form, form] : form;
+      } else if (form.endsWith('s')) {
+        // -es allomorph: roots ending in 's' take '-es' to avoid illegal -ss
+        // See tone-prosody.md §II-B.
+        const inflected = form + 'es';
+        result[_maskKey(letter)] = mask.length === 1 ? [form, inflected] : inflected;
       } else {
-        result[_maskKey(letter)] = form + 's';
+        const inflected = form + 's';
+        result[_maskKey(letter)] = mask.length === 1 ? [form, inflected] : inflected;
       }
     } else {
       // 3+ syllable word — apply tone markers to the last word (for multi-word)

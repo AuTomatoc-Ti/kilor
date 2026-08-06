@@ -668,6 +668,7 @@ def compute_tonal_inflections(form, syl_count, pos_mask):
         return {}
 
     mask = pos_mask.upper()
+    mask_len = len(mask)
     result = {}
     mask_letters = ['N', 'V', 'A', 'D']
     is_toneless = syl_count <= 2
@@ -685,9 +686,26 @@ def compute_tonal_inflections(form, syl_count, pos_mask):
 
         if is_toneless:
             if letter in ('N', 'V'):
-                result[ft] = form
+                if mask_len == 1:
+                    result[ft] = [form, form]
+                else:
+                    result[ft] = form
+            elif form.endswith('s'):
+                # -es allomorph: roots ending in 's' take '-es' instead of '-s'
+                # to avoid illegal geminate -ss. Only 4 grandfathered roots
+                # (fos, gus, meus, rius) — new roots should not end in 's'.
+                # See tone-prosody.md §II-B.
+                inflected = form + 'es'
+                if mask_len == 1:
+                    result[ft] = [form, inflected]
+                else:
+                    result[ft] = inflected
             else:
-                result[ft] = form + 's'
+                inflected = form + 's'
+                if mask_len == 1:
+                    result[ft] = [form, inflected]
+                else:
+                    result[ft] = inflected
         else:
             target_word = words[last_word_idx]
             syls = syllable_positions(target_word)

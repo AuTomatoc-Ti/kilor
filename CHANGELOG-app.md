@@ -1,5 +1,5 @@
-**Current Version:** v2.1.0
-**Last Updated:** 2026-08-05
+**Current Version:** v2.2.0
+**Last Updated:** 2026-08-06
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,22 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.2.0 — 2026-08-06
+
+`-es` allomorph for s-final roots: four grandfathered 1-syllable roots (`fos`, `gus`, `meus`, `rius`) now produce `foses`/`guses`/`meuses`/`riuses` for adjective/adverb instead of illegal `*-ss`. Single-category omission (§IV-G) extended to 1–2 syllable words (returns `[bare, inflected]` tuple). See also: CHANGELOG.md v1.26.0.
+
+**Frontend:**
+- **`kilor/dictionary/src/db.js`** — `computeInflections()`: toneless A/D branch checks `form.endsWith('s')` and appends `'es'`. Single-mask toneless words return `[bare, inflected]` tuple (e.g. `meus` mask=`A`: both `meus` and `meuses`). Rebuilt `dictionary.html` via `python kilor.py export --format html`.
+
+**DB / Backend:**
+- **`kilor/phonology.py`** — `compute_tonal_inflections()`: toneless A/D branch checks `form.endswith('s')` and appends `'es'`. Single-mask toneless words return `[bare, inflected]` tuple.
+- **`kilor/db.py`** — `populate_search_text()`: flattens list-valued inflections (single-mask tuples) into search_text. Now sets `updated_at = datetime('now')` when search_text changes. Only updates rows where search_text actually changed.
+- **`data/kilor.db`** — `search_text` regenerated: `meus` search_text now includes both `meus` and `meuses` (single-mask tuple); `updated_at` bumped for `meus` only (other 3 words unchanged — multi-mask, search_text identical).
+
+**Validation:**
+- `python kilor.py check` — ✅ 7 pre-existing errors, 0 new
+- Frontend: `dictionary.html` rebuilt with updated JS
 
 ## workspace v2.1.0 — 2026-08-05
 

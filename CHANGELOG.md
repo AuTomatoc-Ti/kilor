@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v1.25.1
-**Last Updated:** 2026-08-05
+**Current Version:** v1.26.0
+**Last Updated:** 2026-08-06
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,18 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+## workspace v1.26.0 — 2026-08-06
+
+`-es` allomorph for s-final roots: four grandfathered 1-syllable roots ending in `s` (`fos`, `gus`, `meus`, `rius`) now take epenthetic `-es` instead of `-s` for adjective/adverb derivation, avoiding illegal `-ss` geminate. Also extended §IV-G single-category omission to 1–2 syllable words (both bare root and `-s`/`-es` forms acceptable when mask has only one NVAD letter).
+
+**Spec:**
+- **`tone-prosody.md`** v2.1.0→2.2.0 — §II-B: Added `-es` allomorph exception table. Epenthetic schwa follows existing phonology.md §V-F strategy. New roots may not end in `s`. §IV-G: Extended single-category omission scope from "3+ syllables" to "any syllable count." 1–2 syllable single-mask words now produce `[bare, inflected]` tuple (both forms optional, e.g. `meus` mask=`A`: both `meus` and `meuses`).
+
+**Validation:**
+- `python kilor.py check` — ✅ 7 pre-existing errors, 0 new
+
+> App/DB changes tracked in `CHANGELOG-app.md` v2.2.0.
 
 ## workspace v1.25.1 — 2026-08-05
 
