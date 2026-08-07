@@ -31,7 +31,8 @@ Colour prefix evolution history documented: full diachronic chain (colour = DET 
 
 **Guide:**
 - **`guide/colour-prefix-poetics.md`** — New file: the fossil-colour device (double-voicing, the `a-` vs `awin` renewal tension, and its contrast with 異體字 emotion).
-- **`guide/README.md`** v1.1.0→1.2.0 — Registered `colour-prefix-poetics.md` (file table + "When to Read" mapping); added the previously-unlisted `phonesthemes.md` row.
+- **`guide/emotional-register-translation.md`** — New file: translating/conveying colour emotional particles in target languages (pole → contextual realization; the under-translation / legitimate-rendering / over-translation 超譯 test, with a worked `u'sym maeha winar` example).
+- **`guide/README.md`** v1.1.0→1.3.0 — Registered `colour-prefix-poetics.md` and `emotional-register-translation.md` (file table + "When to Read" mapping); added the previously-unlisted `phonesthemes.md` row.
 
 **Validation:**
 - Docs-only — no DB/lexicon change; `python kilor.py check` unaffected.
