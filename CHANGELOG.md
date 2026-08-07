@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.1.0
+**Current Version:** v2.2.0
 **Last Updated:** 2026-08-07
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,17 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.2.0 — 2026-08-07
+
+Three new derivational suffixes added: `-wes` (Collective), `-rem` (Retrospective), `-rum` (Prospective). Suffix count: 9 → 12.
+
+**Spec:**
+- **`3-subsystems/derivational-suffixes.md`** v1.0.0→1.1.0 — Added §I-J (`-wes`: things/stuff of X, N/V → N), §I-K (`-rem`: former X / that which once was, N→N / V→A / A→A), §I-L (`-rum`: neo-X / that which is yet to be, N→N / V→A / A→A). `-rem` and `-rum` are broad-domain and fully productive (unlike semi-productive `-lise`). §II-A/§II-B updated with new suffix references and phonotactic block examples. §IV-A extended: `-wes` (V-base → `e-` crafted); note added for `-rem`/`-rum` V/A → A (no colour prefix). §IV-B inherit table extended with N-base rows for all three. §I-F `-lise` description updated (no longer sole broad-domain suffix).
+
+**Validation:**
+- Docs-only — no DB/lexicon change; `python kilor.py check` unaffected.
 
 
 ## workspace v2.1.0 — 2026-08-07

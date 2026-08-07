@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-05
-**Version:** 1.0.0
+**Last updated:** 2026-08-07
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -29,6 +29,9 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 7 | `-ius` | Similative | `rius` | n | similar to / like / -ish |
 | 8 | `-eus` | Relational | `meus` | n | type of / from / belongs to (-ian, -ese) |
 | 9 | `-ia` | Abundative | `nia` | n | full of / abounding in / rich with |
+| 10 | `-wes` | Collective | `wes` | n | things of; the stuff/matter of X |
+| 11 | `-rem` | Retrospective | `rem` | n, a | former X; that which once was but is no longer |
+| 12 | `-rum` | Prospective | `rum` | n, a | neo-X; that which is yet to be but is soon coming |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced multi-word combining forms, carried one step further to full fusion.
 
@@ -102,7 +105,7 @@ Takes colour prefix `e-` (crafted/abstract).
 | `shenlise` | one's appointed occurrence; personal destiny |
 | `maelise` | human fate; mortal destiny; the appointed condition of humanity |
 
-`-lise` nominalises a root into a **holistic ordained occurrence** — the base concept as it unfolds under divine appointment. It captures the full providential sweep: when, how, to whom, in what manner — everything that makes the occurrence an *assigned* state, not a random one. Unlike the other eight suffixes (each narrow — agent, instrument, property, etc.), `-lise` is the sole **broad-domain** suffix and is **semi-productive**: new coinages are limited to concepts with existential or spiritual significance — life arcs, fortunes, sacred commitments, seasons of the soul.
+`-lise` nominalises a root into a **holistic ordained occurrence** — the base concept as it unfolds under divine appointment. It captures the full providential sweep: when, how, to whom, in what manner — everything that makes the occurrence an *assigned* state, not a random one. `-lise` is broad-domain like `-rem` and `-rum` (§I-K, §I-L), but unlike those fully productive suffixes, it is **semi-productive**: new coinages are limited to concepts with existential or spiritual significance — life arcs, fortunes, sacred commitments, seasons of the soul.
 
 `-lise` derives from the root `lise` ("assigned state; divine season; appointed time; providential ordering; sacred rhythm") and takes colour prefix `o-` (abstract). Etymologically, the suffix originated in `maelise` ("human-fate" — `mae` combining form of `maeha` "person" + `lise`) and generalised to all ordained occurrences.
 
@@ -159,6 +162,65 @@ Unlike quality roots (e.g., `losto`, "happiness"), whose bare form already nomin
 
 `-ia` contrasts with `-ius` (similative): `forarius` = fire-like (outward resemblance); `forania` = full of fire / fiery (inward pervasion).
 
+### J. Collective — `noun/verb + -wes` / `noun + wes` (multi-word)
+
+| Form | Meaning |
+|---|---|
+| `forawes` | fire-stuff; things of fire (from `fora`, "fire") |
+| `sratowes` | house-things (from `srato`, "house") |
+| `klush wes` | blood-stuff (from `klush`, "blood" — phonotactic block) |
+
+`-wes` derives a collective or material noun from a base root — "the things, stuff, or matter of X." The suffix form is the shortened combining form of `wes` ("things, stuff, matter").
+
+- **Noun base → N:** inherits the colour prefix of the base noun (§IV-B): `a-forawes` (from `a-fora`, "fire").
+- **Verb base → N:** takes fixed colour prefix `e-` (crafted/artifact, §IV-A): `e-forawes` = "combustibles, burning-stuff" (from `fora`, "to burn").
+
+For roots ending in an end-only or edge-only consonant, `-wes` appears in its full-root multi-word form `wes` (§II-B). Example: `klush wes` = "blood-stuff" (not `*klushwes`).
+
+### K. Retrospective — `noun/verb/adjective + -rem` / `root + rem` (multi-word)
+
+| Form | Meaning |
+|---|---|
+| `maeharem` | former person; ex-person (from `maeha`, "person") |
+| `chelrem` | former child (from `chel`, "child") |
+| `forarem` | once-burnt; that which once was burning (from `fora`, "to burn") |
+| `nibarem` | once-young; that which was once young (from `niba`, "young") |
+| `song rem` | former friend (from `song`, "friend" — phonotactic block) |
+
+`-rem` frames a root retrospectively — "that which once was, but is no longer." The suffix form is the shortened combining form of `rem` ("that which once was; the former state").
+
+The output part of speech depends on the base type:
+
+- **Noun base → N:** "former X, ex-X." Inherits the colour prefix of the base noun (§IV-B): `a-maeharem` (from `a-maeha`, "person").
+- **Verb base → A:** "that which once was X-ed." No colour prefix (adjectives do not take colour prefixes).
+- **Adjective base → A:** "that which was once X." No colour prefix.
+
+`-rem` is **fully productive** — any root can be framed retrospectively.
+
+For roots ending in an end-only or edge-only consonant, `-rem` appears in its full-root multi-word form `rem` (§II-B). Example: `song rem` = "former friend" (not `*songrem`).
+
+### L. Prospective — `noun/verb/adjective + -rum` / `root + rum` (multi-word)
+
+| Form | Meaning |
+|---|---|
+| `maeharum` | neo-human; new person (from `maeha`, "person") |
+| `sratorum` | new house; house-to-be (from `srato`, "house") |
+| `forarum` | soon-to-be-burnt; that which will burn (from `fora`, "to burn") |
+| `nibarum` | soon-to-be-young; that which will be young (from `niba`, "young") |
+| `song rum` | friend-to-be (from `song`, "friend" — phonotactic block) |
+
+`-rum` frames a root prospectively — "that which is yet to be, but is soon coming." The suffix form is the shortened combining form of `rum` ("that which is yet to be; the coming state"). `-rem` and `-rum` form a complementary pair: retrospective vs. prospective framing.
+
+The output part of speech depends on the base type:
+
+- **Noun base → N:** "new/revived X, neo-X." Inherits the colour prefix of the base noun (§IV-B): `a-maeharum` (from `a-maeha`, "person").
+- **Verb base → A:** "that which is yet to be X-ed." No colour prefix (adjectives do not take colour prefixes).
+- **Adjective base → A:** "that which will soon be X." No colour prefix.
+
+`-rum` is **fully productive** — any root can be framed prospectively.
+
+For roots ending in an end-only or edge-only consonant, `-rum` appears in its full-root multi-word form `rum` (§II-B). Example: `song rum` = "friend-to-be" (not `*songrum`).
+
 ---
 
 ## II. Syntax & Wordhood
@@ -185,7 +247,7 @@ Per `0-foundation/phonology.md` §IV, consonants restricted to word edges (`ng`,
 | `song` (friend) | end-only `ng` | `*songlise` | `song lise` | phonotactic block |
 | `taka` (eat) | core vowel | `takamae` | — | clean fuse |
 
-This constraint applies identically to all suffixes (including `-ius`, `-eus`, and `-ia`) and all heads.
+This constraint applies identically to all suffixes (including `-ius`, `-eus`, `-ia`, `-wes`, `-rem`, and `-rum`) and all heads.
 
 #### Restored Consonant Constraint: vowel-initial suffixes
 
@@ -199,6 +261,8 @@ The suffixes `-ius`, `-eus`, and `-ia` are shortened combining forms of full con
 
 Consonant-final roots fuse cleanly — the suffix's vowel-initial form attaches directly with no restoration. When the root's final consonant happens to match the restored consonant (e.g., `auror` + `-ius` → `aurorius` vs. `auro` + `-ius` → `aurorius`), homographs may result. Context disambiguates.
 
+`-wes`, `-rem`, and `-rum` are **consonant-initial** (`w-`, `r-`, `r-`) and fuse cleanly with both vowel-final and consonant-final roots — the Restored Consonant Rule does not apply.
+
 This rule is formalised in `0-foundation/grammar-syntax.md` §III.
 
 ### B. Phonotactic Block → Multi-Word
@@ -210,6 +274,9 @@ When a root ends in an end-only or edge-only consonant, fusion is blocked (§II-
 | `klush lu` | courage | `klush` ends in edge-only `sh` |
 | `song lise` | fated friend | `song` ends in end-only `ng` |
 | `bash mae` | (hypothetical) person-who-bash | `bash` ends in edge-only `sh` |
+| `song wes` | friend-stuff | `song` ends in end-only `ng` |
+| `song rem` | former friend | `song` ends in end-only `ng` |
+| `song rum` | friend-to-be | `song` ends in end-only `ng` |
 
 ### C. Derived Stem + Head
 
@@ -248,12 +315,14 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 | Semantic Class | Prefix | Applies to |
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
-| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`) |
+| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Collective nouns from verb base (`-wes`) |
 | Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`) |
 
 > **Compound heads** (`param`, `pos`, `isra`, `afaloi`, `naras`, `posia`) carry their own colour prefix as head nouns. See `3-subsystems/compounding.md` §IV.
 
 Verb roots and adjective roots do not carry colour prefixes of their own, so inheritance is not applicable — the fixed semantic-class prefix provides the only source.
+
+When `-rem` or `-rum` derives from a verb or adjective base, the output is an **adjective** (A). Adjectives do not take colour prefixes — no prefix is assigned. See §I-K and §I-L.
 
 ### B. Base-Dependent — Inherit from Base Noun
 
@@ -265,6 +334,9 @@ For derivations from nouns — where the base already carries a colour prefix �
 | `-eus` | Relational | `i-auroneus` (from `i-auron`, "sky") |
 | `-ia` | Abundative | `a-forania` (from `a-fora`, "fire") |
 | `-lu` | Property | `a-klush lu` (from `a-klush`, "blood") |
+| `-wes` | Collective (N-base) | `a-forawes` (from `a-fora`, "fire") |
+| `-rem` | Retrospective (N-base) | `a-maeharem` (from `a-maeha`, "person") |
+| `-rum` | Prospective (N-base) | `a-maeharum` (from `a-maeha`, "person") |
 
 ---
 
