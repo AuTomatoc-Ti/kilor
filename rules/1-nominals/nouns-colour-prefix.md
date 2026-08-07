@@ -2,8 +2,8 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
-**Last updated:** 2026-07-26
-**Version:** 1.3.0
+**Last updated:** 2026-08-07
+**Version:** 1.4.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -15,6 +15,16 @@ Traditional languages often bind nouns to rigid, arbitrary grammatical genders (
 The Colour Prefix does **not** describe the visual colour of an object, nor does it dictate a fixed dictionary category. It is **subjective metadata** — reflecting the speaker's immediate physical or cognitive perception of the noun. Because the root morpheme carries the core semantic weight, the system is **fault-tolerant**: choosing a "sub-optimal" prefix does not cause catastrophic misunderstanding.
 
 The 7 ontological classes are not abstract philosophical categories imposed top-down. They are **conventionalized sensory experience**, hardened through generations of practical, embodied categorization. A pre-historic speaker categorizes by what they perceive and do with an object — is it alive? is it fluid? can I build with it? — not by abstract ontology. The colour names are mnemonics for these embodied sensory categories, not visual classification criteria.
+
+---
+
+### A. Historical Origin — Colour, DET, and Renewal
+
+Kilor's colour prefix descends from an older stage in which a **colour term doubled as a determiner**: a colour word carried hue *and* specificity together, so pre-historic `a fora` ≈ "red fire" (i.e. "a/the red fire") with no separate articles or demonstratives. Over time the colour sense **eroded and generalised into an ontological category** (Red = living/energy/fire), while the determinative/specificity function was retained — the origin of both the name *colour prefix* and the definiteness rule in §IV.
+
+Because the literal hue sense was lost to the grammaticalised prefix, the language **renewed** it: literal colour meanings are now carried by **dedicated colour words** (e.g. `awin` = "red"), never by the prefix itself. This is why §I states the prefix "does not describe visual colour" — synchronically it encodes ontology + definiteness, and the hue has moved to content words.
+
+In **poetic/archaic register**, a prefix may deliberately resurrect its etymological colour sense (`a-fora` read as "the red, living fire") — a marked double-voicing, distinct from productive grammar and from `awin` + noun for literal colour. See `guide/colour-prefix-poetics.md` for the full artistic usage.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.0.0
-**Last Updated:** 2026-08-06
+**Current Version:** v2.1.0
+**Last Updated:** 2026-08-07
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -20,6 +20,21 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
+
+## workspace v2.1.0 — 2026-08-07
+
+Colour prefix evolution history documented: full diachronic chain (colour = DET → ontological classifier + renewal → emotional layer) added to the two colour-prefix/emotion specs, plus a new guide on the poetic fossil-colour device. Docs-only — no DB or lexicon changes.
+
+**Spec:**
+- **`1-nominals/nouns-colour-prefix.md`** v1.3.0→1.4.0 — New §I-A "Historical Origin — Colour, DET, and Renewal": colour term originally doubled as a determiner (origin of the name *colour prefix*); the colour sense erodes to an ontological classifier (with definiteness) while the literal hue is renewed into dedicated colour words (e.g. `awin`); the poetic/archaic resurrection of the fossil colour sense is cross-referenced to the new guide.
+- **`3-subsystems/colour-emotion.md`** v2.5.0→2.6.0 — §I rewritten from "One Form, Two Roles" to "One Etymology, Multiple Layers": expanded 4-stage history (colour=DET → colour→ontology+renewal → poets add emotion as clause-head / pre-verbal register-adverb / 異體字 override → 7-emotion crystallization); cross-ref added to the new guide.
+
+**Guide:**
+- **`guide/colour-prefix-poetics.md`** — New file: the fossil-colour device (double-voicing, the `a-` vs `awin` renewal tension, and its contrast with 異體字 emotion).
+- **`guide/README.md`** v1.1.0→1.2.0 — Registered `colour-prefix-poetics.md` (file table + "When to Read" mapping); added the previously-unlisted `phonesthemes.md` row.
+
+**Validation:**
+- Docs-only — no DB/lexicon change; `python kilor.py check` unaffected.
 
 ## workspace v2.0.0 — 2026-08-06
 

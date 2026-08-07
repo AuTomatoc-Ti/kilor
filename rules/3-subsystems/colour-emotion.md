@@ -2,25 +2,25 @@
 
 **Module:** Emotional Particles
 **Status:** Canonical
-**Last updated:** 2026-07-26
-**Version:** 2.5.0
+**Last updated:** 2026-08-07
+**Version:** 2.6.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concept meanings), `0-foundation/grammar-syntax.md` §I-E (clause template), §IV-C (closed-class particles), `1-nominals/nouns-colour-prefix.md` (colour prefix system, 異體字 override)
 **Interacts with:** `3-subsystems/imperatives.md` (co-occurrence in commands)
 
 ---
 
-## I. Historical Origin — One Form, Two Roles
+## I. Historical Origin — One Etymology, Multiple Layers
 
-The 7 colour morphemes (`a`, `e`, `i`, `o`, `u`, `y`, `ae`) serve two distinct functions: **ontological classification** (noun prefixes) and **emotional register** (standalone particles). Both descend from the same grammaticalization path:
+The 7 colour morphemes (`a`, `e`, `i`, `o`, `u`, `y`, `ae`) serve several distinct functions: **ontological classification** (noun prefixes, together with definiteness), **emotional register** (standalone particles), and — in poetic register — a **resurrected colour sense**. They all descend from a single grammaticalization path:
 
-1. **Pre-history:** Colour terms were full content words with ontological and emotional associations.
-2. **Early Kilor:** Terms eroded into noun classifiers. Emotional connotations persisted as cultural resonance.
-3. **Classical Kilor:** Emotional connotations were systematized into a parallel grammatical function — standalone particles.
-4. **Modern Kilor:** Particles settled into 7 basic, universally recognizable emotions. The philosophical dual-concepts in `0-foundation/philosophy.md` remain as the historical foundation; the modern system foregrounds intuitive emotional experience.
+1. **Pre-history — colour = DET:** A colour term doubled as a determiner, carrying hue *and* specificity together (pre-historic `a fora` ≈ "red fire" = "a/the red fire"; no separate articles). See `1-nominals/nouns-colour-prefix.md` §IV.
+2. **Ancient — colour → ontology + renewal:** The colour sense eroded and generalised into an **ontological classifier**; the prefix became `[ontology + definiteness]`. The literal hue moved to dedicated colour words (renewal, e.g. `awin`), so the prefix no longer means a hue.
+3. **Classical — poets add emotion:** Emotional connotations were systematized into a parallel grammatical function — standalone particles, deployed at the clause head (§IV-A), pre-verbally as a register-adverb (§IV-B), and as the noun-level 異體字 override.
+4. **Modern — crystallization:** The particles settled into 7 basic, universally recognizable emotions. The philosophical dual-concepts in `0-foundation/philosophy.md` remain as the historical foundation; the modern system foregrounds intuitive emotional experience.
 
-This dual function parallels the Spanish diminutive `-ito` — same form, two related functions, disambiguated by syntactic position.
+This is a single lexical source accumulating grammatical roles across time (like a demonstrative → article, or a content word → auxiliary): **one etymology, several synchronically distinct layers**, kept apart by position and by connector rather than by form.
 
-For extended usage (rhetoric, artistic layering, example gallery), see `guide/emotional-register-usage.md`.
+For extended usage (rhetoric, artistic layering, example gallery), see `guide/emotional-register-usage.md`; for the poetic resurrection of the prefix's covert colour sense, see `guide/colour-prefix-poetics.md`.
 
 ---
 
