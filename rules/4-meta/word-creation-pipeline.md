@@ -2,9 +2,9 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-08-03
-**Version:** 2.4.0
-**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
+**Last updated:** 2026-08-09
+**Version:** 2.4.1
+**Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
 
@@ -259,6 +259,7 @@ For **compounds**, the prefix follows the semantic class of the head noun (`comp
 | Property (`lu`), Measure (`rin`), Process (`par`), Result (`param`) | `o-` (abstract) |
 | Location (`pos`) | `ae-` (earth/boundary) |
 | Doctrine (`isra`), Capability (`afaloi`), Without (`nara`) | `o-` (abstract) |
+| Temporal Pre- (`pi-`), Temporal Post- (`pa-`), Meta- (`sefta-`) | `o-` (abstract) |
 
 ### B. Syllable Count
 
@@ -469,7 +470,7 @@ Priority-ordered list of pipeline features not yet implemented:
 - **Phonotactic rules:** `0-foundation/phonology.md`
 - **Tone application:** `0-foundation/tone-prosody.md`
 - **7-Question Filter & colour prefix ontology:** `1-nominals/nouns-colour-prefix.md` §V
-- **Compound head prefix rules:** `3-subsystems/compounding.md` §IV and `3-subsystems/derivational-suffixes.md` §IV
+- **Compound head prefix rules:** `3-subsystems/compounding.md` §IV, `3-subsystems/derivational-suffixes.md` §IV, and `3-subsystems/derivational-prefixes.md` §IV
 - **Case suffix rules (Contrastive Suffix Rule):** `1-nominals/cases.md` §II
 - **DB schema reference:** `data/SCHEMA.md`
 - **POS tag set & pos_mask computation:** `kilor/schema.py`

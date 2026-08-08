@@ -1,38 +1,29 @@
-### things / stuff (collective)
+### before / prior ({temporal})
 
 | Field | Value |
 |---|---|
-| Kilor Form | wes |
-| Type | root |
-| Consensus Prefix | e- |
-| Meaning (N) | things, stuff |
-| Meaning (V) |  |
-| Meaning (A) |  |
-| Meaning (D) |  |
-| Notes | suffix source root for -wes (Collective, §I-J) |
-
-### former / that which once was (retrospective)
-
-| Field | Value |
-|---|---|
-| Kilor Form | rem |
+| Kilor Form | pih |
 | Type | root |
 | Consensus Prefix | o- |
-| Meaning (N) | former one, that which once was but is no longer |
-| Meaning (V) |  |
-| Meaning (A) |  |
-| Meaning (D) |  |
-| Notes | suffix source root for -rem (Retrospective, §I-K) |
+| Meaning (A) | prior, previous |
+| Notes | Source root for pi- prefix. ADP sense "before (in time)" added post-creation. |
 
-### new revived form / that which is yet to be (prospective)
+### after / subsequent ({temporal})
 
 | Field | Value |
 |---|---|
-| Kilor Form | rum |
+| Kilor Form | pah |
 | Type | root |
 | Consensus Prefix | o- |
-| Meaning (N) | new or revived form, that which is yet to be but is soon coming |
-| Meaning (V) |  |
-| Meaning (A) |  |
-| Meaning (D) |  |
-| Notes | suffix source root for -rum (Prospective, §I-L) |
+| Meaning (A) | subsequent, later |
+| Notes | Source root for pa- prefix. ADP sense "after (in time)" added post-creation. |
+
+### beyond / meta ({abstract})
+
+| Field | Value |
+|---|---|
+| Kilor Form | seftah |
+| Type | root |
+| Consensus Prefix | o- |
+| Meaning (A) | meta, transcendent |
+| Notes | Source root for sefta- prefix. ADP sense "beyond" added post-creation. |

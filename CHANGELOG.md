@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.2.0
-**Last Updated:** 2026-08-07
+**Current Version:** v2.3.0
+**Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,25 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.3.0 — 2026-08-09
+
+Three derivational prefixes added (`pi-`/`pih-`, `pa-`/`pah-`, `sefta-`/`seftah-`) plus their three source roots created in the lexicon. Prefixes follow the same morphological pattern as suffixes (shortened combining forms, Restored Consonant Rule mirror).
+
+**Spec:**
+- **`3-subsystems/derivational-prefixes.md`** v1.0.0 — New file: 3 derivational prefixes (§I A–C): `pi-`/`pih-` (temporal pre-, N→N/A), `pa-`/`pah-` (temporal post-, N→N/A), `sefta-`/`seftah-` (meta-, any→N/A). Restored Consonant Rule (§II): `h` restored before vowel-initial roots (`pihaug`, `paheli`, `seftahema`). Wordhood & tone (§III): fused single word, pos_mask=NA, co-occurrence with suffixes, start-only consonant restriction. Colour prefix `o-` (§IV). Fully productive (§VI).
+- **`3-subsystems/derivational-suffixes.md`** v1.1.0→1.1.1 — Added `See also` cross-reference to prefixes file.
+- **`3-subsystems/compounding.md`** v1.0.0 — Updated Depends on and companion file reference to include prefixes file; suffix count 9→12.
+- **`4-meta/word-creation-pipeline.md`** v2.4.0→2.4.1 — Added `derivational-prefixes.md` to Depends on; added prefix row to colour prefix suggestion table (§V-A); updated cross-references.
+- **`README.md`** v2.3.1→2.3.2 — Added prefixes to directory structure, dependency table, index. Updated suffix count 9→12.
+- **`.clinerules/kilor.md`** — Added prefixes to directory structure.
+
+**Lexicon:**
+- Three new source roots: `pih` (before/prior, ADP+A, `o-`), `pah` (after/subsequent, ADP+A, `o-`), `seftah` (beyond/meta, ADP+A, `o-`). See also: CHANGELOG-app.md v2.4.0.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 
 ## workspace v2.2.0 — 2026-08-07

@@ -1,5 +1,5 @@
-**Current Version:** v2.3.0
-**Last Updated:** 2026-08-06
+**Current Version:** v2.4.0
+**Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,22 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.4.0 — 2026-08-09
+
+Three new source roots for derivational prefixes: `pih`, `pah`, `seftah`. Each has ADP + A meanings, pos_mask = A, `o-` prefix. See also: CHANGELOG.md v2.3.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 3 new root entries (409→412):
+  - `pih`: prior, previous (A); before (in time) (ADP). pos_mask=A, `o-`.
+  - `pah`: subsequent, later (A); after (in time) (ADP). pos_mask=A, `o-`.
+  - `seftah`: meta, transcendent (A); beyond (ADP). pos_mask=A, `o-`.
+- **`kilor/commands/edit.py`** — Used `--add-meaning --pos ADP` for the three adposition senses.
+- **`kilor/commands/add.py`** — unchanged; three roots inserted via `python kilor.py add today.md`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+
 
 ## workspace v2.2.0 — 2026-08-06
 

@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-07
-**Version:** 1.1.0
+**Last updated:** 2026-08-09
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -341,3 +341,5 @@ For derivations from nouns — where the base already carries a colour prefix �
 ---
 
 *End of Derivational Suffixes Specification.*
+
+**See also:** `3-subsystems/derivational-prefixes.md` — derivational prefixes (`pi-`, `pa-`, `sefta-`) following the same morphological pattern (shortened combining forms, Restored Consonant Rule mirror).

@@ -4,9 +4,9 @@
 **Status:** Canonical
 **Last updated:** 2026-08-05
 **Version:** 1.0.0
-**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`
+**Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
-**Companion file:** `3-subsystems/derivational-suffixes.md` — 9 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia), suffix syntax, formal register, colour prefix rules for suffixes.
+**Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
 
 ---
 
