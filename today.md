@@ -1,19 +1,24 @@
-### study / field of study ({academic})
+### repetition / renew ({iterative})
 
 | Field | Value |
 |---|---|
-| Kilor Form | mik |
+| Kilor Form | aigan |
 | Type | root |
 | Consensus Prefix | o- |
-| Meaning (N) | study, field of study |
-| Notes | Source root for -ik/-mik suffix. |
+| Meaning (N) | repetition, renewal |
+| Meaning (A) | repeated, renewed |
+| Meaning (V) | to repeat, to do again |
+| Meaning (D) | repeatedly |
+| Notes | Source root for ai-/aig- prefix. |
 
-### method / way ({procedural})
+### opposition / opposing ({adversative})
 
 | Field | Value |
 |---|---|
-| Kilor Form | mlis |
+| Kilor Form | konta |
 | Type | root |
-| Consensus Prefix | e- |
-| Meaning (N) | method, way |
-| Notes | Source root for -is/-mlis suffix. Whitelisted -s final root; A/D form = mlises. |
+| Consensus Prefix | o- |
+| Meaning (N) | opposition, adversary |
+| Meaning (A) | opposing, contrary |
+| Meaning (V) | to oppose, to counter |
+| Notes | Source root for kon- prefix. |

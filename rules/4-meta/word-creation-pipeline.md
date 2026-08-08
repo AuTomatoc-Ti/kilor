@@ -3,7 +3,7 @@
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 2.4.3
+**Version:** 2.4.4
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 ---
@@ -261,9 +261,11 @@ For **compounds**, the prefix follows the semantic class of the head noun (`comp
 | Doctrine (`isra`), Capability (`afaloi`), Without (`nara`) | `o-` (abstract) |
 | Study of (`-ik`) | `o-` (abstract) |
 | Method to (`-is`) | `e-` (crafted) |
+| Over-/Excess (`-rolif`) | `o-` (abstract) |
 | Temporal Pre- (`pi-`), Temporal Post- (`pa-`), Meta- (`sefta-`) | `o-` (abstract) |
 | Augmentative (`mes-`) | `y-` (dense/mass) |
 | Diminutive (`doi-`) | Inherit from base (§IV-B of `derivational-prefixes.md`) |
+| Re-/Again (`ai-`), Anti- (`kon-`) | `o-` (abstract) |
 
 ### B. Syllable Count
 

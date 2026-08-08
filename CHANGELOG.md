@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.5.0
+**Current Version:** v2.6.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,23 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.6.0 — 2026-08-09
+
+Three new derivational affixes: `ai-`/`aig-` (Re-/Again, prefix #6), `kon-` (Anti-/Opposing, prefix #7), `-rolif` (Over-/Excess, suffix #15). First POS-preserving affixes (V→V, N→N for `ai-`; A→A, N→N/A for `kon-`; V→V, A→A, N→N for `-rolif`). First V-output prefix (`ai-`, pos_mask=VN). Prefix count: 5→7; suffix count: 14→15.
+
+**Spec:**
+- **`3-subsystems/derivational-prefixes.md`** v1.1.0→1.2.0 — Added §I-F (`ai-`/`aig-`: Re-/Again, V/N→V/N, pos_mask=VN, `o-`, restored `g` before vowels) and §I-G (`kon-`: Anti-/Opposing, N/A→N/A, pos_mask=NA, `o-`, consonant-final). Updated inventory table (5→7), Restored Consonant Rule table (added `ai-` row + `kon-` note), §III-B Tone & Category (added VN pattern with tonal V forms), §IV-A Fixed Prefix (added `ai-` and `kon-` to `o-` list), §V formal register, §VI productivity (5→7).
+- **`3-subsystems/derivational-suffixes.md`** v1.2.0→1.3.0 — Added §I-O (`-rolif`: Over-/Excess, V/A/N→V/A/N, POS-preserving, pos_mask=NAV, `o-`, from `rolifor`). Updated inventory table (14→15), §IV-A colour prefix table (added Over-/Excess → `o-`).
+- **`4-meta/word-creation-pipeline.md`** v2.4.3→2.4.4 — Added Over-/Excess, Re-/Again, Anti- rows to colour prefix suggestion table (§V-A).
+- **`README.md`** v2.3.4→2.3.5, **`.clinerules/kilor.md`** — Updated prefix count 5→7, suffix count 14→15.
+
+**Lexicon:**
+- Two new source roots: `aigan` (repetition/repeated/to repeat/repeatedly, NAVD, `o-`), `konta` (opposition/opposing/to oppose, NAV, `o-`). Existing root `rolifor` (excess/overdo/excessive/excessively, NVAD, `o-`) used for `-rolif` suffix. See also: CHANGELOG-app.md v2.7.0.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 
 ## workspace v2.5.0 — 2026-08-09

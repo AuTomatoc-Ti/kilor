@@ -1,4 +1,4 @@
-**Current Version:** v2.6.0
+**Current Version:** v2.7.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.7.0 — 2026-08-09
+
+Two new source roots: `aigan` and `konta`. Existing root `rolifor` designated as source for `-rolif` suffix. See also: CHANGELOG.md v2.6.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 2 new root entries (416→418):
+  - `aigan`: repetition, renewal (N); repeated, renewed (A); to repeat, to do again (V); repeatedly (D). pos_mask=NAVD, `o-`.
+  - `konta`: opposition, adversary (N); opposing, contrary (A); to oppose, to counter (V). pos_mask=NAV, `o-`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+
 
 ## workspace v2.6.0 — 2026-08-09
 

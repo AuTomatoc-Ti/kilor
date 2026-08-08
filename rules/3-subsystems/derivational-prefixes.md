@@ -3,7 +3,7 @@
 **Module:** Derivational Prefixes
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — suffix derivations following the same morphological pattern.
@@ -28,6 +28,8 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 3 | `sefta-` / `seftah-` | `seftah` | Meta- | any root | N, A | `o-` | meta- / beyond |
 | 4 | `doi-` / `doir-` | `doir` | Diminutive | N | N | inherit | little / young / cute |
 | 5 | `mes-` | `meson` | Augmentative | N, A | N, A | `y-` | mega- / giant / ×10¹² |
+| 6 | `ai-` / `aig-` | `aigan` | Re-/Again | V, N | V, N | `o-` | re- / again (POS-preserving) |
+| 7 | `kon-` | `konta` | Anti- | N, A | N, A | `o-` | anti- / opposing (POS-preserving) |
 
 All prefixes descend from full content roots (shown in the "Full Root" column) and still coexist with them as independent words. The prefix form is the shortened combining form — the same historical process as derivational suffixes.
 
@@ -98,6 +100,28 @@ The N and A senses are distinguished by tone (3+ syllable) or the `-s` suffix (1
 pos_mask = `NA`. Both N and A forms distinguished by tone/`-s`.
 
 `mes-` is **consonant-final** (`s`) — it fuses cleanly with any root without needing consonant restoration (see §II).
+### F. Re-/Again — `ai-` / `aig-` (verb / noun base)
+
+| Form | Base | Meaning |
+|---|---|---|
+| `ai-taka` | `taka` (eat, V) | re-eat, eat again |
+| `aig-aug` → `aigaug` | `aug` (start, V/N) | re-start, begin again |
+| `ai-srato` | `srato` (house, N) | re-house, rebuild |
+
+`ai-` frames a verb or noun iteratively — "do X again, X again." Descends from `aigan` ("repetition; repeated; to repeat; repeatedly"). POS-preserving: V→V, N→N. pos_mask = `VN`.
+
+`ai-` is vowel-final — before vowel-initial roots, the restored consonant `g` surfaces: `ai-` → `aig-` (§II). `aig-aug` → `aigaug`.
+
+### G. Anti-/Opposing — `kon-` (noun / adjective base)
+
+| Form | Base | Meaning (N) | Meaning (A) |
+|---|---|---|---|
+| `kon-fora` | `fora` (fire, N) | anti-fire, counter-fire | anti-fire, fire-opposing |
+| `kon-gor` | `gor` (good, A) | anti-good | opposing goodness |
+
+`kon-` frames a noun or adjective as oppositional — "anti-X, opposing X." Descends from `konta` ("opposition; opposing; to oppose"). POS-preserving: N→N/A, A→A. pos_mask = `NA`.
+
+`kon-` is **consonant-final** (`n`) — it fuses cleanly with any root without needing consonant restoration (§II): `kon-aug` → `konaug`.
 ---
 
 ## II. Restored Consonant Rule
@@ -110,10 +134,13 @@ When the prefix attaches to a **vowel-initial root**, the prefix's elided conson
 | `pa-` / `pah-` | `pah` | `pa-fora` | `pah-eli` → `paheli` |
 | `sefta-` / `seftah-` | `seftah` | `sefta-gor` | `seftah-ema` → `seftahema` |
 | `doi-` / `doir-` | `doir` | `doi-chel` | `doir-aug` → `doiraug` |
+| `ai-` / `aig-` | `aigan` | `ai-taka` | `aig-aug` → `aigaug` |
 
 Consonant-initial roots fuse cleanly with the shortened prefix form — no restoration needed.
 
 `mes-` is **consonant-final** (`s`) — it fuses cleanly with both consonant-initial and vowel-initial roots without any restoration: `mes-fora`, `mes-aug` → `mesaug`.
+
+`kon-` is **consonant-final** (`n`) — likewise no restoration needed: `kon-fora`, `kon-aug` → `konaug`.
 
 ---
 
@@ -138,12 +165,13 @@ Per `0-foundation/phonology.md` §IV-C, start-only consonants (`kl`, `tl`, `bl`,
 
 ### B. Tone & Category
 
-Prefixes produce two `pos_mask` patterns:
+Prefixes produce three `pos_mask` patterns:
 
-| Prefixes | pos_mask | Tone Omission | N form | A form |
-|---|---|---|---|---|
-| `pi-`, `pa-`, `sefta-`, `mes-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A |
-| `doi-` | N | Yes (1 letter) | Bare root | — |
+| Prefixes | pos_mask | Tone Omission | N form | A form | V form |
+|---|---|---|---|---|---|
+| `pi-`, `pa-`, `sefta-`, `mes-`, `kon-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | — |
+| `ai-` | VN | No (2 letters) | Bare / tonal N | — | Bare / tonal V |
+| `doi-` | N | Yes (1 letter) | Bare root | — | — |
 
 For `pos_mask = NA` prefixes, both N and A are available:
 
@@ -152,7 +180,14 @@ For `pos_mask = NA` prefixes, both N and A are available:
 | 1–2 | Bare root | Root + `-s` |
 | 3+ | Tonal N: `j` on 1st of last-3 | Tonal A: `j` on 2nd of last-3 |
 
-Tone Omission does not apply (2 letters) — tone markers are mandatory for 3+ syllable forms.
+For `ai-` (`pos_mask = VN`), N and V forms are available:
+
+| Syllable count | N form | V form |
+|---|---|---|
+| 1–2 | Bare root | Bare root |
+| 3+ | Tonal N: `j` on 1st of last-3 | Tonal V: `v` on 1st of last-3 |
+
+Tone Omission does not apply (2 letters) for NA and VN prefixes — tone markers are mandatory for 3+ syllable forms.
 
 For `doi-` (`pos_mask = N`), only the N form exists — Tone Omission applies: tone markers are optional for 3+ syllable forms; the bare root is always valid.
 
@@ -168,7 +203,7 @@ Derivational prefixes follow one of three colour prefix rules:
 
 ### A. Fixed Prefix
 
-`pi-`, `pa-`, `sefta-` take fixed `o-` (abstract). `mes-` takes fixed `y-` (dense/mass). The order is:
+`pi-`, `pa-`, `sefta-`, `ai-`, `kon-` take fixed `o-` (abstract). `mes-` takes fixed `y-` (dense/mass). The order is:
 
 > colour prefix → derivational prefix → root
 
@@ -179,6 +214,8 @@ Derivational prefixes follow one of three colour prefix rules:
 | `o-sefta-gor` | the meta-goodness |
 | `o-pihaug` | the pre-start |
 | `o-paheli` | the afterlife |
+| `o-ai-taka` | the re-eating |
+| `o-kon-fora` | the anti-fire |
 | `y-mes-fora` | the giant fire |
 | `y-mes-gor` | the mega-good |
 
@@ -197,13 +234,13 @@ This is parallel to suffix inherit-from-base rules (`derivational-suffixes.md` �
 
 ## V. Formal Register
 
-Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`, `doir`, `meson`) is used as a standalone content word, not as a derivational prefix.
+Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`, `doir`, `meson`, `aigan`, `konta`) is used as a standalone content word, not as a derivational prefix.
 
 ---
 
 ## VI. Productivity & Editorial Policy
 
-All five prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
+All seven prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
 
 | Form | Store? | Why |
 |---|---|---|

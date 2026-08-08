@@ -3,7 +3,7 @@
 **Module:** Derivational Suffixes
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.2.0
+**Version:** 1.3.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -34,6 +34,7 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 12 | `-rum` | Prospective | `rum` | n, a | neo-X; that which is yet to be but is soon coming |
 | 13 | `-ik` / `-mik` | Study of | `mik` | n | -ology / study of (N→N) |
 | 14 | `-is` / `-mlis` | Method to | `mlis` | n | method to / way of (V→N) |
+| 15 | `-rolif` | Over-/Excess | `rolifor` | n, v, a | over- / excess (POS-preserving: V→V, A→A, N→N) |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced multi-word combining forms, carried one step further to full fusion.
 
@@ -255,6 +256,21 @@ For roots ending in a vowel, the suffix's elided first consonant is restored →
 **Phonotactic constraint:** `mlis` begins with the start-only consonant `ml` (`0-foundation/phonology.md` §IV-C). When the base root ends in a vowel, fusing `-mlis` would place `ml` in word-medial position — blocked. In this case, the suffix **must** appear as a separate word (§II-B): `fora mlis` (not `*foramlis`). Consonant-final roots fuse cleanly with `-is`: `kuptekis`, `takais`.
 
 `mlis` is a whitelisted `-s`-final root (grandfathered); its A/D form is `mlises`.
+### O. Over-/Excess — `-rolif` (verb / adjective / noun base)
+
+| Form | Base | Meaning |
+|---|---|---|
+| `taka-rolif` | `taka` (eat, V) | over-eat |
+| `gor-rolif` | `gor` (good, A) | over-good, excessively good |
+| `fora-rolif` | `fora` (fire, N) | over-fire, excess fire |
+
+`-rolif` creates an excessive version of the base — "over-X, too much X." Descends from `rolifor` ("excess; overdo; excessive; excessively"). POS-preserving: V→V, A→A, N→N. pos_mask = `NAV`.
+
+`-rolif` is **consonant-initial** (`r`) — it fuses cleanly with both vowel-final and consonant-final roots. Takes colour prefix `o-` (abstract), inherited from `rolifor`: `o-taka-rolif` = "the over-eating."
+
+For roots ending in an end-only or edge-only consonant, `-rolif` appears in its full-root multi-word form `rolifor` (§II-B). Example: `klush rolifor` = "over-blood" (not `*klushrolif`).
+
+
 ---
 
 ## II. Syntax & Wordhood
@@ -354,7 +370,7 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
 | Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Method nouns (`-is`), Collective nouns from verb base (`-wes`) |
-| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Study of (`-ik`) |
+| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Study of (`-ik`), Over-/Excess (`-rolif`) |
 
 > **Compound heads** (`param`, `pos`, `isra`, `afaloi`, `naras`, `posia`) carry their own colour prefix as head nouns. See `3-subsystems/compounding.md` §IV.
 
