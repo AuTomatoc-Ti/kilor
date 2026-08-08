@@ -1,21 +1,19 @@
-### little / young / cute ({diminutive})
+### study / field of study ({academic})
 
 | Field | Value |
 |---|---|
-| Kilor Form | doir |
+| Kilor Form | mik |
 | Type | root |
-| Consensus Prefix | u- |
-| Meaning (A) | little, small, young, cute |
-| Meaning (N) | little one, young one |
-| Notes | Source root for doi-/doir- prefix. |
+| Consensus Prefix | o- |
+| Meaning (N) | study, field of study |
+| Notes | Source root for -ik/-mik suffix. |
 
-### huge / giant / enormous ({augmentative})
+### method / way ({procedural})
 
 | Field | Value |
 |---|---|
-| Kilor Form | meson |
+| Kilor Form | mlis |
 | Type | root |
-| Consensus Prefix | y- |
-| Meaning (A) | huge, giant, enormous |
-| Meaning (N) | giant, enormous thing |
-| Notes | Source root for mes- prefix. NUM sense "trillion (10\u00b9\u00b2)" added post-creation via edit. |
+| Consensus Prefix | e- |
+| Meaning (N) | method, way |
+| Notes | Source root for -is/-mlis suffix. Whitelisted -s final root; A/D form = mlises. |

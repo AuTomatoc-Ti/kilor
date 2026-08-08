@@ -3,7 +3,7 @@
 **Module:** Derivational Suffixes
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.1.1
+**Version:** 1.2.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -32,6 +32,8 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 10 | `-wes` | Collective | `wes` | n | things of; the stuff/matter of X |
 | 11 | `-rem` | Retrospective | `rem` | n, a | former X; that which once was but is no longer |
 | 12 | `-rum` | Prospective | `rum` | n, a | neo-X; that which is yet to be but is soon coming |
+| 13 | `-ik` / `-mik` | Study of | `mik` | n | -ology / study of (N→N) |
+| 14 | `-is` / `-mlis` | Method to | `mlis` | n | method to / way of (V→N) |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced multi-word combining forms, carried one step further to full fusion.
 
@@ -221,6 +223,38 @@ The output part of speech depends on the base type:
 
 For roots ending in an end-only or edge-only consonant, `-rum` appears in its full-root multi-word form `rum` (§II-B). Example: `song rum` = "friend-to-be" (not `*songrum`).
 
+### M. Study of — `-ik` / `-mik` (noun base)
+
+| Form | Meaning |
+|---|---|
+| `auronik` | study of the sky, skylogy |
+| `fora` + `-mik` → `foramik` | study of fire, pyrology |
+| `gorik` | study of goodness, ethics |
+| `ema` + `-mik` → `emamik` | study of truth, epistemology |
+
+`-ik` derives a field of study from a noun — "-ology." The suffix form is the shortened combining form of `mik` ("study, field of study"). Descended from the full content root `mik`.
+
+- **Noun base → N:** "study of X, X-ology." Takes colour prefix `o-` (abstract): `o-auronik` = "the study of the sky."
+
+For roots ending in an end-only or edge-only consonant, `-ik` appears in its full-root multi-word form `mik` (§II-B). Example: `song mik` = "study of friendship" (not `*songik`).
+
+For roots ending in a vowel, the suffix's elided first consonant is restored → `-mik` (§II-A Restored Consonant Rule). Example: `fora` + `-mik` → `foramik`.
+
+### N. Method to — `-is` / `-mlis` (verb base)
+
+| Form | Meaning |
+|---|---|
+| `taka` + `-is` → `takais` | method of eating; way to eat |
+| `kuptekis` | method of cutting; cutting technique |
+| `fora mlis` | method of burning; way to set fire |
+
+`-is` derives a method or procedure from a verb. The suffix form is the shortened combining form of `mlis` ("method, way"). Descended from the full content root `mlis`.
+
+- **Verb base → N:** "method to X, way of X." Takes colour prefix `e-` (crafted): `e-takais` = "the method of eating."
+
+**Phonotactic constraint:** `mlis` begins with the start-only consonant `ml` (`0-foundation/phonology.md` §IV-C). When the base root ends in a vowel, fusing `-mlis` would place `ml` in word-medial position — blocked. In this case, the suffix **must** appear as a separate word (§II-B): `fora mlis` (not `*foramlis`). Consonant-final roots fuse cleanly with `-is`: `kuptekis`, `takais`.
+
+`mlis` is a whitelisted `-s`-final root (grandfathered); its A/D form is `mlises`.
 ---
 
 ## II. Syntax & Wordhood
@@ -251,17 +285,21 @@ This constraint applies identically to all suffixes (including `-ius`, `-eus`, `
 
 #### Restored Consonant Constraint: vowel-initial suffixes
 
-The suffixes `-ius`, `-eus`, and `-ia` are shortened combining forms of full content roots (`rius`, `meus`, `nia`). When the base root **ends in a vowel**, fusing the suffix would create a vowel-vowel hiatus at the morpheme boundary. In this case, the suffix's **elided first consonant is restored** from the full root:
+The suffixes `-ius`, `-eus`, `-ia`, `-is`, and `-ik` are shortened combining forms of full content roots (`rius`, `meus`, `nia`, `mlis`, `mik`). When the base root **ends in a vowel**, fusing the suffix would create a vowel-vowel hiatus at the morpheme boundary. In this case, the suffix's **elided first consonant is restored** from the full root:
 
 | Suffix | Full Root | Restored Consonant | Vowel-final root example | Consonant-final example (no change) |
 |:---|:---|:---|:---|:---|
 | `-ius` | `rius` | `r` | `fora` + `-ius` → `forarius` | `auron` + `-ius` → `auronius` |
 | `-eus` | `meus` | `m` | `lira` + `-eus` → `lirameus` | `auron` + `-eus` → `auroneus` |
 | `-ia` | `nia` | `n` | `fora` + `-ia` → `forania` | `fos` + `-ia` → `fosia` |
+| `-ik` | `mik` | `m` | `fora` + `-ik` → `foramik` | `auron` + `-ik` → `auronik` |
+| `-is` | `mlis` | `ml` | `fora` + `-is` → `*foramlis` (blocked — see below) | `taka` + `-is` → `takais` |
 
 Consonant-final roots fuse cleanly — the suffix's vowel-initial form attaches directly with no restoration. When the root's final consonant happens to match the restored consonant (e.g., `auror` + `-ius` → `aurorius` vs. `auro` + `-ius` → `aurorius`), homographs may result. Context disambiguates.
 
 `-wes`, `-rem`, and `-rum` are **consonant-initial** (`w-`, `r-`, `r-`) and fuse cleanly with both vowel-final and consonant-final roots — the Restored Consonant Rule does not apply.
+
+`-is` / `-mlis` is a special case: the restored consonant `ml` is a **start-only consonant** (`0-foundation/phonology.md` §IV-C). When the base root ends in a vowel, restoring `ml` would place it in word-medial position — blocked. Instead, the full-root form `mlis` appears as a separate word (§II-B): `fora mlis` (not `*foramlis`).
 
 This rule is formalised in `0-foundation/grammar-syntax.md` §III.
 
@@ -315,8 +353,8 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 | Semantic Class | Prefix | Applies to |
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
-| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Collective nouns from verb base (`-wes`) |
-| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`) |
+| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Method nouns (`-is`), Collective nouns from verb base (`-wes`) |
+| Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Study of (`-ik`) |
 
 > **Compound heads** (`param`, `pos`, `isra`, `afaloi`, `naras`, `posia`) carry their own colour prefix as head nouns. See `3-subsystems/compounding.md` §IV.
 

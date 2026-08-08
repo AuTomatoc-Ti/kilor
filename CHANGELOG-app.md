@@ -1,4 +1,4 @@
-**Current Version:** v2.5.0
+**Current Version:** v2.6.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.6.0 — 2026-08-09
+
+Two new source roots for derivational suffixes: `mik` and `mlis`. `mlis` added to `S_FINAL_WHITELIST`. See also: CHANGELOG.md v2.5.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 2 new root entries (414→416):
+  - `mik`: study, field of study (N). pos_mask=N, `o-`.
+  - `mlis`: method, way (N). pos_mask=N, `e-`. Grandfathered -s final root (A/D = `mlises`).
+- **`kilor/phonology.py`** — `S_FINAL_WHITELIST`: added `mlis`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+
 
 ## workspace v2.5.0 — 2026-08-09
 

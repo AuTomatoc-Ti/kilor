@@ -2,8 +2,8 @@
 
 **Module:** The Unified Prosody Engine
 **Status:** Canonical (v4.0 — Toneless 1–2 Syllable Standard)
-**Last updated:** 2026-08-06
-**Version:** 2.2.0
+**Last updated:** 2026-08-09
+**Version:** 2.2.1
 **Depends on:**
 
 ---
@@ -80,7 +80,7 @@ The **bare root** serves as both noun and verb. The **`-s` suffixed form** serve
 
 **Constraint:** No 1- or 2-syllable root may end in `s` natively. This preserves `-s` as an unambiguous modifier marker.
 
-**Exception — `-es` allomorph:** A small set of grandfathered 1-syllable roots ending in `s` (`fos`, `gus`, `meus`, `rius`) take the epenthetic variant `-es` instead of `-s` for adjective/adverb forms. This follows the general Kilor schwa-epenthesis strategy (see `0-foundation/phonology.md` §V-F): inserting `e` /ə/ breaks the illegal geminate `-ss` that would otherwise result. Examples:
+**Exception — `-es` allomorph:** A small set of grandfathered 1-syllable roots ending in `s` (`fos`, `gus`, `meus`, `rius`, `mlis`) take the epenthetic variant `-es` instead of `-s` for adjective/adverb forms. This follows the general Kilor schwa-epenthesis strategy (see `0-foundation/phonology.md` §V-F): inserting `e` /ə/ breaks the illegal geminate `-ss` that would otherwise result. Examples:
 
 | Root | A/D form (not `*-ss`) | Gloss |
 |------|----------------------|-------|
@@ -88,8 +88,9 @@ The **bare root** serves as both noun and verb. The **`-s` suffixed form** serve
 | `gus` | `guses` | hot, hotly |
 | `meus` | `meuses` | -ian, -ese, characteristic of |
 | `rius` | `riuses` | similar, kind of |
+| `mlis` | `mlises` | methodical, procedural |
 
-The `-es` suffix adds one syllable (as in English bus→buses). New roots should not end in `s` — this exception exists solely for the four grandfathered forms.
+The `-es` suffix adds one syllable (as in English bus→buses). New roots should not end in `s` — this exception exists solely for the five grandfathered forms.
 
 ---
 

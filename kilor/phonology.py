@@ -26,7 +26,7 @@ S_FINAL_WHITELIST = {
     "gus", "fos", "aus", "ous", "les", "mangus",
     "rius", "meus",
     "kas", "hus", "tus", "rakas", "fidak",
-    "wes",
+    "wes", "mlis",
 }
 
 

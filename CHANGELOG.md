@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.4.0
+**Current Version:** v2.5.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,27 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.5.0 — 2026-08-09
+
+Two new derivational suffixes added: `-ik`/`-mik` (Study of, -ology) and `-is`/`-mlis` (Method to). Suffix count: 12 → 14. First suffix with start-only consonant restored form requiring multi-word escape (`mlis`).
+
+**Spec:**
+- **`3-subsystems/derivational-suffixes.md`** v1.1.1→1.2.0 — Added §I-M (`-ik`/`-mik`: study of, N→N, `o-`, restored `m`) and §I-N (`-is`/`-mlis`: method to, V→N, `e-`, restored `ml` blocked → multi-word for vowel-final roots). Updated inventory table (12→14), Restored Consonant Constraint table (added `-ik` and `-is` rows + `mlis` phonotactic block explanation), §IV-A Fixed Semantic-Class Prefix table (added Study of → `o-`, Method to → `e-`).
+- **`0-foundation/tone-prosody.md`** v2.2.0→2.2.1 — Added `mlis` to grandfathered `-es` allomorph list (4→5 roots); added example row (`mlises` = methodical).
+- **`4-meta/word-creation-pipeline.md`** v2.4.2→2.4.3 — Added Study of and Method to rows to colour prefix suggestion table (§V-A).
+- **`README.md`** v2.3.3→2.3.4 — Updated suffix count 12→14.
+- **`.clinerules/kilor.md`** — Updated suffix count 12→14.
+
+**Implementation:**
+- **`kilor/phonology.py`** — Added `mlis` to `S_FINAL_WHITELIST`.
+
+**Lexicon:**
+- Two new source roots: `mik` (study, N, `o-`), `mlis` (method, N, `e-`, whitelisted -s final). See also: CHANGELOG-app.md v2.6.0.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 
 ## workspace v2.4.0 — 2026-08-09
