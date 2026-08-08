@@ -1,4 +1,4 @@
-**Current Version:** v2.4.0
+**Current Version:** v2.5.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.5.0 — 2026-08-09
+
+Two new source roots for derivational prefixes: `doir` and `meson`. See also: CHANGELOG.md v2.4.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 2 new root entries (412→414):
+  - `doir`: little, small, young, cute (A); little one, young one (N). pos_mask=NA, `u-`.
+  - `meson`: huge, giant, enormous (A); giant, enormous thing (N); trillion / 10¹² (NUM). pos_mask=NA, `y-`.
+- **`kilor/commands/edit.py`** — Used `--add-meaning --pos NUM` for `meson`'s trillion sense.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+
 
 ## workspace v2.4.0 — 2026-08-09
 

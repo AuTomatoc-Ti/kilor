@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.3.0
+**Current Version:** v2.4.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,23 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.4.0 — 2026-08-09
+
+Two new derivational prefixes added: `doi-`/`doir-` (diminutive) and `mes-` (augmentative). Prefix count: 3 → 5. First prefix with inherit-from-base colour (`doi-`). First consonant-final prefix with no restoration needed (`mes-`).
+
+**Spec:**
+- **`3-subsystems/derivational-prefixes.md`** v1.0.0→1.1.0 — Added §I-D (`doi-`/`doir-`: diminutive, N→N, colour inherit from base, pos_mask=N) and §I-E (`mes-`: augmentative, N/A→N/A, fixed `y-`, numeric ×10¹²). Updated inventory table, Restored Consonant Rule table (added `doi-`/`doir-` row; noted `mes-` is consonant-final, no restoration needed). Updated §III-B (Tone & Category) for two pos_mask patterns (NA vs. N, Tone Omission for `doi-`). Updated §IV (Colour Prefix) split into §IV-A Fixed Prefix and §IV-B Inherit from Base. Updated §V (formal register root list) and §VI (productivity: 3→5).
+- **`4-meta/word-creation-pipeline.md`** v2.4.1→2.4.2 — Added augmentative and diminutive rows to colour prefix suggestion table (§V-A).
+- **`README.md`** v2.3.2→2.3.3 — Updated prefix count 3→5.
+- **`.clinerules/kilor.md`** — Updated prefix count 3→5.
+
+**Lexicon:**
+- Two new source roots: `doir` (little/small/young/cute, N+A, `u-`), `meson` (trillion / huge/giant, NUM+A+N, `y-`). See also: CHANGELOG-app.md v2.5.0.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 
 ## workspace v2.3.0 — 2026-08-09

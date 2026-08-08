@@ -1,29 +1,21 @@
-### before / prior ({temporal})
+### little / young / cute ({diminutive})
 
 | Field | Value |
 |---|---|
-| Kilor Form | pih |
+| Kilor Form | doir |
 | Type | root |
-| Consensus Prefix | o- |
-| Meaning (A) | prior, previous |
-| Notes | Source root for pi- prefix. ADP sense "before (in time)" added post-creation. |
+| Consensus Prefix | u- |
+| Meaning (A) | little, small, young, cute |
+| Meaning (N) | little one, young one |
+| Notes | Source root for doi-/doir- prefix. |
 
-### after / subsequent ({temporal})
+### huge / giant / enormous ({augmentative})
 
 | Field | Value |
 |---|---|
-| Kilor Form | pah |
+| Kilor Form | meson |
 | Type | root |
-| Consensus Prefix | o- |
-| Meaning (A) | subsequent, later |
-| Notes | Source root for pa- prefix. ADP sense "after (in time)" added post-creation. |
-
-### beyond / meta ({abstract})
-
-| Field | Value |
-|---|---|
-| Kilor Form | seftah |
-| Type | root |
-| Consensus Prefix | o- |
-| Meaning (A) | meta, transcendent |
-| Notes | Source root for sefta- prefix. ADP sense "beyond" added post-creation. |
+| Consensus Prefix | y- |
+| Meaning (A) | huge, giant, enormous |
+| Meaning (N) | giant, enormous thing |
+| Notes | Source root for mes- prefix. NUM sense "trillion (10\u00b9\u00b2)" added post-creation via edit. |

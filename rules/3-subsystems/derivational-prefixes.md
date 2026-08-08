@@ -3,7 +3,7 @@
 **Module:** Derivational Prefixes
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — suffix derivations following the same morphological pattern.
@@ -26,6 +26,8 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 1 | `pi-` / `pih-` | `pih` | Temporal Pre- | N | N, A | `o-` | pre-/before (in time) |
 | 2 | `pa-` / `pah-` | `pah` | Temporal Post- | N | N, A | `o-` | post-/after (in time) |
 | 3 | `sefta-` / `seftah-` | `seftah` | Meta- | any root | N, A | `o-` | meta- / beyond |
+| 4 | `doi-` / `doir-` | `doir` | Diminutive | N | N | inherit | little / young / cute |
+| 5 | `mes-` | `meson` | Augmentative | N, A | N, A | `y-` | mega- / giant / ×10¹² |
 
 All prefixes descend from full content roots (shown in the "Full Root" column) and still coexist with them as independent words. The prefix form is the shortened combining form — the same historical process as derivational suffixes.
 
@@ -66,6 +68,36 @@ All prefixes descend from full content roots (shown in the "Full Root" column) a
 - **Any base → A:** "beyond/transcending X." Describes something as surpassing the base concept.
 
 The N and A senses are distinguished by tone (3+ syllable) or the `-s` suffix (1–2 syllable) per `0-foundation/tone-prosody.md`.
+### D. Diminutive — `doi-` / `doir-` (noun base)
+
+| Form | Root | Meaning (N) |
+|---|---|---|
+| `doi-chel` | `chel` (child) | little child, young one |
+| `doir-aug` → `doiraug` | `aug` (start) | little beginning, small start |
+
+`doi-` creates a diminutive noun — a smaller, younger, or cuter version of the base. Descends from `doir` ("little, small, young, cute / little one").
+
+- **Noun base → N:** "little X, small X, young X." pos_mask = `N`.
+
+`doi-` is the only prefix with output `pos_mask = N` (single-category). Tone Omission (`tone-prosody.md` §IV-G) applies for 3+ syllable forms. For 1–2 syllable words, the bare root is the N form.
+
+### E. Augmentative — `mes-` (noun / adjective base)
+
+| Form | Base | Meaning (N) | Meaning (A) |
+|---|---|---|---|
+| `mes-fora` | `fora` (fire, N) | giant fire, mega-fire | mega-fiery, extremely fiery |
+| `mes-gor` | `gor` (goodness, A) | giant goodness | mega-good, extremely good |
+
+`mes-` creates an augmentative — an enormously scaled version of the base. Descends from `meson` ("huge, giant, enormous; trillion / 10¹²").
+
+- **Noun base → N:** "giant X, mega-X."
+- **Noun base → A:** "extremely X-ish, mega-X in quality."
+- **Adjective base → A:** "extremely X." Intensifies the quality.
+- **Numeric base:** ×10¹² multiplier (e.g., `mes-` + measure word = trillion-fold).
+
+pos_mask = `NA`. Both N and A forms distinguished by tone/`-s`.
+
+`mes-` is **consonant-final** (`s`) — it fuses cleanly with any root without needing consonant restoration (see §II).
 ---
 
 ## II. Restored Consonant Rule
@@ -77,8 +109,11 @@ When the prefix attaches to a **vowel-initial root**, the prefix's elided conson
 | `pi-` / `pih-` | `pih` | `pi-fora` | `pih-aug` → `pihaug` |
 | `pa-` / `pah-` | `pah` | `pa-fora` | `pah-eli` → `paheli` |
 | `sefta-` / `seftah-` | `seftah` | `sefta-gor` | `seftah-ema` → `seftahema` |
+| `doi-` / `doir-` | `doir` | `doi-chel` | `doir-aug` → `doiraug` |
 
 Consonant-initial roots fuse cleanly with the shortened prefix form — no restoration needed.
+
+`mes-` is **consonant-final** (`s`) — it fuses cleanly with both consonant-initial and vowel-initial roots without any restoration: `mes-fora`, `mes-aug` → `mesaug`.
 
 ---
 
@@ -103,14 +138,23 @@ Per `0-foundation/phonology.md` §IV-C, start-only consonants (`kl`, `tl`, `bl`,
 
 ### B. Tone & Category
 
-All three prefixes produce `pos_mask = NA`. Both N and A forms are always available; the speaker selects the appropriate form:
+Prefixes produce two `pos_mask` patterns:
+
+| Prefixes | pos_mask | Tone Omission | N form | A form |
+|---|---|---|---|---|
+| `pi-`, `pa-`, `sefta-`, `mes-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A |
+| `doi-` | N | Yes (1 letter) | Bare root | — |
+
+For `pos_mask = NA` prefixes, both N and A are available:
 
 | Syllable count | N form | A form |
 |---|---|---|
 | 1–2 | Bare root | Root + `-s` |
 | 3+ | Tonal N: `j` on 1st of last-3 | Tonal A: `j` on 2nd of last-3 |
 
-Since `pos_mask` has two letters (NA), Tone Omission (`tone-prosody.md` §IV-G) does not apply — tone markers are mandatory for 3+ syllable forms.
+Tone Omission does not apply (2 letters) — tone markers are mandatory for 3+ syllable forms.
+
+For `doi-` (`pos_mask = N`), only the N form exists — Tone Omission applies: tone markers are optional for 3+ syllable forms; the bare root is always valid.
 
 ### C. Derived Stem + Head
 
@@ -120,7 +164,11 @@ When a head attaches to a word that already carries a derivational prefix (a der
 
 ## IV. Interaction with the Colour Prefix System
 
-All three prefixes take fixed colour prefix `o-` (abstract). The order is:
+Derivational prefixes follow one of three colour prefix rules:
+
+### A. Fixed Prefix
+
+`pi-`, `pa-`, `sefta-` take fixed `o-` (abstract). `mes-` takes fixed `y-` (dense/mass). The order is:
 
 > colour prefix → derivational prefix → root
 
@@ -131,26 +179,39 @@ All three prefixes take fixed colour prefix `o-` (abstract). The order is:
 | `o-sefta-gor` | the meta-goodness |
 | `o-pihaug` | the pre-start |
 | `o-paheli` | the afterlife |
+| `y-mes-fora` | the giant fire |
+| `y-mes-gor` | the mega-good |
 
-Colour prefix is inherited from the derivational prefix (always `o-`), not from the base noun. This is a fixed semantic-class prefix rule — parallel to `derivational-suffixes.md` §IV-A (Agent → `a-`, Instrument → `e-`, etc.).
+### B. Inherit from Base
+
+`doi-` inherits the colour prefix of the base noun — the diminutive does not change the ontological class:
+
+| Form | Base prefix | Gloss |
+|---|---|---|
+| `a-doi-chel` | `a-chel` (child) | the little child |
+| `y-doi-srato` | `y-srato` (stone) | the little stone |
+
+This is parallel to suffix inherit-from-base rules (`derivational-suffixes.md` §IV-B: `-ius`, `-eus`, `-ia`, `-lu`, `-wes`, `-rem`, `-rum`).
 
 ---
 
 ## V. Formal Register
 
-Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`) is used as a standalone content word, not as a derivational prefix.
+Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`, `doir`, `meson`) is used as a standalone content word, not as a derivational prefix.
 
 ---
 
 ## VI. Productivity & Editorial Policy
 
-All three prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
+All five prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
 
 | Form | Store? | Why |
 |---|---|---|
 | `pi-fora` (pre-fire) | ❌ | Transparent temporal prefix. Computable from `pi-` + `fora`. |
 | `paheli` (post-life / afterlife) | 🤔 | Culturally anchored concept — may merit entry as a named category. |
 | `seftahema` (meta-truth / epistemology) | 🤔 | Names a philosophical field — culturally significant. |
+| `doi-chel` (little child) | ❌ | Transparent diminutive. Computable from `doi-` + `chel`. |
+| `mes-fora` (giant fire) | ❌ | Transparent augmentative. Computable from `mes-` + `fora`. |
 
 ---
 
