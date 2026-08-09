@@ -111,3 +111,116 @@
 
 
 
+
+
+
+### saint ({society})
+
+| Field | Value |
+|---|---|
+| Kilor Form | saeche |
+| Type | root |
+| Derivation Mask | NAD |
+| Consensus Prefix | u- |
+| Meaning | [{"gloss": "saint", "pos": "N"}, {"gloss": "saintly", "pos": "A"}, {"gloss": "saintly", "pos": "D"}] |
+| Notes |  |
+
+### exile ({society})
+
+| Field | Value |
+|---|---|
+| Kilor Form | galut |
+| Type | root |
+| Derivation Mask | NV |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "exile", "pos": "N"}, {"gloss": "to exile, banish", "pos": "V"}] |
+| Notes |  |
+
+### destroy ({action})
+
+| Field | Value |
+|---|---|
+| Kilor Form | blalak |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | y- |
+| Meaning | [{"gloss": "destruction", "pos": "N"}, {"gloss": "to destroy", "pos": "V"}, {"gloss": "destructive", "pos": "A"}, {"gloss": "destructively", "pos": "D"}] |
+| Notes |  |
+
+### fatal ({quality})
+
+| Field | Value |
+|---|---|
+| Kilor Form | milta |
+| Type | root |
+| Derivation Mask | NAD |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "fatality", "pos": "N"}, {"gloss": "fatal, deadly", "pos": "A"}, {"gloss": "fatally", "pos": "D"}] |
+| Notes | Phonological family: mil (death), milise (appointed death). |
+
+### fortress ({structure})
+
+| Field | Value |
+|---|---|
+| Kilor Form | dunom |
+| Type | root |
+| Derivation Mask | NA |
+| Consensus Prefix | y- |
+| Meaning | [{"gloss": "fortress", "pos": "N"}, {"gloss": "fortress-like, fortified", "pos": "A"}] |
+| Notes |  |
+
+### whale ({animal})
+
+| Field | Value |
+|---|---|
+| Kilor Form | ketush |
+| Type | root |
+| Derivation Mask | N |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "whale", "pos": "N"}] |
+| Notes |  |
+
+### plain ({nature})
+
+| Field | Value |
+|---|---|
+| Kilor Form | aedin |
+| Type | root |
+| Derivation Mask | NAD |
+| Consensus Prefix | ae- |
+| Meaning | [{"gloss": "plain (grassland)", "pos": "N"}, {"gloss": "flat, level", "pos": "A"}, {"gloss": "plainly, flatly", "pos": "D"}] |
+| Notes |  |
+
+### root ({nature})
+
+| Field | Value |
+|---|---|
+| Kilor Form | rican |
+| Type | root |
+| Derivation Mask | NAD |
+| Consensus Prefix | u- |
+| Meaning | [{"gloss": "root, source, origin", "pos": "N"}, {"gloss": "fundamental, rooted", "pos": "A"}, {"gloss": "fundamentally", "pos": "D"}] |
+| Notes |  |
+
+### kill ({action})
+
+| Field | Value |
+|---|---|
+| Kilor Form | mlara |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "a kill", "pos": "N"}, {"gloss": "to kill", "pos": "V"}, {"gloss": "deadly, killing", "pos": "A"}, {"gloss": "fatally", "pos": "D"}] |
+| Notes |  |
+
+### murder ({society})
+
+| Field | Value |
+|---|---|
+| Kilor Form | mlada |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "murder (crime)", "pos": "N"}, {"gloss": "to murder", "pos": "V"}, {"gloss": "murderous", "pos": "A"}, {"gloss": "murderously", "pos": "D"}] |
+| Notes |  |
+
