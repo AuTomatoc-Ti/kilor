@@ -3,8 +3,10 @@
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 2.4.4
+**Version:** 2.5.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
+
+**Companion file:** `4-meta/pre-pipeline-brainstorm.md` — Phase 0 discussion guide for resolving meaning/POS, root vs compound, and colour prefix from bare brainstorm entries before filling in `today.md`. Read this first when starting from brainstorm input.
 
 ---
 
@@ -37,7 +39,17 @@ Every word entry consists of these fields. The **Verdict** column encodes who ha
 
 ---
 
-## II. The 4-Phase Pipeline
+## II. The 5-Phase Pipeline
+
+### Phase 0: Pre-Pipeline Brainstorm Discussion
+
+When starting from bare brainstorm entries (`{form}, {meaning}`), run through `4-meta/pre-pipeline-brainstorm.md` to resolve:
+
+1. **Meaning & POS expansion** — what NVAD senses extend from the brief meaning
+2. **Root vs compound** — bare root, or compound of existing roots; defer if components missing
+3. **Colour prefix** — 7-Question Filter + family consistency check
+
+Discuss **one word at a time** with the human. Only proceed to Phase 1 after all three dimensions are locked.
 
 ### Phase 1: Human Design (all creative work in one sitting)
 

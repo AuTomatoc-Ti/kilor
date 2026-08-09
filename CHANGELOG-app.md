@@ -1,4 +1,4 @@
-**Current Version:** v2.7.0
+**Current Version:** v2.8.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,27 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.8.0 — 2026-08-09
+
+10 new words added: 9 roots + 1 compound (weikra–sefe batch). First batch processed through the new pre-pipeline Phase 0 workflow. See also: CHANGELOG.md v2.7.0.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 10 new entries (428→438):
+  - `weikra`: weakness (N), to weaken (V), weak (A), weakly (D). pos_mask=NVAD, `o-`.
+  - `saelom`: peace (N), to pacify/make peace (V), peaceful (A), peacefully (D). pos_mask=NVAD, `o-`.
+  - `arse`: buttocks/arse/ass (N). pos_mask=N, `u-`.
+  - `tesar`: art (N), artistic (A), artistically (D). pos_mask=NAD, `e-`. Phonologically paired with `tesak` (create).
+  - `lausta`: song (N), to sing (V), lyrical/songful (A), lyrically (D). pos_mask=NVAD, `u-`.
+  - `messa`: greatness (N), great (A), greatly (D). pos_mask=NAD, `o-`.
+  - `raekum`: rest/repose (N), to rest/relax (V), restful (A), restfully (D). pos_mask=NVAD, `o-`.
+  - `raekumlausta`: requiem (N). compound-mono (raekum + lausta). pos_mask=N, `u-`.
+  - `mlaska`: sword (N). pos_mask=N, `e-`. `ml-` frame paired with `maliu` (knife).
+  - `sefe`: hammer (N), to hammer (V). pos_mask=NV, `e-`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 8 pre-existing errors, 0 new
+
 
 ## workspace v2.7.0 — 2026-08-09
 

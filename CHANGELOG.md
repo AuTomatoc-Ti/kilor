@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.6.0
+**Current Version:** v2.7.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,18 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+
+## workspace v2.7.0 — 2026-08-09
+
+New pre-pipeline brainstorm guide + pipeline Phase 0. Documented the structured discussion workflow for resolving meaning/POS, root vs compound, and colour prefix from bare brainstorm entries (`{form}, {meaning}`) before filling in `today.md`.
+
+**Spec:**
+- **`4-meta/pre-pipeline-brainstorm.md`** — New file v1.0.0. Phase 0 discussion guide covering: user input format (`{form}, {meaning}`), POS decision heuristics (NVAD/NAD/NV/N patterns, tool N→V test, quality A/D rules), colour prefix patterns (7-Question Filter + family consistency override), root vs compound decision flowchart (Rule 5 upgrade, deferral rules), today.md pitfalls (comma-splitting → fragmented glosses, missing `Derivation Mask` → NULL prefix, descriptive phrase fragments), and a 6-step per-word checklist.
+- **`4-meta/word-creation-pipeline.md`** v2.4.4→2.5.0 — Added Phase 0: Pre-Pipeline Brainstorm Discussion section; added companion file reference to `pre-pipeline-brainstorm.md` in header; renamed "4-Phase Pipeline" → "5-Phase Pipeline".
+
+**Validation:**
+- `python kilor.py check` — ✅ 8 pre-existing errors, 0 new
 
 
 ## workspace v2.6.0 — 2026-08-09
