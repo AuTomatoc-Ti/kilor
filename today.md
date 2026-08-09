@@ -1,129 +1,113 @@
-### weak ({quality})
+### bird — zoological ({animal})
 
 | Field | Value |
 |---|---|
-| Kilor Form | weikra |
-| Type | root |
-| Derivation Mask | NVAD |
-| Consensus Prefix | o- |
-| Meaning (N) | weakness |
-| Meaning (V) | to weaken |
-| Meaning (A) | weak |
-| Meaning (D) | weakly |
-| Notes | Near-collision flag: starts with wei (interrogative root). Reviewed — false alarm. |
-
-### peace ({abstract})
-
-| Field | Value |
-|---|---|
-| Kilor Form | saelom |
-| Type | root |
-| Derivation Mask | NVAD |
-| Consensus Prefix | o- |
-| Meaning (N) | peace |
-| Meaning (V) | to pacify, make peace |
-| Meaning (A) | peaceful |
-| Meaning (D) | peacefully |
-| Notes | |
-
-### buttocks ({body})
-
-| Field | Value |
-|---|---|
-| Kilor Form | arse |
+| Kilor Form | aufe |
 | Type | root |
 | Derivation Mask | N |
-| Consensus Prefix | u- |
-| Meaning (N) | buttocks, arse, ass |
-| Notes | |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "bird (zoological classification)", "pos": "N"}] |
+| Notes | Register distinction: aufe = bird as zoological category (cf. fein = common bird, 鳥 vs 禽) |
 
-### art ({culture})
-
-| Field | Value |
-|---|---|
-| Kilor Form | tesar |
-| Type | root |
-| Derivation Mask | NAD |
-| Consensus Prefix | e- |
-| Meaning (N) | art |
-| Meaning (A) | artistic |
-| Meaning (D) | artistically |
-| Notes | Phonologically paired with tesak (create); t-s frame = creation semantic field. |
-
-### song ({music})
+### fox ({animal})
 
 | Field | Value |
 |---|---|
-| Kilor Form | lausta |
-| Type | root |
-| Derivation Mask | NVAD |
-| Consensus Prefix | u- |
-| Meaning (N) | song |
-| Meaning (V) | to sing |
-| Meaning (A) | lyrical, songful |
-| Meaning (D) | lyrically |
-| Notes | |
-
-### greatness ({quality})
-
-| Field | Value |
-|---|---|
-| Kilor Form | messa |
-| Type | root |
-| Derivation Mask | NAD |
-| Consensus Prefix | o- |
-| Meaning (N) | greatness |
-| Meaning (A) | great |
-| Meaning (D) | greatly |
-| Notes | |
-
-### rest ({action})
-
-| Field | Value |
-|---|---|
-| Kilor Form | raekum |
-| Type | root |
-| Derivation Mask | NVAD |
-| Consensus Prefix | o- |
-| Meaning (N) | rest, repose |
-| Meaning (V) | to rest, relax |
-| Meaning (A) | restful |
-| Meaning (D) | restfully |
-| Notes | |
-
-### requiem ({music})
-
-| Field | Value |
-|---|---|
-| Kilor Form | raekumlausta |
-| Type | compound-mono |
-| Components | raekum + lausta |
-| Derivation Mask | N |
-| Consensus Prefix | u- |
-| Meaning (N) | requiem |
-| Notes | Descriptive noun-noun compound (rest + song). Upgraded to mono per compounding.md Rule 5. |
-
-### sword ({weapon})
-
-| Field | Value |
-|---|---|
-| Kilor Form | mlaska |
+| Kilor Form | kona |
 | Type | root |
 | Derivation Mask | N |
-| Consensus Prefix | e- |
-| Meaning (N) | sword |
-| Notes | ml- frame paired with maliu (knife); bladed object family. |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "fox", "pos": "N"}] |
+| Notes | Form changed from kon to avoid collision with derivational prefix kon- (anti-) |
 
-### hammer ({tool})
+### crow ({animal})
 
 | Field | Value |
 |---|---|
-| Kilor Form | sefe |
+| Kilor Form | kaw |
 | Type | root |
 | Derivation Mask | NV |
-| Consensus Prefix | e- |
-| Meaning (N) | hammer |
-| Meaning (V) | to hammer |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "crow, caw (crow's cry)", "pos": "N"}, {"gloss": "to caw", "pos": "V"}] |
+| Notes | Onomatopoeic. Pattern follows wug (dog/bark). |
+
+### wolf ({animal})
+
+| Field | Value |
+|---|---|
+| Kilor Form | wul |
+| Type | root |
+| Derivation Mask | NV |
+| Consensus Prefix | a- |
+| Meaning | [{"gloss": "wolf, howl (wolf's cry)", "pos": "N"}, {"gloss": "to howl", "pos": "V"}] |
+| Notes | Phonologically paired with wug (dog). Pattern follows wug (dog/bark). |
+
+### star ({nature})
+
+| Field | Value |
+|---|---|
+| Kilor Form | auri |
+| Type | root |
+| Derivation Mask | NA |
+| Consensus Prefix | i- |
+| Meaning | [{"gloss": "star", "pos": "N"}, {"gloss": "starry, dispersed, scattered", "pos": "A"}] |
+| Notes | Reform of sola. sola to be deprecated and superseded by auri. Phonologically grouped with auron (sky). |
+
+### high ({quality})
+
+| Field | Value |
+|---|---|
+| Kilor Form | enli |
+| Type | root |
+| Derivation Mask | VAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "to heighten, raise", "pos": "V"}, {"gloss": "high", "pos": "A"}, {"gloss": "highly", "pos": "D"}] |
+| Notes | enlirin = height (measure) available by -rin suffix, not stored. |
+
+### low ({quality})
+
+| Field | Value |
+|---|---|
+| Kilor Form | anlu |
+| Type | root |
+| Derivation Mask | VAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "to lower", "pos": "V"}, {"gloss": "low", "pos": "A"}, {"gloss": "lowly", "pos": "D"}] |
+| Notes | Antonym of enli. anlurin = lowness (measure) available by -rin suffix, not stored. |
+
+### rotate ({action})
+
+| Field | Value |
+|---|---|
+| Kilor Form | srata |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "rotation, spin", "pos": "N"}, {"gloss": "to rotate, spin, turn", "pos": "V"}, {"gloss": "rotating, rotary", "pos": "A"}, {"gloss": "rotationally", "pos": "D"}] |
+| Notes | Near-collision with srato (house) — distance 1, but semantically distinct domains. |
+
+### thunder ({nature})
+
+| Field | Value |
+|---|---|
+| Kilor Form | tlera |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | i- |
+| Meaning | [{"gloss": "thunder", "pos": "N"}, {"gloss": "to thunder", "pos": "V"}, {"gloss": "thunderous", "pos": "A"}, {"gloss": "thunderously", "pos": "D"}] |
 | Notes | |
+
+### pure ({quality})
+
+| Field | Value |
+|---|---|
+| Kilor Form | argoi |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "purity", "pos": "N"}, {"gloss": "to purify", "pos": "V"}, {"gloss": "pure", "pos": "A"}, {"gloss": "purely", "pos": "D"}] |
+| Notes | |
+
+
 
 

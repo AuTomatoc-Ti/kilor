@@ -191,6 +191,9 @@ function buildFilterClauses({ search, types, compoundTypes, masks, prefixes, syl
     params.push(searchTerm, searchTerm, searchTerm);
   }
 
+  // Always hide deprecated words (no UI toggle for now)
+  clauses.push("w.status != 'deprecated'");
+
   return { clauses, params, hasSearch, searchTerm };
 }
 
@@ -222,9 +225,12 @@ export function queryWords({
     search, types, compoundTypes, masks, prefixes, sylMin, sylMax,
   });
 
-  // Ensure pos_mask column exists (migration guard)
+  // Ensure pos_mask and status columns exist (migration guards)
   try {
     db.run("ALTER TABLE words ADD COLUMN pos_mask TEXT DEFAULT ''");
+  } catch (_e) { /* column already exists */ }
+  try {
+    db.run("ALTER TABLE words ADD COLUMN status TEXT DEFAULT 'active'");
   } catch (_e) { /* column already exists */ }
 
   // ── Total count query ──────────────────────────────────────────────

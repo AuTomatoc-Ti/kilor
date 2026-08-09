@@ -3,7 +3,7 @@
 **Module:** Pre-pipeline word brainstorming & structured discussion
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Depends on:** `4-meta/word-creation-pipeline.md`, `0-foundation/phonology.md`, `1-nominals/nouns-colour-prefix.md`, `3-subsystems/compounding.md`
 
 ---
@@ -178,6 +178,29 @@ Defer a word when:
 | The concept is better as a compound whose components don't exist yet | "voice" needed for "song" compounds |
 | The concept is overly culture-specific and compositional | Excalibur, Mjolnir → not universal enough for Kilor roots |
 
+### E. Near-Minimal-Pair Judgment
+
+When two words differ by ≤ 2 Levenshtein distance (near-collision flag in Phase 2), do not reject automatically. Natural languages tolerate minimal pairs routinely when **semantic domains differ enough to prevent real-world confusion**:
+
+| Language | Pair | Distance | Domains |
+|:--|:--|:--|:--|
+| English | hat / hot | 1 vowel | clothing vs temperature |
+| Mandarin | mā / má / mǎ / mà | 0 segmentally | tone carries distinct meanings |
+
+**Decision rule:**
+
+| Situation | Verdict | Example |
+|:--|:--|:--|
+| Same semantic domain + same POS | ⚠️ Redesign form | — |
+| Different semantic domain or different POS | ✅ Tolerate | `srata` (rotate, NVAD) vs `srato` (house, NV) — action vs physical object |
+
+**Checklist when a near-collision flag triggers:**
+- Are the two words in the same semantic domain? (e.g., both animals, both emotions)
+- Do they share the same primary POS?
+- Would a listener plausibly confuse them in the same sentence?
+
+If the answer to all three is "yes," change the form. Otherwise, note the flag in `today.md` Notes and proceed.
+
 ---
 
 ## VII. today.md Pitfalls (Phase 1 Mistakes)
@@ -233,6 +256,7 @@ Run this for every brainstorm entry:
 □ 3. Check sub-parts: could this be a compound?
      □ If yes: do components exist? Rule 5 check?
      □ If deferral needed: document why and skip
+     □ Does the bare form collide with an existing derivational prefix? (e.g., `kon` vs prefix `kon-`)
 □ 4. Run 7-Question Filter
      □ Check DB for family-word prefixes
      □ Present filter pick + family option (if different)

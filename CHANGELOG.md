@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.8.0
+**Current Version:** v2.9.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -20,6 +20,18 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
+
+## workspace v2.9.0 — 2026-08-09
+
+10 new words added: 9 roots + 1 rename (sola -> auri).
+
+New near-minimal-pair judgment guidance + derivational prefix collision check in the pre-pipeline brainstorm guide. Learned from the Aug 2026 batch (aufe–argoi): `srata`/`srato` (rotate/house, distance 1) was tolerable because domains differ; `kon` was changed to `kona` because it collides with the `kon-` (anti-) prefix.
+
+**Spec:**
+- **`4-meta/pre-pipeline-brainstorm.md`** v1.1.0→1.2.0 — New §VI-E "Near-Minimal-Pair Judgment" with decision rule (same domain+POS → redesign; different domain or POS → tolerate) and checklist. Added derivational prefix collision check to §VIII item 3.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 
 ## workspace v2.8.0 — 2026-08-09
 
