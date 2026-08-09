@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.7.0
+**Current Version:** v2.8.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -20,6 +20,19 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
+
+## workspace v2.8.0 — 2026-08-09
+
+Adopted a JSON array `Meaning` format in `today.md` to eliminate comma-splitting of glosses into redundant meaning rows. One sense per array item (`{"gloss","pos"}`); near-synonyms are grouped into a single item's gloss; legacy per-PoS fields remain supported.
+
+**Spec:**
+- **`4-meta/word-creation-pipeline.md`** v2.5.0→2.6.0 — Content-word `today.md` template + parser behaviour now use a JSON array `Meaning` field (`[{"gloss","pos"}, ...]`). Glosses are no longer comma-split; near-synonyms group into one item; legacy `Meaning (N)` etc. kept as fallback. Compound template reference updated.
+- **`4-meta/pre-pipeline-brainstorm.md`** v1.0.0→1.1.0 — Rewrote today.md pitfall §VII-A (comma-splitting) into "Meaning Representation — JSON Array (no comma-splitting)".
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+
+See also: CHANGELOG-app.md v2.10.0.
 
 ## workspace v2.7.0 — 2026-08-09
 

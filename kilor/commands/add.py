@@ -2,6 +2,7 @@
 
 import os
 import re
+import json
 import sqlite3
 
 from ..db import get_db, rebuild_fts, populate_search_text
@@ -64,17 +65,42 @@ def _parse_field(line, current):
         else:
             current["_pos_warn"] = f"POS '{pos_val}' not in VALID_POS"
 
+    # --- Meaning array: | Meaning | [{"gloss":..., "pos":...}, ...] ---
+    elif key == "Meaning" and val.startswith("["):
+        try:
+            items = json.loads(val)
+        except json.JSONDecodeError:
+            current["_meaning_array_err"] = f"Meaning array is not valid JSON: {val}"
+            return
+        if not isinstance(items, list):
+            current["_meaning_array_err"] = "Meaning array must be a JSON list"
+            return
+        parsed = []
+        for it in items:
+            if not (isinstance(it, dict) and it.get("gloss")):
+                current["_meaning_array_err"] = (
+                    'Meaning array items must be objects like {"gloss": ..., "pos": ...}'
+                )
+                return
+            g = str(it["gloss"]).strip()
+            p = str(it.get("pos", "")).strip().upper()
+            if p not in VALID_POS:
+                current["_meaning_array_err"] = f"Meaning array POS '{p}' not in VALID_POS"
+                return
+            parsed.append({"gloss": g, "pos": p})
+        current["meaning_array"] = parsed
+
     # --- Per-PoS Meaning: | Meaning (N) | ... | ---
     elif m := re.match(r"^Meaning \((N|V|A|D)\)$", key):
         pos = m.group(1)
         if "meanings" not in current:
             current["meanings"] = {}
-        # Comma-separated multiple senses
+        # Comma-separated multiple senses (legacy)
         glosses = [g.strip() for g in val.split(",") if g.strip()]
         current["meanings"][pos] = glosses
 
     # --- Legacy single Meaning field ---
-    elif key == "Meaning" and "meanings" not in current:
+    elif key == "Meaning" and "meanings" not in current and "meaning_array" not in current:
         current["_legacy_meaning"] = val
 
     # --- Syllable Count (deprecated: auto-computed now) ---
@@ -302,6 +328,11 @@ def cmd_add(filepath):
         if not type_ok:
             continue
 
+        # ── Meaning array validity (blocking) ──
+        if entry.get("_meaning_array_err"):
+            errors.append(f"'{root}' ({english}): {entry['_meaning_array_err']}")
+            continue
+
         # ── Auto-compute phonology fields ──
         syl = str(count_syllables(root))
         ipa_val = to_ipa(root)
@@ -329,8 +360,20 @@ def cmd_add(filepath):
 
         # ── Insert meanings with pos tags ──
         meanings = entry.get("meanings")
-        if meanings:
-            # New template: per-PoS meaning fields
+        meaning_array = entry.get("meaning_array")
+        if meaning_array:
+            # Recommended: | Meaning | [{"gloss", "pos"}, ...] array
+            sort_counter = {}
+            for item in meaning_array:
+                pos_letter = item["pos"]
+                so = sort_counter.get(pos_letter, 0)
+                conn.execute(
+                    "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+                    (word_id, item["gloss"], "en", so, pos_letter),
+                )
+                sort_counter[pos_letter] = so + 1
+        elif meanings:
+            # Legacy: per-PoS meaning fields
             sort_counter = {}
             for pos_letter in ("N", "V", "A", "D"):
                 glosses = meanings.get(pos_letter, [])

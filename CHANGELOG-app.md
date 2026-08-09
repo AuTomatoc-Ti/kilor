@@ -1,4 +1,4 @@
-**Current Version:** v2.8.0
+**Current Version:** v2.10.0
 **Last Updated:** 2026-08-09
 **Format:** `**file** — what changed`
 
@@ -19,6 +19,40 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
+## workspace v2.10.0 — 2026-08-09
+
+Backend meaning-separation refactor: the `today.md` `Meaning` field is now a JSON array (`[{"gloss","pos"}, ...]`). `add.py` and `edit.py` parse arrays and no longer comma-split glosses; legacy per-PoS fields remain supported. Re-grouped the 6 comma-split meaning pairs from the v2.9.0 batch into single items.
+
+**DB / Backend:**
+- **`kilor/commands/add.py`** — Parses `| Meaning | [{"gloss":..., "pos":...}] |` as a JSON array; validates each `pos` against `VALID_POS` (blocking error on malformed/invalid); inserts one `meanings` row per array item with no comma-splitting. Legacy per-PoS `Meaning (N)` fields kept as fallback.
+- **`kilor/commands/edit.py`** — `--add-meaning` now also accepts a JSON object/array (`{"gloss","pos"}` or `[...]`) in addition to the plain-string form; inserts one row per item.
+- **`data/kilor.db`** — Re-grouped 6 split meaning pairs into single items: `ipo` V "to trap, catch in a trap", `ipon` V "to truss, bind tightly", `ipot` V "to lure, tempt", `gaeth` V "to lance, pierce", `choumia` A "fruitful, bountiful", `kacit` V "to fence, enclose".
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
+- `draft/test_array.py` / `draft/test_edit.py` — ✅ Array parse + JSON `edit --add-meaning` verified on a throwaway DB copy
+
+See also: CHANGELOG.md v2.8.0.
+
+## workspace v2.9.0 — 2026-08-09
+
+9 new words added (428→437) + 1 rename (`donar`→`piliu`). Family batches: `ip-` hunting (trap/truss/lure), `pil-` boundary (door/gate), `choum-` harvest (sickle/bountiful harvest), plus metal (`talo`), weapon (`gaeth`), and boundary (`kacit`). First `choum-`/materials batch through the Phase 0 pre-pipeline workflow.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 9 new entries + 1 rename:
+  - `talo`: copper (N), copper-coloured (A). pos_mask=NA, `y-`. Metal family (cf. `giliu`).
+  - `ipo`: trap (N), to trap/catch in a trap (V). pos_mask=NV, `e-`. `ip-` hunting frame.
+  - `ipon`: truss (N), to truss/bind tightly (V). pos_mask=NV, `e-`.
+  - `ipot`: lure (N), to lure/tempt (V). pos_mask=NV, `e-`.
+  - `gaeth`: lance (N), to lance/pierce (V). pos_mask=NV, `e-`. 1 syllable.
+  - `piliu`: door (N). Renamed from `donar`; form/IPA/syllables/inflection recomputed (clean 2-syl). pos_mask=N, `ae-`.
+  - `pilau`: gate (N). pos_mask=N, `ae-`. Paired with `piliu` (LD1, intended).
+  - `choumtek`: sickle (N). compound-mono (`choum`+`tek`, instrument). pos_mask=N, `e-`.
+  - `choumia`: bountiful harvest (N), fruitful/bountiful (A). compound-mono (`choum`+`nia`, abundative). pos_mask=NA, `u-`. 3-syl tonal inflections set to `choujmia`/`choumija`.
+  - `kacit`: fence (N), to fence/enclose (V). pos_mask=NV, `ae-`.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new (12 pre-existing warnings)
 ## workspace v2.8.0 — 2026-08-09
 
 10 new words added: 9 roots + 1 compound (weikra–sefe batch). First batch processed through the new pre-pipeline Phase 0 workflow. See also: CHANGELOG.md v2.7.0.

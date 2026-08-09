@@ -3,7 +3,7 @@
 **Module:** Pre-pipeline word brainstorming & structured discussion
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Depends on:** `4-meta/word-creation-pipeline.md`, `0-foundation/phonology.md`, `1-nominals/nouns-colour-prefix.md`, `3-subsystems/compounding.md`
 
 ---
@@ -184,17 +184,17 @@ Defer a word when:
 
 These errors were discovered during the Aug 2026 batch (weikra–sefe).
 
-### A. Comma Splitting in Glosses
+### A. Meaning Representation — JSON Array (no comma-splitting)
 
-**The parser splits glosses on commas into separate meaning rows.**
+**`add.py` parses the `Meaning` field as a JSON array of `{"gloss", "pos"}` items; glosses are NOT comma-split.** This removes the old comma-splitting footgun entirely.
 
-| ❌ Wrong | ✅ Right |
+| ❌ Old (comma-split) | ✅ New (single array item) |
 |:--|:--|
-| `weakness, the state or quality of being weak` | `weakness` |
-| `a bladed weapon, larger than a knife` | `sword` |
-| `rest, repose, relaxation, a break from activity` | `rest, repose` |
+| `| Meaning (V) | to lance, pierce |` → 2 rows | `{"gloss": "to lance, pierce", "pos": "V"}` → 1 row |
+| `| Meaning (A) | fruitful, bountiful |` → 2 rows | `{"gloss": "fruitful, bountiful", "pos": "A"}` |
+| `| Meaning (N) | weakness |` | `{"gloss": "weakness", "pos": "N"}` |
 
-**Rule:** Every comma-separated fragment must be a **valid standalone gloss**. Never use commas in descriptive phrases — those are definitions, not glosses. Only use commas to separate genuine synonyms.
+**Rule:** Each array item is **ONE sense**. Group near-synonyms into a single item's `gloss` (a comma inside a gloss is preserved as part of that sense). Genuinely distinct senses get separate array items (each with its own `pos`).
 
 ### B. Missing Derivation Mask → NULL Prefix
 

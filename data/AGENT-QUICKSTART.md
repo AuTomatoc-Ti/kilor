@@ -49,12 +49,14 @@ Adding to lexicon?
 # Step 1: Generate template
 python kilor.py next --count 10
 
-# Step 2: Edit today.md — fill in Kilor Root, Derivation Mask
+# Step 2: Edit today.md — fill in Kilor Root, Derivation Mask, and the Meaning array
+# Meanings are a JSON array of {"gloss","pos"} items (one sense per item; never comma-split).
 # Example entry:
 # ### volcano (nature)
 # | Kilor Root | foragilan |
 # | Derivation Mask | N |
 # | Consensus Prefix | o- |
+# | Meaning | [{"gloss": "volcano", "pos": "N"}] |
 
 # Step 3: Validate and insert
 python kilor.py add --file today.md

@@ -2,6 +2,7 @@
 
 import os
 import sys
+import json
 
 from ..db import get_db, rebuild_fts, populate_search_text
 from ..phonology import validate_content_root, count_syllables
@@ -40,6 +41,7 @@ def cmd_edit(form, **kwargs):
     
     Usage:
         python kilor.py edit <form> --add-meaning "new gloss" [--pos N|V|A|D|...]
+        python kilor.py edit <form> --add-meaning '{"gloss":"to lure, tempt","pos":"V"}'
         python kilor.py edit <form> --set-prefix "a-"
         python kilor.py edit <form> --set-mask "nv"
         python kilor.py edit <form> --add-example "kilor text" "english text"
@@ -60,32 +62,67 @@ def cmd_edit(form, **kwargs):
     
     # Add meaning
     if "add_meaning" in kwargs:
-        gloss = kwargs["add_meaning"]
-        pos = kwargs.get("add_meaning_pos", "")
-        if pos and pos not in VALID_POS:
-            print(f"Warning: POS '{pos}' not in VALID_POS — storing as-is.")
-        # sort_order scoped within the same pos
-        if pos:
-            sort_order = conn.execute(
-                "SELECT MAX(sort_order) FROM meanings WHERE word_id = ? AND pos = ?",
-                (word_id, pos),
-            ).fetchone()[0] or 0
+        raw = kwargs["add_meaning"]
+        raw_pos = kwargs.get("add_meaning_pos", "")
+        s = raw.strip()
+        # Parse JSON array / object form: [{gloss,pos}, ...] or {gloss,pos}
+        if s.startswith("[") or s.startswith("{"):
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                print(f"Error: --add-meaning JSON invalid: {raw}")
+                conn.close()
+                return False
+            if isinstance(data, dict):
+                items = [data]
+            elif isinstance(data, list):
+                items = data
+            else:
+                print("Error: --add-meaning must be a JSON object or array.")
+                conn.close()
+                return False
+            items = [
+                {"gloss": str(it.get("gloss", "")).strip(),
+                 "pos": str(it.get("pos", "")).strip().upper()}
+                for it in items if isinstance(it, dict) and it.get("gloss")
+            ]
+            if not items:
+                print("Error: no valid meaning items in --add-meaning.")
+                conn.close()
+                return False
         else:
-            sort_order = conn.execute(
-                "SELECT MAX(sort_order) FROM meanings WHERE word_id = ?", (word_id,),
-            ).fetchone()[0] or 0
-        conn.execute(
-            "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
-            (word_id, gloss, "en", sort_order + 1, pos),
-        )
+            # Legacy plain-string form (uses --pos flag)
+            items = [{"gloss": raw, "pos": raw_pos}]
+
+        labels = []
+        for item in items:
+            gloss = item["gloss"]
+            pos = item["pos"]
+            if pos and pos not in VALID_POS:
+                print(f"Warning: POS '{pos}' not in VALID_POS — storing as-is.")
+            # sort_order scoped within the same pos
+            if pos:
+                sort_order = conn.execute(
+                    "SELECT MAX(sort_order) FROM meanings WHERE word_id = ? AND pos = ?",
+                    (word_id, pos),
+                ).fetchone()[0] or 0
+            else:
+                sort_order = conn.execute(
+                    "SELECT MAX(sort_order) FROM meanings WHERE word_id = ?", (word_id,),
+                ).fetchone()[0] or 0
+            conn.execute(
+                "INSERT INTO meanings (word_id, gloss, language, sort_order, pos) VALUES (?, ?, ?, ?, ?)",
+                (word_id, gloss, "en", sort_order + 1, pos),
+            )
+            label = f"'{gloss}'"
+            if pos:
+                label += f" (pos={pos})"
+            labels.append(label)
         conn.execute(
             "UPDATE words SET updated_at = datetime('now') WHERE id = ?",
             (word_id,),
         )
-        label = f"'{gloss}'"
-        if pos:
-            label += f" (pos={pos})"
-        changes.append(f"Added meaning: {label}")
+        changes.append("Added meaning: " + ", ".join(labels))
     
     # Set prefix
     if "set_prefix" in kwargs:

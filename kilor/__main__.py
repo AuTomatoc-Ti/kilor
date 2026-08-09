@@ -144,7 +144,7 @@ def main():
         if len(sys.argv) < 3:
             print("Usage: python -m kilor edit <form> [options]")
             print("Options:")
-            print("  --add-meaning \"gloss\"")
+            print("  --add-meaning \"gloss\"  (or JSON '{\"gloss\":\"...\",\"pos\":\"N\"}' / '[...]')")
             print("  --set-prefix \"a-\"")
             print("  --set-mask \"nv\"")
             print("  --add-example \"kilor text\" \"english text\"")

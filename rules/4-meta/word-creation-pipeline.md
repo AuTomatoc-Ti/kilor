@@ -3,7 +3,7 @@
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
 **Last updated:** 2026-08-09
-**Version:** 2.5.0
+**Version:** 2.6.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 **Companion file:** `4-meta/pre-pipeline-brainstorm.md` — Phase 0 discussion guide for resolving meaning/POS, root vs compound, and colour prefix from bare brainstorm entries before filling in `today.md`. Read this first when starting from brainstorm input.
@@ -155,15 +155,12 @@ For open-class roots and compounds. Meanings are split by word class — each Po
 | Kilor Form |  |
 | Type | root / compound-mono / compound-multi |
 | Consensus Prefix |  |
-| Meaning (N) |  |
-| Meaning (V) |  |
-| Meaning (A) |  |
-| Meaning (D) |  |
+| Meaning | [{gloss, pos}, ...] |
 | Notes |  |
 ```
 
-**Human fills:** Kilor Form, Type, per-PoS meanings (fill only the lines relevant to the word's grammatical roles — e.g. a noun-only word fills only `Meaning (N)`).  
-**Parser behaviour:** Only non-empty per-PoS meaning fields are inserted. Each field becomes one `meanings` row with `pos = N|V|A|D`. Comma-separated senses within a field → multiple `meanings` rows with same `pos` and ascending `sort_order`. `pos_mask` is auto-computed by `compute_pos_mask()` from the aggregate POS tags.  
+**Human fills:** Kilor Form, Type, the `Meaning` array. Each array item is **one distinct sense** tagged with an explicit `pos` (N/V/A/D). Group near-synonyms into a **single item's `gloss`** rather than splitting them (e.g. `{"gloss": "to lance, pierce", "pos": "V"}`).  
+**Parser behaviour:** The `Meaning` field is parsed as a JSON array of `{"gloss": ..., "pos": ...}` objects. Each item becomes one `meanings` row with that `pos` and ascending `sort_order` (scoped per `pos`). **Glosses are NOT comma-split** — a comma inside a `gloss` is preserved as part of that single sense. `pos` must be in `VALID_POS`. The legacy per-PoS fields (`Meaning (N)`, etc.) remain supported for backward compatibility. `pos_mask` is auto-computed by `compute_pos_mask()` from the aggregate POS tags.  
 **AI fills during Phase 2:** Consensus Prefix (auto-suggest).  
 **AI computes:** `pos_mask`, Syllable Count, Syllable Division, Inflections, ACC/GEN — these are not displayed in the template; they appear in the Phase 2 summary report and are stored directly in DB.
 
@@ -202,7 +199,7 @@ Add the following fields to the Content Word template above:
 | Rule Ref | rules/3-subsystems/compounding.md §I-{section} |
 ```
 
-**Human fills:** Kilor Form, per-PoS Meaning, Type, Components, Pattern, Rule Ref.  
+**Human fills:** Kilor Form, `Meaning` array, Type, Components, Pattern, Rule Ref.  
 **AI validates:** Component roots exist in DB.  
 **AI auto-suggests:** Consensus Prefix (from compound head rules, `compounding.md` §IV and `derivational-suffixes.md` §IV).
 
