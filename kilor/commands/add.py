@@ -305,7 +305,7 @@ def cmd_add(filepath):
             continue
 
         # ── Phonotactic validation ──
-        is_compound_check = " " in root
+        is_compound_check = " " in root or entry.get("entry_type", "").strip().lower() in ("compound-mono", "compound-multi")
         valid, err = validate_content_root(root, is_compound=is_compound_check)
         if not valid:
             errors.append(f"'{root}' ({english}): {err}")

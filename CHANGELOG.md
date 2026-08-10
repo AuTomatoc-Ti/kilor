@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.9.0
-**Last Updated:** 2026-08-09
+**Current Version:** v2.9.1
+**Last Updated:** 2026-08-11
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,18 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+
+## workspace v2.9.1 — 2026-08-11
+
+22 new words across 2 batches (batch 2: 11, batch 3: 11). New word families: `im-` temporal triad, `kl-` military, `sys-` politeness, `ok-` core/hub/capital. 3 new spatial `-ne` postpositions added. 5 new compound entries including derivational prefix/suffix patterns.
+
+**Spec:**
+- **`3-subsystems/spatials.md`** v1.1.1→1.2.0 — Added `fapne` (on the left), `hapne` (on the right), `bopne` (below) to spatial postposition inventory (§III).
+
+**Validation:**
+- `python kilor.py check` — ✅ 12 pre-existing errors, 0 new
+
 
 
 

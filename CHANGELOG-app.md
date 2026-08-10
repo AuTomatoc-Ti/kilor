@@ -1,5 +1,5 @@
-**Current Version:** v2.10.0
-**Last Updated:** 2026-08-09
+**Current Version:** v2.10.1
+**Last Updated:** 2026-08-11
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.10.1 — 2026-08-11
+
+Bug fix: compound-mono entries ending in `-s` were incorrectly rejected by the `-s` constraint. The `is_compound` check only looked for spaces in the form, missing mono-word compounds.
+
+**DB / Backend:**
+- **`kilor/commands/add.py`** — Fixed `is_compound` detection (line 308): now checks `entry_type` for `compound-mono`/`compound-multi` in addition to spaces-in-form. Previously, mono-word compounds like `pires` (pi- + res) and `pares` (pa- + res) were treated as bare roots and rejected by the 1-2 syllable `-s` constraint.
+
+**Validation:**
+- `python kilor.py check` — ✅ 12 pre-existing errors, 0 new
+
+See also: CHANGELOG.md v2.9.1.
+
+
 
 ## workspace v2.10.0 — 2026-08-09
 

@@ -2,8 +2,8 @@
 
 **Module:** Spatial Postpositions
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 1.1.1
+**Last updated:** 2026-08-11
+**Version:** 1.2.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`
 
 ---
@@ -37,6 +37,9 @@ The `-ne` suffix creates a spatial postposition that denotes a location or path 
 | `ouk` | out | `oukne` | outside | New root |
 | `um` | under | `umne` | under | New root |
 | `rap` | top / peak | `rapne` | above | Existing root (category G in lexicon) |
+| `fap` | left | `fapne` | on the left | Existing root (left side) |
+| `hap` | right | `hapne` | on the right | Existing root (right) |
+| `bop` | bottom | `bopne` | below | Existing root (bottom) |
 | `hau` | back | `haune` | behind | New root |
 | `pau` | front | `paune` | in front of | New root |
 | `hin` | side | `hinne` | beside / near / next to | New root |

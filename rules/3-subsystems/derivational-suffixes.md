@@ -194,7 +194,7 @@ For roots ending in an end-only or edge-only consonant, `-wes` appears in its fu
 
 The output part of speech depends on the base type:
 
-- **Noun base → N:** "former X, ex-X." Inherits the colour prefix of the base noun (§IV-B): `a-maeharem` (from `a-maeha`, "person").
+- **Noun base → N:** "former X, ex-X." Inherits the colour prefix of the base noun (§IV-B): `a-maeharem` (from `a-maeha`, "person"). some special case can be NA (e.g. resrem, extinct).
 - **Verb base → A:** "that which once was X-ed." No colour prefix (adjectives do not take colour prefixes).
 - **Adjective base → A:** "that which was once X." No colour prefix.
 
