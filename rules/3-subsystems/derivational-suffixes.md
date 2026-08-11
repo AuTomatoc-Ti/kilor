@@ -233,9 +233,9 @@ For roots ending in an end-only or edge-only consonant, `-rum` appears in its fu
 | `gorik` | study of goodness, ethics |
 | `ema` + `-mik` → `emamik` | study of truth, epistemology |
 
-`-ik` derives a field of study from a noun — "-ology." The suffix form is the shortened combining form of `mik` ("study, field of study"). Descended from the full content root `mik`.
+`-ik` derives a field of study from a noun — "-ology." The suffix form is the shortened combining form of `mik` ("study, field of study"). Descended from the full content root `nomik`.
 
-- **Noun base → N:** "study of X, X-ology." Takes colour prefix `o-` (abstract): `o-auronik` = "the study of the sky."
+- **Noun base → NA:** "study of X, X-ology." Takes colour prefix `o-` (abstract): `o-auronik` = "the study of the sky."
 
 For roots ending in an end-only or edge-only consonant, `-ik` appears in its full-root multi-word form `mik` (§II-B). Example: `song mik` = "study of friendship" (not `*songik`).
 

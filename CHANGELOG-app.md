@@ -1,5 +1,5 @@
-**Current Version:** v2.10.1
-**Last Updated:** 2026-08-11
+**Current Version:** v2.11.0
+**Last Updated:** 2026-08-12
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -19,6 +19,45 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
+## workspace v2.11.0 — 2026-08-12
+
+30 new words added (489→519) across three Phase 0 pre-pipeline batches: `aka-` alternative/synonym family, `-lith` stone family, `sel-` birth family, narrative/religion/art terms, `nom-` study/governance family, and `sou-`/`fid-` process/purpose families.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 30 new entries:
+  - `aka`: an alternate form, variant (N). pos_mask=N, `o-`. root. Head of `aka-` family.
+  - `akaur`: an alternative/option (N); alternative, alternate (A); alternatively (D). pos_mask=NAD, `o-`. root. Renamed from `akau` to avoid near-collision with `kau` (arrive).
+  - `akaberat`: synonym (N); synonymous (A). pos_mask=NA, `o-`. compound-mono (`aka`+`berat`).
+  - `akanumin`: alias, assumed name (N); by the alias of, a.k.a. (D). pos_mask=ND, `o-`. compound-mono (`aka`+`numin`).
+  - `akauselo`: backup plan, alternative way (N); as a backup (D). pos_mask=ND, `ae-`. compound-mono (`akaur`+`selo`; `r` elides → `akauselo`).
+  - `lith`: stone (N); stony, made of stone (A). pos_mask=NA, `y-`. root. Head of `-lith` family.
+  - `galith`: rock (N); rocky (A). pos_mask=NA, `y-`. root.
+  - `gilith`: mineral(s)/ore (N); mineral, mineral-rich (A). pos_mask=NA, `y-`. root.
+  - `shilim`: small stream, brook, creek (N). pos_mask=N, `i-`. root.
+  - `wonlira`: seawater (N). pos_mask=N, `i-`. compound-mono (`wonli`+`lira`; medial `li` collapses → `wonlira`).
+  - `seli`: birth (N); to be born (V). pos_mask=NV, `a-`. root. Head of `sel-` family.
+  - `seliroi`: birthday (N). pos_mask=N, `a-`. compound-mono (`seli`+`roi`).
+  - `selise`: the appointed time of birth (N). pos_mask=N, `a-`. compound-mono (`seli`+`lise`, ordained-occurrence).
+  - `rilse`: legend (N); legendary (A). pos_mask=NA, `o-`. root.
+  - `beril`: story, tale, narrative (N). pos_mask=N, `o-`. root. A "story-like" intentionally omitted — similative `-ius` covers it.
+  - `sym`: god, deity (N); divine (A). pos_mask=NA, `y-`. root.
+  - `symrilse`: myth (N); mythical (A). pos_mask=NA, `o-`. compound-mono (`sym`+`rilse`).
+  - `shinobi`: ninja, hidden covert agent (N). pos_mask=N, `a-`. root. Cultural loanword.
+  - `hula`: dance (N); to dance (V). pos_mask=NV, `u-`. root.
+  - `priko`: laziness (N); lazy (A); lazily (D). pos_mask=NAD, `o-`. root. Quality root.
+  - `lifa`: transformation (N); to transform (V); transformative (A). pos_mask=NVA, `o-`. root.
+  - `nomik`: study, field of study (N); to study (V); studious (A). pos_mask=NVA, `o-`. root. Full content root; `mik` is its shortened combining form (source of `-ik`/`-mik` suffix).
+  - `nomir`: order, law, rule (N); ordered, lawful (A); to order, to decree (V). pos_mask=NAV, `o-`. root.
+  - `misomik`: musicology, study of music (N); musicological (A). pos_mask=NA, `o-`. compound-mono (`miso`+`mik`, study-of pattern).
+  - `loce`: administration, governance (N); to administer/govern (V); administrative (A). pos_mask=NVA, `o-`. root. Source/combining form for `locemir`.
+  - `locemir`: council, governing body (N). pos_mask=N, `o-`. compound-mono (`loce`+`nomir`; `no-` elides → `locemir`).
+  - `sou`: continuation (N); to continue/proceed (V); ongoing (A). pos_mask=NVA, `o-`. root.
+  - `ilsou`: sufficiency, enough (N); enough, sufficient (A); sufficiently (D). pos_mask=NAD, `o-`. compound-mono (`il`+`sou`).
+  - `fid`: goal, aim, objective (N); to aim/target/intend (V). pos_mask=NV, `o-`. root.
+  - `fidden`: reason, rationale (N); to reason/rationalise (V). pos_mask=NV, `o-`. root.
+
+**Validation:**
+- `python kilor.py check` — ✅ 6 pre-existing errors, 0 new
 ## workspace v2.10.1 — 2026-08-11
 
 Bug fix: compound-mono entries ending in `-s` were incorrectly rejected by the `-s` constraint. The `is_compound` check only looked for spaces in the form, missing mono-word compounds.
