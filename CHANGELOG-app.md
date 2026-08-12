@@ -1,4 +1,4 @@
-**Current Version:** v2.11.0
+**Current Version:** v2.12.0
 **Last Updated:** 2026-08-12
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,27 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.12.0 — 2026-08-12
+
+10 new territorial / state words added (519→529): `pos-` land family expansions (nation, country, province, city), `rus-` district/canton family, `pegloce` (county), plus closed/open state roots (`ikke`, `wone`).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 10 new entries (see `draft/batch-2026-08-12.md`):
+  - `posim`: nation, the people sharing identity (N); national (A). pos_mask=NA, `ae-`. root. Near-collision with `posia` (state/land, d=1) accepted — nation = the people, distinct from the polity.
+  - `poskae`: country, land, territory (N); country-wide, of the land (A). pos_mask=NA, `ae-`. root. Country = physical territory, distinct from `posia` (state).
+  - `posloce`: province (N); provincial (A). pos_mask=NA, `ae-`. compound-mono (`poska`+`loce`, land+administration; head-last).
+  - `poslam`: city, urban settlement (N); urban, of the city (A). pos_mask=NA, `ae-`. root. Urban settlement, distinct from `posia`'s city-state/polity reading.
+  - `ruson`: separation (N); to separate (V); separate, distinct (A); separately (D). pos_mask=NVAD, `ae-`. root. `rus-` family (rusome); phonesthetic pairing set `ae-`.
+  - `rusomi`: district, civil division (N); district-level, of a district (A). pos_mask=NA, `ae-`. root. Near-collision `rusome` (room, d=1) accepted — enclosed space vs bounded admin region.
+  - `pegloce`: county (N); county-level (A). pos_mask=NA, `ae-`. root. Near-collision `poska` (place, d=1) accepted.
+  - `ikke`: closure, closing (N); to close, to shut (V); closed (A). pos_mask=NVA, `o-`. root. Near-collision `ikne` (inside, d=1) accepted — locative vs closed-state.
+  - `wone`: opening, breadth (N); to open, to widen (V); open, broad, wide (A); openly, broadly (D). pos_mask=NVAD, `o-`. root. `wonli`/`wonir` (sea/ocean) kept their separate `i-` sub-family.
+  - `rusoloce`: canton (N); canton-level, of a canton (A). pos_mask=NA, `ae-`. root. `rus-` family; bare root (no `rus` root to form `rus`+`loce` compound).
+
+**Validation:**
+- `python kilor.py add --file draft/batch-2026-08-12.md` — ✅ 10 added, 0 errors (note: `--dry-run` is not implemented on `add`; validated against a temp DB clone first)
+- `python kilor.py check` — ✅ no new errors
 
 ## workspace v2.11.0 — 2026-08-12
 
