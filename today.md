@@ -1,118 +1,112 @@
-### transform ({process})
+### personality ({self})
 
 | Field | Value |
 |---|---|
-| Kilor Form | lifa |
+| Kilor Form | altem |
 | Type | root |
-| Derivation Mask | NVA |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "transformation, a transform", "pos": "N"}, {"gloss": "to transform, to change (into something else)", "pos": "V"}, {"gloss": "transformative", "pos": "A"}] |
-| Notes | lif- family head. |
-
-### study ({knowledge})
-
-| Field | Value |
-|---|---|
-| Kilor Form | nomik |
-| Type | root |
-| Derivation Mask | NVA |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "study, field of study", "pos": "N"}, {"gloss": "to study", "pos": "V"}, {"gloss": "studious", "pos": "A"}] |
-| Notes | Full content root; mik is its shortened combining form (-ik/-mik suffix). |
-
-### order/law ({governance})
-
-| Field | Value |
-|---|---|
-| Kilor Form | nomir |
-| Type | root |
-| Derivation Mask | NAV |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "order, law, rule", "pos": "N"}, {"gloss": "ordered, lawful", "pos": "A"}, {"gloss": "to order, to decree", "pos": "V"}] |
-| Notes | nom- family (nomik, nomir). |
-
-### administration ({governance})
-
-| Field | Value |
-|---|---|
-| Kilor Form | loce |
-| Type | root |
-| Derivation Mask | NVA |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "administration, governance", "pos": "N"}, {"gloss": "to administer, to govern, to manage", "pos": "V"}, {"gloss": "administrative", "pos": "A"}] |
-| Notes | loce- family head; combining/source form for locemir. |
-
-### continue ({action})
-
-| Field | Value |
-|---|---|
-| Kilor Form | sou |
-| Type | root |
-| Derivation Mask | NVA |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "continuation", "pos": "N"}, {"gloss": "to continue, to proceed, to go on", "pos": "V"}, {"gloss": "continuing, ongoing", "pos": "A"}] |
-| Notes | sou- family (sou, ilsou). |
-
-### goal ({purpose})
-
-| Field | Value |
-|---|---|
-| Kilor Form | fid |
-| Type | root |
-| Derivation Mask | NV |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "goal, aim, objective", "pos": "N"}, {"gloss": "to aim at, to target, to intend", "pos": "V"}] |
-| Notes | fid- family (fid, fidden; cf. fidak purpose-particle). |
-
-### reason ({purpose})
-
-| Field | Value |
-|---|---|
-| Kilor Form | fidden |
-| Type | root |
-| Derivation Mask | NV |
-| Consensus Prefix | o- |
-| Meaning | [{"gloss": "reason, rationale, grounds", "pos": "N"}, {"gloss": "to reason, to rationalise", "pos": "V"}] |
-| Notes | fid- family. |
-
-### study of music ({knowledge})
-
-| Field | Value |
-|---|---|
-| Kilor Form | misomik |
-| Type | compound-mono |
-| Components | miso + mik |
-| Pattern | study-of |
-| Rule Ref | rules/3-subsystems/derivational-suffixes.md §I-M |
 | Derivation Mask | NA |
 | Consensus Prefix | o- |
-| Meaning | [{"gloss": "musicology, the study of music", "pos": "N"}, {"gloss": "musicological", "pos": "A"}] |
-| Notes | miso (music, u-) + -mik (study of, from nomik). Fixed o- per §IV-A. |
+| Meaning | [{"gloss": "personality, character, temperament", "pos": "N"}, {"gloss": "personal, of one's character", "pos": "A"}] |
+| Notes | alt- family head. |
 
-### council ({governance})
+### act/roles/drama ({self})
 
 | Field | Value |
 |---|---|
-| Kilor Form | locemir |
-| Type | compound-mono |
-| Components | loce + nomir |
-| Pattern | |
-| Rule Ref | rules/3-subsystems/compounding.md §II |
+| Kilor Form | altid |
+| Type | root |
+| Derivation Mask | NVA |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "acting, drama, role-play", "pos": "N"}, {"gloss": "to act, to perform (a role)", "pos": "V"}, {"gloss": "dramatic, theatrical", "pos": "A"}] |
+| Notes | alt- family (altem). Distinguish from chap (a deed/action) — this is performative. |
+
+### mask ({self})
+
+| Field | Value |
+|---|---|
+| Kilor Form | altirma |
+| Type | root |
+| Derivation Mask | NV |
+| Consensus Prefix | e- |
+| Meaning | [{"gloss": "mask, a face-covering", "pos": "N"}, {"gloss": "to mask, to disguise, to conceal identity", "pos": "V"}] |
+| Notes | alt- family. e- (crafted object) chosen over family o-. |
+
+### roles ({self})
+
+| Field | Value |
+|---|---|
+| Kilor Form | altor |
+| Type | root |
 | Derivation Mask | N |
 | Consensus Prefix | o- |
-| Meaning | [{"gloss": "council, governing body", "pos": "N"}] |
-| Notes | loce (administration) + nomir (order/law); no- of nomir elides → locemir. Head-last; non-head compound. |
+| Meaning | [{"gloss": "role, part, function, persona", "pos": "N"}] |
+| Notes | alt- family. |
 
-### enough ({quantity})
+### dress up ({self})
 
 | Field | Value |
 |---|---|
-| Kilor Form | ilsou |
-| Type | compound-mono |
-| Components | il + sou |
-| Pattern | |
-| Rule Ref | rules/3-subsystems/compounding.md §II |
-| Derivation Mask | NAD |
+| Kilor Form | alkam |
+| Type | root |
+| Derivation Mask | NVA |
 | Consensus Prefix | o- |
-| Meaning | [{"gloss": "sufficiency, enough", "pos": "N"}, {"gloss": "enough, sufficient", "pos": "A"}, {"gloss": "sufficiently", "pos": "D"}] |
-| Notes | il (stop/halt) + sou (continue). Head-last; non-head compound. |
+| Meaning | [{"gloss": "dressing-up, a costume", "pos": "N"}, {"gloss": "to dress up, to don a costume, to get into character", "pos": "V"}, {"gloss": "dressed-up, costumed", "pos": "A"}] |
+| Notes | alkam- family. Near klam (cloth, d=2) — distinct domain/POS. o- (alt- persona family). |
+
+### accessories ({self})
+
+| Field | Value |
+|---|---|
+| Kilor Form | alkamer |
+| Type | root |
+| Derivation Mask | N |
+| Consensus Prefix | e- |
+| Meaning | [{"gloss": "accessories, trappings of an outfit", "pos": "N"}] |
+| Notes | alkam- family. e- (crafted objects). |
+
+### flowery ({plant})
+
+| Field | Value |
+|---|---|
+| Kilor Form | frunia |
+| Type | compound-mono |
+| Components | fru + nia |
+| Pattern | abundative |
+| Rule Ref | rules/3-subsystems/derivational-suffixes.md §I-I |
+| Derivation Mask | NA |
+| Consensus Prefix | u- |
+| Meaning | [{"gloss": "floweriness, abundance of flowers", "pos": "N"}, {"gloss": "flowery, abounding in flowers", "pos": "A"}] |
+| Notes | fru (flower, u-) + -ia (abundative). Base-inherit u-. |
+
+### good bye ({social})
+
+| Field | Value |
+|---|---|
+| Kilor Form | tyse |
+| Type | root |
+| Derivation Mask | NA |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "goodbye", "pos": "INTERJ"}, {"gloss": "a farewell, a send-off", "pos": "N"}, {"gloss": "farewell, valedictory", "pos": "A"}] |
+| Notes | Mixed content+function (cf. hei). Counterpart to hei (hello). |
+
+### correct ({truth})
+
+| Field | Value |
+|---|---|
+| Kilor Form | mic |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "correctness, accuracy", "pos": "N"}, {"gloss": "to correct, to set right", "pos": "V"}, {"gloss": "correct, right, accurate", "pos": "A"}, {"gloss": "correctly", "pos": "D"}] |
+| Notes | Distinguish from ema (true, veridical) — correct = error-free/proper. |
+
+### wrong ({truth})
+
+| Field | Value |
+|---|---|
+| Kilor Form | bli |
+| Type | root |
+| Derivation Mask | NVAD |
+| Consensus Prefix | o- |
+| Meaning | [{"gloss": "wrongness, error", "pos": "N"}, {"gloss": "to wrong, to err", "pos": "V"}, {"gloss": "wrong, incorrect, in error", "pos": "A"}, {"gloss": "wrongly, incorrectly", "pos": "D"}] |
+| Notes | Antonym of mic (correct). Distinguish from bonak (bad = moral/qualitative). |

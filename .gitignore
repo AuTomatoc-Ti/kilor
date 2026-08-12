@@ -8,3 +8,4 @@ node_modules/
 kilor/dictionary/public/data
 # Vite build output
 kilor/dictionary/dist/
+data/backup/

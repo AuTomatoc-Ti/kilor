@@ -1,5 +1,5 @@
-**Current Version:** v2.12.0
-**Last Updated:** 2026-08-12
+**Current Version:** v2.13.0
+**Last Updated:** 2026-08-13
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,38 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.13.0 — 2026-08-13
+
+20 new words added across two batches (529→549). New families: `grid-` (trust → promise), `alt-` persona/performing (personality, drama, mask, roles), `alkam-` dressing (dress up → accessories), `hilo-` (expose ↔ nude), `syl-` mystery/magic, `amo-` causal (because / because of), plus `-rin` measure (height) and `-ia` abundative (flowery). Correct/wrong (`mic`/`bli`) carved as error-free vs `ema` true, and wrong vs `bonak` bad.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 20 new entries (see `draft/batch-2026-08-13.md`):
+  - `grid`: trust, faith (N); to trust (V); trusting (A). pos_mask=NAV, `u-`. root. grid- family head.
+  - `gridin`: promise, pledge (N); to promise (V). pos_mask=NV, `u-`. bare root, grid- family.
+  - `sylor`: mystery (N); to mystify (V); mysterious (A). pos_mask=NVA, `y-`. root. Redesigned from `sylos` (2-syl root may not end in `-s`).
+  - `syloris`: magic, art of the mysterious (N); magical (A). pos_mask=NA, `y-`. compound-mono (`sylor`+`mlis`, method-to).
+  - `tesar param`: art work (N). pos_mask=N, `e-`. compound-multi (`tesar`+`param`, result).
+  - `hilorus`: exposure (N); to expose, reveal (V); exposed (A). pos_mask=NVA, `u-`. root. Standalone (NOT rus-/ruso- family).
+  - `hilora`: nudity (N); nude (A); to bare, strip (V). pos_mask=NVA, `u-`. root. hilo- family.
+  - `hasti`: forgiveness (N); to forgive (V); forgiving (A). pos_mask=NAV, `o-`. root.
+  - `enlirin`: height, measure of high (N). pos_mask=N, `o-`. compound-mono (`enli`+`rin`, measure).
+  - `amosi`: because of, due to. pos_mask="", `o-`. function ADP. amo- sibling of `amo` (because, PART); noun-phrase reason vs clause reason.
+  - `altem`: personality, character, temperament (N); personal (A). pos_mask=NA, `o-`. root. alt- family head.
+  - `altid`: acting, drama, role-play (N); to act, perform (V); dramatic (A). pos_mask=NVA, `o-`. root. alt- family; performative vs `chap` (a deed).
+  - `altirma`: mask (N); to mask, disguise (V). pos_mask=NV, `e-`. root. alt- family; `e-` (crafted) over family `o-`.
+  - `altor`: role, part, function, persona (N). pos_mask=N, `o-`. root. alt- family.
+  - `alkam`: dressing-up, costume (N); to dress up (V); dressed-up (A). pos_mask=NVA, `o-`. root. Near `klam` (cloth, d=2) accepted.
+  - `alkamer`: accessories, trappings of an outfit (N). pos_mask=N, `e-`. root. alkam- family.
+  - `frunia`: floweriness (N); flowery (A). pos_mask=NA, `u-`. compound-mono (`fru`+`nia`, abundative). Base-inherit `u-`. A-only → NA to preserve prefix.
+  - `tyse`: goodbye (INTERJ); farewell, send-off (N); valedictory (A). pos_mask=NA, `o-`. root. Mixed content+function (cf. `hei`).
+  - `mic`: correctness (N); to correct (V); correct (A); correctly (D). pos_mask=NVAD, `o-`. root. Correct = error-free, distinct from `ema` true.
+  - `bli`: wrongness, error (N); to wrong, err (V); wrong, incorrect (A); wrongly (D). pos_mask=NVAD, `o-`. root. Antonym of `mic`; distinct from `bonak` bad.
+- **`hei`** — added `hello` INTERJ sense via `kilor edit` (mask stays NA). Structural twin of `tyse`.
+
+**Validation:**
+- `python kilor.py add --file draft/batch-2026-08-13.md` — ✅ 20 added, 0 errors (validated against temp DB clones first; `--dry-run` not implemented on `add`)
+- `python kilor.py check` — ✅ no new errors
 
 ## workspace v2.12.0 — 2026-08-12
 
