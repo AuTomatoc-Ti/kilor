@@ -2,8 +2,8 @@
 
 **Module:** Noun Classification & Colour Prefix Morphology
 **Status:** Canonical
-**Last updated:** 2026-08-07
-**Version:** 1.4.0
+**Last updated:** 2026-08-13
+**Version:** 1.5.0
 **Depends on:** `0-foundation/philosophy.md` (dual-concepts), `0-foundation/grammar-syntax.md` §IV-C (closed-class particles), `0-foundation/tone-prosody.md` (tone), `3-subsystems/colour-emotion.md` (emotional override on nouns)
 
 ---
@@ -69,6 +69,8 @@ The connector ensures unambiguous parsing between the two-letter Brown prefix `a
 The apostrophe carries the same disambiguation: `ae'kora` = Brown emotional/proper, `a'ekora` = Red emotional/proper.
 
 > **Exception — Question words:** Question words formed from `wei` with a colour prefix (`awei`, `ewei`, `iwei`, `owei`, `uwei`, `ywei`, `aewei`) are **exempt** from the connector rules. The merged form without a connector is the sole written form for question words. See `2-predication/interrogative.md` §II.
+
+> **Exception — Colour-term closed class:** The dedicated colour nouns `awino` (red), `ewino` (yellow), `aewino` (brown), `owino` (white), `iwino` (blue), `uwino` (green), `ywino` (black) form a **closed class** that developed historically from `{hue-prefix} + wino` (colour). The leading vowel has been **fossilised into the root** — it is a frozen onto-heuristic marker, *not* a live colour proclitic, and never takes the connector or a further prefix. Each colour term is used **bare** as its own noun/adjective: `awino` alone = "red, the colour red", with **no** `a-wino` and **no** re-prefixing (`a-awino`). They are also exempt from the definiteness rule — the colour term is inherently definite/specific as a named colour. The fossilised hue-vowel matches the term's own ontology (Red→`a-`, Yellow→`e-`, Brown→`ae-`, White→`o-`, Blue→`i-`, Green→`u-`, Black→`y-`), preserved in the lexicon as `consensus_prefix` for consistency but not re-attached in use.
 
 ---
 

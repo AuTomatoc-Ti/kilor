@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.9.1
-**Last Updated:** 2026-08-11
+**Current Version:** v2.10.0
+**Last Updated:** 2026-08-13
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.10.0 — 2026-08-13
+
+Added the **colour-term closed class** to the colour-prefix ontology: the dedicated
+colour nouns `awino`/`ewino`/`aewino`/`owino`/`iwino`/`uwino`/`ywino` are lexicalised
+`{hue-prefix}+wino` forms used **bare** (no connector, no re-prefixing), parallel to the
+existing question-word exception.
+
+**Spec:**
+- **`1-nominals/nouns-colour-prefix.md`** v1.4.0→v1.5.0 — Added §II-A "Exception — Colour-term closed class" listing the 7 colour terms as a closed class: leading vowel fossilised into the root (not a live colour proclitic), used bare as noun/adjective, exempt from connector + definiteness rules, consensus_prefix preserved for consistency only.
+
+**Validation:**
+- `python -m kilor check` — ✅ No warnings for any batch word.
 
 ## workspace v2.9.1 — 2026-08-11
 

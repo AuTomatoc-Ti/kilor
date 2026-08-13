@@ -1,4 +1,4 @@
-**Current Version:** v2.13.0
+**Current Version:** v2.14.0
 **Last Updated:** 2026-08-13
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,40 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.14.0 — 2026-08-13
+
+17 new words across two batches (549→566). New families: `sik-` moral/theological
+(sins → salvation/lord/savior), `-ron` life-stage (childhood→elderly, 5 words all `ae-`),
+and the **`wino` colour-term closed class** (`awino` red → `ywino` black, 7 words) —
+lexicalised `{hue-prefix}+wino` forms used bare without a colour prefix (spec
+`nouns-colour-prefix.md` §II-A).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 17 new entries (see `draft/batch-2026-08-13-c.md` + `draft/batch-2026-08-13-d.md`):
+  - Batch C (`sik-` + `-ron` families):
+  - `sik`: sins (N); to sin (V); sinful (A); sinfully (D). pos_mask=NVAD, `y-`. root. sik- family head. Near-collision si/sin/sis pronouns (d=1, different domain/POS — tolerated).
+  - `siklatif`: salvation, deliverance from sin (N). pos_mask=N, `y-`. compound-mono (`sik`+`latif`, result).
+  - `tifor`: lord, sovereign, master (N). pos_mask=N, `o-`. root. Secular (vs `sym` god).
+  - `siklatifor`: savior, deliverer (N). pos_mask=N, `y-`. compound-mono (`sik`+`latif`+`tifor`, relational).
+  - `senok`: middle, mid of a span (N); mid, middle (A). pos_mask=NA, `ae-`. root. ron- family head.
+  - `chelron`: childhood (N). pos_mask=N, `ae-`. compound-mono (`chel`+`ron`, relational).
+  - `senokron`: middle-aged (N). pos_mask=N, `ae-`. compound-mono (`senok`+`ron`, relational).
+  - `nobaron`: elderly, old age (N). pos_mask=N, `ae-`. compound-mono (`noba`+`ron`, relational).
+  - `nibaron`: teenage, adolescence (N). pos_mask=N, `ae-`. compound-mono (`niba`+`ron`, relational).
+  - `logerron`: adult, prime of life (N). pos_mask=N, `ae-`. compound-mono (`loger`+`ron`, relational). Reuses `loger` (strength) = age of strength.
+  - Batch D (`wino` colour-term closed class, all root, NA, self-matching prefix):
+  - `awino`: red, the colour red (N); red, red-coloured (A). pos_mask=NA, `a-`.
+  - `ewino`: yellow (N/A). pos_mask=NA, `e-`.
+  - `aewino`: brown (N/A). pos_mask=NA, `ae-`.
+  - `owino`: white (N/A). pos_mask=NA, `o-`.
+  - `iwino`: blue (N/A). pos_mask=NA, `i-`.
+  - `uwino`: green (N/A). pos_mask=NA, `u-`.
+  - `ywino`: black (N/A). pos_mask=NA, `y-`.
+
+**Validation:**
+- `python -m kilor check` — ✅ No warnings for any batch word.
+- `draft/batch-2026-08-13-c.md`, `draft/batch-2026-08-13-d.md` (temp-clone validated).
 
 ## workspace v2.13.0 — 2026-08-13
 
