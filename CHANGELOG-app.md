@@ -1,4 +1,4 @@
-**Current Version:** v2.14.0
+**Current Version:** v2.15.0
 **Last Updated:** 2026-08-13
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,33 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.15.0 — 2026-08-13
+
+13 new words across two families (566→579): `arma-` affection (dear/wife/darling,
+all `a-`) and the `kir-` writing family (text, paragraph, section, writer, article,
+writing, pen, book, chapter, library). `kirolote` (paragraph) is the first generalised
+**non-human `lote`** collective.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 13 new entries (see `draft/batch-2026-08-13-e.md`):
+  - `arma`: dear, beloved (N); dear, beloved, endearing (A). pos_mask=NA, `a-`. root. arma- family head.
+  - `morsa`: wife, spouse (female) (N). pos_mask=N, `a-`. root. Kinship.
+  - `armati`: darling, sweetheart (N); darling, cherished (A). pos_mask=NA, `a-`. root. arma- family.
+  - `kiro`: text, written content (N); textual, written (A). pos_mask=NA, `o-`. root. kir- family head.
+  - `kirolote`: paragraph, a block of text (N). pos_mask=N, `o-`. compound-mono (`kiro`+`lote`, collective). Non-human lote (head-class o-).
+  - `kiroli`: section, a portion of text (N). pos_mask=N, `o-`. compound-mono (`kiro`+`roli`, relational). = a lot of text.
+  - `kiromae`: writer, author (N). pos_mask=N, `a-`. compound-mono (`kiro`+`maeha`, agent).
+  - `kiroparam`: article, a written piece (N). pos_mask=N, `e-`. compound-mono (`kiro`+`param`, result). Lexicalised.
+  - `kiropar`: writing, the act/process of writing (N). pos_mask=N, `e-`. compound-mono (`kiro`+`par`, process).
+  - `kirotek`: pen, a writing instrument (N). pos_mask=N, `e-`. compound-mono (`kiro`+`tek`, instrument).
+  - `kira`: book, a bound volume (N). pos_mask=N, `e-`. root. kira- book subfamily head. Near-collision kora/lira/okira (d=1, diff domains — tolerated).
+  - `kiraruson`: chapter, a separate section of a book (N). pos_mask=N, `ae-`. compound-mono (`kira`+`ruson`, property).
+  - `kirapos`: library, a book-place (N). pos_mask=N, `ae-`. compound-mono (`kira`+`poska`, location).
+
+**Validation:**
+- `python -m kilor check` — ✅ No warnings for any batch word.
+- `draft/batch-2026-08-13-e.md` (temp-clone validated).
 
 ## workspace v2.14.0 — 2026-08-13
 

@@ -2,8 +2,8 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-05
-**Version:** 1.0.0
+**Last updated:** 2026-08-13
+**Version:** 1.1.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
@@ -98,7 +98,7 @@ The postposed form `naras` follows the standard head-last compounding pattern. T
 
 Takes colour prefix `ae-` (physical boundaries/earth): `ae-fos posia` = "the land of ice."
 
-### G. Collective (Human Nouns) — `noun + -lo` / `noun + lote`
+### G. Collective — `noun + -lo` / `noun + lote`
 
 | Form | Meaning | Rule |
 |---|---|---|
@@ -107,19 +107,32 @@ Takes colour prefix `ae-` (physical boundaries/earth): `ae-fos posia` = "the lan
 | `famae` → `famaelo` | fathers (collective) | Bare root, clean fuse |
 | `song lote` | friends (collective) | End-only `ng` blocks fusion (§II) |
 | `takamae lote` | eaters (collective) | Derived stem — `-mae` already consumed the one-suffix slot |
+| `kirolote` | paragraph (a group of text) | Non-human — full `lote`, head-class prefix |
 
-`lote` is a content root meaning "group, multitude, collective." It forms collective plurals for **human nouns only**, with two surface forms:
+`lote` is a content root meaning "group, multitude, collective." It forms collectives
+with two surface forms, split by whether the base is a human noun undergoing **clean**
+fusion:
 
-- **Fused `-lo`:** When the human noun is a bare root with no prior derivational suffix AND no phonotactic block (end-only/edge-only consonant at the root boundary). The shortened combining form `-lo` fuses directly: `maehalo`, `mamaelo`, `famaelo`.
-- **Multi-word `lote`:** When any of these blockers apply:
-  - **One-suffix-per-word constraint** (`derivational-suffixes.md` §II-A): the noun already carries a derivational suffix (e.g., `takamae` with `-mae`).
-  - **Phonotactic constraint** (§II): the bare root ends in an end-only or edge-only consonant (e.g., `song` with `ng`).
+- **Fused `-lo` — HUMAN NOUNS ONLY, clean fusion only.** When the human noun is a bare
+  root with no prior derivational suffix AND no phonotactic block (end-only/edge-only
+  consonant at the root boundary). The shortened combining form `-lo` fuses directly:
+  `maehalo`, `mamaelo`, `famaelo`. The fused `-lo` is the grammatically special,
+  human-collective marker.
+- **Full `lote` — everything else.** Used for:
+  - **Human nouns where clean fusion is blocked:** one-suffix-per-word constraint
+    (`derivational-suffixes.md` §II-A, e.g. `takamae` with `-mae`), or a phonotactic
+    block (§II, e.g. `song` with `ng`).
+  - **Non-human / any other term** (extended usage): `kirolote` = "group of text" →
+    paragraph, `theslote` = "group of equipment", etc. Here `lote` is the ordinary
+    full word "group", and the whole reads as a general "group of X".
 
 Pronouns are a **closed class** that always fuses `-lo`: `kilo`, `tilo`, `silo`, `nilo`. See `1-nominals/pronouns.md` for the full pronoun paradigm.
 
 **Numeral constraint:** `-lo` / `lote` never co-occurs with numerals. Use either `a-song ro` (three friends) or `song lote` (friends, collective, unspecified number), never `*song lote ro`. This mirrors the Chinese 們/number mutual-exclusion pattern.
 
-Takes colour prefix `a-` (living beings/human): `a-maehalo` = "the people," `a-mamaelo` = "the mothers."
+**Colour prefix:**
+- Human `-lo` / human `lote`: takes `a-` (living beings/human): `a-maehalo` = "the people," `a-mamaelo` = "the mothers."
+- Non-human `lote`: takes the **head/referential class prefix** (the class of the thing being grouped): `kirolote` (text matter) → `o-` (abstract), matching `kiro`.
 
 ---
 

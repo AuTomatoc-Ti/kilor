@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.10.0
+**Current Version:** v2.11.0
 **Last Updated:** 2026-08-13
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.11.0 — 2026-08-13
+
+Generalised the `lote` collective compound to non-human terms: `-lo` remains the
+human-only fused collective marker (clean fusion), while full `lote` now covers human
+blocked-fusion cases AND any non-human group ("group of X", with the head/referential
+class prefix). Enables words like `kirolote` (paragraph = group of text).
+
+**Spec:**
+- **`3-subsystems/compounding.md`** v1.0.0→v1.1.0 — Rewrote §I-G: split `-lo` (human-only, clean fusion) from `lote` (everything else incl. non-human groups); added prefix rule (human `lote`→`a-`, non-human `lote`→head/referential class prefix, e.g. `kirolote`→`o-`).
+
+**Validation:**
+- `python -m kilor check` — ✅
 
 ## workspace v2.10.0 — 2026-08-13
 
