@@ -23,7 +23,7 @@ _MULTICHAR_CORE = {"qy"}  # Core consonants represented by two ASCII characters
 _ALL_MULTICHAR = EDGE_ONLYS | START_ONLYS | END_ONLYS | _MULTICHAR_CORE
 
 S_FINAL_WHITELIST = {
-    "gus", "fos", "aus", "ous", "les", "mangus",
+    "gus", "fos", "thes", "aus", "ous", "les", "mangus",
     "rius", "meus",
     "kas", "hus", "tus", "rakas", "fidak",
     "wes", "mlis",

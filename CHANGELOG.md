@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.11.0
-**Last Updated:** 2026-08-13
+**Current Version:** v2.12.0
+**Last Updated:** 2026-08-14
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.12.0 — 2026-08-14
+
+Extended the `-s`-final phonotactic whitelist to admit **`thes`** (electricity) as a
+bare 1-syllable natural-force content root ending in `-s`, mirroring the existing
+`fos` (ice) precedent. The `-s` is part of the euphonious form, not a grammatical
+suffix, so forcing a redesign would be artificial.
+
+**Spec:**
+- **`0-foundation/phonology.md`** §V-E — added `thes` to `S_FINAL_WHITELIST` in `kilor/phonology.py` (alongside `fos`). Foundation for the `thes-` electricity family (thes, thesau, thesis).
+
+**Validation:**
+- `python -m kilor check` — ✅ No new warnings/errors from the batch (all flagged items pre-existing).
 
 ## workspace v2.11.0 — 2026-08-13
 

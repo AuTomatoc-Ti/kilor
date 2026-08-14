@@ -1,5 +1,5 @@
-**Current Version:** v2.15.0
-**Last Updated:** 2026-08-13
+**Current Version:** v2.16.0
+**Last Updated:** 2026-08-14
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,56 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.16.0 — 2026-08-14
+
+31 new words across three batches (579→610): the kir-/thes- writing & energy cluster,
+the lan-/epilo- shape & summary families, and the bas- combat + emotion/time words.
+New `thes-` electricity family (whitelisted `thes` per the `fos` precedent, see
+`CHANGELOG.md` v2.12.0), `bas-` combat family, `epilo-` summary register, `lan-`
+shape family. `kirosefon` reclassified from bare root to compound (`kiro`+`sefon`,
+text-shape) once `sefon` (shape) was added.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 579→610 (31 new words, see `draft/batch-2026-08-14-{a,b,c}.md`):
+  - **Batch A** (`thes-` electricity + kir- science; +`kirosefon` reclass):
+    - `kiramik`: library science, study of books (N). N, `o-`. compound-mono (`kira`+`mik`, study-of).
+    - `kiromik`: literary studies (N). N, `o-`. compound-mono (`kiro`+`mik`, study-of).
+    - `kirowes`: literature, body of written works (N). N, `o-`. compound-mono (`kiro`+`wes`, collective).
+    - `kirosefon`: font, typeface (N). N, `o-`. **root → reclassified compound-mono** (`kiro`+`sefon`, relational) in batch B.
+    - `kiratek`: printer (N). N, `e-`. compound-mono (`kira`+`tek`, instrument).
+    - `thes`: electricity (N); to electrify (V); electric (A). NVA, `a-`. root. `thes-` head; whitelisted 1-syl `-s` root.
+    - `theskira`: e-book (N). N, `e-`. compound-mono (`thes`+`kira`, relational).
+    - `thespiliu`: electric door (N). N, `e-`. compound-mono (`thes`+`piliu`, relational). User overrode door-head ae-→e-.
+    - `thestek`: electric equipment (N). N, `e-`. compound-mono (`thes`+`tek`, instrument).
+    - `thesau`: lightning (N). N, `a-`. root. `thes-` family.
+    - `thesis`: power/electricity generation (N). N, `a-`. compound-mono (`thes`+`mlis`, method-to). User overrode e-→a-.
+  - **Batch B** (shapes + epilo- + weather/divine):
+    - `lanko`: angle (N); angular (A). NA, `o-`. root. `lan-` family.
+    - `breso`: circle (N); circular (A). NA, `o-`. root.
+    - `lanfo`: square (N); square, quadrangular (A). NA, `o-`. root. `lan-` family.
+    - `rolanko`: triangle (N); triangular (A). NA, `o-`. compound-mono (`ro`+`lanko`, relational).
+    - `sefon`: shape, form (N); to shape (V); shaped (A). NVA, `o-`. root. Head of font.
+    - `elmin`: cloud (N); cloudy (A). NA, `i-`. root. atmospheric family.
+    - `augor`: angel (N); angelic (A). NA, `y-`. root. divine register.
+    - `epilo`: summary, overview (N); to summarize (V); summarised (A). NVA, `o-`. root. `epilo-` head.
+    - `epilobim`: conclusion (N); to conclude (V); concluding (A). NVA, `o-`. compound-mono (single root `epilo`).
+    - `epiloril`: epilogue (N). N, `o-`. compound-mono (single root `epilo`).
+  - **Batch C** (temperament/combat/emotion/time/divine):
+    - `romah`: passive (N/A). NA, `o-`. root.
+    - `sourom`: to receive (V); reception (N). NV, `o-`. root. sou- give/receive family.
+    - `brostima`: to protect (V); protection (N); protective (A). NVA, `o-`. root.
+    - `basto`: battle (N); to battle (V); combative (A). NVA, `a-`. root. `bas-` head.
+    - `basma`: to attack (V); attack (N); attacking (A). NVA, `a-`. root. `bas-` family.
+    - `basrom`: defense (N); to defend (V); defensive (A). NVA, `a-`. root. `bas-` family.
+    - `aeter`: eternal (A); eternity (N); eternally (D). NAD, `o-`. root.
+    - `irae`: wrath, rage, indignation (N); to rage (V); wrathful (A); wrathfully (D). NVAD, `a-`. root. Carve vs losga.
+    - `grase`: to confuse (V); confusion (N); confused (A). NVA, `o-`. root.
+    - `symrilsemik`: mythology (N). N, `o-`. compound-mono (`sym`+`rilse`+`mik`, study-of, 3-root flat).
+
+**Validation:**
+- `python -m kilor check` — ✅ No warnings for any batch word.
+- `draft/batch-2026-08-14-{a,b,c}.md` (temp-clone validated); backups in `data/backup/{database,today}/`.
 
 ## workspace v2.15.0 — 2026-08-13
 
