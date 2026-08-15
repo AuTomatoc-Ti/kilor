@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.12.0
-**Last Updated:** 2026-08-14
+**Current Version:** v2.13.0
+**Last Updated:** 2026-08-15
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,22 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.13.0 — 2026-08-15
+
+Added a canonical **clock / time-of-day** expression rule to the temporal subsystem.
+Clock times assemble from `tlaur` (hour) plus a **postfixed** numeral (numerals §VI-A
+`NOUN — NUM`), with the fraction unit appended after the numeral (`hak` = half-hour,
+`faur` = minute). Day-part words (`choroi` morning, `sarroi` afternoon, `sarrok` predawn)
+and clock phrases **stack clause-initially** in the temporal slot; no separate "at"
+particle is needed. Enables statements like "Let's see at half past nine in the morning"
+(`choroi tlaur wy hak winar sor.`).
+
+**Spec:**
+- **`3-subsystems/temporals.md`** v1.1.0→v1.2.0 — Added §I-E "Clock & Time-of-Day" (clock-phrase assembly + day-part stacking) and a §II worked clock example. Established `tlaur wy hak` = 9:30 (hour-nine-half), `tlaur wy` = 9:00, `tlaur wy faur tai` = 9:05.
+
+**Validation:**
+- N/A — pure rules/spec addition; no grammar or DB change. `python -m kilor check` unaffected.
 
 ## workspace v2.12.0 — 2026-08-14
 

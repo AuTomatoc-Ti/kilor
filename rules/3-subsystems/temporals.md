@@ -2,9 +2,9 @@
 
 **Module:** Temporal Expression
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.0
-**Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E), `3-subsystems/aspect.md`
+**Last updated:** 2026-08-15
+**Version:** 1.2.0
+**Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E), `3-subsystems/aspect.md`, `3-subsystems/numerals.md` (§VI)
 
 ---
 
@@ -68,6 +68,28 @@ Optional aspect particles (`gin`, `ger`, `gou`; see `3-subsystems/aspect.md`) pr
 
 > **Tone:** All bare temporal roots (1–2 syllables) are toneless (flat mid-tone), consistent with the 1–2 syllable toneless rule (`0-foundation/tone-prosody.md` §II-B).
 
+### E. Clock & Time-of-Day
+
+Time-of-day parts are bare nouns that double as "*in/at the X*" temporal adverbs via their adverbial sense:
+
+| Word | Meaning |
+|---|---|
+| `choroi` | morning / in the morning |
+| `sarroi` | afternoon / in the afternoon |
+| `sarrok` | predawn / early morning (00:00–05:00) |
+
+Clock times assemble from **`tlaur`** (hour) plus a numeral, with a fraction unit appended **after** the numeral. The numeral **postfixes** the noun (numerals.md §VI-A `NOUN — NUM`); it never precedes it.
+
+| Meaning | Kilor | Reading |
+|---|---:|---|
+| X o'clock | `tlaur NUM` | hour-nine → 9:00 (`tlaur wy`) |
+| half past X | `tlaur NUM hak` | hour-nine-half → 9:30 (`tlaur wy hak`), `hak` = half-hour |
+| X:MM | `tlaur NUM faur NUM` | hour-nine + minute-five → 9:05 (`tlaur wy faur tai`) |
+
+> ✅ `tlaur wy hak` — "nine o'clock and a half." ❌ `wy tlaur hak` — the numeral must follow the noun.
+
+A clock phrase and a day-part word may **stack clause-initially** in the temporal slot (any relative order); no separate "at" particle is needed — the phrase itself occupies the temporal slot (see §II).
+
 ---
 
 ## II. Syntax
@@ -79,6 +101,8 @@ Temporal words occupy the **clause-initial slot** in the full clause template (s
 ```
 
 > **Example:** `piroi ki kau.` — "I came yesterday." (yesterday I come)
+
+> **Clock example:** `choroi tlaur wy hak winar sor.` — "Let's see at half past nine in the morning." (in-the-morning hour-nine-half see SUGGESTION)
 
 ---
 
