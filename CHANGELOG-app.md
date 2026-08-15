@@ -1,5 +1,5 @@
-**Current Version:** v2.16.0
-**Last Updated:** 2026-08-14
+**Current Version:** v2.17.0
+**Last Updated:** 2026-08-15
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,25 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.17.0 — 2026-08-15
+
+31 new words across three batches (610→641): the `hem-` kinship group, the `lo-` flat→justice
+family, and the education–science family. Kinship words prefix `a-` (living) except `hemsa`
+home (`ae-`); the `lo-` family splits flatness/law `o-` from crafted `-tek` tools `e-` and the
+location `ae-`; education keeps actions `o-`, books/tools `e-`, places `ae-`, agents `-mae`
+`a-`. Notable cells: `loden` (to judge) is V-only so stores no prefix; `lodin` (flat) is NA to
+preserve its `o-`; grandparents reuse `pima` (two-steps-back); `cetik` (science) is carved at
+d=1 from the `mik` study head.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 610→641 (31 new rows; `draft/batch-2026-08-15.md`, `-b`, `-c`):
+  - **A — `hem-` kinship:** `hemo` family (`a-`), `hemsa` home (`ae-`), `hemra` relative (`a-`); `pimafmae`/`pimamae` grandfather/grandmother (comp `pima`+`famae`/`mamae`, relational); `hytam` brother, `lerra` sister, `poboi` baby, `tiha` aunt, `titam` uncle (roots, `a-`).
+  - **B — `lo-` flat/justice:** `lodin` flat (NA, `o-`), `lodam` balance (NVAD, `o-`); `lodintek` spirit level, `lodamtek` libra/scales (instrument, `e-`); `laedin` horizon (root, `ae-`); `loden` to judge (V-only, no prefix), `lodenmae` judge (agent, `a-`), `lodenpar` judgment (process, `o-`), `lodici` trial (root, `o-`), `lodicipos` court (location, `ae-`).
+  - **C — education/science:** `tlowtek` clock (instrument, `e-`); `nomikpos` school (location, `ae-`), `nomikmae` scholar (agent, `a-`); `nofa` learn (NV, `o-`), `nofamae` student (agent, `a-`); `nofsy` teach (NV, `o-`), `nofsykira` textbook (relational §III, `e-`), `nofsymae` teacher (agent, `a-`); `cetik` science (NA, `o-`), `cetikmae` scientist (agent, `a-`).
+
+**Validation:**
+- `python -m kilor check` — ✅ all pre-existing errors/warnings only (nous, erolise isra, austarius, austereus, argonnamae lise); none of the 31 new words appear.
 
 ## workspace v2.16.0 — 2026-08-14
 
