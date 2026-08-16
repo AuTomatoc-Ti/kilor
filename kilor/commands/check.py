@@ -1,7 +1,7 @@
 """Validate all entries in the database."""
 
 from ..db import get_db
-from ..phonology import validate_content_root, count_syllables, split_syllables, to_ipa
+from ..phonology import validate_content_root, count_syllables, split_syllables, to_ipa, validate_mono_compound_boundaries
 from ..schema import compute_pos_mask
 
 
@@ -108,6 +108,13 @@ def cmd_check():
                 ).fetchone()
                 if comp_row and comp_row["is_compound"]:
                     errors.append(f"  {form}: component '{c['component_form']}' is a compound, not a root")
+
+            # Mono-compound boundary phonotactics (Rule 2 / Rule 2b) — surface-based
+            compound_type = w["compound_type"] if "compound_type" in w.keys() else None
+            if compound_type == "mono" and comps:
+                component_forms = [c["component_form"] for c in sorted(comps, key=lambda x: x["position"])]
+                for be in validate_mono_compound_boundaries(component_forms, surface=form):
+                    errors.append(f"  {form}: {be}")
 
         # ── Prefix-mask consistency ──
         # Rule: consensus_prefix is only meaningful when N ∈ pos_mask.

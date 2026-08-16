@@ -6,7 +6,7 @@ import json
 import sqlite3
 
 from ..db import get_db, rebuild_fts, populate_search_text
-from ..phonology import validate_content_root, count_syllables, get_case_forms, split_syllables, to_ipa
+from ..phonology import validate_content_root, count_syllables, get_case_forms, split_syllables, to_ipa, validate_mono_compound_boundaries
 from ..schema import VALID_POS, POS_TO_INFLECTION, compute_pos_mask, COMPOUND_PATTERN_MAP
 
 SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -327,6 +327,16 @@ def cmd_add(filepath):
             _resolve_compound_type(entry, root, english, errors)
         if not type_ok:
             continue
+
+        # ── Mono-compound boundary phonotactics (Rule 2 / Rule 2b) ──
+        if compound_type_val == "mono":
+            components = entry.get("components", [])
+            if components:
+                boundary_errors = validate_mono_compound_boundaries(components, surface=root)
+                for be in boundary_errors:
+                    errors.append(f"'{root}' ({english}): {be}")
+                if boundary_errors:
+                    continue
 
         # ── Meaning array validity (blocking) ──
         if entry.get("_meaning_array_err"):

@@ -2,8 +2,8 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-13
-**Version:** 1.1.0
+**Last updated:** 2026-08-16
+**Version:** 1.2.0
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
@@ -209,6 +209,31 @@ When the morpheme boundary would place an edge-only, end-only, or start-only con
 | `*klushlu` | `klush lu` | Edge-only `sh` at word-medial position |
 | `*songius` | `song rius` | End-only `ng` + full-root form `rius` |
 | `*auromlar` | `auro mlar` | Start-only `ml` at word-medial position |
+
+**Exception — Rule 2b Boundary Vowel-Repair Exemption (general).** A positionally-restricted consonant (start-only, end-only, or edge-only) **may** occupy a word-medial slot in a mono compound **if and only if** the adjacent element of the compound supplies a vowel immediately on the side the consonant's positional class forbids. The vowel "opens" the sealed edge, re-syllabifying the consonant across the morpheme seam.
+
+**The general law — the repair vowel sits on the *restricted* side:**
+
+| Restricted consonant | Its restriction | Repair vowel goes... | Because |
+|:---|:---|:---|:---|
+| **Start-only** onset | may not be preceded by a vowel | **before** it (end of modifier) | a vowel in preceding position is the only thing its class forbids, so supplying exactly that fixes it |
+| **End-only** coda | may not be followed by a vowel | **after** it (start of head) | likewise — the forbidden side is the following position |
+| **Edge-only** onset *or* coda | may not appear word-medially at all | on whichever side it acts (onset → before; coda → after) | it is banned from medial placement regardless of side, so a vowel on its active side legitimises that placement |
+
+**Symmetric / covers all cases:** the repair is direction-agnostic at the abstract level — a restricted consonant is legal medially *iff* it is immediately vowel-adjacent on the side it would otherwise be sealed from. Any start-only, end-only, or edge-only consonant satisfies this the same way; there is no case-specific rule. Both sides may be bridged at once (a restricted coda followed by a restricted onset, each with its repair vowel). Only a boundary with **no** vowel on the required side stays blocked. This mirrors the `sl` exemption for numerals (`numerals.md §II-B`).
+
+| Exemplar forms (each shown once to illustrate the general law) | Parse | Allowed? |
+|:---|:---|:---|
+| `eli` + `mlis` = `elimlis` | start-only `ml` onset; `‑i` before it | ✅ |
+| `kop` + `mlar` = `kop mlar` | start-only `ml` onset; no vowel before (`p`) | ❌ → multi |
+| `song` + `eli` = `songeli` | end-only `ng` coda; `‑e` after it | ✅ |
+| `song` + `lise` = `song lise` | end-only `ng` coda; no vowel after (`l`) | ❌ → multi |
+| `klush` + `eli` = `klusheli` | edge-only `sh` coda; `‑e` after it | ✅ |
+| `klush` + `lu` = `klush lu` | edge-only `sh` coda; no vowel after (`l`) | ❌ → multi |
+
+**Elision note — a restricted digraph that does not survive in the surface is not a violation.** Where a head fuses via an abbreviating derivational suffix or combining head, the stored *surface* may drop the restricted digraph — e.g. `mlis` → method-to `-is` (`wibomis`, `thesis`), `tlar` → `‑tar` (the seasons `gustar`, `choumar`, `fossar`, `apar`). Since no restricted consonant actually occupies a medial slot in the stored form, these are Rule-1 / composite-headed words and must not be re-flagged.
+
+**Enforcement:** `kilor/phonology.py` `validate_mono_compound_boundaries(components, surface)` — surface-aware and direction-general — plus `add.py` / `check.py` implement Rule 2/2b. It classifies each restricted letter by its morphemic role (onset vs coda), checks the stored surface, and blocks only when the digraph is actually medial with no repair vowel on the required side.
 
 ---
 

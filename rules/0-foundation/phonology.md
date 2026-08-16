@@ -153,7 +153,7 @@ They fall into two families:
 | **pr** | /pɹ/ | `p` released into approximant r | **pr**oud |
 | **sr** | /sɹ/ | `s` released into approximant r | S**ri** Lanka |
 
-> **Compounding restriction:** These start-only consonants are restricted to **absolute word-initial** position. A root beginning with a start-only consonant may not appear as the second or later element in a mono-word compound (where it would become word-medial). Such combinations must use multi-word compounds instead. Roots beginning with a core consonant (see §IV-A) may appear in any position within a compound.
+> **Compounding restriction:** These start-only consonants are restricted to **absolute word-initial** position. A root beginning with a start-only consonant may not appear as the second or later element in a mono-word compound (where it would become word-medial). Such combinations must use multi-word compounds instead. **Exception — Rule 2b boundary vowel-repair (general):** *any* positionally-restricted consonant (start-only, end-only, or edge-only) may appear word-medially at a compound boundary when a vowel adjoins it immediately on the side its positional class forbids — start-only/edge-only onset ← the modifier-final vowel before it; end-only/edge-only coda → the head-initial vowel after it. See `3-subsystems/compounding.md` §III Rule 2b. Roots beginning with a core consonant (see §IV-A) may appear in any position within a compound.
 
 > **Mid-word appearance:** The sequences `kl`, `tl`, `bl`, `ml`, `kr`, `br`, `gr`, `fr`, `pr`, `sr` appearing mid-word are always two separate core consonants, never the single start-only letter. `qy` appearing mid-word is two separate core consonants (`q` + `y`), never the single Kilor letter. See §IV-E.
 

@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.13.0
-**Last Updated:** 2026-08-15
+**Current Version:** v2.14.0
+**Last Updated:** 2026-08-16
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,31 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.14.0 — 2026-08-16
+
+Added a **general boundary vowel-repair exemption** (Rule 2b) to compounding,
+covering ALL positional consonant classes uniformly: a positionally-restricted
+consonant (start-only, end-only, or edge-only) may occupy a word-medial compound
+slot if and only if a vowel adjoins it immediately on the side its class forbids —
+start-only/edge-only onset ← modifier-final vowel before; end-only/edge-only coda →
+head-initial vowel after. The repair is symmetric and class-general (no
+case-specific carve, mirroring the `sl` numeral exemption); only a boundary with
+no vowel on the required side stays a Rule-2 block. A restricted digraph that is
+elided in the stored surface (`mlis`→`-is`, `tlar`→`-tar`) is not a violation.
+Enforced, surface-aware, in the validator + `add`/`check`.
+
+**Spec:**
+- **`3-subsystems/compounding.md`** v1.1.0→v1.2.0 — Added §III Rule 2b as a general boundary vowel-repair law (restriction-by-class table + exemplar table + elision note), replacing the earlier onset-only bridge.
+- **`0-foundation/phonology.md`** v2.0.0 (unchanged ver) — §IV-C compounding-restriction note now documents the general (class-covering) repair.
+
+**Backend:**
+- **`kilor/phonology.py`** — Added `validate_mono_compound_boundaries(components, surface)` (surface-aware, direction-general), `_strip_tone`, `_leading_letter`, `_trailing_letter`, `_validate_mono_surface`.
+- **`kilor/commands/add.py`** — `cmd_add` validates mono-compound boundaries against the stored surface before insert (blocking error).
+- **`kilor/commands/check.py`** — `cmd_check` runs the boundary validator over stored mono-compounds.
+
+**Validation:**
+- `python -m kilor check` — ✅ only pre-existing errors/warnings (nous, erolise isra, austarius, austareus, argonnamae lise); no new boundary-rule errors. Verified: `elimlis`/`songeli`/`klusheli` pass via repair; `kop mlar`/`song lise`/`klush lu` still blocked; existing season & suffix words (`gustar`, `choumar`, `fossar`, `apar`, `wibomis`, `thesis`, `gauslokas`) unaffected by elision.
 
 ## workspace v2.13.0 — 2026-08-15
 

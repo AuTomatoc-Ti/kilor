@@ -187,6 +187,140 @@ def validate_content_root(root, is_func=False, is_compound=False):
     return True, ""
 
 
+# ── Compound-boundary positional check (compounding.md §III Rule 2 / Rule 2b) ──
+#
+# Rule 2 (compounding.md §III): in a mono-word compound, a start-only, end-only,
+# or edge-only consonant may NOT appear in a non-peripheral (medial) position —
+# that forces a multi-word compound instead.
+#
+# Rule 2b — Boundary Vowel-Repair Exemption (general, covers ALL classes):
+# a positionally-restricted consonant (start-only, end-only, or edge-only) is
+# legal in a medial compound slot if and only if a vowel immediately adjoins it
+# on the side its positional class forbids — i.e. the repair vowel sits on the
+# consonant's restricted side, re-syllabifying it across the seam:
+#   - start-only / edge-only ONSET ← needs the modifier-final vowel BEFORE it
+#   - end-only / edge-only CODA → needs the head-initial vowel AFTER it
+# The repair is symmetric and class-general (mirrors numerals.md §II-B `sl`).
+# Only a boundary with no vowel on the required side stays a Rule-2 block.
+#
+# Surface-elision: a restricted digraph that does not survive in the stored
+# surface (abbreviating suffix/combining heads like tlar→tar, mlis→is) does not
+# occupy a medial slot at all, so it is not flagged.
+#
+# SSOT: rules/0-foundation/phonology.md §IV (positional classes), §IV-E (mid-word
+# disambiguation); rules/3-subsystems/compounding.md §III Rule 2/2b.
+
+def _strip_tone(word):
+    return word.replace("j", "").replace("v", "").replace("-", "")
+
+
+def _leading_letter(word):
+    """Return the first Kilor letter of word (longest multichar match wins)."""
+    w = _strip_tone(word)
+    for fc in sorted(_ALL_MULTICHAR, key=len, reverse=True):
+        if w.startswith(fc):
+            return fc
+    return w[0] if w else ""
+
+
+def _trailing_letter(word):
+    """Return the last Kilor letter of word (longest multichar match wins)."""
+    w = _strip_tone(word)
+    for lc in sorted(_ALL_MULTICHAR, key=len, reverse=True):
+        if w.endswith(lc):
+            return lc
+    return w[-1] if w else ""
+
+
+def _validate_mono_surface(components, surface):
+    """Validate a mono compound's boundaries against Rule 2 / Rule 2b (general).
+
+    Uses COMPONENTS to classify each restricted letter by morphemic role:
+      - first letter of a non-first component → ONSET → needs a vowel BEFORE it
+      - last letter of a non-last component → CODA → needs a vowel AFTER it
+    Uses the SURFACE only to suppress elided heads (e.g. tlar->tar, mlis->is)
+    where the restricted digraph never actually appears word-medially.
+
+    Returns a list of error message strings (empty if boundary-legal).
+    """
+    errors = []
+    VOWEL_LIKE = VOWELS | {"ae"}
+    surface_clean = _strip_tone(surface).lower()
+
+    for i in range(len(components)):
+        comp = components[i]
+
+        # --- Onset role: first letter of a NON-first component ---
+        if i >= 1:
+            lead = _leading_letter(comp).lower()
+            if lead in START_ONLYS or lead in EDGE_ONLYS:
+                # Only enforce if the digraph actually survives in the surface
+                if lead in surface_clean:
+                    modifier = components[i - 1]
+                    mod_final = _trailing_letter(modifier).lower()
+                    if mod_final not in VOWEL_LIKE:
+                        prev_seg = ""
+                        b = surface_clean.find(lead)
+                        if b - 1 >= 0:
+                            prev_seg = surface_clean[b - 1]
+                        errors.append(
+                            f"[Rule 2/2b] mono compound '{surface}': {lead} is the "
+                            f"{'start-only' if lead in START_ONLYS else 'edge-only'} onset "
+                            f"of '{comp}' but the modifier '{modifier}' is not vowel-final — "
+                            f"needs a vowel BEFORE it (prev='{prev_seg}'); use multi-word or "
+                            f"a vowel-final modifier"
+                        )
+
+        # --- Coda role: last letter of a NON-last component ---
+        if i < len(components) - 1:
+            trail = _trailing_letter(comp).lower()
+            if trail in END_ONLYS or trail in EDGE_ONLYS:
+                if trail in surface_clean:
+                    head = components[i + 1]
+                    head_init = head.lower()[0] if head else ""
+                    if head_init not in VOWEL_LIKE:
+                        b = surface_clean.find(trail)
+                        nxt = surface_clean[b + len(trail) : b + len(trail) + 1]
+                        errors.append(
+                            f"[Rule 2/2b] mono compound '{surface}': {trail} is the "
+                            f"{'end-only' if trail in END_ONLYS else 'edge-only'} coda "
+                            f"of '{comp}' but the head '{head}' is not vowel-initial — "
+                            f"needs a vowel AFTER it (next='{nxt}'); use multi-word or a "
+                            f"vowel-initial head"
+                        )
+    return errors
+
+
+def validate_mono_compound_boundaries(components, surface=None):
+    """Validate the internal morpheme boundaries of a mono-word compound.
+
+    Components are the stored roots (by form) in order; `surface` is the fused
+    word as actually stored (may elide letters, e.g. tlar→tar, mlis→is).
+
+    Rule 2b (general, covers all positional classes): a positionally-restricted
+    consonant at a compound boundary is legal mono when a vowel adjoins it on the
+    side its morphemic role needs:
+      - ONSET (head-initial start/edge-only) ← modifier-final vowel BEFORE
+      - CODA (modifier-final end/edge-only) → head-initial vowel AFTER
+    A restricted digraph that is elided in the surface (abbreviated suffix/
+    combining head like `tlar`→`tar`, `mlis`→`is`) is not a medial-slot violation.
+
+    Args:
+        components: list of component root forms, in compound order.
+        surface: the stored fused surface form (or None → concatenates components).
+
+    Returns:
+        list of error message strings (empty if the compound is boundary-legal).
+    """
+    if len(components) < 2:
+        return []
+
+    if surface is None:
+        surface = "".join(_strip_tone(c) for c in components)
+
+    return _validate_mono_surface(components, surface)
+
+
 # ── Case-Form Generation ──────────────────────────────────────────────────────
 
 # Pronouns use invariant reduced case endings (SSOT: rules/1-nominals/pronouns.md §III)
