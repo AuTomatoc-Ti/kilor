@@ -1,5 +1,5 @@
-**Current Version:** v2.17.0
-**Last Updated:** 2026-08-15
+**Current Version:** v2.18.0
+**Last Updated:** 2026-08-16
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,28 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.18.0 — 2026-08-16
+
+31 new words across three sets (641→672): the `wi-` numeracy/mathematics family, the
+reckoning–accounting–wisdom block, and the `ek-` leg/body family with bones. The `wi-`
+numeracy register uses abstract `o-` for concepts/operations, crafted `e-` for `-tek`
+instruments (calculator/computer), `a-` for `-mae` agents, and inherits `o-`/`e-` from the
+`mik`/`rum`/`kira` heads. Notable cells: `wimarem` (reckoning = count-the-former `wima+rem`)
+is NV; `imuwimarem` (settle scores later) is V-only so stores no prefix; the 3-root flattens
+`wimonikmae`/`wimaremmae`/`wimakirmae`/`thyramikmae` double as compounds; `wimakirmae`
+(accountant, `wima+kira+maeha`) is carved from `wimaremmae` (reckoner, `wima+rem+maeha`).
+`thyram` wisdom carries `e-` to hug the `thy-` thinking family. All `ek-` leg/body nouns and
+bones take external-body `u-` (bones override to `u-`, not internal `a-`).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 641→672 (31 new rows; `draft/batch-2026-08-16.md`):
+  - **A — `wi-` mathematics:** `wimon` number, `wibom` calculate (NV), `wibar` compute (NV) (roots, `o-`); `wimonik` mathematics, `wibomis` arithmetic (`wibom`+`mlis`, method-to), `wibomik` HELD, `wibomtek` calculator (instrument, `e-`), `wiborum` plan (`wibom`+`rum` relational, `o-`), `wibartek` computer (instrument, `e-`), `wimonikmae` mathematician (3-root `wimon`+`mik`+`maeha`, agent, `a-`).
+  - **B — reckoning/accounting/wisdom:** `wima` count (NV, `o-`); `wimarem` reckoning (`wima`+`rem`, NV, `o-`), `imuwimarem` settle-scores-later (`imu`+`wima`+`rem`, V, no prefix), `wimakira` account/ledger (`wima`+`kira`, `e-`), `wimaremmae` reckoner (3-root, agent, `a-`), `wimakirmae` accountant (3-root, agent, `a-`); `thyram` wisdom (NA, `e-`), `thyramik` philosophy (study-of, `o-`), `thyramikmae` philosopher (3-root, agent, `a-`), `thymae` thinker (`thy`+`maeha`, agent, `a-`); `wita` live (NV, `a-`); `paeti` turn/twist (NVAD, `o-`).
+  - **C — `ek-` leg/body (all `u-`):** `eknim` leg/to-walk (NV), `ekmut` thigh, `eksim` knee, `ekdor` calf, `ekpae` ankle, `ekbod` feet, `ekhil` toe (bare root = foot-finger), `okre` bone, `ekdorokre` shinbone (`ekdor`+`okre`), `ekmutokre` femur (`ekmut`+`okre`, relational).
+
+**Validation:**
+- `python -m kilor check` — ✅ all pre-existing errors/warnings only (nous, erolise isra, austarius, austareus, argonnamae lise); none of the 31 new words appear.
 
 ## workspace v2.17.0 — 2026-08-15
 
