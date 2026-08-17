@@ -346,7 +346,16 @@ def cmd_add(filepath):
         # ── Auto-compute phonology fields ──
         syl = str(count_syllables(root))
         ipa_val = to_ipa(root)
-        syl_division = ".".join(split_syllables(root))
+        # Multi-word compounds: syllabify each element separately (a word
+        # boundary is a real boundary — concatenating would destroy the final
+        # coda position of an element, e.g. 'aurk pos' → 'urkpos'). Mono words
+        # and roots syllabify as a single token.
+        if " " in root:
+            syl_division = " ".join(
+                ".".join(split_syllables(word)) for word in root.split()
+            )
+        else:
+            syl_division = ".".join(split_syllables(root))
 
         mask = (entry.get("mask", "") or "").upper()
         notes = entry.get("notes", entry.get("decision", "root"))

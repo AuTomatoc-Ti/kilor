@@ -1,5 +1,5 @@
-**Current Version:** v2.18.0
-**Last Updated:** 2026-08-16
+**Current Version:** v2.19.0
+**Last Updated:** 2026-08-17
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,30 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.19.0 — 2026-08-17
+
+31 new words across three batches (672→703): the `ek-` leg & movement family (walk-actions),
+the `hil-`/`hin-` hand & digit family, and a weather/household/inspiration/club set. The `ek-`
+movement verbs carry external-body `u-` like the leg nouns, except `ekmae` (pedestrian) which
+takes person-class `a-` (user-locked over the family lean). The hand/digit words all take `u-`
+(matching `hinar` hand) as bare roots in a fossilised `hil-`/`hin-` onset. Weather phenomena
+`auwae`/`tlerahup` sit in the atmospheric `i-` family; household devices (`shaliklamtek`,
+`marip`, `limarip`) are crafted `e-`; inspiration cluster (`urim`/`ureti`) is abstract `o-`
+with `urimlise` at `o-`; `aurk` club is social-group `a-` and `aurk pos` club house is
+location `ae-`. Also fixed a backend bug where multi-word compounds were syllabified as one
+concatenated token (breaking `aurk pos` → `aurkpos`); they now syllabify per element.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 672→703 (31 new rows; `draft/batch-2026-08-17.md`):
+  - **A — `ek-` leg & movement:** `ekmae` pedestrian (root, `a-`, person-class); `ekke` lame (NA, `u-`); `ektoi` run (NV), `ekber` jump (NV), `ekfir` sprint (NV), `ekkae` kneel (NV), `eklun` crawl (NV), `ekkor` step on (NV), `ekkup` stomp (NV), `ekkum` squat (NV) — all roots, `u-`.
+  - **B — `hil-`/`hin-` hand & digit (all `u-`):** `hinhil` finger, `hilfa` index finger/to point (NV), `blap` clap (NV), `hilmodir` thumb, `hilsenok` middle finger, `hilfoidir` ring finger, `hildoir` little finger, `hinod` palm, `hinat` wrist, `hilpae` elbow — all bare roots (fossilised `hil-`/`hin-` onset, not compounds; `hilsenok`/`hildoir` read "mid/little-digit" but `hil` is not a stored root).
+  - **C — weather/household/inspiration/club:** `auwae` weather (root, `i-` N); `tlerahup` thunderstorm (`tlera`+`hup`, relational, `i-`); `shali` washing (NV, `i-`); `shaliklamtek` washing machine (3-root `shali`+`klam`+`tek`, instrument, `e-`); `marip` spout (root, `e-`); `limarip` faucet (`lira`+`marip`, relational, `e-`, lira elides to `li-`); `urim` inspire (NV, `o-`); `urimlise` revelation (`urim`+`lise`, ordained-occurrence, `o-`); `ureti` enlightenment (root, `o-`); `aurk` club (root, `a-`); `aurk pos` club house (multi `aurk`+`poska`, location, `ae-`).
+- **`kilor/commands/add.py`** — Multi-word compounds are now syllabified per element (`" ".join(... for word in root.split())`) instead of as one concatenated token. Previously `aurk pos` was concatenated to `aurkpos`, which breaks at a medial coda cluster (e.g. `rk|p`) — `aurk` is phonotactically valid (§IV-D) but failed to insert. No spec change; aligns with `check.py` which already split multi-word for IPA.
+
+**Validation:**
+- `python -m kilor check` — ✅ all pre-existing errors/warnings only (nous, erolise isra, austarius, austareus, argonnamae lise, stale non-noun prefixes); none of the 31 new words appear.
+- `CHANGELOG.md` (rules) intentionally NOT updated — pure-lexicon batch + one code fix, no spec/grammar change.
 
 ## workspace v2.18.0 — 2026-08-16
 
