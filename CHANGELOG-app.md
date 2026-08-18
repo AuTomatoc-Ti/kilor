@@ -1,5 +1,5 @@
-**Current Version:** v2.19.0
-**Last Updated:** 2026-08-17
+**Current Version:** v2.20.0
+**Last Updated:** 2026-08-19
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,31 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.20.0 — 2026-08-19
+
+30 new words across three sets (703→733): an era/time & tactile-quality set, a birds/animals
+& education set, and a brain/freedom/coast/waterproofing set. Notable cells: the `-rech`
+era family (modern/ancient/future) compounds are `ae-` (head-inherit `rech`), with `imerech mae`
+(ancient people) stored **multi-word** and `a-` because mono `imerechmae` violates Rule 2b
+(`ch` edge-only coda + consonant-initial head). Tactile qualities split by class: `elmaf`
+light (o-) / `gytan` heavy (o-) but `gilen` hard takes mineral-family `y-` (user override).
+Bird parts `fech`/`fecir` (feather/wing) are `u-` (body-class) while the bird/animal nouns
+themselves are `a-`. `sympei` grail = `sym`+`pei` takes divine `y-`. `turete` territory carves
+a distinct niche from `poskae` country. Waterproofing compounds all take `o-` (head `ilat`
+property) — including `ilathes` (insulation, `ilat`+`thes` with a `-t + th-` surface merge).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 703→733 (30 new rows; `draft/batch-2026-08-19.md`):
+  - **A — era/time & tactile:** `rech` era (root, NA, `ae-`); `imarech` modern, `imerech` ancient, `imurech` future era (all mono `ima/ime/imu`+`rech`, NA, `ae-`); `imerech mae` ancient people (multi `ime`+`rech`+`maeha`, agent, N, `a-`); `elmaf` light-in-weight (root, NA, `o-`); `gilen` hard (root, NA, `y-`); `gytan` heavy (root, NAD, `o-`); `redut` meet (root, NV, `o-`); `taldong` bell (root, N, `e-`).
+  - **B — birds/animals/education/territory/food:** `fech` feather, `fecir` wing (roots, N, `u-`); `eflom` eagle, `gouwu` chicken, `blawu` sheep (roots, N, `a-`); `nofil` educate (root, NV, `o-`); `nofilmae` educator (`nofil`+`maeha`, agent, N, `a-`); `turete` territory (root, N, `ae-`); `sympei` grail (`sym`+`pei`, relational, N, `y-`); `oma` meat (root, N, `a-`).
+  - **C — brain/freedom/coast/waterproofing:** `grom` brain (root, N, `u-`); `feirah` free (root, NAD, `o-`); `feirahrin` degree of freedom (`feirah`+`rin`, degree, N, `o-`); `elli` coast, `ellash` shore (roots, N, `ae-`); `ilat` proof/resistant (root, NA, `o-`); `ilatlira` waterproof, `ilatfora` fireproof, `ilathes` insulation (mono `ilat`+material, relational, NA, `o-`); `ilathewes` insulator (mono `ilat`+`thes`+`wes`, collective, N, `o-`).
+- **`kilor/phonology.py`** — **Rule 2b generalized: the boundary vowel-adjacency decision is now made on the stored SURFACE for both onset AND coda**, not on the raw component edges. The onset test previously read the modifier's *component* final (e.g. `ilat`→`t` = not vowel) even when a surface merge had already bridged it — wrongly blocking `ilat`+`thes`=`ilathes`. It now locates the restricted digraph in the surface and checks the adjacent character (preceding for onset, following for coda). This admits modifier-side fusion (`-t + th- → th`) alongside the existing head-side elision (`tlar→tar`, `mlis→is`). The genuinely-unbridged forms (`klushlu`, `songlise`, `kopmlar`) still block. Spec updated in `rules/3-subsystems/compounding.md` (Surface-adjacency law + `ilathes` exemplar).
+
+**Validation:**
+- `python -m kilor check` — ✅ all pre-existing errors/warnings only (nous, erolise isra, austarius, austareus, argonnamae lise, stale non-noun prefixes); none of the 30 new words appear.
+- Generalized Rule 2b unit-probed directly against `validate_mono_compound_boundaries`: `ilathes`/`ilathewes` now pass; `klushlu`/`songlise`/`kopmlar` still block.
+- `CHANGELOG.md` (rules) — NOT yet updated; this batch changed a spec file (`compounding.md` Rule 2b), so a rule-side entry is warranted there when you ask.
 
 ## workspace v2.19.0 — 2026-08-17
 

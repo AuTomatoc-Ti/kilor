@@ -230,10 +230,16 @@ When the morpheme boundary would place an edge-only, end-only, or start-only con
 | `song` + `lise` = `song lise` | end-only `ng` coda; no vowel after (`l`) | ❌ → multi |
 | `klush` + `eli` = `klusheli` | edge-only `sh` coda; `‑e` after it | ✅ |
 | `klush` + `lu` = `klush lu` | edge-only `sh` coda; no vowel after (`l`) | ❌ → multi |
+| `ilat` + `thes` = `ilathes` | edge-only `th` onset; modifier-final `t` merges with `th`, leaving `‑a` before `th` | ✅ |
 
-**Elision note — a restricted digraph that does not survive in the surface is not a violation.** Where a head fuses via an abbreviating derivational suffix or combining head, the stored *surface* may drop the restricted digraph — e.g. `mlis` → method-to `-is` (`wibomis`, `thesis`), `tlar` → `‑tar` (the seasons `gustar`, `choumar`, `fossar`, `apar`). Since no restricted consonant actually occupies a medial slot in the stored form, these are Rule-1 / composite-headed words and must not be re-flagged.
+**Surface-adjacency law (the decision is made on the *stored surface*, symmetric for onset and coda).** A restricted digraph is legal medially *iff* a vowel immediately adjoins it on its forbidden side **in the surface**. The vowel can come from either morpheme — or from a **surface merge that erases the offending segment**. Two ways a restricted digraph escapes a medial-slot violation:
 
-**Enforcement:** `kilor/phonology.py` `validate_mono_compound_boundaries(components, surface)` — surface-aware and direction-general — plus `add.py` / `check.py` implement Rule 2/2b. It classifies each restricted letter by its morphemic role (onset vs coda), checks the stored surface, and blocks only when the digraph is actually medial with no repair vowel on the required side.
+- **Head-side elision** — an abbreviating derivational suffix or combining head drops the digraph from the surface: `mlis` → method-to `-is` (`wibomis`, `thesis`), `tlar` → `‑tar` (the seasons `gustar`, `choumar`, `fossar`, `apar`). Since no restricted consonant occupies a medial slot, no violation.
+- **Modifier-side fusion** — a modifier-final consonant merges into a restricted onset and thereby leaves a vowel directly before it: `ilat` + `thes` = `ilathes` (the `‑t` of `ilat` coalesces into the `th` onset, so the surface reads `…a` `th`). The onset `th` is thus vowel-bridged and legal mono.
+
+Both are covered by the same surface-adjacency test: locate the restricted digraph's occurrence in the stored surface and check the immediately preceding (onset) / following (coda) character for a vowel. What the *raw* component edges were is irrelevant — only the actual stored form's adjacency decides.
+
+**Enforcement:** `kilor/phonology.py` `validate_mono_compound_boundaries(components, surface)` — surface-aware and direction-general — plus `add.py` / `check.py` implement Rule 2/2b. It classifies each restricted letter by its morphemic role (onset vs coda) from the *components*, then tests vowel-adjacency on the *stored surface*, and blocks only when the digraph is actually medial with no repair vowel on the required side. (Generalized 2026-08-19: the onset test previously read the modifier's *component* final; it now reads the surface character before the onset, mirroring the coda side — this is what admits the modifier-side `‑t + th‑ → th` merge.)
 
 ---
 

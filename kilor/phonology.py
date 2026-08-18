@@ -235,11 +235,16 @@ def _trailing_letter(word):
 def _validate_mono_surface(components, surface):
     """Validate a mono compound's boundaries against Rule 2 / Rule 2b (general).
 
-    Uses COMPONENTS to classify each restricted letter by morphemic role:
-      - first letter of a non-first component → ONSET → needs a vowel BEFORE it
-      - last letter of a non-last component → CODA → needs a vowel AFTER it
-    Uses the SURFACE only to suppress elided heads (e.g. tlar->tar, mlis->is)
-    where the restricted digraph never actually appears word-medially.
+    Uses COMPONENTS only to classify each restricted letter's MORPHEMIC ROLE
+    (which component it belongs to): first letter of a non-first component →
+    ONSET (needs a vowel BEFORE it); last letter of a non-last component → CODA
+    (needs a vowel AFTER it). The vowel-adjacency DECISION is made on the actual
+    SURFACE, not the raw component edge — because a restricted digraph that is
+    surface-elided or surface-bridged (e.g. `tlar`→`tar`, `mlis`→`is`,
+    `ilat`+`thes`→`ilathes` where the merged `t`+`th` leaves a vowel before `th`)
+    occupies no medial slot. So a restricted onset is legal iff a vowel
+    immediately precedes its surface occurrence; a restricted coda iff a vowel
+    immediately follows it.
 
     Returns a list of error message strings (empty if boundary-legal).
     """
@@ -256,37 +261,32 @@ def _validate_mono_surface(components, surface):
             if lead in START_ONLYS or lead in EDGE_ONLYS:
                 # Only enforce if the digraph actually survives in the surface
                 if lead in surface_clean:
-                    modifier = components[i - 1]
-                    mod_final = _trailing_letter(modifier).lower()
-                    if mod_final not in VOWEL_LIKE:
-                        prev_seg = ""
-                        b = surface_clean.find(lead)
-                        if b - 1 >= 0:
-                            prev_seg = surface_clean[b - 1]
+                    b = surface_clean.find(lead)
+                    prev_seg = surface_clean[b - 1] if b - 1 >= 0 else ""
+                    if prev_seg not in VOWEL_LIKE:
+                        modifier = components[i - 1]
                         errors.append(
                             f"[Rule 2/2b] mono compound '{surface}': {lead} is the "
                             f"{'start-only' if lead in START_ONLYS else 'edge-only'} onset "
-                            f"of '{comp}' but the modifier '{modifier}' is not vowel-final — "
-                            f"needs a vowel BEFORE it (prev='{prev_seg}'); use multi-word or "
-                            f"a vowel-final modifier"
+                            f"of '{comp}' but nothing before it in the surface is a vowel "
+                            f"(prev='{prev_seg}') — use multi-word or a vowel-final modifier"
                         )
 
         # --- Coda role: last letter of a NON-last component ---
         if i < len(components) - 1:
             trail = _trailing_letter(comp).lower()
             if trail in END_ONLYS or trail in EDGE_ONLYS:
+                # Only enforce if the digraph actually survives in the surface
                 if trail in surface_clean:
-                    head = components[i + 1]
-                    head_init = head.lower()[0] if head else ""
-                    if head_init not in VOWEL_LIKE:
-                        b = surface_clean.find(trail)
-                        nxt = surface_clean[b + len(trail) : b + len(trail) + 1]
+                    b = surface_clean.find(trail)
+                    nxt = surface_clean[b + len(trail) : b + len(trail) + 1]
+                    if nxt not in VOWEL_LIKE:
+                        head = components[i + 1]
                         errors.append(
                             f"[Rule 2/2b] mono compound '{surface}': {trail} is the "
                             f"{'end-only' if trail in END_ONLYS else 'edge-only'} coda "
-                            f"of '{comp}' but the head '{head}' is not vowel-initial — "
-                            f"needs a vowel AFTER it (next='{nxt}'); use multi-word or a "
-                            f"vowel-initial head"
+                            f"of '{comp}' but nothing after it in the surface is a vowel "
+                            f"(next='{nxt}') — use multi-word or a vowel-initial head"
                         )
     return errors
 
