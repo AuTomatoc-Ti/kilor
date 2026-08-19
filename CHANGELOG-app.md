@@ -1,4 +1,4 @@
-**Current Version:** v2.21.0
+**Current Version:** v2.22.0
 **Last Updated:** 2026-08-19
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,32 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.22.0 — 2026-08-19
+
+30 new words across three sets (733→763): a `klai-` violence/disaster + `woi-` depth family,
+a schedule/containment/shock set, and a store/furniture + strong/weather + metropolis set.
+Two new shared-onset families: `klai-` (violent force and its disasters, all abstract `o-`
+except the fire/atmospheric referents) and `tub-` (containment: the abstract verb `tuba` o-,
+the crafted containers `tubae`/`tubadi`/`tubatek` e-). Depth is split quality-vs-measure across
+`woi` (deep/deepness, NAD o-) and `woirin` (depth-as-measure, `woi`+`rin`). User overrides:
+`seng` ascension takes mystic `y-`; `foraklaimy` fire-disaster takes fire-class `a-`; `huklaimy`
+hurricane takes atmospheric `i-`; `auwoi` deep sky rides the `au-` sky onset as a bare `i-` root;
+`radahem` excuse/absolve stays abstract `o-` over a divine `y-`; `praenogi`/`praeme` are bare
+roots (no `gi`/`me` root); `mloda` strong is tolerated as a carved `ml-` force sibling of `mlada`
+murder. `blekae` earthquake = `blek`+`kaera`(ground) with surface elision `kaera→-kae`, `ae-`.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 733→763 (30 new rows; `draft/batch-2026-08-19-k30.md`):
+  - **A — violence/disaster/depth (10):** `klaix` violent/enforce (root, NVAD, `o-`); `klaimy` disaster (root, N, `o-`); `foraklaimy` fire disaster (`fora`+`klaimy`, relational, N, `a-`); `huklaimy` hurricane (`hu`+`klaimy`, relational, N, `i-`); `seng` ascension (root, NA, `y-`); `woi` deep/deepness (root, NAD, `o-`); `woirin` depth (`woi`+`rin`, measure, N, `o-`); `mywoi` abyss (`my`+`woi`, relational, N, `y-`); `woiwonli` deep sea (`woi`+`wonli`, relational, N, `i-`); `auwoi` deep sky (root, N, `i-`).
+  - **B — schedule/containment/shock (10):** `tlarra` schedule (root, NA, `o-`); `tuba` contain (root, NV, `o-`); `tubatek` container (`tuba`+`tek`, instrument, N, `e-`); `tubae` box, `tubadi` bag (roots, N, `e-`); `hautubadi` backpack (`hau`+`tubadi`, relational, N, `e-`); `tubawes` contents (`tuba`+`wes`, collective, N, `o-`); `fostubae` refrigerator (`fos`+`tubae`, relational, N, `e-`); `blek` shock (root, NVAD, `o-`); `blekae` earthquake (`blek`+`kaera`, relational, N, `ae-`, surface `kaera→-kae`).
+  - **C — store/furniture/strong/weather/city (10):** `praeno` store (root, NV, `o-`); `praenopos` storage (`praeno`+`poska`, location, N, `ae-`); `praenogi` cabinet, `praeme` chest (roots, N, `e-`); `klam praenogi` wardrobe (multi `klam`+`praenogi`, relational, N, `e-`); `mloda` strong (root, NVAD, `o-`); `mlodahu` storm (`mloda`+`hu`, relational, N, `i-`); `mlodahupli` heavy rain (`mloda`+`hupli`, relational, N, `i-`); `radahem` excuse/absolve (root, NV, `o-`); `messaposlam` metropolis (`messa`+`poslam`, relational, N, `ae-`).
+
+**Validation:**
+- `python -m kilor check` — ✅ all 30 new words pass; no batch word flagged (only pre-existing errors/warnings remain).
+- Insert validated first in a temp-clone (30/30 added clean); the live `add` then inserted the same 30 rows, confirmed by form/prefix/mask + compound-component join audit (all 16 compound wirings stored correctly).
+- Pure lexicon batch — no spec/`.py`/rule change, so **`CHANGELOG.md` (rules) needs no entry**.
+
 
 ## workspace v2.21.0 — 2026-08-19
 
