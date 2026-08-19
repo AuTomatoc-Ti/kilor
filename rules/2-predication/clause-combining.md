@@ -2,8 +2,8 @@
 
 **Module:** Coordination, Disjunction, Adversative Conjunction
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.0
+**Last updated:** 2026-08-19
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `1-nominals/cases.md`, `2-predication/negation.md`
 
 ---
@@ -49,7 +49,7 @@ Between full SOV clauses:
 ### B. Adversative — `amer` ("but")
 
 **Between clauses:**
-> `ki te selo kau amer bau nar ero.` — "I went to the market but there was no bread."
+> `ki te selo kau amer bau nar os.` — "I went to the market but there was no bread."
 
 **Clause-initial:**
 > `Amer ki bau nar taka.` — "But I didn't eat bread."

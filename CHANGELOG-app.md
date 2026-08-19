@@ -1,4 +1,4 @@
-**Current Version:** v2.20.0
+**Current Version:** v2.21.0
 **Last Updated:** 2026-08-19
 **Format:** `**file** — what changed`
 
@@ -19,6 +19,30 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
 
+## workspace v2.21.0 — 2026-08-19
+
+Cross-language audit (see `CHANGELOG.md` v2.15.0 for rationale): `ero`-family → `os`,
+`fap`-family → `fim` in the lexicon. Forms, IPA, syllable division, syllable count,
+inflections, and search_text recomputed; FTS rebuilt.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 6 word rows renamed with full phonology/inflection recomputation:
+  - `ero` → `os` (existential; function word; no inflections; exempt from `-s`)
+  - `erolise` → `oslise` (compound NVA; inflections `ojslise`/`ovslise`/`oslijse`)
+  - `erolise isra` → `oslise isra` (compound-multi N; noun inflection only)
+  - `ero₁` → `os₁` (content root NV, subscript escape hatch; noun/verb `os₁`)
+  - `fap` → `fim` (left, root NAD; inflections `fim`/`fims`/`fims`)
+  - `fapne` → `fimne` (spatial postposition "on the left")
+  - No `ero`/`fap` substring remains in `words.form` or `words.search_text`.
+  - Normalized `words.notes` references to the renamed forms (words 422 `os₁`, 491 `fimne`, 758 `grom` — `ero`→`os`, `fap`→`fim`).
+- **`kilor/phonology.py`** — `S_FINAL_WHITELIST` add `"os"` (1-syllable `-s` form root, mirrors the `thes`/`fos` precedent; the content root is `os₁`, which does not end in `-s`, so this is defensive).
+- **`kilor/dictionary/backfill_pos.py`** — closed-class POS map: `"ero"` → `"os"`.
+
+**Data:**
+- **`data/compounds_export.json`**, **`data/dictionary-data.json`**, **`data/lexicon_export.csv`** — regenerated from the renamed DB (`oslise`, `oslise isra`, `os`, `os₁`, `fim`, `fimne` now current; notes normalized).
+
+**Validation:**
+- `python kilor.py check` — ✅ exit 0; only pre-existing errors remain (`nous`, `austarius`, `austareus`, `argonnamae lise`); the `erolise isra` 6-syllable error cleared by the rename.
 ## workspace v2.20.0 — 2026-08-19
 
 30 new words across three sets (703→733): an era/time & tactile-quality set, a birds/animals

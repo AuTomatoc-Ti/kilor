@@ -2,8 +2,8 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-16
-**Version:** 1.2.0
+**Last updated:** 2026-08-19
+**Version:** 1.2.1
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
@@ -59,7 +59,7 @@ Takes colour prefix `ae-` (physical boundaries/earth).
 
 | Form | Meaning |
 |---|---|
-| `ero isra` | existentialism (existence-doctrine) |
+| `os isra` | existentialism (existence-doctrine) |
 | `eli isra` | vitalism (life-doctrine) |
 
 Takes colour prefix `o-` (abstract system).
@@ -259,7 +259,7 @@ sym rilse        bau pos        gilan fora
 §I content-root heads default to multi-word, but may be overridden by Rule 5.
 
 ```
-tesak param      bau pos        ero isra
+tesak param      bau pos        os isra
 afaloi taka      lira naras     fos posia
 ```
 

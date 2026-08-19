@@ -2,8 +2,8 @@
 
 **Module:** Optative, Desiderative & Benedictive Mood
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.0
+**Last updated:** 2026-08-19
+**Version:** 1.1.1
 **Depends on:** `0-foundation/grammar-syntax.md`, `0-foundation/tone-prosody.md`, `3-subsystems/colour-emotion.md`, `3-subsystems/imperatives.md`
 
 ---
@@ -47,14 +47,14 @@ No subject. The wished-for clause follows directly without `kus` (parallels bare
 
 | Kilor | Meaning |
 |:---|:---|
-| `havlise ti gor roi ero` | "May you have a good day" |
+| `havlise ti gor roi os` | "May you have a good day" |
 | `havlise si losto res` | "May he/she be happy" |
 
 ### B. Noun Form (`hajlise`) — The Feeling of Hope
 
 | Kilor | Meaning |
 |:---|:---|
-| `ki e-hajlise ero` | "I have a warm hope" |
+| `ki e-hajlise os` | "I have a warm hope" |
 | `a-hajlise ralis res` | "A burning hope is great" |
 
 ---
@@ -77,7 +77,7 @@ Emotional particles layer nuance onto optative expressions (see `3-subsystems/co
 |:---|:---|:---|
 | **Desiderative** | Subject + `havlise` + `kus` + clause | `ki havlise kus ti kau` |
 | **Optative** | `havlise` + clause (no subject) | `havlise hupli hup` |
-| **Benedictive** | `havlise` + 2nd/3rd person target | `havlise ti gor roi ero` |
+| **Benedictive** | `havlise` + 2nd/3rd person target | `havlise ti gor roi os` |
 | **Hortative** | `sor` (sentence-final — see `imperatives.md`) | `ki taka sor` |
 
 ---

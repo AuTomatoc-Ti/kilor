@@ -1,318 +1,734 @@
-form,syl_count,meaning,category,section,noun,verb,adjective,adverb,consensus_prefix,is_function_word,is_compound,compound_type,notes
-fora,2,fire,nv,A,fora,fora,foras,foras,a-,false,false,,
-lumi,2,light,na,A,lumi,lumi,lumis,lumis,o-,false,false,,adj derived from noun + -s
-lira,2,water,n,A,lira,lira,liras,liras,i-,false,false,,
-lima,2,air,n,A,lima,lima,limas,limas,i-,false,false,,
-kaera,2,earth / soil,n,A,kaera,kaera,kaeras,kaeras,ae-,false,false,,
-kora,2,stone / rock,n,A,kora,kora,koras,koras,y-,false,false,,
-sola,2,star,n,A,sola,sola,solas,solas,o-,false,false,,
-rora,2,sun,n,A,rora,rora,roras,roras,a-,false,false,,
-yre,2,moon,n,A,yre,yre,yres,yres,o-,false,false,,
-tiri,2,sky,n,A,tiri,tiri,tiris,tiris,i-,false,false,,
-symak,2,smoke / mist,n,A,symak,symak,symaks,symaks,i-,false,false,,
-maeha,2,person / human,n,B,maeha,maeha,maehas,maehas,a-,false,false,,
-maeda,2,body,n,B,maeda,maeda,maedas,maedas,a-,false,false,,
-hinar,2,hand,n,B,hinar,hinar,hinars,hinars,a-,false,false,,
-winar,2,eye,nv,B,winar,winar,winars,winars,a-,false,false,,verb use = see
-tilda,2,ear,nv,B,tilda,tilda,tildas,tildas,a-,false,false,,verb use = hear
-rilda,2,mouth,nv,B,rilda,rilda,rildas,rildas,a-,false,false,,verb use = speak/say
-pesha,2,blood,n,B,pesha,pesha,peshas,peshas,a-,false,false,,
-hawu,2,animal / beast,n,B,hawu,hawu,hawus,hawus,a-,false,false,,
-fein,1,bird,n,B,fein,fein,feins,feins,a-,false,false,,
-fei,1,fly / flying,nv,B,fei,fei,feis,feis,a-,false,false,,bare root serves as both noun and verb; feis = adj/adv
-lir,1,fish,n,B,lir,lir,lirs,lirs,a-,false,false,,
-lunla,2,tree,n,B,lunla,lunla,lunlas,lunlas,u-,false,false,,
-slu,1,flower,n,B,slu,slu,slus,slus,u-,false,false,,
-giliu,2,metal / iron,n,C,giliu,giliu,gilius,gilius,y-,false,false,,
-lunlagak,3,wood,n,C,lunjlagak,lunvlagak,lunlajgak,lunlavgak,ae-,false,true,mono,
-klang,1,cloth / fabric,n,C,klang,klang,klangs,klangs,e-,false,false,,
-slato,2,house / dwelling,n,C,slato,slato,slatos,slatos,ae-,false,false,,
-donar,2,door,nv,C,donar,donar,donars,donars,ae-,false,false,,
-maliu,2,knife / blade,n,C,maliu,maliu,malius,malius,y-,false,false,,
-tek,1,tool,n,C,tek,tek,teks,teks,e-,false,false,,combining form for instrument derivation
-hamin,2,food,n,C,hamin,hamin,hamins,hamins,e-,false,false,,
-bau,1,bread,n,C,bau,bau,baus,baus,e-,false,false,,
-pei,1,cup / container,n,C,pei,pei,peis,peis,e-,false,false,,
-selo,2,path / road,n,C,selo,selo,selos,selos,ae-,false,false,,
-rusome,3,room / chamber,n,C,rujsome,ruvsome,rusojme,rusovme,ae-,false,false,,
-gilan,2,mountain,n,C,gilan,gilan,gilans,gilans,y-,false,false,,
-liwat,2,lake,n,C,liwat,liwat,liwats,liwats,i-,false,false,,
-taka,2,eat,v,D,taka,taka,takas,takas,a-,false,false,,
-retanik,3,drink,v,D,rejtanik,revtanik,retajnik,retavnik,a-,false,false,,
-taki,2,drink,v,D,taki,taki,takis,takis,a-,false,false,,
-aultake,3,enter,v,D,aujltake,auvltake,aultajke,aultavke,o-,false,false,,
-kau,1,come,v,D,kau,kau,kaus,kaus,o-,false,false,,
-aug,1,start / begin,v,D,aug,aug,augs,augs,o-,false,false,,
-sounar,2,give,v,D,sounar,sounar,sounars,sounars,o-,false,false,,
-thanar,2,take / get,v,D,thanar,thanar,thanars,thanars,o-,false,false,,
-tesak,2,make / create,v,D,tesak,tesak,tesaks,tesaks,o-,false,false,,
-minau,2,stand / stay,v,D,minau,minau,minaus,minaus,o-,false,false,,
-sopa,2,watch / look,v,D,sopa,sopa,sopas,sopas,a-,false,false,,
-kup,1,cut,nv,D,kup,kup,kups,kups,a-,false,false,,bare root serves as both noun and verb
-thep,1,sleep,v,D,thep,thep,theps,theps,a-,false,false,,
-tle,1,wait,v,D,tle,tle,tles,tles,o-,false,false,,
-rali,2,big / large,a,E,rali,rali,ralis,ralis,o-,false,false,,
-pag,1,small,a,E,pag,pag,pags,pags,o-,false,false,,
-wem,1,warm,a,E,wem,wem,wems,wems,o-,false,false,,
-kop,1,cold,a,E,kop,kop,kops,kops,o-,false,false,,
-gor,1,good,a,E,gor,gor,gors,gors,o-,false,false,,
-bono,2,bad,a,E,bono,bono,bonos,bonos,o-,false,false,,
-my,1,dark,a,E,my,my,mys,mys,o-,false,false,,
-shuk,1,fast / quick,a,E,shuk,shuk,shuks,shuks,o-,false,false,,shuks = quickly (manner adverb; quality root + -s per grammar-syntax.md §V-A)
-pusar,2,slow,a,E,pusar,pusar,pusars,pusars,o-,false,false,,
-roli,2,lot / many,a,E,roli,roli,rolis,rolis,o-,false,false,,
-mekri,2,few,a,E,mekri,mekri,mekris,mekris,o-,false,false,,
-meki,2,most,a,E,meki,meki,mekis,mekis,o-,false,false,,
-eski,2,each,a,E,eski,eski,eskis,eskis,o-,false,false,,
-amin,2,any,a,E,amin,amin,amins,amins,o-,false,false,,
-naram,2,none,a,E,naram,naram,narams,narams,o-,false,true,mono,compound: nar + amin
-niba,2,new,a,E,niba,niba,nibas,nibas,o-,false,false,,
-noba,2,old,a,E,noba,noba,nobas,nobas,o-,false,false,,
-hik,1,sad,a,E,hik,hik,hiks,hiks,o-,false,false,,
-asdo,2,know,v,F,asdo,asdo,asdos,asdos,o-,false,false,,
-thy,1,think,v,F,thy,thy,thys,thys,o-,false,false,,
-argonna,3,love,v,F,ajrgonna,avrgonna,argojnna,argovnna,o-,false,false,,
-wamy,2,fear,n,F,wamy,wamy,wamys,wamys,o-,false,false,,
-losga,2,anger / rage,n,F,losga,losga,losgas,losgas,o-,false,false,,
-losto,2,joy / happiness,n,F,losto,losto,lostos,lostos,o-,false,false,,
-hax,1,pain / suffering,n,F,hax,hax,haxs,haxs,o-,false,false,,
-roi,1,day,n,G,roi,roi,rois,rois,o-,false,false,,
-rok,1,night,n,G,rok,rok,roks,roks,o-,false,false,,
-tar,1,dusk,n,G,tar,tar,tars,tars,o-,false,false,,
-ima,2,now,n,G,ima,ima,imas,imas,o-,false,false,,combining form for imaroi (today)
-tilpi,2,before,n,G,tilpi,tilpi,tilpis,tilpis,o-,false,false,,combining form pi in day compounds
-tilpa,2,after,n,G,tilpa,tilpa,tilpas,tilpas,o-,false,false,,combining form pa in day compounds
-thin,1,here / this,n,G,thin,thin,thins,thins,o-,false,false,,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
-tha,1,there / that,n,G,tha,tha,thas,thas,o-,false,false,,also demonstrative determiner & pronoun; see 1-nominals/demonstratives.md
-poska,2,place / location,n,G,poska,poska,poskas,poskas,o-,false,false,,
-ik,1,in,n,G,ik,ik,iks,iks,o-,false,false,,spatial root; -ne → ikne (inside)
-ouk,1,out,n,G,ouk,ouk,ouks,ouks,o-,false,false,,spatial root; -ne → oukne (outside)
-um,1,under,n,G,um,um,ums,ums,o-,false,false,,spatial root; -ne → umne (under)
-hau,1,back,n,G,hau,hau,haus,haus,o-,false,false,,spatial root; -ne → haune (behind)
-pau,1,front,n,G,pau,pau,paus,paus,o-,false,false,,spatial root; -ne → paune (in front of)
-hin,1,side,n,G,hin,hin,hins,hins,o-,false,false,,spatial root; -ne → hinne (beside / near / next to)
-ora,2,along,n,G,ora,ora,oras,oras,o-,false,false,,spatial root; -ne → orane (along)
-meipo,2,around,n,G,meipo,meipo,meipos,meipos,o-,false,false,,spatial root; -ne → meipone (around)
-orak,2,across,n,G,orak,orak,oraks,oraks,o-,false,false,,spatial root; -ne → orakne (across)
-inou,2,through / via,n,G,inou,inou,inous,inous,o-,false,false,,spatial root; -ne → inoune (through)
-tlow,1,time,n,G,tlow,tlow,tlows,tlows,o-,false,false,,combining form tow in temporal compounds
-shu,1,soon,av,G,shu,shu,shus,shus,o-,false,false,,bare root (simplified from shuk+tlow)
-sar,1,late,av,G,sar,sar,sars,sars,o-,false,false,,bare root (simplified from pusar+tlow)
-cho,1,early,av,G,cho,cho,chos,chos,o-,false,false,,bare root; ch onset (start-only)
-amo,2,again,av,G,amo,amo,amos,amos,o-,false,false,,
-fou,1,during,av,G,fou,fou,fous,fous,o-,false,false,,related to founai
-founai,2,duration,n,G,founai,founai,founais,founais,o-,false,false,,
-sakar,2,occurrence / frequency,n,G,sakar,sakar,sakars,sakars,o-,false,false,,combines with esa/slote/na
-esa,2,all / every,a,G,esa,esa,esas,esas,o-,false,false,,combines into esaka (always)
-slote,2,some,a,G,slote,slote,slotes,slotes,o-,false,false,,combines into slosaka (sometimes)
-mi,1,name,n,H,mi,mi,mis,mis,o-,false,false,,
-berat,2,word / speech,n,H,berat,berat,berats,berats,o-,false,false,,
-song,1,friend,n,H,song,song,songs,songs,o-,false,false,,
-loger,2,power / strength,n,H,loger,loger,logers,logers,o-,false,false,,
-eli,2,life,n,H,eli,eli,elis,elis,a-,false,false,,
-mil,1,death,n,H,mil,mil,mils,mils,o-,false,false,,
-maekoi,2,spirit / soul,n,I,maekoi,maekoi,maekois,maekois,o-,false,true,mono,
-emlu,2,truth,n,I,emlu,emlu,emlus,emlus,o-,false,true,mono,compound: em + lu
-noi,1,void / emptiness,n,I,noi,noi,nois,nois,o-,false,false,,
-sinkoi,2,alone / solitude,n,I,sinkoi,sinkoi,sinkois,sinkois,o-,false,true,mono,
-ilsinkoi,3,together,n,I,ijlsinkoi,ivlsinkoi,ilsijnkoi,ilsivnkoi,o-,false,true,mono,
-pireilu,3,property / quality,n,I,pijreilu,pivreilu,pireijlu,pireivlu,o-,false,true,mono,combining form lu for abstract property derivation
-rinok,2,measure / measurement,n,I,rinok,rinok,rinoks,rinoks,o-,false,false,,combining form rin for scalar degree derivation
-chap,1,act / deed,n,I,chap,chap,chaps,chaps,o-,false,false,,combining form par for process derivation
-param,2,result,n,I,param,param,params,params,o-,false,false,,combining form param for result derivation
-lokisra,3,doctrine / system of thought,n,I,lokjisra,lokvisra,lokisjra,lokisvra,o-,false,true,mono,combining form isra for doctrine derivation
-isra,2,idea,n,I,isra,isra,isras,isras,o-,false,false,,combining form for doctrine derivation
-narau,2,without / lack,n,I,narau,narau,naraus,naraus,o-,false,false,,combining form nara for derivational compounding; narau + noun = without X; noun + nara = X-less
-auli,2,comet,n,A,auli,auli,aulis,aulis,o-,false,false,,
-wino,2,colour / hue,n,J,wino,wino,winos,winos,o-,false,false,,
-res,1,copula - identity / attribution,v,-,res,res,res,res,o-,true,false,,closed-class
-ero,2,existential & possession - there is / have,v,-,ero,ero,eros,eros,o-,true,false,,closed-class
-nar,1,clausal / constituent negation,v,-,nar,nar,nar,nar,o-,true,false,,closed-class
-iu,1,yes / no question + affirmative answer,v,-,iu,iu,iu,iu,o-,true,false,,closed-class
-na,1,negative answer (no),v,-,na,na,na,na,o-,true,false,,closed-class
-te,1,dative particle (to) & spatial root (towards),v,-,te,te,te,te,o-,true,false,,closed-class; also open-class spatial root; -ne → tene (towards); see 3-subsystems/spatials.md §IV-C
-we,1,intensify,v,D,we,we,wes,wes,o-,false,false,,"derived adverb wes = ""very"""
-mere,2,be slight (intensity),v,D,mere,mere,meres,meres,o-,false,false,,"derived meres = ""a bit"" (intensity); distinct from pere (amount)"
-pere,2,small amount,n,E,pere,pere,peres,peres,o-,false,false,,"derived peres = ""little (amount)""; distinct from mere (intensity)"
-tor,1,comparative particle (than),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
-les,1,equative particle (as),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
-torra,2,superlative particle (most),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt; fused from tor + rap
-wetor,2,intensified comparative (much more than),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt; fused from wes + tor
-mangus,2,restrictive (among / among all),,I,,,,true,o-,true,false,,closed-class; toneless; -s exempt
-rap,1,top / peak,n,G,rap,rap,raps,raps,o-,false,false,,spatial root; -ne → rapne (above); see 3-subsystems/spatials.md
-hu,1,wind,n,A,hu,hu,hus,hus,o-,false,false,,
-hupli,2,rain,n,A,hupli,hupli,huplis,huplis,o-,false,false,,
-shili,2,river,n,A,shili,shili,shilis,shilis,o-,false,false,,
-blusa,2,wave,n,A,blusa,blusa,blusas,blusas,o-,false,false,,
-wonli,2,sea,n,A,wonli,wonli,wonlis,wonlis,o-,false,false,,
-wonar,2,ocean,n,A,wonar,wonar,wonars,wonars,o-,false,false,,
-liforli,3,flood,n,A,lijforli,livforli,liforjli,liforvli,o-,false,false,,
-aron,2,season,n,A,aron,aron,arons,arons,o-,false,false,,
-apar,2,spring,n,A,apar,apar,apars,apars,o-,false,false,,
-gustar,2,summer,n,A,gustar,gustar,gustars,gustars,o-,false,false,,
-choumar,2,autumn,n,A,choumar,choumar,choumars,choumars,o-,false,false,,
-fossar,2,winter,n,A,fossar,fossar,fossars,fossars,o-,false,false,,
-maur,1,second,n,G,maur,maur,maurs,maurs,o-,false,false,,
-faur,1,minute,n,G,faur,faur,faurs,faurs,o-,false,false,,
-tlaur,1,hour,n,G,tlaur,tlaur,tlaurs,tlaurs,o-,false,false,,
-taroi,2,week,n,G,taroi,taroi,tarois,tarois,o-,false,false,,
-gauroi,2,ten-day,n,G,gauroi,gauroi,gaurois,gaurois,o-,false,false,,
-yra,2,month,n,G,yra,yra,yras,yras,o-,false,false,,
-ron,1,year,n,G,ron,ron,rons,rons,o-,false,false,,
-gauron,2,decade,n,G,gauron,gauron,gaurons,gaurons,o-,false,false,,
-curon,2,century,n,G,curon,curon,curons,curons,o-,false,false,,
-gus,1,hot,a,E,gus,gus,gus,gus,o-,false,false,,noun/adj same form; -s final whitelist exception
-fem,2,cool,a,E,fem,fem,fems,fems,o-,false,false,,
-fos,1,ice / freeze,nv,A,fos,fos,fos,fos,o-,false,false,,"noun/adj same form; -s final whitelist exception; not ""cold"" (→kop)"
-fosli,2,snow,n,A,fosli,fosli,foslis,foslis,o-,false,true,mono,
-foske,2,frost,n,A,foske,foske,foskes,foskes,o-,false,true,mono,
-foshu,2,blizzard,n,A,foshu,foshu,foshus,foshus,o-,false,true,mono,compound: fos (ice) + hu (wind)
-fosgilan,3,glacier,n,A,fosjgilan,fosvgilan,fosgijlan,fosgivlan,o-,false,true,mono,compound: fos (ice) + gilan (mountain)
-fosblon,2,avalanche,n,A,fosblon,fosblon,fosblons,fosblons,o-,false,true,mono,compound: fos (ice) + blon (collapse)
-foskaera,3,frozen soil,n,A,fosjkaera,fosvkaera,foskaejra,foskaevra,o-,false,true,mono,compound: fos (ice) + kaera (earth)
-blon,1,collapse,v,D,blon,blon,blons,blons,o-,false,false,,
-hup,1,fall,v,D,hup,hup,hups,hups,o-,false,false,,
-rolifor,3,excess,nv,E,rojlifor,rovlifor,rolijfor,rolivfor,o-,false,false,,
-aus,1,start-of,n,G,aus,aus,aus,aus,o-,false,false,,etymology: aug + genitive -si; -s final whitelist exception
-oug,1,end,n,G,oug,oug,ougs,ougs,o-,false,false,,
-ous,1,end-of,n,G,ous,ous,ous,ous,o-,false,false,,etymology: oug + genitive -si; -s final whitelist exception
-taroinous,3,weekend,n,G,taroinous,taroinous,taroinous,taroinous,o-,false,true,mono,compound: taroi (week) + ous (end-of)
-faure,2,5min,n,G,faure,faure,faures,faures,o-,false,false,,
-tlaure,2,30min,n,G,tlaure,tlaure,tlaures,tlaures,o-,false,false,,
-afaloi,3,ability / able to,nv,H,afaloi,afaloi,afaloi,afaloi,o-,false,true,mono,
-sew,1,can,v,H,sew,sew,sews,sews,o-,false,false,,
-hostak,2,must,v,H,hostak,hostak,hostaks,hostaks,o-,false,false,,
-mug,1,want,v,H,mug,mug,mugs,mugs,o-,false,false,,replaces rima
-som,1,need,v,H,som,som,soms,soms,o-,false,false,,
-shunle,2,should,v,H,shunle,shunle,shunles,shunles,o-,false,false,,
-hostakes,3,certainly / must have (deduction),av,H,hosjtakes,hosvtakes,hostajkes,hostavkes,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
-sewanes,3,might / perhaps / could be,av,H,sejwanes,sevwanes,sewajnes,sewavnes,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
-bamares,3,would have (counterfactual),av,H,bajmares,bavmares,bamajres,bamavres,o-,false,true,mono,epistemic modal; pre-verbal adverb slot
-chorogor,3,good morning,n,H,chorogor,chorogor,chorogor,chorogor,o-,false,true,mono,compound: cho + roi + gor
-sarrogor,3,good afternoon,n,H,sarrogor,sarrogor,sarrogor,sarrogor,o-,false,true,mono,compound: sar + roi + gor
-targor,2,good evening,n,H,targor,targor,targors,targors,o-,false,true,mono,compound: tar + gor
-rokgor,2,good night,n,H,rokgor,rokgor,rokgors,rokgors,o-,false,true,mono,compound: rok + gor
-pem,1,inclusive or (either or both),v,-,pem,pem,pem,pem,o-,true,false,,closed-class; toneless; -s exempt
-pona,2,xnor (both or neither),v,-,pona,pona,pona,pona,o-,true,false,,closed-class; toneless; -s exempt
-pemna,2,nor (neither...nor),v,-,pemna,pemna,pemna,pemna,o-,true,false,,closed-class; toneless; -s exempt
-sor,1,suggestion particle (sentence-final),v,-,sor,sor,sor,sor,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 啦
-chom,1,polite request particle (pre-verbal),v,-,chom,chom,chom,chom,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 請
-maug,1,strong prohibition particle (pre-verbal),v,-,maug,maug,maug,maug,o-,true,false,,closed-class; toneless; -s exempt; like Cantonese 咪
-gin,1,progressive aspect (be X-ing),v,-,gin,gin,gin,gin,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
-ger,1,perfective aspect (have X-ed),v,-,ger,ger,ger,ger,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
-gou,1,experiential aspect (have X-ed before),v,-,gou,gou,gou,gou,o-,true,false,,closed-class; toneless; -s exempt; post-verbal
-hei,1,hello / hey (vocative),n,I,hei,hei,heis,heis,o-,false,false,,colour prefix on vocative conveys emotional stance (異體字)
-shen,1,self (reflexive),n,I,shen,shen,shens,shens,a-,false,false,,reflexive pronoun; follows personal pronoun; open-class
-meshen,2,each other (reciprocal),av,I,meshen,meshen,meshens,meshens,o-,false,false,,pre-verbal reciprocal adverb; open-class
-mer,1,comitative particle (with),v,-,mer,mer,mer,mer,o-,true,false,,closed-class; toneless; -s exempt
-sy,1,instrumental & passive particle (by / with),v,-,sy,sy,sy,sy,o-,true,false,,closed-class; toneless; -s exempt
-ar,1,ablative particle (from),v,-,ar,ar,ar,ar,o-,true,false,,closed-class; toneless; -s exempt
-tilpe,2,locative-relational particle (between),v,-,tilpe,tilpe,tilpe,tilpe,o-,true,false,,closed-class; toneless; -s exempt
-ei,1,coordinator (and),v,-,ei,ei,ei,ei,o-,true,false,,closed-class; toneless; -s exempt
-po,1,exclusive or (either but not both),v,-,po,po,po,po,o-,true,false,,closed-class; toneless; -s exempt
-amer,2,adversative (but / however),v,-,amer,amer,amer,amer,o-,true,false,,closed-class; toneless; -s exempt
-tu,1,temporal subordinator (when / while),v,-,tu,tu,tu,tu,o-,true,false,,closed-class; toneless; -s exempt
-li,1,conditional subordinator (if),v,-,li,li,li,li,o-,true,false,,closed-class; toneless; -s exempt
-bam,1,consequential particle (then / 便 / 就),v,-,bam,bam,bam,bam,o-,true,false,,closed-class; toneless; -s exempt
-aiga,2,causal subordinator (because),v,-,aiga,aiga,aiga,aiga,o-,true,false,,closed-class; toneless; -s exempt
-hoskar,2,concessive subordinator (although),v,-,hoskar,hoskar,hoskar,hoskar,o-,true,false,,closed-class; toneless; -s exempt
-arfi,2,concessive intensifier (even),v,-,arfi,arfi,arfi,arfi,o-,true,false,,closed-class; toneless; -s exempt
-fidak,2,purpose subordinator (in order to),v,-,fidak,fidak,fidak,fidak,o-,true,false,,closed-class; toneless; -s exempt
-kus,1,relativizer & complementizer (that / which),v,-,kus,kus,kus,kus,o-,true,false,,closed-class; toneless; -s exempt
-halise,3,hope / wish,nv,I,hajlise,havlise,halijse,halivse,o-,false,true,mono,open-class; optative/desiderative/benedictive verb
-min,1,let (permissive),v,H,min,min,mins,mins,o-,false,false,,causative: let someone do something
-mingo,2,make / force (使 / 令),v,H,mingo,mingo,mingos,mingos,o-,false,false,,causative: make someone do something
-ma,1,mom,n,H,ma,ma,mas,mas,a-,false,false,,
-mamae,2,mother,n,H,mamae,mamae,mamaes,mamaes,a-,false,false,,
-fa,1,dad,n,H,fa,fa,fas,fas,a-,false,false,,
-famae,2,father,n,H,famae,famae,famaes,famaes,a-,false,false,,
-lorrak,2,language,n,H,lorrak,lorrak,lorraks,lorraks,a-,false,true,mono,
-wug,1,dog,n,B,wug,wug,wugs,wugs,a-,false,false,,
-mau,1,cat,n,B,mau,mau,maus,maus,a-,false,false,,
-onla,2,leaves,n,B,onla,onla,onlas,onlas,u-,false,false,,
-walunla,3,forest,n,A,walunla,walunla,walunlas,walunlas,u-,false,true,mono,
-rori,2,sunrise,n,A,rori,rori,roris,roris,a-,false,false,,
-aura,2,celestial object,n,A,aura,aura,auras,auras,o-,false,false,,
-auron,2,sky,n,A,auron,auron,aurons,aurons,i-,false,false,,
-aurok,2,cosmic / space,n,A,aurok,aurok,auroks,auroks,i-,false,true,mono,compound: auron + rok
-auronte,3,dome / canopy,n,A,auronte,auronte,aurontes,aurontes,i-,false,true,mono,compound: auron + tek
-thung,1,swim,v,D,thung,thung,thungs,thungs,o-,false,false,,
-latif,2,heal / save,v,D,latif,latif,latifs,latifs,o-,false,false,,
-argonnia,4,grace / grateful,na,F,argonnia,argonnia,argonnias,argonnias,o-,false,false,,4-syl: ar/gon/ni/a
-miso,2,music,n,J,miso,miso,misos,misos,o-,false,false,,
-bop,1,bottom / down,n,G,bop,bop,bops,bops,o-,false,false,,
-hap,1,right,n,G,hap,hap,haps,haps,o-,false,false,,
-fap,1,left,n,G,fap,fap,faps,faps,o-,false,false,,
-arrin,2,distance,n,G,arrin,arrin,arrins,arrins,o-,false,false,,
-arrinna,3,distant,a,G,arrinna,arrinna,arrinnas,arrinnas,o-,false,true,mono,derived from arrin
-hak,1,half,n,I,hak,hak,haks,haks,o-,false,false,,
-hakdo,2,one-fourth,n,I,hakdo,hakdo,hakdos,hakdos,o-,false,true,mono,compound: hak + do
-hakfoi,2,one-eighth,n,I,hakfoi,hakfoi,hakfois,hakfois,o-,false,true,mono,compound: hak + foi
-hakauk,2,one-sixth,n,I,hakauk,hakauk,hakauks,hakauks,o-,false,true,mono,compound: hak + auk
-dok,1,double,n,I,dok,dok,doks,doks,o-,false,false,,
-dokdo,2,four times,n,I,dokdo,dokdo,dokdos,dokdos,o-,false,true,mono,compound: dok + do
-dokfoi,2,eight times,n,I,dokfoi,dokfoi,dokfois,dokfois,o-,false,true,mono,compound: dok + foi
-dokauk,2,sixteen times,n,I,dokauk,dokauk,dokauks,dokauks,o-,false,true,mono,compound: dok + auk
-dise,2,head / facing,nv,G,dise,dise,dises,dises,o-,false,false,,
-diserin,3,direction,n,G,diserin,diserin,diserins,diserins,o-,false,true,mono,
-nordi,2,north,n,G,nordi,nordi,nordis,nordis,o-,false,false,,
-sirdi,2,south,n,G,sirdi,sirdi,sirdis,sirdis,o-,false,false,,
-aerdi,2,east,n,G,aerdi,aerdi,aerdis,aerdis,o-,false,false,,
-bordi,2,west,n,G,bordi,bordi,bordis,bordis,o-,false,false,,
-aniu,2,zero,n,I,aniu,aniu,aniu,aniu,o-,true,false,,closed-class numeral
-mo,1,one,n,I,mo,mo,mo,mo,o-,true,false,,closed-class numeral
-do,1,two,n,I,do,do,do,do,o-,true,false,,closed-class numeral
-ro,1,three,n,I,ro,ro,ro,ro,o-,true,false,,closed-class numeral
-foi,1,four,n,I,foi,foi,foi,foi,o-,true,false,,closed-class numeral
-tai,1,five,n,I,tai,tai,tai,tai,o-,true,false,,closed-class numeral
-slo,1,six,n,I,slo,slo,slo,slo,o-,true,false,,closed-class numeral
-lai,1,seven,n,I,lai,lai,lai,lai,o-,true,false,,closed-class numeral
-auk,1,eight,n,I,auk,auk,auk,auk,o-,true,false,,closed-class numeral
-wy,1,nine,n,I,wy,wy,wy,wy,o-,true,false,,closed-class numeral
-gau,1,ten,n,I,gau,gau,gau,gau,o-,true,false,,closed-class numeral
-mai,1,eleven,n,I,mai,mai,mai,mai,o-,true,false,,closed-class numeral
-doi,1,twelve,n,I,doi,doi,doi,doi,o-,true,false,,closed-class numeral
-rai,1,thirteen,n,I,rai,rai,rai,rai,o-,true,false,,closed-class numeral
-cu,1,hundred,n,I,cu,cu,cu,cu,o-,true,false,,closed-class scale marker
-kas,1,thousand,n,I,kas,kas,kas,kas,o-,true,false,,closed-class scale marker; -s exempt
-hus,1,million,n,I,hus,hus,hus,hus,o-,true,false,,closed-class scale marker; -s exempt
-tus,1,billion,n,I,tus,tus,tus,tus,o-,true,false,,closed-class scale marker; -s exempt
-rakas,2,trillion,n,I,rakas,rakas,rakas,rakas,o-,true,false,,closed-class scale marker; -s exempt
-dir,1,ordinal particle,n,I,dir,dir,dir,dir,o-,true,false,,closed-class; toneless; -s exempt
-piroi,2,yesterday,n,G,piroi,piroi,pirois,pirois,o-,false,true,mono,compound: pi + roi; see 3-subsystems/temporals.md §I-A
-paroi,2,tomorrow,n,G,paroi,paroi,parois,parois,o-,false,true,mono,compound: pa + roi; see 3-subsystems/temporals.md §I-A
-imaroi,3,today,n,G,imaroi,imaroi,imarois,imarois,o-,false,true,mono,compound: ima + roi; see 3-subsystems/temporals.md §I-A
-pimaroi,3,day before yesterday,n,G,pimaroi,pimaroi,pimarois,pimarois,o-,false,true,mono,compound: pi + ma + roi; see 3-subsystems/temporals.md §I-A
-pamaroi,3,day after tomorrow,n,G,pamaroi,pamaroi,pamarois,pamarois,o-,false,true,mono,compound: pa + ma + roi; see 3-subsystems/temporals.md §I-A
-pima,2,earlier / further back,n,G,pima,pima,pimas,pimas,o-,false,true,mono,compound: pi + ma; see 3-subsystems/temporals.md §I-B
-pama,2,later / further ahead,n,G,pama,pama,pamas,pamas,o-,false,true,mono,compound: pa + ma; see 3-subsystems/temporals.md §I-B
-esaka,3,always,av,G,esaka,esaka,esakas,esakas,o-,false,true,mono,compound: esa + sakar; see 3-subsystems/temporals.md §I-C
-slosaka,3,sometimes,av,G,slosaka,slosaka,slosakas,slosakas,o-,false,true,mono,compound: slote + sakar; see 3-subsystems/temporals.md §I-C
-nasaka,3,never,av,G,nasaka,nasaka,nasakas,nasakas,o-,false,true,mono,compound: na + sakar; see 3-subsystems/temporals.md §I-C
-foragilan,4,volcano,n,A,foragilan,foragilan,foragilans,foragilans,a-,false,true,mono,compound: fora + gilan
-lirahup,3,waterfall,n,A,lirahup,lirahup,lirahups,lirahups,i-,false,true,mono,compound: lira + hup
-roralumi,4,sunlight,n,A,roralumi,roralumi,roralumis,roralumis,o-,false,true,mono,compound: rora + lumi
-yrelumi,4,moonlight,n,A,yrelumi,yrelumi,yrelumis,yrelumis,o-,false,true,mono,compound: yre + lumi
-theprusome,4,bedroom,n,C,theprusome,theprusome,theprusomes,theprusomes,ae-,false,true,mono,compound: thep + rusome
-haminrusome,5,dining room,n,C,haminrusome,haminrusome,haminrusomes,haminrusomes,ae-,false,true,mono,compound: hamin + rusome
-latif mae,3,doctor / healer,n,I,,,,,o-,false,true,multi,
-miso mae,3,musician,n,I,,,,,o-,false,true,multi,
-miso maeha,4,musician (formal),n,I,,,,,o-,false,true,multi,
-tesak mae,3,crafter / maker,n,I,,,,,o-,false,true,multi,
-taka mae,3,eater,n,I,,,,,o-,false,true,multi,
-fei mae,2,flyer,n,I,,,,,o-,false,true,multi,
-kup tek,2,cutter (cutting tool),n,I,,,,,o-,false,true,multi,
-tesak tek,3,creation tool,n,I,,,,,o-,false,true,multi,
-gor lu,2,goodness,n,I,,,,,o-,false,true,multi,
-my lu,2,darkness,n,I,,,,,o-,false,true,multi,
-wem lu,2,warmth,n,I,,,,,o-,false,true,multi,
-shuk rin,2,speed,n,I,,,,,o-,false,true,multi,
-rali rin,3,size,n,I,,,,,o-,false,true,multi,
-tesak par,3,creation (act of creating),n,I,,,,,o-,false,true,multi,
-bau pos,2,bakery,n,I,,,,,o-,false,true,multi,
-hamin pos,3,kitchen / dining hall,n,I,,,,,o-,false,true,multi,
-ero isra,4,existentialism,n,I,,,,,o-,false,true,multi,
-afaloi taka,5,edible,na,I,,,,,o-,false,true,multi,
-narau lira,4,without water,na,I,,,,,o-,false,true,multi,
-lira nara,4,waterless,na,I,,,,,o-,false,true,multi,
-gilan fora,4,wildfire / mountain fire (山火),n,I,,,,,o-,false,true,multi,
+form,syl_count,meaning,derivation_mask,noun,verb,adjective,adverb,consensus_prefix,is_function_word,is_compound,compound_type,notes
+fora,2,fire / to set fire / to burn / burning,NVA,fora,fora,foras,,a-,false,false,,
+lumi,2,light / to light / lucent / bright / illuminated,NVA,lumi,lumi,lumis,,a-,false,false,,
+lira,2,water / to water / wet,NVA,lira,lira,liras,,i-,false,false,,
+lima,2,humidity / moisture / humidify / humid / moist,NVA,lima,lima,limas,,i-,false,false,,
+kaera,2,ground / to land,NV,kaera,kaera,,,ae-,false,false,,
+kora,2,soil / muddy,NA,kora,,koras,,ae-,false,false,,
+sola,2,"star / starry / dispersed, scattered",NA,sola,,solas,,i-,false,false,,
+rora,2,sun / solar / sunny,NA,rora,,roras,,a-,false,false,,
+yre,2,moon / lunar / round-shape,NA,yre,,yres,,i-,false,false,,
+tiri,2,"a colour close to azure, cerulean, teal, and dusky blue-green; usually used to describe sky or sea / austere and solemn / solemnly",NAD,tiri,,tiris,tiris,i-,false,false,,
+symak,2,smoke / to smoke / smoky,NVA,symak,symak,symaks,,i-,false,false,,
+maeha,2,person / human / personal / relating to human,NA,maeha,,maehas,,a-,false,false,,
+maeda,2,body of living creatures / painted metal shell of vehicle / main part of sth,N,maeda,,,,a-,false,false,,
+hinar,2,hand / to touch / handy or skillful,NVA,hinar,hinar,hinars,,u-,false,false,,
+winar,2,eye / see / eye-sight / use eye contact to give a hint,NV,winar,winar,,,u-,false,false,,
+tilda,2,ear / hear,NV,tilda,tilda,,,u-,false,false,,
+rilda,2,mouth / speak / making sound with mouth / talkative,NVA,rilda,rilda,rildas,,u-,false,false,,
+klush,1,blood / bleed / bloody,NVA,klush,klush,klushs,,a-,false,false,,
+hawu,2,animal / beast,N,hawu,,,,a-,false,false,,
+fein,1,bird / cackle / chatter,NV,fein,fein,,,a-,false,false,,
+fei,1,fly/flight / fly / moving or able to move through the air with wing,NVA,fei,fei,feis,,i-,false,false,,
+lir,1,fish / fishy,NA,lir,,lirs,,a-,false,false,,
+lunla,2,tree / to plant / to erect,NV,lunla,lunla,,,u-,false,false,,
+fru,1,flower / bloom / floral / young lady,NVA,fru,fru,frus,,u-,false,false,,
+giliu,2,metal / metallic,NA,giliu,,gilius,,y-,false,false,,
+lunlagak,3,wood / wooden,NA,lujnlagak,,lunlajgak,,ae-,false,true,mono,
+klam,1,cloth / fabric / to weave / woven,NVA,klam,klam,klams,,e-,false,false,,
+srato,2,"house / dwelling / to give a person or animal a place to live, or to provide space for something",NV,slato,slato,,,y-,false,false,,
+piliu,2,door,N,piliu,,,,ae-,false,false,,
+maliu,2,knife / blade / slash or cut with sharp tools / sharp,NVA,maliu,maliu,malius,,e-,false,false,,
+tek,1,tool,N,tek,,,,e-,false,false,,
+hamin,2,food / to feed,NV,hamin,hamin,,,u-,false,false,,
+bau,1,bread / bake,NV,bau,bau,,,u-,false,false,,
+pei,1,cup / trophy / container / measure word for liquid in the cup,N,pei,,,,e-,false,false,,
+selo,2,"path, road / pathway / way / method",N,selo,,,,ae-,false,false,,
+rusome,3,room / chamber,N,rujsome,,,,ae-,false,false,,
+gilan,2,mountain / mountainous,NA,gilan,,gilans,,ae-,false,false,,
+liwat,2,lake,N,liwat,,,,i-,false,false,,
+taka,2,meal / eat,NV,taka,taka,,,u-,false,false,,
+retanik,3,drink / to drink,NV,rejtanik,revtanik,,,u-,false,false,,
+taki,2,hunger / starvation / starve / hungry / hungrily,NVAD,taki,taki,takis,takis,u-,false,false,,
+aultake,3,entering / enter,NV,aujltake,auvltake,,,ae-,false,false,,
+kau,1,arrival / arrive / come / incoming,NVA,kau,kau,kaus,,o-,false,false,,
+aug,1,start/starting/beginning / start/begin,NV,aug,aug,,,o-,false,false,,
+sounar,2,gift / give,NV,sounar,sounar,,,e-,false,false,,
+thaki,2,to take / to get,V,,thaki,,,o-,false,false,,
+tesak,2,creativity / to make or to create / creative / creatively,NVAD,tesak,tesak,tesaks,tesaks,e-,false,false,,
+minau,2,stay / stand / to stay / standing,NVA,minau,minau,minaus,,o-,false,false,,
+sopa,2,watch / look,V,,sopa,,,o-,false,false,,
+kup,1,cut / to cut,NV,kup,kup,,,e-,false,false,,
+thep,1,sleep / to sleep / sleepy / sleepily,NVAD,thep,thep,theps,theps,u-,false,false,,
+tle,1,wait / to wait,NV,tle,tle,,,o-,false,false,,
+rali,2,big / large / largely,AD,,,ralis,ralis,o-,false,false,,
+pag,1,small,A,,,pags,,o-,false,false,,
+wem,1,body temperature / to warm / warm / warmly / warmth,NVAD,wem,wem,wems,wems,a-,false,false,,
+kop,1,coldness / cool down / cold,NVA,kop,kop,kops,,o-,false,false,,
+gor,1,goodness / good / goodly,NAD,gor,,gors,gors,o-,false,false,,
+bonak,2,bad / badly,AD,,,bonaks,bonaks,o-,false,false,,
+my,1,darkness / dark / dark,NA,my,,mys,,y-,false,false,,
+shuk,1,fast / quick / fast / quickly,AD,,,shuks,shuks,o-,false,false,,
+pusar,2,slowness / slow down / slow / slowly,NVAD,pusar,pusar,pusars,pusars,o-,false,false,,
+roli,2,lot of / many,N,roli,,,,o-,false,false,,
+mekri,2,few of the / few / rare / less,NAD,mekri,,mekris,mekris,o-,false,false,,
+meki,2,majority / major / most / mostly,NAD,meki,,mekis,mekis,o-,false,false,,
+eski,2,each,,,,,,o-,true,false,,
+amin,2,any,,,,,,o-,true,false,,
+naram,2,none / not any / nihility,N,naram,,,,o-,false,true,mono,
+niba,2,new things / youth / new / young / newly,NAD,niba,,nibas,nibas,u-,false,false,,
+noba,2,old things / elder / old / elderly,NA,noba,,nobas,,u-,false,false,,
+hik,1,sadness / upset / to upset / sad / upset / sadly,NVAD,hik,hik,hiks,hiks,i-,false,false,,
+asdo,2,knowledge / know / known / knowing / knowingly,NVAD,asdo,asdo,asdos,asdos,o-,false,false,,
+thy,1,thinking / think,NV,thy,thy,,,e-,false,false,,
+argonna,3,love / love / loving / in a way that display love,NVAD,ajrgonna,avrgonna,argojnna,argovnna,e-,false,false,,-na in here does not relared to acc case suffix -na
+wamy,2,fear / fear or be afraid / afraid,NVA,wamy,wamy,wamys,,y-,false,false,,
+losga,2,anger / rage / to rage / angry / angrily,NVAD,losga,losga,losgas,losgas,a-,false,false,,
+losto,2,joy / happiness / make someone to be joyful or happy / joyful / happy / joyfully / happily,NVAD,losto,losto,lostos,lostos,e-,false,false,,
+hax,1,pain / suffering,NVAD,hax,hax,,,ae-,false,false,,
+roi,1,day / daily / daily,NAD,roi,,rois,rois,a-,false,false,,
+rok,1,"night / dim, dusky",NA,rok,,roks,,y-,false,false,,
+tar,1,dusk / sunset / end of the day / dusky / leisurely,NA,tar,,tars,,a-,false,false,,
+ima,2,the present moment or time / now / immediately / used to give an explanation of a new situation,ND,ima,,,imas,o-,false,false,,
+tilpi,2,before,,,,,,ae-,true,false,,
+tilpa,2,after,,,,,,ae-,true,false,,
+thin,1,here / this,D,,,,thins,o-,false,false,,
+tha,1,there / that,D,,,,thas,o-,false,false,,
+poska,2,"place / locality, location / to locate / locational",NVA,poska,poska,poskas,,ae-,false,false,,
+ik,1,entrance / get inside sth,NV,ik,ik,,,o-,false,false,,
+ouk,1,get out / not at the place or at home,VA,,ouk,ouks,,o-,false,false,,
+um,1,down / under,D,,,,ums,o-,false,false,,
+hau,1,back,NAD,hau,,,,ae-,false,false,,
+pau,1,front / to face or be next to / front,NVA,pau,pau,paus,,ae-,false,false,,
+hin,1,side,N,hin,,,,ae-,false,false,,
+oran,2,"along, moving forward",D,,,,orans,ae-,false,false,,
+meipo,2,in a position or direction surrounding,D,,,,meipos,ae-,false,false,,
+orak,2,across / in every part of particular place,,,,,,o-,true,false,,
+inou,2,through / via,,,,,,o-,true,false,,
+tlow,1,"time / current situation / current / repetition usage to have a meaning of ""sometimes..., sometimes...""",NAD,tlow,,tlows,tlows,o-,false,false,,
+shu,1,soon,D,,,,shus,o-,false,false,,
+sar,1,late / lately,AD,,,sars,sars,o-,false,false,,
+cho,1,early / early,AD,,,chos,chos,o-,false,false,,
+amo,2,because,,,,,,o-,true,false,,
+fou,1,during,,,,,,o-,true,false,,
+founai,2,duration,N,founai,,,,ae-,false,false,,
+sakar,2,occurrence / frequency / frequent / frequently,NAD,sakar,,sakars,sakars,ae-,false,false,,
+esa,2,all / every one / complete / completely,AD,,,esas,esas,o-,false,false,,
+srote,2,"some / unknown amount or number of, or being a part of something",A,,,slotes,,o-,false,false,,
+numin,2,name / to name / famous or well-known / namely / measure word for human nouns (e.g. people),NVAD,numin,numin,numins,numins,o-,false,false,,
+berat,2,word / speech / wordy,NA,berat,,berats,,o-,false,false,,
+song,1,friend / cooperate / friendly,NVA,song,song,songs,,a-,false,false,,
+loger,2,power / strength / to power / powerful,NVA,loger,loger,logers,,a-,false,false,,
+eli,2,life / alive,NA,eli,,elis,,a-,false,false,,
+mil,1,death / die / give up / dead / blocked or impassable / unchangeable / stubborn / extremely,NVAD,mil,mil,mils,mils,a-,false,false,,
+maekoi,2,spirit / soul / spiritual,NA,maekoi,,maekois,,o-,false,false,,
+noi,1,void / emptiness / remove everything / empty,NVA,noi,noi,nois,,o-,false,false,,
+sinkoi,2,alone / solitude / lonely,NAD,sinkoi,,sinkois,sinkois,i-,false,false,,
+ilsinkoi,3,gathering / gather / together (with each other),NVD,ijlsinkoi,ivlsinkoi,,ilsivnkoi,a-,false,true,mono,
+pireilu,3,property / quality,N,pijreilu,,,,o-,false,false,mono,
+rinok,2,measure / to measure,NV,rinok,rinok,,,o-,false,false,,Source root for measure suffix -rin
+chap,1,act / deed / act,NV,chap,chap,,,o-,false,false,,
+param,2,"result / result in, cause",NV,param,param,,,e-,false,false,,
+lokisra,3,doctrine / system of thought,N,lojkisra,,,,o-,false,true,mono,
+isra,2,idea / ideal,NA,isra,,isras,,o-,false,false,,
+narau,2,without / lack / lack / lacking,NVA,narau,narau,naraus,,o-,false,false,,
+auli,2,comet / broom,N,auli,,,,i-,false,false,,
+wino,2,"colour / hue / to colour / landscape, scenery / colourful",NVA,wino,wino,winos,,u-,false,false,,
+res,1,"copula - identity (i.e. is, am, are) / attribution",,,,,,o-,true,false,,
+os,1,existential & possession - there is / have,,,,,,o-,true,false,,
+nar,1,clausal / constituent negation (e.g. not),,,,,,o-,true,false,,
+iu,1,yes / yes/no question / affirmative answer,,,,,,o-,true,false,,
+na,1,negative answer (no),,,,,,o-,true,false,,
+te,1,dative particle (to) & spatial root (towards),,,,,,o-,true,false,,
+we,1,very,D,,,,wes,o-,false,false,,
+mere,2,be slight (intensity),D,,,,meres,o-,false,false,,
+pere,2,small amount of,A,,,peres,,o-,false,false,,
+tor,1,comparative particle (than),,,,,,o-,true,false,,
+les,1,equative particle (as),,,,,,o-,true,false,,closed-class; toneless; -s exempt
+torra,2,superlative particle (most),,,,,,o-,true,false,,fused from tor + rap
+wetor,2,intensified comparative (much more than),,,,,,o-,true,false,,closed-class; toneless; -s exempt; fused from wes + tor
+mangus,2,restrictive (among / among all),,,,,,o-,true,false,,closed-class; toneless; -s exempt
+rap,1,top / peak / top / peaky,NA,rap,,raps,,ae-,false,false,,
+hu,1,wind / blow / to blow / windy,NVA,hu,hu,hus,,i-,false,false,,
+hupli,2,rain / rain falls / rainy,NVA,hupli,hupli,huplis,,i-,false,false,,
+shili,2,river,N,shili,,,,i-,false,false,,
+blusa,2,wave / wave / wavely,NVA,blusa,blusa,blusas,,i-,false,false,,-sa in here not related to case suffix -sa
+wonli,2,sea / inland sea or great lake / large amount of,NA,wonli,,wonlis,,i-,false,false,,
+wonir,2,"ocean / vast, boundless",NA,wonir,,wonirs,,i-,false,false,,
+liforli,3,flood / to flood / flooded,NVA,lijforli,livforli,lifojrli,,i-,false,false,,
+aron,2,season / seasonly,NA,aron,,arons,,u-,false,false,,
+apar,2,spring / exuberant / spring,NA,apar,,apars,,u-,false,true,mono,irregular contraction: apa + tlar → apar
+gustar,2,summer / torrid,NA,gustar,,gustars,,u-,false,true,mono,
+choumar,2,autumn / year / autumnal / melancholy,NA,choumar,,choumars,,u-,false,true,mono,irregular contraction: choum + tlar → choumar
+fossar,2,winter / withering / cold,NA,fossar,,fossars,,u-,false,true,mono,
+maur,1,second / arc second / one in sixty,NA,maur,,maurs,,ae-,false,false,,
+faur,1,minute,N,faur,,,,ae-,false,false,,
+tlaur,1,hour / hourly / hourly,NAD,tlaur,,tlaurs,tlaurs,ae-,false,false,,
+taroi,2,week / weekly,NA,taroi,,tarois,,ae-,false,false,,
+gauroi,2,ten-day / one-third of / one-third,NA,gauroi,,gaurois,,ae-,false,true,mono,
+yra,2,month / monthly / monthly,NAD,yra,,yras,yras,ae-,false,false,,
+ron,1,"year / age / a particular period in the life (e.g. childhood, teenage) / yearly, annual / annually",NAD,ron,,rons,rons,ae-,false,false,,
+gauron,2,decade / once in a decade,NA,gauron,,gaurons,,ae-,false,false,,
+curon,2,century / once in a century,NA,curon,,curons,,ae-,false,false,,
+gus,1,heat / hotness / to heat / hot / hotly,NVAD,gus,gus,guss,guss,a-,false,false,,
+fem,1,cool,A,,,fems,,o-,false,false,,
+fos,1,ice / to freeze / frozen / icy,NVA,fos,fos,foss,,i-,false,false,,
+fosli,2,snow / snow falls / snowy,NVA,fosli,fosli,foslis,,i-,false,true,mono,
+foske,2,frost / to frost / frosty,NVA,foske,foske,foskes,,i-,false,true,mono,
+foshu,2,blizzard,N,foshu,,,,i-,false,true,mono,
+fosgilan,3,iceberg,N,fojsgilan,,,,y-,false,true,mono,
+fos blon,2,avalanche,N,fos blon,,,,i-,false,true,multi,
+foskaera,3,frozen soil,N,fojskaera,,,,ae-,false,true,mono,
+blon,1,collapse / collapse / collapsing,NVA,blon,blon,blons,,o-,false,false,,
+hup,1,fall / decrease / to fall / decrease the amount of sth / falling / decreasing / decreasingly,NVAD,hup,hup,hups,hups,o-,false,false,,
+rolifor,3,excess / overdo / excessive / excessively,NVAD,rojlifor,rovlifor,rolijfor,rolivfor,o-,false,false,,
+aus,1,start-of,N,aus,,,,o-,false,false,,
+oug,1,end / ending / to end / ending,NVA,oug,oug,ougs,,o-,false,false,,
+nous,1,end-of,N,nous,,,,o-,false,false,,Full-root form of suffix -ous.
+taroinous,3,weekend,N,tajroinous,,,,ae-,false,true,mono,
+faure,2,5min,N,faure,,,,ae-,false,false,,
+tlaurhak,2,30min,N,tlaurhak,,,,ae-,false,true,mono,
+afaloi,3,ability / able to / capable,NVA,ajfaloi,avfaloi,afajloi,,o-,false,false,,
+sew,1,can,V,,sew,,,o-,false,false,,
+hostak,2,"must / something that is necessary / something that is a must to do it, have it, or see it",NA,hostak,hostak,hostaks,,o-,false,false,,
+mug,1,sth that is wanted / want,NV,mug,mug,,,u-,false,false,,
+som,1,need,V,,som,,,o-,false,false,,
+shunle,2,should,V,,shunle,,,o-,false,false,,
+hostakes,3,certainly / must have (deduction),D,,,,hostavkes,o-,false,true,mono,
+sewanes,3,might / perhaps / could be,D,,sevwanes,,sewavnes,o-,false,false,,
+bamares,3,would have (counterfactual),D,,,,bamavres,o-,false,true,mono,
+chorogor,3,good morning,N,chojrogor,,,,a-,false,true,mono,
+sarrogor,3,good afternoon,N,sajrrogor,,,,a-,false,true,mono,
+targor,2,good evening,N,targor,,,,a-,false,true,mono,
+rokgor,2,good night,N,rokgor,,,,y-,false,true,mono,
+pem,1,inclusive or (either or both),,,,,,o-,true,false,,
+pona,2,xnor (both or neither),,,,,,o-,true,false,,
+pemna,2,nor (neither...nor),,,,,,o-,true,false,,
+sor,1,suggestion particle (sentence-final),,,,,,o-,true,false,,
+chom,1,polite request particle (pre-verbal),,,,,,o-,true,false,,
+maug,1,strong prohibition particle (pre-verbal),,,,,,o-,true,false,,
+gin,1,progressive aspect (be X-ing),,,,,,o-,true,false,,
+ger,1,perfective aspect (have X-ed),,,,,,o-,true,false,,
+gou,1,experiential aspect (have X-ed before),,,,,,o-,true,false,,
+hei,1,hello / hey (vocative) / hello,NAD,hei,,heis,,o-,false,false,,
+shen,1,self (reflexive),N,shen,,,,a-,false,false,,
+meshen,2,each other / reciprocal,A,,,meshens,,a-,false,false,,
+mer,1,comitative particle (with),,,,,,o-,true,false,,
+sy,1,instrumental & passive particle (by / with),,,,,,o-,true,false,,
+ar,1,ablative particle (from),,,,,,o-,true,false,,
+tilpe,2,locative-relational particle (between),,,,,,o-,true,false,,
+ei,1,coordinator (and),,,,,,o-,true,false,,
+po,1,exclusive or (either but not both),,,,,,o-,true,false,,
+amer,2,adversative (but / however),,,,,,o-,true,false,,
+tu,1,temporal subordinator (when / while),,,,,,o-,true,false,,
+li,1,conditional subordinator (if),,,,,,o-,true,false,,
+bam,1,consequential particle (then / 便 / 就),,,,,,o-,true,false,,
+aiga,2,again,D,,,,aigas,o-,false,false,,
+hoskar,2,concessive subordinator (although),,,,,,o-,true,false,,
+arfi,2,concessive intensifier (even),,,,,,o-,true,false,,
+fidak,2,purpose subordinator (in order to),,,,,,o-,true,false,,
+kus,1,relativizer & complementizer (that / which),,,,,,o-,true,false,,
+halise,3,piety; religious devotion / to pray in a formal way / prayerful; devout / prayerfully; with devotion,NVAD,hajlise,havlise,halijse,halivse,e-,false,true,mono,
+min,1,let (permissive),V,,min,,,o-,false,false,,
+mingo,2,make / to force,V,,mingo,,,o-,false,false,,
+ma,1,mom / mommy,N,ma,,,,a-,false,false,,
+mamae,2,mother,N,mamae,,,,a-,false,false,,
+fa,1,dad / daddy,NA,fa,,fas,,a-,false,false,,
+famae,2,father,N,famae,,,,a-,false,false,,
+lorrak,2,language,N,lorrak,,,,o-,false,false,,
+wug,1,dog / sound made by dog barking / bark,NV,wug,wug,,,a-,false,false,,
+mau,1,cat / sound made by cat,N,mau,,,,a-,false,false,,
+onla,2,leaves / leaves-shape / light in weight,NA,onla,,onlas,,u-,false,false,,
+walunla,3,forest / densely and numerously,ND,wajlunla,,,waluvnla,u-,false,true,mono,
+rori,2,"sunrise, dawn",N,rori,,,,a-,false,false,,
+aura,2,celestial object / celestial,NA,aura,,auras,,i-,false,false,,
+auron,2,sky,N,auron,,,,i-,false,false,,
+aurok,2,cosmic/space / cosmic / night sky,NA,aurok,,auroks,,i-,false,true,mono,
+auronte,3,dome / canopy / sky,N,aujronte,,,,i-,false,true,mono,
+thung,1,swim,V,,thung,,,e-,false,false,,
+latif,2,healing / to save or rescue / to heal / safe / healing,NVA,latif,latif,latifs,,a-,false,false,,
+argonnia,4,grace / grateful,NA,argojnnia,,argonnija,,u-,false,false,,-nia in here does not related to the derivational suffix -nia
+miso,2,music / musical / harmonic,NA,miso,,misos,,u-,false,false,,
+bop,1,bottom / bottom,NA,bop,,bops,,ae-,false,false,,
+hap,1,right,NAD,hap,,,,ae-,false,false,,
+fim,1,left side / left / left,NAD,fim,,fims,fims,ae-,false,false,,
+arrin,2,distance / to make sth far off in position or nature / distant / distantly,NVAD,arrin,arrin,arrins,arrins,o-,false,false,,
+hak,1,half hour(i.e. 30 mins) in informal ways / half amount as usual / make sth half amount / half as much or as many / at half amount or extent,NVAD,hak,hak,haks,haks,o-,false,false,,
+hakdo,2,one-fourth amount as usual / make sth one-fourth amount / one-fourth as much or as many / at one-fourth amount or extent,NVAD,hakdo,hakdo,hakdos,hakdos,o-,false,true,mono,
+hakfoi,2,one-eighth amount as usual / make sth one-eighth amount / one-eighth as much or as many / at one-eighth amount or extent,NVAD,hakfoi,hakfoi,hakfois,hakfois,o-,false,true,mono,
+hakauk,2,one-sixteenth amount as usual / make sth one-sixteenth amount / one-sixteenth as much or as many / at one-sixteenth amount or extent,NVAD,hakauk,hakauk,hakauks,hakauks,o-,false,true,mono,
+dok,1,twice as usual / make sth double amount / twice as much or as many / at twice amount or extent,NVAD,dok,dok,doks,doks,o-,false,false,,
+dokdo,2,four times amount as usual / make sth four times amount / four times as much or as many / at four times amount or extent,NVAD,dokdo,dokdo,dokdos,dokdos,o-,false,true,mono,
+dokfoi,2,eight times amount as usual / make sth eight times amount / eight times as much or as many / at eight times amount or extent,NVAD,dokfoi,dokfoi,dokfois,dokfois,o-,false,true,mono,
+dokauk,2,sixteen times amount as usual / make sth sixteen times amount / sixteen times as much or as many / at sixteen times amount or extent,NVAD,dokauk,dokauk,dokauks,dokauks,o-,false,true,mono,
+dise,2,facing / turn towards,NV,dise,dise,,,ae-,false,false,,
+diserin,3,direction / directional,NA,dijserin,,disejrin,,ae-,false,true,mono,
+nordi,2,north / northern,NA,nordi,,nordis,,ae-,false,false,,
+sirdi,2,south / southern,NA,sirdi,,sirdis,,ae-,false,false,,
+aerdi,2,east / eastern,NA,aerdi,,aerdis,,ae-,false,false,,
+bordi,2,west / western,NA,bordi,,bordis,,ae-,false,false,,
+aniu,2,zero / zero amount of / not,AD,,,anius,anius,o-,false,false,,
+mo,1,one,,,,,,o-,true,false,,
+do,1,two,,,,,,o-,true,false,,
+ro,1,three,,,,,,o-,true,false,,
+foi,1,four,,,,,,o-,true,false,,
+tai,1,five,,,,,,o-,true,false,,
+sro,1,six,,,,,,o-,true,false,,
+lai,1,seven,,,,,,o-,true,false,,
+auk,1,eight,,,,,,o-,true,false,,
+wy,1,nine,,,,,,o-,true,false,,
+gau,1,ten,,,,,,o-,true,false,,
+mai,1,eleven,,,,,,o-,true,false,,
+doi,1,twelve,,,,,,o-,true,false,,
+rai,1,thirteen,,,,,,o-,true,false,,
+cu,1,hundred,,,,,,o-,true,false,,
+kas,1,thousand,,,,,,o-,true,false,,
+hus,1,million,,,,,,o-,true,false,,
+tus,1,billion,,,,,,o-,true,false,,
+rakas,2,trillion,,,,,,o-,true,false,,
+dir,1,ordinal particle,,,,,,o-,true,false,,
+piroi,2,yesterday,N,piroi,,,,a-,false,true,mono,
+paroi,2,tomorrow,N,paroi,,,,a-,false,true,mono,
+imaroi,3,today / the present time,N,ijmaroi,,,,a-,false,true,mono,
+pimaroi,3,day before yesterday,N,pijmaroi,,,,a-,false,true,mono,
+pamaroi,3,day after tomorrow,N,pajmaroi,,,,a-,false,true,mono,
+pima,2,things at exactly two step before / anything before the two step before (including the two step before) / further earlier,ND,pima,,,pimas,o-,false,false,mono,
+pama,2,things at exactly two step after / anything after the two step after (including the two step after) / further later or further ahead,ND,pama,,,pamas,o-,false,false,mono,
+esaka,3,always,D,,,,esavka,o-,false,true,mono,
+srosaka,3,sometimes,D,,,,slosavka,o-,false,true,mono,
+nasaka,3,never,D,,,,nasavka,o-,false,true,mono,
+foragilan,4,volcano / volcanic,NA,forajgilan,,foragijlan,,ae-,false,true,mono,
+lirahup,3,waterfall,N,lijrahup,,,,i-,false,true,mono,
+roralumi,4,sunlight / sunshine,N,rorajlumi,,,,a-,false,true,mono,
+yrelumi,4,moonlight / the ray of moonlight pass through the gaps of trees or sth / quiet with melancholy,NA,yrejlumi,,yrelujmi,,a-,false,true,mono,
+theprusome,4,bedroom,N,theprujsome,,,,ae-,false,true,mono,
+haminrusome,5,dining hall or dining room,N,haminrujsome,,,,ae-,false,true,mono,
+latifmae,3,doctor / healer,N,lajtifmae,,,,a-,false,true,mono,
+misomae,3,musician,N,mijsomae,,,,a-,false,true,mono,
+misomaeha,4,musician (formal),N,misojmaeha,,,,a-,false,true,mono,
+tesakmae,3,crafter / maker,N,tejsakmae,,,,a-,false,true,mono,
+takamae,3,eater,N,tajkamae,,,,a-,false,true,mono,
+feimae,2,pilot/aviator,N,feimae,,,,a-,false,true,mono,
+kuptek,2,cutlery / cutter / any cutting tools,N,kuptek,,,,e-,false,true,mono,
+tesaktek,3,creation tool,N,tejsaktek,,,,e-,false,true,mono,
+shukrin,2,speed,N,shukrin,,,,o-,false,true,mono,
+ralirin,3,size,N,rajlirin,,,,o-,false,true,mono,
+tesakpar,3,creation (act of creating),N,tejsakpar,,,,e-,false,true,mono,
+bau pos,2,bakery,N,bau pos,,,,ae-,false,true,multi,
+hamin pos,3,restaurant / canteen,N,hamin pos,,,,ae-,false,true,multi,
+oslise isra,5,existentialism,N,oslise isra,,,,o-,false,true,multi,
+afaloi taka,5,edible,A,,,afaloi taka,,a-,false,true,multi,
+lira naras,4,waterless,A,,,lira naras,,i-,false,true,multi,
+gilan fora,4,wildfire / fire on mountain,N,gilan fora,,,,a-,false,true,multi,
+orse,2,"also, too, as well",,,,,,o-,true,false,,"additive adverb: also, too, as well"
+aewei,2,Who?,,,,,,o-,true,false,,question word
+ewei,2,What?,,,,,,o-,true,false,,question word
+iwei,2,Where?,,,,,,o-,true,false,,question word
+owei,2,When?,,,,,,o-,true,false,,question word
+uwei,2,How?,,,,,,o-,true,false,,question word
+ywei,2,Why?,,,,,,o-,true,false,,question word
+awei,2,Which?,,,,,,o-,true,false,,question word
+aeweisan,3,Whose?,,,,,,o-,true,false,,question word (genitive of aewei)
+ki,1,I,,,,,,o-,true,false,,"personal pronoun, 1st singular"
+kin,1,me (ACC),,,,,,o-,true,false,,"personal pronoun, 1st singular accusative"
+kis,1,my (GEN),,,,,,o-,true,false,,"personal pronoun, 1st singular genitive"
+ti,1,you (sg),,,,,,o-,true,false,,"personal pronoun, 2nd singular"
+tin,1,you (sg ACC),,,,,,o-,true,false,,"personal pronoun, 2nd singular accusative"
+tis,1,your (sg GEN),,,,,,o-,true,false,,"personal pronoun, 2nd singular genitive"
+si,1,he/she/they (sg),,,,,,o-,true,false,,"personal pronoun, 3rd living singular"
+sin,1,him/her/them (sg ACC),,,,,,o-,true,false,,"personal pronoun, 3rd living singular accusative"
+sis,1,his/her/their (sg GEN),,,,,,o-,true,false,,"personal pronoun, 3rd living singular genitive"
+ni,1,it (sg),,,,,,o-,true,false,,"personal pronoun, 3rd non-living singular"
+nin,1,it (sg ACC),,,,,,o-,true,false,,"personal pronoun, 3rd non-living singular accusative"
+nis,1,its (sg GEN),,,,,,o-,true,false,,"personal pronoun, 3rd non-living singular genitive"
+ikne,2,inside,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+oukne,2,outside,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+umne,2,under,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+rapne,2,above,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+haune,2,behind,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+paune,2,in front of,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+hinne,2,beside; near,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+tene,2,towards,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+orane,3,along,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+meipone,3,around,,,,,,o-,true,false,,spatial postposition (-ne suffix)
+ema,2,truth / true / real / truely / without a doubt,NAD,ema,,emas,emas,o-,false,false,,base root for emlu (truth); section I
+lise,2,assigned state; divine season; appointed time; providential ordering; sacred rhythm,N,lise,,,,o-,false,false,,Core root. Source of the grammaticalised -lise suffix (borrowed from maelise).
+hal,1,hope / to hope / prospect / to prospect,NV,hal,hal,,,e-,false,false,,Everyday/personal hope. Contrast with halise (wish/prayer).
+hop,1,luck / to bless / lucky,NVA,hop,hop,hops,,o-,false,false,,Informal. Formal variant: hoplise.
+lumin,2,brightness / bright,NA,lumin,,lumins,,o-,false,false,,
+maelise,3,human fate; mortal destiny; the appointed condition of humanity,N,maejlise,,,,o-,false,true,mono,Original source word for the -lise suffix. Literally 'human-fate'.
+elise,3,lifetime; appointed span of life / to live out one's days / alive with the fullness of life; vital,NVA,ejlise,evlise,elijse,,a-,false,true,mono,
+milise,3,appointed death; time of dying / sacrifice / to die an ordained death; to be given over to death / to sacrifice / to fade away / toward death; until death,NVD,mijlise,mivlise,,milivse,a-,false,true,mono,
+hoplise,3,formal blessing; benediction / to bestow a formal blessing / formally blessed,NVA,hojplise,hovplise,hoplijse,,o-,false,true,mono,Formal variant of hop.
+gorlise,3,good fortune; appointed goodness / fortunate; blessed with good timing,NA,gojrlise,,gorlijse,,o-,false,true,mono,
+bonaklise,4,appointed adversity; season of hardship / misfortunate; afflicted by ordained trial / by unfortunate appointment,NAD,bonajklise,,bonaklijse,bonaklivse,o-,false,true,mono,
+luminlise,4,bright turning; appointed dawn; season of hope / having a good luck in future,N,lumijnlise,,,,o-,false,true,mono,
+mylise,3,dark turning; appointed dusk; season of foreboding / having a bad luck in future,N,myjlise,,,,y-,false,true,mono,
+huplise,3,appointed decline; time of falling / apocalypse,N,hujplise,,,,o-,false,true,mono,
+rildalise,4,oracle; prophetic utterance / to prophesy,NV,rildajlise,rildavlise,,,o-,false,true,mono,
+shenlise,3,one's appointed occurrence; personal destiny,N,shejnlise,,,,o-,false,true,mono,
+shoun,1,since (temporal),,,,,,o-,true,false,,
+mitok,2,until,,,,,,o-,true,false,,
+austar,2,start of the dusk,N,austar,,,,i-,false,true,mono,
+auronius,3,sky-like,N,aujronius,,,,i-,false,true,mono,
+auroneus,3,of the sky,N,aujroneus,,,,i-,false,true,mono,
+austarius,3,start-of-dusk-like,N,aujstarius,,,,i-,false,true,mono,
+austareus,3,of the start of dusk,N,aujstareus,,,,i-,false,true,mono,
+rius,1,likeness / similar as / kind of,NA,rius,,riuss,,o-,false,false,,Source root for similative suffix -ius
+meus,1,"genre of sth / with the origin of/belongs to sth (-ian, -ese) / characteristics of sth",A,,,meuss,,ae-,false,false,,Source root for relational suffix -eus
+song rius,2,acquaintance,N,song rius,,,,a-,false,true,multi,Compound: song + rius; phonotactic block → multi-word; similative
+song meus,2,family friendship,N,song meus,,,,a-,false,true,multi,Compound: song + meus; phonotactic block → multi-word; relational
+nia,2,"abundance, fullness / fully",NA,nia,,nias,,o-,false,false,,Full-root form of abundative suffix -ia. Syllables: ni/a. Prefix: o-.
+posia,3,"land, realm, domain / state / city-state",N,pojsia,,,,ae-,false,false,,
+lote,2,group / group of people / multitude / to group / collective,NVA,lote,lote,lotes,,a-,false,false,,Source of -lo pronoun plural suffix (fused) and lote multi-word collective marker for human nouns. Syllables: lo/te. Prefix: a-.
+kilo,2,we,,,,,,o-,true,false,,Pronoun: ki plural (NOM)
+kilon,2,us (ACC),,,,,,o-,true,false,,Pronoun: ki plural (ACC)
+kilos,2,our (GEN),,,,,,o-,true,false,,Pronoun: ki plural (GEN)
+tilo,2,you (pl),,,,,,o-,true,false,,Pronoun: ti plural (NOM)
+tilon,2,"you (pl, ACC)",,,,,,o-,true,false,,Pronoun: ti plural (ACC)
+tilos,2,"your (pl, GEN)",,,,,,o-,true,false,,Pronoun: ti plural (GEN)
+silo,2,"they (living, pl)",,,,,,o-,true,false,,Pronoun: si plural (NOM)
+silon,2,"them (living, pl, ACC)",,,,,,o-,true,false,,Pronoun: si plural (ACC)
+silos,2,"their (living, pl, GEN)",,,,,,o-,true,false,,Pronoun: si plural (GEN)
+nilo,2,"they (non-living, pl)",,,,,,o-,true,false,,Pronoun: ni plural (NOM)
+nilon,2,"them (non-living, pl, ACC)",,,,,,o-,true,false,,Pronoun: ni plural (ACC)
+nilos,2,"their (non-living, pl, GEN)",,,,,,o-,true,false,,Pronoun: ni plural (GEN)
+tam,1,male / male / masculine,NA,tam,,tams,,a-,false,false,,Syllables: tam. Prefix: a-.
+shem,1,female / feminine,NA,shem,,shems,,a-,false,false,,Syllables: shem. Prefix: a-.
+tamae,2,man,N,tamae,,,,a-,false,true,mono,Syllables: ta/mae. Prefix: a-.
+shemae,2,women,N,shemae,,,,a-,false,true,mono,Syllables: she/mae. Prefix: a-.
+chel,1,child / childish,NA,chel,,chels,,a-,false,false,,Syllables: chel. Prefix: a-.
+ler,1,girl,N,ler,,,,a-,false,false,,Syllables: ler. Prefix: a-.
+lar,1,boy,N,lar,,,,a-,false,false,,Syllables: lar. Prefix: a-.
+chellar,2,son,N,chellar,,,,a-,false,true,mono,chel + lar. Syllables: chel/lar. Prefix: a-.
+cheller,2,daught,N,cheller,,,,a-,false,true,mono,chel + ler. Syllables: chel/ler. Prefix: a-.
+rinok param,4,measurement,N,rinok param,,,,o-,false,true,multi,result compound
+lu,1,"property suffix, -ness / quality",N,lu,,,,o-,false,false,,Combining form of pireilu
+rin,1,"measure suffix, -th / degree",N,rin,,,,o-,false,false,,Combining form of rinok
+par,1,process / to process / proceed,NV,par,par,,,e-,false,false,,
+choum,1,harvest / harvesting / reap,NV,choum,choum,,,u-,false,false,,root
+il,1,stop / halt / stop / halt,NV,il,il,,,o-,false,false,,root
+apa,2,seed / seeding / seed,NV,apa,apa,,,u-,false,false,,root
+tlar,1,period / time interval,N,tlar,,,,o-,false,false,,root
+oslise,3,existence / to exist / existent,NVA,ojslise,ovslise,oslijse,,o-,false,true,mono,root
+os₁,1,"having, own / have",NV,os₁,os₁,,,o-,false,false,,subscript escape hatch — os already exists as function word (PART)
+klush lu,2,courage,N,klush lu,,,,a-,false,true,multi,
+argonnamae,4,lover / one who loves,N,argojnnamae,,,,a-,false,true,mono,
+argonnamae lise,6,fated lover / destined beloved / appointed lover,N,argonnamae lise,,,,a-,false,true,multi,
+wes,1,things / stuff,,wes,,,,e-,false,false,,"suffix source root for -wes (Collective, §I-J)"
+rem,1,former one / that which once was but is no longer,,rem,,,,o-,false,false,,"suffix source root for -rem (Retrospective, §I-K)"
+rum,1,new or revived form / that which is yet to be but is soon coming,,rum,,,,o-,false,false,,"suffix source root for -rum (Prospective, §I-L)"
+pih,1,prior / previous / before (in time),,,,pihs,,o-,false,false,,"Source root for pi- prefix. ADP sense ""before (in time)"" added post-creation."
+pah,1,subsequent / later / after (in time),,,,pahs,,o-,false,false,,"Source root for pa- prefix. ADP sense ""after (in time)"" added post-creation."
+seftah,2,meta / transcendent / beyond,,,,seftahs,,o-,false,false,,"Source root for sefta- prefix. ADP sense ""beyond"" added post-creation."
+doir,1,little one / young one / little / small / young / cute,,doir,,doirs,,u-,false,false,,Source root for doi-/doir- prefix.
+meson,2,giant / enormous thing / huge / giant / enormous / trillion (10^12),,meson,,mesons,,y-,false,false,,"Source root for mes- prefix. NUM sense ""trillion (10\u00b9\u00b2)"" added post-creation via edit."
+mik,1,study / field of study,,mik,,,,o-,false,false,,Source root for -ik/-mik suffix.
+mlis,1,method / way,,mlis,,,,e-,false,false,,Source root for -is/-mlis suffix. Whitelisted -s final root; A/D form = mlises.
+aigan,2,repetition / renewal / to repeat / to do again / repeated / renewed / repeatedly,,aigan,aigan,aigans,aigans,o-,false,false,,Source root for ai-/aig- prefix.
+konta,2,opposition / adversary / to oppose / to counter / opposing / contrary,,konta,konta,kontas,,o-,false,false,,Source root for kon- prefix.
+weikra,2,weakness / to weaken / weak / weakly,NVAD,weikra,weikra,weikras,weikras,o-,false,false,,Near-collision flag: starts with wei (interrogative root). Reviewed — false alarm.
+saelom,2,peace / to pacify / make peace / peaceful / peacefully,NVAD,saelom,saelom,saeloms,saeloms,o-,false,false,,root
+arse,2,buttocks / arse / ass,N,arse,,,,u-,false,false,,root
+tesar,2,art / artistic / artistically,NAD,tesar,,tesars,tesars,e-,false,false,,Phonologically paired with tesak (create); t-s frame = creation semantic field.
+lausta,2,song / to sing / lyrical / songful / lyrically,NVAD,lausta,lausta,laustas,laustas,u-,false,false,,root
+messa,2,greatness / great / greatly,NAD,messa,,messas,messas,o-,false,false,,root
+raekum,2,rest / repose / to rest / relax / restful / restfully,NVAD,raekum,raekum,raekums,raekums,o-,false,false,,root
+raekumlausta,4,requiem,N,raekumlausta,,,,u-,false,true,mono,Descriptive noun-noun compound (rest + song). Upgraded to mono per compounding.md Rule 5.
+mlaska,2,sword,N,mlaska,,,,e-,false,false,,ml- frame paired with maliu (knife); bladed object family.
+sefe,2,hammer / to hammer,NV,sefe,sefe,,,e-,false,false,,root
+talo,2,copper / copper-coloured,NA,talo,,talos,,y-,false,false,,"bare root; metal family (cf. giliu 'metal', y-). Near-collision with kilo (LD2) — reviewed, not blocking."
+ipo,2,"trap / to trap, catch in a trap",NV,ipo,ipo,,,e-,false,false,,"ip- hunting family (cf. ipon truss, ipot lure, e-). Near-collisions: po 'exclusive or' (LD1), meipo 'around' (LD2) — flagged, proceed."
+ipon,2,"truss / to truss, bind tightly",NV,ipon,ipon,,,e-,false,false,,"ip- constraint family (cf. ipo trap, e-). Near-collisions: ipo (LD1, intended), pona/po (LD2) — proceed."
+ipot,2,"lure / to lure, tempt",NV,ipot,ipot,,,e-,false,false,,"ip- hunting family (cf. ipo trap, ipon truss, e-). Near-collisions: ipo/ipon (LD1, intended), po (LD2) — proceed."
+gaeth,1,"lance / to lance, pierce",NV,gaeth,gaeth,,,e-,false,false,,"polearm family (cf. mlaska 'sword', e-). 1 syllable; ae→back ACC/GEN (gaethna, gaethsa)."
+pilau,2,gate,N,pilau,,,,ae-,false,false,,"pil- opening family (cf. piliu 'door', ae-). Near-collision piliu (LD1, intended) — proceed."
+choumtek,2,sickle,N,choumtek,,,,e-,false,true,mono,"choum (harvest/reap, u-) + tek (tool, e-). Instrument head → e-. Pattern auto=instrument, Rule Ref: rules/3-subsystems/compounding.md (Instrument head tek)."
+choumia,3,"bountiful harvest / fruitful, bountiful",NA,choujmia,,choumija,,u-,false,true,mono,"choum (harvest, u-) + -ia 'abundance' (nia). Abundative inherits u- from base; cf. choumar autumn. Pattern auto=abundative, Rule Ref: rules/3-subsystems/derivational-suffixes.md (-ia Abundative)."
+kacit,2,"fence / to fence, enclose",NV,kacit,kacit,,,ae-,false,false,,"boundary family (cf. piliu door, pilau gate, ae-)."
+aufe,2,bird (zoological classification),N,aufe,,,,a-,false,false,,"Register distinction: aufe = bird as zoological category (cf. fein = common bird, 鳥 vs 禽)"
+kona,2,fox,N,kona,,,,a-,false,false,,Form changed from kon to avoid collision with derivational prefix kon- (anti-)
+kaw,1,"crow, caw (crow's cry) / to caw",NV,kaw,kaw,,,a-,false,false,,Onomatopoeic. Pattern follows wug (dog/bark).
+wul,1,"wolf, howl (wolf's cry) / to howl",NV,wul,wul,,,a-,false,false,,Phonologically paired with wug (dog). Pattern follows wug (dog/bark).
+auri,2,"star / starry, dispersed, scattered",NA,auri,,auris,,i-,false,false,,Reform of sola. sola to be deprecated and superseded by auri. Phonologically grouped with auron (sky).
+enli,2,"to heighten, raise / high / highly",VAD,,enli,enlis,enlis,o-,false,false,,"enlirin = height (measure) available by -rin suffix, not stored."
+anlu,2,to lower / low / lowly,VAD,,anlu,anlus,anlus,o-,false,false,,"Antonym of enli. anlurin = lowness (measure) available by -rin suffix, not stored."
+srata,2,"rotation, spin / to rotate, spin, turn / rotating, rotary / rotationally",NVAD,srata,srata,sratas,sratas,o-,false,false,,"Near-collision with srato (house) — distance 1, but semantically distinct domains."
+tlera,2,thunder / to thunder / thunderous / thunderously,NVAD,tlera,tlera,tleras,tleras,i-,false,false,,root
+argoi,2,purity / to purify / pure / purely,NVAD,argoi,argoi,argois,argois,o-,false,false,,root
+saeche,2,saint / saintly / saintly,NAD,saeche,,saeches,saeches,u-,false,false,,root
+galut,2,"exile / to exile, banish",NV,galut,galut,,,o-,false,false,,root
+blalak,2,destruction / to destroy / destructive / destructively,NVAD,blalak,blalak,blalaks,blalaks,y-,false,false,,root
+milta,2,"fatality / fatal, deadly / fatally",NAD,milta,,miltas,miltas,a-,false,false,,"Phonological family: mil (death), milise (appointed death)."
+dunom,2,"fortress / fortress-like, fortified",NA,dunom,,dunoms,,y-,false,false,,root
+ketush,2,whale,N,ketush,,,,a-,false,false,,root
+aedin,2,"plain (grassland) / flat, level / plainly, flatly",NAD,aedin,,aedins,aedins,ae-,false,false,,root
+rican,2,"root, source, origin / fundamental, rooted / fundamentally",NAD,rican,,ricans,ricans,u-,false,false,,root
+mlara,2,"a kill / to kill / deadly, killing / fatally",NVAD,mlara,mlara,mlaras,mlaras,o-,false,false,,root
+mlada,2,murder (crime) / to murder / murderous / murderously,NVAD,mlada,mlada,mladas,mladas,o-,false,false,,root
+oki,2,"core, central part, innermost part / core, essential, fundamental / essentially, fundamentally, at the core",NAD,oki,,okis,okis,o-,false,false,,root
+okira,3,"hub, busy place, center of activity / bustling, hub-like / busily, in a bustling manner",NAD,okira,,okiras,okiras,a-,false,false,,root
+okika,3,"capital, capital city, seat of government / capital, primary, foremost",NA,okika,,okikas,,ae-,false,false,,root
+sentum,2,"center, midpoint / to center, to place at the center, to focus / central, located at the center / centrally",NVAD,sentum,sentum,sentums,sentums,o-,false,false,,root
+fimne,2,on the left,,,,,,o-,true,false,,spatial postposition; derived from fim (left) + -ne
+hapne,2,on the right,,,,,,o-,true,false,,spatial postposition; derived from hap (right) + -ne
+choroi,2,"morning / morning, of the morning / in the morning",NAD,choroi,,chorois,chorois,a-,false,false,,root
+sarroi,2,"afternoon / afternoon, of the afternoon / in the afternoon",NAD,sarroi,,sarrois,sarrois,a-,false,false,,root
+sarrok,2,"early morning, predawn hours (00:00-05:00) / predawn, early-morning / in the early morning, before dawn",NAD,sarrok,,sarroks,sarroks,a-,false,false,,root
+losfi,2,"liking, fondness, preference / to like, to enjoy, to be fond of",NV,losfi,losfi,,,o-,false,false,,root
+ime,2,"the past, time before now / past, former, bygone / in the past, formerly, ago",NAD,ime,,imes,imes,o-,false,false,,"im- temporal family: ima (present), ime (past), imu (future)"
+imu,2,"the future, time after now / future, forthcoming, eventual / in the future, eventually",NAD,imu,,imus,imus,o-,false,false,,"im- temporal family: ima (present), ime (past), imu (future)"
+klofi,2,"glory, splendor, renown / glorious, splendid / gloriously",NAD,klofi,,klofis,klofis,o-,false,false,,root
+klur,1,"war, conflict / to wage war, to war against",NV,klur,klur,,,a-,false,false,,"kl- military family: klush (blood), klur (war), klup (march), klusin (victory)"
+klup,1,"march, military advance / to march",NV,klup,klup,,,a-,false,false,,kl- military family
+klusin,2,"victory, triumph / victorious, triumphant / victoriously",NAD,klusin,,klusins,klusins,a-,false,false,,kl- military family
+aiganar,3,"no longer, not anymore",D,,,,aiganars,o-,false,true,mono,aigan (again/repeat) + nar (not). Mono-word negation compound.
+resrem,2,"extinct being, that which has ceased to exist / extinct",NA,resrem,,resrems,,o-,false,true,mono,"res (being) + -rem (Retrospective: former X, from rem). Consonant-initial suffix, clean fuse."
+resrum,2,"gestation, something developing or brewing over time / gestating, simmering, brewing, developing and intensifying over time",NA,resrum,,resrums,,o-,false,true,mono,"res (being) + -rum (Prospective: that which is yet to be, from rum). Mirror of resrem."
+pires,2,"predecessor, prior existence, antecedent / preceding, prior to existence",NA,pires,,piress,,o-,false,true,mono,"pi- (Temporal Pre-, from pih) + res (being)"
+pares,2,"successor, posterior existence / succeeding, posterior to existence",NA,pares,,paress,,o-,false,true,mono,"pa- (Temporal Post-, from pah) + res (being)"
+shukau,2,"almost, nearly / to arrive soon, to be imminent",DV,,shukau,,shukaus,o-,false,true,mono,shuk (fast) + kau (arrive). No pattern.
+bopne,2,below,,,,,,o-,true,false,,spatial postposition; bop (bottom) + -ne. Mirror of rapne (above).
+sysmoi,2,"thanks (everyday politeness; acknowledging a service, favour, or small help); excuse me, please (polite request marker)",,,,,,o-,true,false,,sys- politeness family. Everyday casual thanks and polite requests.
+sysmou,2,"thanks (deeper gratitude; for a gift, kindness, compliment, or thoughtful act)",,,,,,o-,true,false,,sys- politeness family. Deeper gratitude vs everyday sysmoi.
+sysmil,2,my condolences,,,,,,o-,true,false,,sys- politeness family.
+sysril,2,"politeness, courtesy / polite, courteous / politely",NAD,sysril,,sysrils,sysrils,o-,false,false,,sys- quality family.
+sysbim,2,"agreement, consent / to agree, to consent",NV,sysbim,sysbim,,,o-,false,false,,sys- social family.
+bimlor,2,"opinion, view, viewpoint",N,bimlor,,,,o-,false,false,,Treated as bare root for now.
+mlar,1,head (body part),N,mlar,,,,a-,false,false,,ml- body/family.
+sysloi,2,welcome,,,,,,o-,true,false,,sys- politeness family.
+mlarmae,2,"chief, head, leader",N,mlarmae,,,,a-,false,true,mono,"mlar (head) + -mae (Agent, from maeha)"
+aka,2,"an alternate form, variant, another rendering of the same thing",N,aka,,,,o-,false,false,,"Root of the aka- family (aka, akaberat, akanumin, akaur, akauselo). Near-collision with taka 'eat' (LD1) — different domain/POS, reviewed, non-blocking."
+akaur,2,"an alternative, an option / alternative, alternate; as a substitute / alternatively",NAD,akaur,,akaurs,akaurs,o-,false,false,,"aka- family. Renamed from akau to avoid near-collision with kau 'arrive, come' (id 43). Syllable division a.kaur."
+lith,1,"stone / stony, made of stone",NA,lith,,liths,,y-,false,false,,"Root of the -lith family (lith, galith, gilith)."
+galith,2,"rock (a large mass of mineral matter) / rocky, of rock",NA,galith,,galiths,,y-,false,false,,-lith family.
+gilith,2,"mineral(s); ore — naturally occurring inorganic matter / mineral, mineral-rich",NA,gilith,,giliths,,y-,false,false,,-lith family.
+shilim,2,"small stream, brook, creek",N,shilim,,,,i-,false,false,,"Watercourse family (shili river, i-). Near-collision with shili 'river' (LD1) — same watercourse domain, size-nuance distinction, reviewed, proceed."
+akaberat,4,synonym; a word with the same or near-same meaning as another / synonymous,NA,akaberat,,akaberats,,o-,false,true,mono,aka (alternate form) + berat (word). Head-last; non-head compound (no pattern).
+akanumin,4,"alias, assumed name, another name for the same referent / by the alias of, a.k.a.",ND,akanumin,,,akanumins,o-,false,true,mono,aka (alternate form) + numin (name). Head-last; non-head compound (no pattern).
+akauselo,4,"backup plan, alternative way, fallback / as a backup, as a fallback",ND,akauselo,,,akauselos,ae-,false,true,mono,"akaur (alternative) + selo (way, ae-). r-elision at fusion boundary: akaur+selo → akauselo. Head-last; non-head compound (no pattern)."
+wonlira,3,seawater,N,wonlira,,,,i-,false,true,mono,"wonli (sea, i-) + lira (water, i-). Medial li-collapse at fusion boundary: wonli+lira → wonlira. Head-last; non-head compound (no pattern)."
+seli,2,birth / to be born,NV,seli,seli,,,a-,false,false,,"Head of the sel- birth family (seli, seliroi, selise)."
+rilse,2,legend / legendary,NA,rilse,,rilses,,o-,false,false,,Narrative family.
+beril,2,"story, tale, narrative",N,beril,,,,o-,false,false,,A 'story-like' dropped — similative -ius covers it.
+sym,1,"god, deity / divine",NA,sym,,syms,,y-,false,false,,"sym- family (sym, symrilse)."
+shinobi,3,"ninja, hidden covert agent",N,shinobi,,,,a-,false,false,,Cultural loanword.
+hula,2,dance / to dance,NV,hula,hula,,,u-,false,false,,Prefix u- (per review).
+priko,2,laziness / lazy / lazily,NAD,priko,,prikos,prikos,o-,false,false,,Quality root.
+seliroi,3,birthday,N,seliroi,,,,a-,false,true,mono,seli (birth) + roi (day). Head-last; non-head compound (no pattern).
+selise,3,the appointed time of birth; the ordained hour of one's coming into being,N,selise,,,,a-,false,true,mono,seli (birth) + -lise (ordained occurrence); inherits a- from base seli.
+symrilse,3,myth / mythical,NA,symrilse,,symrilses,,o-,false,true,mono,sym (god) + rilse (legend). A = mythical only. Head-last; non-head compound (no pattern).
+lifa,2,"transformation, a transform / to transform, to change (into something else) / transformative",NVA,lifa,lifa,lifas,,o-,false,false,,lif- family head.
+nomik,2,"study, field of study / to study / studious",NVA,nomik,nomik,nomiks,,o-,false,false,,Full content root; mik is its shortened combining form (-ik/-mik suffix).
+nomir,2,"order, law, rule / ordered, lawful / to order, to decree",NAV,nomir,nomir,nomirs,,o-,false,false,,"nom- family (nomik, nomir)."
+loce,2,"administration, governance / to administer, to govern, to manage / administrative",NVA,loce,loce,loces,,o-,false,false,,loce- family head; combining/source form for locemir.
+sou,1,"continuation / to continue, to proceed, to go on / continuing, ongoing",NVA,sou,sou,sous,,o-,false,false,,"sou- family (sou, ilsou)."
+fid,1,"goal, aim, objective / to aim at, to target, to intend",NV,fid,fid,,,o-,false,false,,"fid- family (fid, fidden; cf. fidak purpose-particle)."
+fidden,2,"reason, rationale, grounds / to reason, to rationalise",NV,fidden,fidden,,,o-,false,false,,fid- family.
+misomik,3,"musicology, the study of music / musicological",NA,misomik,,misomiks,,o-,false,true,mono,"miso (music, u-) + -mik (study of, from nomik). Fixed o- per §IV-A."
+locemir,3,"council, governing body",N,locemir,,,,o-,false,true,mono,loce (administration) + nomir (order/law); no- of nomir elides → locemir. Head-last; non-head compound.
+ilsou,2,"sufficiency, enough / enough, sufficient / sufficiently",NAD,ilsou,,ilsous,ilsous,o-,false,true,mono,il (stop/halt) + sou (continue). Head-last; non-head compound.
+posim,2,"nation (the people, a people sharing identity) / national",NA,posim,,posims,,ae-,false,false,,"pos- land family; near-collision with posia (state/land, d=1) accepted — nation = the people, distinct from the polity."
+poskae,2,"country, land, territory / country-wide, of the land",NA,poskae,,poskaes,,ae-,false,false,,"pos- family; country = physical territory, distinct from posia (state/polity). Near-collision poska (place, d=1) accepted."
+posloce,3,province / provincial,NA,posloce,,posloces,,ae-,false,true,mono,pos (land) + loce (administration); head-last. pos- family ae-.
+poslam,2,"city, urban settlement / urban, of the city",NA,poslam,,poslams,,ae-,false,false,,"pos- family; urban settlement, distinct from posia (polity/city-state reading)."
+ruson,2,"separation / to separate, to set apart / separate, distinct / separately",NVAD,ruson,ruson,rusons,rusons,ae-,false,false,,rus- family (rusome); phonesthetic pairing set ae- overriding o-.
+rusomi,3,"district, civil division / district-level, of a district",NA,rusomi,,rusomis,,ae-,false,false,,"rus- family; near-collision rusome (room, d=1) accepted — concrete enclosed space vs bounded administrative region."
+pegloce,3,county / county-level,NA,pegloce,,pegloces,,ae-,false,false,,"pe- land family; near-collision poska (place, d=1) accepted."
+ikke,2,"closure, closing / to close, to shut / closed",NVA,ikke,ikke,ikkes,,o-,false,false,,"near-collision ikne (inside, d=1) accepted — distinct domains (locative vs closed-state)."
+wone,2,"opening, breadth / to open, to widen / open, broad, wide / openly, broadly",NVAD,wone,wone,wones,wones,o-,false,false,,wonli/wonir own i- (sea/ocean) sub-family; wone kept distinct at o-.
+rusoloce,4,"canton / canton-level, of a canton",NA,rusoloce,,rusoloces,,ae-,false,false,,rus- family; bare root (no rus root for rus+loce compound).
+grid,1,"trust, faith / to trust / trusting",NAV,grid,grid,grids,,u-,false,false,,grid- family head.
+gridin,2,"promise, pledge / to promise, to pledge",NV,gridin,gridin,,,u-,false,false,,grid- family (grid trust).
+sylor,2,mystery / to mystify / mysterious,NVA,sylor,sylor,sylors,,y-,false,false,,"Originally sylos (rejected: 2-syl root ending in -s). Redesigned to sylor. y- dark/foreboding family (my, mylise, wamy)."
+syloris,3,"magic, the art of the mysterious / magical",NA,syloris,,syloriss,,y-,false,true,mono,sylor (mystery) + -is/-mlis (method-to). y- family.
+tesar param,4,"art work, a work of art",N,tesar param,,,,e-,false,true,multi,"tesar (art, e-) + param (result, e-). Head-last; head noun param carries e-."
+hilorus,3,"exposure / to expose, to reveal, to lay bare / exposed, laid bare",NVA,hilorus,hilorus,hiloruss,,u-,false,false,,Standalone root; NOT rus-/ruso- family (no shared ruso- onset). u- (user).
+hilora,3,"nudity, bareness / nude, naked, bare / to bare, to strip",NAV,hilora,hilora,hiloras,,u-,false,false,,hilo- family (hilorus expose). u- family.
+hasti,2,"forgiveness, pardon / to forgive, to pardon / forgiving",NAV,hasti,hasti,hastis,,o-,false,false,,Abstract moral concept; o-.
+enlirin,3,"height, the measure of high",N,enlirin,,,,o-,false,true,mono,enli (high) + -rin (measure). o- per -rin measure rule.
+amosi,3,"because of, due to",,,,,,o-,true,false,,"Function word. amo- family; sibling of amo (because, PART, clause-level). amosi takes a noun-phrase cause/reason."
+altem,2,"personality, character, temperament / personal, of one's character",NA,altem,,altems,,o-,false,false,,alt- family head.
+altid,2,"acting, drama, role-play / to act, to perform (a role) / dramatic, theatrical",NVA,altid,altid,altids,,o-,false,false,,alt- family (altem). Distinguish from chap (a deed/action) — this is performative.
+altirma,3,"mask, a face-covering / to mask, to disguise, to conceal identity",NV,altirma,altirma,,,e-,false,false,,alt- family. e- (crafted object) chosen over family o-.
+altor,2,"role, part, function, persona",N,altor,,,,o-,false,false,,alt- family.
+alkam,2,"dressing-up, a costume / to dress up, to don a costume, to get into character / dressed-up, costumed",NVA,alkam,alkam,alkams,,o-,false,false,,"alkam- family. Near klam (cloth, d=2) — distinct domain/POS. o- (alt- persona family)."
+alkamer,3,"accessories, trappings of an outfit",N,alkamer,,,,e-,false,false,,alkam- family. e- (crafted objects).
+frunia,3,"floweriness, abundance of flowers / flowery, abounding in flowers",NA,frunia,,frunias,,u-,false,true,mono,"fru (flower, u-) + -ia (abundative). Base-inherit u-."
+tyse,2,"goodbye / a farewell, a send-off / farewell, valedictory",NA,tyse,,tyses,,o-,false,false,,Mixed content+function (cf. hei). Counterpart to hei (hello).
+mic,1,"correctness, accuracy / to correct, to set right / correct, right, accurate / correctly",NVAD,mic,mic,mics,mics,o-,false,false,,"Distinguish from ema (true, veridical) — correct = error-free/proper."
+bli,1,"wrongness, error / to wrong, to err / wrong, incorrect, in error / wrongly, incorrectly",NVAD,bli,bli,blis,blis,o-,false,false,,Antonym of mic (correct). Distinguish from bonak (bad = moral/qualitative).
+sik,1,"sin, a moral transgression, wrongdoing / to sin, to commit a moral transgression / sinful, morally wrong / sinfully",NVAD,sik,sik,siks,siks,y-,false,false,,"sik- family head. y- (dark/moral register). Distinguish from mlada (crime/legal), bli (wrong = error), bonak (bad = qualitative). Near-collisions: si/sin/sis pronoun set (d=1, different domain/POS — tolerate)."
+siklatif,3,"salvation, deliverance from sin",N,siklatif,,,,y-,false,true,mono,"sik (sin) + latif (save, a-). y- (sik family)."
+tifor,2,"lord, sovereign, master",N,tifor,,,,o-,false,false,,"secular abstract. Distinguish from sym (god, deity). o- over y-."
+siklatifor,4,"savior, deliverer",N,siklatifor,,,,y-,false,true,mono,3-root: sik+latif+tifor = sin-save-lord. y- (sik family).
+senok,2,"middle, the mid of a span / mid, middle",NA,senok,,senoks,,ae-,false,false,,"ron- age family. ae- (life-period). Distinguish from sentum (center/midpoint, geometric), oki (core). Feeds senokron."
+chelron,2,childhood,N,chelron,,,,ae-,false,true,mono,"chel (child, a-) + ron (age-period, ae-). ae- (ron family)."
+senokron,3,"middle-aged, the middle period of life",N,senokron,,,,ae-,false,true,mono,"senok (mid, ae-) + ron (age-period). ae- (ron family)."
+nobaron,3,"elderly, old age",N,nobaron,,,,ae-,false,true,mono,"noba (old, u-) + ron (age-period). ae- (ron family)."
+nibaron,3,"teenage, adolescence",N,nibaron,,,,ae-,false,true,mono,"niba (young, u-) + ron (age-period). ae- (ron family)."
+logerron,3,"adult, prime of life, the age of strength",N,logerron,,,,ae-,false,true,mono,"loger (strength, a-) + ron (age-period) = age of strength. ae- (ron family)."
+awino,3,"red, the colour red / red, red-coloured",NA,awino,,awinos,,a-,false,false,,"Colour-term closed class: fossilised a-+wino (colour). Frozen prefix, used bare, no re-prefix. a- (red/ontology)."
+ewino,3,"yellow, the colour yellow / yellow, yellow-coloured",NA,ewino,,ewinos,,e-,false,false,,Colour-term closed class: fossilised e-+wino. e- (yellow/crafted).
+aewino,3,"brown, the colour brown / brown, brown-coloured",NA,aewino,,aewinos,,ae-,false,false,,Colour-term closed class: fossilised ae-+wino. ae- (brown/earth).
+owino,3,"white, the colour white / white, white-coloured",NA,owino,,owinos,,o-,false,false,,Colour-term closed class: fossilised o-+wino. o- (white/abstract).
+iwino,3,"blue, the colour blue / blue, blue-coloured",NA,iwino,,iwinos,,i-,false,false,,Colour-term closed class: fossilised i-+wino. i- (blue/fluid).
+uwino,3,"green, the colour green / green, green-coloured",NA,uwino,,uwinos,,u-,false,false,,Colour-term closed class: fossilised u-+wino. u- (green/organic).
+ywino,3,"black, the colour black / black, black-coloured",NA,ywino,,ywinos,,y-,false,false,,Colour-term closed class: fossilised y-+wino. y- (black/mass).
+arma,2,"dear, beloved / dear, beloved, endearing",NA,arma,,armas,,a-,false,false,,arma- affection family head. a- (living/person-oriented). Distinguish argonna (love).
+morsa,2,"wife, spouse (female)",N,morsa,,,,a-,false,false,,Kinship term. a- (living).
+armati,3,"darling, sweetheart / darling, cherished",NA,armati,,armatis,,a-,false,false,,"arma- family. NOT arma+ti (ti = ""you"" pronoun); fossilised root. a-."
+kiro,2,"text, written content / textual, written",NA,kiro,,kiros,,o-,false,false,,"kir- writing family head. o- (abstract content). Distinguish berat (word), kira (book)."
+kirolote,4,"paragraph, a block of text",N,kirolote,,,,o-,false,true,mono,kiro (text) + lote (group). Non-human lote → head-class o-. First generalised non-human lote compound (spec §I-G amended).
+kiroli,3,"section, a portion of text",N,kiroli,,,,o-,false,true,mono,"kiro (text) + roli (a lot / many) = a lot of text. o-. Not kiro+li (li = ""if"" subordinator)."
+kiromae,3,"writer, author",N,kiromae,,,,a-,false,true,mono,kiro (text) + maeha (person). Agent. a- (living).
+kiroparam,4,"article, a written piece",N,kiroparam,,,,e-,false,true,mono,"kiro (text) + param (result) = lexicalised article. e- (crafted head, cf. tesar param)."
+kiropar,3,"writing, the act/process of writing / to write",N,kiropar,kiropar,,,e-,false,true,mono,"kiro (text) + par (process). e- (process head, cf. tesakpar)."
+kirotek,3,"pen, a writing instrument",N,kirotek,,,,e-,false,true,mono,kiro (text) + tek (tool). instrument. e- (crafted).
+kira,2,"book, a bound volume",N,kira,,,,e-,false,false,,"kira- book subfamily head. e- (crafted artifact). Distinguish kiro (text). Near-collision kora/lira/okira (d=1, diff domains — tolerated)."
+kiraruson,4,"chapter, a separate section of a book",N,kiraruson,,,,ae-,false,true,mono,kira (book) + ruson (separate) = separate part of book. ae- (ruso- family head-inherit).
+kirapos,3,"library, a book-place",N,kirapos,,,,ae-,false,true,mono,kira (book) + poska (place/location head). location. ae- (earth).
+kiramik,3,"library science, study of books",N,kiramik,,,,o-,false,true,mono,kira (book) + mik (study-of -ik). N-only discipline. o- (abstract head). mik not in pattern map → pattern supplied manually.
+kiromik,3,"literary studies, literature as a studied discipline",N,kiromik,,,,o-,false,true,mono,"kiro (text) + mik (study-of). The discipline, distinct from kirowes (the body of works). o-."
+kirowes,3,"literature, the body of written works",N,kirowes,,,,o-,false,true,mono,"kiro (text) + wes (-wes collective, ""the stuff of X""). Mono fused per -wes higher-priority rule. o-. Lexicalised cultural category (editorial: stored despite transparent -wes)."
+kirosefon,4,"font, typeface",N,kirosefon,,,,o-,false,true,mono,"kir- family by onset but bare root (SEFON is not a stored root → not a kiro+sefon compound, cf. hilorus). o- (abstract style of text)."
+kiratek,3,"printer, a printing machine",N,kiratek,,,,e-,false,true,mono,kira (book) + tek (instrument). e- crafted. Near-collision d=1 kirotek (pen) tolerated — parallel bases (kiro text / kira book).
+thes,1,electricity / to electrify / electric,NVA,thes,thes,thess,,a-,false,false,,"thes- family head. 1-syl content root ending -s → added to S_FINAL_WHITELIST (mirrors fos/ice). a- (natural energy, cf. loger power). Near-collision thep (sleep, d=1, diff domain) tolerated."
+theskira,3,"e-book, electric book",N,theskira,,,,e-,false,true,mono,thes (electricity) + kira (book). Descriptor compound. e- (book head).
+thespiliu,3,"electric door, automatic door",N,thespiliu,,,,e-,false,true,mono,thes + piliu (door). Descriptor compound. e- (crafted — user override over door-head ae-). Transparent but deliberate coinage.
+thestek,2,"electric equipment, electrical devices",N,thestek,,,,e-,false,true,mono,"thes + tek (instrument). e- crafted. Transparent general category, deliberate coinage."
+thesau,2,lightning,N,thesau,,,,a-,false,false,,"Bare thes- family root (lightning = sky electricity). a-. Etymologised vs aura (sky) but au not a root → standalone. d=2 tesak/tesar (art), diff domain, tolerated."
+thesis,2,"power generation, electricity generation",N,thesis,,,,a-,false,true,mono,thes + mlis (method-to -is). Consonant-final base thes fuses cleanly. a- (thes- family). mlis not in pattern map → pattern supplied manually.
+lanko,2,"angle, a corner or bend / angular, having angles (not jagged/sharp)",NA,lanko,,lankos,,o-,false,false,,lan- shape family head. o-. A sense = angles-related only; jagged/sharp reserved for a future distinct root.
+breso,2,circle / circular,NA,breso,,bresos,,o-,false,false,,"Geometric-figure root, o-. Accepted near-synonym (akaberat) with yre (round/moon) for ""circular""."
+lanfo,2,"square / square, quadrangular",NA,lanfo,,lanfos,,o-,false,false,,"lan- shape family (with lanko angle; k/f sibling, carved family). o-."
+rolanko,3,triangle / triangular,NA,rolanko,,rolankos,,o-,false,true,mono,ro (three) + lanko (angle) = three-angle. o-. Lexicalized basic shape.
+sefon,2,"shape, form / to shape, to form / shaped, formed",NVA,sefon,sefon,sefons,,o-,false,false,,"Generic shape/form category, o-. Also the head of font: enables kirosefon = kiro+sefon (text-shape) — see kirosefon upgrade note."
+elmin,2,cloud / cloudy,NA,elmin,,elmins,,i-,false,false,,"Atmospheric root, i- (cloud/weather family: hu wind, hupli rain, auron sky)."
+augor,2,angel / angelic,NA,augor,,augors,,y-,false,false,,"Heavenly/divine being, y- (divine register: sym, siklatifor). Not aug(egin)+gor(good) compositionally."
+epilo,3,"summary, overview / to summarize / summarised, condensed",NVA,epilo,epilo,epilos,,o-,false,false,,"Abstract concept root, o-. epilo- conclusion/summary family head."
+epilobim,4,conclusion / to conclude / concluding,NVA,epilobim,epilobim,epilobims,,o-,false,true,mono,epilo + non-root tail -bim (single stored root epilo). o-.
+epiloril,4,"epilogue, the closing section of a work",N,epiloril,,,,o-,false,true,mono,epilo + non-root tail -ril. Carve: epilogue (literary closing section) ≠ epilobim (general conclusion). o-.
+romah,2,"passivity, passiveness / passive, inactive, receptive",NA,romah,,romahs,,o-,false,false,,Temperament quality; distinct from the grammar passive particle sy (by). o- (abstract quality).
+sourom,2,"to receive / reception, the act of receiving",NV,sourom,sourom,,,o-,false,false,,Bare sou- give/receive family (with sounar give). User prefix o- (overrode e- lean). Unrelated to sou (continuation) homonym.
+brostima,3,to protect / protection / protective,NVA,brostima,brostima,brostimas,,o-,false,false,,Proactive protection ≠ latif save/rescue. o- (abstract).
+basto,2,"battle / to battle, to fight / combative, of battle",NVA,basto,basto,bastos,,a-,false,false,,"bas- combat family head. a- (combat register, cf. klur war a-). Single engagement ≠ klur (war)."
+basma,2,"to attack / an attack, an assault / attacking, offensive",NVA,basma,basma,basmas,,a-,false,false,,bas- combat family. a- (shared-onset family).
+basrom,2,defense / to defend / defensive,NVA,basrom,basrom,basroms,,a-,false,false,,bas- combat family. a-. Antonym pair with basma (attack).
+aeter,2,"eternal, ever-lasting / eternity / eternally",NAD,aeter,,aeters,aeters,o-,false,false,,Time-cluster root (ime/imu/tlow o-). Timeless ≠ esaka always. o-.
+irae,2,"wrath, rage, indignation / to rage, to fume / wrathful, indignant / wrathfully, indignantly",NVAD,irae,irae,iraes,iraes,a-,false,false,,Carve: hot/righteous wrath ≠ losga general anger. a- (anger register).
+grase,2,"to confuse / confusion / confused, confusing",NVA,grase,grase,grases,,o-,false,false,,Abstract mental-state root. o-.
+symrilsemik,4,"mythology, the study of myths",N,symrilsemik,,,,o-,false,true,mono,"sym (god) + rilse (legend) + mik (study-of). 3-root flat (symrilse myth is a compound, can't be a component). o-. mik not in pattern map → manual pattern."
+hemo,2,"family (kin group, relatives as a unit)",N,hemo,,,,a-,false,false,,"hem- kinship-family head. a- (living/person, matches chel/mamae/famae). Distinguish hemra (relative, individual), hemsa (home)."
+hemsa,2,"home, dwelling",N,hemsa,,,,ae-,false,false,,"hem- family (domestic). ae- (place/dwelling class, cf. rusome room). Distinct from hemo (family) a-, hemra (relative) a-."
+pimafmae,3,grandfather,N,pimafmae,,,,a-,false,true,mono,pima (two-steps-back) + famae (father; surface fused as fmae). relational §III. a- (living).
+pimamae,3,grandmother,N,pimamae,,,,a-,false,true,mono,pima (two-steps-back) + mamae (mother). relational §III. a- (living).
+hytam,2,"brother, male sibling",N,hytam,,,,a-,false,false,,"bare kin root. a-. Matches lerra (sister). Gender-neutral ""sibling"" left open."
+lerra,2,"sister, female sibling",N,lerra,,,,a-,false,false,,bare kin root. a-. Matches hytam (brother).
+poboi,2,"baby, infant",N,poboi,,,,a-,false,false,,"Infant/very-young carve beneath chel (child). a- (living). Not po+boi (po=PART, boi not a root)."
+hemra,2,"relative, kinsman or kinswoman",N,hemra,,,,a-,false,false,,"individual related person; hem- family. Distinct from hemo (family, the group) a-. a- (living)."
+tiha,2,"aunt, auntie",N,tiha,,,,a-,false,false,,"parent's sister. ti- aunt/uncle carve (ties to titam uncle). a- (living). Not ti (you, PRON)+ha (no such root)."
+titam,2,uncle,N,titam,,,,a-,false,false,,"parent's brother. ti- aunt/uncle carve (ties to tiha aunt). a- (living). Echoes tam (male) at d=2, tolerated."
+agnu,2,lamb,N,agnu,,,,a-,false,false,,"Bare root (ag/nu not roots; no sheep root exists yet). a- (animal/living class, matches hawu animal, mau cat, aufe bird)."
+lodin,2,"flatness, a flat surface / flat, of a surface/shape",NA,lodin,,lodins,,o-,false,false,,"lo- flat family head. NA (not A-only) so the o- prefix is stored. o- (abstract/geometric, matches lanko/lanfo shape family). Carve: terrain-flat = aedin (ae-); lodin = geometric/material flatness."
+lodintek,3,"level, spirit level",N,lodintek,,,,e-,false,true,mono,lodin (flat) + tek (instrument). instrument. e- (crafted).
+lodam,2,"balance, equilibrium / to balance, keep level / balanced, even, steady / in balance, evenly",NVAD,lodam,lodam,lodams,lodams,o-,false,false,,"lo- balance family. o- (abstract). Distinct from lodintek (spirit level, tool) and lodamtek (scales)."
+lodamtek,3,"libra, scales (weighing balance)",N,lodamtek,,,,e-,false,true,mono,lodam (balance) + tek (instrument). instrument. e- (crafted).
+laedin,2,"horizon, skyline",N,laedin,,,,ae-,false,false,,Bare root (la not a root). d=1 from aedin (plain/flat) carved: horizon = far edge of flat plain where it meets the sky. ae- (earth/terrain).
+loden,2,"to judge, pass judgment",V,,loden,,,o-,false,false,,"lo- justice family. V-only → no colour prefix stored (add.py clears prefix without an N sense; the o- reading is dropped). Distinct from lodenmae (person), lodenpar (judgment)."
+lodenmae,3,"judge, umpire, adjudicator",N,lodenmae,,,,a-,false,true,mono,"loden (to judge) + maeha (person). agent. a- (living, matches kiromae/tamae)."
+lodenpar,3,"judgment, verdict",N,lodenpar,,,,o-,false,true,mono,loden (to judge) + par (process). o- (abstract; user chose over process-head e- convention).
+lodici,3,"trial, legal proceeding",N,lodici,,,,o-,false,false,,lo- justice family. o- (institutional/abstract).
+lodicipos,4,"court, courthouse",N,lodicipos,,,,ae-,false,true,mono,"lodici (trial) + poska (location head, surface elided to pos). location. ae- (matches bau pos/kirapos)."
+tlowtek,2,clock,N,tlowtek,,,,e-,false,true,mono,tlow (time) + tek (instrument). instrument. e- (crafted).
+nomikpos,3,school,N,nomikpos,,,,ae-,false,true,mono,"nomik (study) + poska (location head, surface pos). location. ae-."
+nomikmae,3,scholar,N,nomikmae,,,,a-,false,true,mono,nomik (study) + maeha (person). agent. a- (living).
+nofa,2,"learning, scholarship / to learn",NV,nofa,nofa,,,o-,false,false,,"no-/nom- education family. NV so o- is stored. o- (abstract, matches nomik). Distinct from nomik (study)."
+nofamae,3,"student, learner",N,nofamae,,,,a-,false,true,mono,nofa (learn) + maeha (person). agent. a- (living).
+nofsy,2,"teaching, instruction / to teach",NV,nofsy,nofsy,,,o-,false,false,,Bare root (nof not a root; sy = grammar particle). Causative twin of nofa (learn). NV so the o- family prefix is kept.
+nofsykira,4,textbook,N,nofsykira,,,,e-,false,true,mono,"nofsy (teach) + kira (book). relational §III (kira not in auto-pattern map — manual), mirrors theskira. e- (crafted book)."
+cetik,2,science / scientific,NA,cetik,,cetiks,,o-,false,false,,Bare root (ce/tik/cet not roots). Carve at d=1 from mik (study head): cetik = the knowledge discipline. o-. Kept as science; -mik subject merging deferred.
+cetikmae,3,scientist,N,cetikmae,,,,a-,false,true,mono,cetik (science) + maeha (person). agent. a- (living).
+nofsymae,3,teacher,N,nofsymae,,,,a-,false,true,mono,nofsy (teach) + maeha (person). agent. a- (living).
+wimon,2,"number, a count or quantity",N,wimon,,,,o-,false,false,,"wi- numeracy family head. o- (abstract count-concept). Near-collision wino/colour (d=2), kilon-pronouns (d=2) — diff domain/POS, tolerated."
+wibom,2,"calculation, computing a result / to calculate, work out",NV,wibom,wibom,,,o-,false,false,,wi- numeracy family. Abstract operation. Carve vs wibar (compute). Near-collision wino (d=2) tolerated.
+wibar,2,"computation / to compute, process by rule",NV,wibar,wibar,,,o-,false,false,,"wi- numeracy family. Near-synonym carve vs wibom (formal/computational). d=1 winar (eye/see, u-) — diff domain, tolerated."
+wimonik,3,"mathematics, the study of number",N,wimonik,,,,o-,false,true,mono,wimon + mik (study). o- matches -mik head. mik NOT in COMPOUND_PATTERN_MAP — Pattern/Rule Ref supplied manually.
+wibomis,3,"arithmetic, the method of calculation",N,wibomis,,,,o-,false,true,mono,wibom + mlis (surface -is). Discipline reading o- (over method-head e-). mlis NOT in COMPOUND_PATTERN_MAP — manual Pattern/Rule Ref.
+wibomtek,3,"calculator, a calculating instrument",N,wibomtek,,,,e-,false,true,mono,"wibom + tek instrument. e- (crafted, matches kirotek/tlowtek). Auto-pattern fires (tek last)."
+wiborum,3,"plan, a calculated course of action",N,wiborum,,,,o-,false,true,mono,wibom + rum (that which is soon coming) = reasoned plan for the future. rum head o-. Precedent resrum (o-).
+wibartek,3,"computer, a computing machine",N,wibartek,,,,e-,false,true,mono,wibar + tek instrument. e- (crafted).
+wimonikmae,4,"mathematician, one who does mathematics",N,wimonikmae,,,,a-,false,true,mono,Flattened 3-root (wimon+mik+maeha) since wimonik is itself a compound. maeha agent → a-.
+wima,2,"a count, tally / to count, enumerate",NV,wima,wima,,,o-,false,false,,"wi- numeracy family. d=1 cluster (ima/pima/lima) — all diff domain, tolerated. Base of reckoning/account block."
+wimarem,3,"reckoning, settling of accounts / to reckon, to count up (the past) into a settlement",NV,wimarem,wimarem,,,o-,false,true,mono,wima + rem (former) = counting what was/passed = reckon/settle accounts. rem already a live component root (resrem). o-.
+imuwimarem,5,"to settle scores later, to get even, deferred reckoning",V,,imuwimarem,,,o-,false,true,mono,"imu (future) + wima + rem (flattened, since wimarem is a compound) = future reckoning = get-even-later. V-only → prefix drops to -- (matches lofen)."
+wimakira,4,"account, ledger, the written record of counting",N,wimakira,,,,e-,false,true,mono,wima + kira (book) = the account-book / record. kira head e- (crafted).
+wimaremmae,4,"reckoner, one who settles accounts",N,wimaremmae,,,,a-,false,true,mono,Flattened 3-root (wima+rem+maeha) since wimarem is a compound. agent a-. carve vs wimakirmae.
+wimakirmae,4,"accountant, one who keeps accounts",N,wimakirmae,,,,a-,false,true,mono,Flattened 3-root (wima+kira+maeha) since wimakira is a compound. agent a-. Carve distinct from wimaremmae (one who settles).
+thyram,2,wisdom / wise,NA,thyram,,thyrams,,e-,false,false,,thy- thinking family (thy think/thinking = e-). Wisdom = deep thinking. e- (family). Near-collision hytam (d=2) tolerated.
+thyramik,3,"philosophy, the study of wisdom",N,thyramik,,,,o-,false,true,mono,"thyram + mik study-of → o-. mik not in map, manual."
+thyramikmae,4,"philosopher, one who studies wisdom",N,thyramikmae,,,,a-,false,true,mono,Flattened 3-root (thyram+mik+maeha) since thyramik is a compound. agent a-.
+thymae,2,"thinker, one who thinks",N,thymae,,,,a-,false,true,mono,thy (thinking) + maeha agent. a-.
+wita,2,life / to live,NV,wita,wita,,,a-,false,false,,Living/animate register → a- (matches hawu/mau/fein).
+paeti,2,"a turn, twist / to turn, twist / turning, twisting / turningly, in a twist",NVAD,paeti,paeti,paetis,paetis,o-,false,false,,"motion, action. o-. Near-collisions gaeth/hasti/pei/paroi (d=2) — all diff domain."
+eknim,2,leg / to walk,NV,eknim,eknim,,,u-,false,false,,ek- leg-family head. u- (external body class). V = to walk (intrinsic to legs; no separate walk root).
+ekmut,2,thigh,N,ekmut,,,,u-,false,false,,ek- leg family. u- (external body).
+eksim,2,knee,N,eksim,,,,u-,false,false,,"ek- leg family. u-. Near-collision posim/nation (d=2), diff domain, tolerated."
+ekdor,2,calf (lower leg),N,ekdor,,,,u-,false,false,,ek- leg family. u-. Component of shinbone (ekdorokre).
+ekpae,2,ankle,N,ekpae,,,,u-,false,false,,ek- leg family. u-.
+ekbod,2,feet,N,ekbod,,,,u-,false,false,,ek- leg family. u- (external). Plural-form noun for the feet.
+ekhil,2,toe,N,ekhil,,,,u-,false,false,,ek- leg family. Bare root (ek/hil not stored) = foot-finger; hil- finger family not yet materialised. u-.
+okre,2,bone,N,okre,,,,u-,false,false,,Bone — user override to u- (not internal a-). Head component of the shin/femur compounds.
+ekdorokre,4,"shinbone, shin",N,ekdorokre,,,,u-,false,true,mono,ekdor (calf) + okre (bone) = the calf's bone. Bone head u- (per override).
+ekmutokre,4,"femur, thighbone",N,ekmutokre,,,,u-,false,true,mono,ekmut (thigh) + okre (bone) = thigh-bone. u-.
+ekmae,2,"pedestrian, a person on foot",N,ekmae,,,,a-,false,false,,ek- family but person-class → a- (user-locked over the u- family lean). d=1 to ekpae (ankle) tolerated (different referent inside carved family).
+ekke,2,"lameness, a limp / lame, limping",NA,ekke,,ekkes,,u-,false,false,,"ek- family u-. N sense added to keep the prefix. d=1 to ikke (closed, o-) cross-domain, tolerated."
+ektoi,2,"a run, running / to run",NV,ektoi,ektoi,,,u-,false,false,,ek- family u-. General locomotion; distinct from ekfir (sprint).
+ekber,2,"a jump, a leap / to jump, to leap",NV,ekber,ekber,,,u-,false,false,,ek- family u-.
+ekfir,2,"a sprint, a fast run / to sprint, to run fast",NV,ekfir,ekfir,,,u-,false,false,,ek- family u-. Carve vs ektoi: max-effort pace.
+ekkae,2,"a kneel, kneeling / to kneel, to go down on one knee",NV,ekkae,ekkae,,,u-,false,false,,"ek- family u-. d=1 to ekpae (ankle) and ekke (lame) — carved-family packing, tolerated."
+eklun,2,"a crawl, crawling / to crawl",NV,eklun,eklun,,,u-,false,false,,ek- family u-.
+ekkor,2,"a step, a tread / to step on, to tread on",NV,ekkor,ekkor,,,u-,false,false,,"ek- family u-. d=1 to ekdor (calf) — different POS/referent, tolerated. Distinct from ekkup (stomp)."
+ekkup,2,"a stomp, a stamp of the foot / to stomp, to stamp",NV,ekkup,ekkup,,,u-,false,false,,"ek- family u-. Carve vs ekkor: forceful trample. d=2 to kup (cut, e-) cross-domain, silent."
+ekkum,2,"a squat, squatting / to squat",NV,ekkum,ekkum,,,u-,false,false,,"ek- family u-. d=1 to ekkup (stomp) batch-internal, tolerated."
+hinhil,2,finger,N,hinhil,,,,u-,false,false,,"hil-/hin- hand & digit family, u- (matches hinar hand u-). Fossilised onset, not hin+hil (hin = side, unrelated). No near-collisions."
+hilfa,2,"index finger, forefinger / to point at, to point to",NV,hilfa,hilfa,,,u-,false,false,,"hil- family u-. The pointing finger. d=2 to hilora (expose, u-) cross-domain, silent."
+blap,1,"a clap, a handclap / to clap",NV,blap,blap,,,u-,false,false,,"hand-action u-. NV keeps prefix. d=2 to blon (collapse) cross-domain, silent."
+hilmodir,3,thumb,N,hilmodir,,,,u-,false,false,,hil- family u-. No near-collisions.
+hilsenok,3,middle finger,N,hilsenok,,,,u-,false,false,,"Reads ""mid-digit"" (senok=middle) but hil is not a stored root → bare root, compositional reading in Notes only. u-. No near-collisions."
+hilfoidir,3,ring finger,N,hilfoidir,,,,u-,false,false,,hil- family u-. No near-collisions.
+hildoir,2,"little finger, pinky",N,hildoir,,,,u-,false,false,,"Reads ""little-digit"" (doir=little) but hil not a root → bare root. u-."
+hinod,2,palm (of the hand),N,hinod,,,,u-,false,false,,"hin- hand region u-. d=2 to hin (side, ae-)/hinar (hand) — cross-referent tolerated."
+hinat,2,wrist,N,hinat,,,,u-,false,false,,"hin- hand region u-. d=1 to hinar (hand) — same-domain packed, tolerated."
+hilpae,2,elbow,N,hilpae,,,,u-,false,false,,"hil- family, arm-region extension, u-."
+auwae,2,weather,N,auwae,,,,i-,false,false,,"Atmospheric i- family (elmin, hu, hupli, auron). Bare root."
+tlerahup,3,thunderstorm,N,tlerahup,,,,i-,false,true,mono,"""thunder falls"" (tlera i- + hup fall). Referential atmospheric → i-, not the hup head's o-."
+shali,2,"washing, a wash / to wash",NV,shali,shali,,,i-,false,false,,"Water-based action → i- (lira water). d=1 to shili (river) cross-domain, silent."
+shaliklamtek,4,washing machine,N,shaliklamtek,,,,e-,false,true,mono,wash+cloth+instrument. e- crafted. NAME CHANGED from shalikamtek (kam not a root) → shaliklamtek (klam=cloth exists).
+marip,2,"spout, a pipe outlet",N,marip,,,,e-,false,false,,"e- crafted fixture. Bare root (user's carve splitting spout from faucet). d=2 to mai/maliu cross-domain, silent."
+limarip,3,"faucet, tap",N,limarip,,,,e-,false,true,mono,water+spout. lira elides to li- in surface (famae→fmae pattern). e-.
+urim,2,inspiration / to inspire,NV,urim,urim,,,o-,false,false,,Abstract o-.
+urimlise,4,"revelation, divine inspiration",N,urimlise,,,,o-,false,true,mono,"inspire+divine-ordering = god-inspired. o- (matches lise root + all -lise words; y- divine offered, user chose o-)."
+ureti,3,enlightenment,N,ureti,,,,o-,false,false,,"Abstract o-. d=2 to paeti (turn) cross-domain, silent."
+aurk,1,"club, a social membership group",N,aurk,,,,a-,false,false,,"Social group of people → a- (song, hemo). d=1 hits (auk eight/NUM, aura/auri/aurok celestial) all cross-domain+POS, silent."
+aurk pos,2,club house,N,aurk pos,,,,ae-,false,true,multi,location head → ae-. Mirrors bau pos / hamin pos.
+rech,1,"era, an epoch, a historical period / of an era, epochal",NA,rech,,rechs,,ae-,false,false,,"New bare root, ae- (USER OVERRIDE from o-, matches -ron age-period family ron ae-). Carve vs ron (age/life-period) — era is the epoch/epochal span. Near-collision rem (d=2, former, o-) — diff sense, tolerated. Precedes its ima/ime/imu compounds in-batch."
+imarech,3,"the present era, modern times / modern, of the present era",NA,imarech,,imarechs,,ae-,false,true,mono,"ima (present) + rech (era) = present era. ae- (USER: -rech compounds ae-, head-inherit rech). ima not in COMPOUND_PATTERN_MAP → no pattern stored (matches imaroi). NA."
+imerech,3,"the ancient past, antiquity / ancient, of the remote past",NA,imerech,,imerechs,,ae-,false,true,mono,"ime (past) + rech (era) = past era, ancient. ae- (USER override). No pattern (ime not in map). NA."
+imurech,3,"the future era; the time of the next generation / of the future era, future",NA,imurech,,imurechs,,ae-,false,true,mono,"imu (future) + rech = future era, the age to come. ae- (USER override). No pattern (imu not in map). NA."
+imerech mae,4,"the ancient people, people of the remote past",N,ime rech mae,,,,a-,false,true,multi,"Multi-word (user-locked): mono `imerechmae` hit Rule 2b (rech's ch is an edge-only coda; maeha is consonant-initial, no repair vowel). Stored `ime rech mae` (ime+rech+maeha; imerech is a compound so it flattens to 3 roots; maeha→mae elides in surface). maeha IS in COMPOUND_PATTERN_MAP → auto-pattern agent fires; a- person class (USER: imerechmae is the exception to the ae- -rech rule). N-only."
+elmaf,2,"lightness, small weight / light, light in weight, not heavy",NA,elmaf,,elmafs,,o-,false,false,,"elmaf takes the MAIN meaning of light-in-weight (antonym of gytan); onla (u-, leaves) keeps its side-sense but does not block — elmaf is the dedicated lightweight quality. o- (abstract quality)."
+gilen,2,"hardness, firmness / hard, firm, resistant to pressure",NA,gilen,,gilens,,y-,false,false,,"y- (USER override, mineral/ore family giliu/gilith/galith y-). Near-collision gilan (mountain, ae-, d=1) — diff domain (landform vs quality), tolerated."
+gytan,2,"heaviness, great weight / heavy, of great weight",NA,gytan,,gytans,,o-,false,false,,"Antonym of elmaf. o- (abstract quality). Near-collisions gilan (mountain, d=2), hytam (brother, d=2) — diff domains, tolerated."
+redut,2,"a meeting, an encounter / to meet, to encounter",NV,redut,redut,,,o-,false,false,,"New bare root. o-. No near-collision hits. NV to hold o- prefix. Carve vs ilsinkoi (gather together, a-) — meet = encounter, not assemble."
+taldong,2,"bell, a struck or ringing instrument",N,taldong,,,,e-,false,false,,"e- (crafted struck instrument, matches kirotek pen / tlowtek clock) over music u-. N-only (concrete object). No near-collision."
+fech,1,feather,N,fech,,,,u-,false,false,,"u- (USER OVERRIDE from a-, bird-part/plumage reads as body-class u- like ek-/hil-). fei=fly (i-), fein=bird (a-) family; a feather is the fly-body part. N-only."
+fecir,2,wing,N,fecir,,,,u-,false,false,,"u- (USER OVERRIDE, plumage/fly-body class). Sibling to fech feather. N-only. Near-collision fei/fein (d=2, bird/fly domain) — different part-vs-act referent, tolerated."
+eflom,2,"eagle, bird of prey",N,eflom,,,,a-,false,false,,"a- (living/animal class, matches hawu/mau/aufe/fein). N-only. No near-collision."
+gouwu,2,"chicken, domestic fowl",N,gouwu,,,,a-,false,false,,"a- (living/animal class). N-only. Near-collision gou (d=2, aspect particle, function word) — diff class, tolerated."
+blawu,2,sheep,N,blawu,,,,a-,false,false,,"a- (living/animal class, matches agnu lamb). Carve: blawu = adult sheep, agnu = lamb (young). N-only. Near-collisions bau (build) / blap (clap) / hawu (animal, d=2) — hawu cross-referent (general vs specific), tolerated."
+nofil,2,education / to educate,NV,nofil,nofil,,,o-,false,false,,"o- (education family nofa/nofsy/nomik o-). Fossilised nof- onset (bare root, not nof+il; il = stop, unrelated). Carve vs nofsy (teach — the direct instruction) / nofa (learn) — nofil = the broader schooling/education. NV holds o-."
+nofilmae,3,educator,N,nofilmae,,,,a-,false,true,mono,"nofil + maeha agent. a- (person class, like nofamae/nofsymae/nomikmae). maeha in map → auto-pattern agent. N-only."
+turete,3,"territory, an area under a jurisdiction",N,turete,,,,ae-,false,false,,"ae- (earth/land class). USER CONFIRMED carve: territory ≠ country (poskae) — territory = the governed/claimed expanse, poskae = country as land. Distinct root, not a dupe. Near-collision ureti (enlightenment, d=2) — diff domain, tolerated."
+sympei,2,"grail, a holy vessel",N,sympei,,,,y-,false,true,mono,"sym (god, y-) + pei (cup, e-) = holy cup / grail. y- (USER override: divine register, matches sym/siklatif) over the pei-cup head's e-. Relational (content-root descriptor compound). N-only. Now possible because sym exists (previously grail deferred)."
+oma,2,"meat, animal flesh as food",N,oma,,,,a-,false,false,,"a- (organic/animal-derived, matches the living/animal register). N-only. Near-collisions ema (true, d=1) / ima (present, d=1) / ma (internal) — all diff domains (epistemic/time/body), tolerated."
+grom,1,brain,N,grom,,,,u-,false,false,,"u- (USER OVERRIDE from internal-body a-, to hug the ek-/body u- set; cf. bone u-). Internal organ. N-only. Many d=2 hits all cross-domain (aron/os/rem/grid etc.) — tolerated."
+feirah,2,"freedom, liberty / free, at liberty / freely",NAD,feirah,,feirahs,feirahs,o-,false,false,,"o- (abstract quality). Root. Near-collision feimae (d=2, bird-person) — diff domain, tolerated. NAD (abstract)."
+feirahrin,3,"degree of freedom, extent of liberty",N,feirahrin,,,,o-,false,true,mono,"feirah (free) + rin (degree, o-) = the measured degree. o-. SPELLING: feirahrin (single r after feirah; user-corrected). N-only. rin is a stored root (o-)."
+elli,2,"coast, the land along a sea",N,elli,,,,ae-,false,false,,"ae- (earth/land class). Root. Near-collision eli (life, a-, d=1) — diff domain (landform vs life), tolerated. Carve vs ellash (shore) below."
+ellash,2,"shore, the immediate water's edge / beach",N,ellash,,,,ae-,false,false,,"ae- (earth/land class). Root. Carve: elli = the coastal land strip, ellash = the immediate shoreline/beach at the water. No near-collision."
+ilat,2,"proofness, resistance to an agent / proof, resistant, impervious",NA,ilat,,ilats,,o-,false,false,,o- (abstract quality). Head of the waterproofing compounds (ilatlira/ilatfora/ilathes/ilathewes). Root. Many d=2 hits all cross-domain — tolerated. NA.
+ilatlira,4,"waterproofness / waterproof, water-resistant",NA,ilatlira,,ilatliras,,o-,false,true,mono,"ilat (resistant) + lira (water) = waterproof. o- (USER: head ilat property → o-, over the lira-water i-). Relational. NA."
+ilatfora,4,"fireproofness / fireproof, fire-resistant",NA,ilatfora,,ilatforas,,o-,false,true,mono,"ilat (resistant) + fora (fire) = fireproof. o- (USER: head ilat → o-, over fora-fire a-). Relational. NA."
+ilathes,3,"insulation / insulated, insulating",NA,ilathes,,ilathess,,o-,false,true,mono,"ilat (resistant) + thes (electricity) = insulation (proof against current). -t + th- surface merge → ilathes: the merged t+th leaves a vowel before th, so Rule 2b (generalized, surface-aware) allows it. o- (head ilat property, matching ilatlira/ilatfora/ilathewes). NA."
+ilathewes,4,"insulator, an insulating material",N,ilathewes,,,,o-,false,true,mono,"Flatten of ilathes (compound) + wes → ilat+thes+wes (3-root, comp-as-component block). -wes collective of insulation = the insulating stuff. o- (USER). wes NOT in COMPOUND_PATTERN_MAP → supply Pattern/Rule Ref manually. N-only."

@@ -2,7 +2,7 @@
 
 **Purpose:** Fast decision-making for common Kilor lexicon tasks.  
 **For detailed specs:** See `data/AI-GUIDE.md`, `rules/4-meta/word-creation-pipeline.md`, `data/SCHEMA.md`  
-**Last updated:** 2026-07-27
+**Last updated:** 2026-08-19
 
 ---
 
@@ -26,7 +26,7 @@ Adding to lexicon?
 ### Phonotactics
 - **No `j` or `v`** in bare roots (reserved for tone markers on 3+ syllable words)
 - **Max 5 syllables** per root
-- **1–2 syllable roots cannot end in `-s`** (unless whitelisted: `gus`, `fos`, `aus`, `ous`, `les`, `mangus`, `kas`, `hus`, `tus`, `rakas`, `fidak`)
+- **1–2 syllable roots cannot end in `-s`** (unless whitelisted: `os`, `gus`, `fos`, `aus`, `ous`, `les`, `mangus`, `kas`, `hus`, `tus`, `rakas`, `fidak`)
 - **Function words and compounds are exempt** from the `-s` constraint
 
 ### Derivation Mask

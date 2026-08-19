@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.14.0
-**Last Updated:** 2026-08-16
+**Current Version:** v2.15.0
+**Last Updated:** 2026-08-19
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -20,6 +20,33 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
+## workspace v2.15.0 — 2026-08-19
+
+Cross-language audio audit + rename: the existential/possession predicate `ero` was
+renamed to `os` (Japanese `ero` = erotic/obscene), and the left-direction word
+`fap`/`fapne` was renamed to `fim`/`fimne` (English slang "fap" = masturbation).
+`os` was whitelisted as a 1-syllable `-s` form on the `thes`/`fos` precedent (the
+content root is stored subscripted `os₁`). `gau` (ten) retained after review —
+Cantonese `gau` is vernacular and homophonic with the harmless numeral nine. DB
+side in `CHANGELOG-app.md` v2.21.0.
+
+**Spec:**
+- **`0-foundation/grammar-syntax.md`** v2.4.0→v2.5.0 — §IV-C closed-class inventory (SSOT): existential particle `ero` → `os`.
+- **`2-predication/copula-existential.md`** v1.4.0→v1.5.0 — existential/possession verb `ero` → `os` throughout (intro, clauses, structure, summary table).
+- **`2-predication/clause-combining.md`** v1.1.0→v1.1.1 — adversative example sentence uses `os`.
+- **`3-subsystems/optative.md`** v1.1.0→v1.1.1 — example sentences use `os`.
+- **`3-subsystems/compounding.md`** v1.2.0→v1.2.1 — `-isra` exemplar `ero isra` → `os isra`.
+- **`3-subsystems/derivational-suffixes.md`** v1.3.0→v1.3.1 — `-lise` exemplar `erolise` → `oslise`.
+- **`3-subsystems/spatials.md`** v1.2.0→v1.2.1 — left postposition `fap`/`fapne` → `fim`/`fimne`.
+- **`rules/README.md`** v2.3.5→v2.3.6 — particle index row `ero` → `os`.
+
+**Data:**
+- **`question.md`** — resolved-checklist references to existential `ero` → `os`.
+- **`data/AGENT-QUICKSTART.md`** — `-s` whitelist list: added `os`.
+- **`data/AI-GUIDE.md`** — `-s` whitelist row: added `os`.
+
+**Validation:**
+- `python kilor.py check` — ✅ exit 0; only pre-existing errors remain (`nous`, `austarius`, `austareus`, `argonnamae lise`); the `erolise isra` 6-syllable error was cleared by the rename (`oslise isra` = 5 syll).
 ## workspace v2.14.0 — 2026-08-16
 
 Added a **general boundary vowel-repair exemption** (Rule 2b) to compounding,

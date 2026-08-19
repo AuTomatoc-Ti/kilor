@@ -1,6 +1,6 @@
 {
-  "_last_updated": "2026-08-04",
-  "_total": 91,
+  "_last_updated": "2026-08-19",
+  "_total": 191,
   "compounds": {
     "lunlagak": {
       "type": "mono",
@@ -8,7 +8,7 @@
       "construction": [
         "lunla"
       ],
-      "pattern": "material-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "naram": {
@@ -18,7 +18,7 @@
         "nar",
         "amin"
       ],
-      "pattern": "negation-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "ilsinkoi": {
@@ -28,7 +28,7 @@
         "il",
         "sinkoi"
       ],
-      "pattern": "negation-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "lokisra": {
@@ -47,9 +47,8 @@
         "apa",
         "tlar"
       ],
-      "pattern": "Time/Period (-ar/-tlar)",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-TBD"
+      "pattern": "",
+      "in_lexicon": true
     },
     "gustar": {
       "type": "mono",
@@ -68,9 +67,8 @@
         "choum",
         "tlar"
       ],
-      "pattern": "Time/Period (-ar/-tlar)",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-TBD"
+      "pattern": "",
+      "in_lexicon": true
     },
     "fossar": {
       "type": "mono",
@@ -79,7 +77,7 @@
         "fos",
         "tlar"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "gauroi": {
@@ -89,7 +87,7 @@
         "gau",
         "roi"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "fosli": {
@@ -99,7 +97,7 @@
         "fos",
         "lira"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "foske": {
@@ -108,7 +106,7 @@
       "construction": [
         "fos"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "foshu": {
@@ -118,7 +116,7 @@
         "fos",
         "hu"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "fosgilan": {
@@ -128,7 +126,7 @@
         "fos",
         "gilan"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "fos blon": {
@@ -138,7 +136,7 @@
         "fos",
         "blon"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": false
     },
     "foskaera": {
@@ -148,7 +146,7 @@
         "fos",
         "kaera"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "taroinous": {
@@ -158,7 +156,7 @@
         "taroi",
         "nous"
       ],
-      "pattern": "temporal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "tlaurhak": {
@@ -177,7 +175,7 @@
       "construction": [
         "hostak"
       ],
-      "pattern": "epistemic-modal",
+      "pattern": "",
       "in_lexicon": true
     },
     "bamares": {
@@ -186,7 +184,7 @@
       "construction": [
         "bam"
       ],
-      "pattern": "epistemic-modal",
+      "pattern": "",
       "in_lexicon": true
     },
     "chorogor": {
@@ -197,7 +195,7 @@
         "roi",
         "gor"
       ],
-      "pattern": "temporal-greeting",
+      "pattern": "",
       "in_lexicon": true
     },
     "sarrogor": {
@@ -208,7 +206,7 @@
         "roi",
         "gor"
       ],
-      "pattern": "temporal-greeting",
+      "pattern": "",
       "in_lexicon": true
     },
     "targor": {
@@ -218,7 +216,7 @@
         "tar",
         "gor"
       ],
-      "pattern": "temporal-greeting",
+      "pattern": "",
       "in_lexicon": true
     },
     "rokgor": {
@@ -228,17 +226,17 @@
         "rok",
         "gor"
       ],
-      "pattern": "temporal-greeting",
+      "pattern": "",
       "in_lexicon": true
     },
     "halise": {
       "type": "mono",
-      "meaning": "wish / pray / piety / to wish / to pray / pious / piously",
+      "meaning": "piety; religious devotion / to pray in a formal way / prayerful; devout / prayerfully; with devotion",
       "construction": [
         "hal",
         "lise"
       ],
-      "pattern": "optative",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true
     },
     "walunla": {
@@ -247,7 +245,7 @@
       "construction": [
         "lunla"
       ],
-      "pattern": "collective-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "aurok": {
@@ -257,7 +255,7 @@
         "auron",
         "rok"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "auronte": {
@@ -266,7 +264,7 @@
       "construction": [
         "auron"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "hakdo": {
@@ -276,7 +274,7 @@
         "hak",
         "do"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "hakfoi": {
@@ -286,7 +284,7 @@
         "hak",
         "foi"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "hakauk": {
@@ -296,7 +294,7 @@
         "hak",
         "auk"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "dokdo": {
@@ -306,7 +304,7 @@
         "dok",
         "do"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "dokfoi": {
@@ -316,7 +314,7 @@
         "dok",
         "foi"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "dokauk": {
@@ -326,7 +324,7 @@
         "dok",
         "auk"
       ],
-      "pattern": "numeral-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "diserin": {
@@ -336,7 +334,7 @@
         "dise",
         "rin"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "measure",
       "in_lexicon": true
     },
     "piroi": {
@@ -346,9 +344,8 @@
         "tilpi",
         "roi"
       ],
-      "pattern": "temporal-day",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+      "pattern": "",
+      "in_lexicon": true
     },
     "paroi": {
       "type": "mono",
@@ -357,9 +354,8 @@
         "tilpa",
         "roi"
       ],
-      "pattern": "temporal-day",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+      "pattern": "",
+      "in_lexicon": true
     },
     "imaroi": {
       "type": "mono",
@@ -368,9 +364,8 @@
         "ima",
         "roi"
       ],
-      "pattern": "temporal-day",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+      "pattern": "",
+      "in_lexicon": true
     },
     "pimaroi": {
       "type": "mono",
@@ -379,9 +374,8 @@
         "pima",
         "roi"
       ],
-      "pattern": "temporal-day",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+      "pattern": "",
+      "in_lexicon": true
     },
     "pamaroi": {
       "type": "mono",
@@ -390,9 +384,8 @@
         "pama",
         "roi"
       ],
-      "pattern": "temporal-day",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-A"
+      "pattern": "",
+      "in_lexicon": true
     },
     "esaka": {
       "type": "mono",
@@ -401,20 +394,18 @@
         "esa",
         "sakar"
       ],
-      "pattern": "frequency",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+      "pattern": "",
+      "in_lexicon": true
     },
-    "slosaka": {
+    "srosaka": {
       "type": "mono",
       "meaning": "sometimes",
       "construction": [
-        "slote",
+        "srote",
         "sakar"
       ],
-      "pattern": "frequency",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+      "pattern": "",
+      "in_lexicon": true
     },
     "nasaka": {
       "type": "mono",
@@ -423,9 +414,8 @@
         "na",
         "sakar"
       ],
-      "pattern": "frequency",
-      "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/temporals.md §I-C"
+      "pattern": "",
+      "in_lexicon": true
     },
     "foragilan": {
       "type": "mono",
@@ -434,7 +424,7 @@
         "fora",
         "gilan"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "lirahup": {
@@ -444,7 +434,7 @@
         "lira",
         "hup"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "roralumi": {
@@ -454,7 +444,7 @@
         "rora",
         "lumi"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "yrelumi": {
@@ -464,7 +454,7 @@
         "yre",
         "lumi"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "theprusome": {
@@ -474,7 +464,7 @@
         "thep",
         "rusome"
       ],
-      "pattern": "location-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "haminrusome": {
@@ -484,7 +474,7 @@
         "hamin",
         "rusome"
       ],
-      "pattern": "location-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "latifmae": {
@@ -494,7 +484,7 @@
         "latif",
         "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -502,9 +492,10 @@
       "type": "mono",
       "meaning": "musician",
       "construction": [
-        "miso"
+        "miso",
+        "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -515,7 +506,7 @@
         "miso",
         "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -526,7 +517,7 @@
         "tesak",
         "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -537,7 +528,7 @@
         "taka",
         "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -548,7 +539,7 @@
         "fei",
         "maeha"
       ],
-      "pattern": "agentive-suffix",
+      "pattern": "agent",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
@@ -559,7 +550,7 @@
         "kup",
         "tek"
       ],
-      "pattern": "instrument-suffix",
+      "pattern": "instrument",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B"
     },
@@ -570,7 +561,7 @@
         "tesak",
         "tek"
       ],
-      "pattern": "instrument-suffix",
+      "pattern": "instrument",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-B"
     },
@@ -581,7 +572,7 @@
         "shuk",
         "rin"
       ],
-      "pattern": "measure-suffix",
+      "pattern": "measure",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D"
     },
@@ -592,7 +583,7 @@
         "rali",
         "rin"
       ],
-      "pattern": "measure-suffix",
+      "pattern": "measure",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D"
     },
@@ -603,7 +594,7 @@
         "tesak",
         "par"
       ],
-      "pattern": "process-suffix",
+      "pattern": "process",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-E"
     },
@@ -629,11 +620,11 @@
       "in_lexicon": false,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-G"
     },
-    "erolise isra": {
+    "oslise isra": {
       "type": "multi",
       "meaning": "existentialism",
       "construction": [
-        "ero",
+        "os",
         "isra"
       ],
       "pattern": "doctrine",
@@ -669,139 +660,128 @@
         "gilan",
         "fora"
       ],
-      "pattern": "two-word-vocab",
+      "pattern": "",
       "in_lexicon": false
     },
     "maelise": {
       "type": "mono",
-      "meaning": "fate, destiny as a human",
+      "meaning": "human fate; mortal destiny; the appointed condition of humanity",
       "construction": [
         "maeha",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "elise": {
       "type": "mono",
-      "meaning": "survival / survive / lifetime / innate / vivid/lifelike",
+      "meaning": "lifetime; appointed span of life / to live out one's days / alive with the fullness of life; vital",
       "construction": [
         "eli",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "milise": {
       "type": "mono",
-      "meaning": "sacrifice / dying / to sacrifice / to fade / to wither / to death",
+      "meaning": "appointed death; time of dying / sacrifice / to die an ordained death; to be given over to death / to sacrifice / to fade away / toward death; until death",
       "construction": [
         "mil",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "hoplise": {
       "type": "mono",
-      "meaning": "fortune / to bless in a formal way / fortunate",
+      "meaning": "formal blessing; benediction / to bestow a formal blessing / formally blessed",
       "construction": [
         "hop",
         "lise"
       ],
-      "pattern": "Life-condition",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "gorlise": {
       "type": "mono",
-      "meaning": "good fortune / fortunate",
+      "meaning": "good fortune; appointed goodness / fortunate; blessed with good timing",
       "construction": [
         "gor",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "bonaklise": {
       "type": "mono",
-      "meaning": "misfortune / misfortunate / misfortunately",
+      "meaning": "appointed adversity; season of hardship / misfortunate; afflicted by ordained trial / by unfortunate appointment",
       "construction": [
         "bonak",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "luminlise": {
       "type": "mono",
-      "meaning": "bright fate",
+      "meaning": "bright turning; appointed dawn; season of hope / having a good luck in future",
       "construction": [
         "lumin",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "mylise": {
       "type": "mono",
-      "meaning": "dark fate",
+      "meaning": "dark turning; appointed dusk; season of foreboding / having a bad luck in future",
       "construction": [
         "my",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "huplise": {
       "type": "mono",
-      "meaning": "downfall / devolution",
+      "meaning": "appointed decline; time of falling / apocalypse",
       "construction": [
         "hup",
         "lise"
       ],
-      "pattern": "Fate",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "rildalise": {
       "type": "mono",
-      "meaning": "oath / to vow",
+      "meaning": "oracle; prophetic utterance / to prophesy",
       "construction": [
         "rilda",
         "lise"
       ],
-      "pattern": "numinous",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "shenlise": {
       "type": "mono",
-      "meaning": "one's own destiny",
+      "meaning": "one's appointed occurrence; personal destiny",
       "construction": [
         "shen",
         "lise"
       ],
-      "pattern": "life conditions",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
-      "rule_ref": "rules/3-subsystems/derivational-compounding.md"
-    },
-    "song lise": {
-      "type": "multi",
-      "meaning": "ally / to ally",
-      "construction": [
-        "song",
-        "lise"
-      ],
-      "pattern": "numinous",
-      "in_lexicon": false,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md"
     },
     "austar": {
@@ -811,7 +791,7 @@
         "aus",
         "tar"
       ],
-      "pattern": "nominal-compound",
+      "pattern": "",
       "in_lexicon": true
     },
     "auronius": {
@@ -861,7 +841,7 @@
         "song",
         "rius"
       ],
-      "pattern": "",
+      "pattern": "similative",
       "in_lexicon": false
     },
     "song meus": {
@@ -871,7 +851,7 @@
         "song",
         "meus"
       ],
-      "pattern": "",
+      "pattern": "relational",
       "in_lexicon": false
     },
     "tamae": {
@@ -881,7 +861,7 @@
         "tam",
         "maeha"
       ],
-      "pattern": "",
+      "pattern": "agent",
       "in_lexicon": true
     },
     "shemae": {
@@ -891,7 +871,7 @@
         "shem",
         "maeha"
       ],
-      "pattern": "",
+      "pattern": "agent",
       "in_lexicon": true
     },
     "chellar": {
@@ -925,14 +905,14 @@
       "in_lexicon": false,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-A"
     },
-    "erolise": {
+    "oslise": {
       "type": "mono",
-      "meaning": "existence / exist / existent",
+      "meaning": "existence / to exist / existent",
       "construction": [
-        "ero",
+        "os",
         "lise"
       ],
-      "pattern": "Life-condition",
+      "pattern": "ordained-occurrence",
       "in_lexicon": true,
       "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-F"
     },
@@ -943,9 +923,1110 @@
         "klush",
         "lu"
       ],
-      "pattern": "property-compound",
+      "pattern": "property",
       "in_lexicon": false,
       "rule_ref": "derivational-compounding.md §I-C"
+    },
+    "argonnamae": {
+      "type": "mono",
+      "meaning": "lover / one who loves",
+      "construction": [
+        "argonna",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §I-A"
+    },
+    "argonnamae lise": {
+      "type": "multi",
+      "meaning": "fated lover / destined beloved / appointed lover",
+      "construction": [
+        "argonnamae",
+        "lise"
+      ],
+      "pattern": "ordained-occurrence",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §I-F"
+    },
+    "raekumlausta": {
+      "type": "mono",
+      "meaning": "requiem",
+      "construction": [
+        "raekum",
+        "lausta"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "choumtek": {
+      "type": "mono",
+      "meaning": "sickle",
+      "construction": [
+        "choum",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true
+    },
+    "choumia": {
+      "type": "mono",
+      "meaning": "bountiful harvest / fruitful, bountiful",
+      "construction": [
+        "choum",
+        "nia"
+      ],
+      "pattern": "abundative",
+      "in_lexicon": true
+    },
+    "aiganar": {
+      "type": "mono",
+      "meaning": "no longer, not anymore",
+      "construction": [
+        "aigan",
+        "nar"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "resrem": {
+      "type": "mono",
+      "meaning": "extinct being, that which has ceased to exist / extinct",
+      "construction": [
+        "res",
+        "rem"
+      ],
+      "pattern": "Retrospective",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-K"
+    },
+    "resrum": {
+      "type": "mono",
+      "meaning": "gestation, something developing or brewing over time / gestating, simmering, brewing, developing and intensifying over time",
+      "construction": [
+        "res",
+        "rum"
+      ],
+      "pattern": "Prospective",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-L"
+    },
+    "pires": {
+      "type": "mono",
+      "meaning": "predecessor, prior existence, antecedent / preceding, prior to existence",
+      "construction": [
+        "pih",
+        "res"
+      ],
+      "pattern": "Temporal Pre-",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-prefixes.md I-A"
+    },
+    "pares": {
+      "type": "mono",
+      "meaning": "successor, posterior existence / succeeding, posterior to existence",
+      "construction": [
+        "pah",
+        "res"
+      ],
+      "pattern": "Temporal Post-",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-prefixes.md I-B"
+    },
+    "shukau": {
+      "type": "mono",
+      "meaning": "almost, nearly / to arrive soon, to be imminent",
+      "construction": [
+        "shuk",
+        "kau"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "mlarmae": {
+      "type": "mono",
+      "meaning": "chief, head, leader",
+      "construction": [
+        "mlar",
+        "maeha"
+      ],
+      "pattern": "Agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md I-A"
+    },
+    "akaberat": {
+      "type": "mono",
+      "meaning": "synonym; a word with the same or near-same meaning as another / synonymous",
+      "construction": [
+        "aka",
+        "berat"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "akanumin": {
+      "type": "mono",
+      "meaning": "alias, assumed name, another name for the same referent / by the alias of, a.k.a.",
+      "construction": [
+        "aka",
+        "numin"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "akauselo": {
+      "type": "mono",
+      "meaning": "backup plan, alternative way, fallback / as a backup, as a fallback",
+      "construction": [
+        "akaur",
+        "selo"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "wonlira": {
+      "type": "mono",
+      "meaning": "seawater",
+      "construction": [
+        "wonli",
+        "lira"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "seliroi": {
+      "type": "mono",
+      "meaning": "birthday",
+      "construction": [
+        "seli",
+        "roi"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "selise": {
+      "type": "mono",
+      "meaning": "the appointed time of birth; the ordained hour of one's coming into being",
+      "construction": [
+        "seli",
+        "lise"
+      ],
+      "pattern": "ordained-occurrence",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-F"
+    },
+    "symrilse": {
+      "type": "mono",
+      "meaning": "myth / mythical",
+      "construction": [
+        "sym",
+        "rilse"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "misomik": {
+      "type": "mono",
+      "meaning": "musicology, the study of music / musicological",
+      "construction": [
+        "miso",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-M"
+    },
+    "locemir": {
+      "type": "mono",
+      "meaning": "council, governing body",
+      "construction": [
+        "loce",
+        "nomir"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "ilsou": {
+      "type": "mono",
+      "meaning": "sufficiency, enough / enough, sufficient / sufficiently",
+      "construction": [
+        "il",
+        "sou"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "posloce": {
+      "type": "mono",
+      "meaning": "province / provincial",
+      "construction": [
+        "poska",
+        "loce"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "syloris": {
+      "type": "mono",
+      "meaning": "magic, the art of the mysterious / magical",
+      "construction": [
+        "sylor",
+        "mlis"
+      ],
+      "pattern": "method-to",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-N"
+    },
+    "tesar param": {
+      "type": "multi",
+      "meaning": "art work, a work of art",
+      "construction": [
+        "tesar",
+        "param"
+      ],
+      "pattern": "result",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "enlirin": {
+      "type": "mono",
+      "meaning": "height, the measure of high",
+      "construction": [
+        "enli",
+        "rin"
+      ],
+      "pattern": "measure",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md §II-D"
+    },
+    "frunia": {
+      "type": "mono",
+      "meaning": "floweriness, abundance of flowers / flowery, abounding in flowers",
+      "construction": [
+        "fru",
+        "nia"
+      ],
+      "pattern": "abundative",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-I"
+    },
+    "siklatif": {
+      "type": "mono",
+      "meaning": "salvation, deliverance from sin",
+      "construction": [
+        "sik",
+        "latif"
+      ],
+      "pattern": "result",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "siklatifor": {
+      "type": "mono",
+      "meaning": "savior, deliverer",
+      "construction": [
+        "sik",
+        "latif",
+        "tifor"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "chelron": {
+      "type": "mono",
+      "meaning": "childhood",
+      "construction": [
+        "chel",
+        "ron"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "senokron": {
+      "type": "mono",
+      "meaning": "middle-aged, the middle period of life",
+      "construction": [
+        "senok",
+        "ron"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "nobaron": {
+      "type": "mono",
+      "meaning": "elderly, old age",
+      "construction": [
+        "noba",
+        "ron"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "nibaron": {
+      "type": "mono",
+      "meaning": "teenage, adolescence",
+      "construction": [
+        "niba",
+        "ron"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "logerron": {
+      "type": "mono",
+      "meaning": "adult, prime of life, the age of strength",
+      "construction": [
+        "loger",
+        "ron"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "kirolote": {
+      "type": "mono",
+      "meaning": "paragraph, a block of text",
+      "construction": [
+        "kiro",
+        "lote"
+      ],
+      "pattern": "collective",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I-G"
+    },
+    "kiroli": {
+      "type": "mono",
+      "meaning": "section, a portion of text",
+      "construction": [
+        "kiro",
+        "roli"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "kiromae": {
+      "type": "mono",
+      "meaning": "writer, author",
+      "construction": [
+        "kiro",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "kiroparam": {
+      "type": "mono",
+      "meaning": "article, a written piece",
+      "construction": [
+        "kiro",
+        "param"
+      ],
+      "pattern": "result",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "kiropar": {
+      "type": "mono",
+      "meaning": "writing, the act/process of writing / to write",
+      "construction": [
+        "kiro",
+        "par"
+      ],
+      "pattern": "process",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "kirotek": {
+      "type": "mono",
+      "meaning": "pen, a writing instrument",
+      "construction": [
+        "kiro",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "kiraruson": {
+      "type": "mono",
+      "meaning": "chapter, a separate section of a book",
+      "construction": [
+        "kira",
+        "ruson"
+      ],
+      "pattern": "property",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "kirapos": {
+      "type": "mono",
+      "meaning": "library, a book-place",
+      "construction": [
+        "kira",
+        "poska"
+      ],
+      "pattern": "location",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "kiramik": {
+      "type": "mono",
+      "meaning": "library science, study of books",
+      "construction": [
+        "kira",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-M"
+    },
+    "kiromik": {
+      "type": "mono",
+      "meaning": "literary studies, literature as a studied discipline",
+      "construction": [
+        "kiro",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-M"
+    },
+    "kirowes": {
+      "type": "mono",
+      "meaning": "literature, the body of written works",
+      "construction": [
+        "kiro",
+        "wes"
+      ],
+      "pattern": "collective",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-J"
+    },
+    "kirosefon": {
+      "type": "mono",
+      "meaning": "font, typeface",
+      "construction": [
+        "kiro",
+        "sefon"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "kiratek": {
+      "type": "mono",
+      "meaning": "printer, a printing machine",
+      "construction": [
+        "kira",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "theskira": {
+      "type": "mono",
+      "meaning": "e-book, electric book",
+      "construction": [
+        "thes",
+        "kira"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "thespiliu": {
+      "type": "mono",
+      "meaning": "electric door, automatic door",
+      "construction": [
+        "thes",
+        "piliu"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "thestek": {
+      "type": "mono",
+      "meaning": "electric equipment, electrical devices",
+      "construction": [
+        "thes",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "thesis": {
+      "type": "mono",
+      "meaning": "power generation, electricity generation",
+      "construction": [
+        "thes",
+        "mlis"
+      ],
+      "pattern": "method-to",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-N"
+    },
+    "rolanko": {
+      "type": "mono",
+      "meaning": "triangle / triangular",
+      "construction": [
+        "ro",
+        "lanko"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "epilobim": {
+      "type": "mono",
+      "meaning": "conclusion / to conclude / concluding",
+      "construction": [
+        "epilo"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "epiloril": {
+      "type": "mono",
+      "meaning": "epilogue, the closing section of a work",
+      "construction": [
+        "epilo"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "symrilsemik": {
+      "type": "mono",
+      "meaning": "mythology, the study of myths",
+      "construction": [
+        "sym",
+        "rilse",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-M"
+    },
+    "pimafmae": {
+      "type": "mono",
+      "meaning": "grandfather",
+      "construction": [
+        "pima",
+        "famae"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "pimamae": {
+      "type": "mono",
+      "meaning": "grandmother",
+      "construction": [
+        "pima",
+        "mamae"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "lodintek": {
+      "type": "mono",
+      "meaning": "level, spirit level",
+      "construction": [
+        "lodin",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "lodamtek": {
+      "type": "mono",
+      "meaning": "libra, scales (weighing balance)",
+      "construction": [
+        "lodam",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "lodenmae": {
+      "type": "mono",
+      "meaning": "judge, umpire, adjudicator",
+      "construction": [
+        "loden",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "lodenpar": {
+      "type": "mono",
+      "meaning": "judgment, verdict",
+      "construction": [
+        "loden",
+        "par"
+      ],
+      "pattern": "process",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "lodicipos": {
+      "type": "mono",
+      "meaning": "court, courthouse",
+      "construction": [
+        "lodici",
+        "poska"
+      ],
+      "pattern": "location",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "tlowtek": {
+      "type": "mono",
+      "meaning": "clock",
+      "construction": [
+        "tlow",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "nomikpos": {
+      "type": "mono",
+      "meaning": "school",
+      "construction": [
+        "nomik",
+        "poska"
+      ],
+      "pattern": "location",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "nomikmae": {
+      "type": "mono",
+      "meaning": "scholar",
+      "construction": [
+        "nomik",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "nofamae": {
+      "type": "mono",
+      "meaning": "student, learner",
+      "construction": [
+        "nofa",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "nofsykira": {
+      "type": "mono",
+      "meaning": "textbook",
+      "construction": [
+        "nofsy",
+        "kira"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "cetikmae": {
+      "type": "mono",
+      "meaning": "scientist",
+      "construction": [
+        "cetik",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "nofsymae": {
+      "type": "mono",
+      "meaning": "teacher",
+      "construction": [
+        "nofsy",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wimonik": {
+      "type": "mono",
+      "meaning": "mathematics, the study of number",
+      "construction": [
+        "wimon",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-M"
+    },
+    "wibomis": {
+      "type": "mono",
+      "meaning": "arithmetic, the method of calculation",
+      "construction": [
+        "wibom",
+        "mlis"
+      ],
+      "pattern": "method-to",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-N"
+    },
+    "wibomtek": {
+      "type": "mono",
+      "meaning": "calculator, a calculating instrument",
+      "construction": [
+        "wibom",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wiborum": {
+      "type": "mono",
+      "meaning": "plan, a calculated course of action",
+      "construction": [
+        "wibom",
+        "rum"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wibartek": {
+      "type": "mono",
+      "meaning": "computer, a computing machine",
+      "construction": [
+        "wibar",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wimonikmae": {
+      "type": "mono",
+      "meaning": "mathematician, one who does mathematics",
+      "construction": [
+        "wimon",
+        "mik",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wimarem": {
+      "type": "mono",
+      "meaning": "reckoning, settling of accounts / to reckon, to count up (the past) into a settlement",
+      "construction": [
+        "wima",
+        "rem"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "imuwimarem": {
+      "type": "mono",
+      "meaning": "to settle scores later, to get even, deferred reckoning",
+      "construction": [
+        "imu",
+        "wima",
+        "rem"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "wimakira": {
+      "type": "mono",
+      "meaning": "account, ledger, the written record of counting",
+      "construction": [
+        "wima",
+        "kira"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "wimaremmae": {
+      "type": "mono",
+      "meaning": "reckoner, one who settles accounts",
+      "construction": [
+        "wima",
+        "rem",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "wimakirmae": {
+      "type": "mono",
+      "meaning": "accountant, one who keeps accounts",
+      "construction": [
+        "wima",
+        "kira",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §I"
+    },
+    "thyramik": {
+      "type": "mono",
+      "meaning": "philosophy, the study of wisdom",
+      "construction": [
+        "thyram",
+        "mik"
+      ],
+      "pattern": "study-of",
+      "in_lexicon": true,
+      "rule_ref": "derivational-suffixes.md §I-M"
+    },
+    "thyramikmae": {
+      "type": "mono",
+      "meaning": "philosopher, one who studies wisdom",
+      "construction": [
+        "thyram",
+        "mik",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "compounding.md §I"
+    },
+    "thymae": {
+      "type": "mono",
+      "meaning": "thinker, one who thinks",
+      "construction": [
+        "thy",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "compounding.md §I"
+    },
+    "ekdorokre": {
+      "type": "mono",
+      "meaning": "shinbone, shin",
+      "construction": [
+        "ekdor",
+        "okre"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "ekmutokre": {
+      "type": "mono",
+      "meaning": "femur, thighbone",
+      "construction": [
+        "ekmut",
+        "okre"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "tlerahup": {
+      "type": "mono",
+      "meaning": "thunderstorm",
+      "construction": [
+        "tlera",
+        "hup"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "shaliklamtek": {
+      "type": "mono",
+      "meaning": "washing machine",
+      "construction": [
+        "shali",
+        "klam",
+        "tek"
+      ],
+      "pattern": "instrument",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §IV"
+    },
+    "limarip": {
+      "type": "mono",
+      "meaning": "faucet, tap",
+      "construction": [
+        "lira",
+        "marip"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "urimlise": {
+      "type": "mono",
+      "meaning": "revelation, divine inspiration",
+      "construction": [
+        "urim",
+        "lise"
+      ],
+      "pattern": "ordained-occurrence",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-compounding.md"
+    },
+    "aurk pos": {
+      "type": "multi",
+      "meaning": "club house",
+      "construction": [
+        "aurk",
+        "poska"
+      ],
+      "pattern": "location",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/compounding.md §IV"
+    },
+    "imarech": {
+      "type": "mono",
+      "meaning": "the present era, modern times / modern, of the present era",
+      "construction": [
+        "ima",
+        "rech"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "imerech": {
+      "type": "mono",
+      "meaning": "the ancient past, antiquity / ancient, of the remote past",
+      "construction": [
+        "ime",
+        "rech"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "imurech": {
+      "type": "mono",
+      "meaning": "the future era; the time of the next generation / of the future era, future",
+      "construction": [
+        "imu",
+        "rech"
+      ],
+      "pattern": "",
+      "in_lexicon": true
+    },
+    "imerech mae": {
+      "type": "multi",
+      "meaning": "the ancient people, people of the remote past",
+      "construction": [
+        "ime",
+        "rech",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": false,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I"
+    },
+    "nofilmae": {
+      "type": "mono",
+      "meaning": "educator",
+      "construction": [
+        "nofil",
+        "maeha"
+      ],
+      "pattern": "agent",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I"
+    },
+    "sympei": {
+      "type": "mono",
+      "meaning": "grail, a holy vessel",
+      "construction": [
+        "sym",
+        "pei"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "feirahrin": {
+      "type": "mono",
+      "meaning": "degree of freedom, extent of liberty",
+      "construction": [
+        "feirah",
+        "rin"
+      ],
+      "pattern": "degree",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-K"
+    },
+    "ilatlira": {
+      "type": "mono",
+      "meaning": "waterproofness / waterproof, water-resistant",
+      "construction": [
+        "ilat",
+        "lira"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "ilatfora": {
+      "type": "mono",
+      "meaning": "fireproofness / fireproof, fire-resistant",
+      "construction": [
+        "ilat",
+        "fora"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "ilathes": {
+      "type": "mono",
+      "meaning": "insulation / insulated, insulating",
+      "construction": [
+        "ilat",
+        "thes"
+      ],
+      "pattern": "relational",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/compounding.md §III"
+    },
+    "ilathewes": {
+      "type": "mono",
+      "meaning": "insulator, an insulating material",
+      "construction": [
+        "ilat",
+        "thes",
+        "wes"
+      ],
+      "pattern": "collective",
+      "in_lexicon": true,
+      "rule_ref": "rules/3-subsystems/derivational-suffixes.md §I-J"
     }
   }
 }

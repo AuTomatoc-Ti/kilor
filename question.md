@@ -36,8 +36,8 @@
 ### Predication
 - [x] Coordination `ei` (and), `po` (exclusive or), `pem` (inclusive or), `pona` (XNOR), `pemna` (NOR), `amer` (but)
 - [x] Conditionals: `li` (if), `bam` (then) — covers realis, hypothetical, and counterfactual via context (Chinese 如果…便/就 model)
-- [x] Copula `res` & existential/possession `ero`
-- [x] Existential + location: `ero` + spatial postposition per clause template (see `2-predication/copula-existential.md` §I-D)
+- [x] Copula `res` & existential/possession `os`
+- [x] Existential + location: `os` + spatial postposition per clause template (see `2-predication/copula-existential.md` §I-D)
 - [x] Predicate adjective syntax: `res` + adjective form
 - [x] Negation: `nar` (uniform postpositive — negates immediately preceding constituent), `na` (negative answer)
 - [x] Negation scope with modals: `nar` after modal negates modal ("don't have to"); `nar` after verb negates verb ("must not")

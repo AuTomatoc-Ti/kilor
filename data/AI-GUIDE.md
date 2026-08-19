@@ -180,7 +180,7 @@ conn.close()
 | No **j** or **v** | These letters are reserved for tone marking |
 | Max 5 syllables | Roots exceeding 5 syllables are invalid |
 | **-s rule** | 1–2 syllable content roots may NOT end in `s` (reserved for derivational suffix) |
-| -s whitelist | `gus`, `fos`, `aus`, `ous`, `les`, `mangus`, `kas`, `hus`, `tus`, `rakas`, `fidak` — these are exempt |
+| -s whitelist | `os`, `gus`, `fos`, `aus`, `ous`, `les`, `mangus`, `kas`, `hus`, `tus`, `rakas`, `fidak` — these are exempt |
 | Function words | Not subject to -s constraint (`is_func=True` bypasses) |
 | Compounds | Not subject to -s constraint (`is_compound=True` bypasses) |
 

@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-09
-**Version:** 1.3.0
+**Last updated:** 2026-08-19
+**Version:** 1.3.1
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -100,7 +100,7 @@ Takes colour prefix `e-` (crafted/abstract).
 | `rildalise` | oracle; prophetic utterance; to prophesy |
 | `gorlise` | good fortune; appointed goodness; fortunate |
 | `bonaklise` | appointed adversity; season of hardship; misfortunate |
-| `erolise` | existence; to exist; existent |
+| `oslise` | existence; to exist; existent |
 | `hoplise` | formal blessing; benediction; to bestow a formal blessing |
 | `huplise` | appointed decline; time of falling; apocalypse |
 | `luminlise` | bright turning; appointed dawn; season of hope; having good luck in future |

@@ -30,7 +30,7 @@ FUNCTION_WORD_POS = {
     "aiga": "PART", "hoskar": "PART",
     "torra": "SCONJ", "wetor": "SCONJ", "mangus": "SCONJ",
     "thin": "DEM", "tha": "DEM",
-    "res": "PART", "ero": "PART", "iu": "PART",
+    "res": "PART", "os": "PART", "iu": "PART",
     # Spatial postpositions (ADP)
     "ikne": "ADP", "oukne": "ADP", "umne": "ADP", "rapne": "ADP",
     "haune": "ADP", "paune": "ADP", "hinne": "ADP", "tene": "ADP",

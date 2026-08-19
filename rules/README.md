@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-08-09
-**Version:** 2.3.5
+**Last updated:** 2026-08-19
+**Version:** 2.3.6
 
 ---
 
@@ -30,7 +30,7 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | Particle | Function | File |
 |---|---|---|
 | `res` | Copula ("is") | `2-predication/copula-existential.md` |
-| `ero` | Existential / Possession ("there is", "have") | `2-predication/copula-existential.md` |
+| `os` | Existential / Possession ("there is", "have") | `2-predication/copula-existential.md` |
 | `nar` | Negation ("not") | `2-predication/negation.md` |
 | `iu` | Yes/No question marker; affirmative answer | `2-predication/interrogative.md` |
 | `na` | Negative answer ("no") | `2-predication/negation.md` |
