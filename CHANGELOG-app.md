@@ -1,5 +1,5 @@
-**Current Version:** v2.22.0
-**Last Updated:** 2026-08-19
+**Current Version:** v2.23.0
+**Last Updated:** 2026-08-20
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,28 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.23.0 — 2026-08-20
+
+30 new words across four batches (763→793), plus one post-insert rename
+(`okrum` → `okraim`). New families: `mon-`/`don-` number-parity (odd/even),
+`nit-` extremity (pole/extreme/limit), `bre-` rolling/round built on `breso`
+circle, `bas-` combat extension (fight/punch/kick), `lipro-` commerce, and
+`sel-` road/street (carved against existing `selo` path). `monit`/`donit`
+(anode/cathode) deferred to a later batch.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 763→793 (30 new rows; `draft/batch-2026-08-20.md`):
+  - **1 — parity/pole/combat (8):** `mon` odd (root, NA, `o-`), `don` even (root, NA, `o-`); `nita` pole (root, NA, `o-`), `nitum` extreme (root, NA, `o-`), `nitog` limit (root, NVA, `o-`); `basga` fighting (root, NVA, `a-`), `bashin` punch (root, NV, `a-`), `basek` kick (root, NV, `a-`).
+  - **2 — rolling/round (10):** `bremu` smooth (root, NA, `o-`), `brepa` wheel (root, N, `e-`), `bregi` roll (root, NV, `o-`), `breli` cycle (root, NA, `o-`), `breim` ring (root, NA, `o-`), `hilar` pillar (root, N, `o-`), `bresohilar` cylinder (`breso`+`hilar`, relational, N, `o-`), `dobrepa` bicycle (`do`+`brepa`, relational, N, `e-`), `thesdobrepa` motorcycle (flat `thes`+`do`+`brepa`, relational, N, `e-`), `brasko` scroll (root, N, `e-`).
+  - **3 — vehicles/commerce/roads (10):** `hait` car (root, N, `e-`), `neih` horse (root, NA, `a-`), `neihait` carriage (`neih`+`hait`, relational, N, `e-`); `lipro` business (root, NA, `o-`), `lipromae` businessman (`lipro`+`maeha`, agent, N, `a-`), `lipwes` cargo (`lipro`+`wes`, collective, N, `y-`), `lipweshait` truck (flat `lipro`+`wes`+`hait`, relational, N, `e-`), `lipromik` business study (`lipro`+`mik`, study-of, N, `o-`); `selam` road (root, N, `ae-`), `selpo` street (root, N, `ae-`).
+  - **4 — close (2):** `okraim` main (root, NA, `o-`), `hym` folk (root, NA, `a-`).
+  - **Renamed** `okrum` → `okraim` (main, NA, `o-`) with full phonology recomputation (IPA `/ˈɔk.ɹaɪm/`, syllables `ok.raim`, syl_count 2).
+
+**Validation:**
+- `python -m kilor check` — ✅ all 30 new words pass; plus the rename shows no IPA mismatch (only pre-existing errors/warnings remain).
+- Insert validated first in a temp-clone (30/30 added clean); the live `add` then inserted the same 30 rows, confirmed by form/prefix/mask + compound-component join audit (all 8 compound wirings stored correctly).
+- Pure lexicon batch — no spec/`.py`/rule change, so **`CHANGELOG.md` (rules) needs no entry**.
 
 ## workspace v2.22.0 — 2026-08-19
 
