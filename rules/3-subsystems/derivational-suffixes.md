@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-19
-**Version:** 1.3.1
+**Last updated:** 2026-08-22
+**Version:** 1.4.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -35,6 +35,9 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 13 | `-ik` / `-mik` | Study of | `mik` | n | -ology / study of (N→N) |
 | 14 | `-is` / `-mlis` | Method to | `mlis` | n | method to / way of (V→N) |
 | 15 | `-rolif` | Over-/Excess | `rolifor` | n, v, a | over- / excess (POS-preserving: V→V, A→A, N→N) |
+| 16 | `-tesy` | Material (made-by) | `tesak` + `sy` | n, a | made of / composed of X (original material) |
+| 17 | `-tesis` | Process-craft | `tesak` + `mlis` | n, a | made by the process/method of X |
+| 18 | `-teseus` | Place / origin | `tesak` + `meus` | n, a | made in X / made by the people of X |
 
 All suffixes descend from full content roots (shown in the "From Root" column) and still coexist with them as independent words. The suffix form is the shortened combining form — this is the same historical process that produced multi-word combining forms, carried one step further to full fusion.
 
@@ -269,7 +272,30 @@ For roots ending in a vowel, the suffix's elided first consonant is restored →
 `-rolif` is **consonant-initial** (`r`) — it fuses cleanly with both vowel-final and consonant-final roots. Takes colour prefix `o-` (abstract), inherited from `rolifor`: `o-taka-rolif` = "the over-eating."
 
 For roots ending in an end-only or edge-only consonant, `-rolif` appears in its full-root multi-word form `rolifor` (§II-B). Example: `klush rolifor` = "over-blood" (not `*klushrolif`).
+### P. Manufactory Provenance — `-tesy` / `-tesis` / `-teseus` (noun base)
 
+| Form | Base | Meaning |
+|---|---|---|
+| `lunlattesy` | `lunla` (tree) | made of wood, wooden |
+| `lithtesy` | `lith` (stone) | made of stone, stone-built |
+| `foratesis` | `fora` (fire) | made by fire, fire-crafted (baked) |
+| `maliutesis` | `maliu` (knife) | made with a knife, knife-wrought |
+| `posiateseus` | `posia` (a named place) | made in that place |
+
+The manufactory suffixes derive a noun/adjective naming a thing's **origin of making**: the material it is physically composed of, the process that formed it, or the place/people it came from. All three descend from `tesak` ("make / create") in its combining form `tesa`, doubled or extended by the provenance head:
+
+| Suffix | Echo head | Split | Meaning |
+|:---|:---|:---|:---|
+| `-tesy` | `sy` (by) | `tesa` + `sy` | made of X (original material) |
+| `-tesis` | `mlis` (method) | `tesa` + `mlis` | made by the process of X |
+| `-teseus` | `meus` (of a place) | `tesa` + `meus` | made in / by the people of X |
+
+- **Noun base → NA:** "made of X / made by that process / made in that place." pos_mask = `NA`.
+  - `-tesy` derives the *substance* — what a thing is **physically composed of**. Takes colour prefix inherited from the base noun (§IV-B): `u-lunlattesy` (from `u-lunla`).
+  - `-tesis` derives the *craft* — by what **method or act** a thing was formed. Echoes the Method suffix `-is`. Takes fixed colour prefix `e-` (crafted/artifact, §IV-A): `e-foratesis` = "the thing made by burning."
+  - `-teseus` derives the *place* — made **in / by (the people of)** X. Echoes the Relational suffix `-eus` (§I-H). Takes colour prefix inherited from the base (§IV-B): `ae-posiateseus` (from `ae-posia`).
+
+`-tesy`, `-tesis`, and `-teseus` are **consonant-initial** (`t-`) — they fuse cleanly with consonant-final and vowel-final roots alike; the Restored Consonant Rule does not apply. For roots ending in an end-only or edge-only consonant, they appear in their full multi-word form (§II-B): `lunla tesak sy`, `fora tesak mlis`, `posia tesak meus`.
 
 ---
 
@@ -313,7 +339,7 @@ The suffixes `-ius`, `-eus`, `-ia`, `-is`, and `-ik` are shortened combining for
 
 Consonant-final roots fuse cleanly — the suffix's vowel-initial form attaches directly with no restoration. When the root's final consonant happens to match the restored consonant (e.g., `auror` + `-ius` → `aurorius` vs. `auro` + `-ius` → `aurorius`), homographs may result. Context disambiguates.
 
-`-wes`, `-rem`, and `-rum` are **consonant-initial** (`w-`, `r-`, `r-`) and fuse cleanly with both vowel-final and consonant-final roots — the Restored Consonant Rule does not apply.
+`-wes`, `-rem`, `-rum`, and the manufactory suffixes `-tesy`, `-tesis`, `-teseus` are **consonant-initial** (`w-`, `r-`, `t-`) and fuse cleanly with both vowel-final and consonant-final roots — the Restored Consonant Rule does not apply.
 
 `-is` / `-mlis` is a special case: the restored consonant `ml` is a **start-only consonant** (`0-foundation/phonology.md` §IV-C). When the base root ends in a vowel, restoring `ml` would place it in word-medial position — blocked. Instead, the full-root form `mlis` appears as a separate word (§II-B): `fora mlis` (not `*foramlis`).
 
@@ -369,7 +395,7 @@ For derivations from verbs, adjectives, or any-root stems (semi-productive `-lis
 | Semantic Class | Prefix | Applies to |
 |---|---|---|
 | Living beings | `a-` | Agent nouns (`-mae`) |
-| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Method nouns (`-is`), Collective nouns from verb base (`-wes`) |
+| Crafted | `e-` | Instrument nouns (`-tek`), Process nouns (`-par`), Method nouns (`-is`), Collective nouns from verb base (`-wes`), Process-craft (`-tesis`) |
 | Abstract | `o-` | Measure (`-rin`), Life-condition (`-lise`), Study of (`-ik`), Over-/Excess (`-rolif`) |
 
 > **Compound heads** (`param`, `pos`, `isra`, `afaloi`, `naras`, `posia`) carry their own colour prefix as head nouns. See `3-subsystems/compounding.md` §IV.
@@ -391,6 +417,8 @@ For derivations from nouns — where the base already carries a colour prefix �
 | `-wes` | Collective (N-base) | `a-forawes` (from `a-fora`, "fire") |
 | `-rem` | Retrospective (N-base) | `a-maeharem` (from `a-maeha`, "person") |
 | `-rum` | Prospective (N-base) | `a-maeharum` (from `a-maeha`, "person") |
+| `-tesy` | Manufactory material (N-base) | `u-lunlattesy` (from `u-lunla`, "tree") |
+| `-teseus` | Manufactory place (N-base) | `ae-posiateseus` (from `ae-posia`, "named place") |
 
 ---
 

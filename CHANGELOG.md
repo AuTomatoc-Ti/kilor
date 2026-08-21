@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.16.0
-**Last Updated:** 2026-08-21
+**Current Version:** v2.17.0
+**Last Updated:** 2026-08-22
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -18,6 +18,21 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
+
+
+## workspace v2.17.0 — 2026-08-22
+
+Added three manufactory provenance suffixes (`-tesy` made-of-material, `-tesis` made-with-process, `-teseus` made-in-place) to the suffix inventory and two degree/modifier prefixes (`hak-` semi-/partial-, `hy-`/`hym-` pseudo-) to the prefix inventory. The pseudo- prefix introduces source root `hymin`.
+
+**Subsystems:**
+- **`3-subsystems/derivational-suffixes.md`** v1.3.1→v1.4.0 — Adds §I-P Manufactory Provenance: `-tesy` (made of / composed of X, echoes `sy`), `-tesis` (made by the process/method of X, echoes `-is`), `-teseus` (made in / by the people of X, echoes `-eus`). Colour: `-tesy`/`-teseus` inherit from base noun (§IV-B); `-tesis` takes fixed `e-` (§IV-A). Included carve-out notes vs `-eus` (Relational) and `-is` (Method). Updated inventory 15→18 and §II-A consonant-initial list.
+- **`3-subsystems/derivational-prefixes.md`** v1.2.0→v1.3.0 — Added §I-H `hak-` (semi-/partial-, degree not numeric ½, fixed `o-`, pos_mask NA, consonant-final) and §I-I `hy-`/`hym-` (pseudo-, source root `hymin`, restored consonant `m` before vowels, fixed `o-`). Inventory 7→9; §II restored-consonant table, §III-B tone, §IV colour updated.
+
+**Lexicon:**
+- Added **`hymin`** (root, A, no colour prefix) as source for the `hy-`/`hym-` pseudo- prefix. See also `CHANGELOG-app.md` v2.25.0.
+
+**Validation:**
+- `python kilor.py check` — 4 pre-existing validation errors (unrelated to this change); no new errors.
 
 
 ## workspace v2.16.0 — 2026-08-21

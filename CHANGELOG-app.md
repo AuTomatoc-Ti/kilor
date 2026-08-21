@@ -1,5 +1,5 @@
-**Current Version:** v2.24.0
-**Last Updated:** 2026-08-21
+**Current Version:** v2.25.0
+**Last Updated:** 2026-08-22
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,17 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.25.0 — 2026-08-22
+
+Added source root `hymin` ("pseudo, apparent, sham", adjective, no colour prefix) to underpin the new `hy-`/`hym-` pseudo- prefix (spec: `CHANGELOG.md` v2.17.0).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 823→824 (batch `draft/batch-hymn-2026-08-22.md`): added `hymin` (root, pos_mask=A, no consensus prefix, IPA/syllables auto-computed, adjective inflection `hymins`). Follows the existing prefix source-root convention (`pih`, `pah`, `seftah`).
+
+**Validation:**
+- `python kilor.py check` — 4 pre-existing validation errors (unrelated to this change); no new errors.
+
 
 ## workspace v2.24.0 — 2026-08-21
 

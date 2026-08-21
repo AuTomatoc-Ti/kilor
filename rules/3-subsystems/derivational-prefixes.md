@@ -2,8 +2,8 @@
 
 **Module:** Derivational Prefixes
 **Status:** Canonical
-**Last updated:** 2026-08-09
-**Version:** 1.2.0
+**Last updated:** 2026-08-22
+**Version:** 1.3.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — suffix derivations following the same morphological pattern.
@@ -30,6 +30,8 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 5 | `mes-` | `meson` | Augmentative | N, A | N, A | `y-` | mega- / giant / ×10¹² |
 | 6 | `ai-` / `aig-` | `aigan` | Re-/Again | V, N | V, N | `o-` | re- / again (POS-preserving) |
 | 7 | `kon-` | `konta` | Anti- | N, A | N, A | `o-` | anti- / opposing (POS-preserving) |
+| 8 | `hak-` | `hak` | Semi-/Partial- | N, A | N, A | `o-` | semi- / half-strength / partial (degree, not numeric ½) |
+| 9 | `hy-` / `hym-` | `hymin` | Pseudo- | N, A | N, A | `o-` | pseudo- / sham- / apparent-not-real |
 
 All prefixes descend from full content roots (shown in the "Full Root" column) and still coexist with them as independent words. The prefix form is the shortened combining form — the same historical process as derivational suffixes.
 
@@ -122,6 +124,32 @@ pos_mask = `NA`. Both N and A forms distinguished by tone/`-s`.
 `kon-` frames a noun or adjective as oppositional — "anti-X, opposing X." Descends from `konta` ("opposition; opposing; to oppose"). POS-preserving: N→N/A, A→A. pos_mask = `NA`.
 
 `kon-` is **consonant-final** (`n`) — it fuses cleanly with any root without needing consonant restoration (§II): `kon-aug` → `konaug`.
+
+### H. Semi-/Partial- — `hak-` (noun / adjective base)
+
+| Form | Root | Meaning (N) | Meaning (A) |
+|---|---|---|---|
+| `hak-fora` (→ `hakfora`) | `fora` (fire, N) | a half-fire, a partial fire | half-burning, semi-fiery |
+| `hak-gor` | `gor` (good, A) | half-good, a middling good | semi-good, half-decent |
+| `hak-aug` | `aug` (start, V/N) | a partial start, semi-start | semi-begun, incipient |
+
+`hak-` frames a noun or adjective at **half-strength or partial degree** — "semi-X, half-X, partially X." Descends from `hak` ("half"), which also persists as a standalone fractional/numeric word. POS-preserving: N→N/A, A→A. pos_mask = `NA`.
+
+> **Degree, not numeric ½.** `hak`'s standalone use is the *numeric fraction* ½ (`tlaur wy hak` = 9:30, `hakdo` ¼, `hakfoi` ⅛). `hak-` the prefix is the *scalar/modifier* degree "semi-/partial-" — it does not carry an arithmetic half. Numeric halves stay lexical (`hakdo`); prefixal semi- is productive. This mirrors the split between the augmentative `mes-` (giant/mega) and the numeric ×10¹² `meson`.
+
+`hak-` is **consonant-final** (`k`) — it fuses cleanly with both consonant-initial and vowel-initial roots; no consonant restoration needed (§II): `hak-aug` → `hakaug`. Colour prefix fixed `o-` (abstract), consistent with the other scalar-degree prefixes (`pi-`, `pa-`, `sefta-`, `kon-`).
+
+### I. Pseudo- — `hy-` / `hym-` (noun / adjective base)
+
+| Form | Example | Meaning (N) | Meaning (A) |
+|---|---|---|---|
+| `hy-fora` | `fora` (fire, N) | pseudo-fire, a sham fire | falsely fiery, apparent |
+| `hy-auron` → `hymauron` | `auron` (sky, N) | pseudo-sky, a mock firmament | sky-apparent, seeming-sky |
+| `hym-aug` → `hymaug` | `aug` (start, V/N) | pseudo-start, a staged beginning | pseudo-begun |
+
+`hy-` frames a noun or adjective as **apparent but not genuinely X** — "pseudo-X, sham-X, seeming X." Descends from `hymin` ("pseudo, apparent, sham"). POS-preserving: N→N/A, A→A. pos_mask = `NA`.
+
+`hy-` is **vowel-final** — before vowel-initial roots, the restored consonant `m` surfaces from the full root `hymin`: `hy-` → `hym-` (§II). `hym-aug` → `hymaug`. Colour prefix fixed `o-` (abstract).
 ---
 
 ## II. Restored Consonant Rule
@@ -135,12 +163,15 @@ When the prefix attaches to a **vowel-initial root**, the prefix's elided conson
 | `sefta-` / `seftah-` | `seftah` | `sefta-gor` | `seftah-ema` → `seftahema` |
 | `doi-` / `doir-` | `doir` | `doi-chel` | `doir-aug` → `doiraug` |
 | `ai-` / `aig-` | `aigan` | `ai-taka` | `aig-aug` → `aigaug` |
+| `hy-` / `hym-` | `hymin` | `hy-fora` | `hym-aug` → `hymaug` |
 
 Consonant-initial roots fuse cleanly with the shortened prefix form — no restoration needed.
 
 `mes-` is **consonant-final** (`s`) — it fuses cleanly with both consonant-initial and vowel-initial roots without any restoration: `mes-fora`, `mes-aug` → `mesaug`.
 
 `kon-` is **consonant-final** (`n`) — likewise no restoration needed: `kon-fora`, `kon-aug` → `konaug`.
+
+`hak-` is **consonant-final** (`k`) — likewise no restoration needed: `hak-fora`, `hak-aug` → `hakaug`.
 
 ---
 
@@ -169,7 +200,7 @@ Prefixes produce three `pos_mask` patterns:
 
 | Prefixes | pos_mask | Tone Omission | N form | A form | V form |
 |---|---|---|---|---|---|
-| `pi-`, `pa-`, `sefta-`, `mes-`, `kon-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | — |
+| `pi-`, `pa-`, `sefta-`, `mes-`, `kon-`, `hak-`, `hy-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | — |
 | `ai-` | VN | No (2 letters) | Bare / tonal N | — | Bare / tonal V |
 | `doi-` | N | Yes (1 letter) | Bare root | — | — |
 
@@ -203,7 +234,7 @@ Derivational prefixes follow one of three colour prefix rules:
 
 ### A. Fixed Prefix
 
-`pi-`, `pa-`, `sefta-`, `ai-`, `kon-` take fixed `o-` (abstract). `mes-` takes fixed `y-` (dense/mass). The order is:
+`pi-`, `pa-`, `sefta-`, `ai-`, `kon-`, `hak-`, `hy-` take fixed `o-` (abstract). `mes-` takes fixed `y-` (dense/mass). The order is:
 
 > colour prefix → derivational prefix → root
 
@@ -216,6 +247,8 @@ Derivational prefixes follow one of three colour prefix rules:
 | `o-paheli` | the afterlife |
 | `o-ai-taka` | the re-eating |
 | `o-kon-fora` | the anti-fire |
+| `o-hak-fora` | the half-fire |
+| `o-hymaug` | the pseudo-start |
 | `y-mes-fora` | the giant fire |
 | `y-mes-gor` | the mega-good |
 
@@ -234,13 +267,13 @@ This is parallel to suffix inherit-from-base rules (`derivational-suffixes.md` �
 
 ## V. Formal Register
 
-Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`, `doir`, `meson`, `aigan`, `konta`) is used as a standalone content word, not as a derivational prefix.
+Prefix-derived words have no distinct formal register variant. The full-root form of the source word (`pih`, `pah`, `seftah`, `doir`, `meson`, `aigan`, `konta`, `hak`, `hymin`) is used as a standalone content word, not as a derivational prefix.
 
 ---
 
 ## VI. Productivity & Editorial Policy
 
-All seven prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
+All nine prefixes are **fully productive**. The same store/don't-store decision checklist applies as for suffixes — see `rules/4-meta/word-creation-pipeline.md` §VIII.
 
 | Form | Store? | Why |
 |---|---|---|
@@ -249,6 +282,8 @@ All seven prefixes are **fully productive**. The same store/don't-store decision
 | `seftahema` (meta-truth / epistemology) | 🤔 | Names a philosophical field — culturally significant. |
 | `doi-chel` (little child) | ❌ | Transparent diminutive. Computable from `doi-` + `chel`. |
 | `mes-fora` (giant fire) | ❌ | Transparent augmentative. Computable from `mes-` + `fora`. |
+| `hak-` (semi-) | ❌ | Transparent degree prefix. Computable from `hak-` + root. |
+| `hy-` (pseudo-) | ❌ | Transparent pseudo-prefix. Computable from `hy-` + root. |
 
 ---
 
