@@ -2,8 +2,8 @@
 
 **Module:** Word Formation, Constraints & Development Pipeline
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 1.0.2
+**Last updated:** 2026-08-21
+**Version:** 1.0.3
 **Depends on:** `3-subsystems/spatials.md`
 
 ---
@@ -16,7 +16,7 @@ All roots in Kilor must satisfy the following constraints:
 
 | Constraint | Rule |
 |:---|:---|
-| **Syllable count** | 1 to 5 syllables per root |
+| **Syllable count** | Typically 1 to 5 syllables per root (soft guideline; lexicalised forms may exceed) |
 | **Syllable templates** | Strictly CV, CVC, VC, or V only |
 | **Consonant clusters** | Forbidden — no CCV, CVCC, or any multi-consonant sequences |
 | **`j` and `v`** | Must never appear as consonants or vowels |

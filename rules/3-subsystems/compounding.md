@@ -2,8 +2,8 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-19
-**Version:** 1.2.1
+**Last updated:** 2026-08-21
+**Version:** 1.2.2
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
@@ -272,10 +272,10 @@ A compound that defaults to multi (Rule 3 or Rule 4) may be upgraded to mono whe
 | Condition | Criterion |
 |:---|:---|
 | **A. Semantic lexicalisation** | The compound denotes a stable cultural concept with its own dictionary entry, not an ad-hoc descriptive combination |
-| **B. Fused length ≤ 5 syllables** | `syllables(base) + syllables(head) ≤ 5` |
+| **B. Fused length ≤ 5 syllables (guideline)** | `syllables(base) + syllables(head) ≤ 5` — a *preference*, not a hard cap |
 | **C. No phonotactic block** | The morpheme boundary does not violate Rule 2 |
 
-**Exception:** Highly lexicalised proper nouns (place names, personal names, technical terms) may exceed the 5-syllable limit.
+**Exception:** The 5-syllable length is a *soft guideline*, not a hard rule. Most Kilor roots run 1–5 syllables, but entrained/lexicalised compounds **may exceed 5** — real languages carry long exceptional forms (cf. `esalasdokira` encyclopaedia, 6 syl). The validator treats >5 syllables as advisory only, never blocking. (User-settled 2026-08-21.)
 
 | Compound | Lexicalised? | Syllables | Blocked? | Verdict |
 |:---|:---|:---|:---|:---|

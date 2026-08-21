@@ -166,7 +166,11 @@ def validate_root(root):
     if syl_count == 0:
         return False, f"root '{root}' has no vowel nucleus"
     if syl_count > 5:
-        return False, f"root '{root}' has {syl_count} syllables (max 5)"
+        # Rule 5 is a soft guideline, not a hard cap: most Kilor roots are
+        # 1–5 syllables, but entrained/lexicalised compounds may exceed 5.
+        # Real languages carry long exceptional forms, so this is advisory
+        # only (non-blocking). User-settled 2026-08-21.
+        return True, f"root '{root}' has {syl_count} syllables (over the usual 5-syllable guideline, permitted as an exception)"
     return True, ""
 
 

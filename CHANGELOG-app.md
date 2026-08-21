@@ -1,5 +1,5 @@
-**Current Version:** v2.23.0
-**Last Updated:** 2026-08-20
+**Current Version:** v2.24.0
+**Last Updated:** 2026-08-21
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,29 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.24.0 — 2026-08-21
+
+30 new words across three sets (793→823), plus two renames (`hym` → `hemin`,
+`hytam` → `hetam`). New families: `py-` curve + `anil(um)-` straight axis (all
+`o-`, with `pyssah` snake at animal-class `a-`), `del-` communication/postal
+(split by register: abstract actions `o-`, concrete media `e-`, agents `a-`,
+place `ae-`), and `as-` knowledge riding the existing `asdo` root (bare roots at
+`o-`). One rule change (5-syllable cap relaxed — see `CHANGELOG.md` v2.16.0)
+unblocked the 6-syllable `esalasdokira` encyclopaedia.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 793→823 (30 new rows; `draft/batch-2026-08-21.md`,
+  `draft/batch-2026-08-21b.md`, `draft/batch-2026-08-21c.md`):
+  - **Set 1 — curve/straight (10):** `py` curve (root, NA, `o-`), `pybre` winding (root, NA, `o-`), `pysam` bend (root, NV, `o-`), `pyssah` snake (root, N, `a-`); `anili` array (root, N, `o-`), `anilum` straight (root, NA, `o-`); compounds `anilumpy` rights-and-wrongs (`anilum`+`py`, relational, N, `o-`), `anilumaltem` straightforward/blunt (`anilum`+`altem`, relational, A, `--`), `anilumpar` straightforwardly (`anilum`+`par`, process, ND, `o-`), `anilumtek` ruler (`anilum`+`tek`, instrument, N, `e-`).
+  - **Set 2 — communication/postal (10):** `delaril` communicate (root, NV, `o-`), `delo` message (root, N, `o-`), `delkir` letter (root, N, `e-`), `delin` post (root, NV, `e-`), `delmi` mail (root, N, `e-`); agents `delinmae` postman (`delin`+`maeha`), `delmimae` addressee (`delmi`+`maeha`), `sourommae` receiver (`sourom`+`maeha`) all N, `a-`; `delinpos` post office (`delin`+`poska`, location, N, `ae-`); `thesdelmi` e-mail (`thes`+`delmi`, relational, N, `e-`).
+  - **Set 3 — knowledge (10):** `asdima` understand (root, NV, `o-`), `asdelo` remind (root, NV, `o-`), `asdaito` information (root, N, `o-`), `asdei` intel (root, N, `o-`), `asnira` news (root, N, `o-`); `rolinasdaito` well-informed (`roli`+`asdaito`, relational, NA, `o-`), `asdaitomik` info science (`asdaito`+`mik`, study-of, N, `o-`), `asdonia` erudite (`asdo`+`nia`, Abundative, NA, `o-`), `esalasdokira` encyclopaedia (flat `esa`+`asdo`+`kira`, relational, N, `e-`, 6 syl), `asdopos` museum (`asdo`+`poska`, location, N, `ae-`).
+  - **Renamed** `hemin` (was `hym`, folk/common people, NA, `a-`) and `hetam` (was `hytam`, brother, N, `a-`), both leaf roots with phonology recomputation (IPA `/ˈhe.min/`, `/ˈhe.tam/`); old forms removed.
+
+**Validation:**
+- `python -m kilor check` — ✅ all 30 new words + both renames show no IPA mismatch; only pre-existing errors/warnings remain.
+- Insert validated in temp-clones per set (10/10, 10/10, 10/10 added clean); live `add` inserted same 30 rows, confirmed by form/prefix/mask + compound-component join audit (14 compound wirings stored correctly).
+- Rule change (Rule 5) documented in `CHANGELOG.md` v2.16.0.
 
 ## workspace v2.23.0 — 2026-08-20
 

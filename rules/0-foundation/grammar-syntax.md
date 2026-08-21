@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-08-19
-**Version:** 2.5.0
+**Last updated:** 2026-08-21
+**Version:** 2.5.1
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/compounding.md`
 
 ---
@@ -228,7 +228,7 @@ When the root's final consonant happens to match the restored consonant (e.g., `
 
 ### A. Lexical Compounding
 
-Vocabulary is expanded through **lexical compounding**: roots of 1 to 5 syllables are combined to form complex concepts.
+Vocabulary is expanded through **lexical compounding**: roots (usually 1 to 5 syllables) are combined to form complex concepts.
 
 > **Example:** `lumi` (light) + `sola` (star) → `lumi sola` (star-light, multi-word vocab)
 

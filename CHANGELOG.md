@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.15.0
-**Last Updated:** 2026-08-19
+**Current Version:** v2.16.0
+**Last Updated:** 2026-08-21
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,30 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.16.0 — 2026-08-21
+
+Relaxed the **5-syllable cap on content roots to a soft guideline**. The user
+held (correctly) that real languages carry long lexicalised forms, so a hard
+cap on compound length is wrong — most Kilor roots stay 1–5 syllables, but an
+entrained/lexicalised compound may exceed 5 (trigger: `esalasdokira`
+encyclopaedia, 6 syllables, esa+asdo+kira). Per the standing generalization
+preference, this is one uniform rules change across spec + validator, NOT a
+one-off carve for that one word.
+
+**Spec:**
+- **`3-subsystems/compounding.md`** v1.2.1→v1.2.2 — §III Rule 5: Condition B ("Fused length ≤ 5 syllables") relabeled a *preference*, not a hard criterion; the old exception (proper nouns only) replaced with the general guideline that *any* lexicalised compound may exceed 5.
+- **`0-foundation/grammar-syntax.md`** v2.5.0→v2.5.1 — §I-A Lexical Compounding: "roots of 1 to 5 syllables" → "roots (usually 1 to 5 syllables)".
+- **`4-meta/lexicon-roadmap.md`** v1.0.2→v1.0.3 — Syllable-count constraint row marked a soft guideline ("typically 1 to 5; lexicalised forms may exceed").
+
+**Backend:**
+- **`kilor/phonology.py`** — `validate_root`: `syl_count > 5` no longer hard-fails; returns `(True, advisory-warning)` instead. All callers (`add`, `check`, `audit_apply`, `edit`) inherit the relaxation.
+
+**Validation:**
+- `python -m kilor check` — ✅ run post-change; only pre-existing errors/warnings remain (the relaxed 6-syllable `esalasdokira` clears clean).
+- Reprobe: `esalasdokira` (6 syl) now inserts; all prior ≤5-syllable behaviour unchanged.
+
+**DB:** new words live in `CHANGELOG-app.md` v2.24.0.
 
 ## workspace v2.15.0 — 2026-08-19
 
