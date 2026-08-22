@@ -151,3 +151,52 @@
 | Consensus Prefix | ae- |
 | Meaning | [{"gloss": "library, a book-place", "pos": "N"}] |
 | Notes | kira (book) + poska (place/location head). location. ae- (earth). |
+---
+
+## PENDING A–J REVIEW — Local-case particles (grammar proposal 2026-08-23)
+
+These four forms were designed during the case-function discussion. They are **proposed entries only** — none are inserted into the DB. To actually add them, confirm fields **A–J** (per the 4-phase workflow in `4-meta/word-creation-pipeline.md`) so `python kilor.py add` can process them.
+
+### at ({spatial})
+
+| Field | Value |
+|---|---|
+| Kilor Form | posne |
+| Type | function |
+| POS | ADP |
+| Consensus Prefix | o- |
+| Meaning | at (neutral point-locative) |
+| Notes | PENDING A–J. Locative #1. `pos` (location head from `poska`) + `-ne`. `[landmark]-GEN posne` = "at the landmark". Complements `ikne` (in) / `rapne` (on). See `3-subsystems/spatials.md` §III, §IV-D. |
+
+### into ({spatial})
+
+| Field | Value |
+|---|---|
+| Kilor Form | ikte |
+| Type | function |
+| POS | ADP |
+| Consensus Prefix | o- |
+| Meaning | into (motion goal into the interior) |
+| Notes | PENDING A–J. Illative #6. `ik` (in root) + `te` (goal particle). `[goal] ikte` + motion verb (`aug`). Goal split: `te` dative ≠ `tene` allative ≠ `ikte` illative. See `3-subsystems/spatials.md` §IV-D. |
+
+### as ({relation})
+
+| Field | Value |
+|---|---|
+| Kilor Form | raus |
+| Type | function |
+| POS | ADP |
+| Consensus Prefix | o- |
+| Meaning | as / in the capacity of (role) |
+| Notes | PENDING A–J. Essive #9. Preposed before the role noun. Distinct from `les` (equative "as … as") and `-ius` (similative "like"). See `1-nominals/cases.md` §V-A. |
+
+### become ({relation})
+
+| Field | Value |
+|---|---|
+| Kilor Form | lik |
+| Type | function |
+| POS | ADP |
+| Consensus Prefix | o- |
+| Meaning | become / turn into (resultant state) |
+| Notes | PENDING A–J. Translative #10. Preposed before the result noun: `SUBJ lik RESULT`. Contrast `lifa` (process verb "transform"); `lik` is the resultative marker. See `1-nominals/cases.md` §V-A. |

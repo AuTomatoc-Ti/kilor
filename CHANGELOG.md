@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.18.0
-**Last Updated:** 2026-08-22
+**Current Version:** v2.19.0
+**Last Updated:** 2026-08-23
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -19,6 +19,27 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.19.0 — 2026-08-23
+
+Documented how Kilor fulfils the traditional 10 local/role "cases" analytically (spatial postpositions, oblique particles, and content verbs — no new case suffixes). Four proposed closed-class particles were designed (locative `posne`, illative `ikte`, essive `raus`, translative `lik`) and recorded as **pending pipeline approval** — they are **not** inserted into the DB. Clarified the goal split (`te` dative / `tene` allative / `ikte` illative) and that `les` is equative-only (essive = `raus`).
+
+**Nominals:**
+- **`1-nominals/cases.md`** v1.4.0→v1.5.0 — §V-A added essive `raus` + translative `lik` to the oblique-preposition table; added the goal-split table (`te`/`tene`/`ikte`), the partitive (not-a-case) note, the elative-composition note, and the temporal-`shoun` clarification.
+
+**Subsystems:**
+- **`3-subsystems/spatials.md`** v1.2.1→v1.3.0 — Added `pos`/`posne` to the §III inventory; new §IV-D "Case Roles of Spatial Postpositions" mapping locative/inessive/elative/illative/adessive/allative; documented illative `ikte`, elative composition (`ar [source] ouk`), and the `posne`/`ikne`/`rapne` distinction.
+- **`3-subsystems/comparatives.md`** v1.1.1→v1.2.0 — Noted `les` is equative-only; essive is `raus` (not conflated).
+
+**Foundation:**
+- **`0-foundation/grammar-syntax.md`** v2.5.1→v2.6.0 — §IV-C closed-class inventory extended with `posne`, `ikte`, `raus`, `lik`; §I-E spatial inventory list updated.
+
+**Meta:**
+- **`rules/README.md`** v2.3.7→v2.4.0 — Updated Oblique Particles and Spatial Postpositions quick-reference tables; header version/date.
+- **`today.md`** — Appended PENDING A–J REVIEW proposals for `posne`, `ikte`, `raus`, `lik`. No DB insert yet.
+
+**Validation:**
+- `python kilor.py check` — Ran; only 4 pre-existing errors + 12 warnings, 0 new (doc-only change; no DB touched, pending A–J sign-off).
 
 ## workspace v2.18.0 — 2026-08-22
 

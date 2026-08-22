@@ -2,8 +2,8 @@
 
 **Module:** Syntactic Role Marking & Poetic Freedom
 **Status:** Canonical
-**Last updated:** 2026-07-12
-**Version:** 1.4.0
+**Last updated:** 2026-08-23
+**Version:** 1.5.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `3-subsystems/spatials.md`
 
 ---
@@ -134,9 +134,27 @@ Kilor intentionally restricts the case system to 3 slots. All other semantic rol
 | **Comitative** | with / together (companion) | **`mer`** | Placed before the companion noun |
 | **Locative-relational** | between | **`tilpe`** | Placed before the reference points (two or more) |
 | **Ablative** | from (origin, source) | **`ar`** | Placed before the source noun |
-| **Dative** | to / for (recipient, direction) | **`te`** | Placed before the recipient/goal noun |
+| **Dative** | to / for (recipient) | **`te`** | Placed before the recipient noun |
+| **Essive** | as / in the capacity of (role) | **`raus`** | Placed before the role noun |
+| **Translative** | become / turn into (resultant state) | **`lik`** | Placed before the result noun |
 
-When multiple obliques co-occur in the same clause, they follow the fixed order: `sy` (Instrumental) > `mer` (Comitative) > spatial postpositions / `tilpe` (Locative-relational & Spatial) > `ar` (Ablative) > `te` (Dative). For the full spatial postposition inventory (`ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `tilpe`), see `3-subsystems/spatials.md`. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
+**Goal split (dative / allative / illative):** three distinct goal particles, mirroring English *to / towards / into*:
+
+| Particle | Meaning | Role |
+|---|---|---|
+| `te` | to / for (recipient) | **Dative** |
+| `tene` | towards (goal-direction) | **Allative** |
+| `ikte` | into (enter the interior) | **Illative** |
+
+`te` is reserved for the recipient-dative. Spatial goal-direction uses `tene` (allative); motion-into uses `ikte` (illative). For the full spatial postposition family (`posne` locative "at", `ikne` inessive "in", `oukne` outside, etc.) and their case roles, see `3-subsystems/spatials.md` §IV-D.
+
+**Partitive — not a case:** Kilor has no partitive case. "Some of / a portion of" is expressed compositionally via measure words (`NOUN-rin` = a portion/measure of X), the quantifier `srote` ("some"), or a GEN possessor + portion head for a definite part. See `3-subsystems/numerals.md` §VI-B and §VII.
+
+**Elative — composition:** "out of" = source marker `ar` (prepositive, before the source) + the exit-motion verb `ouk`. Emphatic "from inside": `ar [landmark]-GEN ikne ouk`. See `3-subsystems/spatials.md` §IV-D.
+
+**Temporal from:** for "since / from (a time)" use the subordinator `shoun`, not the spatial `ar`.
+
+When multiple obliques co-occur in the same clause, they follow the fixed order: `sy` (Instrumental) > `mer` (Comitative) > spatial postpositions / `tilpe` (Locative-relational & Spatial) > `ar` (Ablative) > `te` (Dative). For the full spatial postposition inventory (`posne`, `ikne`, `oukne`, `umne`, `rapne`, `haune`, `paune`, `hinne`, `tene`, `orane`, `meipone`, `tilpe`), see `3-subsystems/spatials.md`. See `0-foundation/grammar-syntax.md` §I-E for the full clause template.
 
 ### B. Conjunctions
 

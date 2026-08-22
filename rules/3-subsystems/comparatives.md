@@ -2,8 +2,8 @@
 
 **Module:** Comparatives & Superlatives
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.1
+**Last updated:** 2026-08-23
+**Version:** 1.2.0
 **Depends on:** `0-foundation/grammar-syntax.md` (clause template, §IV-C closed-class particles), `2-predication/copula-existential.md` (copula `res`)
 
 ---
@@ -59,6 +59,8 @@ Subject  les  Standard  (Degree)  Quality
 > **Example:** `ki les ti ralis.`
 > (I as you big)
 > "I am as big as you."
+
+**`les` is equative only.** It marks the *equative standard* ("as … as", degree comparison). The **essive** role/capacity sense ("as a teacher") is a distinct function carried by the particle **`raus`** (see `1-nominals/cases.md` §V-A) — Kilor does not conflate equative and essive, mirroring the goal split of `te`/`tene`/`ikte`.
 
 **Negation:** Negation of the comparison uses `nar` **after** the particle (`les nar`, `tor nar`) to scope over the comparison itself, not over the subject:
 

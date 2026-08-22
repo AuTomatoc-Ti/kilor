@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-08-22
-**Version:** 2.3.7
+**Last updated:** 2026-08-23
+**Version:** 2.4.0
 
 ---
 
@@ -74,12 +74,17 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `mer` | Comitative ("with") | `1-nominals/cases.md` |
 | `tilpe` | Between | `1-nominals/cases.md`, `3-subsystems/spatials.md` |
 | `ar` | Ablative ("from") | `1-nominals/cases.md` |
-| `te` | Dative ("to/for") & spatial root ("towards") | `1-nominals/cases.md`, `3-subsystems/spatials.md` |
+| `te` | Dative ("to/for", recipient) | `1-nominals/cases.md` |
+| `raus` | Essive ("as / in the capacity of") | `1-nominals/cases.md` |
+| `lik` | Translative ("become / turn into") | `1-nominals/cases.md` |
+
+Goal split: `te` (dative, to) ≠ `tene` (allative, towards) ≠ `ikte` (illative, into). See `1-nominals/cases.md` §V-A.
 
 ### Spatial Postpositions (`-ne` suffix)
 
 | Form | Meaning | File |
 |---|---|---|
+| `posne` | at (point, locative) | `3-subsystems/spatials.md` |
 | `ikne` | inside | `3-subsystems/spatials.md` |
 | `oukne` | outside | `3-subsystems/spatials.md` |
 | `umne` | under | `3-subsystems/spatials.md` |
@@ -87,11 +92,13 @@ For usage guides (examples, rhetoric, artistic patterns), see `guide/`.
 | `haune` | behind | `3-subsystems/spatials.md` |
 | `paune` | in front of | `3-subsystems/spatials.md` |
 | `hinne` | beside / near | `3-subsystems/spatials.md` |
-| `tene` | towards | `3-subsystems/spatials.md` |
+| `tene` | towards (allative) | `3-subsystems/spatials.md` |
 | `orane` | along | `3-subsystems/spatials.md` |
 | `meipone` | around | `3-subsystems/spatials.md` |
 | `orakne` | across | `3-subsystems/spatials.md` |
 | `inoune` | through / via | `3-subsystems/spatials.md` |
+
+Illative `ikte` ("into") is a goal particle, not a `-ne` form — see `3-subsystems/spatials.md` §IV-D.
 
 ### Case Suffixes & Tone Markers
 
