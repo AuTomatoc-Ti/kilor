@@ -1,4 +1,4 @@
-**Current Version:** v2.25.0
+**Current Version:** v2.26.0
 **Last Updated:** 2026-08-22
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,43 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.26.0 — 2026-08-22
+
+30 new words across three sets (824→854), plus two in-place gloss edits. New
+families: `syra-` social/society (all `o-`, with `kon-` anti/negative compounds
+`konsyra`/`konsyrote` and study-of `syramik`/agent `syramikmae`), the `sel-`
+road family (`selun` boulevard joins `selo`/`selam`/`selpo` at `ae-`), and an
+`-ere` motion register (`artere` transport, `haitere` traffic). Compound
+`sentuposlam` (downtown = center-of-city, `ae-`) completes the `pos-` city set.
+
+**DB / Backend:**
+- **`data/kilor.db`** — 824→854 (batch `draft/batch-2026-08-22.md`): 30 new entries.
+
+  Set A (identity & daily life): `isam` same (NA, o-), `selun` boulevard (N, ae-),
+  `liutere` leave/depart (NV, o-), `tolae` island (N, ae-), `latem` safety/safe (NA, o-),
+  `halpa` cheap (NA, o-), `lappu` note (NV, o-), `dellap` notification (NV, o-),
+  `sukan` brush (NVA, e-), `sentuposlam` downtown/city center (N, ae-; comp sentum+poslam).
+
+  Set B (public/transport): `lym` folk (NA, a-), `heminhait` bus (N, e-; hemin+hait),
+  `artere` transport (NV, o-), `arteretek` vehicle (N, e-; artere+tek),
+  `hemin artere` public transport (N, o-), `ismir` system (N, o-),
+  `hemin artere ismir` public transport system (N, o-), `haitere` traffic (N, o-),
+  `ilhaitere` traffic jam (N, o-; il+haitere), `shukli` torrent (NVA, i-).
+
+  Set C (social/society): `syra` social (NVA, o-), `syrote` society (N, o-),
+  `konsyra` unsociable (NA, o-; konta+syra), `konsyrote` anti-social (NA, o-; konta+syrote),
+  `konsyrote altem` sociopath (N, o-), `syramik` sociology (N, o-; syra+mik),
+  `syramikmae` sociologist (N, a-; syra+mik+maeha), `syracetik` social science (N, o-),
+  `syrote isra` socialism (N, o-; doctrine), `syralu` sociality (N, o-; syra+lu).
+
+  Two in-place gloss edits: `latif` (removed the `safe` A gloss; now healing / to
+  save-or-rescue / to heal — the safety *state* relocated to new root `latem`);
+  `hemin` (reassigned folk → public/communal; its folk sense moved to new root `lym`.
+  `heminhait`/`hemin artere`/`hemin artere ismir` compound off the updated root).
+
+**Validation:**
+- `python kilor.py check` — no new errors; all 30 new words clean (pre-existing warnings on older roots unchanged).
 
 ## workspace v2.25.0 — 2026-08-22
 
