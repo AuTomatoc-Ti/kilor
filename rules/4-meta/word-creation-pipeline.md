@@ -2,8 +2,8 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-08-09
-**Version:** 2.6.0
+**Last updated:** 2026-08-22
+**Version:** 2.6.1
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 **Companion file:** `4-meta/pre-pipeline-brainstorm.md` — Phase 0 discussion guide for resolving meaning/POS, root vs compound, and colour prefix from bare brainstorm entries before filling in `today.md`. Read this first when starting from brainstorm input.
@@ -274,7 +274,7 @@ For **compounds**, the prefix follows the semantic class of the head noun (`comp
 | Temporal Pre- (`pi-`), Temporal Post- (`pa-`), Meta- (`sefta-`) | `o-` (abstract) |
 | Augmentative (`mes-`) | `y-` (dense/mass) |
 | Diminutive (`doi-`) | Inherit from base (§IV-B of `derivational-prefixes.md`) |
-| Re-/Again (`ai-`), Anti- (`kon-`) | `o-` (abstract) |
+| Re-/Again (`ai-`), Anti-/Negative/Reversive (`kon-`) | `o-` (abstract) |
 
 ### B. Syllable Count
 

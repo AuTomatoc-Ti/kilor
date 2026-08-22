@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-08-19
-**Version:** 2.3.6
+**Last updated:** 2026-08-22
+**Version:** 2.3.7
 
 ---
 
@@ -171,8 +171,8 @@ rules/
 │   ├── aspect.md               — Optional aspect particles
 │   ├── colour-emotion.md       — Emotional particles
 │   ├── comparatives.md         — Comparatives & superlatives
-│   ├── derivational-suffixes.md — 15 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum, -ik, -is, -rolif)
-│   ├── derivational-prefixes.md — 7 derivational prefixes (pi-, pa-, sefta-, doi-, mes-, ai-, kon-)
+│   ├── derivational-suffixes.md — 18 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum, -ik, -is, -rolif, -tesy, -tesis, -teseus)
+│   ├── derivational-prefixes.md — 9 derivational prefixes (pi-, pa-, sefta-, doi-, mes-, ai-, kon-, hak-, hy-)
 │   ├── compounding.md          — Multi-word compounding heads, mono/multi decision rules
 │   ├── imperatives.md          — Commands, suggestions, prohibitions, vocative
 │   ├── numerals.md             — Numerals, measure words, ordinals

@@ -2,11 +2,11 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-21
-**Version:** 1.2.2
+**Last updated:** 2026-08-22
+**Version:** 1.2.3
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
-**Companion file:** `3-subsystems/derivational-suffixes.md` — 12 derivational suffixes (-mae, -tek, -lu, -rin, -par, -lise, -ius, -eus, -ia, -wes, -rem, -rum), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 3 derivational prefixes (`pi-`, `pa-`, `sefta-`).
+**Companion file:** `3-subsystems/derivational-suffixes.md` — 18 derivational suffixes (inventory §I), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 9 derivational prefixes (inventory §I, incl. the anti-/negative/reversive `kon-`).
 
 ---
 

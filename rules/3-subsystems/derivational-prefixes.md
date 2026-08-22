@@ -3,7 +3,7 @@
 **Module:** Derivational Prefixes
 **Status:** Canonical
 **Last updated:** 2026-08-22
-**Version:** 1.3.0
+**Version:** 1.4.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — suffix derivations following the same morphological pattern.
@@ -29,7 +29,7 @@ For multi-word compounding (content-root heads, mono/multi decision rules), see 
 | 4 | `doi-` / `doir-` | `doir` | Diminutive | N | N | inherit | little / young / cute |
 | 5 | `mes-` | `meson` | Augmentative | N, A | N, A | `y-` | mega- / giant / ×10¹² |
 | 6 | `ai-` / `aig-` | `aigan` | Re-/Again | V, N | V, N | `o-` | re- / again (POS-preserving) |
-| 7 | `kon-` | `konta` | Anti- | N, A | N, A | `o-` | anti- / opposing (POS-preserving) |
+| 7 | `kon-` | `konta` | Anti-/Negative/Reversive | N, A, V | N, A, V | `o-` | anti- / opposing (N); un- / not- (A); un- / reversive (V); POS-preserving |
 | 8 | `hak-` | `hak` | Semi-/Partial- | N, A | N, A | `o-` | semi- / half-strength / partial (degree, not numeric ½) |
 | 9 | `hy-` / `hym-` | `hymin` | Pseudo- | N, A | N, A | `o-` | pseudo- / sham- / apparent-not-real |
 
@@ -114,16 +114,30 @@ pos_mask = `NA`. Both N and A forms distinguished by tone/`-s`.
 
 `ai-` is vowel-final — before vowel-initial roots, the restored consonant `g` surfaces: `ai-` → `aig-` (§II). `aig-aug` → `aigaug`.
 
-### G. Anti-/Opposing — `kon-` (noun / adjective base)
+### G. Anti- (N) / Negative (A) / Reversive (V) — `kon-` (noun / adjective / verb base)
 
-| Form | Base | Meaning (N) | Meaning (A) |
+`kon-` is a **single polar prefix whose reading is disambiguated by the base's part of speech** — a three-way split that mirrors English `un-` (reversal for verbs, negation for adjectives):
+
+| Base category | Reading | Example | Gloss |
 |---|---|---|---|
-| `kon-fora` | `fora` (fire, N) | anti-fire, counter-fire | anti-fire, fire-opposing |
-| `kon-gor` | `gor` (good, A) | anti-good | opposing goodness |
+| **N** → **anti- / opposing** | a counter-force working against X | `kon-fora` | anti-fire, counter-fire |
+| **A** → **negative "not- / un-"** | the absence or lack of quality X | `kon-niba` | not-young (negative, weak) |
+| **V** (telic) → **reversive "un-"** | undo / cancel the state X produces | `kon-tesak` | unmake, unbuild, undo |
 
-`kon-` frames a noun or adjective as oppositional — "anti-X, opposing X." Descends from `konta` ("opposition; opposing; to oppose"). POS-preserving: N→N/A, A→A. pos_mask = `NA`.
+`kon-` descends from `konta` ("opposition; to oppose; to counter; to act against"), whose lexicon `pos_mask` is `NVA` — the root already carries the verb range the prefix restores. This makes `kon-` the **second NAV affix** after `-rolif` (`derivational-suffixes.md` §I-O). POS-preserving: N→N, A→A, V→V. pos_mask = `NAV`.
 
-`kon-` is **consonant-final** (`n`) — it fuses cleanly with any root without needing consonant restoration (§II): `kon-aug` → `konaug`.
+**Reading-preference** (when a base fits more than one category):
+
+| Base type | Preferred reading |
+|---|---|
+| Noun | anti- / opposing |
+| Adjective | negative "not- / un-" |
+| Telic verb | reversive "un-" |
+| Mixed N/A or N/V root | merge where the senses overlap; disambiguate by tone or `-s` (§III-B), else context |
+
+The three-way split lets Kilor keep a clean real-world distinction — **asocial** (`kon-` + A, withdrawn) vs **antisocial** (`kon-` + N, against society): `konsyra` = "unsociable (not sociable)", `konsyrote` = "anti-social (against society)".
+
+`kon-` is **consonant-final** (`n`) — it fuses cleanly with both consonant-initial and vowel-initial roots; no consonant restoration needed (§II): `kon-aug` → `konaug`.
 
 ### H. Semi-/Partial- — `hak-` (noun / adjective base)
 
@@ -196,12 +210,13 @@ Per `0-foundation/phonology.md` §IV-C, start-only consonants (`kl`, `tl`, `bl`,
 
 ### B. Tone & Category
 
-Prefixes produce three `pos_mask` patterns:
+Prefixes produce four `pos_mask` patterns:
 
 | Prefixes | pos_mask | Tone Omission | N form | A form | V form |
 |---|---|---|---|---|---|
-| `pi-`, `pa-`, `sefta-`, `mes-`, `kon-`, `hak-`, `hy-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | — |
+| `pi-`, `pa-`, `sefta-`, `mes-`, `hak-`, `hy-` | NA | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | — |
 | `ai-` | VN | No (2 letters) | Bare / tonal N | — | Bare / tonal V |
+| `kon-` | NAV | No (2 letters) | Bare / tonal N | Root+`-s` / tonal A | Bare / tonal V |
 | `doi-` | N | Yes (1 letter) | Bare root | — | — |
 
 For `pos_mask = NA` prefixes, both N and A are available:
@@ -218,7 +233,9 @@ For `ai-` (`pos_mask = VN`), N and V forms are available:
 | 1–2 | Bare root | Bare root |
 | 3+ | Tonal N: `j` on 1st of last-3 | Tonal V: `v` on 1st of last-3 |
 
-Tone Omission does not apply (2 letters) for NA and VN prefixes — tone markers are mandatory for 3+ syllable forms.
+For `kon-` (`pos_mask = NAV`), all three categories are available: **N** and **V** use the bare root (tonal for 3+ syllables), **A** uses the `-s` form (1–2 syllables) or the tonal A (3+). The category is disambiguated by tone and `-s`, and for 1–2 syllable toneless forms by context.
+
+Tone Omission does not apply (2 letters) for NA, VN, and NAV prefixes — tone markers are mandatory for 3+ syllable forms.
 
 For `doi-` (`pos_mask = N`), only the N form exists — Tone Omission applies: tone markers are optional for 3+ syllable forms; the bare root is always valid.
 
@@ -284,6 +301,10 @@ All nine prefixes are **fully productive**. The same store/don't-store decision 
 | `mes-fora` (giant fire) | ❌ | Transparent augmentative. Computable from `mes-` + `fora`. |
 | `hak-` (semi-) | ❌ | Transparent degree prefix. Computable from `hak-` + root. |
 | `hy-` (pseudo-) | ❌ | Transparent pseudo-prefix. Computable from `hy-` + root. |
+| `kon-tesak` (unmake / unbuild) | ❌ | Transparent reversive. Computable from `kon-` + telic verb. |
+| `kon-niba` (not-young) | ❌ | Transparent negative. Computable from `kon-` + adjective. |
+| `konsyra` (unsociable), `konsyrote` (anti-social) | ❌ | Transparent. Computable from `kon-` + `syra`/`syrote` (proposed family, not yet in DB). |
+| `konsyrote altem` (sociopath) | 🤔 | Clinically/culturally anchored — may merit a stored entry. |
 
 ---
 

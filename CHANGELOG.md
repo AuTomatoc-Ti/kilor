@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.17.0
+**Current Version:** v2.18.0
 **Last Updated:** 2026-08-22
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,22 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.18.0 — 2026-08-22
+
+Reconceived the `kon-` prefix from a noun/adjective-only **anti-** (`pos_mask = NA`) into a single polar prefix whose reading is disambiguated by base category — **anti-**/opposing (N-base), **negative un-/not-** (A-base), **reversive un- (telic V-base)** — restoring the `V` range its source root `konta` already carries (`NVA`). This fills the previously-missing **reversive "un-"** slot (undo/unlock/untie) via the existing prefix rather than a new one, mirroring English `un-`. Now the second NAV affix after `-rolif`.
+
+**Subsystems:**
+- **`3-subsystems/derivational-prefixes.md`** v1.3.0→v1.4.0 — §I row 7: `kon-` → `pos_mask = NAV`, meaning anti-/negative/reversive. Rewrote §G as "Anti- (N) / Negative (A) / Reversive (V)": reading-preference table, `konta` `NVA` etymology note, `konsyra` (asocial) vs `konsyrote` (anti-social) example, consonant-final fusion note. §III-B: moved `kon-` to a new NAV row; added NAV tone/category note (N/V bare root / tonal, A `-s` / tonal A); updated "NA and VN"→"NA, VN, and NAV". §VI editorial: added reversive/negative/sociopath storage verdicts.
+- **`3-subsystems/compounding.md`** v1.2.2→v1.2.3 — Corrected stale companion-header counts (12→18 suffixes, 3→9 prefixes) and cross-referenced the expanded `kon-`.
+- **`4-meta/word-creation-pipeline.md`** v2.6.0→v2.6.1 — Renamed `kon-` label to Anti-/Negative/Reversive in the colour-prefix suggestion table (§V-A).
+- **`rules/README.md`** v2.3.6→v2.3.7 — Updated suffix (15→18) and prefix (7→9) counts in the structure diagram.
+
+**Draft:**
+- **`draft/future-suffix-ideas.md`** — Marked the "Cross-Linguistic Inspirations" gaps resolved (diminutive `doi-`, collective `-lo`/`lote`, inhabitant `-eus`, augmentative `mes-`, reversive `kon-`).
+
+**Validation:**
+- `python kilor.py check` — expected: 4 pre-existing validation errors (no new changes; spec/docs only, no DB edit).
 
 ## workspace v2.17.0 — 2026-08-22
 
