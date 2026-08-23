@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.20.0
+**Current Version:** v2.21.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.21.0 — 2026-08-23
+
+Formalised the **Geminate Collapse** rule (morphophonology): when two identical core consonants abut at the fusion seam of a mono-word compound or fused derivation, the geminate collapses to a single consonant. Complement to `Boundary Plosive Voicing` (phonology §VI) and Rule 2b (compounding). Native double-consonant roots are carved out as legal, never collapsed. Already instantiated (halise/milise ll, neihait hh, shukau kk).
+
+**Foundation:**
+- `0-foundation/phonology.md` v2.1.0→v2.2.0 — New §VII `Geminate Collapse`: rule, triggering, non-triggering (native geminates + multi-word carve-out), relationship to Rule 2/2b, existing exemplars.
+
+**Subsystems:**
+- `3-subsystems/compounding.md` v1.2.3→1.2.4 — Cross-reference to `0-foundation/phonology.md §VII` in Rule 2b surface-adjacency law.
+
+**Validation:**
+- `python kilor.py check` — (doc-only change; expected 0 new errors)
 
 ## workspace v2.20.0 — 2026-08-23
 

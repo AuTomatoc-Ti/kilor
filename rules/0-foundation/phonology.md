@@ -3,7 +3,7 @@
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
 **Last updated:** 2026-08-23
-**Version:** 2.1.0
+**Version:** 2.2.0
 **Depends on:**
 
 ---
@@ -332,4 +332,48 @@ All three concern the comfortable seam at a morph boundary; none conflicts with 
 
 ---
 
+## VII. Geminate Collapse (Morphophonology)
+
+A boundary repair rule for mono-word fusion. Where §VI handles final voiceless stops and the Restored Consonant Rule handles vowel-vowel hiatus, this rule removes the identical-consonant overlap at a fusion boundary.
+
+### A. The Rule
+
+When two identical core consonants abut at the morpheme boundary of a mono-word compound or fused derivation — the first belongs to the final syllable of the first root (coda), the second to the initial consonant of the second element (onset) — the geminate collapses to a single consonant:
+
+| Boundary | Collapsed surface |
+|:---|:---|
+| `...l` + `l...` | `...l...` |
+| `...h` + `h...` | `...h...` |
+| `...k` + `k...` | `...k...` |
+| `...n` + `n...` | `...n...` |
+| any identical core consonant | single instance |
+
+### B. Triggering Environment
+
+Collapse applies at the fusion seam of a mono-word compound or fused derivation, when both ends of the boundary are the same consonant (true geminate). The result is stored as a single orthographic letter.
+
+### C. Non-Triggering Environments
+
+The rule does not fire:
+
+- Inside a bare root — underlying geminates remain legal and are never collapsed. argonna, torra, messa, lorrak, lerra, ekke, sarrok are valid native roots.
+- Where the two consonants differ — no collapse.
+- Multi-word compounds (space-separated) — no fusion seam.
+
+### D. Relationship to Other Rules
+
+Geminate collapse is a surface-simplification at the seam. It does not block or replace Rule 2/2b (positional restriction); both keep Kilor cluster-free — 2b re-syllabifies restricted consonants, collapse deletes the redundant identical twin.
+
+### E. Existing Instantiation
+
+The rule is already present in the lexicon:
+
+> halise (hal + lise) — ll → l
+> milise (mil + lise) — ll → l
+> neihait (neih + hait) — hh → h
+> shukau (shuk + kau) — kk → k
+
+---
+
 *End of Phonology Specification.*
+

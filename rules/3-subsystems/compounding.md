@@ -2,8 +2,8 @@
 
 **Module:** Multi-Word Compounding & Mono/Multi Decision Rules
 **Status:** Canonical
-**Last updated:** 2026-08-22
-**Version:** 1.2.3
+**Last updated:** 2026-08-23
+**Version:** 1.2.4
 **Depends on:** `0-foundation/grammar-syntax.md` (compounding §IV, clause template §I-E), `0-foundation/tone-prosody.md` (Modular Stitching §IV-D, Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`
 
 **Companion file:** `3-subsystems/derivational-suffixes.md` — 18 derivational suffixes (inventory §I), suffix syntax, formal register, colour prefix rules for suffixes. See also `3-subsystems/derivational-prefixes.md` — 9 derivational prefixes (inventory §I, incl. the anti-/negative/reversive `kon-`).
@@ -239,6 +239,8 @@ When the morpheme boundary would place an edge-only, end-only, or start-only con
 
 Both are covered by the same surface-adjacency test: locate the restricted digraph's occurrence in the stored surface and check the immediately preceding (onset) / following (coda) character for a vowel. What the *raw* component edges were is irrelevant — only the actual stored form's adjacency decides.
 
+
+A distinct boundary simplification — **Geminate Collapse** (identical-consonant overlap, not a restricted digraph) — is handled in `0-foundation/phonology.md` §VII.
 **Enforcement:** `kilor/phonology.py` `validate_mono_compound_boundaries(components, surface)` — surface-aware and direction-general — plus `add.py` / `check.py` implement Rule 2/2b. It classifies each restricted letter by its morphemic role (onset vs coda) from the *components*, then tests vowel-adjacency on the *stored surface*, and blocks only when the digraph is actually medial with no repair vowel on the required side. (Generalized 2026-08-19: the onset test previously read the modifier's *component* final; it now reads the surface character before the onset, mirroring the coda side — this is what admits the modifier-side `‑t + th‑ → th` merge.)
 
 ---
