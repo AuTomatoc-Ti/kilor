@@ -1,4 +1,4 @@
-**Current Version:** v2.29.0
+**Current Version:** v2.30.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** — what changed`
 
@@ -17,7 +17,17 @@
 
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
-- `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+- `npx vitest --run src/App.test.jsx
+
+## workspace v2.30.0 — 2026-08-23
+
+Follow-up to v2.29.0 cranberry reclassification: epilobim and epiloril are the same single-component pattern — both are roots with fossil tails (`-bim`, `-ril`), now `is_root=1, is_compound=0`.
+
+**DB / Backend:**
+- `data/kilor.db` — reclassified epilobim and epiloril to is_root (deleted dangling component rows; kept existing tail notes).
+
+**Validation:**
+- python kilor.py check — 4 pre-existing + 12 warnings, 0 new.
 
 ## workspace v2.29.0 — 2026-08-23
 
