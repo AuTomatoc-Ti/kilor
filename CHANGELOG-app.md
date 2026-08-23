@@ -1,4 +1,4 @@
-**Current Version:** v2.27.0
+**Current Version:** v2.28.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,16 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.28.0 — 2026-08-23
+
+Re-labelled seven single-element mono words whose extra piece is a fossil tail (cranberry morph): they are roots, not compounds. Each now — is_root=1, is_compound=0 with a tail note, matching the existing epilo—bim/epiloril pattern.
+
+**DB / Backend:**
+- `data/kilor.db` — Reclassified lokisra (isra head full root; mirrors param/poska/afaloi/narau/posia/lote), lunlagak, foske, hostakes, bamares, walunla, auronte from is_compound=1 to is_root=1; deleted dangling compound_components (and compound_meta for lokisra); added cranberry-tail notes.
+
+**Validation:**
+- `python kilor.py check` — 4 pre-existing errors + 12 warnings, 0 new.
 
 ## workspace v2.27.0 — 2026-08-23
 
