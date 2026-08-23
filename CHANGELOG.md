@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.19.0
+**Current Version:** v2.20.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -20,7 +20,18 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
-## workspace v2.19.0 — 2026-08-23
+## workspace v2.20.0 — 2026-08-23
+
+Formalised the **Boundary Plosive Voicing** rule (morphophonology): a root-final voiceless plosive (`p`/`t`/`k`) fuses with a **vowel-initial derivational suffix** and voices to `b`/`d`/`g` in the intervocalic position. Written as a broad future-proof rule (any vowel-initial suffix, not an enumerated list). Complementary to the Restored Consonant Rule (`grammar-syntax.md` §III). Neutralisation (voiced-form collision) policy: accept and rely on context — no prohibition. The rule was already instantiated in the lexicon (`lorrak` + `-ik` → `lorragik` "linguistics"); no DB migration needed.
+
+**Foundation:**
+- **`0-foundation/phonology.md`** v2.0.0→v2.1.0 — New §VI "Boundary Plosive Voicing": the rule, only-vowel-initial-suffix trigger domain, non-triggering environments (consonant-initial suffixes, cases, `-s`, multi-word), existing exemplar (`lorragik`), neutralisation policy, interaction table with Contrastive Suffix Vowel + Restored Consonant Rule.
+
+**Meta:**
+- **`4-meta/word-creation-pipeline.md`** v2.6.1→v2.7.0 — §II Phase-2 validation checks table: added the voicing check row. New §IV-A₂ "Boundary Plosive Voicing Validation" (blocking if unvoiced, non-blocking homograph policy, non-triggering cases).
+
+**Validation:**
+- `python kilor.py check` — (doc-only change; expected 0 new errors)
 
 Documented how Kilor fulfils the traditional 10 local/role "cases" analytically (spatial postpositions, oblique particles, and content verbs — no new case suffixes). Four proposed closed-class particles were designed (locative `posne`, illative `ikte`, essive `raus`, translative `lik`) and recorded as **pending pipeline approval** — they are **not** inserted into the DB. Clarified the goal split (`te` dative / `tene` allative / `ikte` illative) and that `les` is equative-only (essive = `raus`).
 

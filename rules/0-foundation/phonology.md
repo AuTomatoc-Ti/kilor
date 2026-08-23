@@ -2,8 +2,8 @@
 
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
-**Last updated:** 2026-08-06
-**Version:** 2.0.0
+**Last updated:** 2026-08-23
+**Version:** 2.1.0
 **Depends on:**
 
 ---
@@ -275,6 +275,60 @@ For loanwords and foreign terminology, positional restrictions (start-only, end-
 3. **Schwa Epenthesis:** If consonant clusters remain that cannot be broken by positional overrides, insert epenthetic `e` as described above.
 
 Loanwords that break positional rules must be flagged in the lexicon (e.g., `notes` field: `loanword: positional override`).
+
+---
+
+## VI. Boundary Plosive Voicing (Morphophonology)
+
+A **boundary repair** rule complementary to the Restored Consonant Rule (`0-foundation/grammar-syntax.md` §III): where that rule handles a **vowel-final** root meeting a vowel-initial suffix, this rule handles a root ending in a **voiceless plosive** meeting a vowel-initial suffix.
+
+### A. The Rule
+
+When a word ending in a voiceless core plosive — `p`, `t`, or `k` (with no vowel between it and the suffix) — fuses with a **vowel-initial derivational suffix**, the root-final stop is resyllabified into the **onset** of the suffix's first syllable. It now stands **between two vowels** (`V_C_V`). In that intervocalic position the stop **voices** to its voiced counterpart:
+
+| Root-final stop | Voiced counterpart | Archetype (root + suffix → derived) |
+|:---|:---|:---|
+| `p` → `b` | `kop` + `-ius` | `kopius` → `kobius` |
+| `t` → `d` | `rat` + `-ia` | `ratia` → `radia` |
+| `k` → `g` | `lanak` + `-ik` | `lanagik` → `lanagik` |
+
+> The suffix is vowel-initial; the root-final stop is pulled into the suffix's first syllable (`V_C_V`), where it voices. Hypothetical `kop` + `-ius` → `kobius`, `rat` + `-ia` → `radia`, `lanak` + `-ik` → `lanagik`.
+
+### B. Triggering Environment — Only Vowel-Initial Suffixes
+
+Voicing fires **only** when the attached derivational suffix begins with a vowel: the existing vowel-initial suffixes `-ius`, `-eus`, `-ia`, `-ik`, `-is` — and, by definition, **any future vowel-initial suffix**. This is a broad, future-proof rule: nothing needs updating when a new vowel-initial suffix is added; it is captured automatically by the "vowel-initial" definition.
+
+### C. Non-Triggering Environments
+
+The rule explicitly does **not** fire in any of these:
+
+- **Consonant-initial suffixes** (`-mae`, `-tek`, `-lu`, `-rin`, `-par`, `-wes`, `-rem`, `-rum`, `-tesy`, …) — the root-final stop stays in coda position, so no intervocalic environment arises.
+- **Case suffixes** (`-ni`/`-na`, `-si`/`-sa`) — all consonant-initial; the stop remains word-final or in coda, never intervocalic.
+- **The `-s` derivational appendix** — attaches directly (extrasyllabic; §V-E), no resyllabification, no voicing.
+- **Multi-word compounds / derived head + head** (space-separated independent words) — the root-final stop stays word-final; no fusion, no voicing.
+
+### D. Existing Instantiation
+
+The rule is not new in fact — the lexicon already contains a word built by it:
+
+> `lorrak` (root, final `k`) + `-ik` (study-of) → **`lorragik`** (linguistics, "study of language").
+> The root-final `k` resyllabifies into the onset of the suffix's first syllable (…`-g-`…), voices `k→g`, and is stored as `lorragik` (`lor·rak` → `lor·rag·ik`), as already present in the DB.
+
+### E. Neutralisation Policy
+
+Voicing may merge a derived form with an existing word (e.g., a root-final-`g` word and its voiceless counterpart's derivation become homographs): **accept it** and rely on syntactic/contextual disambiguation — the same policy already applied to homographs arising from the Restored Consonant Rule (`0-foundation/grammar-syntax.md` §III; `3-subsystems/derivational-suffixes.md` §II-A). No prohibition rule is added. Avoiding a collision is a lexical choice during word creation, not a phonological constraint.
+
+### F. Interaction with Other Boundary Rules
+
+The three boundary-side effects are orthogonal and compose:
+
+| Rule | Handles | File |
+|:---|:---|:---|
+| Contrastive Suffix Vowel | Vowel-class of suffix chosen by last-syllable nucleus | `0-foundation/grammar-syntax.md` §II |
+| Restored Consonant | Vowel-final root + vowel-initial suffix | `0-foundation/grammar-syntax.md` §III |
+| Boundary Plosive Voicing | Voiceless-plosive-final root + vowel-initial suffix | this §VI |
+
+All three concern the comfortable seam at a morph boundary; none conflicts with the others.
 
 ---
 

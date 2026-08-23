@@ -2,8 +2,8 @@
 
 **Module:** Word creation workflow & field-level automation rules
 **Status:** Canonical
-**Last updated:** 2026-08-22
-**Version:** 2.6.1
+**Last updated:** 2026-08-23
+**Version:** 2.7.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/nouns-colour-prefix.md`, `1-nominals/cases.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/derivational-prefixes.md`, `3-subsystems/compounding.md`, `data/SCHEMA.md`, `kilor/schema.py`
 
 **Companion file:** `4-meta/pre-pipeline-brainstorm.md` — Phase 0 discussion guide for resolving meaning/POS, root vs compound, and colour prefix from bare brainstorm entries before filling in `today.md`. Read this first when starting from brainstorm input.
@@ -83,6 +83,7 @@ Runs all automated checks and computations. Outputs a summary report. If errors 
 | No duplicate form in DB | — |
 | POS tags per meaning are in `VALID_POS` set (`kilor/schema.py`) | — |
 | If compound: all component roots exist in DB | — |
+| If a voiceless-plosive-final root (`p`/`t`/`k`) takes a vowel-initial suffix, the fused form must voice the root-final stop (`p→b`, `t→d`, `k→g`) | `phonology.md` §VI |
 
 **Validation warnings (non-blocking flags):**
 
@@ -229,6 +230,16 @@ See `kilor/phonology.py:validate_content_root()`. Blocking errors:
 
 Non-blocking warning:
 - Near-collision: form is within Levenshtein distance ≤ 2 of an existing root (threshold configurable)
+
+### A₂. Boundary Plosive Voicing Validation
+
+See `0-foundation/phonology.md` §VI. Blocking errors when a **voiceless core plosive-final** root (`p`/`t`/`k`) fuses with a **vowel-initial** derivational suffix:
+
+- The fused form **must** voice the root-final stop to its voiced counterpart (`p→b`, `t→d`, `k→g`) in the intervocalic position. Storing the unvoiced spelling (e.g. `*kopik` for root `kop` + `-ik`) is a blocking error.
+- The neutralisation policy (voiced form may collide with an existing root) is **non-blocking** — accept it; record the homograph in `notes` if it arises.
+- Non-triggering cases (consonant-initial suffixes, case suffixes, `-s`, multi-word forms) are unaffected and require no mutation.
+
+> **Existing exemplar:** `lorrak` (root, k-final) + `-ik` → `lorragik` (linguistics), stored voiced.
 
 ### B. POS Tag & pos_mask Validation
 
