@@ -34,12 +34,17 @@ def count_syllables(word):
     """Count vowel nuclei in a Kilor word."""
     count = 0
     i = 0
-    while i < len(word):
-        if word[i].lower() in VOWELS:
+    w = word.lower()
+    while i < len(w):
+        # Multi-char core consonant qy (= /j/): it is a consonant, not a vowel nucle us.
+        # Skip the whole pair (qy) so its y is not counted as a vowel.
+        if i + 2 <= len(w) and w[i : i + 2] in _MULTICHAR_CORE:
+            i += 2
+        elif w[i] in VOWELS:
             count += 1
-            if word[i : i + 2].lower() == "ae":
+            if w[i : i + 2] == "ae":
                 i += 2
-            elif i + 1 < len(word) and word[i : i + 2].lower() in DIPHTHONGS:
+            elif i + 1 < len(w) and w[i : i + 2] in DIPHTHONGS:
                 i += 2
             else:
                 i += 1

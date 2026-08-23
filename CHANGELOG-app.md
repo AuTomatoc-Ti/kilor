@@ -1,4 +1,4 @@
-**Current Version:** v2.30.0
+**Current Version:** v2.31.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,17 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
+
+## workspace v2.31.0 — 2026-08-23
+
+Applied the `qy` glide repair to the two existing mono V-V seam words and fixed a syllable-count bug.
+
+**DB / Backend:**
+- `data/kilor.db` — renamed `esalasdokira` → `esaqyasdokira` (esa+asdo+kira; qy glide; 6 syl) and `rolinasdaito` → `roliqyasdaito` (roli+asdaito; 5 syl); corrected `tuqye` syl_count 3→2.
+- `kilor/phonology.py` — fixed `count_syllables` to skip the multi-char core consonant `qy`.
+
+**Validation:**
+- python kilor.py check — 4 pre-existing errors + 12 warnings, 0 new.
 
 ## workspace v2.30.0 — 2026-08-23
 

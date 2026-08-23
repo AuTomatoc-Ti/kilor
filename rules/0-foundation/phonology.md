@@ -3,7 +3,7 @@
 **Module:** Phonemic Inventory & Syllable Structure
 **Status:** Canonical
 **Last updated:** 2026-08-23
-**Version:** 2.2.0
+**Version:** 2.3.0
 **Depends on:**
 
 ---
@@ -375,5 +375,44 @@ The rule is already present in the lexicon:
 
 ---
 
+## VIII. V-V Glide Repair (qy)
+
+A boundary repair for mono-word fusion: a seam that would join two vowels (front root ends in a vowel, back root begins with a vowel).
+
+### A. The Rule
+
+When a mono-compound seam would join two vowels (V-V), insert the glide consonant `qy` (= /j/, a multi-char core consonant) as the onset of the following vowel, turning the hiatus into a smooth V-qy-V link:
+
+| Seam | Raw | Repaired |
+|:---|:---|:---|
+| esa + asdo | esaasdo | esaqyasdo |
+| roli + asdaito | roliasdaito | roliqyasdaito |
+
+### B. Triggering Environment
+
+Repair fires at the fusion seam of a mono-word compound when the first component ends in a vowel and the second begins with a vowel. The glide `qy` takes onset of the following vowel, so the seam reads as two clean syllables.
+
+### C. Relationship to Other Rules
+
+| Rule | Handles | File |
+|:---|:---|:---|
+| Restored Consonant | Vowel-final root + vowel-initial derivational suffix | 0-foundation/grammar-syntax.md §III |
+| Boundary Plosive Voicing | p/t/k-final root + vowel-initial suffix | this §VI |
+| Geminate Collapse | Identical-consonant boundary | this §VII |
+| V-V Glide Repair | Front-vowel + back-vowel seam (mono) | this §VIII |
+
+Where the Restored Consonant rule fixes V-V at the suffix seam by restoring an elided consonant, this rule fixes V-V at a content-compound seam by inserting `qy`. The two are complementary.
+
+### D. Non-Triggering
+
+External-boundary hiatus (colour prefix or emotional particle before a vowel-initial word, e.g. a-ajkora) is phonotactically legal and is NOT repaired by this rule (an optional-glottal-catch context). Multi-word compounds keep their space and do not fuse, so no repair applies.
+
+### E. Existing Instantiation
+
+The lexicon previously stored two V-V seams with inconsistent repair consonants (esalasdokira using -l-, rolinasdaito using -n-). Both are re-spelled with the standard `qy` glide: `esaqyasdokira`, `roliqyasdaito`. This also exposed and fixed a syllable-count bug in count_syllables, which had treated the y of the multi-char core consonant qy as a vowel in these forms.
+
+---
+
 *End of Phonology Specification.*
+
 

@@ -1,6 +1,6 @@
 # Changelog
 
-**Current Version:** v2.21.0
+**Current Version:** v2.22.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** vX.Y.Z — what changed`
 
@@ -19,6 +19,16 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 
+
+## workspace v2.22.0 — 2026-08-23
+
+Added the `V-V Glide Repair (qy)` rule (phonology §VIII): a mono-compound seam that would join two vowels now inserts the glide consonant `qy` (=/j/) as the onset of the following vowel, turning V-V hiatus into a smooth V-qy-V link. Complementary to the Restored Consonant rule (suffix seams) and the other boundary rules.
+
+**Foundation:**
+- `0-foundation/phonology.md` v2.2.0→v2.3.0 — New §VIII V-V Glide Repair (qy): rule, triggering, relationship to other boundary rules, non-triggering (external hiatus kept), existing-instantiation note.
+
+**Validation:**
+- python kilor.py check — 4 pre-existing errors + 12 warnings, 0 new.
 
 ## workspace v2.21.0 — 2026-08-23
 
