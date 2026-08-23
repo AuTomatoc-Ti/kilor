@@ -1,5 +1,5 @@
-**Current Version:** v2.26.0
-**Last Updated:** 2026-08-22
+**Current Version:** v2.27.0
+**Last Updated:** 2026-08-23
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,39 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.27.0 — 2026-08-23
+
+30 new words across three sets (858→888). New families/registers: a `kulu-`
+fault/culpability family (`kulba` fault, `kul` mistake, `kulik` crime,
+`kulpo` blame), a `feun-` once/temporal cluster (`feunos` once-had, `feunres`
+once-been, built on `feun` + `os`/`res` — no N sense, prefix stored as `--`),
+and continuation of the `-ere` motion register (`matere` move, `seltere`
+travel). Compound `ilsinkoinia` (union) flattens the compound base
+`ilsinkoi`; `disichen` (conversation) is a `disit+shen` fusion (`tsh`→`ch`).
+
+**DB / Backend:**
+- **`data/kilor.db`** — 858→888 (batch `draft/batch-2026-08-23-30w.md`): 30 new entries.
+
+  Set 1 (union/language/transport/motion): `ilsinkoinia` union (N, a-; il+sinkoi+nia),
+  `lorragik` linguistic/linguistics (NA, o-; lorrak+mik), `lorragikmae` linguist
+  (N, a-; lorrak+mik+maeha), `ilminau` station/stop (N, o-; il+minau),
+  `pahte` next (NA, o-), `lihamin` soup (N, u-; lira+hamin), `lefati` remove (NV, o-),
+  `matere` move (NV, o-), `seltere` travel (NV, o-), `klaimylu` disastrous (NA, o-;
+  klaimy+lu).
+
+  Set 2 (fault/time/remain/fear): `kulba` fault (N, o-), `kul` mistake (NA, o-),
+  `kulik` crime (N, o-), `kulpo` blame (NV, o-), `feun` once (AD, --), `feunos`
+  once-had (V, --; feun+os), `feunres` once-been (V, --; feun+res), `geudo` remain
+  (NVA, o-), `geudowes` remainder (N, o-; geudo+wes), `temy` afraid (NA, y-).
+
+  Set 3 (speech/valuation/earnest): `tuqye` whole (NA, o-), `ferum` prepare (NVA, o-),
+  `disit` talk (NVA, o-), `diril` say (NV, o-), `disichen` conversation (N, o-;
+  disit+shen, `tsh`→`ch`), `onfar` honour (NA, o-), `onfilse` respect (NA, o-),
+  `adwarsel` warn (NV, o-), `worlig` serious (NA, o-), `alworlig` earnest (NA, o-).
+
+**Validation:**
+- `python kilor.py check` — ✅ exit 0; none of the 30 new words flagged (pre-existing warnings on older roots unchanged).
 
 ## workspace v2.26.0 — 2026-08-22
 
