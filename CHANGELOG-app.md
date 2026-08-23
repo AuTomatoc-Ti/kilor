@@ -1,4 +1,4 @@
-**Current Version:** v2.28.0
+**Current Version:** v2.29.0
 **Last Updated:** 2026-08-23
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,16 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx` — ✅ N/N pass
+
+## workspace v2.29.0 — 2026-08-23
+
+Compound boundary polishes: added irregular-contraction notes to gustar and fossar; corrected sentuposlam to sentumposlam (restored the m; sentum+poslam); documented naram as a historical simplification of nar (not) + amin (any).
+
+**DB / Backend:**
+- `data/kilor.db` — season notes, sentumposlam rename, naram note.
+
+**Validation:**
+- python kilor.py check — 4 pre-existing errors + 12 warnings, 0 new.
 
 ## workspace v2.28.0 — 2026-08-23
 
