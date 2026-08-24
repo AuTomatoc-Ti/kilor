@@ -2,8 +2,8 @@
 
 **Module:** Temporal Expression
 **Status:** Canonical
-**Last updated:** 2026-08-15
-**Version:** 1.2.0
+**Last updated:** 2026-08-25
+**Version:** 1.3.0
 **Depends on:** `0-foundation/grammar-syntax.md` (clause template, §I-E), `3-subsystems/aspect.md`, `3-subsystems/numerals.md` (§VI)
 
 ---
@@ -16,6 +16,8 @@ Optional aspect particles (`gin`, `ger`, `gou`; see `3-subsystems/aspect.md`) pr
 
 > **Example:** *piroi ki kau* (yesterday I come) = I came yesterday
 > *paroi ki kau* (tomorrow I come) = I will come tomorrow
+
+**Pure future / prediction** with no date anchor uses the root-modal `rum` "will; to be about to" (see `0-foundation/grammar-syntax.md` §I-E), optionally combined with aspect particles: `rum taka` "will eat", `rum taka gin` "will be eating", `rum taka ger` "will have eaten". See `3-subsystems/aspect.md` §III-D / §IV; this complements — rather than replaces — relational time words like `paroi`/`pama`.
 
 ---
 
