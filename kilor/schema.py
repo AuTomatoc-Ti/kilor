@@ -19,6 +19,7 @@ COMPOUND_PATTERN_MAP = {
     "rius": "similative",
     "meus": "relational",
     "nia": "abundative",
+    "rum": "Prospective",
     # ── Compounding heads (compounding.md §I) ──
     "poska": "location",
     "param": "result",

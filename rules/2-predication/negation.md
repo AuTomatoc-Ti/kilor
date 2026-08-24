@@ -3,7 +3,7 @@
 **Module:** Yes/No Answers & Clausal Negation
 **Status:** Canonical
 **Last updated:** 2026-07-23
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Depends on:** `2-predication/interrogative.md`, `0-foundation/grammar-syntax.md`
 
 ---
@@ -46,7 +46,7 @@ When `nar` follows the verb at clause-end, it negates the verb — which natural
 
 ### C. Scope with Modals
 
-Root modals (`hostak`, `sew`, `som`, `mug`, `shunle`) form a `[Modal] [Verb]` complex (see `0-foundation/grammar-syntax.md` §I-E). The uniform postpositive rule cleanly disambiguates negation of the modal vs. negation of the main verb:
+Root modals (`hostak`, `sew`, `som`, `mug`, `shunle`, `rum`) form a `[Modal] [Verb]` complex (see `0-foundation/grammar-syntax.md` §I-E). The uniform postpositive rule cleanly disambiguates negation of the modal vs. negation of the main verb:
 
 | Phrase | `nar` follows | Negates | Meaning |
 |:---|:---|:---|:---|
@@ -56,6 +56,8 @@ Root modals (`hostak`, `sew`, `som`, `mug`, `shunle`) form a `[Modal] [Verb]` co
 | `ki sew fei nar` | `fei` | the verb | "I can not-fly" = "I can refrain from flying" |
 | `ki mug nar taka` | `mug` | the modal | "I not-want eat" = "I don't want to eat" |
 | `ki mug taka nar` | `taka` | the verb | "I want not-eat" = "I want to not eat" |
+| `ki bau rum nar taka` | `rum` | the modal | "I will-not eat" = "I will not eat" |
+| `ki bau rum taka nar` | `taka` | the verb | "I will not-eat" = "I will refrain from eating" |
 
 The same rule applies to stacked modals:
 

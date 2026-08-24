@@ -2,8 +2,8 @@
 
 **Module:** Progressive, Perfective, Experiential Aspect
 **Status:** Canonical
-**Last updated:** 2026-07-11
-**Version:** 1.1.0
+**Last updated:** 2026-08-25
+**Version:** 1.3.0
 **Depends on:** `0-foundation/grammar-syntax.md`, `3-subsystems/temporals.md`
 **Interacts with:** `2-predication/negation.md` (nar after aspect), `3-subsystems/imperatives.md` (aspect in commands)
 
@@ -72,6 +72,34 @@ Aspect particles combine freely with clause-initial temporal words:
 ### C. Imperatives
 
 > `Taka ger!` — "Eat up!" (urging completion)
+
+### D. Future + Aspect (`rum` modal)
+
+The root-modal `rum` "will; to be about to" (see `0-foundation/grammar-syntax.md` §I-E) marks the general future and stacks with aspect particles post-verbally without combining them:
+> `ki bau rum taka gin.` — "I will be eating bread."
+> `ki bau rum taka ger.` — "I will have eaten bread."
+
+There is **no aspect stacking** (`ger gin` is avoided for poor euphony); the perfect-progressive set ("have/had/will have been -ing") is expressed via context/time words, not grammatically. See §IV for the full English-tense mapping.
+
+---
+
+## IV. English-Tense Overview (conceptual mapping)
+
+Kilo has **no grammatical tense**; this is a **conceptual mapping** of English tense terms onto Kilo's temporal/contextual + aspect + modal machinery. Aspect is never stacked (`ger gin` is avoided — poor euphony); the perfect-progressive set is not grammatically marked.
+
+| # | English | Kilor | Notes |
+|---|---|---|---|
+| 1 | Simple present (I eat) | `ki bau taka` | bare verb |
+| 2 | Present progressive (am eating) | `ki bau taka gin` | `gin` aspect |
+| 3 | Present perfect (have eaten) | `ki bau taka ger` | `ger` aspect |
+| 4 | Simple past (ate) | `piroi ki bau taka` | temporal word or context |
+| 5 | Past progressive (was eating) | `piroi ki bau taka gin` | |
+| 6 | Past perfect (had eaten) | `piroi ki bau taka ger` | |
+| 7 | Simple future (will eat) | `ki bau rum taka` | **`rum` modal** |
+| 8 | Future progressive (will be eating) | `ki bau rum taka gin` | `rum` + `gin` (separate) |
+| 9 | Future perfect (will have eaten) | `ki bau rum taka ger` | `rum` + `ger` (separate) |
+
+**Excluded (perfect-progressive set):** present/past/future perfect progressive ("have/had/will have been -ing") are not grammatically marked — expressed via context, time words, or periphrasis. This matches their low frequency in English and the awkwardness of an aspect stack in Kilo.
 
 ---
 

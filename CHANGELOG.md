@@ -1,7 +1,7 @@
 # Changelog
 
-**Current Version:** v2.22.0
-**Last Updated:** 2026-08-23
+**Current Version:** v2.23.0
+**Last Updated:** 2026-08-25
 **Format:** `**file** vX.Y.Z — what changed`
 
 > **App/frontend/database changes** are tracked in `CHANGELOG-app.md`. This file covers rules/grammar/spec and meta changes only.
@@ -20,6 +20,26 @@
 - `python kilor.py check` — ✅ All N entries pass
 
 
+## workspace v2.23.0 — 2026-08-25
+
+Future/tense gap resolution (Option A1): the root `rum` gains a **root-modal sense** marking the general future / prediction ("will; to be about to"), living in the existing `[Modal]` slot. Aspect is never stacked (`ger gin` is avoided for poor euphony); the perfect-progressive set remains context/time-word expressed. Cross-cutting with CHANGELOG-app v2.32.0 (DB side).
+
+**Foundation:**
+- `0-foundation/grammar-syntax.md` v2.6.0→v2.7.0 — §I-E: added `rum` ("will; to be about to") to the root-modal inventory and the `[Modal]` slot explanation; noted future + aspect stacking (`rum … gin` / `rum … ger`) with pointer to `3-subsystems/aspect.md` §IV.
+
+**Predication:**
+- `2-predication/negation.md` v1.1.0→v1.2.0 — §II-C: added `rum` to the modal-scope list and two `rum` negation examples (modal- vs verb-negation via uniform postpositive rule).
+
+**Subsystems:**
+- `3-subsystems/aspect.md` v1.1.0→v1.3.0 — New §III-D "Future + Aspect" (`rum` stacks with `gin`/`ger` post-verbally; no-stacking note for perfect-progressive); new §IV "English-Tense Overview" — the 9-grid conceptual mapping of English tense terms onto Kilor's temporal/aspect/modal machinery. This file now carries the future/tense reference (formerly in the removed `rules/tense-future-ideas.md`).
+- `3-subsystems/temporals.md` v1.2.0→v1.3.0 — Intro: added a paragraph on pure future/prediction via `rum` (complements relational time words like `paroi`/`pama`).
+- `3-subsystems/derivational-suffixes.md` v1.4.0→v1.5.0 — §I-L: added aspect-based prospective compounds `ginrum` / `gerum` (distinct from `resrum`; `gerum` shows Geminate Collapse at the `rr` seam).
+
+**Meta:**
+- `rules/tense-future-ideas.md` — **removed** (2026-08-25). The standalone draft no longer resides at the top of `rules/` (violates the no-top-level-files convention). Its spec content was distributed into the canonical files above (grammar-syntax §I-E, negation §II-C, aspect §III-D/§IV, temporals intro, derivational-suffixes §I-L); the 9-grid lives in `3-subsystems/aspect.md` §IV.
+
+**Validation:**
+- python kilor.py check — 4 pre-existing errors + 12 warnings, 0 new.
 ## workspace v2.22.0 — 2026-08-23
 
 Added the `V-V Glide Repair (qy)` rule (phonology §VIII): a mono-compound seam that would join two vowels now inserts the glide consonant `qy` (=/j/) as the onset of the following vowel, turning V-V hiatus into a smooth V-qy-V link. Complementary to the Restored Consonant rule (suffix seams) and the other boundary rules.

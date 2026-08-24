@@ -2,8 +2,8 @@
 
 **Module:** Word Order, Harmony, Compounding, Plural Strategy
 **Status:** Canonical
-**Last updated:** 2026-08-23
-**Version:** 2.6.0
+**Last updated:** 2026-08-25
+**Version:** 2.7.0
 **Depends on:** `0-foundation/phonology.md`, `0-foundation/tone-prosody.md`, `1-nominals/demonstratives.md`, `3-subsystems/spatials.md`, `3-subsystems/derivational-suffixes.md`, `3-subsystems/compounding.md`
 
 ---
@@ -130,7 +130,7 @@ The object (with optional ACC case suffix) and any numeral come first. When mult
 
 #### Modal Verbs
 
-Root modal verbs (`mug` "want", `som` "need", `sew` "can", `hostak` "must", `shunle` "should") form a **bare serial construction** with the main verb. The modal directly precedes the main verb — no complementizer is used. The object stays before the modal+verb complex:
+Root modal verbs (`mug` "want", `som` "need", `sew` "can", `hostak` "must", `shunle` "should", `rum` "will; to be about to") form a **bare serial construction** with the main verb. The modal directly precedes the main verb — no complementizer is used. The object stays before the modal+verb complex:
 
 > `ki bau mug taka.` — "I want to eat bread." (lit. "I bread want eat.")
 > `ki sew fei.` — "I can fly."
@@ -139,6 +139,12 @@ Root modal verbs (`mug` "want", `som` "need", `sew` "can", `hostak` "must", `shu
 Modals can **stack**:
 
 > `ki mug sew fei.` — "I want to be able to fly."
+
+The future modal `rum` "will; to be about to" marks the general future / prediction and combines with the main verb and aspect:
+
+> `ki bau rum taka.` — "I will eat bread."
+> `ki bau rum taka gin.` — "I will be eating bread."
+> `ki bau rum taka ger.` — "I will have eaten bread."
 
 The modal sits between the manner adverb and the verb:
 
@@ -159,7 +165,7 @@ NPSUBJ: [Demo]  [Poss GEN]  [Adj]  [(Colour-)Noun]  [Rel Clause]
 NPOBJ:  [Demo]  [Poss GEN]  [Adj]  [(Colour-)Noun]  [Rel Clause]  [Num/Quant (on OBJ side preceding Numeral slot)]
 ```
 
-All slots are optional except the subject and main verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only. `[Modal]` is an optional root modal verb (`mug`, `som`, `sew`, `hostak`, `shunle`); epistemic modals (`hostakes`, `sewanes`, `bamares`) occupy the `[Manner Adv]` slot.
+All slots are optional except the subject and main verb. `[Emo]` is an optional emotional particle (see `3-subsystems/colour-emotion.md` §IV). The clause-initial `[Emo]` sets the emotional frame for the entire clause; the pre-verbal `[Emo]` scopes over the verb only. `[Modal]` is an optional root modal verb (`mug`, `som`, `sew`, `hostak`, `shunle`, `rum`); epistemic modals (`hostakes`, `sewanes`, `bamares`) occupy the `[Manner Adv]` slot. `rum` "will; to be about to" marks the **general future / prediction** and stacks with aspect post-verbally (`rum … gin` will be -ing, `rum … ger` will have -ed). See `3-subsystems/aspect.md` §IV for the 9-grid English-tense mapping.
 
 #### Maximal Example Sentence
 

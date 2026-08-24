@@ -1,5 +1,5 @@
-**Current Version:** v2.31.0
-**Last Updated:** 2026-08-23
+**Current Version:** v2.32.0
+**Last Updated:** 2026-08-25
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -19,6 +19,17 @@
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
 
+## workspace v2.32.0 — 2026-08-25
+
+Future/tense gap resolution: `rum` gains a modal V-sense for the general future; two aspect-based prospective compounds added. Cross-cutting with CHANGELOG v2.23.0 (grammar side).
+
+**DB / Backend:**
+- `data/kilor.db` — `rum` (id 429): added MODAL meaning "will; to be about to (future auxiliary)"; `pos_mask` N→NV; regenerated verb inflection `rum`.
+- `data/kilor.db` — added compounds `ginrum` (emergent process, NA, `o-`) and `gerum` (imminent threshold, NA, `o-`), both Pattern `Prospective`, rule ref `derivational-suffixes.md §I-L`; components `gin`/`ger` + `rum`. Geminate discussed: `ger`+`rum` rr seam stored as `gerum`.
+- `kilor/schema.py` — `COMPOUND_PATTERN_MAP` added `"rum": "Prospective"` (derivational suffix source root; SSOT sync with `derivational-suffixes.md` §I-L).
+
+**Validation:**
+- python kilor.py check — 4 pre-existing errors + 12 warnings, 0 new.
 ## workspace v2.31.0 — 2026-08-23
 
 Applied the `qy` glide repair to the two existing mono V-V seam words and fixed a syllable-count bug.

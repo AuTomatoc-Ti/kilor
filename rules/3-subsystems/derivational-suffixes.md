@@ -2,8 +2,8 @@
 
 **Module:** Derivational Suffixes
 **Status:** Canonical
-**Last updated:** 2026-08-22
-**Version:** 1.4.0
+**Last updated:** 2026-08-25
+**Version:** 1.5.0
 **Depends on:** `0-foundation/grammar-syntax.md` (§III Restored Consonant Rule), `0-foundation/tone-prosody.md` (Last-3 Domain §IV-A), `0-foundation/phonology.md` (§IV positional consonant classes), `1-nominals/nouns-colour-prefix.md`
 
 **Companion file:** `3-subsystems/compounding.md` — multi-word compounding heads, mono/multi decision rules, compound colour prefix rules.
@@ -226,6 +226,12 @@ The output part of speech depends on the base type:
 `-rum` is **fully productive** — any root can be framed prospectively.
 
 For roots ending in an end-only or edge-only consonant, `-rum` appears in its full-root multi-word form `rum` (§II-B). Example: `song rum` = "friend-to-be" (not `*songrum`).
+
+**Aspect-based prospective compounds:** the aspect particles `gin` (progressive) and `ger` (perfective) can serve as the base, forming lexical compounds distinct from `resrum` ("gestation, dormant incubation"):
+- `ginrum` — "an emergent process; actively unfolding toward the future" (ongoing emergence)
+- `gerum` — "a threshold state; incubation complete, imminent expression" — the `rr` seam of `ger`+`rum` collapses per Geminate Collapse (`0-foundation/phonology.md` §VII)
+
+Semantic axis: `resrem` (past-end) → `resrum` (present incubation) → `ginrum` (ongoing emergence) → `gerum` (imminent completion). These are **lexical** (not grammatical tense; see `3-subsystems/aspect.md` §IV for the tense mapping).
 
 ### M. Study of — `-ik` / `-mik` (noun base)
 
