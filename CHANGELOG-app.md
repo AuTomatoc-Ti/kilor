@@ -1,5 +1,5 @@
-**Current Version:** v2.32.0
-**Last Updated:** 2026-08-25
+**Current Version:** v2.33.0
+**Last Updated:** 2026-08-26
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
+
+## workspace v2.33.0 — 2026-08-26
+
+30-word lexicon expansion across three sets — railway/transport, optical/atmospheric phenomena, and corona/halo/weather. Introduces the **celestial-referent prefix** convention (sun `rora`-tagged compounds → `a-`, moon `yre`-tagged → `i-`, overriding the head root's prefix) and the `hylle-` false-sun/moon + `bre-` disk/ring/halo families. Note: `shukau` was first renamed → `shukkau` then reverted; final DB keeps `shukau` unchanged.
+
+**DB / Backend:**
+- `data/kilor.db` — **Set 1 railway/transport:** `anilihait` train (N, `e-`, anili+hait), `feliu` iron (**root**, N, `y-`, carve vs `giliu` generic metal), `anilife` rail (**root**, N, `e-`), `selanilife` railway (N, `ae-`, selo+anilife); `selanilife ismir` railway system (N, `o-`, compound-multi), `shukanilihait` high-speed rail (N, `e-`, shuk+anili+hait), `umkae` underground (N, `ae-`, um+kaera `-kae` elided like `blekae`), `umkaeselo` tunnel (N, `ae-`), `umkae anilihait` metro/subway (N, `e-`, compound-multi), `umkaehait` metro short form (N, `e-`).
+- `data/kilor.db` — **Set 2 optical/atmospheric:** `lumihilar` light pillar (N, `a-`), `auwino` rainbow (**root**, N, `i-`, au- sky onset; carve from colour terms `awino`/`aewino`), `hylle` illusion (**root**, NA, `o-`), `hyllerora` sun dogs/parhelion (N, `a-`), `hyllerorabreim` parhelic circle (N, `a-`), `dif` gap/interval (**root**, NA, `o-`), `elmindiflumi` crepuscular ray (N, `a-`, elmin+dif+lumi), `konelmindiflumi` anti-crepuscular ray (N, `a-`, konta+… flattened), `hylleyre` moon dogs (N, `i-`), `hylleyrebreim` paraselenic circle (N, `i-`).
+- `data/kilor.db` — **Set 3 corona/halo/weather:** `bredin` disk (**root**, N, `o-`, bre- family), `rorabredin` solar corona (N, `a-`, gloss scoped meteorological-not-astronomical), `yrebredin` lunar corona (N, `i-`), `breilum` halo (**root**, N, `o-`), `haubreilum` glory (N, `o-`, hau back + breilum), `rorabreilum` solar halo (N, `a-`), `yrebreilum` lunar halo (N, `i-`), `sekauwae` weather & atmospheric phenomena (**root**, N, `i-`, carve vs `auwae` daily weather), `sekauwaemik` meteorology (N, `o-`, study-of `-mik`), `sekauwaemikmae` meteorologist (N, `a-`, agent `-maeha`).
+
+**Validation:**
+- `python kilor.py check` — 4 pre-existing errors + 12 warnings, **0 new**.
+- Batch docs: `draft/batch-2026-08-26-railway.md`, `draft/batch-2026-08-26-optical.md`, `draft/batch-2026-08-26-halo.md`.
 
 ## workspace v2.32.0 — 2026-08-25
 
