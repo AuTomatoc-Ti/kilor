@@ -1,4 +1,4 @@
-**Current Version:** v2.33.0
+**Current Version:** v2.34.0
 **Last Updated:** 2026-08-26
 **Format:** `**file** — what changed`
 
@@ -18,6 +18,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
+
+## workspace v2.34.0 — 2026-08-26
+
+Nautical/military/light lexicon expansion across three sets (sea-crossing & small craft, navy & extended military tools, indefinites & light), plus four function-word renames. Introduces the naval/maritime register (`thel-` sailing `i-` vs vessel `e-`), the `mlak-` military register (`o-` institution, `e-` instruments), and a bridge-vowel carve for Rule-2b: `mlakathelom`/`umilathelom` spell in an `a` before the edge-only `th` of `thelom` so the mono compounds pass the boundary rule.
+
+**DB / Backend:**
+- `data/kilor.db` — **renames (function words):** `po`→`pom` (exclusive-or, PART), `pona`→`pomnar` (xnor, PART), `pemna`→`pemnar` (neither-nor, PART), `li`→`mosil` (if subordinator, SCONJ). All leaf roots (no component references); IPA/syllables/syl_count recomputed after each `edit --fix-typo`.
+- `data/kilor.db` — **Set 1 nautical/military:** `thel` sail/cross-the-sea (**root**, NV, `i-`), `theltek` ferry (N, `e-`, thel+tek instrument), `nau` small craft/boat (N, `e-`), `pagnau` skiff (N, `e-`, pag+nau), `thelmae` sailor (N, `a-`, thel+maeha agent), `naumae` crew (N, `a-`, nau+maeha agent), `thelom` ship/vessel (**root**, N, `e-`), `mlak` military (**root**, NA, `o-`), `mlakpar` militarization (N, `o-`, mlak+par process), `mlaktek` weapon/to-weapon (NV, `e-`, mlak+tek instrument).
+- `data/kilor.db` — **Set 2 navy & tools:** `mlakwes` armament (N, `o-`, mlak+wes collective), `mlakip` army (**root**, N, `o-`), `mlakathelom` warship (N, `e-`, mlak+thelom relational, bridge `a-`), `mlak mlar` general (N, `a-`, compound-multi mlak+mlar), `umil` dive (**root**, NV, `i-`), `umilmae` diver (N, `a-`, agent), `umilathelom` submarine (N, `e-`, umil+thelom, bridge `a-`), `nautilus` nautilus (**root**, N, `a-` living-animal register), `kiroparwes` stationery (N, `o-`, kiro+par+wes flattened since `kiropar` is itself a compound), `feitere` soar (**root**, NV, `o-`, `-ere` motion register).
+- `data/kilor.db` — **Set 3 indefinites/light/structure:** `srowes` something (N, `o-`, srote+wes), `sromae` someone (N, `a-`, srote+maeha agent), `fafil` do/work-on (**root**, NV, `o-`), `lumif` lamp (**root**, NVAD, `e-` crafted over light-family `a-`), `ennom` tower (**root**, N, `y-`), `lumifennom` lighthouse (N, `y-`, lumif+ennom), `lumifennommae` lighthouse keeper (N, `a-`, lumif+ennom+maeha flattened), `aurimik` astronomy (N, `o-`, aura+mik study-of), `lumire` guide (**root**, NV, `o-`), `lumyd` shadow (**root**, N, `y-` dark family).
+
+**Validation:**
+- `python kilor.py check` — 4 pre-existing errors + 12 warnings, **0 new**.
+- Batch doc: `draft/batch-2026-08-26-maritime.md`. Clone-validated (30 added, 0 errors) then committed.
 
 ## workspace v2.33.0 — 2026-08-26
 
