@@ -1,5 +1,5 @@
-**Current Version:** v2.34.0
-**Last Updated:** 2026-08-26
+**Current Version:** v2.35.0
+**Last Updated:** 2026-08-29
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,19 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
+
+## workspace v2.35.0 — 2026-08-29
+
+31-word lexicon expansion across three sets — broadcast/body/kingdom (Set 1), logic-set & epistemic-seek (Set 2), and spatial distance & focus (Set 3). Introduces the `cup-` logical-set family (scope/include/exclude), the `ema-` truth/epistemic register (seek/investigate/proof/evidence), coining the short bare root `sela` for plain seek alongside compositional `emapar` (ema+par = investigate), and the `-ne` locative adjuncts `toine`/`anoine` built off the new far/close pair `toi`/`anoi`. Note: `aurogik` (cosmology) flattens to `auron+rok+mik` — `aurok` is itself a compound and cannot be a component.
+
+**DB / Backend:**
+- `data/kilor.db` — **Set 1 broadcast/body/kingdom:** `denap` radio (N, `e-` crafted comm device), `aurogik` cosmology (N, `o-`, auron+rok+mik study-of, k→g), `prastin` heart (N, `u-` internal organ), `mofre` holding/to-hold (NV, `o-`), `nitonous` utmost/end (NA, `o-`, near-syn. nitum), `epilonous` end-of-word/last-sentence (N, `o-`, epilo+nous relational), `klesa` worried (NVA, `y-` fear register), `rekug` king (N, `o-`, carve vs tifor), `ceit` tide (N, `i-` marine), `iporom` obstacles (N, `o-`).
+- `data/kilor.db` — **Set 2 logic-set & epistemic-seek:** `tener` reach/arrival (NVA, `o-`, syn. kau noted), `cuppi` scope (N, `o-`), `cupem` include/inclusive/including (NVAD, `o-`), `cupom` exclude/exclusive/excluding (NVAD, `o-`), `klar` clean/cleaning/cleanly (NVAD, `o-`), `klarram` clear-and-distinct/clearly (NA, `o-`, bare root — no ram root), `meilo` bright-clear-visibility (NVA, `o-`, use-note sky/view), `sela` to seek/search (**root**, NV, `o-`), `emapar` to investigate (NV, `o-`, ema+par process), `emakor` proof/to-prove (NVA, `o-`, bare root — kor not a root), `emawes` evidence (N, `o-`, ema+wes relational "truth-things").
+- `data/kilor.db` — **Set 3 spatial distance & focus:** `mosnar` no-matter (**function PART**), `nurom` only (**function D**), `itor` just/merely (**function D**), `ekte` go/to-go (NV, `o-`), `tasda` hug/to-hug (NV, `o-`, tas- family), `toi` far (NA, `o-`, ant. anoi), `toine` on-the-far-side (**function ADP**, `-ne` locative), `anoi` close/near (NA, `o-`, ant. toi), `anoine` on-the-close-side (**function ADP**, `-ne` locative), `tasanoi` embrace (NV, `o-`, tas- bare root, near-syn. tasda).
+
+**Validation:**
+- `python kilor.py check` — **0 batch words flagged** (31 added).
+- Batch docs: `draft/batch-2026-08-29-set1.md`, `set2.md`, `set3.md`. Clone-validated (31 added, 0 errors) then committed to real DB (960→981).
 
 ## workspace v2.34.0 — 2026-08-26
 
