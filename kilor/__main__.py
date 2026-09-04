@@ -11,6 +11,7 @@ from .commands.audio import cmd_audio
 from .commands.audit_apply import cmd_audit_apply
 from .commands.audit_export import cmd_audit_export
 from .commands.check import cmd_check
+from .commands.chat_corpus import cmd_chat_corpus
 from .commands.edit import cmd_edit
 from .commands.export import cmd_export
 from .commands.migrate import cmd_migrate
@@ -79,6 +80,9 @@ def main():
 
     elif cmd == "sync":
         cmd_sync()
+
+    elif cmd == "chat-corpus":
+        cmd_chat_corpus()
 
     elif cmd == "suggest":
         if len(sys.argv) < 3:

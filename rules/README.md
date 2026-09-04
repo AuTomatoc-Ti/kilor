@@ -2,8 +2,8 @@
 
 The authoritative specification of the Kilor constructed language. This directory contains all grammatical, phonological, and philosophical rules.
 
-**Last updated:** 2026-08-23
-**Version:** 2.4.0
+**Last updated:** 2026-09-01
+**Version:** 2.5.0
 
 ---
 
@@ -188,6 +188,7 @@ rules/
 │   └── temporals.md            — Temporal expression
 └── 4-meta/                     ← Project governance
     ├── lexicon-roadmap.md      — Lexicon development plan
+    └── chat-corpus-workflow.md — Guided conversation practice → reusable corpus
 
 guide/                          ← Usage guides (examples, style, rhetoric)
 ├── README.md
@@ -226,6 +227,7 @@ When you change a file, check these dependents:
 | `3-subsystems/derivational-suffixes.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md`, `derivational-prefixes.md` |
 | `3-subsystems/derivational-prefixes.md` | `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md`, `derivational-suffixes.md` |
 | `3-subsystems/compounding.md` | `derivational-suffixes.md`, `derivational-prefixes.md`, `grammar-syntax.md`, `tone-prosody.md`, `nouns-colour-prefix.md` |
+| `4-meta/chat-corpus-workflow.md` | `word-creation-pipeline.md` |
 | `3-subsystems/spatials.md` | `grammar-syntax.md`, `cases.md` |
 
 ---

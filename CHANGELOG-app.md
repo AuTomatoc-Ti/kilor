@@ -1,5 +1,5 @@
-**Current Version:** v2.35.0
-**Last Updated:** 2026-08-29
+**Current Version:** v2.36.0
+**Last Updated:** 2026-09-04
 **Format:** `**file** — what changed`
 
 ## Template (for next entry):
@@ -18,6 +18,20 @@
 **Validation:**
 - `python kilor.py check` — ✅ All N entries pass
 - `npx vitest --run src/App.test.jsx
+
+## workspace v2.36.0 — 2026-09-04
+
+30-word lexicon expansion across three sets — catch/heaven/emergency (Set 1), travel/silence/memory (Set 2), and meta/grammar/world (Set 3). Plus two renames: `we`→`wen` (very, D) and the weather family `sekauwae`→`sefauwae` (with `sekauwaemik`→`sefauwaemik`, `sekauwaemikmae`→`sefauwaemikmae`, components re-pointed by ID). Introduces the `sel-` road/travel family (wander/follow/lost) and the `kulu-` culpability noun `kuliram` punishment. Form tweaks during Phase 0: `hinos`→`hinoso` (dodge `-s`-final rule), `seltare`→`selaute` (d=1 from `seltere` travel), `numberat`→`numinberat` (num not a root → name-word).
+
+**DB / Backend:**
+- `data/kilor.db` — **renames:** `we`→`wen` (very, D, leaf function word); `sekauwae`→`sefauwae` (weather & atmospheric phenomena, i-), `sekauwaemik`→`sefauwaemik` (meteorology, o-, sefauwae+mik), `sekauwaemikmae`→`sefauwaemikmae` (meteorologist, a-, sefauwae+mik+maeha). IPA/syllables/syl_count recomputed after each `edit --fix-typo`.
+- `data/kilor.db` — **Set 1 catch/heaven/emergency:** `hinoso` a grip / to catch / to grip (NVA, `o-`), `kaelum` heaven (NA, `y-` divine), `tilom` listening / to listen (NV, `o-`, carve vs `tilda` hear), `mugel` willingness / willing (NA, `o-`), `notta` emergency / urgent (NA, `o-`), `oukpos` exit-way (N, `ae-`, ouk+poska location), `ikpos` entrance-way (N, `ae-`, ik+poska location), `omer` about/regarding (**function ADP**, no prefix), `kuliram` punishment / to punish (NV, `o-`, kulu- family bare root — kuli/ram not roots), `grosh` guilt-laden regret/sorrow (NVAD, `o-`, carve vs `hik` pure sadness).
+- `data/kilor.db` — **Set 2 travel/silence/memory:** `selaim` wander/roam (NVA, `o-`), `selaimae` wanderer (N, `a-`, selaim+maeha agent), `selaute` follow (NVA, `o-`), `selautemae` follower (N, `a-`, selaute+maeha agent), `hyp` fake/forgery/counterfeit (NA, `o-`, carve vs `hylle`/`hymin`), `saehum` hush / to quiet-shut-up (NV, `o-`), `nostero` silence / silent (NA, `o-`, carve pair with saehum), `melarde` memory / to remember (NV, `o-`), `hyshera` phantom (N, `o-`), `bisel` a getting lost / to lose one's way (NV, `o-`, sel- family bare root of bli+sel-).
+- `data/kilor.db` — **Set 3 meta/grammar/world:** `frage` a question (N, `o-`), `sefim` the world (N, `ae-` earth-domain), `sefri` space/void (N, `i-` cosmic), `sefrusom` boundary/border (N, `o-`, bare root — rusom not a root), `numinberat` noun (N, `o-`, numin+berat relational), `parberat` verb (N, `o-`, par+berat relational), `esawes` everything (N, `e-`, esa+wes collective), `beratkira` dictionary (N, `e-`, berat+kira), `lodema` critic/critical (NA, `o-`, carve vs `loden` judge), `tamen` more (NA, `o-`).
+
+**Validation:**
+- `python kilor.py check` — **0 batch words flagged** (30 added, 4 renames).
+- Batch doc: `draft/batch/batch-2026-09-04.md`. Clone-validated (30 added, 0 errors) then committed to real DB (981→1011).
 
 ## workspace v2.35.0 — 2026-08-29
 
